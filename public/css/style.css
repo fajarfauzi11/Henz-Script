@@ -177,7 +177,7 @@ body.page-home .kazeo-page{padding-top:76px}
 .kz-cp-grid .kz-card-divider{width:32px;height:4px;background:#e53232;border-radius:9999px;margin:10px auto 16px}
 @media(min-width:640px){.kz-cp-grid .kz-card-divider{width:48px;margin:12px auto 20px}}
 .kz-cp-grid .kz-card-meta{align-items:center;flex-direction:column;gap:6px}
-.kz-cp-grid .kz-card-author{display:none}
+.kz-cp-grid .kz-card-author{display:flex;justify-content:center}
 .kz-cp-grid .kz-card-date-wrap{display:none}
 /* Download button: tampilkan di category, sembunyikan di homepage swiper */
 .kz-cp-grid .kz-card-dl-btn{display:inline-flex;pointer-events:none;width:100%}
