@@ -1,12 +1,25 @@
 [
   {
     "id": 1,
-    "title": "Dyrroth Street Fighter 1 Script",
+    "title": "Dyrroth Street Fighter",
     "url": "/post/dyrroth-street-fighter-1.html",
     "thumb": "https://i.ibb.co/Rpwz4Vb4/dyrrothstreetfighter1.webp",
-    "cat": "Fighter",
+    "cat": "Street Fighter",
     "date": "10 Jun 2026",
-    "author": "Henz Official",
+    "author": "Henz MLBB",
+    "comments": 0
+  }
+]
+
+[
+  {
+    "id": 1,
+    "title": "Paquito Street Fighter 1",
+    "url": "/blogpost.html",
+    "thumb": "https://i.ibb.co/Rpwz4Vb4/dyrrothstreetfighter1.webp",
+    "cat": "Street Fighter 1",
+    "date": "10 Jun 2026",
+    "author": "Henz MLBB",
     "comments": 0
   }
 ]
