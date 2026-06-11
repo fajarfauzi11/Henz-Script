@@ -152,6 +152,7 @@ body.page-home .kazeo-page{padding-top:76px}
 .kz-cp-hero-title{font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:#111;margin:0 auto 10px;-webkit-font-smoothing:antialiased}
 .kz-cp-hero-title em{color:#e53232;font-style:normal}
 @media(min-width:720px){.kz-cp-hero-title{font-size:44px}}
+.kz-cp-hero-redline{width:64px;height:5px;background:#e53232;border-radius:9999px;margin:12px auto 0;}
 .kz-cp-tabs-wrap{background:#fff;border-radius:24px;border:1px solid #e4e4e7;box-shadow:0 1px 2px rgba(0,0,0,.05);padding:24px;margin-bottom:36px;margin-top:36px}
 .kz-cp-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .kz-cp-tab{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:2px solid #e8e8e8;border-radius:9999px;padding:13px 10px;font-size:15px;font-weight:800;color:#888;font-family:'Manrope',sans-serif;cursor:pointer;transition:all .18s;white-space:nowrap;line-height:1;letter-spacing:-.2px;width:100%;-webkit-tap-highlight-color:transparent}
@@ -180,6 +181,7 @@ body.page-home .kazeo-page{padding-top:76px}
 @media(max-width:1024px){.kz-cp-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:768px){
   .kz-cp-wrap{padding:20px 4px 28px;padding-top:0}
+  .kz-cp-hero{padding:0 0 20px;margin-top:-24px}
   .kz-cp-tabs-wrap{padding:12px 14px;border-radius:16px;margin-top:0;margin-left:-10px;margin-right:-10px}
   .kz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:8px}
   .kz-cp-tab{padding:11px 8px;font-size:13px}
