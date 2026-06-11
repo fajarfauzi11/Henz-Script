@@ -158,18 +158,29 @@ body.page-home .kazeo-page{padding-top:76px}
 .kz-cp-tab{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:2px solid #e8e8e8;border-radius:9999px;padding:13px 10px;font-size:15px;font-weight:800;color:#888;font-family:'Manrope',sans-serif;cursor:pointer;transition:all .18s;white-space:nowrap;line-height:1;letter-spacing:-.2px;width:100%;-webkit-tap-highlight-color:transparent}
 .kz-cp-tab:hover{border-color:#bbb;color:#333;background:#fafafa}
 .kz-cp-tab.active{background:#111;color:#fff;border-color:#111}
+
+/* Category grid — pakai kz-card identik dengan homepage slider */
 .kz-cp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.kz-cp-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);border:1px solid #f0f0f0;transition:transform .2s,box-shadow .2s;color:inherit;text-decoration:none;display:flex;flex-direction:column;-webkit-tap-highlight-color:transparent}
-.kz-cp-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.12)}
-.kz-cp-card-img-wrap{width:100%;aspect-ratio:16/9;overflow:hidden;flex-shrink:0;background:#111;display:flex;align-items:center;justify-content:center}
-.kz-cp-card-img{width:100%;height:100%;object-fit:contain;display:block}
-.kz-cp-card-no-img{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#f0f0f0,#e0e0e0);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.kz-cp-card-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
-.kz-cp-card-label{font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#e53232;margin-bottom:5px;font-family:'Manrope',sans-serif}
-.kz-cp-card-title{font-size:14px;font-weight:800;color:#111;line-height:1.4;margin-bottom:10px;font-family:'Manrope',sans-serif}
-.kz-cp-card-divider{width:24px;height:3px;background:#f5c518;border-radius:2px;margin-bottom:10px}
+
+/* kz-card override untuk category: img height fixed seperti Blogger */
+.kz-cp-grid .kz-card{height:auto}
+.kz-cp-grid .kz-card-img-wrap{height:128px}
+.kz-cp-grid .kz-card-body{text-align:left;padding:14px 16px 16px}
+.kz-cp-grid .kz-card-label{color:#e53232}
+.kz-cp-grid .kz-card-title{-webkit-line-clamp:2;font-size:14px}
+@media(min-width:640px){
+  .kz-cp-grid .kz-card-img-wrap{height:160px}
+  .kz-cp-grid .kz-card-title{font-size:14px;-webkit-line-clamp:2}
+}
+.kz-cp-grid .kz-card-divider{width:24px;height:3px;background:#f5c518;margin:8px 0 10px}
+.kz-cp-grid .kz-card-meta{align-items:flex-start}
+.kz-cp-grid .kz-card-author{justify-content:flex-start}
+.kz-cp-grid .kz-card-date-wrap{text-align:left}
+
+/* Skeleton */
 .kz-cp-skel{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);border:1px solid #f0f0f0}
-.kz-cp-skel-img{aspect-ratio:16/9;background:#ececec;animation:kzPulse 1.4s ease infinite}
+.kz-cp-skel-img{height:128px;background:#ececec;animation:kzPulse 1.4s ease infinite}
+@media(min-width:640px){.kz-cp-skel-img{height:160px}}
 .kz-cp-skel-body{padding:14px 16px 16px}
 .kz-cp-skel-line{height:10px;background:#ececec;border-radius:5px;margin-bottom:8px;animation:kzPulse 1.4s ease infinite}
 .kz-cp-skel-line.sm{width:45%}.kz-cp-skel-line.xs{width:28%}
@@ -178,6 +189,7 @@ body.page-home .kazeo-page{padding-top:76px}
 .kz-cp-loadmore{text-align:center;margin-top:28px}
 .kz-cp-loadmore-btn{display:inline-block;padding:11px 36px;background:#111;color:#fff;font-size:13px;font-weight:700;border-radius:10px;border:none;cursor:pointer;font-family:'Manrope',sans-serif;transition:background .2s;-webkit-tap-highlight-color:transparent}
 .kz-cp-loadmore-btn:hover{background:#333}
+
 @media(max-width:1024px){.kz-cp-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:768px){
   .kz-cp-wrap{padding:20px 4px 28px;padding-top:0}
@@ -186,14 +198,14 @@ body.page-home .kazeo-page{padding-top:76px}
   .kz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:8px}
   .kz-cp-tab{padding:11px 8px;font-size:13px}
   .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .kz-cp-card-body{padding:10px 12px 12px}
-  .kz-cp-card-title{font-size:12px;margin-bottom:7px}
+  .kz-cp-grid .kz-card-body{padding:10px 12px 12px}
+  .kz-cp-grid .kz-card-title{font-size:12px;margin-bottom:7px}
   .kz-cp-hero-title{font-size:28px}
 }
 @media(max-width:420px){
   .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .kz-cp-card-body{padding:8px 10px 10px}
-  .kz-cp-card-title{font-size:11px}
+  .kz-cp-grid .kz-card-body{padding:8px 10px 10px}
+  .kz-cp-grid .kz-card-title{font-size:11px}
 }
 
 /* SEARCH */
