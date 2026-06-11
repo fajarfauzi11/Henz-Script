@@ -213,6 +213,8 @@ body.page-home .kazeo-page{padding-top:76px}
 .kz-sp-sub{font-size:15px;color:#888;line-height:1.7;margin:0 auto;max-width:480px;font-family:'Manrope',sans-serif;display:block}
 .kz-sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
 @media(max-width:700px){.kz-sp-grid{grid-template-columns:1fr;gap:12px}}
+body.page-social .kazeo-page{padding-top:72px;padding-bottom:0}
+@media(max-width:768px){body.page-social .kazeo-page{padding-top:40px}}
 .kz-sp-card{background:#fff;border-radius:20px;border:1px solid #efefef;padding:32px 28px 28px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
 .kz-sp-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .kz-sp-card.yt:hover{border-color:#FF0000}
