@@ -89,8 +89,7 @@ function kzBuildSlide(e){
 /* Build category card */
 function kzBuildCatCard(e){
   var thumb=e.thumb,label=e.cat,url=e.url,
-    title=e.title||'Tanpa Judul',auth=e.author||'Henz Official',
-    ava='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22%3E%3Crect width=%2240%22 height=%2240%22 fill=%22%23f4f4f5%22/%3E%3Ctext x=%2220%22 y=%2226%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2318181b%22%3EH%3C/text%3E%3C/svg%3E',
+    title=e.title||'Tanpa Judul',
     esc=title.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   var imgH=thumb
     ?'<img class="kz-card-img" src="'+thumb+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\'<div class=&quot;kz-card-no-img&quot;>No Image</div>\'">'
@@ -102,10 +101,6 @@ function kzBuildCatCard(e){
     +'<h3 class="kz-card-title" title="'+esc+'">'+esc+'</h3>'
     +'<div class="kz-card-divider"></div>'
     +'<div class="kz-card-meta">'
-    +'<div class="kz-card-author">'
-    +'<img class="kz-card-avatar" src="'+ava+'" alt="'+auth+'" onerror="this.style.background=\'#e4e4e7\';this.removeAttribute(\'src\')">'
-    +'<span class="kz-card-author-name">'+auth+'</span>'
-    +'</div>'
     +'<span class="kz-card-dl-btn">Download'
     +'<span class="kz-card-dl-btn-icon">'
     +'<svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M15.9959 10.0005L3 10.0005" stroke="currentColor" stroke-width="2"/><path d="M9.73389 16.3179L15.6318 9.99866L9.73389 3.67945" stroke="currentColor" stroke-width="2"/></svg>'
