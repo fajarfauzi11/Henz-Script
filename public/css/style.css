@@ -147,8 +147,8 @@ body.page-home .kazeo-page{padding-top:76px}
 /* CATEGORY PAGE */
 #kz-category-page{display:none;width:100%}
 #kz-category-page.active{display:block}
-.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 0 48px;box-shadow:none;width:100%}
-.kz-cp-hero{text-align:center;padding:0 24px;margin-top:0}
+.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%}
+.kz-cp-hero{text-align:center;padding:0;margin-top:0}
 .kz-cp-hero-title{font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:#111;margin:0 auto 10px;-webkit-font-smoothing:antialiased}
 .kz-cp-hero-title em{color:#e53232;font-style:normal}
 @media(min-width:720px){.kz-cp-hero-title{font-size:44px}}
@@ -198,22 +198,18 @@ body.page-home .kazeo-page{padding-top:76px}
 
 @media(max-width:1024px){.kz-cp-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:768px){
-  .kz-cp-wrap{padding:0}
-  .kz-cp-hero{padding:20px 16px 20px;margin-top:0}
-  .kz-cp-tabs-wrap{padding:16px;border-radius:16px;margin-top:16px;margin-left:0;margin-right:0}
+  .kz-cp-wrap{padding:20px 4px 28px;padding-top:0}
+  .kz-cp-hero{padding:0 0 20px;margin-top:0}
+  .kz-cp-tabs-wrap{padding:12px 14px;border-radius:16px;margin-top:0;margin-left:-10px;margin-right:-10px}
   .kz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:8px}
   .kz-cp-tab{padding:11px 8px;font-size:13px}
   .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .kz-cp-grid .kz-card-img-wrap{height:128px}
   .kz-cp-grid .kz-card-body{padding:10px 12px 12px}
-  .kz-cp-grid .kz-card-title{font-size:12px;margin-bottom:7px;-webkit-line-clamp:2}
-  .kz-cp-grid .kz-card-divider{width:24px;margin:8px auto 12px}
+  .kz-cp-grid .kz-card-title{font-size:12px;margin-bottom:7px}
   .kz-cp-hero-title{font-size:28px}
-  .kz-cp-skel-img{height:128px}
 }
 @media(max-width:420px){
-  .kz-cp-tabs-wrap{padding:12px}
-  .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .kz-cp-grid .kz-card-body{padding:8px 10px 10px}
   .kz-cp-grid .kz-card-title{font-size:11px}
 }
