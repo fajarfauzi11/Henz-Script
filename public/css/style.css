@@ -147,6 +147,9 @@ body.page-home .kazeo-page{padding-top:76px}
 /* CATEGORY PAGE */
 #kz-category-page{display:none;width:100%}
 #kz-category-page.active{display:block}
+@media(max-width:768px){
+  #kz-category-page.active{margin-left:-6px;margin-right:-6px;width:calc(100% + 12px)}
+}
 .kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%}
 .kz-cp-hero{text-align:center;padding:0;margin-top:0}
 .kz-cp-hero-title{font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:#111;margin:0 auto 10px;-webkit-font-smoothing:antialiased}
@@ -159,8 +162,26 @@ body.page-home .kazeo-page{padding-top:76px}
 .kz-cp-tab:hover{border-color:#bbb;color:#333;background:#fafafa}
 .kz-cp-tab.active{background:#111;color:#fff;border-color:#111}
 
-/* Category grid — card identik dengan homepage slider */
+/* Category grid — pakai kz-card identik dengan homepage slider */
 .kz-cp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* kz-card di category: identik dengan homepage — centered, label kuning, divider merah */
+.kz-cp-grid .kz-card{height:auto}
+.kz-cp-grid .kz-card-img-wrap{height:128px}
+.kz-cp-grid .kz-card-body{text-align:center;padding:16px 20px 20px}
+.kz-cp-grid .kz-card-label{color:#FFC200}
+.kz-cp-grid .kz-card-title{-webkit-line-clamp:2;font-size:13px}
+.kz-cp-grid .kz-card:hover .kz-card-title{color:#FFC200}
+@media(min-width:640px){
+  .kz-cp-grid .kz-card-img-wrap{height:160px}
+  .kz-cp-grid .kz-card-title{font-size:15px;-webkit-line-clamp:1}
+  .kz-cp-grid .kz-card-body{padding:16px 20px 20px}
+}
+.kz-cp-grid .kz-card-divider{width:32px;height:4px;background:#e53232;border-radius:9999px;margin:10px auto 16px}
+@media(min-width:640px){.kz-cp-grid .kz-card-divider{width:48px;margin:12px auto 20px}}
+.kz-cp-grid .kz-card-meta{align-items:center;flex-direction:column;gap:6px}
+.kz-cp-grid .kz-card-author{display:flex;justify-content:center}
+.kz-cp-grid .kz-card-date-wrap{display:none}
 /* Download button: tampilkan di category, sembunyikan di homepage swiper */
 .kz-cp-grid .kz-card-dl-btn{display:inline-flex;pointer-events:none;width:100%}
 .kz-swiper-wrap .kz-card-dl-btn{display:none}
@@ -181,15 +202,19 @@ body.page-home .kazeo-page{padding-top:76px}
 @media(max-width:1024px){.kz-cp-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:768px){
   .kz-cp-wrap{padding:20px 4px 28px;padding-top:0}
-  .kz-cp-hero{padding:0 0 20px;margin-top:0}
+  .kz-cp-hero{padding:0 0 20px;margin-top:-24px}
   .kz-cp-tabs-wrap{padding:12px 14px;border-radius:16px;margin-top:0;margin-left:-10px;margin-right:-10px}
   .kz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:8px}
   .kz-cp-tab{padding:11px 8px;font-size:13px}
   .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .kz-cp-grid .kz-card-body{padding:10px 12px 12px}
+  .kz-cp-grid .kz-card-title{font-size:12px;margin-bottom:7px}
   .kz-cp-hero-title{font-size:28px}
 }
 @media(max-width:420px){
   .kz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .kz-cp-grid .kz-card-body{padding:8px 10px 10px}
+  .kz-cp-grid .kz-card-title{font-size:11px}
 }
 
 /* SEARCH */
