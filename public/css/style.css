@@ -147,7 +147,7 @@ body.page-home .kazeo-page{padding-top:76px}
 /* CATEGORY PAGE */
 #kz-category-page{display:none;width:100%}
 #kz-category-page.active{display:block}
-.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%}
+.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%;overflow:visible}
 .kz-cp-hero{text-align:center;padding:0;margin-top:0}
 .kz-cp-hero-title{font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:#111;margin:0 auto 10px;-webkit-font-smoothing:antialiased}
 .kz-cp-hero-title em{color:#e53232;font-style:normal}
@@ -198,7 +198,7 @@ body.page-home .kazeo-page{padding-top:76px}
 
 @media(max-width:1024px){.kz-cp-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:768px){
-  .kz-cp-wrap{padding:20px 4px 28px;padding-top:0}
+  .kz-cp-wrap{padding:20px 4px 28px;padding-top:0;overflow:visible}
   .kz-cp-hero{padding:0 0 20px;margin-top:0}
   .kz-cp-tabs-wrap{padding:12px 14px;border-radius:16px;margin-top:0;margin-left:-10px;margin-right:-10px}
   .kz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:8px}
