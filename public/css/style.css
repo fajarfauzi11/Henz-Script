@@ -147,7 +147,7 @@ body.page-home .kazeo-page{padding-top:76px}
 /* CATEGORY PAGE */
 #kz-category-page{display:none;width:100%}
 #kz-category-page.active{display:block}
-.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%;overflow:visible}
+.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%}
 .kz-cp-hero{text-align:center;padding:0;margin-top:0}
 .kz-cp-hero-title{font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-0.5px;color:#111;margin:0 auto 10px;-webkit-font-smoothing:antialiased}
 .kz-cp-hero-title em{color:#e53232;font-style:normal}
