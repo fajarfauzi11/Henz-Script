@@ -1,21 +1,11 @@
 [
-    {
-    "id": 1,
-    "title": "Guinevere Street Fighter 1",
-    "url": "/post/dyrroth-street-fighter-1.html",
-    "thumb": "https://i.ibb.co/Rpwz4Vb4/dyrrothstreetfighter1.webp",
-    "cat": "Street Fighter 1",
-    "date": "10 Jun 2026",
-    "author": "Henz",
-    "comments": 0
-  },
   {
     "id": 1,
     "title": "Dyrroth Street Fighter 1",
     "url": "/post/dyrroth-street-fighter-1.html",
     "thumb": "https://i.ibb.co/Rpwz4Vb4/dyrrothstreetfighter1.webp",
     "cat": "Street Fighter 1",
-    "date": "10 Jun 2026",
+    "date": "10 Juni 2026",
     "author": "Henz",
     "comments": 0
   },
@@ -23,9 +13,9 @@
     "id": 1,
     "title": "Paquito Street Fighter 1",
     "url": "post/blogpost.html",
-    "thumb": "https://i.ibb.co/Rpwz4Vb4/dyrrothstreetfighter1.webp",
+    "thumb": "https://i.ibb.co/1ftQgwHd/paquitostreetfighter1.webp",
     "cat": "Street Fighter 1",
-    "date": "10 Jun 2026",
+    "date": "1 Juli 2026",
     "author": "Henz",
     "comments": 0
   }
