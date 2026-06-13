@@ -219,6 +219,7 @@ body.page-home .kazeo-page{padding-top:76px}
 body.page-social .kazeo-page{padding-top:72px;padding-bottom:0}
 @media(max-width:768px){body.page-social .kazeo-page{padding-top:40px}}
 @media(max-width:900px){body.page-category .kazeo-page{padding-top:80px}}
+@media(max-width:900px){body.page-search .kazeo-page{padding-top:80px}}
 .kz-sp-card{background:#fff;border-radius:20px;border:1px solid #efefef;padding:32px 28px 28px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
 .kz-sp-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .kz-sp-card.yt:hover{border-color:#FF0000}
