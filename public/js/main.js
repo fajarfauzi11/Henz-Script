@@ -263,7 +263,7 @@ if(document.getElementById('kz-search-heading')){
   shWrap.style.display='block';
   shWrap.innerHTML='<a class="kz-sh-back" href="/index.html">'
     +'<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;"><polyline points="15,18 9,12 15,6"/></svg>'
-    +'&#8592; Kembali ke Beranda</a>'
+    +'Kembali ke Beranda</a>'
     +'<h1>Hasil pencarian untuk: <em>&ldquo;'+qVal.replace(/</g,'&lt;')+'&rdquo;</em></h1>'
     +'<p class="kz-sh-count" id="kz-sh-count">Memuat...</p>';
   if(!qVal){if(svGrid)svGrid.innerHTML='<div class="kz-cp-empty">Masukkan kata kunci pencarian.</div>';}
