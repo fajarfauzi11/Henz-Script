@@ -203,6 +203,7 @@ body.page-home .kazeo-page{padding-top:76px}
 #kz-search-heading .kz-sh-back{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#888;margin-bottom:10px;cursor:pointer;background:none;border:none;padding:0;font-family:'Manrope',sans-serif;text-decoration:none;transition:color .15s}
 #kz-search-heading .kz-sh-back:hover{color:#111}
 #kz-search-heading h1{font-size:28px;font-weight:800;color:#111;margin:0 0 4px;font-family:'Manrope',sans-serif;line-height:1.2}
+@media(max-width:768px){#kz-search-heading h1{font-size:20px}}
 #kz-search-heading h1 em{color:#e53232;font-style:normal}
 #kz-search-heading .kz-sh-count{font-size:13px;color:#aaa;font-family:'Manrope',sans-serif}
 
