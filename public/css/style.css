@@ -9,6 +9,8 @@ a{text-decoration:none}
 .kazeo-header{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:860px;max-width:calc(100% - 48px);z-index:999;background:transparent;transition:all 0.3s}
 .kazeo-header-inner{width:100%;margin:0 auto;padding:8px 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;background:hsl(0 0% 93% / 72%);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:9999px}
 .kazeo-logo{display:flex;align-items:center;flex-shrink:0;color:#111;text-decoration:none;transition:opacity 0.2s;-webkit-tap-highlight-color:transparent}
+#kz-logo-svg-slot{display:flex;align-items:center}
+#kz-logo-svg-slot svg{display:block}
 .kazeo-logo:hover{opacity:0.75}
 .kazeo-logo-desktop-name{font-family:'Barlow','Manrope',sans-serif;font-weight:900;font-size:24px;line-height:32px;letter-spacing:-0.6px;color:#18181B;white-space:nowrap;-webkit-font-smoothing:antialiased;margin-left:8px}
 @media(max-width:768px){.kazeo-logo-desktop-name{display:none}}
