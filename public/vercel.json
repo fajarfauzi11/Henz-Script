@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/category", "destination": "/category.html" },
+    { "source": "/social", "destination": "/social.html" },
+    { "source": "/search", "destination": "/search.html" }
+  ],
+  "headers": [
+    {
+      "source": "/js/posts.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
+  ]
+}
