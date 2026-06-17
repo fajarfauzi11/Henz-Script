@@ -58,7 +58,7 @@ a{text-decoration:none}
   .kazeo-header-inner{padding:8px 12px 8px 20px;height:auto;min-height:52px;background:hsl(0 0% 93% / 72%);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:28px;border:none;box-shadow:none;justify-content:space-between;position:relative;gap:0;flex-wrap:wrap;align-items:flex-start;transition:border-radius 0.25s cubic-bezier(0,0,0.2,1)}
   .kazeo-header-inner>*:not(.kazeo-mobile-nav){align-self:center}
   .kazeo-header-inner.kz-drawer-open{border-radius:28px;box-shadow:none!important}
-  .kazeo-mobile-search-pill{display:flex!important;position:absolute;left:50%;transform:translateX(-50%);width:46%;background:rgba(0,0,0,0.06);height:30px;padding:0 10px;transition:opacity 0.18s}
+  .kazeo-mobile-search-pill{display:flex!important;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46%;background:rgba(0,0,0,0.06);height:30px;padding:0 10px;transition:opacity 0.18s}
   .kz-drawer-open .kazeo-mobile-search-pill{opacity:0;pointer-events:none}
   .kazeo-mobile-search-pill input{font-size:12px}
   .kazeo-mobile-search-pill svg{width:13px;height:13px}
