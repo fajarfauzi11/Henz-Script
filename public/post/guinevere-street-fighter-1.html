@@ -47,7 +47,7 @@
 -->
 
 <link href='https://i.ibb.co' rel='preconnect'/>
-<link as='image' fetchpriority='high' href='https://i.ibb.co/JwvFq85G/guineverestreetfighter1-2.webp' rel='preload'/>
+<link as='image' fetchpriority='high' href='' rel='preload'/>
 <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap' media='print' onload="this.media='all'" rel='stylesheet'/>
 <noscript><link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap' rel='stylesheet'/></noscript>
 
@@ -188,6 +188,13 @@
       object-fit: cover !important;
       aspect-ratio: 1 / 1 !important;
     }
+
+    /* Short Story — justify bikin spasi antar kata melebar tidak rapi
+       di kolom sempit, jadi di mobile kembali rata kiri saja */
+    #kz-story-short,
+    #kz-story-full {
+      text-align: left !important;
+    }
   }
 </style>
 
@@ -223,7 +230,7 @@
       <!-- ✏️ EDIT: Ganti src="" di bawah ini dengan URL gambar hero kamu -->
       <!-- ✏️ EDIT: Ganti juga href pada <link rel="preload"> di bagian atas dengan URL yang sama -->
       <img
-        src="https://i.ibb.co/JwvFq85G/guineverestreetfighter1-2.webp"
+        src=""
         alt="Hero"
         fetchpriority="high"
         decoding="async"
@@ -237,7 +244,7 @@
       <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
-        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">Street Fighter 1</span>
+        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;"></span>
 
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
@@ -250,7 +257,7 @@
           <!-- ✏️ EDIT: Ganti angka patch (contoh: 1.9.44) -->
           <span style="display:inline-flex;align-items:center;gap:5px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Update 1 Juli 2026
+            
           </span>
 
           <!-- Nama brand — ubah jika perlu -->
@@ -282,23 +289,19 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;">
-          Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga bangsawan t...
-        </div>
+        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;">Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga...</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;">
-          Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga bangsawan terkemuka di Negeri Fajar. Meskipun keluarganya terkenal karena ilmu pedang yang hebat, sejak kecil Guinevere lebih tertarik pada sihir dan dikirim untuk belajar di Akademi Sihir.
+        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga bangsawan terkemuka di Negeri Fajar. Meskipun keluarganya terkenal karena ilmu pedang yang hebat, sejak kecil Guinevere lebih tertarik pada sihir dan dikirim untuk belajar di Akademi Sihir.
 
 Berkat bakat dan persepsi spiritualnya yang luar biasa, Guinevere berhasil menciptakan kekuatan sihir baru pada usia yang sangat muda. Ia sering menggunakan hasil eksperimennya pada kakaknya, Lancelot, yang meskipun kerap menjadi sasaran uji coba sihir, tetap sangat menyayangi adiknya.
 
 Keluarga Barok dikenal tidak hanya karena kekuatan mereka, tetapi juga karena kecantikan dan kebijaksanaan yang diwariskan dari generasi ke generasi. Karena status keluarganya yang tinggi, Guinevere menjadi sosok yang menarik perhatian banyak bangsawan.
 
 Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir mengajukan lamaran kepada Keluarga Barok. Ayah Guinevere menyambut rencana pernikahan tersebut dengan baik, namun Guinevere menolak karena tidak ingin hidupnya dijadikan alat untuk kepentingan politik. Dalam kebingungan dan kegelisahannya, ia pun memutuskan untuk meminta bantuan kepada kakaknya, Lancelot.
-
-          <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
-        </div>
+</div>
+        <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #e8e8e8;">
@@ -360,7 +363,7 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
 
             <!-- ✏️ EDIT: Ganti src dengan URL icon skill pasif -->
             <img
-              src="https://static.wikia.nocookie.net/mobile-legends/images/2/21/Super_Magic.png"
+              src=""
               alt="Pasif"
               style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"
             />
@@ -383,12 +386,13 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
 
               <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
               <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">
-                
+                Guinevere memberikan 25% kerusakan ekstra pada mus...
               </p>
 
               <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
               <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">
-                <br/br/>
+                Guinevere memberikan 25% kerusakan ekstra pada musuh di udara
+. Guinevere memberikan (+80% Total Serangan Fisik) (+60% Total Kekuatan Sihir) Kerusakan Sihir dengan Serangan Dasarnya dan mengumpulkan Sihir Super setiap kali dia memberikan kerusakan. Ketika terisi penuh, Serangan Dasar berikutnya menjadi terarah , memberikan 80 (+100% Total Serangan Fisik) (+90% Total Kekuatan Sihir) Kerusakan Sihir saat mengenai target dan memulihkan 80 (+8% HP Guinevere yang Hilang) HP . Musuh yang terkena Serangan Dasar Guinevere yang ditingkatkan,Gelombang Energi Gelombang Energi , atauMigrasi Spasial Migrasi Spasial ditandai selama 5 detik. Mereka yang memiliki 3 tanda akan terlempar ke udara saat terkena serangannya.Requiem Ungu Requiem Ungu .<br/br/>
                 <!-- ✏️ Tambah detail mekanik, scaling, atau catatan di sini -->
               </div>
 
@@ -418,7 +422,7 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
               <!-- ✏️ EDIT: Ganti src dengan URL icon skill 1 -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/8/89/Energy_Wave.png" alt="Skill 1" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <img src="static.wikia.nocookie.net/mobile-legends/images/2/21/Super_Magic.png" alt="Skill 1" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
                   <!-- ✏️ EDIT: Nama skill 1 -->
@@ -427,9 +431,9 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
-                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;"></p>
+                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Guinevere melepaskan bola energi ke arah target, memberikan...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
-                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;"><br/br/></div>
+                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Guinevere melepaskan bola energi ke arah target, memberikan 300–525 (+125% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh pertama yang terkena dan memperlambat mereka sebesar 25% selama 1,2 detik. Berhasil mengenai musuh mengurangi semua waktu pendinginan skill-nya sebesar 1 detik.<br/br/></div>
                 <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -449,7 +453,7 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
               <!-- ✏️ EDIT: Ganti URL_ICON_SKILL2 dengan URL icon skill 2 -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Spatial_Migration.png" alt="Skill 2" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <img src="" alt="Skill 2" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
                   <!-- ✏️ EDIT: Nama skill 2 -->
@@ -458,9 +462,9 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
-                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;"></p>
+                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Guinevere menghantam lokasi target dengan 250–400 (+80...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;"><br/br/></div>
+                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Guinevere menghantam lokasi target dengan 250–400 (+80% Total Kekuatan Sihir) Kerusakan Sihir [, melumpuhkan musuh di dalamnya selama 1 detik]. Hero dan creep musuh yang terkena akan terlempar ke udara selama 1 detik dan menerima 125–200 (+50% Total Kekuatan Sihir) Kerusakan Sihir tambahan . Setelah digunakan, Guinevere dapat mengaktifkan kembali skill dalam 5 detik untuk berteleportasi ke arah target [sambil tidak terlihat selama 0,5 detik] dan meninggalkan ilusi. Jika ilusi tersebut menerima kerusakan, ia akan memulihkan Super Sihir untuk Guinevere dan akan meledak dalam 1,5 detik, memberikan 100 (+30% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dekatnya.<br/br/></div>
                 <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -482,7 +486,7 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
               <!-- ✏️ EDIT: Ganti URL_ICON_ULTIMATE dengan URL icon ultimate -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/04/Violet_Requiem.png" alt="Ultimate" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <img src="" alt="Ultimate" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
                   <!-- ✏️ EDIT: Nama ultimate -->
@@ -491,9 +495,9 @@ Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir men
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Burst</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
-                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;"></p>
+                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Guinevere menciptakan medan kekuatan di sekitarnya [selam...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;"><br/br/></div>
+                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Guinevere menciptakan medan kekuatan di sekitarnya [selama 2 detik], menyerang musuh di dekatnya 11 kali dalam 2 detik, memberikan total Kerusakan Sihir sebesar 880–1320 (+385% Total Kekuatan Sihir) . Jika musuh yang terkena serangan sudah berada di udara , mereka akan terlempar ke udara lagi, hingga 8 kali tambahan. Guinevere kebal terhadap efek pengendalian massa saat menggunakan skill ini.<br/br/></div>
                 <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
