@@ -188,6 +188,13 @@
       object-fit: cover !important;
       aspect-ratio: 1 / 1 !important;
     }
+
+    /* Short Story — justify bikin spasi antar kata melebar tidak rapi
+       di kolom sempit, jadi di mobile kembali rata kiri saja */
+    #kz-story-short,
+    #kz-story-full {
+      text-align: left !important;
+    }
   }
 </style>
 
@@ -224,7 +231,7 @@
       <!-- ✏️ EDIT: Ganti juga href pada <link rel="preload"> di bagian atas dengan URL yang sama -->
       <img
         src="https://i.ibb.co/Rpwz4Vb4/dyrrothstreetfighter1.webp"
-        alt="Hero"
+        alt="Dyrroth Street Fighter 1"
         fetchpriority="high"
         decoding="async"
         style="width:100%;height:100%;object-fit:cover;display:block;"
@@ -237,12 +244,12 @@
       <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
-        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">STREET FIGHTER 1</span>
+        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">Street Fighter 1</span>
 
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
              ✏️ EDIT: Ganti teks fallback jika perlu -->
-        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Harith Starlight</div>
+        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Dyrroth Street Fighter 1</div>
 
         <!-- Info patch & brand -->
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);">
@@ -250,7 +257,7 @@
           <!-- ✏️ EDIT: Ganti angka patch (contoh: 1.9.44) -->
           <span style="display:inline-flex;align-items:center;gap:5px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Update 10 Juni 2026
+            Update 25 Juni 2026
           </span>
 
           <!-- Nama brand — ubah jika perlu -->
@@ -282,54 +289,20 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;">
-          Dahulu seorang pangeran bangsawan dari Kekaisaran Moniyan...
-        </div>
+        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;">Dyrroth, yang dahulu merupakan Pangeran Cahaya dari Kekaisaran Moniyan, kini dike...</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
-             Gunakan <br/><br/> untuk ganti paragraf -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;">
-          Dahulu seorang pangeran bangsawan dari Kekaisaran Moniyan, ia diculik oleh Alice, Ratu Iblis Darah, dan diubah menjadi Pangeran Jurang.	”
-Dyrroth, yang dulunya Pangeran Cahaya dari Kekaisaran Moniyan, telah menjadi Putra Kegelapan yang paling membangkang di Abyss. Terikat oleh darah, saudara perempuannya, Silvanna, tidak pernah menyerah dalam pencariannya yang waspada untuk menemukannya, sementara Alice, penculiknya, dengan teliti membentuknya menjadi pendamping Abyss yang paling ganas dan setia. Meskipun tidak lahir dari darah iblis, Dyrroth berkembang di kedalaman Abyss dengan merangkul sifat buasnya. Di alam di mana kekuasaan dipuja di atas segalanya, ia dengan sengaja mempercepat korupsinya sendiri untuk membuktikan kesetiaannya, menempa kembali dagingnya dalam kegelapan dan memutuskan semua ikatan dengan cahaya.
+             Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
+        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">Dyrroth, yang dahulu merupakan Pangeran Cahaya dari Kekaisaran Moniyan, kini dikenal sebagai Son of Darkness milik Abyss. Saat masih bayi, ia diculik oleh Alice dan dibawa ke Abyss untuk dibesarkan sebagai penerus kekuatan kegelapan. Di sana, ia tumbuh di bawah bimbingan Alice dan Thamuz, disambut sebagai anak istimewa yang ditakdirkan untuk memimpin Abyss. Berbeda dengan asal-usulnya sebagai manusia, Dyrroth menerima kehidupan barunya dan menganggap Abyss sebagai rumah yang sesungguhnya.
 
-Darah dan Kelahiran
-Darah, segala sesuatu yang terlihat bermandikan warna merah tua. Di titik tertinggi Sarang Sanguine, setetes darah yang sangat besar menggantung di udara seperti jantung yang terus berdetak. Menarik dan memompa keluar, tetes demi tetes, hingga darah yang mengalir berkumpul menjadi genangan, membanjiri segala sesuatu yang terlihat—ini adalah kolam Alice untuk memelihara Iblis Darah.
+Bertahun-tahun kemudian, Dyrroth memimpin pasukan Abyss dalam rencana invasi besar ke Moniyan Empire. Kemenangan sudah berada di depan mata hingga kemunculan Putri Silvanna. Sang putri memanggilnya sebagai &quot;saudara&quot;, sebuah kata yang asing namun entah mengapa membuatnya ragu sejenak. Keraguan itu menjadi titik balik pertempuran, karena Silvanna memanfaatkan kesempatan tersebut untuk menusukkan tombak sucinya ke dada Dyrroth dan menggagalkan invasi Abyss.
 
-Bertahun-tahun kemudian, Dyrroth kembali ke sini untuk pertama kalinya.
+Dalam keadaan terluka parah, Dyrroth diselamatkan oleh Alice dan dibawa kembali ke Sanguine Lair, tempat para Blood Demon dilahirkan dan tempat ia dibesarkan. Di sana, ia merenungkan masa lalunya. Meski Silvanna mengaku sebagai keluarganya, kenangan yang ia miliki hanyalah tentang Alice, Thamuz, dan seluruh penghuni Abyss yang telah menerimanya sejak kecil. Ia menyadari bahwa Moniyan tidak pernah benar-benar menjadi rumahnya, sementara Abyss adalah tempat di mana ia tumbuh dan menemukan jati dirinya.
 
-Saat ia melangkah ke dalam kolam, warna merah tua di dalamnya beresonansi dengan darah di tubuhnya, menariknya kembali ke rencana "Dawnbreak" baru-baru ini—yang seharusnya menjadi invasi sempurna. Memimpin pasukan Abyssal sebagai garda terdepan, Dyrroth hampir menenggelamkan seluruh Kekaisaran Moniyan ke dalam kegelapan pada malam tanpa bulan dan tanpa bintang itu.
+Menginginkan kekuatan yang lebih besar, Dyrroth memutuskan memasuki kolam darah Sanguine Lair, sebuah ritual yang biasanya tidak dapat dibalikkan. Darah iblis menelan tubuhnya, sementara senjata miliknya yang telah dipenuhi energi Abyss menembus luka di dadanya. Di ambang kehidupan dan kematian, cahaya Moniyan dan kegelapan Abyss bertarung di dalam dirinya sebelum akhirnya menyatu menjadi satu kesatuan yang tak terpisahkan.
 
-Sebelum ia muncul, Putri Silvanna dari Kekaisaran, yang wajahnya memiliki kemiripan samar dengan wajahnya sendiri, muncul di tengah doa-doa ketakutan dari warga yang tak terhitung jumlahnya. Sambil memegang tombak sucinya, ia memanggilnya "saudara"....
-
-Saudara—sebuah kata yang sama sekali asing, namun seperti mantra yang ditenun oleh takdir, kata itu membuat Dyrroth ragu. Hanya sesaat, tetapi Silvanna tidak ragu. Kemenangan ditentukan pada saat itu juga, sama asingnya dengan kata itu seperti rasa sakit tumpul dari baja dingin yang menusuk dadanya.
-
-Sungguh menggelikan. Ikatan darah yang disebut-sebut ini... hal pertama yang didapat Dyrroth hanyalah pertumpahan darah.
-
-Darah mengalir melewati pergelangan kakinya, Dyrroth menatap kakinya, yang kini menjadi gumpalan otot mengerikan dan tulang yang menonjol. Kaki yang tak mungkin dimiliki manusia.
-
-Tubuhnya telah lama menyelesaikan transformasinya, namun luka akibat tombak suci di dadanya menolak untuk sembuh.... Dia terluka parah dan masih hidup hanya karena Alice telah membawanya pergi dari medan perang. Alice meninggalkannya untuk pulih sendirian di Sarang Sanguine, bentengnya di Abyss tempat dia memelihara Iblis Darah—tempat yang sama di mana dia dibesarkan.
-
-Bertahun-tahun yang lalu, Alice telah menculiknya dari Kekaisaran saat ia masih bayi, dan dengan melakukan itu, ia juga menyerahkan seluruh Abyss kepadanya sebagai hak warisnya.
-
-Masa lalu dalam ingatan Dyrroth bukanlah keadilan yang diproklamirkan "saudarinya" sambil mengacungkan tombak sucinya; yang diingatnya adalah persahabatan Alice yang selalu ada, ajaran Thamuz , dan seluruh Abyss yang bersukacita atas kelahiran "Putra Kegelapan"—dan semua yang telah ditakdirkan sejak saat itu.
-
-Dyrroth akan bertarung untuk Abyss.
-
-Dia tidak terlahir sebagai Iblis, tetapi orang-orang Moniyan yang mengaku merindukan kembalinya dia telah mengungkapkannya melalui tatapan ketakutan dan kebencian mereka. Kekaisaran tidak akan pernah bisa menjadi rumahnya. Dia tumbuh di Abyss dan telah lama merangkul cara-cara buasnya. Anak dari Abyss ditakdirkan untuk berjuang demi tempat itu.
-
-Dyrroth melemparkan pisau pergelangan tangannya ke dalam kolam darah iblis. Transformasi kolam itu dimaksudkan untuk tidak dapat dibatalkan—itu adalah kelahiran, dan itu adalah kematian. Iblis Darah yang telah berubah tidak punya alasan untuk kembali, namun Dyrroth mendambakan kekuatan. Entah untuk membalas dendam pada "saudarinya" atau untuk kembali ke Abyss... Abyss memuja kekuatan, dan dia tahu dia harus menjadi lebih kuat.
-
-Dyrroth turun ke dalam kolam.
-
-Cairan merah tua itu meluap, menelan tubuhnya. Bilah-bilah di pergelangan tangannya, yang kini dipenuhi kekuatan Jurang Maut, menembus dadanya yang masih terluka. Terombang-ambing antara hidup dan mati, cahaya Kekaisaran dan kegelapan Jurang Maut berbenturan di dalam dirinya, saling merobek dan mencabik sebelum akhirnya menyatu menjadi satu. Batasan antara kematian dan kelahiran kembali terpecah dan cahaya serta kegelapan di dalam dirinya menjadi tak terpisahkan selamanya.
-
-Setetes demi setetes, bola darah yang melayang itu memancarkan esensi merahnya ke dalam kolam, secara bertahap selaras dengan detak jantung Dyrroth.
-
-Sebelum fajar menyingsing, Dyrroth membuka matanya dan menatap ke arah Kekaisaran—Segera ia akan kembali ke Kekaisaran Moniyan dan menunjukkan kepada dunia kekuatan "Pangeran Jurang" melalui kekuatan yang luar biasa. Tanpa ragu lagi, ia akan memutuskan ikatan darah yang membelenggunya dengan tangannya sendiri, dengan darah sebagai persembahan untuk menyelesaikan reuni agung ini.
-
-"Aku terbangun dari jurang untuk memadamkan Cahaya"<br/><br/>
-          <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
-        </div>
+Sebelum fajar menyingsing, Dyrroth terbangun dengan kekuatan baru. Ia tidak lagi ragu terhadap pilihannya dan sepenuhnya menerima takdirnya sebagai &quot;Prince of the Abyss&quot;. Menatap ke arah Moniyan Empire, ia bersumpah akan kembali untuk menunjukkan kekuatan sejatinya dan memutus seluruh ikatan darah yang masih menghubungkannya dengan masa lalunya. Baginya, hanya ada satu tujuan: bangkit dari Abyss dan memadamkan cahaya.</div>
+        <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #e8e8e8;">
@@ -392,7 +365,7 @@ Sebelum fajar menyingsing, Dyrroth membuka matanya dan menatap ke arah Kekaisara
             <!-- ✏️ EDIT: Ganti src dengan URL icon skill pasif -->
             <img
               src="https://static.wikia.nocookie.net/mobile-legends/images/5/53/Wrath_of_the_Abyss.png"
-              alt="Pasif"
+              alt="Wrath of the Abyss"
               style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"
             />
 
@@ -409,17 +382,17 @@ Sebelum fajar menyingsing, Dyrroth membuka matanya dan menatap ke arah Kekaisara
                      Mobility→ background:#e0f2f1; color:#00695c;
                      Heal    → background:#fce4ec; color:#c62828;
                      Burst   → background:#fff3e0; color:#e65100; -->
-                <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">BUFF</span>
+                <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff/Heal</span>
               </div>
 
               <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
               <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">
-                When Dyrroth's Rage reaches 50%, he will enhance Burst Strike Bu...
+                Ketika amarah Dyrroth mencapai 50%, dia akan meningkatkan ke...
               </p>
 
               <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
               <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">
-                When Dyrroth's Rage reaches 50%, he will enhance Burst Strike Burst Strike and Spectre Step Spectre Step. After each 2 Basic Attacks Basic Attacks, Dyrroth will release Circle Strike, dealing (+160% Total Physical Attack) Physical Damage to enemies in the circle and regenerating [50 + 40% of the damage dealt HP] (Circle Strike doesn't have ATK Effect). Each time he hits an enemy hero, the CD of Burst Strike Burst Strike and Spectre Step Spectre Step will be decreased by 1 second.<br/br/>
+                Ketika amarah Dyrroth mencapai 50%, dia akan meningkatkan kekuatannya.Serangan Beruntun Serangan Beruntun danLangkah Spektrum Langkah Spectre . Setelah setiap 2Serangan Dasar Serangan Dasar , Dyrroth akan melepaskan Circle Strike , memberikan (+160% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dalam lingkaran dan meregenerasi [50 + 40% dari kerusakan yang diberikan HP ] (Circle Strike tidak memiliki Efek ATK). Setiap kali dia mengenai hero musuh, cooldown dariSerangan Beruntun Serangan Beruntun danLangkah Spektrum Langkah Spectre akan dikurangi 1 detik.<br/br/>
                 <!-- ✏️ Tambah detail mekanik, scaling, atau catatan di sini -->
               </div>
 
@@ -449,19 +422,19 @@ Sebelum fajar menyingsing, Dyrroth membuka matanya dan menatap ke arah Kekaisara
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
               <!-- ✏️ EDIT: Ganti src dengan URL icon skill 1 -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Burst_Strike.png" alt="Skill 1" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Burst_Strike.png" alt="Burst Strike" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
                   <!-- ✏️ EDIT: Nama skill 1 -->
                   <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Burst Strike</span>
                   <!-- ✏️ EDIT: Tipe skill 1 (lihat panduan warna di bagian Pasif atas) -->
-                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE</span>
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Slow</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
-                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth releases a burst strike in a designated direction...</p>
+                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth melepaskan serangan beruntun ke arah yang diten...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
-                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth releases a burst strike in a designated direction. Each burst deals 200–450 (+60% Extra Physical Attack) Physical Damage to enemies and slows them by 25% for 1.5 seconds. (The damage decays against the same target and decreases to only 75% on minions.)
-Abyss Enhanced: Burst Strike has a longer range, deals 140% of the original damage, and its slow effect is doubled.<br/br/></div>
+                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth melepaskan serangan beruntun ke arah yang ditentukan. Setiap serangan beruntun memberikan 200–450 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh dan memperlambat mereka sebesar 25% selama 1,5 detik. (Kerusakan berkurang terhadap target yang sama dan hanya berkurang menjadi 75% pada minion .)
+Abyss Enhanced : Burst Strike memiliki jangkauan yang lebih jauh, memberikan 140% dari kerusakan asli , dan efek perlambatannya berlipat ganda.<br/br/></div>
                 <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -481,19 +454,19 @@ Abyss Enhanced: Burst Strike has a longer range, deals 140% of the original dama
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
               <!-- ✏️ EDIT: Ganti URL_ICON_SKILL2 dengan URL icon skill 2 -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/09/Spectre_Step.png" alt="Skill 2" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/09/Spectre_Step.png" alt="Spectre Step" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
                   <!-- ✏️ EDIT: Nama skill 2 -->
                   <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Spectre Step</span>
                   <!-- ✏️ EDIT: Tipe skill 2 -->
-                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility/Damage</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
-                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth dashes in the designated direction. He will stop when he hits a [non-minion] target...</p>
+                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth melesat ke arah yang ditentukan. Dia akan berhen...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth dashes in the designated direction. He will stop when he hits a [non-minion] target, dealing 230–355 (+60% Extra Physical Attack) Physical Damage to enemies. When he uses this skill again, he will lock onto a target and release a Fatal Strike, dealing [a total of] 345–570 (+120% Extra Physical Attack) Physical Damage. Enemy heroes or creeps hit by Fatal Strike will have their Physical Defense reduced by 40% for 4 seconds.
-Abyss Enhanced: Fatal Strike will deal 150% of the original damage, slow the target by an extra 90% [for 1 second] and reduce the target's Physical Defense by 60% [instead] for 4 seconds.<br/br/></div>
+                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth melesat ke arah yang ditentukan. Dia akan berhenti ketika mengenai target [bukan minion], memberikan 230–355 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh. Ketika dia menggunakan skill ini lagi, dia akan mengunci target dan melepaskan Fatal Strike, memberikan [total] 345–570 (+120% Serangan Fisik Ekstra) Kerusakan Fisik . Hero atau creep musuh yang terkena Fatal Strike akan mengalami pengurangan Pertahanan Fisik sebesar 40% selama 4 detik.
+Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperlambat target sebesar 90% tambahan [selama 1 detik] dan mengurangi Pertahanan Fisik target sebesar 60% [sebagai gantinya] selama 4 detik.<br/br/></div>
                 <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -502,6 +475,8 @@ Abyss Enhanced: Fatal Strike will deal 150% of the original damage, slow the tar
             </div>
           </div>
           <!-- END SKILL 2 -->
+
+          
 
           <!-- ───────────────────────────────────────
                ULTIMATE
@@ -513,18 +488,18 @@ Abyss Enhanced: Fatal Strike will deal 150% of the original damage, slow the tar
             </div>
             <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
               <!-- ✏️ EDIT: Ganti URL_ICON_ULTIMATE dengan URL icon ultimate -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Abysm_Strike.png" alt="Ultimate" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Abysm_Strike.png" alt="Abysm Strike" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
               <div style="flex:1;min-width:0;">
                 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
                   <!-- ✏️ EDIT: Nama ultimate -->
                   <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Abysm Strike</span>
                   <!-- ✏️ EDIT: Tipe ultimate -->
-                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Burst</span>
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Burst/Slow</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
-                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">After a short delay, Dyrroth launches a destrucive strike...</p>
+                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Setelah jeda singkat, Dyrroth melancarkan serangan des...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">After a short delay, Dyrroth launches a destrucive strike in the target direction (cannot be interrupted), dealing 650–1250 (+250% Extra Physical Attack) (+enemies' 20% Lost HP) Physical Damage to enemies along the way and slowing them by 55% for 0.8 seconds.<br/br/>.</div>
+                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Setelah jeda singkat, Dyrroth melancarkan serangan destruktif ke arah target (tidak dapat diinterupsi), memberikan 650–1250 (+250% Serangan Fisik Ekstra) (+20% HP musuh yang hilang) Kerusakan Fisik kepada musuh di sepanjang jalan dan memperlambat mereka sebesar 55% selama 0,8 detik.<br/br/></div>
                 <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -556,21 +531,21 @@ Abyss Enhanced: Fatal Strike will deal 150% of the original damage, slow the tar
       <div id="kz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
 
         <!-- ✏️ EDIT: href → link artikel cara pasang script -->
-        <a href="#"
+        <a href="https://www.youtube.com/watch?v=5T68xE85GTI"
           style="display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 10px;border-radius:12px;background:#111;color:#fff;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;text-align:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           Cara Pasang Script
         </a>
 
         <!-- ✏️ EDIT: href → link artikel cara backup script -->
-        <a href="#"
+        <a href="https://www.youtube.com/watch?v=HreF0ZAPDb0"
           style="display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 10px;border-radius:12px;background:#111;color:#fff;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;text-align:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           Cara Backup Script
         </a>
 
         <!-- ✏️ EDIT: href → link artikel fix akses ditolak -->
-        <a href="#"
+        <a href="https://www.youtube.com/watch?v=CIb396uzyTU"
           style="display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 10px;border-radius:12px;background:#b91c1c;color:#fff;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;text-align:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
           Fix Akses Ditolak
@@ -639,106 +614,59 @@ Abyss Enhanced: Fatal Strike will deal 150% of the original damage, slow the tar
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
                     <!-- ✏️ Ganti href dengan URL download yang benar -->
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero851-icon.png/revision/latest?cb=20250917081355" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-                
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Basic</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png/revision/latest?cb=20260424022429" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-                
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png/revision/latest?cb=20260424022429" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-                
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Saint Seiya</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/8/86/Hero853-icon.png/revision/latest?cb=20220126142116" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-                
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Starlight</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Hero854-icon.png/revision/latest?cb=20220126142115" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-                
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">V.E.N.O.M</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero856-icon.png/revision/latest?cb=20220401091155" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-                
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Annual Starlight</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero857-icon.png/revision/latest?cb=20221217033854" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                    <a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
                   </td>
                 </tr>
 
                 <!-- ✏️ TAMBAH BARIS VARIAN BARU DI SINI (duplikat <tr>...</tr> di atas) -->
 
+                <tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero851-icon.png" alt="Default + Logo" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/42XDOiiGkI9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png" alt="Basic" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/T35VvlBN7aT" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png" alt="Basic + Logo" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">KOF</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/8/86/Hero853-icon.png" alt="KOF" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/2HC7W5MIIlt" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Hero854-icon.png" alt="Starlight" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">V.E.N.O.M</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero856-icon.png" alt="V.E.N.O.M" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/UuikzduVyee" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Collector</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero857-icon.png" alt="Collector" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/pT4YWMkCLdV" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+
+
                 <!-- BARIS TERAKHIR — hapus border-bottom (style berbeda dari baris lain) -->
                 <tr>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Street Fighter 2</span>
+                    <span style="font-weight:800;color:#111;font-size:12px;">HxH</span>
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a3/Hero858-icon.png/revision/latest?cb=20241201053531" alt="HXH" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a3/Hero858-icon.png" alt="HXH" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="LINKDOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                    <a href="https://sfile.co/seIeLiF3ea1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
                   </td>
                 </tr>
 
@@ -840,7 +768,7 @@ function kzAutoTitle(){
   var sep = -1;
   var pipeIdx = raw.lastIndexOf(' | ');
   var dashIdx = raw.lastIndexOf(' - ');
-  var emIdx   = raw.lastIndexOf(' \u2013 ');
+  var emIdx   = raw.lastIndexOf(' – ');
   if(pipeIdx !== -1) sep = pipeIdx;
   if(dashIdx !== -1 && dashIdx > sep) sep = dashIdx;
   if(emIdx   !== -1 && emIdx   > sep) sep = emIdx;
@@ -882,16 +810,13 @@ function kzToggleAllSkills(){
     wrap.style.display = 'none';
     if(lbl)  lbl.textContent      = 'Lihat Semua Skill';
     if(icon) icon.style.transform = 'rotate(0deg)';
-    ['kz-ab-pasif','kz-ab-s1','kz-ab-s2','kz-ab-ult'].forEach(function(id){
-      var full  = document.getElementById(id+'-full');
-      var short = document.getElementById(id+'-short');
-      var l     = document.getElementById(id+'-lbl');
-      var ic    = document.getElementById(id+'-icon');
-      if(full && full.style.display === 'block'){
+    document.querySelectorAll('[id^="kz-ab-"][id$="-full"]').forEach(function(full){
+      if(full.style.display === 'block'){
+        var baseId = full.id.replace('-full','');
         full.style.display  = 'none';
-        if(short) short.style.display = 'block';
-        if(l)     l.textContent       = 'Baca Selengkapnya';
-        if(ic)    ic.style.transform  = 'rotate(0deg)';
+        var sh = document.getElementById(baseId+'-short'); if(sh) sh.style.display = 'block';
+        var l  = document.getElementById(baseId+'-lbl');   if(l)  l.textContent      = 'Baca Selengkapnya';
+        var ic = document.getElementById(baseId+'-icon');  if(ic) ic.style.transform = 'rotate(0deg)';
       }
     });
     if(_scrollBack !== null) window.scrollTo({ top: _scrollBack, behavior: 'instant' });
@@ -984,7 +909,6 @@ document.addEventListener('DOMContentLoaded', kzMoveComments);
 </main>
 </div>
 <!-- include:footer.html -->
-
 <script src="/js/main.js"></script>
 </body>
 </html>
