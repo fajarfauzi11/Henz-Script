@@ -188,6 +188,13 @@
       object-fit: cover !important;
       aspect-ratio: 1 / 1 !important;
     }
+
+    /* Short Story — justify bikin spasi antar kata melebar tidak rapi
+       di kolom sempit, jadi di mobile kembali rata kiri saja */
+    #kz-story-short,
+    #kz-story-full {
+      text-align: left !important;
+    }
   }
 </style>
 
@@ -282,17 +289,18 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;word-break:break-word;text-wrap:pretty;">Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga bangsawan t...</div>
+        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;">Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga...</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;word-break:break-word;text-wrap:pretty;">Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga bangsawan terkemuka di Negeri Fajar. Meskipun keluarganya terkenal karena ilmu pedang yang hebat, sejak kecil Guinevere lebih tertarik pada sihir dan dikirim untuk belajar di Akademi Sihir.
+        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">Guinevere adalah putri bungsu dari Keluarga Barok, salah satu keluarga bangsawan terkemuka di Negeri Fajar. Meskipun keluarganya terkenal karena ilmu pedang yang hebat, sejak kecil Guinevere lebih tertarik pada sihir dan dikirim untuk belajar di Akademi Sihir.
 
 Berkat bakat dan persepsi spiritualnya yang luar biasa, Guinevere berhasil menciptakan kekuatan sihir baru pada usia yang sangat muda. Ia sering menggunakan hasil eksperimennya pada kakaknya, Lancelot, yang meskipun kerap menjadi sasaran uji coba sihir, tetap sangat menyayangi adiknya.
 
 Keluarga Barok dikenal tidak hanya karena kekuatan mereka, tetapi juga karena kecantikan dan kebijaksanaan yang diwariskan dari generasi ke generasi. Karena status keluarganya yang tinggi, Guinevere menjadi sosok yang menarik perhatian banyak bangsawan.
 
-Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir mengajukan lamaran kepada Keluarga Barok. Ayah Guinevere menyambut rencana pernikahan tersebut dengan baik, namun Guinevere menolak karena tidak ingin hidupnya dijadikan alat untuk kepentingan politik. Dalam kebingungan dan kegelisahannya, ia pun memutuskan untuk meminta bantuan kepada kakaknya, Lancelot.</div>
+Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir mengajukan lamaran kepada Keluarga Barok. Ayah Guinevere menyambut rencana pernikahan tersebut dengan baik, namun Guinevere menolak karena tidak ingin hidupnya dijadikan alat untuk kepentingan politik. Dalam kebingungan dan kegelisahannya, ia pun memutuskan untuk meminta bantuan kepada kakaknya, Lancelot.
+</div>
         <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
