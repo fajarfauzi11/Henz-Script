@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Guinevere Street Fighter1 </title>
+<title>Guinevere Street Fighter1</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
@@ -188,6 +188,13 @@
       object-fit: cover !important;
       aspect-ratio: 1 / 1 !important;
     }
+
+    /* Short Story — justify bikin spasi antar kata melebar tidak rapi
+       di kolom sempit, jadi di mobile kembali rata kiri saja */
+    #kz-story-short,
+    #kz-story-full {
+      text-align: left !important;
+    }
   }
 </style>
 
@@ -242,7 +249,7 @@
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
              ✏️ EDIT: Ganti teks fallback jika perlu -->
-        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Guinevere Street Fighter1 </div>
+        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Guinevere Street Fighter1</div>
 
         <!-- Info patch & brand -->
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);">
@@ -292,8 +299,7 @@ Berkat bakat dan persepsi spiritualnya yang luar biasa, Guinevere berhasil menci
 
 Keluarga Barok dikenal tidak hanya karena kekuatan mereka, tetapi juga karena kecantikan dan kebijaksanaan yang diwariskan dari generasi ke generasi. Karena status keluarganya yang tinggi, Guinevere menjadi sosok yang menarik perhatian banyak bangsawan.
 
-Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir mengajukan lamaran kepada Keluarga Barok. Ayah Guinevere menyambut rencana pernikahan tersebut dengan baik, namun Guinevere menolak karena tidak ingin hidupnya dijadikan alat untuk kepentingan politik. Dalam kebingungan dan kegelisahannya, ia pun memutuskan untuk meminta bantuan kepada kakaknya, Lancelot.
-</div>
+Suatu hari, keluarga Paxley yang memiliki kedudukan tinggi dalam dunia sihir mengajukan lamaran kepada Keluarga Barok. Ayah Guinevere menyambut rencana pernikahan tersebut dengan baik, namun Guinevere menolak karena tidak ingin hidupnya dijadikan alat untuk kepentingan politik. Dalam kebingungan dan kegelisahannya, ia pun memutuskan untuk meminta bantuan kepada kakaknya, Lancelot.</div>
         <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
