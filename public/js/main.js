@@ -138,8 +138,8 @@ if(seg&&pill){
     items.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-checked','false');});
     btn.classList.add('active');btn.setAttribute('aria-checked','true');movePill(btn);
     var target=btn.getAttribute('data-target');
-    if(secLatest)secLatest.style.display=(target==='kz-section-latest')?'':'none';
-    if(secPopular)secPopular.style.display=(target==='kz-section-popular')?'':'none';
+    if(secLatest)secLatest.style.display=(target==='kz-section-latest')?'block':'none';
+    if(secPopular)secPopular.style.display=(target==='kz-section-popular')?'block':'none';
   }
   items.forEach(function(btn){btn.addEventListener('click',function(){activate(btn);});});
   if(secPopular)secPopular.style.display='none';
