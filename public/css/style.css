@@ -99,6 +99,7 @@ body.page-home .kazeo-page{padding-top:76px}
 @media(max-width:640px){.kz-swiper-wrap .swiper{padding-bottom:52px!important}}
 .kz-slider-section{margin-bottom:32px}
 @media(max-width:640px){.kz-slider-section{margin-bottom:16px}}
+#kz-section-popular{display:none}
 .kz-section-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px}
 .kz-section-head-left{display:flex;flex-direction:column;gap:3px}
 .kz-section-title{font-size:22px;font-weight:900;color:#18181b;letter-spacing:-.8px;font-family:'Plus Jakarta Sans','Manrope',sans-serif}
