@@ -192,7 +192,12 @@
     /* Short Story — justify bikin spasi antar kata melebar tidak rapi
        di kolom sempit, jadi di mobile kembali rata kiri saja */
     #kz-story-short,
-    #kz-story-full {
+    #kz-story-full,
+    #kz-ab-pasif-full,
+    #kz-ab-s1-full,
+    #kz-ab-s2-full,
+    #kz-ab-ult-full,
+    [id^="kz-ab-s"][id$="-full"] {
       text-align: left !important;
     }
   }
@@ -244,7 +249,7 @@
       <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
-        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">Neobeast</span>
+        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">Neobeasts</span>
 
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
@@ -387,14 +392,12 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
 
               <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
               <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">
-                
+                Lylia mendapatkan kekuatan dari Gloom , meningkatkan kecepat...
               </p>
 
               <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
-              <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">
-                <br/br/>
-                <!-- ✏️ Tambah detail mekanik, scaling, atau catatan di sini -->
-              </div>
+              <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia mendapatkan kekuatan dari Gloom , meningkatkan kecepatan geraknya sebesar 15% setiap kali dia berada di area Gloom . Selain itu, setiap kali Gloom ditingkatkan, kecepatan geraknya meningkat sebesar 5% , yang dapat diakumulasikan hingga 4 kali atau 20% untuk peningkatan kecepatan gerak maksimum sebesar 35%.</div>
+              <!-- ✏️ Pisahkan paragraf dengan baris kosong (Enter 2x) -->
 
               <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                 <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
@@ -431,9 +434,11 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Slow</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
-                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;"></p>
+                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Lylia mengirimkan Gloom dalam garis lurus, memberikan 250 / 300 / 350...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
-                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;"><br/br/></div>
+                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia mengirimkan Gloom dalam garis lurus, memberikan 250 / 300 / 350 / 400 / 450 / 500 (+100% Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalur dan memperlambat mereka sebesar 40% selama 1,5 detik .
+
+Jika Gloom menyentuh Energi Bayangan Energi Bayangan, dia akan melahap dan meledakkannya.</div>
                 <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -462,9 +467,13 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">AOE/Slow</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
-                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;"></p>
+                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Lylia memadatkan Energi Bayangan di suatu lokasi, memberikan 100...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;"><br/br/></div>
+                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia memadatkan Energi Bayangan di suatu lokasi, memberikan 100 / 112 / 124 / 136 / 148 / 160 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena dan memperlambat mereka sebesar 80% selama 0,5 detik .
+
+Jika Energi Bayangan diledakkan oleh Gloom atauGelombang Kejut Ajaib Gelombang Kejut Ajaib akan meledak dan memberikan tambahan 250 / 280 / 310 / 340 / 370 / 400 (+100% Kekuatan Sihir) Kerusakan Sihir dan mengubah Energi Bayangan menjadi Kegelapan selama8 detik. Selama waktu ini, Kegelapan dapat meledakkan Energi Bayangan tambahan dalam jangkauannya, mengatur ulang penghitung waktunya dan berpindah ke lokasi Energi Bayangan di setiap kejadian.
+
+Selain itu, setiap kali Kegelapan meledakkan Energi Bayangan dalam waktu8 detik, kerusakan ledakan meningkat sebesar30%, menumpuk hingga4 kaliatau120%. Jika Kegelapan meledakkan 5 Energi Bayangan secara beruntun, skill ini dapat memberikan kerusakan Sihir maksimum 550 / 605 / 660 / 715 / 770 / 825 (+220% Kekuatan Sihir) .Menyimpan satu muatan Energi Bayangan setiap9 detik, hingga5 muatan. Waktu pengisian ulang dipengaruhi oleh pengurangan cooldown.</div>
                 <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -495,9 +504,11 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Buff/Mobility</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
-                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;"></p>
+                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Lylia kembali ke lokasi Sepatu Hitam 4 detik yang lalu dan memulihkan...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;"><br/br/></div>
+                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia kembali ke lokasi Sepatu Hitam 4 detik yang lalu dan memulihkan semua 5 muatan Energi Bayangan , 100% HP dan Mana- nya ke keadaan sebelumnya, dan mendapatkan tambahan 10% / 15% / 20% HP Maksimum . Dia juga mendapatkan tambahan Kecepatan Gerak sebesar 20% selama 2 / 3 / 4 detik.
+
+Lylia tidak dapat ditargetkan saat berteleportasi.</div>
                 <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
                   <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
                   <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
@@ -608,11 +619,11 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
                     <span style="font-weight:800;color:#111;font-size:12px;">Default</span>
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="" alt="Default" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png" alt="Hero861" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
                     <!-- ✏️ Ganti href dengan URL download yang benar -->
-                    <a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                    <a href="https://sfile.co/QDZvRs0NxSm" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
                   </td>
                 </tr>
 
@@ -620,41 +631,51 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
 
                 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="Default + Logo" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png" alt="Hero861" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;"></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/3/3a/Hero862-icon.png" alt="Hero862" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/aKC1AvcfCtU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/3/3a/Hero862-icon.png" alt="Hero862" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;"></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/e/ee/Hero863-icon.png" alt="Hero863" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/lEfptOwwHK7" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;"></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Special</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/d/df/Hero864-icon.png" alt="Hero864" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/bJ1L04Zawbu" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;"></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Halloween</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/0/0a/Hero865-icon.png" alt="Hero865" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/FDm8FaACozV" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero867-icon.png" alt="Hero867" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/NjTPQfoJp0C" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 
 
                 <!-- BARIS TERAKHIR — hapus border-bottom (style berbeda dari baris lain) -->
                 <tr>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;"></span>
+                    <span style="font-weight:800;color:#111;font-size:12px;">Covenant</span>
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="" alt="" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/2/26/Hero869-icon.png" alt="Hero869" referrerpolicy="no-referrer" style="width:40.5px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
                   </td>
                   <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                    <a href="https://sfile.co/NAEYTKlbLEk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
                   </td>
                 </tr>
 
