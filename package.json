@@ -1,0 +1,23 @@
+{
+  "name": "henz-script",
+  "version": "1.0.0",
+  "description": "Henz MLBB Script Website",
+  "main": "build.js",
+  "scripts": {
+    "prebuild": "node bundle-speed-insights.js",
+    "build": "node build.js",
+    "start": "npm run prebuild && node build.js"
+  },
+  "keywords": [
+    "mlbb",
+    "mobile legends"
+  ],
+  "author": "Henz",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.1"
+  }
+}
