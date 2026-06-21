@@ -1,8 +1,7 @@
 <footer class="kz-footer">
   <div class="kz-footer-inner">
     <div>
-      <div class="kz-footer-logo">
-        <img alt="Logo" class="kz-footer-logo-img" onerror="this.style.background='#eee';this.removeAttribute('src')" src="https://i.ibb.co/v476ky7S/Pi7-GIF-CMP.gif"/>
+      <div class="kz-footer-logo"
         <div class="kz-footer-logo-text"><span class="kz-footer-logo-bold">Henz</span><span class="kz-footer-logo-light">MLBB</span></div>
       </div>
       <p class="kz-footer-tagline">Official Website of Henz, Henz the Great, Henz ML, Henz Officiale and Henz MLBB!</p>
