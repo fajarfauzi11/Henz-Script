@@ -845,7 +845,7 @@ function kzToggleAllSkills(){
       if(full.style.display === 'block'){
         var baseId = full.id.replace('-full','');
         full.style.display  = 'none';
-        var sh = document.getElementById(baseId+'-short'); if(sh) sh.style.display = 'block';
+        var sh = document.getElementById(baseId+'-short'); if(sh) sh.style.display = '';
         var l  = document.getElementById(baseId+'-lbl');   if(l)  l.textContent      = 'Baca Selengkapnya';
         var ic = document.getElementById(baseId+'-icon');  if(ic) ic.style.transform = 'rotate(0deg)';
       }
@@ -873,7 +873,7 @@ function kzToggleAb(id){
   } else {
     var _scrollBack = _kzAbScroll[id];
     full.style.display  = 'none';
-    if(short) short.style.display = 'block';
+    if(short) short.style.display = '';
     if(lbl)   lbl.textContent     = 'Baca Selengkapnya';
     if(icon)  icon.style.transform = 'rotate(0deg)';
     if(_scrollBack !== undefined) window.scrollTo({ top: _scrollBack, behavior: 'instant' });
@@ -900,7 +900,7 @@ function kzToggleStory(){
   } else {
     var _scrollBack = _kzStoryScroll;
     full.style.display  = 'none';
-    short.style.display = 'block';
+    short.style.display = '';
     lbl.textContent     = 'Baca Selengkapnya';
     icon.style.transform = 'rotate(0deg)';
     if(_scrollBack !== null) window.scrollTo({ top: _scrollBack, behavior: 'instant' });
