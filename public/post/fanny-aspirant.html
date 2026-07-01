@@ -204,6 +204,144 @@
       text-align: left !important;
     }
   }
+
+  /* ── DUAL ABILITIES SEGMENTED CONTROL (scaled down dari homepage) ── */
+  .kz-ab-seg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: fit-content;
+    margin: 0 auto 16px;
+    user-select: none;
+    gap: 2px;
+    background: rgba(0,0,0,.08);
+    border-radius: 9999px;
+    padding: 3px;
+  }
+  .kz-ab-seg-item {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    cursor: pointer;
+    padding: 0 14px;
+    border-radius: 9999px;
+    border: none;
+    background: transparent;
+    transition: color .2s cubic-bezier(.4,0,.2,1);
+    white-space: nowrap;
+    outline: none;
+  }
+  .kz-ab-seg-item.active { color: #111; }
+  .kz-ab-seg-pill {
+    position: absolute;
+    top: 3px; bottom: 3px; left: 3px;
+    z-index: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08);
+    pointer-events: none;
+    border-radius: 9999px;
+    background: #fff;
+    transition: width .2s cubic-bezier(.4,0,.2,1), translate .2s cubic-bezier(.4,0,.2,1);
+  }
+  /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate) */
+  .kz-ab-seg-mini {
+    height: 22px;
+    width: fit-content;
+    margin: 0;
+    gap: 1px;
+    padding: 2px;
+  }
+  .kz-ab-seg-mini .kz-ab-seg-item {
+    height: 18px;
+    font-size: 9.5px;
+    padding: 0 9px;
+  }
+  .kz-ab-seg-mini .kz-ab-seg-pill {
+    top: 2px; bottom: 2px; left: 2px;
+  }
+
+  /* ── TOOLTIP "APA ITU LOGO?" ── */
+  .kz-tooltip-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0,0,0,.45);
+    opacity: 0;
+    transition: opacity .18s ease;
+  }
+  .kz-tooltip-overlay.open { opacity: 1; }
+  .kz-tooltip-box {
+    width: 100%;
+    max-width: 340px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+    transform: scale(.96) translateY(6px);
+    opacity: 0;
+    transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s ease;
+  }
+  .kz-tooltip-overlay.open .kz-tooltip-box {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  .kz-tooltip-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 20px 0;
+  }
+  .kz-tooltip-head span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #111;
+  }
+  .kz-tooltip-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #717171;
+    padding: 2px;
+    line-height: 0;
+    flex-shrink: 0;
+  }
+  .kz-tooltip-desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12.5px;
+    color: #717171;
+    line-height: 1.7;
+    font-weight: 500;
+    white-space: pre-line;
+    padding: 12px 20px 0;
+    margin: 0;
+  }
+  .kz-tooltip-imgwrap {
+    margin-top: 16px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #ececec;
+    overflow: hidden;
+  }
+  .kz-tooltip-imgwrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 </style>
 
 
@@ -367,56 +505,29 @@ Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi 
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:4px 0;margin-bottom:24px;overflow:hidden;">
 
         <!-- ───────────────────────────────────────
-             PASIF — selalu tampil
-             ✏️ EDIT: Ganti icon, nama, tipe, dan deskripsi
+             PASIF — selalu tampil. Setiap blok abilities bisa
+             diaktifkan jadi 2 varian lewat editor (segmented control
+             kecil otomatis muncul di sebelah label kalau diaktifkan).
              ─────────────────────────────────────── -->
         <div style="border-bottom:1px solid #efefef;">
+  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span></div>
+  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+    <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Only_Fast.png" alt="Only Fast" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+    <div style="flex:1;min-width:0;">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Only Fast</span>
+        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff</span>
+      </div>
+      <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</p>
+      <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</div>
+      <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+        <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
+        <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
 
-          <div style="padding:10px 20px 0;">
-            <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span>
-          </div>
-
-          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-
-            <!-- ✏️ EDIT: Ganti src dengan URL icon skill pasif -->
-            <img
-              src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Only_Fast.png"
-              alt="Only Fast"
-              style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"
-            />
-
-            <div style="flex:1;min-width:0;">
-
-              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-                <!-- ✏️ EDIT: Nama skill pasif -->
-                <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Only Fast</span>
-                <!-- ✏️ EDIT: Tipe skill — Buff / Damage / Control / Mobility / Heal / Burst
-                     Ganti teks, background, dan color sesuai tipe:
-                     Buff    → background:#e8f5e9; color:#2e7d32;
-                     Damage  → background:#e3f2fd; color:#1565c0;
-                     Control → background:#f3e5f5; color:#6a1b9a;
-                     Mobility→ background:#e0f2f1; color:#00695c;
-                     Heal    → background:#fce4ec; color:#c62828;
-                     Burst   → background:#fff3e0; color:#e65100; -->
-                <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff</span>
-              </div>
-
-              <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
-              <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</p>
-
-              <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
-              <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</div>
-              <!-- ✏️ Pisahkan paragraf dengan baris kosong (Enter 2x) -->
-
-              <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
-                <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-              </button>
-
-            </div>
-          </div>
-        </div>
-        <!-- END PASIF -->
 
         <!-- ───────────────────────────────────────
              SKILL 1, 2, ULTIMATE
@@ -424,108 +535,69 @@ Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi 
              ─────────────────────────────────────── -->
         <div id="kz-ab-skills" style="display:none;">
 
-          <!-- ───────────────────────────────────────
-               SKILL 1
-               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
-               ─────────────────────────────────────── -->
           <div style="border-top:1px solid #efefef;border-bottom:1px solid #efefef;">
-            <div style="padding:10px 20px 0;">
-              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-              <!-- ✏️ EDIT: Ganti src dengan URL icon skill 1 -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/4/48/Jeet_Kune_Do.png" alt="Jeet Kune Do" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-              <div style="flex:1;min-width:0;">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-                  <!-- ✏️ EDIT: Nama skill 1 -->
-                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Jeet Kune Do</span>
-                  <!-- ✏️ EDIT: Tipe skill 1 (lihat panduan warna di bagian Pasif atas) -->
-                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Mobility</span>
-                </div>
-                <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
-                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
+  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span></div>
+  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+    <img src="https://static.wikia.nocookie.net/mobile-legends/images/4/48/Jeet_Kune_Do.png" alt="Jeet Kune Do" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+    <div style="flex:1;min-width:0;">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Jeet Kune Do</span>
+        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Mobility</span>
+      </div>
+      <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
 
 Mengenai hero musuh dengan penggunaan ke-3 akan mereset cooldown Shunpo.</p>
-                <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
-                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
+      <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
 
 Mengenai hero musuh dengan penggunaan ke-3 akan mereset cooldown Shunpo.</div>
-                <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                  <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
-                  <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- END SKILL 1 -->
-
-          <!-- ───────────────────────────────────────
-               SKILL 2
-               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
-               ─────────────────────────────────────── -->
-          <div style="border-bottom:1px solid #efefef;">
-            <div style="padding:10px 20px 0;">
-              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-              <!-- ✏️ EDIT: Ganti URL_ICON_SKILL2 dengan URL icon skill 2 -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/7/72/Shunpo.png" alt="Shunpo" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-              <div style="flex:1;min-width:0;">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-                  <!-- ✏️ EDIT: Nama skill 2 -->
-                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shunpo</span>
-                  <!-- ✏️ EDIT: Tipe skill 2 -->
-                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
-                </div>
-                <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
-                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</p>
-                <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</div>
-                <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                  <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
-                  <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- END SKILL 2 -->
-
-          
-
-          <!-- ───────────────────────────────────────
-               ULTIMATE
-               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
-               ─────────────────────────────────────── -->
-          <div>
-            <div style="padding:10px 20px 0;">
-              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span>
-            </div>
-            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-              <!-- ✏️ EDIT: Ganti URL_ICON_ULTIMATE dengan URL icon ultimate -->
-              <img src="https://static.wikia.nocookie.net/mobile-legends/images/6/65/The_Way_of_Dragon.png" alt="The Way of Dragon" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-              <div style="flex:1;min-width:0;">
-                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-                  <!-- ✏️ EDIT: Nama ultimate -->
-                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">The Way of Dragon</span>
-                  <!-- ✏️ EDIT: Tipe ultimate -->
-                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">CC/Burst</span>
-                </div>
-                <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
-                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
+      <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+        <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
+        <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div style="border-bottom:1px solid #efefef;">
+  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span></div>
+  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+    <img src="https://static.wikia.nocookie.net/mobile-legends/images/7/72/Shunpo.png" alt="Shunpo" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+    <div style="flex:1;min-width:0;">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shunpo</span>
+        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
+      </div>
+      <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</p>
+      <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</div>
+      <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+        <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
+        <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div style="border-top:1px solid #efefef;">
+  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span></div>
+  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+    <img src="https://static.wikia.nocookie.net/mobile-legends/images/6/65/The_Way_of_Dragon.png" alt="The Way of Dragon" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+    <div style="flex:1;min-width:0;">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">The Way of Dragon</span>
+        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">CC/Burst</span>
+      </div>
+      <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
 
 Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serangan Fisik Ekstra) Kerusakan Fisik .</p>
-                <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
+      <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
 
 Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serangan Fisik Ekstra) Kerusakan Fisik .</div>
-                <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                  <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
-                  <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- END ULTIMATE -->
+      <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+        <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
+        <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
 
         </div>
         <!-- END kz-ab-skills -->
@@ -539,6 +611,7 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
         </div>
 
       </div>
+
       <!-- END [D3] ABILITIES -->
 
 
@@ -592,54 +665,23 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
         <h2 style="font-size:20px;font-weight:800;color:#111;margin:0 0 18px;letter-spacing:-.2px;font-family:'Manrope',sans-serif;">Download Script</h2>
 
         <div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
-          <div style="overflow-x:auto;width:100%;">
-            <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
-
-              <thead>
-                <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
-                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
-                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
-                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
-                </tr>
-              </thead>
-
-              <tbody>
-
-                <!-- ══════════════════════════════════════════════
-                     TEMPLATE BARIS — DUPLIKAT INI UNTUK VARIAN BARU
-                     ══════════════════════════════════════════════
-
-                     <tr style="border-bottom:1px solid #f0f0f0;">
-                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                         <span style="font-weight:800;color:#111;font-size:12px;">NAMA VARIANT</span>
-                       </td>
-                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                         <img src="URL_ICON_SKIN" alt="NAMA VARIANT" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                       </td>
-                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                         <a href="URL_DOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                       </td>
-                     </tr>
-
-                     ══════════════════════════════════════════════ -->
-
-                <tr style="border-bottom:1px solid #f0f0f0;">
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">Default</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <!-- ✏️ Ganti href dengan URL download yang benar -->
-                    <a href="https://sfile.co/4qluU649gzU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-
-                <!-- ✏️ TAMBAH BARIS VARIAN BARU DI SINI (duplikat <tr>...</tr> di atas) -->
-
-                <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span></td>
+  <div style="overflow-x:auto;width:100%;">
+    <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
+      <thead>
+        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
+          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
+          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
+          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/4qluU649gzU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span> <button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;vertical-align:middle;margin-left:4px;line-height:1;">?</button></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
 </tr>
@@ -649,7 +691,7 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/OsU4ax9ZbGs" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span> <button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;vertical-align:middle;margin-left:4px;line-height:1;">?</button></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png" alt="Hero262" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
 </tr>
@@ -698,25 +740,16 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero102611-icon.png" alt="Hero102611" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/sz97BFro67Y" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
+<tr style="">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">ECHO</span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero102612-icon.png" alt="Hero102612" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/FW929oECKbq" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-
-                <!-- BARIS TERAKHIR — hapus border-bottom (style berbeda dari baris lain) -->
-                <tr>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <span style="font-weight:800;color:#111;font-size:12px;">ECHO</span>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero102612-icon.png" alt="Hero102612" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
-                  </td>
-                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
-                    <a href="https://sfile.co/FW929oECKbq" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-        </div>
 
       </div>
       <!-- END [D5] TABEL DOWNLOAD -->
@@ -730,6 +763,20 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
   </div>
   <!-- END [B2] CARD PUTIH -->
 
+  <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
+  <div id="kz-logo-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
+    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
+      <div class="kz-tooltip-head">
+        <span>Apa itu Logo?</span>
+        <button type="button" class="kz-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <p class="kz-tooltip-desc">Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, tergantung skin yang dijadikan script.</p>
+      <div class="kz-tooltip-imgwrap"><img src="https://i.ibb.co/fzn6VDJY/5ec3187f0a94.webp" alt="Contoh Logo"/></div>
+    </div>
+  </div>
+
 </div>
 <!-- END [B] OUTER WRAPPER -->
 
@@ -741,6 +788,8 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
      - kzAutoTitle()       → ambil judul artikel dari Blogger
      - kzScrollDownload()  → smooth scroll animasi ke area download
      - kzToggleAllSkills() → show/hide Skill 1/2/Ultimate
+     - kzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
+     - kzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
      - kzToggleAb()        → expand/collapse per skill
      - kzToggleStory()     → expand/collapse cerita
 
@@ -868,6 +917,51 @@ function kzToggleAllSkills(){
   wrap.style.display = 'block';
   if(lbl)  lbl.textContent      = 'Sembunyikan Skill';
   if(icon) icon.style.transform = 'rotate(180deg)';
+  // Pill segmented di dalam wrap ini sebelumnya display:none saat init pertama,
+  // jadi offsetWidth/offsetLeft-nya 0 — hitung ulang sekarang setelah terlihat.
+  if(typeof kzAbSegMiniInit === 'function') kzAbSegMiniInit();
+}
+
+
+/* ── [E4b] Mini segmented control per blok (Pasif/Skill/Ultimate) — varian 2 ── */
+function kzAbSegMiniInit(){
+  document.querySelectorAll('.kz-ab-seg-mini').forEach(function(seg){
+    var pill = seg.querySelector('.kz-ab-seg-pill');
+    var first = seg.querySelector('.kz-ab-seg-item.active');
+    if(first && pill){
+      var pad = 2;
+      // Matikan transition sesaat supaya reposisi pill (mis. saat wrapper
+      // yang sebelumnya display:none baru ditampilkan) langsung final,
+      // tidak ikut animasi width/translate dari 0.
+      pill.style.transition = 'none';
+      pill.style.width = first.offsetWidth + 'px';
+      pill.style.translate = (first.offsetLeft - pad) + 'px';
+      void pill.offsetWidth; // force reflow
+      pill.style.transition = '';
+    }
+  });
+}
+if(document.readyState !== 'loading') kzAbSegMiniInit();
+else document.addEventListener('DOMContentLoaded', kzAbSegMiniInit);
+window.addEventListener('resize', kzAbSegMiniInit);
+
+function kzAbMiniSwitch(btn){
+  var seg = btn.closest('.kz-ab-seg-mini');
+  if(!seg) return;
+  var pill = seg.querySelector('.kz-ab-seg-pill');
+  seg.querySelectorAll('.kz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
+  btn.classList.add('active'); btn.setAttribute('aria-checked','true');
+  if(pill){
+    var pad = 2;
+    pill.style.width = btn.offsetWidth + 'px';
+    pill.style.translate = (btn.offsetLeft - pad) + 'px';
+  }
+  var prefix = seg.getAttribute('data-prefix');
+  var variant = btn.getAttribute('data-variant');
+  var w1 = document.getElementById(prefix + '-w1');
+  var w2 = document.getElementById(prefix + '-w2');
+  if(w1) w1.style.display = (variant === '1') ? 'block' : 'none';
+  if(w2) w2.style.display = (variant === '2') ? 'block' : 'none';
 }
 
 
@@ -922,6 +1016,22 @@ function kzToggleStory(){
   short.style.display = 'none';
   lbl.textContent     = 'Tutup Cerita';
   icon.style.transform = 'rotate(180deg)';
+}
+
+
+/* ── [E7b] Tooltip "Apa itu Logo?" ── */
+function kzOpenLogoTooltip(){
+  var ov = document.getElementById('kz-logo-tooltip-overlay');
+  if(!ov) return;
+  ov.style.display = 'flex';
+  void ov.offsetWidth;
+  ov.classList.add('open');
+}
+function kzCloseLogoTooltip(e){
+  var ov = document.getElementById('kz-logo-tooltip-overlay');
+  if(!ov) return;
+  ov.classList.remove('open');
+  setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
 
 
