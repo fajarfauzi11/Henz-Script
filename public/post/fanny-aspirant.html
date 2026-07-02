@@ -686,7 +686,16 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
 
         <h2 style="font-size:20px;font-weight:800;color:#111;margin:0 0 18px;letter-spacing:-.2px;font-family:'Manrope',sans-serif;">Download Script</h2>
 
-        <div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:14px;">
+  <div class="kz-ab-seg" id="kz-dl-seg" role="radiogroup" style="margin:0;">
+    <button aria-checked="true" class="kz-ab-seg-item active" data-target="kz-dl-t1" role="radio" type="button" onclick="kzDlTabSwitch(this)">Tanpa UI</button>
+    <button aria-checked="false" class="kz-ab-seg-item" data-target="kz-dl-t2" role="radio" type="button" onclick="kzDlTabSwitch(this)">Fix UI</button>
+    <div class="kz-ab-seg-pill" id="kz-dl-seg-pill"></div>
+  </div>
+  <button type="button" onclick="kzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>
+</div>
+<div id="kz-dl-t1">
+<div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
   <div style="overflow-x:auto;width:100%;">
     <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
       <thead>
@@ -771,6 +780,59 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
     </table>
   </div>
 </div>
+</div>
+<div id="kz-dl-t2" style="display:none;">
+<div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
+  <div style="overflow-x:auto;width:100%;">
+    <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
+      <thead>
+        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
+          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
+          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
+          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;"></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
+</tr>
+<tr style="">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;"></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="" alt="" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<script>
+(function(){
+  function kzDlSegInit(){
+    var seg=document.getElementById("kz-dl-seg");if(!seg)return;
+    var pill=document.getElementById("kz-dl-seg-pill");
+    var first=seg.querySelector(".kz-ab-seg-item.active");
+    if(first&&pill){pill.style.transition="none";pill.style.width=first.offsetWidth+"px";pill.style.translate=(first.offsetLeft-3)+"px";void pill.offsetWidth;pill.style.transition="";}
+  }
+  if(document.readyState!=="loading")kzDlSegInit();
+  else document.addEventListener("DOMContentLoaded",kzDlSegInit);
+  window.addEventListener("resize",kzDlSegInit);
+})();
+window.kzDlTabSwitch=function(btn){
+  var seg=document.getElementById("kz-dl-seg");
+  var pill=document.getElementById("kz-dl-seg-pill");
+  seg.querySelectorAll(".kz-ab-seg-item").forEach(function(b){b.classList.remove("active");b.setAttribute("aria-checked","false");});
+  btn.classList.add("active");btn.setAttribute("aria-checked","true");
+  if(pill){pill.style.width=btn.offsetWidth+"px";pill.style.translate=(btn.offsetLeft-3)+"px";}
+  var target=btn.getAttribute("data-target");
+  var t1=document.getElementById("kz-dl-t1");
+  var t2=document.getElementById("kz-dl-t2");
+  if(t1)t1.style.display=(target==="kz-dl-t1")?"block":"none";
+  if(t2)t2.style.display=(target==="kz-dl-t2")?"block":"none";
+};
+</script>
 
 
       </div>
@@ -799,6 +861,21 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
 
 <span class="kz-tooltip-disclaimer"><strong>Disclaimer :</strong> <em>Tag skin atau logo akan tetap terlihat di potret pada history gameplay.</em></span></p>
       <div class="kz-tooltip-imgwrap"><img src="https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp" alt="Contoh Logo"/></div>
+    </div>
+  </div>
+
+  <!-- TOOLTIP "APA ITU TAB 1 & TAB 2?" — konten diisi dari editor -->
+  <div id="kz-dltab-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
+    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
+      <div class="kz-tooltip-head">
+        <span>Apa itu Fix UI?</span>
+        <button type="button" class="kz-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <hr class="kz-tooltip-hr"/>
+      <p class="kz-tooltip-desc">Fix UI adalah vignate atau gambar yang ada di samping layar yang muncul saat menggunakan skill tertentu.</p>
+      <div class="kz-tooltip-imgwrap"><img src="https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp" alt="Contoh Tab"/></div>
     </div>
   </div>
 
@@ -1054,6 +1131,19 @@ function kzOpenLogoTooltip(){
 }
 function kzCloseLogoTooltip(e){
   var ov = document.getElementById('kz-logo-tooltip-overlay');
+  if(!ov) return;
+  ov.classList.remove('open');
+  setTimeout(function(){ ov.style.display = 'none'; }, 180);
+}
+function kzOpenDlTabTooltip(){
+  var ov = document.getElementById('kz-dltab-tooltip-overlay');
+  if(!ov) return;
+  ov.style.display = 'flex';
+  void ov.offsetWidth;
+  ov.classList.add('open');
+}
+function kzCloseDlTabTooltip(e){
+  var ov = document.getElementById('kz-dltab-tooltip-overlay');
   if(!ov) return;
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
