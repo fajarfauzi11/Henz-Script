@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>{{HERO_NAME}} — Henz MLBB</title>
+<meta name="description" content="Kumpulan script dan modifikasi Mobile Legends untuk hero {{HERO_NAME}} ({{HERO_ROLE_LABEL}})."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/></noscript>
+<link href="/css/style.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<link rel="icon" type="image/webp" href="/favicon.webp"/>
+<link rel="apple-touch-icon" href="/favicon.png"/>
+</head>
+<body class="page-hero">
+<!-- include:header.html -->
+<div class="kazeo-page">
+<main class="kazeo-main-content" id="main" role="main">
+
+<div class="kz-dh-page kz-heroh-page">
+
+<a class="kz-heroh-back" href="/daftarhero.html">&#8592; Kembali ke Daftar Hero</a>
+
+<div class="kz-heroh-card">
+  <div class="kz-heroh-content">
+    <div class="kz-heroh-info">
+      <span class="kz-heroh-role-badge">{{HERO_ROLE_LABEL_UPPER}}</span>
+      <div class="kz-heroh-name">{{HERO_NAME}}</div>
+      <div class="kz-heroh-count">{{POST_COUNT}} script tersedia</div>
+    </div>
+    <div class="kz-heroh-avatar-wrap"><img src="{{HERO_IMAGE}}" alt="{{HERO_NAME}}" onerror="this.parentNode.style.background='#ececec';this.remove()"/></div>
+  </div>
+</div>
+
+<div class="kz-heroh-section-title">Koleksi Script</div>
+<div class="kz-heroh-divider"></div>
+
+<div class="kz-cp-grid" style="max-width:1080px;margin:0 auto;">
+{{POSTS_HTML}}
+</div>
+
+</div>
+
+</main>
+</div>
+<!-- include:footer.html -->
+
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -204,166 +204,6 @@
       text-align: left !important;
     }
   }
-
-  /* ── DUAL ABILITIES SEGMENTED CONTROL (scaled down dari homepage) ── */
-  .kz-ab-seg {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 34px;
-    width: fit-content;
-    margin: 0 auto 16px;
-    user-select: none;
-    gap: 2px;
-    background: rgba(0,0,0,.08);
-    border-radius: 9999px;
-    padding: 3px;
-  }
-  .kz-ab-seg-item {
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 28px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: #888;
-    cursor: pointer;
-    padding: 0 14px;
-    border-radius: 9999px;
-    border: none;
-    background: transparent;
-    transition: color .2s cubic-bezier(.4,0,.2,1);
-    white-space: nowrap;
-    outline: none;
-  }
-  .kz-ab-seg-item.active { color: #111; }
-  .kz-ab-seg-pill {
-    position: absolute;
-    top: 3px; bottom: 3px; left: 3px;
-    z-index: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,.08);
-    pointer-events: none;
-    border-radius: 9999px;
-    background: #fff;
-    transition: width .2s cubic-bezier(.4,0,.2,1), translate .2s cubic-bezier(.4,0,.2,1);
-  }
-  /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate) */
-  .kz-ab-seg-mini {
-    height: 22px;
-    width: fit-content;
-    margin: 0;
-    gap: 1px;
-    padding: 2px;
-  }
-  .kz-ab-seg-mini .kz-ab-seg-item {
-    height: 18px;
-    font-size: 9.5px;
-    padding: 0 9px;
-  }
-  .kz-ab-seg-mini .kz-ab-seg-pill {
-    top: 2px; bottom: 2px; left: 2px;
-  }
-
-  /* ── TOOLTIP "APA ITU LOGO?" ── */
-  .kz-tooltip-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0,0,0,.45);
-    opacity: 0;
-    transition: opacity .18s ease;
-  }
-  .kz-tooltip-overlay.open { opacity: 1; }
-  .kz-tooltip-box {
-    width: 100%;
-    max-width: 340px;
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e8e8e8;
-    box-shadow: 0 2px 12px rgba(0,0,0,.06);
-    overflow: hidden;
-    transform: scale(.96) translateY(6px);
-    opacity: 0;
-    transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s ease;
-  }
-  .kz-tooltip-overlay.open .kz-tooltip-box {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-  .kz-tooltip-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 20px 20px 0;
-  }
-  .kz-tooltip-head span {
-    font-family: 'Manrope', sans-serif;
-    font-size: 19px;
-    font-weight: 800;
-    color: #111;
-  }
-  .kz-tooltip-close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #717171;
-    padding: 4px;
-    border-radius: 50%;
-    line-height: 0;
-    flex-shrink: 0;
-    transition: background .15s, color .15s;
-  }
-  .kz-tooltip-close:hover {
-    background: #f0f0f0;
-    color: #111;
-  }
-  .kz-tooltip-hr {
-    height: 1px;
-    background: #efefef;
-    border: none;
-    margin: 14px 20px 0;
-  }
-  .kz-tooltip-desc {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12.5px;
-    color: #717171;
-    line-height: 1.7;
-    font-weight: 500;
-    white-space: pre-line;
-    padding: 12px 20px 0;
-    margin: 0;
-  }
-  .kz-tooltip-desc em {
-    font-style: italic;
-  }
-  .kz-tooltip-disclaimer {
-    display: block;
-  }
-  .kz-tooltip-disclaimer strong {
-    font-style: italic;
-  }
-  .kz-tooltip-imgwrap {
-    margin-top: 16px;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #ececec;
-    overflow: hidden;
-  }
-  .kz-tooltip-imgwrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
 </style>
 
 
@@ -457,15 +297,7 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Lylia adalah keturunan dari penyihir besar Magic Academy dan dikenal sebagai &quot;Little Witch&quot;. Meskipun masih muda, ia memiliki bakat luar biasa dalam sihir dan telah menguasai kemampuan mengendalikan makhluk misterius bernama Gloom. Namun, bakatnya dalam Dark Magic membuatnya sering dianggap berbahaya oleh banyak orang.
-
-Ratusan tahun lalu, terjadi konflik besar antara White Mage dan Dark Mage yang dikenal sebagai Rift War. Para Dark Mage menggunakan sihir terlarang bernama Alien Space Summoning, sebuah sihir yang mampu membuka portal ke dunia lain dan memanggil makhluk asing. Karena dianggap terlalu berbahaya, eksperimen tersebut dilarang dan para Dark Mage akhirnya diasingkan, sementara Magic Academy berada di bawah kendali White Magic.
-
-Di tengah ancaman Void Monster yang kembali muncul dan mulai mendekati Magic Academy, Lylia menjadi salah satu penyihir muda paling berbakat sekaligus paling nakal. Ia percaya bahwa Dark Magic tidak selalu jahat dan menjadi penerus terakhir dari Alien Space Summoning. Karena kemampuannya yang berbeda dari penyihir lain, Lylia sering disalahpahami, dijauhi, bahkan dianggap sebagai penyihir kecil yang berbahaya.
-
-Suatu hari, Lylia menemukan salah satu Void Monster yang memiliki kekuatan besar. Alih-alih takut, ia melihat sisi lain makhluk itu dan menjadikannya teman. Ia memberinya nama Gloom. Namun ketika Lylia mencoba memperkenalkannya kepada penyihir lain, mereka tidak percaya bahwa ia bisa menjinakkan makhluk tersebut. Menganggap Gloom sebagai ancaman, para penyihir mencoba menangkapnya, membuat Gloom marah dan mulai menyerang Magic Academy.
-
-Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void Monster hingga situasi menjadi kacau. Awalnya Lylia merasa senang karena bisa membuktikan kekuatannya, tetapi ketika melihat para monster mulai membahayakan semua orang, ia menyadari kesalahannya. Saat Eudora dan para penyihir lain berada dalam bahaya, Lylia menggunakan kekuatan Dark Magic miliknya untuk menyegel para monster kembali ke dalam Gloom dan menyelamatkan mereka. Sejak saat itu, Eudora menyadari bahwa kebaikan atau kejahatan bukan ditentukan oleh jenis sihirnya, melainkan oleh orang yang menggunakannya.</div>
+        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;">Lylia adalah keturunan dari penyihir besar Magic Academy dan dikenal sebagai &quot;Lit...</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
@@ -527,29 +359,58 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:4px 0;margin-bottom:24px;overflow:hidden;">
 
         <!-- ───────────────────────────────────────
-             PASIF — selalu tampil. Setiap blok abilities bisa
-             diaktifkan jadi 2 varian lewat editor (segmented control
-             kecil otomatis muncul di sebelah label kalau diaktifkan).
+             PASIF — selalu tampil
+             ✏️ EDIT: Ganti icon, nama, tipe, dan deskripsi
              ─────────────────────────────────────── -->
         <div style="border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/9c/Angry_Gloom.png" alt="Angry Gloom" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Angry Gloom</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff/Speed Up</span>
-      </div>
-      <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Lylia mendapatkan kekuatan dari Gloom , meningkatkan kecepatan geraknya sebesar 15% setiap kali dia berada di area Gloom . Selain itu, setiap kali Gloom ditingkatkan, kecepatan geraknya meningkat sebesar 5% , yang dapat diakumulasikan hingga 4 kali atau 20% untuk peningkatan kecepatan gerak maksimum sebesar 35%.</p>
-      <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia mendapatkan kekuatan dari Gloom , meningkatkan kecepatan geraknya sebesar 15% setiap kali dia berada di area Gloom . Selain itu, setiap kali Gloom ditingkatkan, kecepatan geraknya meningkat sebesar 5% , yang dapat diakumulasikan hingga 4 kali atau 20% untuk peningkatan kecepatan gerak maksimum sebesar 35%.</div>
-      <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
 
+          <div style="padding:10px 20px 0;">
+            <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+
+            <!-- ✏️ EDIT: Ganti src dengan URL icon skill pasif -->
+            <img
+              src="https://static.wikia.nocookie.net/mobile-legends/images/9/9c/Angry_Gloom.png"
+              alt="Angry Gloom"
+              style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"
+            />
+
+            <div style="flex:1;min-width:0;">
+
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                <!-- ✏️ EDIT: Nama skill pasif -->
+                <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Angry Gloom</span>
+                <!-- ✏️ EDIT: Tipe skill — Buff / Damage / Control / Mobility / Heal / Burst
+                     Ganti teks, background, dan color sesuai tipe:
+                     Buff    → background:#e8f5e9; color:#2e7d32;
+                     Damage  → background:#e3f2fd; color:#1565c0;
+                     Control → background:#f3e5f5; color:#6a1b9a;
+                     Mobility→ background:#e0f2f1; color:#00695c;
+                     Heal    → background:#fce4ec; color:#c62828;
+                     Burst   → background:#fff3e0; color:#e65100; -->
+                <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff/Speed Up</span>
+              </div>
+
+              <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
+              <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">
+                Lylia mendapatkan kekuatan dari Gloom , meningkatkan kecepat...
+              </p>
+
+              <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
+              <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia mendapatkan kekuatan dari Gloom , meningkatkan kecepatan geraknya sebesar 15% setiap kali dia berada di area Gloom . Selain itu, setiap kali Gloom ditingkatkan, kecepatan geraknya meningkat sebesar 5% , yang dapat diakumulasikan hingga 4 kali atau 20% untuk peningkatan kecepatan gerak maksimum sebesar 35%.</div>
+              <!-- ✏️ Pisahkan paragraf dengan baris kosong (Enter 2x) -->
+
+              <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
+                <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+              </button>
+
+            </div>
+          </div>
+        </div>
+        <!-- END PASIF -->
 
         <!-- ───────────────────────────────────────
              SKILL 1, 2, ULTIMATE
@@ -557,77 +418,108 @@ Dengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void
              ─────────────────────────────────────── -->
         <div id="kz-ab-skills" style="display:none;">
 
+          <!-- ───────────────────────────────────────
+               SKILL 1
+               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
+               ─────────────────────────────────────── -->
           <div style="border-top:1px solid #efefef;border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Magic_Shockwave.png" alt="Magic Shockwave" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Magic Shockwave</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Slow</span>
-      </div>
-      <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Lylia mengirimkan Gloom dalam garis lurus, memberikan 250 / 300 / 350 / 400 / 450 / 500 (+100% Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalur dan memperlambat mereka sebesar 40% selama 1,5 detik .
-
-Jika Gloom menyentuh Energi Bayangan Energi Bayangan, dia akan melahap dan meledakkannya.</p>
-      <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia mengirimkan Gloom dalam garis lurus, memberikan 250 / 300 / 350 / 400 / 450 / 500 (+100% Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalur dan memperlambat mereka sebesar 40% selama 1,5 detik .
+            <div style="padding:10px 20px 0;">
+              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+              <!-- ✏️ EDIT: Ganti src dengan URL icon skill 1 -->
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Magic_Shockwave.png" alt="Magic Shockwave" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                  <!-- ✏️ EDIT: Nama skill 1 -->
+                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Magic Shockwave</span>
+                  <!-- ✏️ EDIT: Tipe skill 1 (lihat panduan warna di bagian Pasif atas) -->
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Slow</span>
+                </div>
+                <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
+                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Lylia mengirimkan Gloom dalam garis lurus, memberikan 250 / 300 / 350...</p>
+                <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
+                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia mengirimkan Gloom dalam garis lurus, memberikan 250 / 300 / 350 / 400 / 450 / 500 (+100% Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalur dan memperlambat mereka sebesar 40% selama 1,5 detik .
 
 Jika Gloom menyentuh Energi Bayangan Energi Bayangan, dia akan melahap dan meledakkannya.</div>
-      <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<div style="border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/0c/Shadow_Energy.png" alt="Shadow Energy" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shadow Energy</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">AOE/Slow</span>
-      </div>
-      <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Lylia memadatkan Energi Bayangan di suatu lokasi, memberikan 100 / 112 / 124 / 136 / 148 / 160 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena dan memperlambat mereka sebesar 80% selama 0,5 detik .
+                <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
+                  <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- END SKILL 1 -->
 
-Jika Energi Bayangan diledakkan oleh Gloom atauGelombang Kejut Ajaib Gelombang Kejut Ajaib akan meledak dan memberikan tambahan 250 / 280 / 310 / 340 / 370 / 400 (+100% Kekuatan Sihir) Kerusakan Sihir dan mengubah Energi Bayangan menjadi Kegelapan selama8 detik. Selama waktu ini, Kegelapan dapat meledakkan Energi Bayangan tambahan dalam jangkauannya, mengatur ulang penghitung waktunya dan berpindah ke lokasi Energi Bayangan di setiap kejadian.
-
-Selain itu, setiap kali Kegelapan meledakkan Energi Bayangan dalam waktu8 detik, kerusakan ledakan meningkat sebesar30%, menumpuk hingga4 kaliatau120%. Jika Kegelapan meledakkan 5 Energi Bayangan secara beruntun, skill ini dapat memberikan kerusakan Sihir maksimum 550 / 605 / 660 / 715 / 770 / 825 (+220% Kekuatan Sihir) .Menyimpan satu muatan Energi Bayangan setiap9 detik, hingga5 muatan. Waktu pengisian ulang dipengaruhi oleh pengurangan cooldown.</p>
-      <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia memadatkan Energi Bayangan di suatu lokasi, memberikan 100 / 112 / 124 / 136 / 148 / 160 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena dan memperlambat mereka sebesar 80% selama 0,5 detik .
+          <!-- ───────────────────────────────────────
+               SKILL 2
+               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
+               ─────────────────────────────────────── -->
+          <div style="border-bottom:1px solid #efefef;">
+            <div style="padding:10px 20px 0;">
+              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+              <!-- ✏️ EDIT: Ganti URL_ICON_SKILL2 dengan URL icon skill 2 -->
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/0c/Shadow_Energy.png" alt="Shadow Energy" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                  <!-- ✏️ EDIT: Nama skill 2 -->
+                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shadow Energy</span>
+                  <!-- ✏️ EDIT: Tipe skill 2 -->
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">AOE/Slow</span>
+                </div>
+                <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
+                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Lylia memadatkan Energi Bayangan di suatu lokasi, memberikan 100...</p>
+                <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
+                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia memadatkan Energi Bayangan di suatu lokasi, memberikan 100 / 112 / 124 / 136 / 148 / 160 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena dan memperlambat mereka sebesar 80% selama 0,5 detik .
 
 Jika Energi Bayangan diledakkan oleh Gloom atauGelombang Kejut Ajaib Gelombang Kejut Ajaib akan meledak dan memberikan tambahan 250 / 280 / 310 / 340 / 370 / 400 (+100% Kekuatan Sihir) Kerusakan Sihir dan mengubah Energi Bayangan menjadi Kegelapan selama8 detik. Selama waktu ini, Kegelapan dapat meledakkan Energi Bayangan tambahan dalam jangkauannya, mengatur ulang penghitung waktunya dan berpindah ke lokasi Energi Bayangan di setiap kejadian.
 
 Selain itu, setiap kali Kegelapan meledakkan Energi Bayangan dalam waktu8 detik, kerusakan ledakan meningkat sebesar30%, menumpuk hingga4 kaliatau120%. Jika Kegelapan meledakkan 5 Energi Bayangan secara beruntun, skill ini dapat memberikan kerusakan Sihir maksimum 550 / 605 / 660 / 715 / 770 / 825 (+220% Kekuatan Sihir) .Menyimpan satu muatan Energi Bayangan setiap9 detik, hingga5 muatan. Waktu pengisian ulang dipengaruhi oleh pengurangan cooldown.</div>
-      <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<div style="border-top:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/94/Black_Shoes.png" alt="Black Shoes" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Black Shoes</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Buff/Mobility</span>
-      </div>
-      <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Lylia kembali ke lokasi Sepatu Hitam 4 detik yang lalu dan memulihkan semua 5 muatan Energi Bayangan , 100% HP dan Mana- nya ke keadaan sebelumnya, dan mendapatkan tambahan 10% / 15% / 20% HP Maksimum . Dia juga mendapatkan tambahan Kecepatan Gerak sebesar 20% selama 2 / 3 / 4 detik.
+                <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
+                  <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- END SKILL 2 -->
 
-Lylia tidak dapat ditargetkan saat berteleportasi.</p>
-      <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia kembali ke lokasi Sepatu Hitam 4 detik yang lalu dan memulihkan semua 5 muatan Energi Bayangan , 100% HP dan Mana- nya ke keadaan sebelumnya, dan mendapatkan tambahan 10% / 15% / 20% HP Maksimum . Dia juga mendapatkan tambahan Kecepatan Gerak sebesar 20% selama 2 / 3 / 4 detik.
+          
+
+          <!-- ───────────────────────────────────────
+               ULTIMATE
+               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
+               ─────────────────────────────────────── -->
+          <div>
+            <div style="padding:10px 20px 0;">
+              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+              <!-- ✏️ EDIT: Ganti URL_ICON_ULTIMATE dengan URL icon ultimate -->
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/94/Black_Shoes.png" alt="Black Shoes" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                  <!-- ✏️ EDIT: Nama ultimate -->
+                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Black Shoes</span>
+                  <!-- ✏️ EDIT: Tipe ultimate -->
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Buff/Mobility</span>
+                </div>
+                <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
+                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Lylia kembali ke lokasi Sepatu Hitam 4 detik yang lalu dan memulihkan...</p>
+                <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
+                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Lylia kembali ke lokasi Sepatu Hitam 4 detik yang lalu dan memulihkan semua 5 muatan Energi Bayangan , 100% HP dan Mana- nya ke keadaan sebelumnya, dan mendapatkan tambahan 10% / 15% / 20% HP Maksimum . Dia juga mendapatkan tambahan Kecepatan Gerak sebesar 20% selama 2 / 3 / 4 detik.
 
 Lylia tidak dapat ditargetkan saat berteleportasi.</div>
-      <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
+                <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
+                  <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- END ULTIMATE -->
 
         </div>
         <!-- END kz-ab-skills -->
@@ -641,34 +533,7 @@ Lylia tidak dapat ditargetkan saat berteleportasi.</div>
         </div>
 
       </div>
-
       <!-- END [D3] ABILITIES -->
-
-      <div style="height:1px;background:linear-gradient(to right,transparent,#e5e5e5,transparent);margin:24px 0;"></div>
-
-      <!-- ═══════════════════════════════════════════
-           [D3b] NOTICE BOXES — Info & Lapor Bug
-           ✏️ EDIT: Ganti href="#" pada link "di sini" dengan URL chat admin kamu
-           ═══════════════════════════════════════════ -->
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
-
-        <div style="position:relative;display:flex;align-items:flex-start;gap:16px;background:rgba(59,130,246,.10);border:1px solid rgba(59,130,246,.25);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(59,130,246,.08);">
-          <div style="flex-shrink:0;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#60a5fa,#3b82f6);display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#fff;box-shadow:0 3px 8px rgba(59,130,246,.35);">i</div>
-          <div style="flex:1;min-width:0;">
-            <span style="display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;color:#1d4ed8;margin-bottom:2px;">Info:</span>
-            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#1e3a8a;line-height:1.7;">File script yang ada di website ini sudah terupdate dan yang paling baru.</span>
-          </div>
-        </div>
-
-        <div style="position:relative;display:flex;align-items:flex-start;gap:16px;background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.25);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(239,68,68,.08);">          <div style="flex-shrink:0;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#f87171,#ef4444);display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#fff;box-shadow:0 3px 8px rgba(239,68,68,.35);">!</div>
-          <div style="flex:1;min-width:0;">
-            <span style="display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;color:#b91c1c;margin-bottom:2px;">Lapor Bug:</span>
-            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#7f1d1d;line-height:1.7;">Jika ada kerusakan efek atau bug pada script, bisa dilaporkan kepada admin <a href="#" style="color:#b91c1c;text-decoration:underline;font-weight:700;">di sini</a>.</span>
-          </div>
-        </div>
-
-      </div>
-      <!-- END [D3b] NOTICE BOXES -->
 
 
       <!-- ═══════════════════════════════════════════
@@ -721,66 +586,106 @@ Lylia tidak dapat ditargetkan saat berteleportasi.</div>
         <h2 style="font-size:20px;font-weight:800;color:#111;margin:0 0 18px;letter-spacing:-.2px;font-family:'Manrope',sans-serif;">Download Script</h2>
 
         <div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
-  <div style="overflow-x:auto;width:100%;">
-    <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
-      <thead>
-        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png" alt="Hero861" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/QDZvRs0NxSm" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span><button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
+          <div style="overflow-x:auto;width:100%;">
+            <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
+
+              <thead>
+                <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
+                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
+                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
+                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <!-- ══════════════════════════════════════════════
+                     TEMPLATE BARIS — DUPLIKAT INI UNTUK VARIAN BARU
+                     ══════════════════════════════════════════════
+
+                     <tr style="border-bottom:1px solid #f0f0f0;">
+                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                         <span style="font-weight:800;color:#111;font-size:12px;">NAMA VARIANT</span>
+                       </td>
+                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                         <img src="URL_ICON_SKIN" alt="NAMA VARIANT" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                       </td>
+                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                         <a href="URL_DOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                       </td>
+                     </tr>
+
+                     ══════════════════════════════════════════════ -->
+
+                <tr style="border-bottom:1px solid #f0f0f0;">
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <span style="font-weight:800;color:#111;font-size:12px;">Default</span>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png" alt="Hero861" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <!-- ✏️ Ganti href dengan URL download yang benar -->
+                    <a href="https://sfile.co/QDZvRs0NxSm" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                  </td>
+                </tr>
+
+                <!-- ✏️ TAMBAH BARIS VARIAN BARU DI SINI (duplikat <tr>...</tr> di atas) -->
+
+                <tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png" alt="Hero861" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/QfEkhBmwsjJ" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/3/3a/Hero862-icon.png" alt="Hero862" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/aKC1AvcfCtU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span><button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/3/3a/Hero862-icon.png" alt="Hero862" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/hsIi4zJtcjW" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/e/ee/Hero863-icon.png" alt="Hero863" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/lEfptOwwHK7" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Special</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Special</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/d/df/Hero864-icon.png" alt="Hero864" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/bJ1L04Zawbu" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Halloween</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Halloween</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/0/0a/Hero865-icon.png" alt="Hero865" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/FDm8FaACozV" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero867-icon.png" alt="Hero867" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/NjTPQfoJp0C" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
-<tr style="">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Covenant</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/2/26/Hero869-icon.png" alt="Hero869" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/NAEYTKlbLEk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
+
+                <!-- BARIS TERAKHIR — hapus border-bottom (style berbeda dari baris lain) -->
+                <tr>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <span style="font-weight:800;color:#111;font-size:12px;">Covenant</span>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/2/26/Hero869-icon.png" alt="Hero869" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <a href="https://sfile.co/NAEYTKlbLEk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
 
       </div>
       <!-- END [D5] TABEL DOWNLOAD -->
@@ -794,38 +699,6 @@ Lylia tidak dapat ditargetkan saat berteleportasi.</div>
   </div>
   <!-- END [B2] CARD PUTIH -->
 
-  <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
-  <div id="kz-logo-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
-        <span>Apa itu Logo?</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc">Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.
-
-<span class="kz-tooltip-disclaimer"><strong>Disclaimer :</strong> <em>Tag skin atau logo akan tetap terlihat di potret pada history gameplay.</em></span></p>
-      <div class="kz-tooltip-imgwrap"><img src="https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp" alt="Contoh Logo"/></div>
-    </div>
-  </div>
-
-  <!-- TOOLTIP "APA ITU TAB 1 & TAB 2?" — konten diisi dari editor -->
-  <div id="kz-dltab-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
-        <span>Apa itu Tab 1 &amp; Tab 2?</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc"></p>
-      <div class="kz-tooltip-imgwrap"><img src="" alt="Contoh Tab"/></div>
-    </div>
-  </div>
-
 </div>
 <!-- END [B] OUTER WRAPPER -->
 
@@ -837,8 +710,6 @@ Lylia tidak dapat ditargetkan saat berteleportasi.</div>
      - kzAutoTitle()       → ambil judul artikel dari Blogger
      - kzScrollDownload()  → smooth scroll animasi ke area download
      - kzToggleAllSkills() → show/hide Skill 1/2/Ultimate
-     - kzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
-     - kzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
      - kzToggleAb()        → expand/collapse per skill
      - kzToggleStory()     → expand/collapse cerita
 
@@ -955,7 +826,7 @@ function kzToggleAllSkills(){
       if(full.style.display === 'block'){
         var baseId = full.id.replace('-full','');
         full.style.display  = 'none';
-        var sh = document.getElementById(baseId+'-short'); if(sh){ sh.style.display='-webkit-box'; sh.style.webkitLineClamp='2'; sh.style.webkitBoxOrient='vertical'; sh.style.overflow='hidden'; }
+        var sh = document.getElementById(baseId+'-short'); if(sh) sh.style.display = 'block';
         var l  = document.getElementById(baseId+'-lbl');   if(l)  l.textContent      = 'Baca Selengkapnya';
         var ic = document.getElementById(baseId+'-icon');  if(ic) ic.style.transform = 'rotate(0deg)';
       }
@@ -966,51 +837,6 @@ function kzToggleAllSkills(){
   wrap.style.display = 'block';
   if(lbl)  lbl.textContent      = 'Sembunyikan Skill';
   if(icon) icon.style.transform = 'rotate(180deg)';
-  // Pill segmented di dalam wrap ini sebelumnya display:none saat init pertama,
-  // jadi offsetWidth/offsetLeft-nya 0 — hitung ulang sekarang setelah terlihat.
-  if(typeof kzAbSegMiniInit === 'function') kzAbSegMiniInit();
-}
-
-
-/* ── [E4b] Mini segmented control per blok (Pasif/Skill/Ultimate) — varian 2 ── */
-function kzAbSegMiniInit(){
-  document.querySelectorAll('.kz-ab-seg-mini').forEach(function(seg){
-    var pill = seg.querySelector('.kz-ab-seg-pill');
-    var first = seg.querySelector('.kz-ab-seg-item.active');
-    if(first && pill){
-      var pad = 2;
-      // Matikan transition sesaat supaya reposisi pill (mis. saat wrapper
-      // yang sebelumnya display:none baru ditampilkan) langsung final,
-      // tidak ikut animasi width/translate dari 0.
-      pill.style.transition = 'none';
-      pill.style.width = first.offsetWidth + 'px';
-      pill.style.translate = (first.offsetLeft - pad) + 'px';
-      void pill.offsetWidth; // force reflow
-      pill.style.transition = '';
-    }
-  });
-}
-if(document.readyState !== 'loading') kzAbSegMiniInit();
-else document.addEventListener('DOMContentLoaded', kzAbSegMiniInit);
-window.addEventListener('resize', kzAbSegMiniInit);
-
-function kzAbMiniSwitch(btn){
-  var seg = btn.closest('.kz-ab-seg-mini');
-  if(!seg) return;
-  var pill = seg.querySelector('.kz-ab-seg-pill');
-  seg.querySelectorAll('.kz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
-  btn.classList.add('active'); btn.setAttribute('aria-checked','true');
-  if(pill){
-    var pad = 2;
-    pill.style.width = btn.offsetWidth + 'px';
-    pill.style.translate = (btn.offsetLeft - pad) + 'px';
-  }
-  var prefix = seg.getAttribute('data-prefix');
-  var variant = btn.getAttribute('data-variant');
-  var w1 = document.getElementById(prefix + '-w1');
-  var w2 = document.getElementById(prefix + '-w2');
-  if(w1) w1.style.display = (variant === '1') ? 'block' : 'none';
-  if(w2) w2.style.display = (variant === '2') ? 'block' : 'none';
 }
 
 
@@ -1028,7 +854,7 @@ function kzToggleAb(id){
   } else {
     var _scrollBack = _kzAbScroll[id];
     full.style.display  = 'none';
-    if(short){ short.style.display='-webkit-box'; short.style.webkitLineClamp='2'; short.style.webkitBoxOrient='vertical'; short.style.overflow='hidden'; }
+    if(short) short.style.display = 'block';
     if(lbl)   lbl.textContent     = 'Baca Selengkapnya';
     if(icon)  icon.style.transform = 'rotate(0deg)';
     if(_scrollBack !== undefined) window.scrollTo({ top: _scrollBack, behavior: 'instant' });
@@ -1055,7 +881,7 @@ function kzToggleStory(){
   } else {
     var _scrollBack = _kzStoryScroll;
     full.style.display  = 'none';
-    short.style.display='-webkit-box'; short.style.webkitLineClamp='2'; short.style.webkitBoxOrient='vertical'; short.style.overflow='hidden';
+    short.style.display = 'block';
     lbl.textContent     = 'Baca Selengkapnya';
     icon.style.transform = 'rotate(0deg)';
     if(_scrollBack !== null) window.scrollTo({ top: _scrollBack, behavior: 'instant' });
@@ -1065,35 +891,6 @@ function kzToggleStory(){
   short.style.display = 'none';
   lbl.textContent     = 'Tutup Cerita';
   icon.style.transform = 'rotate(180deg)';
-}
-
-
-/* ── [E7b] Tooltip "Apa itu Logo?" ── */
-function kzOpenLogoTooltip(){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
-  if(!ov) return;
-  ov.style.display = 'flex';
-  void ov.offsetWidth;
-  ov.classList.add('open');
-}
-function kzCloseLogoTooltip(e){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
-  if(!ov) return;
-  ov.classList.remove('open');
-  setTimeout(function(){ ov.style.display = 'none'; }, 180);
-}
-function kzOpenDlTabTooltip(){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
-  if(!ov) return;
-  ov.style.display = 'flex';
-  void ov.offsetWidth;
-  ov.classList.add('open');
-}
-function kzCloseDlTabTooltip(e){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
-  if(!ov) return;
-  ov.classList.remove('open');
-  setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
 
 

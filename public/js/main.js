@@ -5,7 +5,7 @@
 var kzYrEl=document.getElementById('kz-year');
 if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
 
-/* Mobile Nav Drawer */
+/* Mobile Nav Drawer (Header V2 - pill) */
 (function(){
   var btn=document.getElementById('kazeo-menu-btn');
   var nav=document.getElementById('kazeo-mobile-nav');
@@ -29,6 +29,7 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
     nav.style.display='none';
     btn.addEventListener('click',function(){if(nav.classList.contains('open')){kzCloseDrawer();}else{kzOpenDrawer();}});
   }
+  window.kzV2CloseDrawer=kzCloseDrawer;
   document.addEventListener('click',function(e){
     if(nav&&nav.classList.contains('open')){
       if(!nav.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){kzCloseDrawer();}
@@ -36,12 +37,179 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
   });
 })();
 
+/* Mobile Nav Dropdown (Header V1 - box) */
+(function(){
+  var btn=document.getElementById('kz-hv1-menu-btn');
+  var nav=document.getElementById('kz-hv1-mobile-nav');
+  if(!btn||!nav)return;
+  function open(){nav.classList.add('open');btn.classList.add('active');btn.setAttribute('aria-expanded','true');kzHv1CloseSearch();}
+  function close(){nav.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');}
+  function toggle(){if(nav.classList.contains('open')){close();}else{open();}}
+  window.kzHv1CloseNav=close;
+  btn.addEventListener('click',toggle);
+  document.addEventListener('click',function(e){
+    if(nav.classList.contains('open')&&!nav.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){close();}
+  });
+})();
+
+/* Cegah dua penanda aktif bersamaan di dropdown nav Header V1 saat ditekan */
+(function(){
+  var nav=document.getElementById('kz-hv1-mobile-nav');
+  if(!nav)return;
+  function norm(p){
+    if(!p)return '/';
+    p=p.split('?')[0].split('#')[0];
+    p=p.replace(/index\.html$/,'').replace(/\.html$/,'');
+    if(p.length>1)p=p.replace(/\/$/,'');
+    return p||'/';
+  }
+  var currentPath=norm(window.location.pathname);
+  function clearActive(){
+    nav.querySelectorAll('a.active').forEach(function(a){a.classList.remove('active');});
+  }
+  function restoreActive(){
+    nav.querySelectorAll('a').forEach(function(a){
+      var href=norm(a.getAttribute('href'));
+      a.classList.toggle('active',href===currentPath);
+    });
+  }
+  nav.addEventListener('touchstart',function(e){
+    if(e.target.closest('a'))clearActive();
+  },{passive:true});
+  nav.addEventListener('mousedown',function(e){
+    if(e.target.closest('a'))clearActive();
+  });
+  var restoreTimer=null;
+  function scheduleRestore(){
+    clearTimeout(restoreTimer);
+    restoreTimer=setTimeout(restoreActive,150);
+  }
+  nav.addEventListener('click',function(e){
+    if(e.target.closest('a'))clearTimeout(restoreTimer);
+  });
+  document.addEventListener('touchend',scheduleRestore);
+  document.addEventListener('touchcancel',scheduleRestore);
+  document.addEventListener('mouseup',scheduleRestore);
+})();
+
+/* Search Toggle (Header V1 - expand ke kiri) */
+(function(){
+  var wrap=document.getElementById('kz-hv1-search-wrap');
+  var btn=document.getElementById('kz-hv1-search-btn');
+  var inner=wrap?wrap.closest('.kz-hv1-inner'):null;
+  var input=wrap?wrap.querySelector('input[name="q"]'):null;
+  if(!wrap||!btn)return;
+  function open(){
+    wrap.classList.add('open');
+    if(inner)inner.classList.add('kz-search-active');
+    btn.setAttribute('aria-expanded','true');
+    if(window.kzHv1CloseNav)window.kzHv1CloseNav();
+    if(input)input.focus({preventScroll:true});
+  }
+  function close(){
+    wrap.classList.remove('open');
+    if(inner)inner.classList.remove('kz-search-active');
+    btn.setAttribute('aria-expanded','false');
+  }
+  window.kzHv1CloseSearch=close;
+  btn.addEventListener('click',function(){if(wrap.classList.contains('open')){close();}else{open();}});
+  document.addEventListener('click',function(e){
+    if(wrap.classList.contains('open')&&!wrap.contains(e.target)){close();}
+  });
+})();
+
+/* Sinkronkan posisi header dengan visual viewport (hindari ketutup UI browser mobile / keyboard) */
+(function(){
+  if(!window.visualViewport)return;
+  var vv=window.visualViewport;
+  var hv1=document.getElementById('kz-hv1-header');
+  var hv2=document.querySelector('.kazeo-header');
+  var mq=window.matchMedia('(max-width:768px)');
+  function hv2BaseTop(){return mq.matches?8:24;}
+  function sync(){
+    if(hv1)hv1.style.top=vv.offsetTop+'px';
+    if(hv2)hv2.style.top=(vv.offsetTop+hv2BaseTop())+'px';
+  }
+  var ticking=false;
+  function onVVChange(){
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(function(){sync();ticking=false;});
+  }
+  vv.addEventListener('resize',onVVChange);
+  vv.addEventListener('scroll',onVVChange);
+  window.addEventListener('resize',onVVChange);
+  sync();
+})();
+
+/* Header V1 <-> V2 crossfade on scroll */
+(function(){
+  var sentinel=document.getElementById('kz-header-sentinel');
+  var hv1=document.getElementById('kz-hv1-header');
+  if(!sentinel)return;
+  function positionSentinel(){if(hv1)sentinel.style.top=hv1.offsetHeight+'px';}
+  positionSentinel();
+  window.addEventListener('resize',positionSentinel);
+  if(typeof IntersectionObserver==='undefined'){document.body.classList.add('kz-scrolled');return;}
+  var switchTimer=null;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var willScroll=!entry.isIntersecting;
+      clearTimeout(switchTimer);
+      switchTimer=setTimeout(function(){
+        document.body.classList.toggle('kz-scrolled',willScroll);
+        if(window.kzHv1CloseNav)window.kzHv1CloseNav();
+        if(window.kzHv1CloseSearch)window.kzHv1CloseSearch();
+        if(window.kzV2CloseDrawer)window.kzV2CloseDrawer();
+      },120);
+    });
+  },{root:null,threshold:0});
+  io.observe(sentinel);
+})();
+
+/* Cegah browser mobile "melompat" scroll ke atas saat input search header di-fokus */
+(function(){
+  function guardScroll(input){
+    var lockX=null,lockY=null,lockUntil=0,rafId=null;
+    function tick(){
+      if(Date.now()>lockUntil){lockY=null;rafId=null;return;}
+      if(lockY!==null&&(window.scrollX!==lockX||window.scrollY!==lockY)){
+        window.scrollTo(lockX,lockY);
+      }
+      rafId=requestAnimationFrame(tick);
+    }
+    function startLock(){
+      lockX=window.scrollX;lockY=window.scrollY;
+      lockUntil=Date.now()+600;
+      if(!rafId)rafId=requestAnimationFrame(tick);
+    }
+    input.addEventListener('touchstart',function(e){
+      startLock();
+      if(document.activeElement!==input){
+        e.preventDefault();
+        input.focus({preventScroll:true});
+      }
+    },{passive:false});
+    input.addEventListener('mousedown',startLock);
+    input.addEventListener('focus',function(){if(lockY===null)startLock();});
+  }
+  document.querySelectorAll('.kz-hv1-header input[type="text"],.kazeo-header input[type="text"]').forEach(guardScroll);
+})();
+
 /* Active nav */
-var path=window.location.pathname;
-document.querySelectorAll('.kazeo-nav a,.kazeo-mobile-nav a').forEach(function(link){
-  var href=link.getAttribute('href');
-  if(href&&(path===href||path===href.replace(/index\.html$/,'')))link.classList.add('active');
-  if((path==='/'||path==='/index.html')&&href==='/index.html')link.classList.add('active');
+function kzNormalizePath(p){
+  if(!p)return '/';
+  p=p.split('?')[0].split('#')[0];
+  p=p.replace(/index\.html$/,'');
+  p=p.replace(/\.html$/,'');
+  if(p.length>1)p=p.replace(/\/$/,'');
+  if(p==='')p='/';
+  return p;
+}
+var kzCurrentPath=kzNormalizePath(window.location.pathname);
+document.querySelectorAll('.kazeo-nav a,.kazeo-mobile-nav a,.kz-hv1-mobile-nav a').forEach(function(link){
+  var href=kzNormalizePath(link.getAttribute('href'));
+  if(href&&href===kzCurrentPath)link.classList.add('active');
 });
 
 /* Search form */
@@ -169,12 +337,32 @@ if(document.getElementById('kz-swiper-latest')){
   });
 }
 
+/* Hero Terpopuler (Home) */
+if(document.getElementById('kz-hero-popular-wrapper')){
+  Promise.all([
+    fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
+    fetch('/js/hero-popular.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];})
+  ]).then(function(res){
+    var heroes=Array.isArray(res[0])?res[0]:[];
+    var keys=Array.isArray(res[1])?res[1]:[];
+    var byName={};
+    heroes.forEach(function(h){byName[(h.name||'').toLowerCase()]=h;});
+    var wrapper=document.getElementById('kz-hero-popular-wrapper');
+    var html='';
+    keys.forEach(function(key){
+      var h=byName[(key||'').toLowerCase()];
+      if(!h)return;
+      html+=kzDhBuildCard(h);
+    });
+    if(wrapper)wrapper.innerHTML=html||'<div class="kz-dh-empty">Belum ada hero populer.</div>';
+  });
+}
+
 /* Category State */
-var kzCatState={labels:[],activeTab:'semua',entries:[],allEntries:[],page:0,perPage:12};
+var kzCatState={labels:[]};
 
 if(document.getElementById('kz-category-page')){
   document.getElementById('kz-category-page').classList.add('active');
-  kzCatShowSkeleton(8);
   kzFetchPosts(function(posts){
     var labelMap={};
     posts.forEach(function(e){
@@ -182,75 +370,21 @@ if(document.getElementById('kz-category-page')){
         labelMap[e.cat]=(labelMap[e.cat]||0)+1;
       }
     });
-    kzCatState.allEntries=posts;
     var labels=Object.keys(labelMap).sort(function(a,b){return a.localeCompare(b);});
     kzCatState.labels=labels.map(function(n){return{name:n,count:labelMap[n]};});
     kzCatRenderTabs();
-    kzCatSelectTab('semua');
   });
-  var lmBtn=document.getElementById('kz-cp-loadmore-btn');
-  if(lmBtn)lmBtn.addEventListener('click',function(){kzCatRenderPage();});
 }
 
 function kzCatRenderTabs(){
   var cont=document.getElementById('kz-cp-tabs');
   if(!cont)return;
-  var html='<button class="kz-cp-tab active" data-tab="semua">Semua</button>';
+  var html='<a class="kz-cp-tab" href="/kategori/semua.html">Semua</a>';
   kzCatState.labels.forEach(function(l){
-    html+='<button class="kz-cp-tab" data-tab="'+l.name.replace(/"/g,'&quot;')+'">'+l.name+'</button>';
+    var href='/kategori/'+kzDhSlugify(l.name)+'.html';
+    html+='<a class="kz-cp-tab" href="'+href+'">'+l.name+'</a>';
   });
   cont.innerHTML=html;
-  cont.querySelectorAll('.kz-cp-tab').forEach(function(tab){
-    tab.addEventListener('click',function(){
-      var t=this.getAttribute('data-tab');
-      cont.querySelectorAll('.kz-cp-tab').forEach(function(x){x.classList.remove('active');});
-      this.classList.add('active');
-      kzCatSelectTab(t);
-    });
-  });
-}
-
-function kzCatSelectTab(tab){
-  kzCatState.activeTab=tab;kzCatState.page=0;kzCatState.entries=[];
-  var countEl=document.getElementById('kz-cp-count');
-  var lmWrap=document.getElementById('kz-cp-loadmore');
-  if(countEl){countEl.style.display='none';countEl.textContent='';}
-  if(lmWrap)lmWrap.style.display='none';
-  kzCatState.entries=tab==='semua'?kzCatState.allEntries:kzCatState.allEntries.filter(function(e){return e.cat===tab;});
-  kzCatShowGrid();
-}
-
-function kzCatShowGrid(){
-  var grid=document.getElementById('kz-cp-grid');
-  var countEl=document.getElementById('kz-cp-count');
-  var lmWrap=document.getElementById('kz-cp-loadmore');
-  if(!grid)return;
-  var total=kzCatState.entries.length;
-  if(countEl){countEl.style.display=total?'block':'none';countEl.textContent=total+' script ditemukan';}
-  if(!total){grid.innerHTML='<div class="kz-cp-empty">Tidak ada postingan ditemukan.</div>';if(lmWrap)lmWrap.style.display='none';return;}
-  grid.innerHTML='';kzCatState.page=0;kzCatRenderPage();
-}
-
-function kzCatShowSkeleton(n){
-  var grid=document.getElementById('kz-cp-grid');if(!grid)return;
-  var h='';
-  for(var i=0;i<n;i++)h+='<div class="kz-cp-skel"><div class="kz-cp-skel-img"></div><div class="kz-cp-skel-body"><div class="kz-cp-skel-line sm"></div><div class="kz-cp-skel-line"></div><div class="kz-cp-skel-line xs"></div></div></div>';
-  grid.innerHTML=h;
-}
-
-function kzCatRenderPage(){
-  var grid=document.getElementById('kz-cp-grid');
-  var lmWrap=document.getElementById('kz-cp-loadmore');
-  if(!grid)return;
-  var entries=kzCatState.entries,perPage=kzCatState.perPage,start=kzCatState.page*perPage;
-  var slice=entries.slice(start,start+perPage);
-  kzCatState.page++;
-  slice.forEach(function(e){
-    var tmp=document.createElement('div');tmp.innerHTML=kzBuildCatCard(e);
-    var cardEl=tmp.querySelector('.kz-card');if(cardEl)grid.appendChild(cardEl);
-  });
-  var hasMore=(kzCatState.page*perPage)<entries.length;
-  if(lmWrap)lmWrap.style.setProperty('display',hasMore?'block':'none','important');
 }
 
 /* Search */
@@ -281,6 +415,75 @@ if(document.getElementById('kz-search-heading')){
       }
     });
   }
+}
+
+/* Daftar Hero Page */
+if(document.getElementById('kz-dh-sections')){
+  var kzDhLimit=window.matchMedia('(max-width:768px)').matches?6:10;
+  fetch('/js/heroes.json?t='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(d){kzDhInit(Array.isArray(d)?d:[]);})
+    .catch(function(){kzDhInit([]);});
+}
+
+function kzDhEsc(s){
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function kzDhSlugify(name){
+  return (name||'').toLowerCase().replace(/'/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-+|-+$)/g,'');
+}
+
+function kzDhBuildCard(h){
+  var name=h.name||'Hero',esc=kzDhEsc(name),img=h.image||'',
+    initial=esc.charAt(0).toUpperCase(),
+    href='/hero/'+kzDhSlugify(name)+'.html';
+  var avatarH=img
+    ?'<img src="'+img+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\''+initial+'\';this.parentNode.style.cssText=\'display:flex;align-items:center;justify-content:center;font-weight:800;color:#bbb;font-family:Manrope,sans-serif;\'">'
+    :initial;
+  return '<a class="kz-dh-card" href="'+href+'">'
+    +'<div class="kz-dh-avatar-wrap">'+avatarH+'</div>'
+    +'<span class="kz-dh-name">'+esc+'</span>'
+    +'</a>';
+}
+
+function kzDhInit(heroes){
+  var byRole={};
+  heroes.forEach(function(h){
+    var r=(h.role||'').toLowerCase();
+    if(!byRole[r])byRole[r]=[];
+    byRole[r].push(h);
+  });
+  document.querySelectorAll('.kz-dh-section').forEach(function(section){
+    var role=section.getAttribute('data-role');
+    var list=byRole[role]||[];
+    var grid=section.querySelector('[data-role-grid]');
+    var countEl=section.querySelector('[data-count]');
+    var toggleBtn=section.querySelector('[data-role-toggle]');
+    if(countEl)countEl.textContent=list.length?'('+list.length+')':'';
+    if(!list.length){
+      if(grid)grid.innerHTML='<div class="kz-dh-empty">Belum ada hero untuk role ini.</div>';
+      if(toggleBtn)toggleBtn.classList.remove('show');
+      return;
+    }
+    var expanded=false;
+    function render(){
+      var slice=expanded?list:list.slice(0,kzDhLimit);
+      var html='';
+      slice.forEach(function(h){html+=kzDhBuildCard(h);});
+      if(grid)grid.innerHTML=html;
+    }
+    render();
+    if(list.length>kzDhLimit&&toggleBtn){
+      toggleBtn.classList.add('show');
+      toggleBtn.addEventListener('click',function(){
+        expanded=!expanded;
+        toggleBtn.classList.toggle('expanded',expanded);
+        toggleBtn.childNodes[0].nodeValue=expanded?'Sembunyikan':'Tampilkan Semua';
+        render();
+      });
+    }
+  });
 }
 
 })();
