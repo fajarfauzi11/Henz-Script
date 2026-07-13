@@ -204,166 +204,6 @@
       text-align: left !important;
     }
   }
-
-  /* ── DUAL ABILITIES SEGMENTED CONTROL (scaled down dari homepage) ── */
-  .kz-ab-seg {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 34px;
-    width: fit-content;
-    margin: 0 auto 16px;
-    user-select: none;
-    gap: 2px;
-    background: rgba(0,0,0,.08);
-    border-radius: 9999px;
-    padding: 3px;
-  }
-  .kz-ab-seg-item {
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 28px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: #888;
-    cursor: pointer;
-    padding: 0 14px;
-    border-radius: 9999px;
-    border: none;
-    background: transparent;
-    transition: color .2s cubic-bezier(.4,0,.2,1);
-    white-space: nowrap;
-    outline: none;
-  }
-  .kz-ab-seg-item.active { color: #111; }
-  .kz-ab-seg-pill {
-    position: absolute;
-    top: 3px; bottom: 3px; left: 3px;
-    z-index: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,.08);
-    pointer-events: none;
-    border-radius: 9999px;
-    background: #fff;
-    transition: width .2s cubic-bezier(.4,0,.2,1), translate .2s cubic-bezier(.4,0,.2,1);
-  }
-  /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate) */
-  .kz-ab-seg-mini {
-    height: 22px;
-    width: fit-content;
-    margin: 0;
-    gap: 1px;
-    padding: 2px;
-  }
-  .kz-ab-seg-mini .kz-ab-seg-item {
-    height: 18px;
-    font-size: 9.5px;
-    padding: 0 9px;
-  }
-  .kz-ab-seg-mini .kz-ab-seg-pill {
-    top: 2px; bottom: 2px; left: 2px;
-  }
-
-  /* ── TOOLTIP "APA ITU LOGO?" ── */
-  .kz-tooltip-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0,0,0,.45);
-    opacity: 0;
-    transition: opacity .18s ease;
-  }
-  .kz-tooltip-overlay.open { opacity: 1; }
-  .kz-tooltip-box {
-    width: 100%;
-    max-width: 340px;
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e8e8e8;
-    box-shadow: 0 2px 12px rgba(0,0,0,.06);
-    overflow: hidden;
-    transform: scale(.96) translateY(6px);
-    opacity: 0;
-    transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s ease;
-  }
-  .kz-tooltip-overlay.open .kz-tooltip-box {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-  .kz-tooltip-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 20px 20px 0;
-  }
-  .kz-tooltip-head span {
-    font-family: 'Manrope', sans-serif;
-    font-size: 19px;
-    font-weight: 800;
-    color: #111;
-  }
-  .kz-tooltip-close {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #717171;
-    padding: 4px;
-    border-radius: 50%;
-    line-height: 0;
-    flex-shrink: 0;
-    transition: background .15s, color .15s;
-  }
-  .kz-tooltip-close:hover {
-    background: #f0f0f0;
-    color: #111;
-  }
-  .kz-tooltip-hr {
-    height: 1px;
-    background: #efefef;
-    border: none;
-    margin: 14px 20px 0;
-  }
-  .kz-tooltip-desc {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12.5px;
-    color: #717171;
-    line-height: 1.7;
-    font-weight: 500;
-    white-space: pre-line;
-    padding: 12px 20px 0;
-    margin: 0;
-  }
-  .kz-tooltip-desc em {
-    font-style: italic;
-  }
-  .kz-tooltip-disclaimer {
-    display: block;
-  }
-  .kz-tooltip-disclaimer strong {
-    font-style: italic;
-  }
-  .kz-tooltip-imgwrap {
-    margin-top: 16px;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #ececec;
-    overflow: hidden;
-  }
-  .kz-tooltip-imgwrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
 </style>
 
 
@@ -375,10 +215,10 @@
 
   <!-- ─────────────────────────────────────────────
        [B1] TOMBOL KEMBALI
-       ✏️ EDIT: href="#" + onclick kembali ke halaman sebelumnya (browser history)
+       ✏️ EDIT: Ganti href="/" jika URL beranda berbeda
        ───────────────────────────────────────────── -->
-  <a href="#" onclick="history.back();return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px;">
-    &#8592; Halaman Sebelumnya
+  <a href="/" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px;">
+    &#8592; Kembali ke Beranda
   </a>
 
   <!-- ═══════════════════════════════════════════════
@@ -527,29 +367,56 @@ Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi 
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:4px 0;margin-bottom:24px;overflow:hidden;">
 
         <!-- ───────────────────────────────────────
-             PASIF — selalu tampil. Setiap blok abilities bisa
-             diaktifkan jadi 2 varian lewat editor (segmented control
-             kecil otomatis muncul di sebelah label kalau diaktifkan).
+             PASIF — selalu tampil
+             ✏️ EDIT: Ganti icon, nama, tipe, dan deskripsi
              ─────────────────────────────────────── -->
         <div style="border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Only_Fast.png" alt="Only Fast" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Only Fast</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff</span>
-      </div>
-      <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</p>
-      <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</div>
-      <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
 
+          <div style="padding:10px 20px 0;">
+            <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+
+            <!-- ✏️ EDIT: Ganti src dengan URL icon skill pasif -->
+            <img
+              src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Only_Fast.png"
+              alt="Only Fast"
+              style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"
+            />
+
+            <div style="flex:1;min-width:0;">
+
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                <!-- ✏️ EDIT: Nama skill pasif -->
+                <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Only Fast</span>
+                <!-- ✏️ EDIT: Tipe skill — Buff / Damage / Control / Mobility / Heal / Burst
+                     Ganti teks, background, dan color sesuai tipe:
+                     Buff    → background:#e8f5e9; color:#2e7d32;
+                     Damage  → background:#e3f2fd; color:#1565c0;
+                     Control → background:#f3e5f5; color:#6a1b9a;
+                     Mobility→ background:#e0f2f1; color:#00695c;
+                     Heal    → background:#fce4ec; color:#c62828;
+                     Burst   → background:#fff3e0; color:#e65100; -->
+                <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff</span>
+              </div>
+
+              <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
+              <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</p>
+
+              <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
+              <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</div>
+              <!-- ✏️ Pisahkan paragraf dengan baris kosong (Enter 2x) -->
+
+              <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
+                <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+              </button>
+
+            </div>
+          </div>
+        </div>
+        <!-- END PASIF -->
 
         <!-- ───────────────────────────────────────
              SKILL 1, 2, ULTIMATE
@@ -557,69 +424,108 @@ Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi 
              ─────────────────────────────────────── -->
         <div id="kz-ab-skills" style="display:none;">
 
+          <!-- ───────────────────────────────────────
+               SKILL 1
+               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
+               ─────────────────────────────────────── -->
           <div style="border-top:1px solid #efefef;border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/4/48/Jeet_Kune_Do.png" alt="Jeet Kune Do" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Jeet Kune Do</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Mobility</span>
-      </div>
-      <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
+            <div style="padding:10px 20px 0;">
+              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+              <!-- ✏️ EDIT: Ganti src dengan URL icon skill 1 -->
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/4/48/Jeet_Kune_Do.png" alt="Jeet Kune Do" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                  <!-- ✏️ EDIT: Nama skill 1 -->
+                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Jeet Kune Do</span>
+                  <!-- ✏️ EDIT: Tipe skill 1 (lihat panduan warna di bagian Pasif atas) -->
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Mobility</span>
+                </div>
+                <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
+                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
 
 Mengenai hero musuh dengan penggunaan ke-3 akan mereset cooldown Shunpo.</p>
-      <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
+                <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
+                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
 
 Mengenai hero musuh dengan penggunaan ke-3 akan mereset cooldown Shunpo.</div>
-      <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<div style="border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/7/72/Shunpo.png" alt="Shunpo" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shunpo</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
-      </div>
-      <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</p>
-      <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</div>
-      <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<div style="border-top:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/6/65/The_Way_of_Dragon.png" alt="The Way of Dragon" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">The Way of Dragon</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">CC/Burst</span>
-      </div>
-      <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
+                <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
+                  <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- END SKILL 1 -->
+
+          <!-- ───────────────────────────────────────
+               SKILL 2
+               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
+               ─────────────────────────────────────── -->
+          <div style="border-bottom:1px solid #efefef;">
+            <div style="padding:10px 20px 0;">
+              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+              <!-- ✏️ EDIT: Ganti URL_ICON_SKILL2 dengan URL icon skill 2 -->
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/7/72/Shunpo.png" alt="Shunpo" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                  <!-- ✏️ EDIT: Nama skill 2 -->
+                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shunpo</span>
+                  <!-- ✏️ EDIT: Tipe skill 2 -->
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
+                </div>
+                <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
+                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</p>
+                <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
+                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</div>
+                <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
+                  <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- END SKILL 2 -->
+
+          
+
+          <!-- ───────────────────────────────────────
+               ULTIMATE
+               ✏️ EDIT: Ganti icon, nama, tipe, deskripsi
+               ─────────────────────────────────────── -->
+          <div>
+            <div style="padding:10px 20px 0;">
+              <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
+              <!-- ✏️ EDIT: Ganti URL_ICON_ULTIMATE dengan URL icon ultimate -->
+              <img src="https://static.wikia.nocookie.net/mobile-legends/images/6/65/The_Way_of_Dragon.png" alt="The Way of Dragon" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
+                  <!-- ✏️ EDIT: Nama ultimate -->
+                  <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">The Way of Dragon</span>
+                  <!-- ✏️ EDIT: Tipe ultimate -->
+                  <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">CC/Burst</span>
+                </div>
+                <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
+                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
 
 Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serangan Fisik Ekstra) Kerusakan Fisik .</p>
-      <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
+                <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
+                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
 
 Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serangan Fisik Ekstra) Kerusakan Fisik .</div>
-      <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
+                <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
+                  <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- END ULTIMATE -->
 
         </div>
         <!-- END kz-ab-skills -->
@@ -633,44 +539,7 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
         </div>
 
       </div>
-
       <!-- END [D3] ABILITIES -->
-
-      <div style="height:1px;background:linear-gradient(to right,transparent,#e5e5e5,transparent);margin:24px 0;"></div>
-
-      <!-- ═══════════════════════════════════════════
-           [D3b] NOTICE BOXES — Info & Lapor Bug
-           ✏️ EDIT: Ganti href="#" pada link "di sini" dengan URL chat admin kamu
-           ═══════════════════════════════════════════ -->
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
-
-        <div style="position:relative;display:flex;align-items:flex-start;gap:16px;background:rgba(59,130,246,.10);border:1px solid rgba(59,130,246,.25);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(59,130,246,.08);">
-          <div style="flex-shrink:0;position:relative;width:52px;height:52px;">
-            <img src="data:image/png;base64,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" alt="" style="position:absolute;top:-10px;left:-12px;width:auto;height:20px;"/>
-            <div style="width:52px;height:52px;border-radius:50%;background:rgba(59,130,246,.18);display:flex;align-items:center;justify-content:center;">
-              <img src="data:image/png;base64,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" alt="Info" style="width:34px;height:37px;object-fit:contain;"/>
-            </div>
-          </div>
-          <div style="flex:1;min-width:0;">
-            <span style="display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;color:#1d4ed8;margin-bottom:2px;">Info:</span>
-            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#1e3a8a;line-height:1.7;">File script yang ada di website ini sudah pasti terupdate dan yang paling baru.</span>
-          </div>
-        </div>
-
-        <div style="position:relative;display:flex;align-items:flex-start;gap:16px;background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.25);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(239,68,68,.08);">          <div style="flex-shrink:0;position:relative;width:52px;height:52px;">
-            <img src="data:image/png;base64,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" alt="" style="position:absolute;top:-10px;left:-12px;width:auto;height:20px;"/>
-            <div style="width:52px;height:52px;border-radius:50%;background:rgba(239,68,68,.18);display:flex;align-items:center;justify-content:center;">
-              <img src="data:image/png;base64,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" alt="Lapor Bug" style="width:34px;height:37px;object-fit:contain;"/>
-            </div>
-          </div>
-          <div style="flex:1;min-width:0;">
-            <span style="display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;color:#b91c1c;margin-bottom:2px;">Lapor Bug:</span>
-            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#7f1d1d;line-height:1.7;">Jika ada kerusakan efek atau bug pada script, bisa laporkan ke admin <a href="#" style="color:#b91c1c;text-decoration:underline;font-weight:700;">di sini</a>.</span>
-          </div>
-        </div>
-
-      </div>
-      <!-- END [D3b] NOTICE BOXES -->
 
 
       <!-- ═══════════════════════════════════════════
@@ -723,91 +592,131 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
         <h2 style="font-size:20px;font-weight:800;color:#111;margin:0 0 18px;letter-spacing:-.2px;font-family:'Manrope',sans-serif;">Download Script</h2>
 
         <div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
-  <div style="overflow-x:auto;width:100%;">
-    <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
-      <thead>
-        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/4qluU649gzU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span><button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
+          <div style="overflow-x:auto;width:100%;">
+            <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
+
+              <thead>
+                <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
+                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
+                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
+                  <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <!-- ══════════════════════════════════════════════
+                     TEMPLATE BARIS — DUPLIKAT INI UNTUK VARIAN BARU
+                     ══════════════════════════════════════════════
+
+                     <tr style="border-bottom:1px solid #f0f0f0;">
+                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                         <span style="font-weight:800;color:#111;font-size:12px;">NAMA VARIANT</span>
+                       </td>
+                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                         <img src="URL_ICON_SKIN" alt="NAMA VARIANT" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                       </td>
+                       <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                         <a href="URL_DOWNLOAD" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                       </td>
+                     </tr>
+
+                     ══════════════════════════════════════════════ -->
+
+                <tr style="border-bottom:1px solid #f0f0f0;">
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <span style="font-weight:800;color:#111;font-size:12px;">Default</span>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <!-- ✏️ Ganti href dengan URL download yang benar -->
+                    <a href="https://sfile.co/4qluU649gzU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                  </td>
+                </tr>
+
+                <!-- ✏️ TAMBAH BARIS VARIAN BARU DI SINI (duplikat <tr>...</tr> di atas) -->
+
+                <tr style="border-bottom:1px solid #f0f0f0;">
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png" alt="Hero262" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/OsU4ax9ZbGs" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span><button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png" alt="Hero262" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Luckybox</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Luckybox</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero263-icon.png" alt="Hero263" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero264-icon.png" alt="Hero264" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/vz37LlwH0Hy" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Special</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Special</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero265-icon.png" alt="Hero265" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/r7Z53JFSX8a" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">KOF</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">KOF</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero266-icon.png" alt="Hero266" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/fDXGkDPTXC7" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero267-icon.png" alt="Hero267" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/cRjn4lpFxMg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Dawning Star</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Dawning Star</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/16/Hero268-icon.png" alt="Hero268" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/wyCyTSnu7yN" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">S.T.U.N</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">S.T.U.N</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero269-icon.png" alt="Hero269" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/DjlnEHpbBug" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Dragon Shiryu</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Dragon Shiryu</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/ad/Hero102610-icon.png" alt="Hero102610" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/maXyg4fE1xz" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Libra Shiryu</span></span></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#111;font-size:12px;">Libra Shiryu</span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero102611-icon.png" alt="Hero102611" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/sz97BFro67Y" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
-<tr style="">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">ECHO</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero102612-icon.png" alt="Hero102612" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/FW929oECKbq" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
+
+                <!-- BARIS TERAKHIR — hapus border-bottom (style berbeda dari baris lain) -->
+                <tr>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <span style="font-weight:800;color:#111;font-size:12px;">ECHO</span>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero102612-icon.png" alt="Hero102612" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/>
+                  </td>
+                  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">
+                    <a href="https://sfile.co/FW929oECKbq" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
 
       </div>
       <!-- END [D5] TABEL DOWNLOAD -->
@@ -821,38 +730,6 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
   </div>
   <!-- END [B2] CARD PUTIH -->
 
-  <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
-  <div id="kz-logo-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
-        <span>Apa itu Logo?</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc">Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.
-
-<span class="kz-tooltip-disclaimer"><strong>Disclaimer :</strong> <em>Tag skin atau logo akan tetap terlihat di potret pada history gameplay.</em></span></p>
-      <div class="kz-tooltip-imgwrap"><img src="https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp" alt="Contoh Logo"/></div>
-    </div>
-  </div>
-
-  <!-- TOOLTIP "APA ITU TAB 1 & TAB 2?" — konten diisi dari editor -->
-  <div id="kz-dltab-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
-        <span>Apa itu Tab 1 &amp; Tab 2?</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc"></p>
-      <div class="kz-tooltip-imgwrap"><img src="" alt="Contoh Tab"/></div>
-    </div>
-  </div>
-
 </div>
 <!-- END [B] OUTER WRAPPER -->
 
@@ -864,8 +741,6 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
      - kzAutoTitle()       → ambil judul artikel dari Blogger
      - kzScrollDownload()  → smooth scroll animasi ke area download
      - kzToggleAllSkills() → show/hide Skill 1/2/Ultimate
-     - kzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
-     - kzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
      - kzToggleAb()        → expand/collapse per skill
      - kzToggleStory()     → expand/collapse cerita
 
@@ -880,7 +755,7 @@ function kzResponsive(){
 
   /* kazeo-page padding-top: 76px mobile, 124px desktop */
   var kazeoPage = document.querySelector('.kazeo-page');
-  if(kazeoPage) kazeoPage.style.paddingTop = w <= 768 ? '90px' : '96px';
+  if(kazeoPage) kazeoPage.style.paddingTop = w <= 768 ? '76px' : '96px';
 
   /* Hero height */
   var hero = document.getElementById('kz-hero');
@@ -993,51 +868,6 @@ function kzToggleAllSkills(){
   wrap.style.display = 'block';
   if(lbl)  lbl.textContent      = 'Sembunyikan Skill';
   if(icon) icon.style.transform = 'rotate(180deg)';
-  // Pill segmented di dalam wrap ini sebelumnya display:none saat init pertama,
-  // jadi offsetWidth/offsetLeft-nya 0 — hitung ulang sekarang setelah terlihat.
-  if(typeof kzAbSegMiniInit === 'function') kzAbSegMiniInit();
-}
-
-
-/* ── [E4b] Mini segmented control per blok (Pasif/Skill/Ultimate) — varian 2 ── */
-function kzAbSegMiniInit(){
-  document.querySelectorAll('.kz-ab-seg-mini').forEach(function(seg){
-    var pill = seg.querySelector('.kz-ab-seg-pill');
-    var first = seg.querySelector('.kz-ab-seg-item.active');
-    if(first && pill){
-      var pad = 2;
-      // Matikan transition sesaat supaya reposisi pill (mis. saat wrapper
-      // yang sebelumnya display:none baru ditampilkan) langsung final,
-      // tidak ikut animasi width/translate dari 0.
-      pill.style.transition = 'none';
-      pill.style.width = first.offsetWidth + 'px';
-      pill.style.translate = (first.offsetLeft - pad) + 'px';
-      void pill.offsetWidth; // force reflow
-      pill.style.transition = '';
-    }
-  });
-}
-if(document.readyState !== 'loading') kzAbSegMiniInit();
-else document.addEventListener('DOMContentLoaded', kzAbSegMiniInit);
-window.addEventListener('resize', kzAbSegMiniInit);
-
-function kzAbMiniSwitch(btn){
-  var seg = btn.closest('.kz-ab-seg-mini');
-  if(!seg) return;
-  var pill = seg.querySelector('.kz-ab-seg-pill');
-  seg.querySelectorAll('.kz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
-  btn.classList.add('active'); btn.setAttribute('aria-checked','true');
-  if(pill){
-    var pad = 2;
-    pill.style.width = btn.offsetWidth + 'px';
-    pill.style.translate = (btn.offsetLeft - pad) + 'px';
-  }
-  var prefix = seg.getAttribute('data-prefix');
-  var variant = btn.getAttribute('data-variant');
-  var w1 = document.getElementById(prefix + '-w1');
-  var w2 = document.getElementById(prefix + '-w2');
-  if(w1) w1.style.display = (variant === '1') ? 'block' : 'none';
-  if(w2) w2.style.display = (variant === '2') ? 'block' : 'none';
 }
 
 
@@ -1092,35 +922,6 @@ function kzToggleStory(){
   short.style.display = 'none';
   lbl.textContent     = 'Tutup Cerita';
   icon.style.transform = 'rotate(180deg)';
-}
-
-
-/* ── [E7b] Tooltip "Apa itu Logo?" ── */
-function kzOpenLogoTooltip(){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
-  if(!ov) return;
-  ov.style.display = 'flex';
-  void ov.offsetWidth;
-  ov.classList.add('open');
-}
-function kzCloseLogoTooltip(e){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
-  if(!ov) return;
-  ov.classList.remove('open');
-  setTimeout(function(){ ov.style.display = 'none'; }, 180);
-}
-function kzOpenDlTabTooltip(){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
-  if(!ov) return;
-  ov.style.display = 'flex';
-  void ov.offsetWidth;
-  ov.classList.add('open');
-}
-function kzCloseDlTabTooltip(e){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
-  if(!ov) return;
-  ov.classList.remove('open');
-  setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
 
 

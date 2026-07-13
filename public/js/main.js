@@ -352,9 +352,24 @@ if(document.getElementById('kz-hero-popular-wrapper')){
     keys.forEach(function(key){
       var h=byName[(key||'').toLowerCase()];
       if(!h)return;
-      html+=kzDhBuildCard(h);
+      html+='<div class="swiper-slide" style="height:auto">'+kzDhBuildCard(h)+'</div>';
     });
     if(wrapper)wrapper.innerHTML=html||'<div class="kz-dh-empty">Belum ada hero populer.</div>';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      kzInitHeroSwiper('kz-swiper-hero-popular');
+    });});
+  });
+}
+
+/* Init Swiper Hero Terpopuler (config sama dengan kzInitSwiper, cuma slidesPerView disesuaikan buat kartu hero yang lebih kecil) */
+function kzInitHeroSwiper(id){
+  if(typeof Swiper==='undefined')return null;
+  var el=document.getElementById(id);
+  if(!el)return null;
+  return new Swiper('#'+id,{
+    slidesPerView:3,spaceBetween:10,grabCursor:true,simulateTouch:true,touchRatio:1.5,resistanceRatio:0.8,
+    pagination:{el:'#'+id+' .swiper-pagination',clickable:true,dynamicBullets:true},
+    breakpoints:{480:{slidesPerView:4,spaceBetween:12},768:{slidesPerView:5,spaceBetween:14},1024:{slidesPerView:6,spaceBetween:14}}
   });
 }
 
@@ -388,6 +403,37 @@ function kzCatRenderTabs(){
 }
 
 /* Search */
+function kzSvEsc(s){
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function kzBuildSearchEmpty(qVal){
+  var esc=kzSvEsc(qVal);
+  var html='<div class="kz-sv-empty">'
+    +'<div class="kz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
+    +'<circle cx="40" cy="40" r="26" stroke="#e6e6e6" stroke-width="7"/>'
+    +'<circle cx="40" cy="40" r="26" stroke="#e53232" stroke-width="7" stroke-dasharray="30 300" stroke-linecap="round" transform="rotate(-45 40 40)"/>'
+    +'<line x1="59" y1="59" x2="82" y2="82" stroke="#e6e6e6" stroke-width="8" stroke-linecap="round"/>'
+    +'<line x1="30" y1="30" x2="50" y2="50" stroke="#e53232" stroke-width="5" stroke-linecap="round"/>'
+    +'<line x1="50" y1="30" x2="30" y2="50" stroke="#e53232" stroke-width="5" stroke-linecap="round"/>'
+    +'</svg></div>'
+    +'<div class="kz-sv-empty-title">Script tidak ditemukan</div>'
+    +'<p class="kz-sv-empty-sub">Kami tidak menemukan script untuk kata kunci <b>&ldquo;'+esc+'&rdquo;</b>. Coba periksa kembali ejaannya atau gunakan kata kunci lain.</p>'
+    +'<div class="kz-sv-empty-tips" id="kz-sv-empty-tips"></div>'
+    +'<a class="kz-sv-empty-cta" href="/scriptrequest.html">Request script ini'
+    +'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
+    +'</a></div>';
+  fetch('/js/hero-popular.json?t='+Date.now())
+    .then(function(r){return r.json();})
+    .then(function(list){
+      var tipsEl=document.getElementById('kz-sv-empty-tips');
+      if(!tipsEl||!Array.isArray(list))return;
+      tipsEl.innerHTML=list.slice(0,4).map(function(name){
+        return '<a class="kz-sv-empty-tip" href="/search.html?q='+encodeURIComponent(name)+'">'+kzSvEsc(name)+'</a>';
+      }).join('');
+    })
+    .catch(function(){});
+  return html;
+}
 if(document.getElementById('kz-search-heading')){
   var shWrap=document.getElementById('kz-search-heading');
   var svGrid=document.getElementById('kz-sv-grid');
@@ -405,7 +451,7 @@ if(document.getElementById('kz-search-heading')){
       var results=posts.filter(function(e){return(e.title||'').toLowerCase().indexOf(qLower)!==-1;});
       var countEl=document.getElementById('kz-sh-count');
       if(countEl)countEl.textContent='Menemukan '+results.length+' script yang sesuai.';
-      if(!results.length){if(svGrid)svGrid.innerHTML='<div class="kz-cp-empty">Tidak ada script yang cocok.</div>';return;}
+      if(!results.length){if(svGrid)svGrid.innerHTML=kzBuildSearchEmpty(qVal);return;}
       if(svGrid){
         svGrid.innerHTML='';
         results.forEach(function(e){

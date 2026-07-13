@@ -23,7 +23,7 @@ body.kz-scrolled .kz-hv1-header{opacity:0;pointer-events:none;transform:translat
 .kz-hv1-search-toggle-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:#9ca3af;pointer-events:none;flex-shrink:0}
 .kz-hv1-search-toggle-form input{width:180px;box-sizing:border-box;border:1px solid #e4e4e7;background:#fff;border-radius:9999px;padding:8px 14px 8px 32px;font-size:13px;font-family:'Manrope',sans-serif;color:#111;outline:none}
 .kz-hv1-search-toggle-form input::placeholder{color:#9ca3af}
-.kz-hv1-mobile-nav{display:none;position:absolute;top:100%;left:0;right:0;background:hsl(0 0% 100% / 45%);backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);border-top:1px solid #e4e4e7;box-shadow:0 12px 24px rgba(0,0,0,.08);max-height:0;overflow:hidden;opacity:0;flex-direction:column;transition:max-height .32s cubic-bezier(0,0,.2,1),opacity .25s ease}
+.kz-hv1-mobile-nav{display:none;position:absolute;top:100%;left:0;right:0;background:hsl(0 0% 100% / 92%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #e4e4e7;box-shadow:0 12px 24px rgba(0,0,0,.08);max-height:0;overflow:hidden;opacity:0;flex-direction:column;transition:max-height .32s cubic-bezier(0,0,.2,1),opacity .25s ease}
 .kz-hv1-mobile-nav.open{max-height:480px;opacity:1}
 .kz-hv1-mobile-nav a{padding:15px 20px 15px 17px;font-family:'Manrope',sans-serif;font-weight:600;font-size:15px;color:#18181B;border-bottom:1px solid rgba(0,0,0,.06);border-left:3px solid transparent;transition:background .15s,border-color .2s,padding-left .2s;-webkit-tap-highlight-color:transparent}
 .kz-hv1-mobile-nav a:last-child{border-bottom:none}
@@ -80,10 +80,13 @@ body.kz-scrolled .kazeo-header{opacity:1;pointer-events:auto}
 .kz-drawer-links{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:0}
 .kz-drawer-links li{opacity:0}
 .kazeo-mobile-nav.open .kz-drawer-links li{animation:kzNavItemIn 0.28s cubic-bezier(0,0,0.2,1) forwards}
-.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(1){animation-delay:0.04s}
-.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(2){animation-delay:0.10s}
-.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(3){animation-delay:0.16s}
-.kazeo-mobile-nav.open .kz-drawer-search{animation:kzNavItemIn 0.28s cubic-bezier(0,0,0.2,1) 0.22s both}
+.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(1){animation-delay:0.01s}
+.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(2){animation-delay:0.04s}
+.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(3){animation-delay:0.07s}
+.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(4){animation-delay:0.10s}
+.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(5){animation-delay:0.13s}
+.kazeo-mobile-nav.open .kz-drawer-links li:nth-child(6){animation-delay:0.16s}
+.kazeo-mobile-nav.open .kz-drawer-search{animation:kzNavItemIn 0.28s cubic-bezier(0,0,0.2,1) 0.19s both}
 .kz-drawer-links li a{font-family:'Manrope',sans-serif;font-weight:650;font-size:20px;color:#060318;padding:12px 0;display:block;transition:opacity 0.15s;-webkit-tap-highlight-color:transparent;letter-spacing:-0.04em;line-height:1.2}
 .kz-drawer-links li a:hover{opacity:0.6}
 .kz-drawer-search{margin-top:4px;padding:0}
@@ -115,7 +118,7 @@ body.page-home .kazeo-page{padding-top:90px}
 @media(min-width:769px){body.page-home .kazeo-page{padding-top:90px}}
 
 /* HERO */
-.kz-hero{text-align:center;padding:12px 0 0}
+.kz-hero{text-align:center;padding:4px 0 0}
 .kz-hero-cta-wrap{display:flex;justify-content:center;padding:16px 0 20px}
 .kz-hero-cta{position:relative;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 16px;border-radius:9999px;background:transparent;border:none;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;color:#111;cursor:pointer;text-decoration:none;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,0.16);transition:background 0.15s;-webkit-tap-highlight-color:transparent;gap:8px}
 .kz-hero-cta:hover{background:rgba(0,0,0,0.06)}
@@ -138,6 +141,8 @@ body.page-home .kazeo-page{padding-top:90px}
 @media(max-width:640px){.kz-swiper-wrap .swiper{padding-bottom:52px!important}}
 .kz-slider-section{margin-bottom:32px}
 @media(max-width:640px){.kz-slider-section{margin-bottom:16px}}
+#kz-section-hero-popular{margin-bottom:4px}
+@media(max-width:640px){#kz-section-hero-popular{margin-bottom:2px}}
 #kz-section-popular{display:none}
 .kz-section-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px}
 .kz-section-head-left{display:flex;flex-direction:column;gap:3px}
@@ -145,17 +150,9 @@ body.page-home .kazeo-page{padding-top:90px}
 @media(max-width:640px){.kz-section-title{font-size:19px}}
 .kz-section-sub{font-size:12px;font-weight:500;color:#a1a1aa;font-family:'Manrope',sans-serif}
 .kz-section-head-right{align-self:center;flex-shrink:0}
-.kz-section-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#e53232;text-decoration:none;font-family:'Manrope',sans-serif}
+.kz-section-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#e53232;text-decoration:none;font-family:'Manrope',sans-serif;-webkit-tap-highlight-color:transparent}
 
-/* HERO TERPOPULER SCROLL */
-.kz-hero-scroll{display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 0 6px 4px}
-.kz-hero-scroll::-webkit-scrollbar{display:none}
-.kz-hero-scroll>*{flex:0 0 calc((100% - 20px)/3);scroll-snap-align:start;min-width:0}
-.kz-hero-scroll>*:last-child{margin-right:4px}
-@media(min-width:480px){.kz-hero-scroll{gap:12px}.kz-hero-scroll>*{flex:0 0 calc((100% - 36px)/4)}}
-@media(min-width:641px){.kz-hero-scroll{padding:8px 0 8px 8px}.kz-hero-scroll>*:last-child{margin-right:8px}}
-@media(min-width:768px){.kz-hero-scroll{gap:14px}.kz-hero-scroll>*{flex:0 0 calc((100% - 56px)/5)}}
-@media(min-width:1024px){.kz-hero-scroll{gap:14px}.kz-hero-scroll>*{flex:0 0 calc((100% - 70px)/6)}}
+/* HERO TERPOPULER (skeleton loading) */
 .kz-skel-hero{background:#fff;border:1px solid #efefef;border-radius:14px;padding:10px 6px 12px;display:flex;flex-direction:column;align-items:center}
 .kz-skel-circle{width:48px;height:48px;border-radius:50%;background:#e4e4e7;margin-bottom:8px;animation:kzPulse 1.4s ease infinite}
 @media(min-width:640px){.kz-skel-circle{width:56px;height:56px}}
@@ -263,6 +260,26 @@ body.page-home .kazeo-page{padding-top:90px}
 #kz-search-heading h1 em{color:#e53232;font-style:normal}
 #kz-search-heading .kz-sh-count{font-size:13px;color:#aaa;font-family:'Manrope',sans-serif}
 
+.kz-sv-empty{grid-column:1/-1;text-align:center;padding:64px 32px;background:#fafafa;border:1.5px solid #f0f0f0;border-radius:28px;font-family:'Manrope',sans-serif}
+.kz-sv-empty-icon{width:88px;height:88px;margin:0 auto 24px}
+.kz-sv-empty-icon svg{width:100%;height:100%;display:block}
+.kz-sv-empty-title{font-size:22px;font-weight:800;color:#111;margin:0 0 10px}
+.kz-sv-empty-sub{font-size:14.5px;color:#888;line-height:1.7;max-width:420px;margin:0 auto;font-family:'Manrope',sans-serif}
+.kz-sv-empty-sub b{color:#333;font-weight:700}
+.kz-sv-empty-tips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0 30px;min-height:33px}
+.kz-sv-empty-tip{background:#fff;border:1.5px solid #ececec;color:#666;font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:999px;text-decoration:none;transition:border-color .15s,color .15s;-webkit-tap-highlight-color:transparent}
+@media(hover:hover) and (pointer:fine){.kz-sv-empty-tip:hover{border-color:#e53232;color:#e53232}}
+.kz-sv-empty-cta{display:inline-flex;align-items:center;gap:8px;background:#111;color:#fff;font-size:14px;font-weight:700;padding:14px 26px;border-radius:12px;text-decoration:none;transition:opacity .2s;-webkit-tap-highlight-color:transparent}
+.kz-sv-empty-cta:hover{opacity:.85}
+.kz-sv-empty-cta svg{width:16px;height:16px;flex-shrink:0}
+@media(max-width:640px){
+  .kz-sv-empty{padding:48px 20px;border-radius:20px}
+  .kz-sv-empty-icon{width:72px;height:72px;margin-bottom:20px}
+  .kz-sv-empty-title{font-size:18px}
+  .kz-sv-empty-sub{font-size:13.5px}
+  .kz-sv-empty-tips{margin:20px 0 26px}
+}
+
 /* SOCIAL PAGE */
 #kz-social-page{display:none;width:100%;padding:3rem 1rem 4rem}
 #kz-social-page.active{display:block}
@@ -325,9 +342,12 @@ body.page-scriptrequest .kazeo-page{padding-left:2rem;padding-right:2rem;padding
 .kz-rq-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .kz-rq-card.wa:hover{border-color:#25D366}
 .kz-rq-card.tg:hover{border-color:#2AABEE}
+.kz-rq-card.wa:hover .kz-rq-btn{background:#25D366}
+.kz-rq-card.tg:hover .kz-rq-btn{background:#2AABEE}
 .kz-rq-deco{position:absolute;bottom:-30px;right:-24px;width:150px;height:150px;opacity:.14;pointer-events:none}
 .kz-rq-card.wa .kz-rq-deco{fill:#25D366}
 .kz-rq-card.tg .kz-rq-deco{fill:#2AABEE}
+.kz-rq-arrow{position:absolute;top:70px;right:-1px;width:120px;height:100px;opacity:.14;pointer-events:none;z-index:0}
 .kz-rq-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
 .kz-rq-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .kz-rq-card.wa .kz-rq-icon{background:#e8fef2}
@@ -393,7 +413,7 @@ body.page-tutorial .kazeo-page{padding-top:72px;padding-bottom:0}
 body.page-daftarhero .kazeo-page{padding-top:72px;padding-bottom:0}
 @media(max-width:768px){body.page-daftarhero .kazeo-page{padding-top:55px}}
 body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
-@media(max-width:768px){body.page-hero .kazeo-page{padding-top:45px}}
+@media(max-width:768px){body.page-hero .kazeo-page{padding-top:39px}}
 .kz-dh-page{width:100%;padding:3rem 2rem 4rem}
 @media(max-width:900px){.kz-dh-page{padding:2.25rem 0.5rem 3rem}}
 @media(max-width:480px){.kz-dh-page{padding:3rem 0.25rem 2.5rem}}
@@ -411,8 +431,10 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 .kz-dh-role-icon svg{width:30px;height:30px;color:#e53232;display:block}
 .kz-dh-role-name{font-size:16px;font-weight:800;color:#18181b;font-family:'Manrope',sans-serif;letter-spacing:-.2px}
 .kz-dh-role-count{font-size:12px;font-weight:600;color:#b5b5ba;font-family:'Manrope',sans-serif}
-.kz-dh-toggle{display:none;align-items:center;gap:4px;background:#666;color:#fff;border:none;border-radius:9999px;padding:8px 14px;font-size:12px;font-weight:800;font-family:'Manrope',sans-serif;cursor:pointer;transition:background .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.kz-dh-toggle:hover{background:#555}
+.kz-dh-toggle{display:none;align-items:center;gap:4px;background:#e53232;color:#fff;border:none;border-radius:9999px;padding:8px 14px;font-size:12px;font-weight:800;font-family:'Manrope',sans-serif;cursor:pointer;transition:background .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+@media(hover:hover) and (pointer:fine){
+  .kz-dh-toggle:hover{background:#c92a2a}
+}
 .kz-dh-toggle.show{display:inline-flex}
 .kz-dh-toggle svg{width:12px;height:12px;transition:transform .25s;flex-shrink:0}
 .kz-dh-toggle.expanded svg{transform:rotate(180deg)}
@@ -437,12 +459,14 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 .kz-dh-empty{grid-column:1/-1;text-align:center;padding:24px 0;color:#bbb;font-size:13px;font-family:'Manrope',sans-serif}
 
 /* HERO DETAIL PAGE (Daftar Hero) */
-.kz-heroh-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;font-family:'Manrope',sans-serif;margin-bottom:20px}
+.kz-heroh-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;font-family:'Manrope',sans-serif;margin:0 auto 20px -2rem;padding-left:1rem;-webkit-tap-highlight-color:transparent;cursor:pointer}
+@media(max-width:900px){.kz-heroh-back{margin-left:-1.5rem}}
+@media(max-width:480px){.kz-heroh-back{margin-left:-1.5rem}}
 .kz-heroh-back:hover{color:#e53232}
 .kz-heroh-card{position:relative;max-width:1080px;margin:0 auto 28px;border-radius:18px;overflow:hidden;background:#fff;border:2px solid #e0e0e0;box-shadow:0 10px 28px rgba(0,0,0,.08)}
 .kz-heroh-content{position:relative;display:flex;align-items:center;padding:22px 20px;gap:16px}
 .kz-heroh-info{flex:1;min-width:0}
-.kz-heroh-role-badge{display:inline-block;background:#18181b;color:#fff;font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 10px;border-radius:9999px;margin-bottom:8px;font-family:'Manrope',sans-serif}
+.kz-heroh-role-badge{display:inline-block;background:#e53232;color:#fff;font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 10px;border-radius:9999px;margin-bottom:8px;font-family:'Manrope',sans-serif}
 .kz-heroh-name{font-size:24px;font-weight:800;color:#111;letter-spacing:-.4px;line-height:1.1;font-family:'Manrope',sans-serif}
 .kz-heroh-count{font-size:11.5px;color:#e53232;font-weight:700;margin-top:6px;font-family:'Manrope',sans-serif}
 .kz-heroh-avatar-wrap{width:76px;height:76px;border-radius:50%;overflow:hidden;background:#ececec;border:3px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,.16);flex-shrink:0;position:relative;z-index:1}
@@ -453,12 +477,14 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 @media(max-width:600px){.kz-heroh-avatar-wrap{width:60px;height:60px}.kz-heroh-name{font-size:20px}}
 
 /* CATEGORY DETAIL PAGE (Kategori Skin) */
-.kz-cath-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;font-family:'Manrope',sans-serif;margin-bottom:20px}
+.kz-cath-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;font-family:'Manrope',sans-serif;margin:0 auto 20px -2rem;padding-left:1rem;-webkit-tap-highlight-color:transparent;cursor:pointer}
+@media(max-width:900px){.kz-cath-back{margin-left:-1.5rem}}
+@media(max-width:480px){.kz-cath-back{margin-left:-1.5rem}}
 .kz-cath-back:hover{color:#e53232}
 .kz-cath-card{position:relative;max-width:1080px;margin:0 auto 28px;border-radius:18px;overflow:hidden;background:#fff;border:2px solid #e0e0e0;box-shadow:0 10px 28px rgba(0,0,0,.08)}
 .kz-cath-content{position:relative;display:flex;align-items:center;padding:22px 20px;gap:16px}
 .kz-cath-info{flex:1;min-width:0}
-.kz-cath-role-badge{display:inline-block;background:#18181b;color:#fff;font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 10px;border-radius:9999px;margin-bottom:8px;font-family:'Manrope',sans-serif}
+.kz-cath-role-badge{display:inline-block;background:#e53232;color:#fff;font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 10px;border-radius:9999px;margin-bottom:8px;font-family:'Manrope',sans-serif}
 .kz-cath-name{font-size:24px;font-weight:800;color:#111;letter-spacing:-.4px;line-height:1.1;font-family:'Manrope',sans-serif}
 .kz-cath-count{font-size:11.5px;color:#e53232;font-weight:700;margin-top:6px;font-family:'Manrope',sans-serif}
 .kz-cath-avatar-wrap{max-width:80px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
