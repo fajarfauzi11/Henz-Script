@@ -427,7 +427,7 @@ function kzBuildSearchEmpty(qVal){
     .then(function(list){
       var tipsEl=document.getElementById('kz-sv-empty-tips');
       if(!tipsEl||!Array.isArray(list))return;
-      tipsEl.innerHTML=list.slice(0,4).map(function(name){
+      tipsEl.innerHTML=list.slice(0,3).map(function(name){
         return '<a class="kz-sv-empty-tip" href="/search.html?q='+encodeURIComponent(name)+'">'+kzSvEsc(name)+'</a>';
       }).join('');
     })
@@ -441,8 +441,8 @@ if(document.getElementById('kz-search-heading')){
   var qVal=urlParams.get('q')||'';
   var qLower=qVal.toLowerCase();
   shWrap.style.display='block';
-  shWrap.innerHTML='<a class="kz-sh-back" href="/index.html">'
-    +'&#8592; Kembali ke Beranda</a>'
+  shWrap.innerHTML='<a class="kz-sh-back" href="/index.html" onclick="history.back();return false;">'
+    +'&#8592; Halaman Sebelumnya</a>'
     +'<h1>Hasil pencarian untuk: <em>&ldquo;'+qVal.replace(/</g,'&lt;')+'&rdquo;</em></h1>'
     +'<p class="kz-sh-count" id="kz-sh-count">Memuat...</p>';
   if(!qVal){if(svGrid)svGrid.innerHTML='<div class="kz-cp-empty">Masukkan kata kunci pencarian.</div>';}
@@ -450,8 +450,8 @@ if(document.getElementById('kz-search-heading')){
     kzFetchPosts(function(posts){
       var results=posts.filter(function(e){return(e.title||'').toLowerCase().indexOf(qLower)!==-1;});
       var countEl=document.getElementById('kz-sh-count');
-      if(countEl)countEl.textContent='Menemukan '+results.length+' script yang sesuai.';
-      if(!results.length){if(svGrid)svGrid.innerHTML=kzBuildSearchEmpty(qVal);return;}
+      if(!results.length){if(countEl)countEl.style.display='none';if(svGrid)svGrid.innerHTML=kzBuildSearchEmpty(qVal);return;}
+      if(countEl){countEl.style.display='block';countEl.textContent='Menemukan '+results.length+' script yang sesuai.';}
       if(svGrid){
         svGrid.innerHTML='';
         results.forEach(function(e){

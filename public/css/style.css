@@ -253,7 +253,9 @@ body.page-home .kazeo-page{padding-top:90px}
 
 /* SEARCH */
 #kz-search-heading{margin-bottom:28px}
-#kz-search-heading .kz-sh-back{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#888;margin-bottom:10px;cursor:pointer;background:none;border:none;padding:0;font-family:'Manrope',sans-serif;text-decoration:none;transition:color .15s}
+#kz-search-heading .kz-sh-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;margin:0 auto 20px -2rem;padding-left:1rem;cursor:pointer;background:none;border:none;font-family:'Manrope',sans-serif;text-decoration:none;transition:color .15s;-webkit-tap-highlight-color:transparent}
+@media(max-width:900px){#kz-search-heading .kz-sh-back{margin-left:-1.5rem}}
+@media(max-width:480px){#kz-search-heading .kz-sh-back{margin-left:-1.5rem}}
 #kz-search-heading .kz-sh-back:hover{color:#111}
 #kz-search-heading h1{font-size:28px;font-weight:800;color:#111;margin:0 0 4px;font-family:'Manrope',sans-serif;line-height:1.2}
 @media(max-width:768px){#kz-search-heading h1{font-size:20px}}
@@ -294,7 +296,8 @@ body.page-social .kazeo-page{padding-top:72px;padding-bottom:0;padding-left:1rem
 @media(max-width:900px){body.page-category .kazeo-page{padding-top:100px}}
 body.page-scriptrequest .kazeo-page{padding-left:2rem;padding-right:2rem;padding-bottom:0}
 @media(max-width:900px){body.page-scriptrequest .kazeo-page{padding-top:100px}}
-@media(max-width:900px){body.page-search .kazeo-page{padding-top:80px}}
+body.page-search .kazeo-page{padding-top:87px}
+@media(max-width:900px){body.page-search .kazeo-page{padding-top:87px}}
 .kz-sp-card{background:#fff;border-radius:28px;border:1.5px solid #efefef;padding:32px 28px 28px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
 .kz-sp-card.yt{border-color:#f6c6c6}
 .kz-sp-card.tg{border-color:#bfe4fa}
