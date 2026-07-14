@@ -20,6 +20,10 @@ function readPartial(name) {
   return fs.readFileSync(partialPath, 'utf8');
 }
 
+function viewSlugFromUrl(url) {
+  return (url || '').replace(/^.*\/post\//, '').replace(/\.html$/, '').replace(/\/+$/, '');
+}
+
 function processHtml(content) {
   return content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
@@ -98,7 +102,7 @@ function buildPostCardHtml(p) {
     + `<span class="kz-card-dl-btn">Download`
     + `<span class="kz-card-dl-btn-icon"><svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M15.9959 10.0005L3 10.0005" stroke="currentColor" stroke-width="2"/><path d="M9.73389 16.3179L15.6318 9.99866L9.73389 3.67945" stroke="currentColor" stroke-width="2"/></svg></span>`
     + `</span>`
-    + `<p class="kz-card-views" data-view-id="${p.id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>`
+    + `<p class="kz-card-views" data-view-id="${p.id}" data-view-slug="${viewSlugFromUrl(p.url)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>`
     + `</div></div></a>`;
 }
 

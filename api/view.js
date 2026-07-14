@@ -7,27 +7,38 @@ const redis = new Redis({
 
 const KEY_PREFIX = 'view:';
 
+function safeSlug(slug) {
+  return String(slug || '').trim().replace(/[^a-zA-Z0-9-_]/g, '').slice(0, 80);
+}
+
 module.exports = async (req, res) => {
   try {
     if (req.method === 'GET') {
-      const idsParam = req.query.ids || '';
-      const ids = idsParam
+      const itemsParam = req.query.items || '';
+      const items = itemsParam
         .split(',')
         .map((s) => s.trim())
-        .filter(Boolean);
+        .filter(Boolean)
+        .map((s) => {
+          const idx = s.indexOf(':');
+          const id = idx === -1 ? s : s.slice(0, idx);
+          const slug = idx === -1 ? '' : s.slice(idx + 1);
+          return { id: String(id).trim(), slug: safeSlug(slug) };
+        })
+        .filter((it) => it.id);
 
-      if (!ids.length) {
+      if (!items.length) {
         res.status(200).json({ views: {} });
         return;
       }
 
-      const keys = ids.map((id) => KEY_PREFIX + id);
+      const keys = items.map((it) => KEY_PREFIX + it.id + ':' + it.slug);
       const values = await redis.mget(...keys);
 
       const views = {};
-      ids.forEach((id, i) => {
+      items.forEach((it, i) => {
         const v = values[i];
-        views[id] = typeof v === 'number' ? v : parseInt(v, 10) || 0;
+        views[it.id] = typeof v === 'number' ? v : parseInt(v, 10) || 0;
       });
 
       res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=60');
@@ -41,13 +52,15 @@ module.exports = async (req, res) => {
         try { body = JSON.parse(body); } catch (e) { body = {}; }
       }
       const id = body && body.id ? String(body.id).trim() : '';
+      const slug = safeSlug(body && body.slug);
 
       if (!id) {
         res.status(400).json({ error: 'Missing id' });
         return;
       }
 
-      const newCount = await redis.incr(KEY_PREFIX + id);
+      const key = KEY_PREFIX + id + ':' + slug;
+      const newCount = await redis.incr(key);
       res.status(200).json({ id, views: newCount });
       return;
     }

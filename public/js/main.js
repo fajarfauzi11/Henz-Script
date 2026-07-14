@@ -217,7 +217,7 @@ document.querySelectorAll('.kz-search-form-js').forEach(function(form){
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var q=form.querySelector('input[name="q"]');
-    if(q&&q.value.trim())window.location.href='/search.html?q='+encodeURIComponent(q.value.trim());
+    if(q&&q.value.trim())window.location.href='/search?q='+encodeURIComponent(q.value.trim());
   });
 });
 
@@ -251,7 +251,7 @@ function kzBuildSlide(e){
     +'<span class="kz-card-author-name">'+auth+'</span>'
     +'</div>'
     +'<div class="kz-card-date-wrap"><p>'+date+'</p></div>'
-    +'<p class="kz-card-views" data-view-id="'+e.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>'
+    +'<p class="kz-card-views" data-view-id="'+e.id+'" data-view-slug="'+kzSlugFromUrl(e.url)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>'
     +'</div></div></a></div>';
 }
 
@@ -279,7 +279,7 @@ function kzBuildCatCard(e){
     +'<span class="kz-card-dl-btn-icon">'
     +'<svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M15.9959 10.0005L3 10.0005" stroke="currentColor" stroke-width="2"/><path d="M9.73389 16.3179L15.6318 9.99866L9.73389 3.67945" stroke="currentColor" stroke-width="2"/></svg>'
     +'</span></span>'
-    +'<p class="kz-card-views" data-view-id="'+e.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>'
+    +'<p class="kz-card-views" data-view-id="'+e.id+'" data-view-slug="'+kzSlugFromUrl(e.url)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>'
     +'</div></div></a>';
 }
 
@@ -320,6 +320,9 @@ if(seg&&pill){
 }
 
 /* View Count */
+function kzSlugFromUrl(url){
+  return (url||'').replace(/^.*\/post\//,'').replace(/\.html$/,'').replace(/\/+$/,'');
+}
 function kzFormatViewCount(n){
   n=parseInt(n,10)||0;
   return n.toLocaleString('id-ID')+'x dilihat';
@@ -328,13 +331,14 @@ function kzLoadViewCounts(root){
   var scope=root||document;
   var els=scope.querySelectorAll('[data-view-id]');
   if(!els.length)return;
-  var ids=[];
+  var items=[],seen={};
   els.forEach(function(el){
     var id=el.getAttribute('data-view-id');
-    if(id&&ids.indexOf(id)===-1)ids.push(id);
+    var slug=el.getAttribute('data-view-slug')||'';
+    if(id&&!seen[id]){seen[id]=1;items.push(id+':'+slug);}
   });
-  if(!ids.length)return;
-  fetch('/api/view?ids='+ids.join(','))
+  if(!items.length)return;
+  fetch('/api/view?items='+encodeURIComponent(items.join(',')))
     .then(function(r){return r.json();})
     .then(function(data){
       var views=(data&&data.views)||{};
@@ -354,12 +358,13 @@ if(document.body.classList.contains('page-post')){
     var path=window.location.pathname.replace(/\/+$/,'');
     var current=posts.filter(function(p){return (p.url||'').replace(/\/+$/,'')===path;})[0];
     if(!current||!current.id)return;
+    var slug=kzSlugFromUrl(current.url);
     var flagKey='kz_viewed_'+current.id;
     if(sessionStorage.getItem(flagKey))return;
     fetch('/api/view',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({id:current.id})
+      body:JSON.stringify({id:current.id,slug:slug})
     }).then(function(){sessionStorage.setItem(flagKey,'1');}).catch(function(){});
   });
 }
@@ -442,9 +447,9 @@ if(document.getElementById('kz-category-page')){
 function kzCatRenderTabs(){
   var cont=document.getElementById('kz-cp-tabs');
   if(!cont)return;
-  var html='<a class="kz-cp-tab" href="/kategori/semua.html">Semua</a>';
+  var html='<a class="kz-cp-tab" href="/kategori/semua">Semua</a>';
   kzCatState.labels.forEach(function(l){
-    var href='/kategori/'+kzDhSlugify(l.name)+'.html';
+    var href='/kategori/'+kzDhSlugify(l.name);
     html+='<a class="kz-cp-tab" href="'+href+'">'+l.name+'</a>';
   });
   cont.innerHTML=html;
@@ -467,7 +472,7 @@ function kzBuildSearchEmpty(qVal){
     +'<div class="kz-sv-empty-title">Script tidak ditemukan</div>'
     +'<p class="kz-sv-empty-sub">Kami tidak menemukan script untuk kata kunci <b>&ldquo;'+esc+'&rdquo;</b>. Coba periksa kembali ejaannya atau gunakan kata kunci lain.</p>'
     +'<div class="kz-sv-empty-tips" id="kz-sv-empty-tips"></div>'
-    +'<a class="kz-sv-empty-cta" href="/scriptrequest.html">Request script ini'
+    +'<a class="kz-sv-empty-cta" href="/scriptrequest">Request script ini'
     +'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
     +'</a></div>';
   fetch('/js/hero-popular.json?t='+Date.now())
@@ -476,7 +481,7 @@ function kzBuildSearchEmpty(qVal){
       var tipsEl=document.getElementById('kz-sv-empty-tips');
       if(!tipsEl||!Array.isArray(list))return;
       tipsEl.innerHTML=list.slice(0,3).map(function(name){
-        return '<a class="kz-sv-empty-tip" href="/search.html?q='+encodeURIComponent(name)+'">'+kzSvEsc(name)+'</a>';
+        return '<a class="kz-sv-empty-tip" href="/search?q='+encodeURIComponent(name)+'">'+kzSvEsc(name)+'</a>';
       }).join('');
     })
     .catch(function(){});
@@ -489,7 +494,7 @@ if(document.getElementById('kz-search-heading')){
   var qVal=urlParams.get('q')||'';
   var qLower=qVal.toLowerCase();
   shWrap.style.display='block';
-  shWrap.innerHTML='<a class="kz-sh-back" href="/index.html" onclick="history.back();return false;">'
+  shWrap.innerHTML='<a class="kz-sh-back" href="/" onclick="history.back();return false;">'
     +'&#8592; Halaman Sebelumnya</a>'
     +'<h1>Hasil pencarian untuk: <em>&ldquo;'+qVal.replace(/</g,'&lt;')+'&rdquo;</em></h1>'
     +'<p class="kz-sh-count" id="kz-sh-count">Memuat...</p>';
@@ -532,7 +537,7 @@ function kzDhSlugify(name){
 function kzDhBuildCard(h){
   var name=h.name||'Hero',esc=kzDhEsc(name),img=h.image||'',
     initial=esc.charAt(0).toUpperCase(),
-    href='/hero/'+kzDhSlugify(name)+'.html';
+    href='/hero/'+kzDhSlugify(name);
   var avatarH=img
     ?'<img src="'+img+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\''+initial+'\';this.parentNode.style.cssText=\'display:flex;align-items:center;justify-content:center;font-weight:800;color:#bbb;font-family:Manrope,sans-serif;\'">'
     :initial;

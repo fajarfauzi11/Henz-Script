@@ -1,12 +1,7 @@
 {
   "buildCommand": "node build.js",
   "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/category", "destination": "/category.html" },
-    { "source": "/social", "destination": "/social.html" },
-    { "source": "/search", "destination": "/search.html" }
-  ],
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/js/posts.json",
