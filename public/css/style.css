@@ -186,6 +186,8 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-card-avatar{width:20px;height:20px;border-radius:50%;object-fit:cover;border:1px solid #e4e4e7;flex-shrink:0}
 .kz-card-author-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:90px}
 .kz-card-date-wrap{text-align:center;font-size:10px;font-weight:500;color:#a1a1aa;font-family:'Manrope',sans-serif}
+.kz-card-views{display:flex;align-items:center;justify-content:center;gap:4px;font-size:10px;font-weight:600;color:#a1a1aa;font-family:'Manrope',sans-serif}
+.kz-card-views svg{width:11px;height:11px;flex-shrink:0;opacity:.7}
 .kz-card-dl-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;height:28px;padding:0 10px;border-radius:9999px;background:transparent;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#666;pointer-events:none;border:1.5px solid rgba(0,0,0,0.12);gap:5px;white-space:nowrap;width:100%;letter-spacing:0.2px}
 .kz-card-dl-btn-icon{display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:9999px;background:rgba(0,0,0,0.06);margin-right:-2px;flex-shrink:0}
 
@@ -211,10 +213,15 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-cp-hero-sub{font-size:15px;color:#888;line-height:1.7;margin:0 auto;max-width:480px;font-family:'Manrope',sans-serif;display:block}
 .kz-cp-tabs-wrap{background:#fff;border-radius:24px;border:2px solid #dcdcdc;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:24px;margin-bottom:36px;margin-top:36px}
 .kz-cp-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.kz-cp-tab{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:transparent;border:2px solid #e8e8e8;border-radius:9999px;padding:13px 10px;font-size:15px;font-weight:800;color:#888;font-family:'Manrope',sans-serif;cursor:pointer;transition:all .18s;white-space:nowrap;line-height:1;letter-spacing:-.2px;width:100%;-webkit-tap-highlight-color:transparent;text-decoration:none}
-.kz-cp-tab:hover{border-color:#e53232;color:#e53232;background:#fdeaea}
-.kz-cp-tab-count{color:#bbb;font-weight:700;font-size:13px}
-.kz-cp-tab:hover .kz-cp-tab-count{color:#e5807f}
+.kz-cp-tab{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:transparent;border:2px solid #e8e8e8;border-radius:9999px;padding:13px 10px;font-size:15px;font-weight:800;color:#888;font-family:'Manrope',sans-serif;cursor:pointer;transition:border-color .22s cubic-bezier(.4,0,.2,1),color .22s cubic-bezier(.4,0,.2,1),background .22s cubic-bezier(.4,0,.2,1),transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);white-space:nowrap;line-height:1;letter-spacing:-.2px;width:100%;-webkit-tap-highlight-color:transparent;text-decoration:none}
+.kz-cp-tab:active{border-color:#e53232;color:#e53232;background:#fdf4f4;transform:translateY(-1px);box-shadow:0 6px 14px rgba(229,50,50,.12)}
+.kz-cp-tab:active .kz-cp-tab-count{color:#e53232}
+@media(hover:hover) and (pointer:fine){
+  .kz-cp-tab:hover{border-color:#e53232;color:#e53232;background:#fdf4f4;transform:translateY(-3px);box-shadow:0 10px 20px rgba(229,50,50,.12)}
+  .kz-cp-tab:hover .kz-cp-tab-count{color:#e53232}
+  .kz-cp-tab:active{transform:translateY(-1px)}
+}
+.kz-cp-tab-count{color:#bbb;font-weight:700;font-size:13px;transition:color .22s cubic-bezier(.4,0,.2,1)}
 
 /* Category grid — pakai kz-card identik dengan homepage slider */
 .kz-cp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -253,10 +260,10 @@ body.page-home .kazeo-page{padding-top:90px}
 
 /* SEARCH */
 #kz-search-heading{margin-bottom:28px}
-#kz-search-heading .kz-sh-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;margin:0 auto 20px -2rem;padding-left:1rem;cursor:pointer;background:none;border:none;font-family:'Manrope',sans-serif;text-decoration:none;transition:color .15s;-webkit-tap-highlight-color:transparent}
+#kz-search-heading .kz-sh-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;margin:0 auto 20px 2.25rem;padding-left:1rem;cursor:pointer;background:none;border:none;font-family:'Manrope',sans-serif;text-decoration:none;transition:color .15s;-webkit-tap-highlight-color:transparent}
+#kz-search-heading .kz-sh-back:hover{color:#e53232}
 @media(max-width:900px){#kz-search-heading .kz-sh-back{margin-left:-1.5rem}}
 @media(max-width:480px){#kz-search-heading .kz-sh-back{margin-left:-1.5rem}}
-#kz-search-heading .kz-sh-back:hover{color:#111}
 #kz-search-heading h1{font-size:28px;font-weight:800;color:#111;margin:0 0 4px;font-family:'Manrope',sans-serif;line-height:1.2}
 @media(max-width:768px){#kz-search-heading h1{font-size:20px}}
 #kz-search-heading h1 em{color:#e53232;font-style:normal}

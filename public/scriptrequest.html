@@ -64,6 +64,7 @@
     </div>
     <hr class="kz-tooltip-hr">
     <p class="kz-tooltip-desc" id="kz-request-tooltip-desc"></p>
+    <div class="kz-tooltip-imgwrap"><img id="kz-request-tooltip-img" src="" alt="Contoh"></div>
   </div>
 </div>
 
@@ -72,11 +73,13 @@
   var KZ_REQUEST_TOOLTIP_DATA = {
     wa: {
       title: 'Bagaimana cara menghubungi admin via WhatsApp?',
-      desc: 'Klik tombol "Request via WhatsApp", lalu kirim pesan ke admin dengan menyebutkan nama hero dan skin yang ingin kamu request, atau jelaskan bug yang kamu temukan secara detail biar cepat diproses.'
+      desc: 'Klik tombol "Request via WhatsApp", lalu kirim pesan ke admin dengan menyebutkan nama hero dan skin yang ingin kamu request, atau jelaskan bug yang kamu temukan secara detail biar cepat diproses.',
+      img: ''
     },
     tg: {
       title: 'Bagaimana cara menghubungi admin via Telegram?',
-      desc: 'Klik tombol "Request via Telegram", lalu kirim pesan ke admin dengan menyebutkan hero dan skin yang ingin kamu request, atau jelaskan bug yang kamu temukan secara detail biar cepat diproses.'
+      desc: 'Klik tombol "Request via Telegram", lalu kirim pesan ke admin dengan menyebutkan hero dan skin yang ingin kamu request, atau jelaskan bug yang kamu temukan secara detail biar cepat diproses.',
+      img: ''
     }
   };
   function kzOpenRequestTooltip(type){
@@ -84,6 +87,10 @@
     if(!data) return;
     document.getElementById('kz-request-tooltip-title').textContent = data.title;
     document.getElementById('kz-request-tooltip-desc').textContent = data.desc;
+    var imgEl = document.getElementById('kz-request-tooltip-img');
+    var imgWrap = imgEl.closest('.kz-tooltip-imgwrap');
+    if(data.img){ imgEl.src = data.img; imgWrap.style.display = 'block'; }
+    else { imgEl.removeAttribute('src'); imgWrap.style.display = 'none'; }
     var overlay = document.getElementById('kz-request-tooltip-overlay');
     overlay.style.display = 'flex';
     requestAnimationFrame(function(){ overlay.classList.add('open'); });
