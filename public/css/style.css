@@ -188,6 +188,9 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-card-date-wrap{text-align:center;font-size:10px;font-weight:500;color:#a1a1aa;font-family:'Manrope',sans-serif}
 .kz-card-views{display:flex;align-items:center;justify-content:center;gap:4px;font-size:10px;font-weight:600;color:#a1a1aa;font-family:'Manrope',sans-serif}
 .kz-card-views svg{width:11px;height:11px;flex-shrink:0;opacity:.7}
+.kz-card-pills{display:flex;align-items:center;justify-content:center;gap:6px}
+.kz-card-pill{display:inline-flex;align-items:center;flex-shrink:0;white-space:nowrap;gap:4px;padding:3px 9px;border-radius:9999px;background:rgba(0,0,0,.045);font-size:10px;font-weight:600;color:#a1a1aa;font-family:'Manrope',sans-serif;line-height:1}
+.kz-card-pill svg{width:11px;height:11px;flex-shrink:0;opacity:.7}
 .kz-card-dl-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;height:28px;padding:0 10px;border-radius:9999px;background:transparent;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#666;pointer-events:none;border:1.5px solid rgba(0,0,0,0.12);gap:5px;white-space:nowrap;width:100%;letter-spacing:0.2px}
 .kz-card-dl-btn-icon{display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:9999px;background:rgba(0,0,0,0.06);margin-right:-2px;flex-shrink:0}
 

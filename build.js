@@ -10,6 +10,9 @@ const SRC_DIR = path.join(__dirname, 'public');
 const OUT_DIR = path.join(__dirname, 'dist');
 const PARTIALS_DIR = path.join(SRC_DIR, 'partials');
 
+/* Desain card script dipusatkan di public/js/card-template.js (dipakai juga oleh browser lewat window.kzCard) */
+const { kzBuildCard } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
+
 const INCLUDE_RE = /<!--\s*include:([\w.-]+)\s*-->/g;
 
 function readPartial(name) {
@@ -18,10 +21,6 @@ function readPartial(name) {
     throw new Error('Partial tidak ditemukan: ' + partialPath);
   }
   return fs.readFileSync(partialPath, 'utf8');
-}
-
-function viewSlugFromUrl(url) {
-  return (url || '').replace(/^.*\/post\//, '').replace(/\.html$/, '').replace(/\/+$/, '');
 }
 
 function processHtml(content) {
@@ -79,33 +78,6 @@ function escHtml(s) {
   return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function buildPostCardHtml(p) {
-  const title = escHtml(p.title || 'Tanpa Judul');
-  const thumb = p.thumb;
-  const label = p.cat;
-  const auth = p.author || 'Henz Official';
-  const ava = p.avatar || 'https://i.ibb.co/nstjBcMd/avatar.jpg';
-  const imgH = thumb
-    ? `<img class="kz-card-img" src="${thumb}" alt="${title}" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML='&lt;div class=&quot;kz-card-no-img&quot;&gt;No Image&lt;/div&gt;'">`
-    : `<div class="kz-card-no-img">No Image</div>`;
-  return `<a class="kz-card" href="${p.url}">`
-    + `<div class="kz-card-img-wrap">${imgH}</div>`
-    + `<div class="kz-card-body">`
-    + (label ? `<p class="kz-card-label">${escHtml(label)}</p>` : '')
-    + `<h3 class="kz-card-title" title="${title}">${title}</h3>`
-    + `<div class="kz-card-divider"></div>`
-    + `<div class="kz-card-meta">`
-    + `<div class="kz-card-author">`
-    + `<img class="kz-card-avatar" src="${ava}" alt="${escHtml(auth)}" onerror="this.style.background='#e4e4e7';this.removeAttribute('src')">`
-    + `<span class="kz-card-author-name">${escHtml(auth)}</span>`
-    + `</div>`
-    + `<span class="kz-card-dl-btn">Download`
-    + `<span class="kz-card-dl-btn-icon"><svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M15.9959 10.0005L3 10.0005" stroke="currentColor" stroke-width="2"/><path d="M9.73389 16.3179L15.6318 9.99866L9.73389 3.67945" stroke="currentColor" stroke-width="2"/></svg></span>`
-    + `</span>`
-    + `<p class="kz-card-views" data-view-id="${p.id}" data-view-slug="${viewSlugFromUrl(p.url)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>`
-    + `</div></div></a>`;
-}
-
 function generateHeroPages() {
   const heroesPath = path.join(SRC_DIR, 'js', 'heroes.json');
   const postsPath = path.join(SRC_DIR, 'js', 'posts.json');
@@ -137,7 +109,7 @@ function generateHeroPages() {
     if (!slug) return;
     const matched = postsByFirstWord[(h.name || '').toLowerCase()] || [];
     const postsHtml = matched.length
-      ? matched.map(buildPostCardHtml).join('\n')
+      ? matched.map(kzBuildCard).join('\n')
       : '<div class="kz-cp-empty">Belum ada modifikasi untuk hero ini.</div>';
 
     let html = template
@@ -194,7 +166,7 @@ function generateCategoryPages() {
     if (!slug) return;
     const matched = postsByCat[catName];
     const postsHtml = matched.length
-      ? matched.map(buildPostCardHtml).join('\n')
+      ? matched.map(kzBuildCard).join('\n')
       : '<div class="kz-cp-empty">Belum ada script untuk kategori ini.</div>';
     const initial = catName.trim().charAt(0).toUpperCase();
     const avatarHtml = buildCategoryAvatarHtml(catName, initial, CATEGORY_LOGOS);
@@ -213,7 +185,7 @@ function generateCategoryPages() {
   // Halaman "Semua" — seluruh post lintas kategori (dikecualikan cat internal)
   const allMatched = posts.filter((p) => !p.cat || EXCLUDED_CATS.indexOf(p.cat) === -1);
   const allPostsHtml = allMatched.length
-    ? allMatched.map(buildPostCardHtml).join('\n')
+    ? allMatched.map(kzBuildCard).join('\n')
     : '<div class="kz-cp-empty">Belum ada script.</div>';
   let allHtml = template
     .split('{{CATEGORY_NAME}}').join('Semua')

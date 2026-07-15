@@ -229,59 +229,11 @@ function kzFetchPosts(cb){
     .catch(function(){cb([]);});
 }
 
-/* Build slider card */
+/* Build slider card — desain card dipusatkan di /js/card-template.js (window.kzCard) */
 function kzBuildSlide(e){
-  var thumb=e.thumb,label=e.cat,url=e.url,
-    title=e.title||'Tanpa Judul',date=e.date||'',auth=e.author||'Henz Official',
-    ava=e.avatar||'https://i.ibb.co/nstjBcMd/avatar.jpg',
-    esc=title.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  var imgH=thumb
-    ?'<img class="kz-card-img" src="'+thumb+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\'<div class=&quot;kz-card-no-img&quot;>No Image</div>\'">'
-    :'<div class="kz-card-no-img">No Image</div>';
-  return '<div class="swiper-slide" style="height:auto">'
-    +'<a class="kz-card" href="'+url+'">'
-    +'<div class="kz-card-img-wrap">'+imgH+'</div>'
-    +'<div class="kz-card-body">'
-    +(label?'<p class="kz-card-label">'+label+'</p>':'')
-    +'<h3 class="kz-card-title" title="'+esc+'">'+esc+'</h3>'
-    +'<div class="kz-card-divider"></div>'
-    +'<div class="kz-card-meta">'
-    +'<div class="kz-card-author">'
-    +'<img class="kz-card-avatar" src="'+ava+'" alt="'+auth+'" onerror="this.style.background=\'#e4e4e7\';this.removeAttribute(\'src\')">'
-    +'<span class="kz-card-author-name">'+auth+'</span>'
-    +'</div>'
-    +'<div class="kz-card-date-wrap"><p>'+date+'</p></div>'
-    +'<p class="kz-card-views" data-view-id="'+e.id+'" data-view-slug="'+kzSlugFromUrl(e.url)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>'
-    +'</div></div></a></div>';
+  return '<div class="swiper-slide" style="height:auto">'+window.kzCard.kzBuildCard(e)+'</div>';
 }
 
-/* Build category card */
-function kzBuildCatCard(e){
-  var thumb=e.thumb,label=e.cat,url=e.url,
-    title=e.title||'Tanpa Judul',auth=e.author||'Henz Official',
-    ava=e.avatar||'https://i.ibb.co/nstjBcMd/avatar.jpg',
-    esc=title.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  var imgH=thumb
-    ?'<img class="kz-card-img" src="'+thumb+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\'<div class=&quot;kz-card-no-img&quot;>No Image</div>\'">'
-    :'<div class="kz-card-no-img">No Image</div>';
-  return '<a class="kz-card" href="'+url+'">'
-    +'<div class="kz-card-img-wrap">'+imgH+'</div>'
-    +'<div class="kz-card-body">'
-    +(label?'<p class="kz-card-label">'+label+'</p>':'')
-    +'<h3 class="kz-card-title" title="'+esc+'">'+esc+'</h3>'
-    +'<div class="kz-card-divider"></div>'
-    +'<div class="kz-card-meta">'
-    +'<div class="kz-card-author">'
-    +'<img class="kz-card-avatar" src="'+ava+'" alt="'+auth+'" onerror="this.style.background=\'#e4e4e7\';this.removeAttribute(\'src\')">'
-    +'<span class="kz-card-author-name">'+auth+'</span>'
-    +'</div>'
-    +'<span class="kz-card-dl-btn">Download'
-    +'<span class="kz-card-dl-btn-icon">'
-    +'<svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M15.9959 10.0005L3 10.0005" stroke="currentColor" stroke-width="2"/><path d="M9.73389 16.3179L15.6318 9.99866L9.73389 3.67945" stroke="currentColor" stroke-width="2"/></svg>'
-    +'</span></span>'
-    +'<p class="kz-card-views" data-view-id="'+e.id+'" data-view-slug="'+kzSlugFromUrl(e.url)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>&ndash;</span></p>'
-    +'</div></div></a>';
-}
 
 /* Init Swiper */
 function kzInitSwiper(id){
@@ -319,14 +271,7 @@ if(seg&&pill){
   });});
 }
 
-/* View Count */
-function kzSlugFromUrl(url){
-  return (url||'').replace(/^.*\/post\//,'').replace(/\.html$/,'').replace(/\/+$/,'');
-}
-function kzFormatViewCount(n){
-  n=parseInt(n,10)||0;
-  return n.toLocaleString('id-ID')+'x dilihat';
-}
+/* View Count — kzSlugFromUrl & kzFormatViewCount sekarang dari window.kzCard (card-template.js) */
 function kzLoadViewCounts(root){
   var scope=root||document;
   var els=scope.querySelectorAll('[data-view-id]');
@@ -345,7 +290,7 @@ function kzLoadViewCounts(root){
       els.forEach(function(el){
         var id=el.getAttribute('data-view-id');
         var span=el.querySelector('[data-view-count]');
-        if(span)span.textContent=kzFormatViewCount(views[id]||0);
+        if(span)span.textContent=window.kzCard.kzFormatViewCount(views[id]||0);
       });
     })
     .catch(function(){});
@@ -358,7 +303,7 @@ if(document.body.classList.contains('page-post')){
     var path=window.location.pathname.replace(/\/+$/,'');
     var current=posts.filter(function(p){return (p.url||'').replace(/\/+$/,'')===path;})[0];
     if(!current||!current.id)return;
-    var slug=kzSlugFromUrl(current.url);
+    var slug=window.kzCard.kzSlugFromUrl(current.url);
     var flagKey='kz_viewed_'+current.id;
     if(sessionStorage.getItem(flagKey))return;
     fetch('/api/view',{
@@ -390,7 +335,7 @@ if(document.getElementById('kz-swiper-latest')){
       });});
     }
 
-    var items=posts.map(function(p){return p.id+':'+kzSlugFromUrl(p.url);});
+    var items=posts.map(function(p){return p.id+':'+window.kzCard.kzSlugFromUrl(p.url);});
     fetch('/api/view?items='+encodeURIComponent(items.join(',')))
       .then(function(r){return r.json();})
       .then(function(data){
@@ -529,7 +474,7 @@ if(document.getElementById('kz-search-heading')){
       if(svGrid){
         svGrid.innerHTML='';
         results.forEach(function(e){
-          var tmp=document.createElement('div');tmp.innerHTML=kzBuildCatCard(e);
+          var tmp=document.createElement('div');tmp.innerHTML=window.kzCard.kzBuildCard(e);
           var cardEl=tmp.querySelector('.kz-card');if(cardEl)svGrid.appendChild(cardEl);
         });
         kzLoadViewCounts();
