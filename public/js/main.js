@@ -518,7 +518,11 @@ if(document.getElementById('kz-search-heading')){
   if(!qVal){if(svGrid)svGrid.innerHTML='<div class="kz-cp-empty">Masukkan kata kunci pencarian.</div>';}
   else{
     kzFetchPosts(function(posts){
-      var results=posts.filter(function(e){return(e.title||'').toLowerCase().indexOf(qLower)!==-1;});
+      var qWords=qLower.split(/\s+/).filter(Boolean);
+      var results=posts.filter(function(e){
+        var haystack=((e.title||'')+' '+(e.cat||'')).toLowerCase();
+        return qWords.every(function(w){return haystack.indexOf(w)!==-1;});
+      });
       var countEl=document.getElementById('kz-sh-count');
       if(!results.length){if(countEl)countEl.style.display='none';if(svGrid)svGrid.innerHTML=kzBuildSearchEmpty(qVal);return;}
       if(countEl){countEl.style.display='block';countEl.textContent='Menemukan '+results.length+' script yang sesuai.';}
