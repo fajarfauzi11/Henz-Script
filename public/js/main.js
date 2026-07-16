@@ -421,6 +421,68 @@ function kzCatRenderTabs(){
 function kzSvEsc(s){
   return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+
+/* Fuzzy match — "did you mean" buat search kosong.
+   Levenshtein distance dinormalisasi jadi skor kemiripan 0..1 (1 = identik). */
+function kzLevenshtein(a,b){
+  a=a||'';b=b||'';
+  var m=a.length,n=b.length;
+  if(!m)return n;
+  if(!n)return m;
+  var prev=[];for(var j=0;j<=n;j++)prev[j]=j;
+  for(var i=1;i<=m;i++){
+    var cur=[i];
+    for(var j=1;j<=n;j++){
+      var cost=a.charAt(i-1)===b.charAt(j-1)?0:1;
+      cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+cost);
+    }
+    prev=cur;
+  }
+  return prev[n];
+}
+function kzSimilarity(a,b){
+  a=(a||'').toLowerCase().trim();b=(b||'').toLowerCase().trim();
+  if(!a||!b)return 0;
+  var maxLen=Math.max(a.length,b.length);
+  return 1-(kzLevenshtein(a,b)/maxLen);
+}
+
+/* Gabung kandidat hero + kategori, ranking murni berdasar skor kemiripan ke kata kunci.
+   Kalau kandidat yang lolos ambang batas kurang dari 3, sisanya ditambal pill populer (fallback). */
+var KZ_SUGGEST_THRESHOLD=0.5;
+function kzBuildSuggestions(qVal,callback){
+  Promise.all([
+    fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
+    fetch('/js/categories.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {};}),
+    fetch('/js/hero-popular.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];})
+  ]).then(function(res){
+    var heroes=res[0]||[],cats=res[1]||{},popular=res[2]||[];
+    var q=(qVal||'').toLowerCase().trim();
+    var pool=[];
+    heroes.forEach(function(h){
+      if(h&&h.name)pool.push({label:h.name,href:'/search?q='+encodeURIComponent(h.name),score:kzSimilarity(q,h.name)});
+    });
+    Object.keys(cats).forEach(function(catName){
+      pool.push({label:catName,href:'/kategori/'+kzDhSlugify(catName),score:kzSimilarity(q,catName)});
+    });
+    pool.sort(function(a,b){return b.score-a.score;});
+    var picked=[],seen={};
+    pool.forEach(function(item){
+      if(picked.length>=3||item.score<KZ_SUGGEST_THRESHOLD||seen[item.label])return;
+      seen[item.label]=1;
+      picked.push(item);
+    });
+    if(picked.length<3){
+      popular.forEach(function(name){
+        if(picked.length>=3||seen[name])return;
+        seen[name]=1;
+        picked.push({label:name,href:'/search?q='+encodeURIComponent(name)});
+      });
+    }
+    callback(picked.slice(0,3));
+  }).catch(function(){callback([]);});
+}
+
 function kzBuildSearchEmpty(qVal){
   var esc=kzSvEsc(qVal);
   var html='<div class="kz-sv-empty">'
@@ -437,16 +499,13 @@ function kzBuildSearchEmpty(qVal){
     +'<a class="kz-sv-empty-cta" href="/scriptrequest">Request script ini'
     +'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
     +'</a></div>';
-  fetch('/js/hero-popular.json?t='+Date.now())
-    .then(function(r){return r.json();})
-    .then(function(list){
-      var tipsEl=document.getElementById('kz-sv-empty-tips');
-      if(!tipsEl||!Array.isArray(list))return;
-      tipsEl.innerHTML=list.slice(0,3).map(function(name){
-        return '<a class="kz-sv-empty-tip" href="/search?q='+encodeURIComponent(name)+'">'+kzSvEsc(name)+'</a>';
-      }).join('');
-    })
-    .catch(function(){});
+  kzBuildSuggestions(qVal,function(picked){
+    var tipsEl=document.getElementById('kz-sv-empty-tips');
+    if(!tipsEl)return;
+    tipsEl.innerHTML=picked.map(function(item){
+      return '<a class="kz-sv-empty-tip" href="'+item.href+'">'+kzSvEsc(item.label)+'</a>';
+    }).join('');
+  });
   return html;
 }
 if(document.getElementById('kz-search-heading')){
