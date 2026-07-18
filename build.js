@@ -302,7 +302,7 @@ function kzBuildTooltipDescHtml(text) {
   const before = text.substring(0, idx);
   const label = text.substr(idx, 'disclaimer'.length);
   const rest = text.substring(idx + 'disclaimer'.length).replace(/^[:\s]+/, '');
-  return escHtml(before) + '<span class="kz-tooltip-disclaimer"><strong>' + escHtml(label) + ' :</strong> <em>' + escHtml(rest) + '</em></span>';
+  return escHtml(before) + '<span class="kz-post-tooltip-disclaimer"><strong>' + escHtml(label) + ' :</strong> <em>' + escHtml(rest) + '</em></span>';
 }
 
 /* Rotasi warna untuk blok skill dinamis (di antara Skill 2 dan Ultimate) — identik dengan tool */
@@ -514,6 +514,15 @@ function generatePostPages() {
   const templatePath = path.join(PARTIALS_DIR, 'post-template.html');
   const template = fs.readFileSync(templatePath, 'utf8');
 
+  // Cross-reference ke posts.json biar view count pakai id yang SAMA persis dengan
+  // yang dipakai main.js buat nge-increment (lihat public/js/main.js: page-post block)
+  const postsJsonPath = path.join(SRC_DIR, 'js', 'posts.json');
+  const postsIndexByUrl = {};
+  if (fs.existsSync(postsJsonPath)) {
+    const postsIndex = JSON.parse(fs.readFileSync(postsJsonPath, 'utf8'));
+    postsIndex.forEach((p) => { if (p.url) postsIndexByUrl[p.url] = p; });
+  }
+
   const files = fs.readdirSync(dataDir).filter((f) => f.endsWith('.json'));
   files.forEach((fname) => {
     const slug = fname.replace(/\.json$/, '');
@@ -527,6 +536,11 @@ function generatePostPages() {
     const tooltipLogo = data.tooltipLogo || {};
     const tooltipDlTab = data.tooltipDlTab || {};
     const postUrl = '/post/' + slug;
+    const postsEntry = postsIndexByUrl[postUrl];
+    const viewId = postsEntry && postsEntry.id != null ? String(postsEntry.id) : slug;
+    if (!postsEntry) {
+      console.log('  \u26a0 "' + slug + '" belum ada di posts.json — view count sementara pakai slug sebagai id.');
+    }
 
     let html = template
       .split('{{NAMEHERO}}').join(escHtml(namehero))
@@ -545,6 +559,8 @@ function generatePostPages() {
       .split('{{DLTAB_TOOLTIP_TITLE}}').join(escHtml(tooltipDlTab.title || 'Apa itu Tab 1 & Tab 2?'))
       .split('{{DLTAB_TOOLTIP_DESC}}').join(kzBuildTooltipDescHtml(tooltipDlTab.desc || ''))
       .split('{{DLTAB_TOOLTIP_IMG}}').join(tooltipDlTab.img || '')
+      .split('{{VIEW_ID}}').join(escHtml(viewId))
+      .split('{{VIEW_SLUG}}').join(escHtml(slug))
       .split('{{CANONICAL_URL}}').join(absoluteUrl(postUrl));
 
     html = kzApplySoonFallback(html);

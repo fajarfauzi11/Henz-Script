@@ -277,7 +277,7 @@
   }
 
   /* ── TOOLTIP "APA ITU LOGO?" ── */
-  .kz-tooltip-overlay {
+  .kz-post-tooltip-overlay {
     position: fixed;
     inset: 0;
     z-index: 9999;
@@ -289,8 +289,8 @@
     opacity: 0;
     transition: opacity .18s ease;
   }
-  .kz-tooltip-overlay.open { opacity: 1; }
-  .kz-tooltip-box {
+  .kz-post-tooltip-overlay.open { opacity: 1; }
+  .kz-post-tooltip-box {
     width: 100%;
     max-width: 340px;
     background: #fff;
@@ -302,24 +302,24 @@
     opacity: 0;
     transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s ease;
   }
-  .kz-tooltip-overlay.open .kz-tooltip-box {
+  .kz-post-tooltip-overlay.open .kz-post-tooltip-box {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
-  .kz-tooltip-head {
+  .kz-post-tooltip-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     padding: 20px 20px 0;
   }
-  .kz-tooltip-head span {
+  .kz-post-tooltip-head span {
     font-family: 'Manrope', sans-serif;
     font-size: 19px;
     font-weight: 800;
     color: #111;
   }
-  .kz-tooltip-close {
+  .kz-post-tooltip-close {
     background: none;
     border: none;
     cursor: pointer;
@@ -330,17 +330,17 @@
     flex-shrink: 0;
     transition: background .15s, color .15s;
   }
-  .kz-tooltip-close:hover {
+  .kz-post-tooltip-close:hover {
     background: #f0f0f0;
     color: #111;
   }
-  .kz-tooltip-hr {
+  .kz-post-tooltip-hr {
     height: 1px;
     background: #efefef;
     border: none;
     margin: 14px 20px 0;
   }
-  .kz-tooltip-desc {
+  .kz-post-tooltip-desc {
     font-family: 'Manrope', sans-serif;
     font-size: 12.5px;
     color: #717171;
@@ -350,23 +350,23 @@
     padding: 12px 20px 0;
     margin: 0;
   }
-  .kz-tooltip-desc em {
+  .kz-post-tooltip-desc em {
     font-style: italic;
   }
-  .kz-tooltip-disclaimer {
+  .kz-post-tooltip-disclaimer {
     display: block;
   }
-  .kz-tooltip-disclaimer strong {
+  .kz-post-tooltip-disclaimer strong {
     font-style: italic;
   }
-  .kz-tooltip-imgwrap {
+  .kz-post-tooltip-imgwrap {
     margin-top: 16px;
     width: 100%;
     aspect-ratio: 1 / 1;
     background: #ececec;
     overflow: hidden;
   }
-  .kz-tooltip-imgwrap img {
+  .kz-post-tooltip-imgwrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -440,6 +440,12 @@
           <span style="display:inline-flex;align-items:center;gap:5px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="5"/><path d="M7 13h0M17 13h0"/><path d="M10 11v4M8 13h4"/><circle cx="17" cy="13" r=".5" fill="currentColor"/></svg>
             {{AUTHORNAME}}
+          </span>
+
+          <!-- View count — otomatis diisi JS dari /api/view (lihat main.js: kzLoadViewCounts) -->
+          <span style="display:inline-flex;align-items:center;gap:5px;" data-view-id="{{VIEW_ID}}" data-view-slug="{{VIEW_SLUG}}">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span data-view-count>&ndash;</span>
           </span>
 
         </div>
@@ -649,32 +655,32 @@
   <!-- END [B2] CARD PUTIH -->
 
   <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
-  <div id="kz-logo-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
+  <div id="kz-logo-tooltip-overlay" class="kz-post-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
+    <div class="kz-post-tooltip-box" onclick="event.stopPropagation()">
+      <div class="kz-post-tooltip-head">
         <span>{{LOGO_TOOLTIP_TITLE}}</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
+        <button type="button" class="kz-post-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc">{{LOGO_TOOLTIP_DESC}}</p>
-      <div class="kz-tooltip-imgwrap"><img src="{{LOGO_TOOLTIP_IMG}}" alt="Contoh Logo"/></div>
+      <hr class="kz-post-tooltip-hr"/>
+      <p class="kz-post-tooltip-desc">{{LOGO_TOOLTIP_DESC}}</p>
+      <div class="kz-post-tooltip-imgwrap"><img src="{{LOGO_TOOLTIP_IMG}}" alt="Contoh Logo"/></div>
     </div>
   </div>
 
   <!-- TOOLTIP "APA ITU TAB 1 & TAB 2?" — konten diisi dari editor -->
-  <div id="kz-dltab-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
+  <div id="kz-dltab-tooltip-overlay" class="kz-post-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
+    <div class="kz-post-tooltip-box" onclick="event.stopPropagation()">
+      <div class="kz-post-tooltip-head">
         <span>{{DLTAB_TOOLTIP_TITLE}}</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
+        <button type="button" class="kz-post-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc">{{DLTAB_TOOLTIP_DESC}}</p>
-      <div class="kz-tooltip-imgwrap"><img src="{{DLTAB_TOOLTIP_IMG}}" alt="Contoh Tab"/></div>
+      <hr class="kz-post-tooltip-hr"/>
+      <p class="kz-post-tooltip-desc">{{DLTAB_TOOLTIP_DESC}}</p>
+      <div class="kz-post-tooltip-imgwrap"><img src="{{DLTAB_TOOLTIP_IMG}}" alt="Contoh Tab"/></div>
     </div>
   </div>
 
