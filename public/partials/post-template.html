@@ -23,7 +23,7 @@
 </head>
 <body class="page-post item-view">
 <!-- include:header.html -->
-<div class="kazeo-page" style="padding-left:16px;padding-right:16px;padding-top:96px;">
+<div class="kazeo-page" style="padding-left:16px;padding-right:16px;padding-top:90px;">
 <main class="kazeo-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
 <!--
 =================================================================
@@ -577,7 +577,7 @@
           </div>
           <div style="flex:1;min-width:0;">
             <span style="display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;color:#b91c1c;margin-bottom:2px;">Lapor Bug:</span>
-            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#7f1d1d;line-height:1.7;">Jika ada kerusakan efek atau bug pada script, bisa laporkan ke admin lewat <a href="/request-script" style="color:#b91c1c;text-decoration:underline;font-weight:700;">halaman Request Script</a> (WhatsApp/Telegram).</span>
+            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#7f1d1d;line-height:1.7;">Jika ada kerusakan efek atau bug pada script, bisa laporkan ke admin <a href="/request-script" style="color:#b91c1c;text-decoration:underline;font-weight:700;">di sini</a>.</span>
           </div>
         </div>
 
@@ -703,9 +703,9 @@
 function kzResponsive(){
   var w = window.innerWidth;
 
-  /* kazeo-page padding-top: 76px mobile, 124px desktop */
+  /* kazeo-page padding-top: 90px (seragam mobile & desktop) */
   var kazeoPage = document.querySelector('.kazeo-page');
-  if(kazeoPage) kazeoPage.style.paddingTop = w <= 768 ? '76px' : '96px';
+  if(kazeoPage) kazeoPage.style.paddingTop = '90px';
 
   /* Hero height */
   var hero = document.getElementById('kz-hero');
