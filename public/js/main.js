@@ -409,9 +409,9 @@ if(document.getElementById('kz-category-page')){
 function kzCatRenderTabs(){
   var cont=document.getElementById('kz-cp-tabs');
   if(!cont)return;
-  var html='<a class="kz-cp-tab" href="/kategori/semua">Semua</a>';
+  var html='<a class="kz-cp-tab" href="/kategori-skin/semua">Semua</a>';
   kzCatState.labels.forEach(function(l){
-    var href='/kategori/'+kzDhSlugify(l.name);
+    var href='/kategori-skin/'+kzDhSlugify(l.name);
     html+='<a class="kz-cp-tab" href="'+href+'">'+l.name+'</a>';
   });
   cont.innerHTML=html;
@@ -463,7 +463,7 @@ function kzBuildSuggestions(qVal,callback){
       if(h&&h.name)pool.push({label:h.name,href:'/search?q='+encodeURIComponent(h.name),score:kzSimilarity(q,h.name)});
     });
     Object.keys(cats).forEach(function(catName){
-      pool.push({label:catName,href:'/kategori/'+kzDhSlugify(catName),score:kzSimilarity(q,catName)});
+      pool.push({label:catName,href:'/kategori-skin/'+kzDhSlugify(catName),score:kzSimilarity(q,catName)});
     });
     pool.sort(function(a,b){return b.score-a.score;});
     var picked=[],seen={};
@@ -496,7 +496,7 @@ function kzBuildSearchEmpty(qVal){
     +'<div class="kz-sv-empty-title">Script tidak ditemukan</div>'
     +'<p class="kz-sv-empty-sub">Kami tidak menemukan script untuk kata kunci <b>&ldquo;'+esc+'&rdquo;</b>. Coba periksa kembali ejaannya atau gunakan kata kunci lain.</p>'
     +'<div class="kz-sv-empty-tips" id="kz-sv-empty-tips"></div>'
-    +'<a class="kz-sv-empty-cta" href="/scriptrequest">Request script ini'
+    +'<a class="kz-sv-empty-cta" href="/request-script">Request script ini'
     +'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
     +'</a></div>';
   kzBuildSuggestions(qVal,function(picked){

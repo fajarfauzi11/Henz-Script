@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Kategori {{CATEGORY_NAME}} — Henz MLBB</title>
-<meta name="description" content="Kumpulan script dan modifikasi Mobile Legends untuk kategori {{CATEGORY_NAME}}."/>
-<link rel="canonical" href="{{CANONICAL_URL}}"/>
+<title>Kategori Skin — Henz MLBB</title>
+<meta name="description" content="Temukan script skin Mobile Legends berdasarkan kategori skin seperti Aspirants, Neobeasts, dan Street Fighter di Henz MLBB."/>
+<link rel="canonical" href="https://www.henzscript.my.id/kategori-skin"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
@@ -15,35 +15,22 @@
 <link rel="icon" type="image/webp" href="/favicon.webp"/>
 <link rel="apple-touch-icon" href="/favicon.png"/>
 </head>
-<body class="page-hero">
+<body class="page-category">
 <!-- include:header.html -->
 <div class="kazeo-page">
 <main class="kazeo-main-content" id="main" role="main">
 
-<div class="kz-dh-page kz-cath-page">
-
-<a class="kz-cath-back" href="/kategori-skin" onclick="history.back();return false;">&#8592; Halaman Sebelumnya</a>
-
-<div class="kz-cath-card">
-  <div class="kz-cath-content">
-    <div class="kz-cath-info">
-      <span class="kz-cath-role-badge">KATEGORI</span>
-      <div class="kz-cath-name">{{CATEGORY_NAME}}</div>
-      <div class="kz-cath-count">{{POST_COUNT}} script tersedia</div>
+<div id="kz-category-page">
+  <div class="kz-cp-wrap">
+    <div class="kz-cp-hero">
+      <h1 class="kz-cp-hero-title">Kategori <em>Skin</em></h1>
+      <p class="kz-cp-hero-sub">Temukan script yang kamu cari berdasarkan kategori skin favorit kamu.</p>
     </div>
-    <div class="kz-cath-avatar-wrap">{{CATEGORY_AVATAR}}</div>
+    <div class="kz-cp-tabs-wrap">
+      <div class="kz-cp-tabs" id="kz-cp-tabs"></div>
+    </div>
   </div>
 </div>
-
-<div class="kz-cath-section-title">Koleksi Script</div>
-<div class="kz-cath-divider"></div>
-
-<div class="kz-cp-grid" style="max-width:1080px;margin:0 auto;">
-{{POSTS_HTML}}
-</div>
-
-</div>
-
 </main>
 </div>
 <!-- include:footer.html -->

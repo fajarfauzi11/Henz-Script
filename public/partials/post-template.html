@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Fanny Aspirant</title>
+<title>{{NAMEHERO}}</title>
+<link rel="canonical" href="{{CANONICAL_URL}}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Henz MLBB"/>
+<meta property="og:title" content="{{NAMEHERO}} — Henz MLBB"/>
+<meta property="og:description" content="Download script skin {{NAMEHERO}} terbaru dari Henz MLBB, mudah dipasang dan selalu update."/>
+<meta property="og:url" content="{{CANONICAL_URL}}"/>
+<meta property="og:image" content="{{URLTHUMBNAIL}}"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="icon" type="image/png" href="/favicon.png"/>
 <link rel="icon" type="image/webp" href="/favicon.webp"/>
 <link rel="apple-touch-icon" href="/favicon.png"/>
@@ -50,7 +58,7 @@
 -->
 
 <link href='https://i.ibb.co' rel='preconnect'/>
-<link as='image' fetchpriority='high' href='https://i.ibb.co/wXDbnhF/2a00f65a7bbc.webp' rel='preload'/>
+<link as='image' fetchpriority='high' href='{{URLTHUMBNAIL}}' rel='preload'/>
 <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap' media='print' onload="this.media='all'" rel='stylesheet'/>
 <noscript><link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap' rel='stylesheet'/></noscript>
 
@@ -398,8 +406,8 @@
       <!-- ✏️ EDIT: Ganti src="" di bawah ini dengan URL gambar hero kamu -->
       <!-- ✏️ EDIT: Ganti juga href pada <link rel="preload"> di bagian atas dengan URL yang sama -->
       <img
-        src="https://i.ibb.co/wXDbnhF/2a00f65a7bbc.webp"
-        alt="Fanny Aspirant"
+        src="{{URLTHUMBNAIL}}"
+        alt="{{NAMEHERO}}"
         fetchpriority="high"
         decoding="async"
         style="width:100%;height:100%;object-fit:cover;display:block;"
@@ -412,12 +420,12 @@
       <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
-        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">Aspirants</span>
+        <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">{{KATEGORISKIN}}</span>
 
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
              ✏️ EDIT: Ganti teks fallback jika perlu -->
-        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Fanny Aspirant</div>
+        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">{{NAMEHERO}}</div>
 
         <!-- Info patch & brand -->
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);">
@@ -425,13 +433,13 @@
           <!-- ✏️ EDIT: Ganti angka patch (contoh: 1.9.44) -->
           <span style="display:inline-flex;align-items:center;gap:5px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Update 25 Juni 2026
+            {{DATEPOST}}
           </span>
 
           <!-- Nama brand — ubah jika perlu -->
           <span style="display:inline-flex;align-items:center;gap:5px;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="5"/><path d="M7 13h0M17 13h0"/><path d="M10 11v4M8 13h4"/><circle cx="17" cy="13" r=".5" fill="currentColor"/></svg>
-            Henz MLBB
+            {{AUTHORNAME}}
           </span>
 
         </div>
@@ -457,27 +465,11 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou adalah seorang ahli bela diri berbakat yang lahir dan dibesarkan di kawasan kumuh yang terpencil. Meskipun hidup dalam kemiskinan dan kondisi yang sulit, ia tetap memiliki hati yang baik. Setiap hari, Chou membantu serta menjaga orang-orang tua dan anak-anak di lingkungannya, menjadikannya sosok yang dihormati oleh penduduk sekitar.
-
-Pada saat itu, Land of Dawn sedang dilanda kekacauan dan konflik yang terus meluas. Kerusuhan yang terjadi di berbagai wilayah akhirnya mulai memengaruhi tempat tinggal Chou. Meski hidup sederhana, ia tidak tinggal diam saat melihat penderitaan orang lain.
-
-Suatu hari, Chou menyelamatkan seorang biksu misterius yang sedang dikejar oleh para pengejarnya. Ia membawa sang biksu ke permukimannya dan merawatnya hingga pulih. Sebagai balas budi, biksu tersebut mengajarkan Chou seni bela diri kuno dari Timur serta berbagai teknik Kung Fu yang luar biasa.
-
-Sebelum berpisah, sang biksu mengatakan bahwa dunia membutuhkan seorang pahlawan sejati untuk mengakhiri kekacauan yang melanda Land of Dawn. Kata-kata itu meninggalkan kesan mendalam dalam hati Chou dan memberinya tujuan hidup yang baru.
-
-Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi pahlawan sejati. Ia meninggalkan kampung halamannya tanpa menoleh ke belakang, sementara sang biksu misterius hanya mengangguk sebelum menghilang ke dalam bayang-bayang.</div>
+        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{SHORTSTORY}}</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">Chou adalah seorang ahli bela diri berbakat yang lahir dan dibesarkan di kawasan kumuh yang terpencil. Meskipun hidup dalam kemiskinan dan kondisi yang sulit, ia tetap memiliki hati yang baik. Setiap hari, Chou membantu serta menjaga orang-orang tua dan anak-anak di lingkungannya, menjadikannya sosok yang dihormati oleh penduduk sekitar.
-
-Pada saat itu, Land of Dawn sedang dilanda kekacauan dan konflik yang terus meluas. Kerusuhan yang terjadi di berbagai wilayah akhirnya mulai memengaruhi tempat tinggal Chou. Meski hidup sederhana, ia tidak tinggal diam saat melihat penderitaan orang lain.
-
-Suatu hari, Chou menyelamatkan seorang biksu misterius yang sedang dikejar oleh para pengejarnya. Ia membawa sang biksu ke permukimannya dan merawatnya hingga pulih. Sebagai balas budi, biksu tersebut mengajarkan Chou seni bela diri kuno dari Timur serta berbagai teknik Kung Fu yang luar biasa.
-
-Sebelum berpisah, sang biksu mengatakan bahwa dunia membutuhkan seorang pahlawan sejati untuk mengakhiri kekacauan yang melanda Land of Dawn. Kata-kata itu meninggalkan kesan mendalam dalam hati Chou dan memberinya tujuan hidup yang baru.
-
-Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi pahlawan sejati. Ia meninggalkan kampung halamannya tanpa menoleh ke belakang, sementara sang biksu misterius hanya mengangguk sebelum menghilang ke dalam bayang-bayang.</div>
+        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">{{LONGSTORY}}</div>
         <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
@@ -531,25 +523,7 @@ Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi 
              diaktifkan jadi 2 varian lewat editor (segmented control
              kecil otomatis muncul di sebelah label kalau diaktifkan).
              ─────────────────────────────────────── -->
-        <div style="border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e53232;">Pasif</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Only_Fast.png" alt="Only Fast" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Only Fast</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e8f5e9;color:#2e7d32;">Buff</span>
-      </div>
-      <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</p>
-      <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">During fight, Fanny deals 10%–20% extra damage to enemies hit (scales with flying speed[speed unknown]) and applies a stack of Prey Mark to them (up to 2 stacks) on each attack. Her subsequent skill hits on marked enemy heroes restore 8 energy per stack for her. The energy restoration is reduced[amount unknown] if she hits multiple enemy heroes within a short period of time.[duration unknown]</div>
-      <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
+        {{AB_PASIF_INJECT}}
 
         <!-- ───────────────────────────────────────
              SKILL 1, 2, ULTIMATE
@@ -557,69 +531,7 @@ Dengan tekad yang kuat, Chou bersumpah untuk memulai perjalanannya demi menjadi 
              ─────────────────────────────────────── -->
         <div id="kz-ab-skills" style="display:none;">
 
-          <div style="border-top:1px solid #efefef;border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#1565c0;">Skill 1</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/4/48/Jeet_Kune_Do.png" alt="Jeet Kune Do" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Jeet Kune Do</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Mobility</span>
-      </div>
-      <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
-
-Mengenai hero musuh dengan penggunaan ke-3 akan mereset cooldown Shunpo.</p>
-      <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, memberikan 180 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Skill ini dapat digunakan 3 kali sebelum memasuki cooldown. Pada penggunaan ke-3, Chou juga membuat musuh yang terkena terlempar ke udara.
-
-Mengenai hero musuh dengan penggunaan ke-3 akan mereset cooldown Shunpo.</div>
-      <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<div style="border-bottom:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6a1b9a;">Skill 2</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/7/72/Shunpo.png" alt="Shunpo" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">Shunpo</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility</span>
-      </div>
-      <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</p>
-      <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang ke arah target, mendapatkan Kekebalan Kontrol dan perisai Kerusakan Fisik sebesar 200 (+200% Serangan Fisik Ekstra) .</div>
-      <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-<div style="border-top:1px solid #efefef;">
-  <div style="padding:10px 20px 0;"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#e65100;">Ultimate</span></div>
-  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">
-    <img src="https://static.wikia.nocookie.net/mobile-legends/images/6/65/The_Way_of_Dragon.png" alt="The Way of Dragon" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">
-        <span style="font-size:14px;font-weight:800;color:#111;font-family:'Manrope',sans-serif;">The Way of Dragon</span>
-        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">CC/Burst</span>
-      </div>
-      <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
-
-Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serangan Fisik Ekstra) Kerusakan Fisik .</p>
-      <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">Chou menyerang hero musuh target dengan tendangan berputar, memberikan 400 (+200% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong mereka mundur.
-
-Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serangan Fisik Ekstra) Kerusakan Fisik .</div>
-      <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-        <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
-        <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
+          {{AB_SKILLS_INJECT}}
 
         </div>
         <!-- END kz-ab-skills -->
@@ -665,7 +577,7 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
           </div>
           <div style="flex:1;min-width:0;">
             <span style="display:block;font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;color:#b91c1c;margin-bottom:2px;">Lapor Bug:</span>
-            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#7f1d1d;line-height:1.7;">Jika ada kerusakan efek atau bug pada script, bisa laporkan ke admin <a href="#" style="color:#b91c1c;text-decoration:underline;font-weight:700;">di sini</a>.</span>
+            <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:500;color:#7f1d1d;line-height:1.7;">Jika ada kerusakan efek atau bug pada script, bisa laporkan ke admin lewat <a href="/request-script" style="color:#b91c1c;text-decoration:underline;font-weight:700;">halaman Request Script</a> (WhatsApp/Telegram).</span>
           </div>
         </div>
 
@@ -722,92 +634,7 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
 
         <h2 style="font-size:20px;font-weight:800;color:#111;margin:0 0 18px;letter-spacing:-.2px;font-family:'Manrope',sans-serif;">Download Script</h2>
 
-        <div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">
-  <div style="overflow-x:auto;width:100%;">
-    <table style="width:100%;border-collapse:collapse;font-family:'Manrope',sans-serif;font-size:13px;">
-      <thead>
-        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>
-          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/4qluU649gzU" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span><button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png" alt="Hero261" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png" alt="Hero262" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/OsU4ax9ZbGs" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span><button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png" alt="Hero262" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Luckybox</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero263-icon.png" alt="Hero263" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero264-icon.png" alt="Hero264" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/vz37LlwH0Hy" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Special</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero265-icon.png" alt="Hero265" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/r7Z53JFSX8a" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">KOF</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero266-icon.png" alt="Hero266" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/fDXGkDPTXC7" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero267-icon.png" alt="Hero267" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/cRjn4lpFxMg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Dawning Star</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/16/Hero268-icon.png" alt="Hero268" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/wyCyTSnu7yN" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">S.T.U.N</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero269-icon.png" alt="Hero269" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/DjlnEHpbBug" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Dragon Shiryu</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/ad/Hero102610-icon.png" alt="Hero102610" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/maXyg4fE1xz" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="border-bottom:1px solid #f0f0f0;">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Libra Shiryu</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero102611-icon.png" alt="Hero102611" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/sz97BFro67Y" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-<tr style="">
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">ECHO</span></span></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero102612-icon.png" alt="Hero102612" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/FW929oECKbq" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
-</tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
+        {{DL_INJECT}}
 
       </div>
       <!-- END [D5] TABEL DOWNLOAD -->
@@ -825,16 +652,14 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
   <div id="kz-logo-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
     <div class="kz-tooltip-box" onclick="event.stopPropagation()">
       <div class="kz-tooltip-head">
-        <span>Apa itu Logo?</span>
+        <span>{{LOGO_TOOLTIP_TITLE}}</span>
         <button type="button" class="kz-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
       <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc">Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.
-
-<span class="kz-tooltip-disclaimer"><strong>Disclaimer :</strong> <em>Tag skin atau logo akan tetap terlihat di potret pada history gameplay.</em></span></p>
-      <div class="kz-tooltip-imgwrap"><img src="https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp" alt="Contoh Logo"/></div>
+      <p class="kz-tooltip-desc">{{LOGO_TOOLTIP_DESC}}</p>
+      <div class="kz-tooltip-imgwrap"><img src="{{LOGO_TOOLTIP_IMG}}" alt="Contoh Logo"/></div>
     </div>
   </div>
 
@@ -842,14 +667,14 @@ Gunakan skill ini lagi untuk mengejar target, memberikan total 480 (+220% Serang
   <div id="kz-dltab-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
     <div class="kz-tooltip-box" onclick="event.stopPropagation()">
       <div class="kz-tooltip-head">
-        <span>Apa itu Tab 1 &amp; Tab 2?</span>
+        <span>{{DLTAB_TOOLTIP_TITLE}}</span>
         <button type="button" class="kz-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
       <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc"></p>
-      <div class="kz-tooltip-imgwrap"><img src="" alt="Contoh Tab"/></div>
+      <p class="kz-tooltip-desc">{{DLTAB_TOOLTIP_DESC}}</p>
+      <div class="kz-tooltip-imgwrap"><img src="{{DLTAB_TOOLTIP_IMG}}" alt="Contoh Tab"/></div>
     </div>
   </div>
 
@@ -936,7 +761,7 @@ function kzAutoTitle(){
   var sep = -1;
   var pipeIdx = raw.lastIndexOf(' | ');
   var dashIdx = raw.lastIndexOf(' - ');
-  var emIdx   = raw.lastIndexOf(' – ');
+  var emIdx   = raw.lastIndexOf(' \u2013 ');
   if(pipeIdx !== -1) sep = pipeIdx;
   if(dashIdx !== -1 && dashIdx > sep) sep = dashIdx;
   if(emIdx   !== -1 && emIdx   > sep) sep = emIdx;
