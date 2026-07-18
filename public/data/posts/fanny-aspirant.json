@@ -1,0 +1,149 @@
+{
+  "namehero": "Fanny Aspirant",
+  "urlthumbnail": "https://i.ibb.co/wXDbnhF/2a00f65a7bbc.webp",
+  "kategoriskin": "Aspirants",
+  "datepost": "Update 18 Juli 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Fanny adalah putri bungsu keluarga Wertz dan adik dari Tigreal, salah satu kesatria paling dihormati di Moniyan Empire. Meski keluarganya telah mengabdi sebagai prajurit selama beberapa generasi, para wanita dilarang bergabung dengan militer. Sejak kecil, Fanny diarahkan untuk belajar seni lukis dan desain, tetapi ia lebih mengagumi Tigreal dan bercita-cita menjadi prajurit yang melindungi kekaisaran. Walaupun sering diajari teknik bertarung oleh kakaknya, Tigreal selalu menolak keinginannya bergabung dengan pasukan demi keselamatannya.\n\nKehidupan Fanny berubah ketika Tigreal menghilang setelah sebuah pertempuran dan dituduh sebagai pengecut serta pembelot. Nama baik keluarga Wertz ikut tercemar oleh berbagai tuduhan. Meski semua orang meragukan Tigreal, Fanny tetap percaya bahwa kakaknya tidak bersalah. Ia pun bertekad memulihkan kehormatan keluarga dengan membuktikan kemampuannya sendiri di medan perang.\n\nMengabaikan larangan keluarganya, Fanny mendaftar menjadi prajurit. Kehidupan militer jauh lebih berat dari yang ia bayangkan, bahkan ia sering diejek sebagai gadis bangsawan yang dimanjakan. Namun Fanny tidak menyerah. Ia memotong rambut panjangnya, berlatih lebih keras daripada prajurit lain, dan akhirnya berhasil lulus sebagai anggota pasukan pengintai Kekaisaran Moniyan.\n\nSelama menjalankan berbagai misi, Fanny menyadari bahwa kekuatan fisiknya tidak sebanding dengan prajurit lain. Berbekal pengetahuan desain yang pernah dipelajarinya, ia menciptakan sepasang pedang yang dilengkapi kabel baja. Senjata itu memungkinkannya meluncur dengan cepat di antara tebing dan pepohonan, menjadikannya petarung yang lincah dan mampu menyelesaikan misi-misi berbahaya. Keahliannya membuat para prajurit yang dulu meremehkannya mulai menghormatinya dan memberinya julukan \"Blade Dancer\".\n\nBerkat prestasinya, Fanny akhirnya diterima sebagai anggota Light's Order. Pada saat yang sama, Tigreal kembali ke Moniyan setelah bertahun-tahun menghilang. Melihat perjuangan adiknya dalam menjaga kehormatan keluarga, Tigreal mengakui bahwa Fanny telah tumbuh menjadi seorang pejuang hebat dan mengajaknya bertarung bersama demi melindungi Moniyan Empire.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ab/Air_Superiority.png",
+    "name": "Air Superiority",
+    "kategori": "Buff",
+    "longDesc": "Selama pertarungan, Fanny memberikan tambahan 10%–20% kerusakan pada musuh yang terkena (skalanya bergantung pada kecepatan terbang [ kecepatan tidak diketahui ] ) dan menerapkan satu tumpukan Tanda Mangsa pada mereka (hingga 2 tumpukan) pada setiap serangan. Serangan skill berikutnya pada hero musuh yang ditandai akan memulihkan 8 energi per tumpukan untuknya. Pemulihan energi berkurang [ jumlah tidak diketahui ] jika dia mengenai beberapa hero musuh dalam waktu singkat. [ durasi tidak diketahui ]",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/35/Tornado_Strike.png",
+      "name": "Tornado Strike",
+      "kategori": "AOE",
+      "longDesc": "Fanny mengayunkan pedangnya, memberikan 275–525 (+85% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dekatnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Steel_Cable.png",
+      "name": "Steel Cable",
+      "kategori": "Mobility",
+      "longDesc": "Fanny menembakkan kabel ke arah target yang menariknya ke rintangan pertama yang terkena. Dia dapat menggunakan kemampuan ini lagi dalam waktu 2 detik hingga energinya habis. Setiap penggunaan berikutnya mengurangi biaya energi kemampuan sebesar 2.\nFanny secara otomatis menggunakan kemampuan ini.Serangan Tornado Serangan Tornado dapat dilancarkan saat mengenai musuh di udara, selama energinya mencukupi.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/46/Cut_Throat.png",
+      "name": "Cut Throat",
+      "kategori": "Burst/Mobility",
+      "longDesc": "Fanny melompat ke arah hero musuh atau Creep target dengan pedangnya, memberikan 400–650 (+200% Serangan Fisik Ekstra) Kerusakan Fisik . Setiap tumpukan Tanda Mangsa target meningkatkan kerusakan ini sebesar 30%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero171-icon.png",
+        "link": "https://sfile.co/7T98EeSnYbZ"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero171-icon.png",
+        "link": "https://sfile.co/OHS3DGZUUSk"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero172-icon.png",
+        "link": "https://sfile.co/Y0xkhwUbzze"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero173-icon.png",
+        "link": "https://sfile.co/QHcp9k0nXcI"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero174-icon.png",
+        "link": "https://sfile.co/1RYSYJO43ss"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero175-icon.png",
+        "link": "https://sfile.co/1cjaHTxTKFL"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Hero176-icon.png",
+        "link": "https://sfile.co/JPjhO7JnJlN"
+      },
+      {
+        "name": "Lightborn",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero177-icon.png",
+        "link": "https://sfile.co/mJqGuH5M6fm"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero178-icon.png",
+        "link": "https://sfile.co/CqJgmwIUhFS"
+      },
+      {
+        "name": "Imperial Warrior",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero179-icon.png",
+        "link": "https://sfile.co/6eO9xbVeSDn"
+      },
+      {
+        "name": "Imperial Warrior + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero179-icon.png",
+        "link": "https://sfile.co/bMJCuMn9SyG"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero101711-icon.png",
+        "link": "https://sfile.co/XALb3E0vCRI"
+      },
+      {
+        "name": "Attack on Titan",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Hero101712-icon.png",
+        "link": "https://sfile.co/mPElaYIWohs"
+      },
+      {
+        "name": "P.ACE",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero101714-icon.png",
+        "link": "https://sfile.co/8ZkhmutMnKw"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
