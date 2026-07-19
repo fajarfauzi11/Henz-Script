@@ -564,7 +564,7 @@ function kzDhBuildCard(h){
     initial=esc.charAt(0).toUpperCase(),
     href='/hero/'+kzDhSlugify(name);
   var avatarH=img
-    ?'<img src="'+img+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\''+initial+'\';this.parentNode.style.cssText=\'display:flex;align-items:center;justify-content:center;font-weight:800;color:#bbb;font-family:Manrope,sans-serif;\'">'
+    ?'<img src="'+img+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="var p=this.parentNode;p.innerHTML=\''+initial+'\';p.style.cssText=\'display:flex;align-items:center;justify-content:center;font-weight:800;color:#bbb;font-family:Manrope,sans-serif;\'">'
     :initial;
   return '<a class="kz-dh-card" href="'+href+'">'
     +'<div class="kz-dh-avatar-wrap">'+avatarH+'</div>'
@@ -578,6 +578,11 @@ function kzDhInit(heroes){
     var r=(h.role||'').toLowerCase();
     if(!byRole[r])byRole[r]=[];
     byRole[r].push(h);
+    var r2=(h.role2||'').toLowerCase();
+    if(r2&&r2!==r){
+      if(!byRole[r2])byRole[r2]=[];
+      byRole[r2].push(h);
+    }
   });
   document.querySelectorAll('.kz-dh-section').forEach(function(section){
     var role=section.getAttribute('data-role');

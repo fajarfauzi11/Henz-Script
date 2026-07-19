@@ -168,9 +168,18 @@ function generateHeroPages() {
   const posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
   const template = fs.readFileSync(path.join(PARTIALS_DIR, 'hero-template.html'), 'utf8');
 
-  // Kelompokkan post berdasarkan kata pertama judul (lowercase) -> array post
+  // Pencocokan post -> hero:
+  // 1) Prioritas: field eksplisit `hero` di posts.json (diisi manual lewat tool, exact match ke nama hero — aman buat nama hero 1 kata maupun lebih)
+  // 2) Fallback: kata pertama judul (lowercase) — cara lama, dipertahankan biar post lama yang belum punya field `hero` tetap muncul
+  const postsByHeroName = {};
   const postsByFirstWord = {};
   posts.forEach((p) => {
+    if (p.hero && String(p.hero).trim()) {
+      const key = String(p.hero).trim().toLowerCase();
+      if (!postsByHeroName[key]) postsByHeroName[key] = [];
+      postsByHeroName[key].push(p);
+      return; // sudah punya field eksplisit, gak perlu masuk fallback first-word
+    }
     const firstWord = (p.title || '').trim().split(/\s+/)[0];
     if (!firstWord) return;
     const key = firstWord.toLowerCase();
@@ -186,7 +195,8 @@ function generateHeroPages() {
     const role = ROLE_CONFIG[roleKey] || { label: h.role || '', icon: '' };
     const slug = slugify(h.name);
     if (!slug) return;
-    const matched = postsByFirstWord[(h.name || '').toLowerCase()] || [];
+    const heroKey = (h.name || '').toLowerCase();
+    const matched = (postsByHeroName[heroKey] || []).concat(postsByFirstWord[heroKey] || []);
     const postsHtml = matched.length
       ? matched.map(kzBuildCard).join('\n')
       : '<div class="kz-cp-empty">Belum ada modifikasi untuk hero ini.</div>';
