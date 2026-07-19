@@ -192,7 +192,10 @@ function generateHeroPages() {
 
   heroes.forEach((h) => {
     const roleKey = (h.role || '').toLowerCase();
-    const role = ROLE_CONFIG[roleKey] || { label: h.role || '', icon: '' };
+    const role = Object.assign({}, ROLE_CONFIG[roleKey] || { label: h.role || '', icon: '' });
+    const role2Key = (h.role2 || '').toLowerCase();
+    const role2Cfg = role2Key ? ROLE_CONFIG[role2Key] : null;
+    if (role2Cfg) role.label = role.label + '/' + role2Cfg.label;
     const slug = slugify(h.name);
     if (!slug) return;
     const heroKey = (h.name || '').toLowerCase();
