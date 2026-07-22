@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://www.henzscript.my.id/request-script"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/></noscript>
 <link href="/css/style.css" rel="stylesheet"/>
 <link rel="icon" type="image/png" href="/favicon.png"/>
@@ -66,7 +66,7 @@
     </div>
     <hr class="kz-tooltip-hr">
     <p class="kz-tooltip-desc" id="kz-request-tooltip-desc"></p>
-    <div class="kz-tooltip-imgwrap"><img id="kz-request-tooltip-img" src="" alt="Contoh"></div>
+    <div class="kz-tooltip-imgwrap"><img id="kz-request-tooltip-img" src=" alt="Contoh"></div>
   </div>
 </div>
 
@@ -74,21 +74,23 @@
 <script>
   var KZ_REQUEST_TOOLTIP_DATA = {
     wa: {
-      title: 'Bagaimana cara menghubungi admin via WhatsApp?',
-      desc: 'Klik tombol "Request via WhatsApp", lalu kirim pesan ke admin dengan menyebutkan nama hero dan skin yang ingin kamu request, atau jelaskan bug yang kamu temukan secara detail biar cepat diproses.',
-      img: ''
+      title: 'Panduan WhatsApp',
+      desc: '',
+      img: 'https://i.ibb.co/LD7vFnbM/6ec0ae27ed82.webp'
     },
     tg: {
-      title: 'Bagaimana cara menghubungi admin via Telegram?',
-      desc: 'Klik tombol "Request via Telegram", lalu kirim pesan ke admin dengan menyebutkan hero dan skin yang ingin kamu request, atau jelaskan bug yang kamu temukan secara detail biar cepat diproses.',
-      img: ''
+      title: 'Telegram Guide',
+      desc: '',
+      img: 'https://i.ibb.co/SXjcCgPD/ac410c6c11dd.webp'
     }
   };
   function kzOpenRequestTooltip(type){
     var data = KZ_REQUEST_TOOLTIP_DATA[type];
     if(!data) return;
     document.getElementById('kz-request-tooltip-title').textContent = data.title;
-    document.getElementById('kz-request-tooltip-desc').textContent = data.desc;
+    var descEl = document.getElementById('kz-request-tooltip-desc');
+    descEl.textContent = data.desc;
+    descEl.style.display = data.desc ? 'block' : 'none';
     var imgEl = document.getElementById('kz-request-tooltip-img');
     var imgWrap = imgEl.closest('.kz-tooltip-imgwrap');
     if(data.img){ imgEl.src = data.img; imgWrap.style.display = 'block'; }

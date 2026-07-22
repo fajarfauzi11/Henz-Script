@@ -248,6 +248,28 @@ function kzInitSwiper(id){
   });
 }
 
+/* Ganti isi slide sebuah instance Swiper yang SUDAH ter-init (dipakai saat skeleton -> konten asli).
+   CATATAN PENTING: sengaja TIDAK pakai swiper.removeAllSlides()+appendSlide() karena di Swiper v11
+   (versi yang dipakai situs ini) kedua method itu gagal menghapus slide lama saat container-nya
+   sedang display:none (mis. tab "Script Terpopuler" yang belum aktif) — slide lama & baru numpuk
+   jadi satu, sehingga konten asli ketutup skeleton lama. Sudah dites & dikonfirmasi ulang lewat
+   simulasi dengan Swiper v11.2.10 asli (persis versi CDN yang dipakai). Ganti innerHTML wrapper
+   langsung + swiper.update() terbukti benar-benar mengganti seluruh isi, konsisten di semua kondisi. */
+function kzSwapSlides(swiper,htmlArray){
+  if(!swiper||!swiper.wrapperEl)return;
+  try{
+    swiper.wrapperEl.innerHTML=htmlArray.join('');
+    swiper.update();
+  }catch(err){
+    console.error('kzSwapSlides error:',err);
+  }
+}
+
+/* Init langsung di atas skeleton yang sudah ada di HTML sejak awal render,
+   supaya dari paint pertama layout sudah presisi sama Swiper (bukan perkiraan CSS). */
+var kzSwiperLatest=kzInitSwiper('kz-swiper-latest');
+var kzSwiperPopular=kzInitSwiper('kz-swiper-popular');
+
 /* Segmented Control */
 var seg=document.getElementById('kz-seg');
 var pill=document.getElementById('kz-seg-pill');
@@ -262,6 +284,11 @@ if(seg&&pill){
     var target=btn.getAttribute('data-target');
     if(secLatest)secLatest.style.display=(target==='kz-section-latest')?'block':'none';
     if(secPopular)secPopular.style.display=(target==='kz-section-popular')?'block':'none';
+    /* Swiper yang di-update() sementara container-nya display:none akan menghitung lebar 0
+       (geometri jadi rusak/tidak valid). Paksa recalculate begitu section benar-benar terlihat,
+       supaya slide selalu tampil benar berapa pun kali tab ini dibuka. */
+    if(target==='kz-section-latest'&&kzSwiperLatest)kzSwiperLatest.update();
+    if(target==='kz-section-popular'&&kzSwiperPopular)kzSwiperPopular.update();
   }
   items.forEach(function(btn){btn.addEventListener('click',function(){activate(btn);});});
   if(secPopular)secPopular.style.display='none';
@@ -284,7 +311,7 @@ function kzLoadViewCounts(root){
   });
   if(!items.length)return;
   fetch('/api/view?items='+encodeURIComponent(items.join(',')))
-    .then(function(r){return r.json();})
+    .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
     .then(function(data){
       var views=(data&&data.views)||{};
       els.forEach(function(el){
@@ -317,27 +344,22 @@ if(document.body.classList.contains('page-post')){
 /* Load Sliders */
 if(document.getElementById('kz-swiper-latest')){
   kzFetchPosts(function(posts){
-    var wLatest=document.getElementById('kz-latest-wrapper');
-    var wPopular=document.getElementById('kz-popular-wrapper');
     if(!posts.length)return;
-    var hLatest='';
-    for(var i=0;i<Math.min(posts.length,10);i++)hLatest+=kzBuildSlide(posts[i]);
-    if(wLatest)wLatest.innerHTML=hLatest;
+    var latestSlides=[];
+    for(var i=0;i<Math.min(posts.length,10);i++)latestSlides.push(kzBuildSlide(posts[i]));
+    kzSwapSlides(kzSwiperLatest,latestSlides);
+    kzLoadViewCounts();
 
     function renderPopular(sortedPosts){
-      var hPopular='';
-      for(var i=0;i<Math.min(sortedPosts.length,10);i++)hPopular+=kzBuildSlide(sortedPosts[i]);
-      if(wPopular)wPopular.innerHTML=hPopular;
+      var popularSlides=[];
+      for(var i=0;i<Math.min(sortedPosts.length,10);i++)popularSlides.push(kzBuildSlide(sortedPosts[i]));
+      kzSwapSlides(kzSwiperPopular,popularSlides);
       kzLoadViewCounts();
-      requestAnimationFrame(function(){requestAnimationFrame(function(){
-        kzInitSwiper('kz-swiper-latest');
-        kzInitSwiper('kz-swiper-popular');
-      });});
     }
 
     var items=posts.map(function(p){return p.id+':'+window.kzCard.kzSlugFromUrl(p.url);});
     fetch('/api/view?items='+encodeURIComponent(items.join(',')))
-      .then(function(r){return r.json();})
+      .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
       .then(function(data){
         var views=(data&&data.views)||{};
         var sortedByViews=posts.slice().sort(function(a,b){
@@ -353,6 +375,7 @@ if(document.getElementById('kz-swiper-latest')){
 }
 
 /* Hero Terpopuler (Home) */
+var kzSwiperHeroPopular=kzInitHeroSwiper('kz-swiper-hero-popular');
 if(document.getElementById('kz-hero-popular-wrapper')){
   Promise.all([
     fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
@@ -362,17 +385,18 @@ if(document.getElementById('kz-hero-popular-wrapper')){
     var keys=Array.isArray(res[1])?res[1]:[];
     var byName={};
     heroes.forEach(function(h){byName[(h.name||'').toLowerCase()]=h;});
-    var wrapper=document.getElementById('kz-hero-popular-wrapper');
-    var html='';
+    var heroSlides=[];
     keys.forEach(function(key){
       var h=byName[(key||'').toLowerCase()];
       if(!h)return;
-      html+='<div class="swiper-slide" style="height:auto">'+kzDhBuildCard(h)+'</div>';
+      heroSlides.push('<div class="swiper-slide" style="height:auto">'+kzDhBuildCard(h)+'</div>');
     });
-    if(wrapper)wrapper.innerHTML=html||'<div class="kz-dh-empty">Belum ada hero populer.</div>';
-    requestAnimationFrame(function(){requestAnimationFrame(function(){
-      kzInitHeroSwiper('kz-swiper-hero-popular');
-    });});
+    if(heroSlides.length){
+      kzSwapSlides(kzSwiperHeroPopular,heroSlides);
+    }else{
+      var wrapper=document.getElementById('kz-hero-popular-wrapper');
+      if(wrapper)wrapper.innerHTML='<div class="kz-dh-empty">Belum ada hero populer.</div>';
+    }
   });
 }
 
@@ -615,5 +639,17 @@ function kzDhInit(heroes){
     }
   });
 }
+
+/* Load More — Detail Hero & Kategori Skin.
+   Semua card sudah ada di HTML sejak build (baik utk SEO), card ke-21 dst
+   cuma disembunyikan via CSS (.kz-cp-limited). Klik tombol = lepas class itu, tidak perlu fetch ulang. */
+document.querySelectorAll('[data-cp-loadmore]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var grid=document.querySelector('.kz-cp-grid.kz-cp-limited');
+    if(grid)grid.classList.remove('kz-cp-limited');
+    var wrap=btn.closest('.kz-cp-loadmore-wrap');
+    if(wrap)wrap.remove();
+  });
+});
 
 })();

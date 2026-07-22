@@ -12,6 +12,27 @@ const PARTIALS_DIR = path.join(SRC_DIR, 'partials');
 
 /* Domain resmi — dipakai buat canonical, Open Graph, dan sitemap.xml */
 const BASE_URL = 'https://www.henzscript.my.id';
+/* Cache-busting: setiap kali build.js dijalankan, semua link css/js dapat query ?v=xxx baru,
+   jadi browser TIDAK BOLEH pakai cache lama begitu file di-deploy ulang. Ini akar solusi dari
+   berulangnya kasus "user test pakai file/versi lama yang ke-cache di browser". */
+const CACHE_BUST = Date.now();
+function injectCacheBust(html) {
+  return html
+    .replace(/(href="\/css\/style\.css)(")/g, `$1?v=${CACHE_BUST}$2`)
+    .replace(/(src="\/js\/main\.js)(")/g, `$1?v=${CACHE_BUST}$2`)
+    .replace(/(src="\/js\/card-template\.js)(")/g, `$1?v=${CACHE_BUST}$2`);
+}
+/* Batas card yang langsung tampil di detail hero & kategori skin sebelum "Lihat Lebih Banyak" */
+const CP_LOADMORE_LIMIT = 20;
+function buildLoadMoreParts(matchedCount) {
+  const isLimited = matchedCount > CP_LOADMORE_LIMIT;
+  return {
+    gridLimitClass: isLimited ? ' kz-cp-limited' : '',
+    loadmoreHtml: isLimited
+      ? '<div class="kz-cp-loadmore-wrap"><button type="button" class="kz-cp-loadmore-btn" data-cp-loadmore>Lihat Lebih Banyak</button></div>'
+      : ''
+  };
+}
 function absoluteUrl(pathOrUrl) {
   pathOrUrl = pathOrUrl || '';
   if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
@@ -53,9 +74,10 @@ function readPartial(name) {
 }
 
 function processHtml(content) {
-  return content.replace(INCLUDE_RE, (match, partialName) => {
+  const withPartials = content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
   });
+  return injectCacheBust(withPartials);
 }
 
 function copyRecursive(srcDir, outDir) {
@@ -203,6 +225,7 @@ function generateHeroPages() {
     const postsHtml = matched.length
       ? matched.map(kzBuildCard).join('\n')
       : '<div class="kz-cp-empty">Belum ada modifikasi untuk hero ini.</div>';
+    const { gridLimitClass, loadmoreHtml } = buildLoadMoreParts(matched.length);
 
     const heroUrl = '/hero/' + slug;
     let html = template
@@ -213,10 +236,12 @@ function generateHeroPages() {
       .split('{{ROLE_ICON}}').join(role.icon)
       .split('{{POST_COUNT}}').join(String(matched.length))
       .split('{{POSTS_HTML}}').join(postsHtml)
+      .split('{{GRID_LIMIT_CLASS}}').join(gridLimitClass)
+      .split('{{LOADMORE_HTML}}').join(loadmoreHtml)
       .split('{{CANONICAL_URL}}').join(absoluteUrl(heroUrl));
 
     html = processHtml(html);
-    fs.writeFileSync(path.join(heroOutDir, slug + '.html'), html, 'utf8');
+    fs.writeFileSync(path.join(heroOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
     addSitemapUrl(heroUrl, {changefreq: 'weekly', priority: 0.7});
     console.log('built: hero/' + slug + '.html');
   });
@@ -263,6 +288,7 @@ function generateCategoryPages() {
     const postsHtml = matched.length
       ? matched.map(kzBuildCard).join('\n')
       : '<div class="kz-cp-empty">Belum ada script untuk kategori ini.</div>';
+    const { gridLimitClass, loadmoreHtml } = buildLoadMoreParts(matched.length);
     const initial = catName.trim().charAt(0).toUpperCase();
     const avatarHtml = buildCategoryAvatarHtml(catName, initial, CATEGORY_LOGOS);
     const catUrl = '/kategori-skin/' + slug;
@@ -272,10 +298,12 @@ function generateCategoryPages() {
       .split('{{CATEGORY_AVATAR}}').join(avatarHtml)
       .split('{{POST_COUNT}}').join(String(matched.length))
       .split('{{POSTS_HTML}}').join(postsHtml)
+      .split('{{GRID_LIMIT_CLASS}}').join(gridLimitClass)
+      .split('{{LOADMORE_HTML}}').join(loadmoreHtml)
       .split('{{CANONICAL_URL}}').join(absoluteUrl(catUrl));
 
     html = processHtml(html);
-    fs.writeFileSync(path.join(catOutDir, slug + '.html'), html, 'utf8');
+    fs.writeFileSync(path.join(catOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
     addSitemapUrl(catUrl, {changefreq: 'weekly', priority: 0.7});
     console.log('built: kategori-skin/' + slug + '.html');
   });
@@ -285,14 +313,17 @@ function generateCategoryPages() {
   const allPostsHtml = allMatched.length
     ? allMatched.map(kzBuildCard).join('\n')
     : '<div class="kz-cp-empty">Belum ada script.</div>';
+  const allLoadMore = buildLoadMoreParts(allMatched.length);
   let allHtml = template
     .split('{{CATEGORY_NAME}}').join('Semua')
     .split('{{CATEGORY_AVATAR}}').join(buildCategoryAvatarHtml('Semua', 'S', CATEGORY_LOGOS))
     .split('{{POST_COUNT}}').join(String(allMatched.length))
     .split('{{POSTS_HTML}}').join(allPostsHtml)
+    .split('{{GRID_LIMIT_CLASS}}').join(allLoadMore.gridLimitClass)
+    .split('{{LOADMORE_HTML}}').join(allLoadMore.loadmoreHtml)
     .split('{{CANONICAL_URL}}').join(absoluteUrl('/kategori-skin/semua'));
   allHtml = processHtml(allHtml);
-  fs.writeFileSync(path.join(catOutDir, 'semua.html'), allHtml, 'utf8');
+  fs.writeFileSync(path.join(catOutDir, 'semua.html'), injectCacheBust(allHtml), 'utf8');
   addSitemapUrl('/kategori-skin/semua', {changefreq: 'daily', priority: 0.8});
   console.log('built: kategori-skin/semua.html');
 }
@@ -383,10 +414,11 @@ function buildAbilitiesHtml(data) {
   const dualTab2 = (data.dualTabNames && data.dualTabNames.tab2) || 'Tab 2';
   const pasif = data.abilitiesPasif || {};
 
+  const pasifCol = { bg: '#e8f5e9', text: '#2e7d32' };
   const pasifHtml = kzBuildAbilityRow({
-    label: 'Pasif', labelColor: '#e53232', idPrefix: 'kz-ab-pasif',
+    label: 'Pasif', labelColor: pasifCol.text, idPrefix: 'kz-ab-pasif',
     url: pasif.url || '', name: pasif.name || '', kategori: pasif.kategori || 'BUFF',
-    longDesc: pasif.longDesc || '', katBg: '#e8f5e9', katText: '#2e7d32', borderTop: false,
+    longDesc: pasif.longDesc || '', katBg: pasifCol.bg, katText: pasifCol.text, borderTop: false,
     dual: !!pasif.dual, tab1Name: dualTab1, tab2Name: dualTab2,
     url2: pasif.url2 || '', name2: pasif.name2 || '', kategori2: pasif.kategori2 || 'BUFF', longDesc2: pasif.longDesc2 || ''
   });
@@ -578,7 +610,7 @@ function generatePostPages() {
 
     html = kzApplySoonFallback(html);
     html = processHtml(html);
-    fs.writeFileSync(path.join(postOutDir, slug + '.html'), html, 'utf8');
+    fs.writeFileSync(path.join(postOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
     addSitemapUrl(postUrl, { lastmod: parseIdDate(data.datepost), changefreq: 'monthly', priority: 0.9 });
     console.log('built: post/' + slug + '.html (dari data JSON)');
   });

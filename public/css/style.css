@@ -33,7 +33,7 @@ body.kz-scrolled .kz-hv1-header{opacity:0;pointer-events:none;transform:translat
 }
 .kz-hv1-drawer-search{position:relative;padding:14px 20px}
 .kz-hv1-drawer-search form{margin:0}
-.kz-hv1-drawer-search input{width:100%;box-sizing:border-box;border-radius:10px;background:#fff;border:1px solid #e4e4e7;padding:12px 14px 12px 40px;font-family:'Manrope',sans-serif;font-size:14px;color:#111;outline:none}
+.kz-hv1-drawer-search input{width:100%;box-sizing:border-box;border-radius:10px;background:#fff;border:1px solid #9ca3af;padding:12px 14px 12px 40px;font-family:'Manrope',sans-serif;font-size:14px;color:#111;outline:none}
 .kz-hv1-drawer-search input:focus{background:#fff}
 .kz-hv1-drawer-search svg{position:absolute;left:34px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#a1a1aa;pointer-events:none;z-index:2}
 @media(max-width:768px){
@@ -139,6 +139,17 @@ body.page-home .kazeo-page{padding-top:90px}
 @media(max-width:640px){.kz-swiper-wrap{margin:0 -4px}}
 .kz-swiper-wrap .swiper{overflow:visible;padding-bottom:56px!important}
 @media(max-width:640px){.kz-swiper-wrap .swiper{padding-bottom:52px!important}}
+/* Fallback width slide sebelum Swiper JS ter-init (cegah slide melebar 100% / bertumpuk saat loading).
+   Angka disamakan dengan konfigurasi slidesPerView+spaceBetween di kzInitSwiper/kzInitHeroSwiper (main.js).
+   Setelah Swiper init, ini otomatis ditimpa oleh inline style width dari Swiper JS. */
+.kz-swiper .swiper-wrapper{display:flex;flex-wrap:nowrap}
+.kz-swiper .swiper-slide{flex-shrink:0;width:calc((100% - 12px)/2)}
+@media(min-width:640px){.kz-swiper .swiper-slide{width:calc((100% - 40px)/3)}}
+@media(min-width:1024px){.kz-swiper .swiper-slide{width:calc((100% - 72px)/4)}}
+#kz-swiper-hero-popular.swiper .swiper-slide{width:calc((100% - 20px)/3)}
+@media(min-width:480px){#kz-swiper-hero-popular.swiper .swiper-slide{width:calc((100% - 36px)/4)}}
+@media(min-width:768px){#kz-swiper-hero-popular.swiper .swiper-slide{width:calc((100% - 56px)/5)}}
+@media(min-width:1024px){#kz-swiper-hero-popular.swiper .swiper-slide{width:calc((100% - 70px)/6)}}
 .kz-slider-section{margin-bottom:32px}
 @media(max-width:640px){.kz-slider-section{margin-bottom:16px}}
 #kz-section-hero-popular{margin-bottom:4px}
@@ -200,9 +211,25 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-skel{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .kz-skel-img{width:100%;height:128px;background:#e4e4e7;animation:kzPulse 1.4s ease infinite}
 @media(min-width:640px){.kz-skel-img{height:160px}}
-.kz-skel-body{padding:14px 16px 18px;text-align:center}
+.kz-skel-body{padding:12px 14px 16px;text-align:center;display:flex;flex-direction:column}
+@media(min-width:640px){.kz-skel-body{padding:16px 20px 20px}}
 .kz-skel-line{height:10px;background:#e4e4e7;border-radius:9999px;margin:0 auto 10px;animation:kzPulse 1.4s ease infinite}
 .kz-skel-line.sm{width:45%}.kz-skel-line.xs{width:28%}
+/* Label kategori */
+.kz-skel-label{height:8px;width:30%;margin:0 auto 8px;background:#e4e4e7;border-radius:9999px;animation:kzPulse 1.4s ease infinite}
+/* Judul (2 baris, meniru line-clamp judul asli) */
+.kz-skel-title{height:13px;background:#e4e4e7;border-radius:6px;margin:0 auto 6px;animation:kzPulse 1.4s ease infinite}
+@media(min-width:640px){.kz-skel-title{height:15px}}
+.kz-skel-title.w1{width:92%}
+.kz-skel-title.w2{width:60%;margin-bottom:0}
+/* Divider merah (placeholder posisi & ukuran sama dgn kz-card-divider) */
+.kz-skel-divider{width:32px;height:4px;background:#e4e4e7;border-radius:9999px;margin:10px auto 16px;animation:kzPulse 1.4s ease infinite}
+@media(min-width:640px){.kz-skel-divider{width:48px;margin:12px auto 20px}}
+/* Baris meta (avatar+nama & pills view/tanggal) */
+.kz-skel-meta{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:auto}
+.kz-skel-meta-line{height:10px;background:#e4e4e7;border-radius:9999px;animation:kzPulse 1.4s ease infinite}
+.kz-skel-meta-line.author{width:55%}
+.kz-skel-meta-line.pills{width:45%;height:16px}
 
 /* CATEGORY PAGE */
 #kz-category-page{display:none;width:100%}
@@ -246,8 +273,14 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-cp-empty{text-align:center;padding:56px 0;color:#bbb;font-size:14px;font-family:'Manrope',sans-serif}
 .kz-cp-count{font-size:13px;color:#aaa;font-family:'Manrope',sans-serif;margin-bottom:20px;margin-top:24px}
 .kz-cp-loadmore{text-align:center;margin-top:28px}
-.kz-cp-loadmore-btn{display:inline-block;padding:11px 36px;background:#111;color:#fff;font-size:13px;font-weight:700;border-radius:10px;border:none;cursor:pointer;font-family:'Manrope',sans-serif;transition:background .2s;-webkit-tap-highlight-color:transparent}
+.kz-cp-loadmore-btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 40px;background:#111;color:#fff;font-size:14px;font-weight:700;border-radius:9999px;border:none;cursor:pointer;font-family:'Manrope',sans-serif;transition:background .2s,transform .15s ease;-webkit-tap-highlight-color:transparent}
 .kz-cp-loadmore-btn:hover{background:#333}
+.kz-cp-loadmore-btn:active{transform:scale(0.96)}
+@media(max-width:640px){.kz-cp-loadmore-btn{height:42px;padding:0 32px;font-size:13px}}
+/* Batasi 20 card pertama pada detail hero & kategori skin, sisanya disembunyikan sampai tombol diklik */
+.kz-cp-grid.kz-cp-limited .kz-card:nth-child(n+21){display:none}
+.kz-cp-loadmore-wrap{display:flex;justify-content:center;margin-top:28px}
+@media(max-width:640px){.kz-cp-loadmore-wrap{margin-top:20px}}
 
 @media(max-width:1024px){.kz-cp-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
 @media(max-width:768px){
@@ -266,8 +299,8 @@ body.page-home .kazeo-page{padding-top:90px}
 #kz-search-heading{margin-bottom:28px}
 #kz-search-heading .kz-sh-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;margin:0 auto 20px 2.25rem;padding-left:1rem;cursor:pointer;background:none;border:none;font-family:'Manrope',sans-serif;text-decoration:none;transition:color .15s;-webkit-tap-highlight-color:transparent}
 #kz-search-heading .kz-sh-back:hover{color:#e53232}
-@media(max-width:900px){#kz-search-heading .kz-sh-back{margin-left:-1.5rem}}
-@media(max-width:480px){#kz-search-heading .kz-sh-back{margin-left:-1.5rem}}
+@media(max-width:900px){#kz-search-heading .kz-sh-back{margin-left:-1.25rem}}
+@media(max-width:480px){#kz-search-heading .kz-sh-back{margin-left:-1.25rem}}
 #kz-search-heading h1{font-size:28px;font-weight:800;color:#111;margin:0 0 4px;font-family:'Manrope',sans-serif;line-height:1.2}
 @media(max-width:768px){#kz-search-heading h1{font-size:20px}}
 #kz-search-heading h1 em{color:#e53232;font-style:normal}
@@ -369,7 +402,8 @@ body.page-search .kazeo-page{padding-top:87px}
 .kz-rq-icon svg{width:26px;height:26px}
 .kz-rq-card.wa .kz-rq-icon svg{fill:#25D366}
 .kz-rq-card.tg .kz-rq-icon svg{fill:#2AABEE}
-.kz-rq-help{width:26px;height:26px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;font-family:'Manrope',sans-serif;cursor:pointer;flex-shrink:0;padding:0;-webkit-tap-highlight-color:transparent;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .15s ease,box-shadow .15s ease}
+.kz-rq-help{width:26px;height:26px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;font-family:'Manrope',sans-serif;cursor:pointer;flex-shrink:0;padding:0;-webkit-tap-highlight-color:transparent;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .15s ease,box-shadow .15s ease;outline:none}
+.kz-rq-help:focus,.kz-rq-help:focus-visible{outline:none;box-shadow:0 3px 10px rgba(0,0,0,.18)}
 .kz-rq-card.wa .kz-rq-help{background:#25D366}
 .kz-rq-card.tg .kz-rq-help{background:#2AABEE}
 .kz-rq-help:hover{transform:scale(1.12);box-shadow:0 5px 14px rgba(0,0,0,.26)}
@@ -382,8 +416,9 @@ body.page-search .kazeo-page{padding-top:87px}
 .kz-tooltip-overlay.open .kz-tooltip-box{transform:scale(1) translateY(0);opacity:1}
 .kz-tooltip-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:20px 20px 0}
 .kz-tooltip-head span{font-family:'Manrope',sans-serif;font-size:19px;font-weight:800;color:#111;line-height:1.3;letter-spacing:-.2px}
-.kz-tooltip-close{width:auto;height:auto;border-radius:50%;border:none;background:none;color:#717171;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,color .15s;padding:4px;line-height:0}
+.kz-tooltip-close{width:auto;height:auto;border-radius:50%;border:none;background:none;color:#717171;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s,color .15s;padding:4px;line-height:0;-webkit-tap-highlight-color:transparent;outline:none}
 .kz-tooltip-close:hover{background:#f0f0f0;color:#111}
+.kz-tooltip-close:focus,.kz-tooltip-close:focus-visible{outline:none}
 .kz-tooltip-hr{border:none;height:1px;background:#efefef;margin:14px 20px 0}
 .kz-tooltip-desc{font-family:'Manrope',sans-serif;font-size:12.5px;color:#717171;line-height:1.7;font-weight:500;white-space:pre-line;padding:12px 20px 0;margin:0}
 .kz-tooltip-desc em{font-style:italic}
@@ -468,7 +503,7 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
   .kz-dh-card:hover .kz-dh-name{color:#e53232}
 }
 .kz-dh-card:active,.kz-dh-card:focus-visible{transform:translateY(-1px) scale(.96);outline:none;border-color:#e53232;box-shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06),inset 0 0 0 2px #e53232}
-.kz-dh-avatar-wrap{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#ececec;border:3px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,.16);margin-bottom:8px;flex-shrink:0;transition:transform .25s;display:flex;align-items:center;justify-content:center}
+.kz-dh-avatar-wrap{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#ececec;box-shadow:0 0 0 2px #FFC200,0 8px 20px rgba(0,0,0,.3);margin-bottom:8px;flex-shrink:0;transition:transform .25s;display:flex;align-items:center;justify-content:center}
 .kz-dh-avatar-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .kz-dh-name{font-size:11px;font-weight:700;color:#111;line-height:1.3;transition:color .2s;font-family:'Manrope',sans-serif}
 @media(min-width:640px){.kz-dh-avatar-wrap{width:56px;height:56px}.kz-dh-name{font-size:12px}}
@@ -485,7 +520,7 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 .kz-heroh-role-badge{display:inline-block;background:#e53232;color:#fff;font-size:10px;font-weight:800;letter-spacing:.4px;padding:4px 10px;border-radius:9999px;margin-bottom:8px;font-family:'Manrope',sans-serif}
 .kz-heroh-name{font-size:24px;font-weight:800;color:#111;letter-spacing:-.4px;line-height:1.1;font-family:'Manrope',sans-serif}
 .kz-heroh-count{font-size:11.5px;color:#e53232;font-weight:700;margin-top:6px;font-family:'Manrope',sans-serif}
-.kz-heroh-avatar-wrap{width:76px;height:76px;border-radius:50%;overflow:hidden;background:#ececec;border:3px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,.16);flex-shrink:0;position:relative;z-index:1}
+.kz-heroh-avatar-wrap{width:76px;height:76px;border-radius:50%;overflow:hidden;background:#ececec;border:3px solid #FFC200;box-shadow:0 8px 20px rgba(0,0,0,.3);flex-shrink:0;position:relative;z-index:1}
 .kz-heroh-avatar-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .kz-heroh-initial{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#bbb;font-family:'Manrope',sans-serif}
 .kz-heroh-section-title{max-width:1080px;margin:0 auto;font-size:17px;font-weight:800;color:#111;font-family:'Manrope',sans-serif}
