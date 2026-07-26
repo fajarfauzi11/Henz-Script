@@ -24,7 +24,7 @@
 </head>
 <body class="page-post item-view">
 <!-- include:header.html -->
-<div class="kazeo-page" style="padding-left:16px;padding-right:16px;padding-top:90px;">
+<div class="kazeo-page" style="padding-left:16px;padding-right:16px;">
 <main class="kazeo-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
 <!--
 =================================================================
@@ -565,7 +565,7 @@
            [D3b] NOTICE BOXES — Info & Lapor Bug
            ✏️ EDIT: Ganti href="#" pada link "di sini" dengan URL chat admin kamu
            ═══════════════════════════════════════════ -->
-      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
+      <div class="kz-notice-wrap" style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
 
         <div style="position:relative;display:flex;align-items:flex-start;gap:16px;background:rgba(59,130,246,.10);border:1px solid rgba(59,130,246,.25);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(59,130,246,.08);">
           <div style="flex-shrink:0;position:relative;width:52px;height:52px;">
@@ -714,21 +714,9 @@
 function kzResponsive(){
   var w = window.innerWidth;
 
-  /* kazeo-page padding-top: 90px (seragam mobile & desktop) */
-  var kazeoPage = document.querySelector('.kazeo-page');
-  if(kazeoPage) kazeoPage.style.paddingTop = '90px';
-
-  /* Hero height */
-  var hero = document.getElementById('kz-hero');
-  if(hero) hero.style.height = w <= 600 ? '300px' : '450px';
-
   /* Hero meta padding */
   var heroMeta = document.getElementById('kz-hero-meta');
   if(heroMeta) heroMeta.style.padding = w <= 600 ? '16px 20px 20px' : '24px 32px 28px';
-
-  /* Hero title font size */
-  var heroTitle = document.getElementById('kz-hero-title');
-  if(heroTitle) heroTitle.style.fontSize = w <= 600 ? '22px' : '32px';
 
   /* Tombol Download: full-width di mobile, auto di desktop */
   var dlBtn = document.getElementById('kz-dl-btn');

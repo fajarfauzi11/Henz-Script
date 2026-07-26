@@ -408,6 +408,7 @@ function kzInitHeroSwiper(id){
   return new Swiper('#'+id,{
     slidesPerView:3,spaceBetween:10,grabCursor:true,simulateTouch:true,touchRatio:1.5,resistanceRatio:0.8,
     pagination:{el:'#'+id+' .swiper-pagination',clickable:true,dynamicBullets:true},
+    navigation:{nextEl:'#'+id+' .swiper-button-next',prevEl:'#'+id+' .swiper-button-prev'},
     breakpoints:{480:{slidesPerView:4,spaceBetween:12},768:{slidesPerView:5,spaceBetween:14},1024:{slidesPerView:6,spaceBetween:14}}
   });
 }
@@ -568,7 +569,7 @@ if(document.getElementById('kz-search-heading')){
 
 /* Daftar Hero Page */
 if(document.getElementById('kz-dh-sections')){
-  var kzDhLimit=window.matchMedia('(max-width:768px)').matches?6:10;
+  var kzDhLimit=window.matchMedia('(max-width:768px)').matches?6:12;
   fetch('/js/heroes.json?t='+Date.now())
     .then(function(r){return r.json();})
     .then(function(d){kzDhInit(Array.isArray(d)?d:[]);})
@@ -651,5 +652,28 @@ document.querySelectorAll('[data-cp-loadmore]').forEach(function(btn){
     if(wrap)wrap.remove();
   });
 });
+
+/* Saran hero (empty state detail hero): pool kandidat (role sama, sudah punya script) disiapkan
+   saat build sbg JSON di data-suggest-pool. Di sini dipilih 3 SECARA ACAK tiap page load/refresh,
+   supaya variatif tapi tetap dalam role yang sama (pool-nya sudah difilter role saat build). */
+function kzRenderRandomHeroSuggest(){
+  var el=document.getElementById('kz-hero-suggest-tips');
+  if(!el)return;
+  var pool;
+  try{ pool=JSON.parse(el.getAttribute('data-suggest-pool')||'[]'); }catch(e){ pool=[]; }
+  if(!pool.length)return;
+  for(var i=pool.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var tmp=pool[i];pool[i]=pool[j];pool[j]=tmp;
+  }
+  var picked=pool.slice(0,3);
+  var html=picked.map(function(item){
+    var name=(item.name||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    var slug=(item.slug||'').replace(/"/g,'&quot;');
+    return '<a class="kz-sv-empty-tip" href="/hero/'+slug+'">'+name+'</a>';
+  }).join('');
+  el.innerHTML=html;
+}
+kzRenderRandomHeroSuggest();
 
 })();

@@ -48,7 +48,8 @@ function addSitemapUrl(urlPath, opts) {
     loc: loc,
     lastmod: opts.lastmod || null,
     changefreq: opts.changefreq || 'weekly',
-    priority: opts.priority != null ? opts.priority : 0.6
+    priority: opts.priority != null ? opts.priority : 0.6,
+    category: opts.category || 'page'
   });
 }
 /* "27 Juni 2026" -> "2026-06-27" (buat <lastmod> sitemap) */
@@ -222,9 +223,44 @@ function generateHeroPages() {
     if (!slug) return;
     const heroKey = (h.name || '').toLowerCase();
     const matched = (postsByHeroName[heroKey] || []).concat(postsByFirstWord[heroKey] || []);
+
+    // Saran pill: cari SEMUA hero lain dgn role (atau role2) yg overlap & SUDAH punya script.
+    // Tidak di-slice ke 3 di sini — semua kandidat disimpan sbg data (JSON), lalu 3 dipilih ACAK
+    // oleh JS client-side (lihat main.js: kzRenderRandomHeroSuggest) setiap halaman dibuka/refresh,
+    // supaya variatif tapi tetap konsisten dalam role yang sama.
+    const suggestPool = matched.length ? [] : heroes.filter((other) => {
+      if (other.name === h.name) return false;
+      const otherRoleKey = (other.role || '').toLowerCase();
+      const otherRole2Key = (other.role2 || '').toLowerCase();
+      const roleOverlap = otherRoleKey === roleKey || otherRoleKey === role2Key
+        || (role2Key && otherRole2Key === role2Key) || (otherRole2Key && otherRole2Key === roleKey);
+      if (!roleOverlap) return false;
+      const otherKey = (other.name || '').toLowerCase();
+      const otherMatched = (postsByHeroName[otherKey] || []).concat(postsByFirstWord[otherKey] || []);
+      return otherMatched.length > 0;
+    }).map((other) => ({ name: other.name, slug: slugify(other.name) }));
+    const suggestPoolJson = JSON.stringify(suggestPool).replace(/'/g, '&#39;');
+    const suggestTipsHtml = suggestPool.length
+      ? '<div class="kz-sv-empty-tips" id="kz-hero-suggest-tips" data-suggest-pool=\'' + suggestPoolJson + '\'></div>'
+      : '';
+
     const postsHtml = matched.length
       ? matched.map(kzBuildCard).join('\n')
-      : '<div class="kz-cp-empty">Belum ada modifikasi untuk hero ini.</div>';
+      : '<div class="kz-sv-empty">'
+        + '<div class="kz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
+        + '<circle cx="48" cy="48" r="34" stroke="#e6e6e6" stroke-width="7"/>'
+        + '<circle cx="48" cy="48" r="34" stroke="#e53232" stroke-width="7" stroke-dasharray="40 400" stroke-linecap="round" transform="rotate(-45 48 48)"/>'
+        + '<path d="M32 28h22l10 10v30H32z" stroke="#e53232" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>'
+        + '<path d="M54 28v10h10" stroke="#e53232" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>'
+        + '<line x1="40" y1="50" x2="56" y2="50" stroke="#e53232" stroke-width="3.5" stroke-linecap="round"/>'
+        + '<line x1="40" y1="58" x2="56" y2="58" stroke="#e53232" stroke-width="3.5" stroke-linecap="round"/>'
+        + '</svg></div>'
+        + '<div class="kz-sv-empty-title">Belum Ada Script</div>'
+        + '<p class="kz-sv-empty-sub">Kami belum punya script atau modifikasi untuk <b>' + escHtml(h.name) + '</b>. Yuk request supaya admin bisa segera menambahkannya.</p>'
+        + suggestTipsHtml
+        + '<a class="kz-sv-empty-cta" href="/request-script">Request script ini'
+        + '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
+        + '</a></div>';
     const { gridLimitClass, loadmoreHtml } = buildLoadMoreParts(matched.length);
 
     const heroUrl = '/hero/' + slug;
@@ -242,7 +278,7 @@ function generateHeroPages() {
 
     html = processHtml(html);
     fs.writeFileSync(path.join(heroOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
-    addSitemapUrl(heroUrl, {changefreq: 'weekly', priority: 0.7});
+    addSitemapUrl(heroUrl, {changefreq: 'weekly', priority: 0.7, category: 'hero'});
     console.log('built: hero/' + slug + '.html');
   });
 }
@@ -304,7 +340,7 @@ function generateCategoryPages() {
 
     html = processHtml(html);
     fs.writeFileSync(path.join(catOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
-    addSitemapUrl(catUrl, {changefreq: 'weekly', priority: 0.7});
+    addSitemapUrl(catUrl, {changefreq: 'weekly', priority: 0.7, category: 'category'});
     console.log('built: kategori-skin/' + slug + '.html');
   });
 
@@ -324,12 +360,41 @@ function generateCategoryPages() {
     .split('{{CANONICAL_URL}}').join(absoluteUrl('/kategori-skin/semua'));
   allHtml = processHtml(allHtml);
   fs.writeFileSync(path.join(catOutDir, 'semua.html'), injectCacheBust(allHtml), 'utf8');
-  addSitemapUrl('/kategori-skin/semua', {changefreq: 'daily', priority: 0.8});
+  addSitemapUrl('/kategori-skin/semua', {changefreq: 'daily', priority: 0.8, category: 'category'});
   console.log('built: kategori-skin/semua.html');
+}
+
+/* Suntik skeleton loading ke daftar-hero.html (file statis, di-copy oleh copyRecursive).
+   Jumlah placeholder per role dihitung dari heroes.json (data asli), dibatasi max 10
+   (sama dgn kzDhLimit desktop di main.js). Versi mobile (6) diatur lwt CSS nth-child,
+   supaya jumlah & posisi skeleton persis sama dgn yang nanti benar-benar tampil,
+   tidak ada layout shift saat kzDhInit() mengganti isinya dgn card asli. */
+function injectDaftarHeroSkeleton() {
+  const filePath = path.join(OUT_DIR, 'daftar-hero.html');
+  const heroesPath = path.join(SRC_DIR, 'js', 'heroes.json');
+  if (!fs.existsSync(filePath) || !fs.existsSync(heroesPath)) return;
+  const heroes = JSON.parse(fs.readFileSync(heroesPath, 'utf8'));
+  const byRole = {};
+  heroes.forEach((h) => {
+    const r = (h.role || '').toLowerCase();
+    if (r) byRole[r] = (byRole[r] || 0) + 1;
+    const r2 = (h.role2 || '').toLowerCase();
+    if (r2 && r2 !== r) byRole[r2] = (byRole[r2] || 0) + 1;
+  });
+  const DH_LIMIT = 12; // samakan dgn kzDhLimit desktop di main.js
+  const skelCard = '<div class="kz-dh-skel"><div class="kz-dh-skel-avatar"></div><div class="kz-dh-skel-line"></div></div>';
+  let html = fs.readFileSync(filePath, 'utf8');
+  html = html.replace(/data-role-grid="([a-z]+)"><\/div>/g, (m, role) =>
+    'data-role-grid="' + role + '">' + skelCard.repeat(Math.min(byRole[role] || 0, DH_LIMIT)) + '</div>');
+  html = html.replace(/data-count="([a-z]+)"><\/span>/g, (m, role) =>
+    'data-count="' + role + '">' + (byRole[role] ? '(' + byRole[role] + ')' : '') + '</span>');
+  fs.writeFileSync(filePath, html, 'utf8');
+  console.log('built: daftar-hero.html (skeleton loading)');
 }
 
 generateHeroPages();
 generateCategoryPages();
+injectDaftarHeroSkeleton();
 
 /* ===================== POST PAGES (dari public/data/posts/*.json) =====================
    Post baru (lewat tool authoring) disimpan sebagai data JSON, bukan HTML jadi.
@@ -611,7 +676,7 @@ function generatePostPages() {
     html = kzApplySoonFallback(html);
     html = processHtml(html);
     fs.writeFileSync(path.join(postOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
-    addSitemapUrl(postUrl, { lastmod: parseIdDate(data.datepost), changefreq: 'monthly', priority: 0.9 });
+    addSitemapUrl(postUrl, { lastmod: parseIdDate(data.datepost), changefreq: 'monthly', priority: 0.9, category: 'post' });
     console.log('built: post/' + slug + '.html (dari data JSON)');
   });
 }
@@ -620,13 +685,13 @@ generatePostPages();
 /* ===================== sitemap.xml & robots.txt ===================== */
 function generateSitemapAndRobots() {
   // Halaman menu statis (bukan hero/kategori/post yang sudah didaftarkan di generate*Pages())
-  addSitemapUrl('/', {changefreq: 'daily', priority: 1.0});
-  addSitemapUrl('/kategori-skin', {changefreq: 'weekly', priority: 0.8});
-  addSitemapUrl('/daftar-hero', {changefreq: 'weekly', priority: 0.8});
-  addSitemapUrl('/request-script', {changefreq: 'monthly', priority: 0.4});
-  addSitemapUrl('/search', {changefreq: 'monthly', priority: 0.3});
-  addSitemapUrl('/socials', {changefreq: 'monthly', priority: 0.3});
-  addSitemapUrl('/tutorial', {changefreq: 'monthly', priority: 0.5});
+  addSitemapUrl('/', {changefreq: 'daily', priority: 1.0, category: 'page'});
+  addSitemapUrl('/kategori-skin', {changefreq: 'weekly', priority: 0.8, category: 'page'});
+  addSitemapUrl('/daftar-hero', {changefreq: 'weekly', priority: 0.8, category: 'page'});
+  addSitemapUrl('/request-script', {changefreq: 'monthly', priority: 0.4, category: 'page'});
+  addSitemapUrl('/search', {changefreq: 'monthly', priority: 0.3, category: 'page'});
+  addSitemapUrl('/socials', {changefreq: 'monthly', priority: 0.3, category: 'page'});
+  addSitemapUrl('/tutorial', {changefreq: 'monthly', priority: 0.5, category: 'page'});
 
   // Halaman post (script detail) — dibaca langsung dari posts.json, di-generate manual (bukan lewat build.js)
   const postsPath = path.join(SRC_DIR, 'js', 'posts.json');
@@ -637,26 +702,68 @@ function generateSitemapAndRobots() {
       addSitemapUrl(p.url, {
         lastmod: parseIdDate(p.date),
         changefreq: 'monthly',
-        priority: 0.9
+        priority: 0.9,
+        category: 'post'
       });
     });
   }
 
-  const xmlItems = SITEMAP_URLS.map((u) => {
-    let item = '  <url>\n    <loc>' + u.loc + '</loc>\n';
-    if (u.lastmod) item += '    <lastmod>' + u.lastmod + '</lastmod>\n';
-    item += '    <changefreq>' + u.changefreq + '</changefreq>\n';
-    item += '    <priority>' + u.priority.toFixed(1) + '</priority>\n  </url>';
-    return item;
-  }).join('\n');
+  /* Kelompokkan URL per kategori -> masing-masing jadi sub-sitemap sendiri (page/hero/category/post),
+     lalu satu sitemap_index.xml menghubungkan semuanya. Pola ini sama seperti yang dipakai
+     plugin SEO populer (mis. Yoast) — lebih reliable dibaca Google dibanding satu file datar besar. */
+  const CATEGORIES = [
+    { key: 'page', file: 'page-sitemap.xml', label: 'Halaman' },
+    { key: 'hero', file: 'hero-sitemap.xml', label: 'Detail Hero' },
+    { key: 'category', file: 'category-sitemap.xml', label: 'Kategori Skin' },
+    { key: 'post', file: 'post-sitemap.xml', label: 'Script/Post' }
+  ];
 
-  const xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    + xmlItems + '\n'
-    + '</urlset>\n';
+  function buildUrlsetXml(urls) {
+    const xmlItems = urls.map((u) => {
+      let item = '  <url>\n    <loc>' + u.loc + '</loc>\n';
+      if (u.lastmod) item += '    <lastmod>' + u.lastmod + '</lastmod>\n';
+      item += '    <changefreq>' + u.changefreq + '</changefreq>\n';
+      item += '    <priority>' + u.priority.toFixed(1) + '</priority>\n  </url>';
+      return item;
+    }).join('\n');
+    return '<?xml version="1.0" encoding="UTF-8"?>\n'
+      + '<?xml-stylesheet type="text/xsl" href="/sitemap-urls.xsl"?>\n'
+      + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+      + xmlItems + '\n'
+      + '</urlset>\n';
+  }
 
-  fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), xml, 'utf8');
-  console.log('built: sitemap.xml (' + SITEMAP_URLS.length + ' url)');
+  const sitemapIndexEntries = [];
+  const buildDate = new Date().toISOString().slice(0, 10);
+
+  CATEGORIES.forEach((cat) => {
+    const urls = SITEMAP_URLS.filter((u) => u.category === cat.key);
+    if (!urls.length) return; // skip kategori kosong, jangan daftarkan sitemap kosong di index
+    const xml = buildUrlsetXml(urls);
+    fs.writeFileSync(path.join(OUT_DIR, cat.file), xml, 'utf8');
+    console.log('built: ' + cat.file + ' (' + urls.length + ' url, kategori: ' + cat.label + ')');
+    // lastmod index = lastmod terbaru di antara url2 kategori itu, fallback tanggal build
+    const lastmods = urls.map((u) => u.lastmod).filter(Boolean).sort();
+    sitemapIndexEntries.push({
+      loc: absoluteUrl('/' + cat.file),
+      lastmod: lastmods.length ? lastmods[lastmods.length - 1] : buildDate
+    });
+  });
+
+  const indexItems = sitemapIndexEntries.map((e) =>
+    '  <sitemap>\n    <loc>' + e.loc + '</loc>\n    <lastmod>' + e.lastmod + '</lastmod>\n  </sitemap>'
+  ).join('\n');
+
+  const indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    + '<?xml-stylesheet type="text/xsl" href="/sitemap-index.xsl"?>\n'
+    + '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + indexItems + '\n'
+    + '</sitemapindex>\n';
+
+  // sitemap.xml TETAP jadi nama file utama (URL yg sudah disubmit ke Search Console tidak berubah),
+  // tapi isinya sekarang sitemap index, bukan lagi satu urlset datar berisi semua URL.
+  fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), indexXml, 'utf8');
+  console.log('built: sitemap.xml (index, ' + sitemapIndexEntries.length + ' sub-sitemap, total ' + SITEMAP_URLS.length + ' url)');
 
   const robots = 'User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ' + BASE_URL + '/sitemap.xml\n';
   fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), robots, 'utf8');

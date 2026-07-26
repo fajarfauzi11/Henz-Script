@@ -44,7 +44,7 @@ body.kz-scrolled .kz-hv1-header{opacity:0;pointer-events:none;transform:translat
 #kz-header-sentinel{position:absolute;left:0;width:1px;height:1px;pointer-events:none}
 
 /* HEADER V2 (pill, tampil setelah discroll) */
-.kazeo-header{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:860px;max-width:calc(100% - 48px);z-index:999;background:transparent;transition:all 0.3s,opacity .3s ease;opacity:0;pointer-events:none}
+.kazeo-header{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:940px;max-width:calc(100% - 48px);z-index:999;background:transparent;transition:all 0.3s,opacity .3s ease;opacity:0;pointer-events:none}
 body.kz-scrolled .kazeo-header{opacity:1;pointer-events:auto}
 .kazeo-header-inner{width:100%;margin:0 auto;padding:8px 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;background:hsl(0 0% 93% / 72%);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:9999px}
 .kazeo-logo{display:flex;align-items:center;flex-shrink:0;color:#111;text-decoration:none;transition:opacity 0.2s;-webkit-tap-highlight-color:transparent}
@@ -53,7 +53,7 @@ body.kz-scrolled .kazeo-header{opacity:1;pointer-events:auto}
 .kazeo-logo:hover{opacity:0.75}
 .kazeo-logo-desktop-name{font-family:'Barlow','Manrope',sans-serif;font-weight:900;font-size:24px;line-height:32px;letter-spacing:-0.6px;color:#18181B;white-space:nowrap;-webkit-font-smoothing:antialiased;margin-left:8px}
 @media(max-width:768px){.kazeo-logo-desktop-name{display:none}}
-.kazeo-nav{display:flex;align-items:center;gap:24px;position:absolute;left:50%;transform:translateX(-50%)}
+.kazeo-nav{display:flex;align-items:center;gap:20px;position:absolute;left:50%;transform:translateX(-50%)}
 .kazeo-nav a{font-family:'Manrope',sans-serif;font-weight:600;font-size:15px;color:#111;text-decoration:none;transition:opacity 0.15s;white-space:nowrap;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 .kazeo-nav a:hover{opacity:0.7}
 .kazeo-nav a.active{font-weight:700}
@@ -62,7 +62,7 @@ body.kz-scrolled .kazeo-header{opacity:1;pointer-events:auto}
 .kazeo-search-input{background:rgba(0,0,0,0.08);border:none;border-radius:9999px;padding:8px 16px 8px 34px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:#111;width:120px;outline:none;cursor:pointer;transition:background 0.15s,width 0.2s}
 .kazeo-search-input::placeholder{color:#555}
 .kazeo-search-input:hover{background:rgba(0,0,0,0.12)}
-.kazeo-search-input:focus{width:160px;background:rgba(0,0,0,0.1)}
+.kazeo-search-input:focus{width:135px;background:rgba(0,0,0,0.1)}
 .kazeo-search-icon{display:block;position:absolute;left:12px;top:50%;transform:translateY(-50%);width:14px;height:14px;pointer-events:none;color:#555}
 .kazeo-mobile-actions{display:none;align-items:center;gap:8px}
 .kazeo-mobile-search-pill{display:none;align-items:center;gap:6px;background:#f0f0f2;border-radius:9999px;padding:0 12px;height:34px;border:none;cursor:text}
@@ -171,6 +171,15 @@ body.page-home .kazeo-page{padding-top:90px}
 @media(min-width:768px){.kz-swiper .swiper-button-next,.kz-swiper .swiper-button-prev{width:44px!important;height:44px!important}}
 .kz-swiper .swiper-button-next:after,.kz-swiper .swiper-button-prev:after{font-size:13px!important;font-weight:900}
 @media(min-width:768px){.kz-swiper .swiper-button-next:after,.kz-swiper .swiper-button-prev:after{font-size:16px!important}}
+/* Hero Terpopuler: tombol next/prev cuma muncul di desktop, dan posisinya dikoreksi
+   supaya center thd tinggi card avatar (bukan ikut center thd container+padding-bottom
+   56px yg disediakan utk pagination dots, yg bikin tombol kegeser ke bawah). */
+#kz-swiper-hero-popular.kz-swiper .swiper-button-next,
+#kz-swiper-hero-popular.kz-swiper .swiper-button-prev{display:none}
+@media(min-width:901px){
+  #kz-swiper-hero-popular.kz-swiper .swiper-button-next,
+  #kz-swiper-hero-popular.kz-swiper .swiper-button-prev{display:flex;top:calc(50% - 28px)}
+}
 .kz-swiper .swiper-pagination-bullet-active{background:#e53232!important}
 .kz-swiper .swiper-pagination{bottom:20px!important}
 .kz-swiper .swiper-wrapper{padding-bottom:0!important}
@@ -237,13 +246,13 @@ body.page-home .kazeo-page{padding-top:90px}
 @media(max-width:768px){
   #kz-category-page.active{margin-left:-6px;margin-right:-6px;width:calc(100% + 12px)}
 }
-.kz-cp-wrap{background:#fff;border-radius:20px;padding:16px 36px 48px;box-shadow:none;width:100%}
+.kz-cp-wrap{background:#fff;border-radius:20px;padding:0 36px 48px;box-shadow:none;width:100%}
 .kz-cp-hero{text-align:center;padding:0;margin-top:0}
 .kz-cp-hero-title{font-size:36px;font-weight:800;color:#111;margin:0 0 12px;font-family:'Manrope',sans-serif;line-height:1.15;letter-spacing:-.5px;-webkit-font-smoothing:antialiased}
 .kz-cp-hero-title em{color:#e53232;font-style:normal}
 .kz-cp-hero-sub{font-size:15px;color:#888;line-height:1.7;margin:0 auto;max-width:480px;font-family:'Manrope',sans-serif;display:block}
 .kz-cp-tabs-wrap{background:#fff;border-radius:24px;border:2px solid #dcdcdc;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:24px;margin-bottom:36px;margin-top:36px}
-.kz-cp-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kz-cp-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .kz-cp-tab{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:transparent;border:2px solid #e8e8e8;border-radius:9999px;padding:13px 10px;font-size:15px;font-weight:800;color:#888;font-family:'Manrope',sans-serif;cursor:pointer;transition:border-color .22s cubic-bezier(.4,0,.2,1),color .22s cubic-bezier(.4,0,.2,1),background .22s cubic-bezier(.4,0,.2,1),transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);white-space:nowrap;line-height:1;letter-spacing:-.2px;width:100%;-webkit-tap-highlight-color:transparent;text-decoration:none}
 .kz-cp-tab:active{border-color:#e53232;color:#e53232;background:#fdf4f4;transform:translateY(-1px);box-shadow:0 6px 14px rgba(229,50,50,.12)}
 .kz-cp-tab:active .kz-cp-tab-count{color:#e53232}
@@ -307,7 +316,7 @@ body.page-home .kazeo-page{padding-top:90px}
 #kz-search-heading .kz-sh-count{font-size:13px;color:#aaa;font-family:'Manrope',sans-serif}
 
 .kz-sv-empty{grid-column:1/-1;text-align:center;padding:64px 32px;background:#fafafa;border:1.5px solid #f0f0f0;border-radius:28px;font-family:'Manrope',sans-serif}
-.kz-sv-empty-icon{width:88px;height:88px;margin:0 auto 24px}
+.kz-sv-empty-icon{width:88px;height:88px;margin:0 auto 10px}
 .kz-sv-empty-icon svg{width:100%;height:100%;display:block}
 .kz-sv-empty-title{font-size:22px;font-weight:800;color:#111;margin:0 0 10px}
 .kz-sv-empty-sub{font-size:14.5px;color:#888;line-height:1.7;max-width:420px;margin:0 auto;font-family:'Manrope',sans-serif}
@@ -320,7 +329,7 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-sv-empty-cta svg{width:16px;height:16px;flex-shrink:0}
 @media(max-width:640px){
   .kz-sv-empty{padding:48px 20px;border-radius:20px}
-  .kz-sv-empty-icon{width:72px;height:72px;margin-bottom:20px}
+  .kz-sv-empty-icon{width:72px;height:72px;margin-bottom:10px}
   .kz-sv-empty-title{font-size:18px}
   .kz-sv-empty-sub{font-size:13.5px}
   .kz-sv-empty-tips{margin:20px 0 26px}
@@ -335,10 +344,12 @@ body.page-home .kazeo-page{padding-top:90px}
 .kz-sp-sub{font-size:15px;color:#888;line-height:1.7;margin:0 auto;max-width:480px;font-family:'Manrope',sans-serif;display:block}
 .kz-sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
 @media(max-width:700px){.kz-sp-grid{grid-template-columns:1fr;gap:12px}}
+@media(min-width:901px){.kz-sp-grid{max-width:1100px;gap:28px}}
 body.page-social .kazeo-page{padding-top:72px;padding-bottom:0;padding-left:1rem;padding-right:1rem}
 @media(max-width:768px){body.page-social .kazeo-page{padding-top:55px}}
+body.page-category .kazeo-page{padding-top:120px}
 @media(max-width:900px){body.page-category .kazeo-page{padding-top:100px}}
-body.page-scriptrequest .kazeo-page{padding-left:2rem;padding-right:2rem;padding-bottom:0}
+body.page-scriptrequest .kazeo-page{padding-left:2rem;padding-right:2rem;padding-bottom:0;padding-top:120px}
 @media(max-width:900px){body.page-scriptrequest .kazeo-page{padding-top:100px}}
 body.page-search .kazeo-page{padding-top:87px}
 @media(max-width:900px){body.page-search .kazeo-page{padding-top:87px}}
@@ -374,6 +385,14 @@ body.page-search .kazeo-page{padding-top:87px}
 .kz-sp-card.tg .kz-sp-divider{background:#2AABEE}
 .kz-sp-card.wa .kz-sp-divider{background:#25D366}
 .kz-sp-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:12px;border:none;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;font-family:'Manrope',sans-serif;transition:background .2s,opacity .2s;margin-top:auto;background:#111;color:#fff}
+@media(min-width:901px){
+  .kz-sp-card{padding:40px 34px 34px}
+  .kz-sp-icon{width:60px;height:60px;border-radius:16px}
+  .kz-sp-icon svg{width:30px;height:30px}
+  .kz-sp-name{font-size:23px}
+  .kz-sp-desc{font-size:14.5px}
+  .kz-sp-btn{padding:15px;font-size:14px}
+}
 .kz-sp-btn:hover{opacity:.85}
 .kz-sp-btn svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2.5;flex-shrink:0}
 .kz-rq-hero{text-align:center;margin-bottom:3rem}
@@ -383,6 +402,7 @@ body.page-search .kazeo-page{padding-top:87px}
 .kz-rq-sub{font-size:15px;color:#888;line-height:1.7;margin:0 auto;max-width:480px;font-family:'Manrope',sans-serif;display:block}
 .kz-rq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:680px;margin:0 auto}
 @media(max-width:700px){.kz-rq-grid{grid-template-columns:1fr;gap:12px}}
+@media(min-width:901px){.kz-rq-grid{max-width:780px;gap:28px}}
 .kz-rq-card{background:#fff;border-radius:28px;border:1.5px solid #efefef;padding:32px 28px 28px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
 .kz-rq-card.wa{border-color:#bfeed6}
 .kz-rq-card.tg{border-color:#bfe4fa}
@@ -395,6 +415,7 @@ body.page-search .kazeo-page{padding-top:87px}
 .kz-rq-card.wa .kz-rq-deco{fill:#25D366}
 .kz-rq-card.tg .kz-rq-deco{fill:#2AABEE}
 .kz-rq-arrow{position:absolute;top:70px;right:-1px;width:120px;height:100px;opacity:.14;pointer-events:none;z-index:0}
+@media(min-width:901px){.kz-rq-arrow{top:80px;right:4px}}
 .kz-rq-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
 .kz-rq-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .kz-rq-card.wa .kz-rq-icon{background:#e8fef2}
@@ -426,12 +447,26 @@ body.page-search .kazeo-page{padding-top:87px}
 .kz-tooltip-disclaimer strong{font-style:italic}
 .kz-tooltip-imgwrap{margin-top:16px;width:100%;aspect-ratio:1/1;background:#ececec;overflow:hidden;border-radius:0}
 .kz-tooltip-imgwrap img{width:100%;height:100%;object-fit:cover;display:block}
+/* Perbesar tooltip WhatsApp/Telegram di desktop - sebelumnya statis 340px (ukuran mobile) */
+@media(min-width:901px){
+  .kz-tooltip-box{max-width:480px}
+  .kz-tooltip-head span{font-size:22px}
+  .kz-tooltip-desc{font-size:14px}
+}
 .kz-rq-name{font-size:20px;font-weight:800;color:#111;margin:0 0 8px;font-family:'Manrope',sans-serif;line-height:1.2;letter-spacing:-.3px}
 .kz-rq-desc{font-size:13.5px;color:#888;line-height:1.65;margin:0 0 28px;font-family:'Manrope',sans-serif;flex:1}
 .kz-rq-divider{width:32px;height:2px;border-radius:2px;margin-bottom:16px}
 .kz-rq-card.wa .kz-rq-divider{background:#25D366}
 .kz-rq-card.tg .kz-rq-divider{background:#2AABEE}
 .kz-rq-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:12px;border:none;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;font-family:'Manrope',sans-serif;transition:background .2s,opacity .2s;margin-top:auto;background:#111;color:#fff}
+@media(min-width:901px){
+  .kz-rq-card{padding:40px 34px 34px}
+  .kz-rq-icon{width:60px;height:60px;border-radius:16px}
+  .kz-rq-icon svg{width:30px;height:30px}
+  .kz-rq-name{font-size:23px}
+  .kz-rq-desc{font-size:14.5px}
+  .kz-rq-btn{padding:15px;font-size:14px}
+}
 .kz-rq-btn:hover{opacity:.85}
 .kz-rq-btn svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2.5;flex-shrink:0}
 .kz-sp-card.yt:hover .kz-sp-btn{background:#FF0000}
@@ -463,8 +498,38 @@ body.page-tutorial .kazeo-page{padding-top:72px;padding-bottom:0}
 /* DAFTAR HERO PAGE */
 body.page-daftarhero .kazeo-page{padding-top:72px;padding-bottom:0}
 @media(max-width:768px){body.page-daftarhero .kazeo-page{padding-top:55px}}
-body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
+body.page-hero .kazeo-page{padding-top:35px;padding-bottom:0}
 @media(max-width:768px){body.page-hero .kazeo-page{padding-top:39px}}
+/* Post detail: padding-top 90px mobile (gantikan inline style lama), 86px khusus desktop */
+@media(max-width:900px){body.page-post .kazeo-page{padding-top:90px}}
+@media(min-width:901px){body.page-post .kazeo-page{padding-top:86px}}
+/* Short story: max 4 baris (dari 2) + rata kiri; Long story: rata kiri. Khusus desktop. */
+@media(min-width:901px){
+  #kz-story-short{-webkit-line-clamp:3!important;text-align:left!important}
+  #kz-story-full{text-align:left!important}
+}
+/* Info & Lapor Bug: sejajar (2 kolom) khusus desktop, biar tidak terlalu panjang ke kanan */
+@media(min-width:901px){
+  .kz-notice-wrap{flex-direction:row!important}
+  .kz-notice-wrap>div{flex:1;min-width:0}
+}
+/* Poin 1: Tooltip "Apa itu Logo?" & "Apa itu Tab 1&2?" - perbesar khusus desktop (sblmnya statis 340px) */
+@media(min-width:901px){
+  .kz-post-tooltip-box{max-width:480px}
+  .kz-post-tooltip-head span{font-size:22px}
+  .kz-post-tooltip-desc{font-size:14px}
+}
+/* Poin 2 & 3: Judul hero & tinggi gambar hero - restore mobile (JS forcing sudah dihapus,
+   sekarang CSS yg atur penuh) + perbesar khusus desktop. Pakai !important krn base masih
+   inline style HTML (450px/32px) yg butuh ditimpa. */
+@media(max-width:600px){
+  #kz-hero{height:300px!important}
+  #kz-hero-title{font-size:22px!important}
+}
+@media(min-width:901px){
+  #kz-hero{height:510px!important}
+  #kz-hero-title{font-size:38px!important}
+}
 .kz-dh-page{width:100%;padding:3rem 2rem 4rem}
 @media(max-width:900px){.kz-dh-page{padding:2.25rem 0.5rem 3rem}}
 @media(max-width:480px){.kz-dh-page{padding:3rem 0.25rem 2.5rem}}
@@ -472,6 +537,14 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 .kz-dh-title{font-size:36px;font-weight:800;color:#111;margin:0 0 12px;font-family:'Manrope',sans-serif;line-height:1.15;letter-spacing:-.5px}
 .kz-dh-title em{color:#e53232;font-style:normal}
 .kz-dh-sub{font-size:15px;color:#888;line-height:1.7;margin:0 auto;max-width:480px;font-family:'Manrope',sans-serif;display:block;padding:0 1rem;box-sizing:border-box}
+
+/* Optimasi ukuran teks header halaman utk desktop — Daftar Hero, Kategori Skin, Tutorial,
+   Request Script, Socials. Sebelumnya semua ukuran ini statis (36px/15px) di semua breakpoint,
+   jadi kurang ideal & terasa kecil di layar besar. Disamakan biar identik di 5 halaman ini. */
+@media(min-width:1024px){
+  .kz-dh-title,.kz-cp-hero-title,.kz-tut-title,.kz-rq-title,.kz-sp-title{font-size:48px;max-width:none}
+  .kz-dh-sub,.kz-cp-hero-sub,.kz-tut-sub,.kz-rq-sub,.kz-sp-sub{font-size:17px;max-width:560px}
+}
 
 .kz-dh-section{max-width:1080px;margin:0 auto 36px}
 .kz-dh-section:last-child{margin-bottom:0}
@@ -496,17 +569,25 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 @media(max-width:768px){.kz-dh-grid{grid-template-columns:repeat(4,1fr);gap:10px}}
 @media(max-width:480px){.kz-dh-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
 
-.kz-dh-card{background:#fff;border:1px solid #ececec;border-radius:14px;padding:10px 6px 12px;text-align:center;text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
+.kz-dh-card{background:#fff;border:2px solid #ececec;border-radius:14px;padding:10px 6px 12px;text-align:center;text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06);transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1),border-color .22s cubic-bezier(.4,0,.2,1);cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
 @media(hover:hover) and (pointer:fine){
   .kz-dh-card:hover{box-shadow:0 10px 22px rgba(0,0,0,.1);border-color:#e53232}
   .kz-dh-card:hover .kz-dh-avatar-wrap{transform:scale(1.08)}
   .kz-dh-card:hover .kz-dh-name{color:#e53232}
 }
-.kz-dh-card:active,.kz-dh-card:focus-visible{transform:translateY(-1px) scale(.96);outline:none;border-color:#e53232;box-shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06),inset 0 0 0 2px #e53232}
-.kz-dh-avatar-wrap{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#ececec;box-shadow:0 0 0 2px #FFC200,0 8px 20px rgba(0,0,0,.3);margin-bottom:8px;flex-shrink:0;transition:transform .25s;display:flex;align-items:center;justify-content:center}
+.kz-dh-card:active,.kz-dh-card:focus-visible{transform:scale(.97);outline:none;border-color:#e53232;box-shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06)}
+.kz-dh-avatar-wrap{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#ececec;box-shadow:0 0 0 2px #FFC200,0 8px 20px rgba(0,0,0,.3);margin-bottom:8px;flex-shrink:0;transition:transform .25s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center}
 .kz-dh-avatar-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-.kz-dh-name{font-size:11px;font-weight:700;color:#111;line-height:1.3;transition:color .2s;font-family:'Manrope',sans-serif}
+.kz-dh-name{font-size:11px;font-weight:700;color:#111;line-height:1.3;transition:color .22s cubic-bezier(.4,0,.2,1);font-family:'Manrope',sans-serif}
 @media(min-width:640px){.kz-dh-avatar-wrap{width:56px;height:56px}.kz-dh-name{font-size:12px}}
+/* Skeleton loading Daftar Hero — meniru persis struktur & ukuran .kz-dh-card,
+   jumlah placeholder disamakan dgn kzDhLimit di main.js (6 mobile / 10 desktop)
+   supaya tidak ada layout shift saat data asli menggantikannya. */
+.kz-dh-skel{background:#fff;border:2px solid #ececec;border-radius:14px;padding:10px 6px 12px;display:flex;flex-direction:column;align-items:center}
+.kz-dh-skel-avatar{width:48px;height:48px;border-radius:50%;background:#e4e4e7;margin-bottom:8px;animation:kzPulse 1.4s ease infinite}
+.kz-dh-skel-line{height:9px;width:70%;border-radius:9999px;background:#e4e4e7;animation:kzPulse 1.4s ease infinite}
+@media(min-width:640px){.kz-dh-skel-avatar{width:56px;height:56px}}
+@media(max-width:768px){.kz-dh-grid .kz-dh-skel:nth-child(n+7){display:none}}
 .kz-dh-empty{grid-column:1/-1;text-align:center;padding:24px 0;color:#bbb;font-size:13px;font-family:'Manrope',sans-serif}
 
 /* HERO DETAIL PAGE (Daftar Hero) */
@@ -526,6 +607,12 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 .kz-heroh-section-title{max-width:1080px;margin:0 auto;font-size:17px;font-weight:800;color:#111;font-family:'Manrope',sans-serif}
 .kz-heroh-divider{max-width:1080px;margin:10px auto 18px;height:1px;background:#ececec}
 @media(max-width:600px){.kz-heroh-avatar-wrap{width:60px;height:60px}.kz-heroh-name{font-size:20px}}
+/* Desktop: card 1080px dgn konten pendek terasa "kosong di tengah" krn info di-flex:1.
+   Perkecil card + hentikan stretch, biar teks & avatar rapat kiri, sisa ruang natural di kanan. */
+@media(min-width:901px){
+  .kz-heroh-card{max-width:500px;margin-left:0;margin-right:0}
+  .kz-heroh-content{justify-content:space-between}
+}
 
 /* CATEGORY DETAIL PAGE (Kategori Skin) */
 .kz-cath-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;font-family:'Manrope',sans-serif;margin:0 auto 20px -2rem;padding-left:1rem;-webkit-tap-highlight-color:transparent;cursor:pointer}
@@ -544,6 +631,11 @@ body.page-hero .kazeo-page{padding-top:72px;padding-bottom:0}
 .kz-cath-section-title{max-width:1080px;margin:0 auto;font-size:17px;font-weight:800;color:#111;font-family:'Manrope',sans-serif}
 .kz-cath-divider{max-width:1080px;margin:10px auto 18px;height:1px;background:#ececec}
 @media(max-width:600px){.kz-cath-avatar-wrap{max-width:80px}.kz-cath-initial{width:60px;height:60px}.kz-cath-name{font-size:20px}}
+/* Desktop: sama seperti hero detail — perkecil card & hentikan stretch info supaya rapat kiri */
+@media(min-width:901px){
+  .kz-cath-card{max-width:500px;margin-left:0;margin-right:0}
+  .kz-cath-content{justify-content:space-between}
+}
 
 /* FOOTER */
 .kz-footer{background:#fff;border-top:1px solid #ebebeb;margin-top:24px;min-height:320px}
