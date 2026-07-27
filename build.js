@@ -760,12 +760,17 @@ function generateSitemapAndRobots() {
     + indexItems + '\n'
     + '</sitemapindex>\n';
 
-  // sitemap.xml TETAP jadi nama file utama (URL yg sudah disubmit ke Search Console tidak berubah),
-  // tapi isinya sekarang sitemap index, bukan lagi satu urlset datar berisi semua URL.
-  fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), indexXml, 'utf8');
-  console.log('built: sitemap.xml (index, ' + sitemapIndexEntries.length + ' sub-sitemap, total ' + SITEMAP_URLS.length + ' url)');
+  // File utama dipindah jadi sitemap_index.xml — URL BARU yang belum pernah punya histori
+  // "gagal fetch" di sistem Google (beda dgn /sitemap.xml yg sudah lama nyangkut status error,
+  // meski isinya sudah lama benar). robots.txt & submission GSC diarahkan ke URL baru ini.
+  fs.writeFileSync(path.join(OUT_DIR, 'sitemap_index.xml'), indexXml, 'utf8');
+  console.log('built: sitemap_index.xml (index, ' + sitemapIndexEntries.length + ' sub-sitemap, total ' + SITEMAP_URLS.length + ' url)');
 
-  const robots = 'User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ' + BASE_URL + '/sitemap.xml\n';
+  // sitemap.xml lama tetap disimpan (isi sama) sbg backward-compat, jaga2 ada yg masih pakai URL lama
+  fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), indexXml, 'utf8');
+  console.log('built: sitemap.xml (salinan lama, backward-compat)');
+
+  const robots = 'User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ' + BASE_URL + '/sitemap_index.xml\n';
   fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), robots, 'utf8');
   console.log('built: robots.txt');
 }

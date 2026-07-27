@@ -16,6 +16,12 @@
       ]
     },
     {
+      "source": "/sitemap_index.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
       "source": "/(page|hero|category|post)-sitemap.xml",
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
