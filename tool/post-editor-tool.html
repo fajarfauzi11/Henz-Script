@@ -194,6 +194,11 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
       <input type="text" id="kategoriskin" placeholder="Starlight / Collector / Elite / Special"/>
     </div>
     <div class="field">
+      <div class="field-label">URL Gambar Kategori <span class="field-badge auto">auto: tambah ke categories.json jika baru</span></div>
+      <input type="text" id="catimgurl" placeholder="https://static.wikia.nocookie.net/... (opsional)"/>
+      <div class="field-hint" style="font-size:11px;color:#999;margin-top:4px;">Opsional. Hanya dipakai jika kategori di atas belum ada di categories.json. Bisa dikosongkan dan diisi manual nanti.</div>
+    </div>
+    <div class="field">
       <div class="field-label">Kata Kunci Tambahan <span class="field-badge">keywords</span></div>
       <input type="text" id="keywords" placeholder="contoh: Vulcan Lionheart, Lionheart (pisahkan dengan koma)"/>
       <div class="field-hint" style="font-size:11px;color:#999;margin-top:4px;">Opsional. Kata kunci tersembunyi untuk memperluas hasil pencarian (misal: nama skin). Pisahkan dengan koma.</div>
@@ -2451,8 +2456,9 @@ async function finalizeAndUpload(){
     }
   }
 
-  var dataPath = 'public/data/posts/'+slug+'.json';
-  var jsonPath = 'public/js/posts.json';
+  var dataPath      = 'public/data/posts/'+slug+'.json';
+  var jsonPath      = 'public/js/posts.json';
+  var categoriesPath = 'public/js/categories.json';
 
   btn.disabled = true;
 
@@ -2526,6 +2532,7 @@ async function finalizeAndUpload(){
     var catVal      = (document.getElementById('kategoriskin').value||'').trim();
     var heroVal     = (document.getElementById('herolink').value||'').trim();
     var keywordsVal = (document.getElementById('keywords').value||'').trim();
+    var catImgVal   = (document.getElementById('catimgurl').value||'').trim();
 
     if(existingIndex !== -1){
       // Overwrite: update entry yang sudah ada in-place, jangan duplikat.
@@ -2563,6 +2570,32 @@ async function finalizeAndUpload(){
       jsonFile.sha
     );
     kzLog('✓ posts.json berhasil diupdate.');
+
+    // 4. Update categories.json jika kategori baru
+    if(catVal){
+      kzLog('Mengecek categories.json...');
+      var catsFile = await kzGhGetFile(categoriesPath, token);
+      if(catsFile){
+        var catsText = kzBase64Decode(catsFile.content);
+        var cats;
+        try{ cats = JSON.parse(catsText); }catch(e){ cats = null; }
+        if(cats && !Object.prototype.hasOwnProperty.call(cats, catVal)){
+          cats[catVal] = catImgVal;
+          await kzGhPutFile(
+            categoriesPath,
+            JSON.stringify(cats, null, 2)+'\n',
+            'Update categories.json: add '+catVal,
+            token,
+            catsFile.sha
+          );
+          kzLog('✓ Kategori baru "'+catVal+'" ditambahkan ke categories.json.');
+        } else if(cats){
+          kzLog('Kategori "'+catVal+'" sudah ada di categories.json, dilewati.');
+        }
+      } else {
+        kzLog('categories.json tidak ditemukan, dilewati.');
+      }
+    }
 
     kzSetStatus('Berhasil!', 'success');
     kzLog('');
