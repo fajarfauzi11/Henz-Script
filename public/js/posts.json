@@ -1,5 +1,17 @@
 [
   {
+    "id": 15,
+    "title": "Saber Legend",
+    "url": "/post/saber-legend",
+    "thumb": "https://i.ibb.co/YTYkTdJL/saber-legend.webp",
+    "cat": "Legend",
+    "hero": "Saber",
+    "date": "1 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Saber Codename - Storm"
+  },
+  {
     "id": 14,
     "title": "Balmond Collector Titan",
     "url": "/post/balmond-collector-titan",
