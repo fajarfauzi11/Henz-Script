@@ -440,6 +440,8 @@ function kzCatRenderTabs(){
     html+='<a class="kz-cp-tab" href="'+href+'">'+l.name+'</a>';
   });
   cont.innerHTML=html;
+  var gridSkel=document.getElementById('kz-cp-grid-skel');
+  if(gridSkel)gridSkel.remove();
 }
 
 /* Search */

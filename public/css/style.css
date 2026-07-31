@@ -218,7 +218,8 @@ body.page-home .kazeo-page{padding-top:90px}
 
 /* SKELETON */
 @keyframes kzPulse{0%,100%{opacity:1}50%{opacity:.4}}
-.kz-skel{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.kz-skel-pill{height:46px;border-radius:9999px;background:#e4e4e7;animation:kzPulse 1.4s ease infinite;width:100%}
+@media(max-width:640px){.kz-skel-pill{height:40px}}
 .kz-skel-img{width:100%;height:128px;background:#e4e4e7;animation:kzPulse 1.4s ease infinite}
 @media(min-width:640px){.kz-skel-img{height:160px}}
 .kz-skel-body{padding:12px 14px 16px;text-align:center;display:flex;flex-direction:column}
