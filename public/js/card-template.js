@@ -37,7 +37,7 @@
     e=e||{};
     var thumb=e.thumb,label=e.cat,url=e.url,
       title=e.title||'Tanpa Judul',date=hzShortDate(e.date||''),auth=e.author||'Henz Official',
-      ava=e.avatar||'https://i.ibb.co/C5RDg8z7/20260610-010408-1.png',
+      ava=e.avatar||'https://i.ibb.co/fzWQDCf4/favicon.webp',
       esc=hzEscHtml(title);
     var imgH=thumb
       ?'<img class="hz-card-img" src="'+thumb+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\'<div class=&quot;hz-card-no-img&quot;>No Image</div>\'">'
