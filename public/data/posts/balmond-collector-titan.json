@@ -1,0 +1,140 @@
+{
+  "namehero": "Balmond Collector Titan",
+  "herolink": "Balmond",
+  "urlthumbnail": "https://i.ibb.co/mVq2npDV/balmond-collector-titans.webp",
+  "kategoriskin": "Collector Titans",
+  "datepost": "Update 1 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Balmond adalah pemimpin bangsa Orc yang sejak kecil dididik untuk menjadi pejuang sekaligus penerus harapan kaumnya. Ayahnya mengajarkan berbagai teknik bertarung dan menceritakan kejayaan masa lalu bangsa Orc, yang dahulu memiliki kerajaan besar sebelum dikalahkan dan terusir dari tanah kelahiran mereka. Sejak itu, Orc hidup terpecah menjadi berbagai suku kecil dan terus ditindas oleh pasukan Abyss.\n\nSaat bangsa Orc semakin menderita akibat penjarahan dan penindasan para iblis, Balmond memimpin sukunya untuk melawan. Keberhasilannya membunuh pemimpin pasukan iblis membangkitkan semangat seluruh suku Orc. Mereka bersatu di bawah kepemimpinan Balmond dan melancarkan pemberontakan besar, bahkan berhasil mengalahkan beberapa pasukan Abyss yang dikirim untuk menindas mereka.\n\nMelihat ancaman tersebut, Thamuz mengirim pasukan Blood Demon dan Fiend dalam jumlah besar untuk menghancurkan bangsa Orc. Meski bertarung dengan gagah berani, pasukan Orc perlahan terdesak dan hampir musnah. Dalam pertempuran terakhir, Balmond menggigit leher seorang Blood Demon hingga darah iblis mengalir ke dalam tubuhnya. Darah itu membangkitkan kekuatan luar biasa, membuatnya mengamuk dan berhasil menerobos kepungan musuh. Kekuatan tersebut juga membangkitkan semangat para Orc yang bertarung bersamanya.\n\nPerubahan itu menarik perhatian Alice. Ia menawarkan perjanjian kepada Balmond: jika bangsa Orc bersedia bergabung dengan Abyss dan membantu menaklukkan Moniyan Empire, wilayah Roaring Wilderness akan dikembalikan kepada mereka. Demi masa depan bangsanya, Balmond menerima tawaran tersebut dan memimpin pasukan Orc bertarung di garis depan pasukan Abyss.\n\nNamun, kesetiaan Balmond kepada Abyss bukanlah tujuan akhirnya. Jauh di dalam hatinya, ia memiliki rencana yang lebih besar. Dengan memanfaatkan kekuatan Abyss, ia ingin menyatukan kembali seluruh bangsa Orc, merebut tanah air mereka yang telah lama hilang, dan membangun kembali kerajaan Orc yang telah runtuh selama ribuan tahun.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Bloodthirst.png",
+    "name": "Bloodthirst",
+    "kategori": "Heal",
+    "longDesc": "Balmond memulihkan 5% HP Maksimum setelah membunuh Minion atau Creep, dan 20% HP Maksimum setelah membunuh hero.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Soul_Lock.png",
+      "name": "Soul Lock",
+      "kategori": "Mobility/Slow",
+      "longDesc": "Balmond bergerak ke arah target sejauh jarak tertentu atau hingga mengenai hero musuh, memberikan 150–275 (+60% Total Serangan Fisik) Kerusakan Fisik kepada musuh di sepanjang jalan. Hero musuh yang terkena akan terpental sedikit, dan Kecepatan Geraknya akan berkurang 40% serta Pertahanan Fisiknya berkurang 40% selama 3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/db/Cyclone_Sweep.png",
+      "name": "Cyclone Sweep",
+      "kategori": "AOE/Buff",
+      "longDesc": "Balmond mendapatkan peningkatan Kecepatan Gerak sebesar 15% yang berkurang seiring waktu dan memutar kapaknya selama 3 detik, memberikan 25–100 (+25% Total Serangan Fisik) (+2% HP Ekstra) Kerusakan Fisik per serangan kepada musuh di dekatnya hingga 14 kali. Setiap serangan berikutnya pada musuh yang sama akan memberikan peningkatan kerusakan sebesar 8,5% (hingga 68%). Bagian bonus Serangan Fisik\ndari kerusakan tersebut dapat menghasilkan Serangan Kritis .",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/50/Lethal_Counter.png",
+      "name": "Lethal Counter",
+      "kategori": "Burst/Slow",
+      "longDesc": "Balmond melepaskan serangan besar ke arah target (skill ini hanya dapat dihentikan oleh Suppression ), memberikan 150 (+70% Total Serangan Fisik) (+30%–45% HP target yang hilang) True Damage .\nSkill ini hanya memberikan damage hingga 1000–2000 kepada unit non-hero.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero021-icon.png",
+        "link": "https://sfile.co/zYb1NNfSru2"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero021-icon.png",
+        "link": "https://sfile.co/qy9Y1g8YVcV"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/44/Hero022-icon.png",
+        "link": "https://sfile.co/1xobl6Pum0A"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/44/Hero022-icon.png",
+        "link": "https://sfile.co/VNvSwRdQtKP"
+      },
+      {
+        "name": "Elite Fury",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hero023-icon.png",
+        "link": "https://sfile.co/YoOWRSb3qPd"
+      },
+      {
+        "name": "Elite Hunter",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero024-icon.png",
+        "link": "https://sfile.co/5njG6i3oN2L"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7a/Hero025-icon.png",
+        "link": "https://sfile.co/c48beaqc9Ph"
+      },
+      {
+        "name": "Special Pointguard",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero026-icon.png",
+        "link": "https://sfile.co/D0Yy4ZBq2pD"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero027-icon.png",
+        "link": "https://sfile.co/JzZo5MyAjx9"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1a/Hero028-icon.png",
+        "link": "https://sfile.co/hWHe6ge7LBV"
+      },
+      {
+        "name": "Special Edge",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/72/Hero029-icon.png",
+        "link": "https://sfile.co/LN1dAYWcMmU"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9f/Hero100210-icon.png",
+        "link": "https://sfile.co/KiZV63cWPCB"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
