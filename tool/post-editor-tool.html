@@ -1501,6 +1501,7 @@ function buildContentData(){
   data.herolink    = v('herolink');
   data.urlthumbnail= v('urlthumbnail');
   data.kategoriskin= v('kategoriskin');
+  data.keywords    = v('keywords');
   data.datepost    = v('datepost');
   data.authorname  = v('authorname') || 'Henz MLBB';
   data.longstory   = v('longstory');
@@ -1565,6 +1566,7 @@ function kzLoadFromJson(jsonString, filename){
   kzSetField('herolink', data.herolink || '');
   kzSetField('urlthumbnail', data.urlthumbnail || '');
   kzSetField('kategoriskin', data.kategoriskin || '');
+  kzSetField('keywords', data.keywords || '');
   kzSetField('datepost', data.datepost || '');
   kzSetField('authorname', data.authorname || 'Henz MLBB');
   kzSetField('longstory', data.longstory || '');
