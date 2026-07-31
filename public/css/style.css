@@ -218,6 +218,7 @@ body.page-home .henz-page{padding-top:90px}
 
 /* SKELETON */
 @keyframes hzPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hz-skel{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .hz-skel-pill{height:46px;border-radius:9999px;background:#e4e4e7;animation:hzPulse 1.4s ease infinite;width:100%}
 @media(max-width:640px){.hz-skel-pill{height:40px}}
 .hz-skel-img{width:100%;height:128px;background:#e4e4e7;animation:hzPulse 1.4s ease infinite}
