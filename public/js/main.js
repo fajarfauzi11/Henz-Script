@@ -549,7 +549,7 @@ if(document.getElementById('kz-search-heading')){
     kzFetchPosts(function(posts){
       var qWords=qLower.split(/\s+/).filter(Boolean);
       var results=posts.filter(function(e){
-        var haystack=((e.title||'')+' '+(e.cat||'')).toLowerCase();
+        var haystack=((e.title||'')+' '+(e.cat||'')+' '+(e.keywords||'')).toLowerCase();
         return qWords.every(function(w){return haystack.indexOf(w)!==-1;});
       });
       var countEl=document.getElementById('kz-sh-count');
