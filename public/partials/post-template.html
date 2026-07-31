@@ -325,19 +325,31 @@
     color: #111;
   }
   .kz-post-tooltip-close {
-    background: none;
+    width: 32px;
+    height: 32px;
+    background: #f0f0f0;
     border: none;
     cursor: pointer;
     color: #717171;
-    padding: 4px;
+    padding: 0;
     border-radius: 50%;
     line-height: 0;
     flex-shrink: 0;
-    transition: background .15s, color .15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s, color .15s, transform .1s;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
   .kz-post-tooltip-close:hover {
-    background: #f0f0f0;
+    background: #e0e0e0;
     color: #111;
+  }
+  .kz-post-tooltip-close:active {
+    background: #d0d0d0;
+    color: #111;
+    transform: scale(.92);
   }
   .kz-post-tooltip-hr {
     height: 1px;

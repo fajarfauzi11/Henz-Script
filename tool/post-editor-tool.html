@@ -558,6 +558,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
         <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
         Tambah Blok
       </button>
+      <button class="add-blok-btn" onclick="kzOpenDlBatchModal(false)" style="margin-left:8px;">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        Batch Nama+Link
+      </button>
       <div style="display:flex;align-items:center;gap:6px;margin-left:auto;">
         <label style="font-size:11px;color:var(--t3);font-family:'Inter',sans-serif;white-space:nowrap;">Total blok:</label>
         <input type="number" id="dl-total-input" min="2" value="2" style="width:56px;padding:5px 8px;border-radius:7px;border:1px solid var(--b2);font-family:'Inter',sans-serif;font-size:12px;color:var(--t1);background:var(--s1);text-align:center;" oninput="kzApplyDlTotal(this.value)"/>
@@ -619,6 +623,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
         <button class="add-blok-btn" onclick="addDlBlokT2()">
           <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           Tambah Blok Tab 2
+        </button>
+        <button class="add-blok-btn" onclick="kzOpenDlBatchModal(true)" style="margin-left:8px;">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          Batch Nama+Link
         </button>
         <span class="count-label" id="dl-count-label-t2"></span>
       </div>
@@ -1880,6 +1888,156 @@ function kzSetField(id, value){
   if(!el) return false;
   el.value = value;
   return true;
+}
+
+/* ══════════════ BATCH NAMA+LINK DOWNLOAD ══════════════
+   Fitur: paste banyak baris "Nama Replace, Link Download" sekaligus.
+   - Cuma update field nama & link (icon tidak disentuh, diisi manual sendiri).
+   - Baris pertama & terakhir batch -> field replace1/replacelast (sesuai struktur form).
+   - Baris tengah batch -> blok tengah yg sudah ada (update nama+link, icon tetap),
+     kalau batch tengah lebih banyak dari blok yg ada, blok baru ditambahkan otomatis.
+   - Kalau batch lebih SEDIKIT dari blok yg sudah ada, sisa blok kelebihan dibiarkan
+     apa adanya (tidak disentuh sama sekali). */
+
+function kzGetDlMidIndices(isT2){
+  var midId = isT2 ? 'dl-middle-t2' : 'dl-middle';
+  var mid = document.getElementById(midId);
+  if(!mid) return [];
+  var idxs = [];
+  mid.querySelectorAll('.blok-card').forEach(function(card){
+    var m = card.id.match(isT2 ? /dl-mid-t2-(\d+)/ : /dl-mid-(\d+)/);
+    if(m) idxs.push(parseInt(m[1], 10));
+  });
+  idxs.sort(function(a, b){ return a - b; });
+  return idxs;
+}
+
+function kzParseDlBatchLines(text){
+  var lines = text.split('\n');
+  var valid = [], invalid = 0;
+  lines.forEach(function(line){
+    line = line.trim();
+    if(!line) return;
+    var commaIdx = line.indexOf(',');
+    if(commaIdx === -1){ invalid++; return; }
+    var name = line.substring(0, commaIdx).trim();
+    var link = line.substring(commaIdx + 1).trim();
+    if(!name || !link){ invalid++; return; }
+    valid.push({ name: name, link: link });
+  });
+  return { valid: valid, invalid: invalid };
+}
+
+function kzApplyDlBatch(isT2, items){
+  var pfx = isT2 ? 't2_' : '';
+  var n = items.length;
+  var addBlokFn = isT2 ? addDlBlokT2 : addDlBlok;
+
+  if(n === 1){
+    kzSetField(pfx + 'replace1', items[0].name);
+    kzSetField(pfx + 'linkreplace1', items[0].link);
+  } else {
+    kzSetField(pfx + 'replace1', items[0].name);
+    kzSetField(pfx + 'linkreplace1', items[0].link);
+
+    var middleItems = items.slice(1, n - 1);
+    var existingMid = kzGetDlMidIndices(isT2);
+    middleItems.forEach(function(item, i){
+      var idx;
+      if(i < existingMid.length){
+        idx = existingMid[i]; // pakai blok yg sudah ada, icon-nya tidak disentuh
+      } else {
+        addBlokFn(); // blok baru, icon kosong (diisi manual nanti)
+        idx = isT2 ? dlCounterT2 : dlCounter;
+      }
+      kzSetField(pfx + 'replace' + idx, item.name);
+      kzSetField(pfx + 'linkreplace' + idx, item.link);
+    });
+
+    var last = items[n - 1];
+    kzSetField(pfx + 'replacelast', last.name);
+    kzSetField(pfx + 'linkreplaceterakhir', last.link);
+  }
+
+  attachAllListeners();
+  if(typeof scheduleLiveUpdate === 'function') scheduleLiveUpdate();
+  if(typeof kzShowLoadStatus === 'function'){
+    kzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update. Icon perlu diisi manual satu per satu.'], false, false);
+  }
+}
+
+function kzOpenDlBatchModal(isT2){
+  var old = document.getElementById('kz-dl-batch-modal');
+  if(old) old.remove();
+
+  var overlay = document.createElement('div');
+  overlay.id = 'kz-dl-batch-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+
+  var box = document.createElement('div');
+  box.style.cssText = 'background:#fff;border-radius:14px;padding:24px;width:560px;max-width:100%;max-height:85vh;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 40px rgba(0,0,0,.18);overflow:auto;';
+
+  var title = document.createElement('div');
+  title.style.cssText = "font-family:'Inter',sans-serif;font-size:15px;font-weight:700;color:#111;";
+  title.textContent = 'Batch Nama + Link Download (' + (isT2 ? 'Tab 2' : 'Tab 1') + ')';
+  box.appendChild(title);
+
+  var desc = document.createElement('div');
+  desc.style.cssText = "font-family:'Inter',sans-serif;font-size:12px;color:#666;line-height:1.7;";
+  desc.innerHTML = 'Satu baris = satu varian, format: <b>Nama Replace, Link Download</b><br>'
+    + 'Contoh: <code style="background:#f4f4f5;padding:1px 5px;border-radius:4px;">Default, https://sfile.co/JuSW9H6e0YX</code><br>'
+    + 'Icon tidak diisi otomatis (isi manual setelahnya). Blok yang sudah ada tapi tidak ke-cover batch (batch lebih sedikit) akan dibiarkan apa adanya.';
+  box.appendChild(desc);
+
+  var textarea = document.createElement('textarea');
+  textarea.id = 'kz-dl-batch-textarea';
+  textarea.placeholder = 'Default, https://sfile.co/JuSW9H6e0YX\nDefault + Logo, https://sfile.co/DaFSRY7shGA\nBasic, https://sfile.co/lgz2tvpprs4';
+  textarea.style.cssText = 'width:100%;min-height:180px;padding:10px 12px;border:1px solid #e0e0e0;border-radius:8px;font-family:monospace;font-size:12.5px;resize:vertical;box-sizing:border-box;';
+  box.appendChild(textarea);
+
+  var previewEl = document.createElement('div');
+  previewEl.id = 'kz-dl-batch-preview';
+  previewEl.style.cssText = "font-family:'Inter',sans-serif;font-size:12px;color:#888;min-height:16px;";
+  box.appendChild(previewEl);
+
+  textarea.oninput = function(){
+    var parsed = kzParseDlBatchLines(textarea.value);
+    previewEl.style.color = '#888';
+    if(!textarea.value.trim()){ previewEl.textContent = ''; return; }
+    var msg = parsed.valid.length + ' baris valid terdeteksi';
+    if(parsed.invalid > 0) msg += ', ' + parsed.invalid + ' baris dilewati (format salah)';
+    previewEl.textContent = msg;
+  };
+
+  var btnRow = document.createElement('div');
+  btnRow.style.cssText = 'display:flex;gap:10px;margin-top:4px;';
+
+  var applyBtn = document.createElement('button');
+  applyBtn.textContent = 'Terapkan';
+  applyBtn.style.cssText = "flex:1;padding:10px 0;border-radius:8px;border:none;background:#111;color:#fff;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;";
+  applyBtn.onclick = function(){
+    var parsed = kzParseDlBatchLines(textarea.value);
+    if(!parsed.valid.length){
+      previewEl.style.color = '#c62828';
+      previewEl.textContent = 'Tidak ada baris valid untuk diterapkan.';
+      return;
+    }
+    kzApplyDlBatch(isT2, parsed.valid);
+    overlay.remove();
+  };
+  btnRow.appendChild(applyBtn);
+
+  var cancelBtn = document.createElement('button');
+  cancelBtn.textContent = 'Batal';
+  cancelBtn.style.cssText = "padding:10px 18px;border-radius:8px;border:1px solid #e0e0e0;background:transparent;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;color:#555;font-weight:600;";
+  cancelBtn.onclick = function(){ overlay.remove(); };
+  btnRow.appendChild(cancelBtn);
+
+  box.appendChild(btnRow);
+  overlay.appendChild(box);
+  overlay.onclick = function(e){ if(e.target === overlay) overlay.remove(); };
+  document.body.appendChild(overlay);
+  textarea.focus();
 }
 
 // Ambil textContent dari elemen di DOM sementara, decode entity HTML otomatis
