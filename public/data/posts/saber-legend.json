@@ -1,0 +1,136 @@
+{
+  "namehero": "Saber Legend",
+  "herolink": "Saber",
+  "urlthumbnail": "https://i.ibb.co/YTYkTdJL/saber-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Saber Codename - Storm",
+  "datepost": "Update 2 Juli 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Saber dulunya adalah seorang pendekar pedang berbakat bernama Duan Meng, yang tumbuh di sebuah desa di Cadia Riverlands dan bercita-cita menjadi ahli pedang terkuat. Berkat kerja kerasnya, ia diterima di Tianyin Swordmaster Sect dan menjadi murid terbaik di bawah bimbingan Master Longma. Namun, ambisinya untuk menjadi pendekar pedang tak terkalahkan membuatnya meninggalkan gunung demi mencari lawan yang lebih kuat.\n\nDalam perjalanannya, Duan Meng berhasil mengalahkan banyak pendekar hingga akhirnya bertemu Zhixu, seorang pendekar misterius yang mengalahkannya dengan mudah. Setelah berlatih keras selama tiga tahun, ia kembali menantang Zhixu, tetapi kembali mengalami kekalahan. Menyadari bahwa kemampuannya telah mencapai batas, Duan Meng mulai mencari cara lain untuk memperoleh kekuatan yang lebih besar.\n\nPerjalanannya membawanya ke Laboratory 1718, sebuah laboratorium yang mengklaim mampu meningkatkan kemampuan manusia melalui modifikasi mekanis. Demi mengejar kesempurnaan ilmu pedang, Duan Meng rela menjalani eksperimen tersebut. Namun setelah transformasi selesai, seluruh ingatannya dihapus dan ia diberi identitas baru sebagai **Saber**, seorang pembunuh mekanis yang hanya hidup untuk menjalankan perintah laboratorium.\n\nSeiring waktu, kenangan masa lalunya mulai muncul kembali. Gerakan pedang yang terasa begitu akrab dan suara-suara dari ingatan yang terkubur membuat Saber mempertanyakan jati dirinya. Tidak ingin terus hidup sebagai senjata pembunuh, ia menghancurkan alat pengendali di kepalanya, meluluhlantakkan Laboratory 1718, lalu melarikan diri dari para penciptanya.\n\nSejak saat itu, Saber mengembara di seluruh Land of Dawn untuk menemukan kembali identitasnya sebagai Duan Meng. Sambil menghindari kejaran Laboratory 1718, ia terus mengikuti petunjuk dari serpihan ingatannya. Ia percaya bahwa masih ada satu tujuan yang belum tercapai: menjadi pendekar pedang sejati dan suatu hari kembali menghadapi rival yang pernah mengalahkannya, Zhixu.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/20/Enemy%27s_Bane.png",
+    "name": "Enemy's Bane",
+    "kategori": "Debuff",
+    "longDesc": "Serangan Saber mengurangi Pertahanan Fisik musuh sebesar 3–8 selama 5 detik setiap kali mengenai target. Efek ini dapat menumpuk hingga 5 kali.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d9/Orbiting_Swords.png",
+      "name": "Orbiting Swords",
+      "kategori": "AOE/Buff",
+      "longDesc": "Saber menembakkan 5 pedang yang berputar mengelilinginya, memberikan 80–105 (+30% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh yang terkena. Setelah berputar mengelilingi Saber selama kurang lebih 5 detik, pedang-pedang tersebut akan terbang kembali ke Saber.\nDalam durasi skill ini, ketika Saber memberikan kerusakan dengan Serangan Dasar atau keahlian- nya , ia akan mengirimkan pedang yang berputar ke arah target, memberikan 210–260 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada target utama dan 50% dari kerusakan tersebut kepada target lain yang dilewatinya, serta mengurangi cooldown Charge sebesar 1 detik. Skill ini hanya memberikan 50% kerusakan kepada semua musuh non-hero seperti minion dan orang aneh .",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/db/Charge.png",
+      "name": "Charge",
+      "kategori": "Mobility/AOE",
+      "longDesc": "Saber melesat ke arah target, memberikan 75–150 (+50% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di sepanjang jalan sambil meningkatkan Serangan Dasar berikutnya . Saber dapat melesat ke target, dan Serangan Dasar yang ditingkatkan memberikan 75–150 (+120% Total Serangan Fisik) Kerusakan Fisik dan memperlambat target sebesar 60% selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0e/Triple_Sweep.png",
+      "name": "Triple Sweep",
+      "kategori": "Burst/CC",
+      "longDesc": "Saber menyerang hero musuh target, membuat mereka terlempar ke udara selama 1,2 detik dan menyerang mereka 3 kali selama durasi tersebut. Dua serangan pertama masing-masing memberikan 120–180 (+100% Serangan Fisik Ekstra) Kerusakan Fisik , sedangkan serangan ketiga memberikan 240–360 (+200% Serangan Fisik Ekstra) Kerusakan Fisik .",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/87/Hero031-icon.png",
+        "link": "https://sfile.co/k2iyNJ4EXVD"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/87/Hero031-icon.png",
+        "link": "https://sfile.co/nluq7Huitbk"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero032-icon.png",
+        "link": "https://sfile.co/n21h5tpQVoE"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero032-icon.png",
+        "link": "https://sfile.co/KURvGa3yJTp"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero033-icon.png",
+        "link": "https://sfile.co/f0g8MNs1o4P"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero035-icon.png",
+        "link": "https://sfile.co/ie6Xeh9PS53"
+      },
+      {
+        "name": "SABER",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/18/Hero036-icon.png",
+        "link": "https://sfile.co/8yyH3LU609j"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4a/Hero037-icon.png",
+        "link": "https://sfile.co/BNx0NPCZmic"
+      },
+      {
+        "name": "Silver Edge",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero038-icon.png",
+        "link": "https://sfile.co/WAEf2btGK7u"
+      },
+      {
+        "name": "Silver Edge + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero038-icon.png",
+        "link": "https://sfile.co/rBMPknSi6Hk"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero039-icon.png",
+        "link": "https://sfile.co/CM5Zy02LtIQ"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://i.ibb.co/wmYdg0d/d19241a3ccfa.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
