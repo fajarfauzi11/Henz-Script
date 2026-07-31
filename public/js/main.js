@@ -2,50 +2,50 @@
 (function(){
 
 /* Year */
-var kzYrEl=document.getElementById('kz-year');
-if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
+var hzYrEl=document.getElementById('hz-year');
+if(hzYrEl)hzYrEl.textContent=new Date().getFullYear();
 
 /* Mobile Nav Drawer (Header V2 - pill) */
 (function(){
-  var btn=document.getElementById('kazeo-menu-btn');
-  var nav=document.getElementById('kazeo-mobile-nav');
-  var headerInner=btn?btn.closest('.kazeo-header-inner'):null;
-  function kzOpenDrawer(){
+  var btn=document.getElementById('henz-menu-btn');
+  var nav=document.getElementById('henz-mobile-nav');
+  var headerInner=btn?btn.closest('.henz-header-inner'):null;
+  function hzOpenDrawer(){
     nav.style.display='flex';
-    var items=nav.querySelectorAll('.kz-drawer-links li,.kz-drawer-search');
+    var items=nav.querySelectorAll('.hz-drawer-links li,.hz-drawer-search');
     items.forEach(function(el){el.style.animation='none';el.getBoundingClientRect();el.style.animation='';});
     nav.getBoundingClientRect();
     nav.classList.add('open');
     btn.classList.add('active');
-    if(headerInner)headerInner.classList.add('kz-drawer-open');
+    if(headerInner)headerInner.classList.add('hz-drawer-open');
   }
-  function kzCloseDrawer(){
+  function hzCloseDrawer(){
     nav.classList.remove('open');
     btn.classList.remove('active');
-    if(headerInner)headerInner.classList.remove('kz-drawer-open');
+    if(headerInner)headerInner.classList.remove('hz-drawer-open');
     setTimeout(function(){if(!nav.classList.contains('open'))nav.style.display='none';},280);
   }
   if(btn&&nav){
     nav.style.display='none';
-    btn.addEventListener('click',function(){if(nav.classList.contains('open')){kzCloseDrawer();}else{kzOpenDrawer();}});
+    btn.addEventListener('click',function(){if(nav.classList.contains('open')){hzCloseDrawer();}else{hzOpenDrawer();}});
   }
-  window.kzV2CloseDrawer=kzCloseDrawer;
+  window.hzV2CloseDrawer=hzCloseDrawer;
   document.addEventListener('click',function(e){
     if(nav&&nav.classList.contains('open')){
-      if(!nav.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){kzCloseDrawer();}
+      if(!nav.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){hzCloseDrawer();}
     }
   });
 })();
 
 /* Mobile Nav Dropdown (Header V1 - box) */
 (function(){
-  var btn=document.getElementById('kz-hv1-menu-btn');
-  var nav=document.getElementById('kz-hv1-mobile-nav');
+  var btn=document.getElementById('hz-hv1-menu-btn');
+  var nav=document.getElementById('hz-hv1-mobile-nav');
   if(!btn||!nav)return;
-  function open(){nav.classList.add('open');btn.classList.add('active');btn.setAttribute('aria-expanded','true');kzHv1CloseSearch();}
+  function open(){nav.classList.add('open');btn.classList.add('active');btn.setAttribute('aria-expanded','true');hzHv1CloseSearch();}
   function close(){nav.classList.remove('open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');}
   function toggle(){if(nav.classList.contains('open')){close();}else{open();}}
-  window.kzHv1CloseNav=close;
+  window.hzHv1CloseNav=close;
   btn.addEventListener('click',toggle);
   document.addEventListener('click',function(e){
     if(nav.classList.contains('open')&&!nav.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){close();}
@@ -54,7 +54,7 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
 
 /* Cegah dua penanda aktif bersamaan di dropdown nav Header V1 saat ditekan */
 (function(){
-  var nav=document.getElementById('kz-hv1-mobile-nav');
+  var nav=document.getElementById('hz-hv1-mobile-nav');
   if(!nav)return;
   function norm(p){
     if(!p)return '/';
@@ -94,24 +94,24 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
 
 /* Search Toggle (Header V1 - expand ke kiri) */
 (function(){
-  var wrap=document.getElementById('kz-hv1-search-wrap');
-  var btn=document.getElementById('kz-hv1-search-btn');
-  var inner=wrap?wrap.closest('.kz-hv1-inner'):null;
+  var wrap=document.getElementById('hz-hv1-search-wrap');
+  var btn=document.getElementById('hz-hv1-search-btn');
+  var inner=wrap?wrap.closest('.hz-hv1-inner'):null;
   var input=wrap?wrap.querySelector('input[name="q"]'):null;
   if(!wrap||!btn)return;
   function open(){
     wrap.classList.add('open');
-    if(inner)inner.classList.add('kz-search-active');
+    if(inner)inner.classList.add('hz-search-active');
     btn.setAttribute('aria-expanded','true');
-    if(window.kzHv1CloseNav)window.kzHv1CloseNav();
+    if(window.hzHv1CloseNav)window.hzHv1CloseNav();
     if(input)input.focus({preventScroll:true});
   }
   function close(){
     wrap.classList.remove('open');
-    if(inner)inner.classList.remove('kz-search-active');
+    if(inner)inner.classList.remove('hz-search-active');
     btn.setAttribute('aria-expanded','false');
   }
-  window.kzHv1CloseSearch=close;
+  window.hzHv1CloseSearch=close;
   btn.addEventListener('click',function(){if(wrap.classList.contains('open')){close();}else{open();}});
   document.addEventListener('click',function(e){
     if(wrap.classList.contains('open')&&!wrap.contains(e.target)){close();}
@@ -122,8 +122,8 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
 (function(){
   if(!window.visualViewport)return;
   var vv=window.visualViewport;
-  var hv1=document.getElementById('kz-hv1-header');
-  var hv2=document.querySelector('.kazeo-header');
+  var hv1=document.getElementById('hz-hv1-header');
+  var hv2=document.querySelector('.henz-header');
   var mq=window.matchMedia('(max-width:768px)');
   function hv2BaseTop(){return mq.matches?8:24;}
   function sync(){
@@ -144,23 +144,23 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
 
 /* Header V1 <-> V2 crossfade on scroll */
 (function(){
-  var sentinel=document.getElementById('kz-header-sentinel');
-  var hv1=document.getElementById('kz-hv1-header');
+  var sentinel=document.getElementById('hz-header-sentinel');
+  var hv1=document.getElementById('hz-hv1-header');
   if(!sentinel)return;
   function positionSentinel(){if(hv1)sentinel.style.top=hv1.offsetHeight+'px';}
   positionSentinel();
   window.addEventListener('resize',positionSentinel);
-  if(typeof IntersectionObserver==='undefined'){document.body.classList.add('kz-scrolled');return;}
+  if(typeof IntersectionObserver==='undefined'){document.body.classList.add('hz-scrolled');return;}
   var switchTimer=null;
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       var willScroll=!entry.isIntersecting;
       clearTimeout(switchTimer);
       switchTimer=setTimeout(function(){
-        document.body.classList.toggle('kz-scrolled',willScroll);
-        if(window.kzHv1CloseNav)window.kzHv1CloseNav();
-        if(window.kzHv1CloseSearch)window.kzHv1CloseSearch();
-        if(window.kzV2CloseDrawer)window.kzV2CloseDrawer();
+        document.body.classList.toggle('hz-scrolled',willScroll);
+        if(window.hzHv1CloseNav)window.hzHv1CloseNav();
+        if(window.hzHv1CloseSearch)window.hzHv1CloseSearch();
+        if(window.hzV2CloseDrawer)window.hzV2CloseDrawer();
       },120);
     });
   },{root:null,threshold:0});
@@ -193,11 +193,11 @@ if(kzYrEl)kzYrEl.textContent=new Date().getFullYear();
     input.addEventListener('mousedown',startLock);
     input.addEventListener('focus',function(){if(lockY===null)startLock();});
   }
-  document.querySelectorAll('.kz-hv1-header input[type="text"],.kazeo-header input[type="text"]').forEach(guardScroll);
+  document.querySelectorAll('.hz-hv1-header input[type="text"],.henz-header input[type="text"]').forEach(guardScroll);
 })();
 
 /* Active nav */
-function kzNormalizePath(p){
+function hzNormalizePath(p){
   if(!p)return '/';
   p=p.split('?')[0].split('#')[0];
   p=p.replace(/index\.html$/,'');
@@ -206,14 +206,14 @@ function kzNormalizePath(p){
   if(p==='')p='/';
   return p;
 }
-var kzCurrentPath=kzNormalizePath(window.location.pathname);
-document.querySelectorAll('.kazeo-nav a,.kazeo-mobile-nav a,.kz-hv1-mobile-nav a').forEach(function(link){
-  var href=kzNormalizePath(link.getAttribute('href'));
-  if(href&&href===kzCurrentPath)link.classList.add('active');
+var hzCurrentPath=hzNormalizePath(window.location.pathname);
+document.querySelectorAll('.henz-nav a,.henz-mobile-nav a,.hz-hv1-mobile-nav a').forEach(function(link){
+  var href=hzNormalizePath(link.getAttribute('href'));
+  if(href&&href===hzCurrentPath)link.classList.add('active');
 });
 
 /* Search form */
-document.querySelectorAll('.kz-search-form-js').forEach(function(form){
+document.querySelectorAll('.hz-search-form-js').forEach(function(form){
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var q=form.querySelector('input[name="q"]');
@@ -222,21 +222,21 @@ document.querySelectorAll('.kz-search-form-js').forEach(function(form){
 });
 
 /* Fetch posts.json */
-function kzFetchPosts(cb){
+function hzFetchPosts(cb){
   fetch('/js/posts.json?t='+Date.now())
     .then(function(r){return r.json();})
     .then(function(d){cb(Array.isArray(d)?d:[]);})
     .catch(function(){cb([]);});
 }
 
-/* Build slider card — desain card dipusatkan di /js/card-template.js (window.kzCard) */
-function kzBuildSlide(e){
-  return '<div class="swiper-slide" style="height:auto">'+window.kzCard.kzBuildCard(e)+'</div>';
+/* Build slider card — desain card dipusatkan di /js/card-template.js (window.hzCard) */
+function hzBuildSlide(e){
+  return '<div class="swiper-slide" style="height:auto">'+window.hzCard.hzBuildCard(e)+'</div>';
 }
 
 
 /* Init Swiper */
-function kzInitSwiper(id){
+function hzInitSwiper(id){
   if(typeof Swiper==='undefined')return null;
   var el=document.getElementById(id);
   if(!el)return null;
@@ -255,51 +255,51 @@ function kzInitSwiper(id){
    jadi satu, sehingga konten asli ketutup skeleton lama. Sudah dites & dikonfirmasi ulang lewat
    simulasi dengan Swiper v11.2.10 asli (persis versi CDN yang dipakai). Ganti innerHTML wrapper
    langsung + swiper.update() terbukti benar-benar mengganti seluruh isi, konsisten di semua kondisi. */
-function kzSwapSlides(swiper,htmlArray){
+function hzSwapSlides(swiper,htmlArray){
   if(!swiper||!swiper.wrapperEl)return;
   try{
     swiper.wrapperEl.innerHTML=htmlArray.join('');
     swiper.update();
   }catch(err){
-    console.error('kzSwapSlides error:',err);
+    console.error('hzSwapSlides error:',err);
   }
 }
 
 /* Init langsung di atas skeleton yang sudah ada di HTML sejak awal render,
    supaya dari paint pertama layout sudah presisi sama Swiper (bukan perkiraan CSS). */
-var kzSwiperLatest=kzInitSwiper('kz-swiper-latest');
-var kzSwiperPopular=kzInitSwiper('kz-swiper-popular');
+var hzSwiperLatest=hzInitSwiper('hz-swiper-latest');
+var hzSwiperPopular=hzInitSwiper('hz-swiper-popular');
 
 /* Segmented Control */
-var seg=document.getElementById('kz-seg');
-var pill=document.getElementById('kz-seg-pill');
+var seg=document.getElementById('hz-seg');
+var pill=document.getElementById('hz-seg-pill');
 if(seg&&pill){
-  var items=seg.querySelectorAll('.kz-seg-item');
-  var secLatest=document.getElementById('kz-section-latest');
-  var secPopular=document.getElementById('kz-section-popular');
+  var items=seg.querySelectorAll('.hz-seg-item');
+  var secLatest=document.getElementById('hz-section-latest');
+  var secPopular=document.getElementById('hz-section-popular');
   function movePill(btn){var pad=4;pill.style.width=btn.offsetWidth+'px';pill.style.translate=(btn.offsetLeft-pad)+'px';}
   function activate(btn){
     items.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-checked','false');});
     btn.classList.add('active');btn.setAttribute('aria-checked','true');movePill(btn);
     var target=btn.getAttribute('data-target');
-    if(secLatest)secLatest.style.display=(target==='kz-section-latest')?'block':'none';
-    if(secPopular)secPopular.style.display=(target==='kz-section-popular')?'block':'none';
+    if(secLatest)secLatest.style.display=(target==='hz-section-latest')?'block':'none';
+    if(secPopular)secPopular.style.display=(target==='hz-section-popular')?'block':'none';
     /* Swiper yang di-update() sementara container-nya display:none akan menghitung lebar 0
        (geometri jadi rusak/tidak valid). Paksa recalculate begitu section benar-benar terlihat,
        supaya slide selalu tampil benar berapa pun kali tab ini dibuka. */
-    if(target==='kz-section-latest'&&kzSwiperLatest)kzSwiperLatest.update();
-    if(target==='kz-section-popular'&&kzSwiperPopular)kzSwiperPopular.update();
+    if(target==='hz-section-latest'&&hzSwiperLatest)hzSwiperLatest.update();
+    if(target==='hz-section-popular'&&hzSwiperPopular)hzSwiperPopular.update();
   }
   items.forEach(function(btn){btn.addEventListener('click',function(){activate(btn);});});
   if(secPopular)secPopular.style.display='none';
   requestAnimationFrame(function(){requestAnimationFrame(function(){
-    var activeBtn=seg.querySelector('.kz-seg-item.active');
+    var activeBtn=seg.querySelector('.hz-seg-item.active');
     if(activeBtn)movePill(activeBtn);
   });});
 }
 
-/* View Count — kzSlugFromUrl & kzFormatViewCount sekarang dari window.kzCard (card-template.js) */
-function kzLoadViewCounts(root){
+/* View Count — hzSlugFromUrl & hzFormatViewCount sekarang dari window.hzCard (card-template.js) */
+function hzLoadViewCounts(root){
   var scope=root||document;
   var els=scope.querySelectorAll('[data-view-id]');
   if(!els.length)return;
@@ -317,20 +317,20 @@ function kzLoadViewCounts(root){
       els.forEach(function(el){
         var id=el.getAttribute('data-view-id');
         var span=el.querySelector('[data-view-count]');
-        if(span)span.textContent=window.kzCard.kzFormatViewCount(views[id]||0);
+        if(span)span.textContent=window.hzCard.hzFormatViewCount(views[id]||0);
       });
     })
     .catch(function(){});
 }
-document.addEventListener('DOMContentLoaded',function(){kzLoadViewCounts();});
-if(document.readyState==='complete'||document.readyState==='interactive')kzLoadViewCounts();
+document.addEventListener('DOMContentLoaded',function(){hzLoadViewCounts();});
+if(document.readyState==='complete'||document.readyState==='interactive')hzLoadViewCounts();
 
 if(document.body.classList.contains('page-post')){
-  kzFetchPosts(function(posts){
+  hzFetchPosts(function(posts){
     var path=window.location.pathname.replace(/\/+$/,'');
     var current=posts.filter(function(p){return (p.url||'').replace(/\/+$/,'')===path;})[0];
     if(!current||!current.id)return;
-    var slug=window.kzCard.kzSlugFromUrl(current.url);
+    var slug=window.hzCard.hzSlugFromUrl(current.url);
     var flagKey='kz_viewed_'+current.id;
     if(sessionStorage.getItem(flagKey))return;
     fetch('/api/view',{
@@ -342,22 +342,22 @@ if(document.body.classList.contains('page-post')){
 }
 
 /* Load Sliders */
-if(document.getElementById('kz-swiper-latest')){
-  kzFetchPosts(function(posts){
+if(document.getElementById('hz-swiper-latest')){
+  hzFetchPosts(function(posts){
     if(!posts.length)return;
     var latestSlides=[];
-    for(var i=0;i<Math.min(posts.length,10);i++)latestSlides.push(kzBuildSlide(posts[i]));
-    kzSwapSlides(kzSwiperLatest,latestSlides);
-    kzLoadViewCounts();
+    for(var i=0;i<Math.min(posts.length,10);i++)latestSlides.push(hzBuildSlide(posts[i]));
+    hzSwapSlides(hzSwiperLatest,latestSlides);
+    hzLoadViewCounts();
 
     function renderPopular(sortedPosts){
       var popularSlides=[];
-      for(var i=0;i<Math.min(sortedPosts.length,10);i++)popularSlides.push(kzBuildSlide(sortedPosts[i]));
-      kzSwapSlides(kzSwiperPopular,popularSlides);
-      kzLoadViewCounts();
+      for(var i=0;i<Math.min(sortedPosts.length,10);i++)popularSlides.push(hzBuildSlide(sortedPosts[i]));
+      hzSwapSlides(hzSwiperPopular,popularSlides);
+      hzLoadViewCounts();
     }
 
-    var items=posts.map(function(p){return p.id+':'+window.kzCard.kzSlugFromUrl(p.url);});
+    var items=posts.map(function(p){return p.id+':'+window.hzCard.hzSlugFromUrl(p.url);});
     fetch('/api/view?items='+encodeURIComponent(items.join(',')))
       .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
       .then(function(data){
@@ -375,8 +375,8 @@ if(document.getElementById('kz-swiper-latest')){
 }
 
 /* Hero Terpopuler (Home) */
-var kzSwiperHeroPopular=kzInitHeroSwiper('kz-swiper-hero-popular');
-if(document.getElementById('kz-hero-popular-wrapper')){
+var hzSwiperHeroPopular=hzInitHeroSwiper('hz-swiper-hero-popular');
+if(document.getElementById('hz-hero-popular-wrapper')){
   Promise.all([
     fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
     fetch('/js/hero-popular.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];})
@@ -389,19 +389,19 @@ if(document.getElementById('kz-hero-popular-wrapper')){
     keys.forEach(function(key){
       var h=byName[(key||'').toLowerCase()];
       if(!h)return;
-      heroSlides.push('<div class="swiper-slide" style="height:auto">'+kzDhBuildCard(h)+'</div>');
+      heroSlides.push('<div class="swiper-slide" style="height:auto">'+hzDhBuildCard(h)+'</div>');
     });
     if(heroSlides.length){
-      kzSwapSlides(kzSwiperHeroPopular,heroSlides);
+      hzSwapSlides(hzSwiperHeroPopular,heroSlides);
     }else{
-      var wrapper=document.getElementById('kz-hero-popular-wrapper');
-      if(wrapper)wrapper.innerHTML='<div class="kz-dh-empty">Belum ada hero populer.</div>';
+      var wrapper=document.getElementById('hz-hero-popular-wrapper');
+      if(wrapper)wrapper.innerHTML='<div class="hz-dh-empty">Belum ada hero populer.</div>';
     }
   });
 }
 
-/* Init Swiper Hero Terpopuler (config sama dengan kzInitSwiper, cuma slidesPerView disesuaikan buat kartu hero yang lebih kecil) */
-function kzInitHeroSwiper(id){
+/* Init Swiper Hero Terpopuler (config sama dengan hzInitSwiper, cuma slidesPerView disesuaikan buat kartu hero yang lebih kecil) */
+function hzInitHeroSwiper(id){
   if(typeof Swiper==='undefined')return null;
   var el=document.getElementById(id);
   if(!el)return null;
@@ -414,11 +414,11 @@ function kzInitHeroSwiper(id){
 }
 
 /* Category State */
-var kzCatState={labels:[]};
+var hzCatState={labels:[]};
 
-if(document.getElementById('kz-category-page')){
-  document.getElementById('kz-category-page').classList.add('active');
-  kzFetchPosts(function(posts){
+if(document.getElementById('hz-category-page')){
+  document.getElementById('hz-category-page').classList.add('active');
+  hzFetchPosts(function(posts){
     var labelMap={};
     posts.forEach(function(e){
       if(e.cat&&['Category','Community','Social'].indexOf(e.cat)===-1){
@@ -426,32 +426,32 @@ if(document.getElementById('kz-category-page')){
       }
     });
     var labels=Object.keys(labelMap).sort(function(a,b){return a.localeCompare(b);});
-    kzCatState.labels=labels.map(function(n){return{name:n,count:labelMap[n]};});
-    kzCatRenderTabs();
+    hzCatState.labels=labels.map(function(n){return{name:n,count:labelMap[n]};});
+    hzCatRenderTabs();
   });
 }
 
-function kzCatRenderTabs(){
-  var cont=document.getElementById('kz-cp-tabs');
+function hzCatRenderTabs(){
+  var cont=document.getElementById('hz-cp-tabs');
   if(!cont)return;
-  var html='<a class="kz-cp-tab" href="/kategori-skin/semua">Semua</a>';
-  kzCatState.labels.forEach(function(l){
-    var href='/kategori-skin/'+kzDhSlugify(l.name);
-    html+='<a class="kz-cp-tab" href="'+href+'">'+l.name+'</a>';
+  var html='<a class="hz-cp-tab" href="/kategori-skin/semua">Semua</a>';
+  hzCatState.labels.forEach(function(l){
+    var href='/kategori-skin/'+hzDhSlugify(l.name);
+    html+='<a class="hz-cp-tab" href="'+href+'">'+l.name+'</a>';
   });
   cont.innerHTML=html;
-  var gridSkel=document.getElementById('kz-cp-grid-skel');
+  var gridSkel=document.getElementById('hz-cp-grid-skel');
   if(gridSkel)gridSkel.remove();
 }
 
 /* Search */
-function kzSvEsc(s){
+function hzSvEsc(s){
   return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 /* Fuzzy match — "did you mean" buat search kosong.
    Levenshtein distance dinormalisasi jadi skor kemiripan 0..1 (1 = identik). */
-function kzLevenshtein(a,b){
+function hzLevenshtein(a,b){
   a=a||'';b=b||'';
   var m=a.length,n=b.length;
   if(!m)return n;
@@ -467,17 +467,17 @@ function kzLevenshtein(a,b){
   }
   return prev[n];
 }
-function kzSimilarity(a,b){
+function hzSimilarity(a,b){
   a=(a||'').toLowerCase().trim();b=(b||'').toLowerCase().trim();
   if(!a||!b)return 0;
   var maxLen=Math.max(a.length,b.length);
-  return 1-(kzLevenshtein(a,b)/maxLen);
+  return 1-(hzLevenshtein(a,b)/maxLen);
 }
 
 /* Gabung kandidat hero + kategori, ranking murni berdasar skor kemiripan ke kata kunci.
    Kalau kandidat yang lolos ambang batas kurang dari 3, sisanya ditambal pill populer (fallback). */
 var KZ_SUGGEST_THRESHOLD=0.5;
-function kzBuildSuggestions(qVal,callback){
+function hzBuildSuggestions(qVal,callback){
   Promise.all([
     fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
     fetch('/js/categories.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {};}),
@@ -487,10 +487,10 @@ function kzBuildSuggestions(qVal,callback){
     var q=(qVal||'').toLowerCase().trim();
     var pool=[];
     heroes.forEach(function(h){
-      if(h&&h.name)pool.push({label:h.name,href:'/search?q='+encodeURIComponent(h.name),score:kzSimilarity(q,h.name)});
+      if(h&&h.name)pool.push({label:h.name,href:'/search?q='+encodeURIComponent(h.name),score:hzSimilarity(q,h.name)});
     });
     Object.keys(cats).forEach(function(catName){
-      pool.push({label:catName,href:'/kategori-skin/'+kzDhSlugify(catName),score:kzSimilarity(q,catName)});
+      pool.push({label:catName,href:'/kategori-skin/'+hzDhSlugify(catName),score:hzSimilarity(q,catName)});
     });
     pool.sort(function(a,b){return b.score-a.score;});
     var picked=[],seen={};
@@ -510,96 +510,96 @@ function kzBuildSuggestions(qVal,callback){
   }).catch(function(){callback([]);});
 }
 
-function kzBuildSearchEmpty(qVal){
-  var esc=kzSvEsc(qVal);
-  var html='<div class="kz-sv-empty">'
-    +'<div class="kz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
+function hzBuildSearchEmpty(qVal){
+  var esc=hzSvEsc(qVal);
+  var html='<div class="hz-sv-empty">'
+    +'<div class="hz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
     +'<circle cx="40" cy="40" r="26" stroke="#e6e6e6" stroke-width="7"/>'
     +'<circle cx="40" cy="40" r="26" stroke="#e53232" stroke-width="7" stroke-dasharray="30 300" stroke-linecap="round" transform="rotate(-45 40 40)"/>'
     +'<line x1="59" y1="59" x2="82" y2="82" stroke="#e6e6e6" stroke-width="8" stroke-linecap="round"/>'
     +'<line x1="30" y1="30" x2="50" y2="50" stroke="#e53232" stroke-width="5" stroke-linecap="round"/>'
     +'<line x1="50" y1="30" x2="30" y2="50" stroke="#e53232" stroke-width="5" stroke-linecap="round"/>'
     +'</svg></div>'
-    +'<div class="kz-sv-empty-title">Script tidak ditemukan</div>'
-    +'<p class="kz-sv-empty-sub">Kami tidak menemukan script untuk kata kunci <b>&ldquo;'+esc+'&rdquo;</b>. Coba periksa kembali ejaannya atau gunakan kata kunci lain.</p>'
-    +'<div class="kz-sv-empty-tips" id="kz-sv-empty-tips"></div>'
-    +'<a class="kz-sv-empty-cta" href="/request-script">Request script ini'
+    +'<div class="hz-sv-empty-title">Script tidak ditemukan</div>'
+    +'<p class="hz-sv-empty-sub">Kami tidak menemukan script untuk kata kunci <b>&ldquo;'+esc+'&rdquo;</b>. Coba periksa kembali ejaannya atau gunakan kata kunci lain.</p>'
+    +'<div class="hz-sv-empty-tips" id="hz-sv-empty-tips"></div>'
+    +'<a class="hz-sv-empty-cta" href="/request-script">Request script ini'
     +'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
     +'</a></div>';
-  kzBuildSuggestions(qVal,function(picked){
-    var tipsEl=document.getElementById('kz-sv-empty-tips');
+  hzBuildSuggestions(qVal,function(picked){
+    var tipsEl=document.getElementById('hz-sv-empty-tips');
     if(!tipsEl)return;
     tipsEl.innerHTML=picked.map(function(item){
-      return '<a class="kz-sv-empty-tip" href="'+item.href+'">'+kzSvEsc(item.label)+'</a>';
+      return '<a class="hz-sv-empty-tip" href="'+item.href+'">'+hzSvEsc(item.label)+'</a>';
     }).join('');
   });
   return html;
 }
-if(document.getElementById('kz-search-heading')){
-  var shWrap=document.getElementById('kz-search-heading');
-  var svGrid=document.getElementById('kz-sv-grid');
+if(document.getElementById('hz-search-heading')){
+  var shWrap=document.getElementById('hz-search-heading');
+  var svGrid=document.getElementById('hz-sv-grid');
   var urlParams=new URLSearchParams(window.location.search);
   var qVal=urlParams.get('q')||'';
   var qLower=qVal.toLowerCase();
   shWrap.style.display='block';
-  shWrap.innerHTML='<a class="kz-sh-back" href="/" onclick="history.back();return false;">'
+  shWrap.innerHTML='<a class="hz-sh-back" href="/" onclick="history.back();return false;">'
     +'&#8592; Halaman Sebelumnya</a>'
     +'<h1>Hasil pencarian untuk: <em>&ldquo;'+qVal.replace(/</g,'&lt;')+'&rdquo;</em></h1>'
-    +'<p class="kz-sh-count" id="kz-sh-count">Memuat...</p>';
-  if(!qVal){if(svGrid)svGrid.innerHTML='<div class="kz-cp-empty">Masukkan kata kunci pencarian.</div>';}
+    +'<p class="hz-sh-count" id="hz-sh-count">Memuat...</p>';
+  if(!qVal){if(svGrid)svGrid.innerHTML='<div class="hz-cp-empty">Masukkan kata kunci pencarian.</div>';}
   else{
-    kzFetchPosts(function(posts){
+    hzFetchPosts(function(posts){
       var qWords=qLower.split(/\s+/).filter(Boolean);
       var results=posts.filter(function(e){
         var haystack=((e.title||'')+' '+(e.cat||'')+' '+(e.keywords||'')).toLowerCase();
         return qWords.every(function(w){return haystack.indexOf(w)!==-1;});
       });
-      var countEl=document.getElementById('kz-sh-count');
-      if(!results.length){if(countEl)countEl.style.display='none';if(svGrid)svGrid.innerHTML=kzBuildSearchEmpty(qVal);return;}
+      var countEl=document.getElementById('hz-sh-count');
+      if(!results.length){if(countEl)countEl.style.display='none';if(svGrid)svGrid.innerHTML=hzBuildSearchEmpty(qVal);return;}
       if(countEl){countEl.style.display='block';countEl.textContent='Menemukan '+results.length+' script yang sesuai.';}
       if(svGrid){
         svGrid.innerHTML='';
         results.forEach(function(e){
-          var tmp=document.createElement('div');tmp.innerHTML=window.kzCard.kzBuildCard(e);
-          var cardEl=tmp.querySelector('.kz-card');if(cardEl)svGrid.appendChild(cardEl);
+          var tmp=document.createElement('div');tmp.innerHTML=window.hzCard.hzBuildCard(e);
+          var cardEl=tmp.querySelector('.hz-card');if(cardEl)svGrid.appendChild(cardEl);
         });
-        kzLoadViewCounts();
+        hzLoadViewCounts();
       }
     });
   }
 }
 
 /* Daftar Hero Page */
-if(document.getElementById('kz-dh-sections')){
-  var kzDhLimit=window.matchMedia('(max-width:768px)').matches?6:12;
+if(document.getElementById('hz-dh-sections')){
+  var hzDhLimit=window.matchMedia('(max-width:768px)').matches?6:12;
   fetch('/js/heroes.json?t='+Date.now())
     .then(function(r){return r.json();})
-    .then(function(d){kzDhInit(Array.isArray(d)?d:[]);})
-    .catch(function(){kzDhInit([]);});
+    .then(function(d){hzDhInit(Array.isArray(d)?d:[]);})
+    .catch(function(){hzDhInit([]);});
 }
 
-function kzDhEsc(s){
+function hzDhEsc(s){
   return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-function kzDhSlugify(name){
+function hzDhSlugify(name){
   return (name||'').toLowerCase().replace(/'/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-+|-+$)/g,'');
 }
 
-function kzDhBuildCard(h){
-  var name=h.name||'Hero',esc=kzDhEsc(name),img=h.image||'',
+function hzDhBuildCard(h){
+  var name=h.name||'Hero',esc=hzDhEsc(name),img=h.image||'',
     initial=esc.charAt(0).toUpperCase(),
-    href='/hero/'+kzDhSlugify(name);
+    href='/hero/'+hzDhSlugify(name);
   var avatarH=img
     ?'<img src="'+img+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="var p=this.parentNode;p.innerHTML=\''+initial+'\';p.style.cssText=\'display:flex;align-items:center;justify-content:center;font-weight:800;color:#bbb;font-family:Manrope,sans-serif;\'">'
     :initial;
-  return '<a class="kz-dh-card" href="'+href+'">'
-    +'<div class="kz-dh-avatar-wrap">'+avatarH+'</div>'
-    +'<span class="kz-dh-name">'+esc+'</span>'
+  return '<a class="hz-dh-card" href="'+href+'">'
+    +'<div class="hz-dh-avatar-wrap">'+avatarH+'</div>'
+    +'<span class="hz-dh-name">'+esc+'</span>'
     +'</a>';
 }
 
-function kzDhInit(heroes){
+function hzDhInit(heroes){
   var byRole={};
   heroes.forEach(function(h){
     var r=(h.role||'').toLowerCase();
@@ -611,7 +611,7 @@ function kzDhInit(heroes){
       byRole[r2].push(h);
     }
   });
-  document.querySelectorAll('.kz-dh-section').forEach(function(section){
+  document.querySelectorAll('.hz-dh-section').forEach(function(section){
     var role=section.getAttribute('data-role');
     var list=byRole[role]||[];
     var grid=section.querySelector('[data-role-grid]');
@@ -619,19 +619,19 @@ function kzDhInit(heroes){
     var toggleBtn=section.querySelector('[data-role-toggle]');
     if(countEl)countEl.textContent=list.length?'('+list.length+')':'';
     if(!list.length){
-      if(grid)grid.innerHTML='<div class="kz-dh-empty">Belum ada hero untuk role ini.</div>';
+      if(grid)grid.innerHTML='<div class="hz-dh-empty">Belum ada hero untuk role ini.</div>';
       if(toggleBtn)toggleBtn.classList.remove('show');
       return;
     }
     var expanded=false;
     function render(){
-      var slice=expanded?list:list.slice(0,kzDhLimit);
+      var slice=expanded?list:list.slice(0,hzDhLimit);
       var html='';
-      slice.forEach(function(h){html+=kzDhBuildCard(h);});
+      slice.forEach(function(h){html+=hzDhBuildCard(h);});
       if(grid)grid.innerHTML=html;
     }
     render();
-    if(list.length>kzDhLimit&&toggleBtn){
+    if(list.length>hzDhLimit&&toggleBtn){
       toggleBtn.classList.add('show');
       toggleBtn.addEventListener('click',function(){
         expanded=!expanded;
@@ -645,12 +645,12 @@ function kzDhInit(heroes){
 
 /* Load More — Detail Hero & Kategori Skin.
    Semua card sudah ada di HTML sejak build (baik utk SEO), card ke-21 dst
-   cuma disembunyikan via CSS (.kz-cp-limited). Klik tombol = lepas class itu, tidak perlu fetch ulang. */
+   cuma disembunyikan via CSS (.hz-cp-limited). Klik tombol = lepas class itu, tidak perlu fetch ulang. */
 document.querySelectorAll('[data-cp-loadmore]').forEach(function(btn){
   btn.addEventListener('click',function(){
-    var grid=document.querySelector('.kz-cp-grid.kz-cp-limited');
-    if(grid)grid.classList.remove('kz-cp-limited');
-    var wrap=btn.closest('.kz-cp-loadmore-wrap');
+    var grid=document.querySelector('.hz-cp-grid.hz-cp-limited');
+    if(grid)grid.classList.remove('hz-cp-limited');
+    var wrap=btn.closest('.hz-cp-loadmore-wrap');
     if(wrap)wrap.remove();
   });
 });
@@ -658,8 +658,8 @@ document.querySelectorAll('[data-cp-loadmore]').forEach(function(btn){
 /* Saran hero (empty state detail hero): pool kandidat (role sama, sudah punya script) disiapkan
    saat build sbg JSON di data-suggest-pool. Di sini dipilih 3 SECARA ACAK tiap page load/refresh,
    supaya variatif tapi tetap dalam role yang sama (pool-nya sudah difilter role saat build). */
-function kzRenderRandomHeroSuggest(){
-  var el=document.getElementById('kz-hero-suggest-tips');
+function hzRenderRandomHeroSuggest(){
+  var el=document.getElementById('hz-hero-suggest-tips');
   if(!el)return;
   var pool;
   try{ pool=JSON.parse(el.getAttribute('data-suggest-pool')||'[]'); }catch(e){ pool=[]; }
@@ -672,10 +672,10 @@ function kzRenderRandomHeroSuggest(){
   var html=picked.map(function(item){
     var name=(item.name||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     var slug=(item.slug||'').replace(/"/g,'&quot;');
-    return '<a class="kz-sv-empty-tip" href="/hero/'+slug+'">'+name+'</a>';
+    return '<a class="hz-sv-empty-tip" href="/hero/'+slug+'">'+name+'</a>';
   }).join('');
   el.innerHTML=html;
 }
-kzRenderRandomHeroSuggest();
+hzRenderRandomHeroSuggest();
 
 })();

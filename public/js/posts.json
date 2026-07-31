@@ -1,36 +1,12 @@
 [
   {
-    "id": 15,
-    "title": "Saber Legend",
-    "url": "/post/saber-legend",
-    "thumb": "https://i.ibb.co/YTYkTdJL/saber-legend.webp",
-    "cat": "Legend",
-    "hero": "Saber",
-    "date": "1 Agustus 2026",
-    "author": "Henz",
-    "comments": 0,
-    "keywords": "Saber Codename - Storm"
-  },
-  {
-    "id": 14,
-    "title": "Balmond Collector Titan",
-    "url": "/post/balmond-collector-titan",
-    "thumb": "https://i.ibb.co/mVq2npDV/balmond-collector-titans.webp",
-    "cat": "Collector Titans",
-    "hero": "Balmond",
-    "date": "31 Juli 2026",
-    "author": "Henz",
-    "comments": 0,
-    "keywords": "Balmond Vulcan Lionheart, Vulcan Lionheart"
-  },
-  {
     "id": 13,
     "title": "Gusion KOF",
     "url": "/post/gusion-kof",
     "thumb": "https://i.ibb.co/7x3QGs6G/575b95e785a3.webp",
     "cat": "KOF",
     "hero": "Gusion",
-    "date": "31 Juli 2026",
+    "date": "28 Juli 2026",
     "author": "Henz",
     "comments": 0
   },

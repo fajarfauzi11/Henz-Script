@@ -78,15 +78,15 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 .dual-tab-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;padding:8px 0 4px;font-family:'Inter',sans-serif;}
 .dual-tab-name-wrap{display:flex;gap:8px;margin-bottom:10px;}
 .dual-tab-name-wrap input{flex:1;}
-.kz-field-edited{position:relative;}
-.kz-field-edited input,.kz-field-edited textarea{border-color:#f59e0b!important;background:rgba(245,158,11,.04)!important;}
-.kz-field-edited::after{content:'edited';position:absolute;top:0;right:0;font-size:9px;font-weight:700;letter-spacing:.5px;color:#f59e0b;background:rgba(245,158,11,.12);padding:2px 6px;border-radius:0 6px 0 6px;font-family:'Inter',sans-serif;line-height:1.6;pointer-events:none;}
+.hz-field-edited{position:relative;}
+.hz-field-edited input,.hz-field-edited textarea{border-color:#f59e0b!important;background:rgba(245,158,11,.04)!important;}
+.hz-field-edited::after{content:'edited';position:absolute;top:0;right:0;font-size:9px;font-weight:700;letter-spacing:.5px;color:#f59e0b;background:rgba(245,158,11,.12);padding:2px 6px;border-radius:0 6px 0 6px;font-family:'Inter',sans-serif;line-height:1.6;pointer-events:none;}
 /* Edited indicator — aktif hanya saat mode import/repo */
-.kz-edited-wrap{position:relative;}
-.kz-edited-wrap::after{content:'edited';position:absolute;top:50%;right:10px;transform:translateY(-50%);font-size:9px;font-weight:700;letter-spacing:.5px;color:#f59e0b;font-family:'Inter',sans-serif;pointer-events:none;opacity:0;transition:opacity .15s;}
-.kz-edited-wrap.is-edited::after{opacity:1;}
-.kz-edited-wrap.is-edited input,
-.kz-edited-wrap.is-edited textarea{border-color:#f59e0b!important;padding-right:52px;}
+.hz-edited-wrap{position:relative;}
+.hz-edited-wrap::after{content:'edited';position:absolute;top:50%;right:10px;transform:translateY(-50%);font-size:9px;font-weight:700;letter-spacing:.5px;color:#f59e0b;font-family:'Inter',sans-serif;pointer-events:none;opacity:0;transition:opacity .15s;}
+.hz-edited-wrap.is-edited::after{opacity:1;}
+.hz-edited-wrap.is-edited input,
+.hz-edited-wrap.is-edited textarea{border-color:#f59e0b!important;padding-right:52px;}
 .add-blok-btn:hover{border-color:var(--b4);background:var(--s2)}
 .add-blok-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
 
@@ -144,18 +144,18 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 </div>
 
 <!-- MODE SELECTOR -->
-<div id="kz-mode-bar" style="display:flex;gap:10px;margin-bottom:18px;">
-  <button id="kz-btn-baru" onclick="kzFetchFromRepo()" style="flex:1;padding:10px 0;border-radius:10px;border:2px solid var(--b2,#e0e0e0);background:transparent;color:var(--t2,#555);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;">
+<div id="hz-mode-bar" style="display:flex;gap:10px;margin-bottom:18px;">
+  <button id="hz-btn-baru" onclick="hzFetchFromRepo()" style="flex:1;padding:10px 0;border-radius:10px;border:2px solid var(--b2,#e0e0e0);background:transparent;color:var(--t2,#555);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;">
     <svg width="13" height="13" fill="none" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Ambil dari Repo
   </button>
-  <label id="kz-btn-edit" style="flex:1;padding:10px 0;border-radius:10px;border:2px solid var(--b2,#e0e0e0);background:transparent;color:var(--t2,#555);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;">
+  <label id="hz-btn-edit" style="flex:1;padding:10px 0;border-radius:10px;border:2px solid var(--b2,#e0e0e0);background:transparent;color:var(--t2,#555);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;">
     <svg width="13" height="13" fill="none" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     Edit File yang Ada
-    <input type="file" id="kz-file-input" accept=".html,.json" style="display:none;" onchange="kzHandleFileUpload(event)"/>
+    <input type="file" id="hz-file-input" accept=".html,.json" style="display:none;" onchange="hzHandleFileUpload(event)"/>
   </label>
 </div>
-<div id="kz-load-status" style="display:none;margin-bottom:14px;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:500;line-height:1.6;"></div>
+<div id="hz-load-status" style="display:none;margin-bottom:14px;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:500;line-height:1.6;"></div>
 
 <!-- SPLIT LAYOUT -->
 <div class="split">
@@ -293,7 +293,7 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
     </div>
 
     <label class="dual-ab-check-wrap" style="margin-top:2px;">
-      <input type="checkbox" id="dual-pasif" onchange="kzToggleBlockDual('pasif')"/>
+      <input type="checkbox" id="dual-pasif" onchange="hzToggleBlockDual('pasif')"/>
       <span>Aktifkan 2 Varian untuk Pasif</span>
     </label>
     <div id="dual-pasif-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
@@ -337,7 +337,7 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
     </div>
 
     <label class="dual-ab-check-wrap" style="margin-top:2px;">
-      <input type="checkbox" id="dual-skill1" onchange="kzToggleBlockDual('skill1')"/>
+      <input type="checkbox" id="dual-skill1" onchange="hzToggleBlockDual('skill1')"/>
       <span>Aktifkan 2 Varian untuk Skill 1</span>
     </label>
     <div id="dual-skill1-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
@@ -381,7 +381,7 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
     </div>
 
     <label class="dual-ab-check-wrap" style="margin-top:2px;">
-      <input type="checkbox" id="dual-skill2" onchange="kzToggleBlockDual('skill2')"/>
+      <input type="checkbox" id="dual-skill2" onchange="hzToggleBlockDual('skill2')"/>
       <span>Aktifkan 2 Varian untuk Skill 2</span>
     </label>
     <div id="dual-skill2-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
@@ -439,7 +439,7 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
     </div>
 
     <label class="dual-ab-check-wrap" style="margin-top:2px;">
-      <input type="checkbox" id="dual-ulti" onchange="kzToggleBlockDual('ulti')"/>
+      <input type="checkbox" id="dual-ulti" onchange="hzToggleBlockDual('ulti')"/>
       <span>Aktifkan 2 Varian untuk Ultimate</span>
     </label>
     <div id="dual-ulti-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
@@ -471,7 +471,7 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 
     <!-- DUAL DOWNLOAD CHECKBOX -->
     <label class="dual-ab-check-wrap">
-      <input type="checkbox" id="dual-dl-enabled" onchange="kzToggleDlDual()"/>
+      <input type="checkbox" id="dual-dl-enabled" onchange="hzToggleDlDual()"/>
       <span>Aktifkan 2 Tab Download</span>
     </label>
 
@@ -568,13 +568,13 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
         <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
         Tambah Blok
       </button>
-      <button class="add-blok-btn" onclick="kzOpenDlBatchModal(false)" style="margin-left:8px;">
+      <button class="add-blok-btn" onclick="hzOpenDlBatchModal(false)" style="margin-left:8px;">
         <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
         Batch Nama+Link
       </button>
       <div style="display:flex;align-items:center;gap:6px;margin-left:auto;">
         <label style="font-size:11px;color:var(--t3);font-family:'Inter',sans-serif;white-space:nowrap;">Total blok:</label>
-        <input type="number" id="dl-total-input" min="2" value="2" style="width:56px;padding:5px 8px;border-radius:7px;border:1px solid var(--b2);font-family:'Inter',sans-serif;font-size:12px;color:var(--t1);background:var(--s1);text-align:center;" oninput="kzApplyDlTotal(this.value)"/>
+        <input type="number" id="dl-total-input" min="2" value="2" style="width:56px;padding:5px 8px;border-radius:7px;border:1px solid var(--b2);font-family:'Inter',sans-serif;font-size:12px;color:var(--t1);background:var(--s1);text-align:center;" oninput="hzApplyDlTotal(this.value)"/>
       </div>
       <span class="count-label" id="dl-count-label">Total: 2 blok</span>
     </div>
@@ -634,7 +634,7 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
           <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           Tambah Blok Tab 2
         </button>
-        <button class="add-blok-btn" onclick="kzOpenDlBatchModal(true)" style="margin-left:8px;">
+        <button class="add-blok-btn" onclick="hzOpenDlBatchModal(true)" style="margin-left:8px;">
           <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           Batch Nama+Link
         </button>
@@ -750,7 +750,7 @@ function scheduleLiveUpdate(){
 var _kzImportBaseline = null; // null = mode baru (tidak ada tracking)
 
 // Simpan baseline semua field saat ini
-function kzSaveBaseline(){
+function hzSaveBaseline(){
   _kzImportBaseline = {};
   document.querySelectorAll('.left-panel input, .left-panel textarea').forEach(function(el){
     if(el.id) _kzImportBaseline[el.id] = el.value;
@@ -758,18 +758,18 @@ function kzSaveBaseline(){
 }
 
 // Reset baseline (mode baru / tidak ada tracking)
-function kzClearBaseline(){
+function hzClearBaseline(){
   _kzImportBaseline = null;
   // Hapus semua tanda edited
-  document.querySelectorAll('.kz-edited-wrap').forEach(function(w){
+  document.querySelectorAll('.hz-edited-wrap').forEach(function(w){
     w.classList.remove('is-edited');
   });
 }
 
 // Cek satu field apakah sudah berubah dari baseline
-function kzCheckEdited(el){
+function hzCheckEdited(el){
   if(!_kzImportBaseline || !el.id) return;
-  var wrap = el.closest('.kz-edited-wrap');
+  var wrap = el.closest('.hz-edited-wrap');
   if(!wrap) return;
   var baseline = _kzImportBaseline.hasOwnProperty(el.id) ? _kzImportBaseline[el.id] : null;
   // Field yang tidak ada di baseline (field dinamis baru) dianggap edited kalau ada isinya
@@ -778,10 +778,10 @@ function kzCheckEdited(el){
 }
 
 // Pasang listener edited check pada semua field
-function kzAttachEditedListeners(){
+function hzAttachEditedListeners(){
   document.querySelectorAll('.left-panel input, .left-panel textarea').forEach(function(el){
     el.removeEventListener('input', el._kzEditedHandler);
-    el._kzEditedHandler = function(){ kzCheckEdited(this); };
+    el._kzEditedHandler = function(){ hzCheckEdited(this); };
     el.addEventListener('input', el._kzEditedHandler);
   });
 }
@@ -807,8 +807,8 @@ function attachAllListeners(){
     '.left-panel input[type="text"][id^="urlultimate"]'
   );
   urlFields.forEach(function(el){
-    el.removeEventListener('blur', kzCleanPngUrlOnBlur);
-    el.addEventListener('blur', kzCleanPngUrlOnBlur);
+    el.removeEventListener('blur', hzCleanPngUrlOnBlur);
+    el.addEventListener('blur', hzCleanPngUrlOnBlur);
   });
 
   // Auto-isi nama ability dari URL logo saat blur (hanya kalau field nama masih kosong)
@@ -827,7 +827,7 @@ function attachAllListeners(){
     urlEl._kzAutoNameHandler = function(){
       var nameEl = document.getElementById(abilityUrlNameMap[urlId]);
       if(!nameEl || nameEl.value.trim()) return;
-      var extracted = kzExtractAbilityName(this.value);
+      var extracted = hzExtractAbilityName(this.value);
       if(extracted){ nameEl.value = extracted; scheduleLiveUpdate(); }
     };
     urlEl.addEventListener('blur', urlEl._kzAutoNameHandler);
@@ -841,17 +841,17 @@ function attachAllListeners(){
     urlEl._kzAutoNameDynHandler = function(){
       var nameEl = document.getElementById(nameId);
       if(!nameEl || nameEl.value.trim()) return;
-      var extracted = kzExtractAbilityName(this.value);
+      var extracted = hzExtractAbilityName(this.value);
       if(extracted){ nameEl.value = extracted; scheduleLiveUpdate(); }
     };
     urlEl.addEventListener('blur', urlEl._kzAutoNameDynHandler);
   });
 
   // Re-attach edited tracking untuk field dinamis baru (hanya kalau tracking aktif)
-  if(_kzTrackingActive) kzAttachEditedListeners();
+  if(_kzTrackingActive) hzAttachEditedListeners();
 }
 
-function kzCleanPngUrl(url){
+function hzCleanPngUrl(url){
   if(!url) return url;
   var idx = url.toLowerCase().indexOf('.png');
   if(idx === -1) return url; // tidak ada .png, biarkan apa adanya
@@ -861,7 +861,7 @@ function kzCleanPngUrl(url){
 // Ekstrak "HeroXXX" (kata Hero diikuti angka) dari URL icon
 // Contoh: .../Hero801-icon.png/... → "Hero801"
 // Fallback: kalau pola tidak ditemukan, kembalikan string kosong
-function kzExtractHeroCode(url){
+function hzExtractHeroCode(url){
   if(!url) return '';
   var m = url.match(/\/(Hero\d+)-icon/i);
   if(m) return m[1];
@@ -871,10 +871,10 @@ function kzExtractHeroCode(url){
 // Ekstrak nama ability dari URL logo
 // Contoh: .../Only_Fast.png/... → "Only Fast"
 // Ambil bagian terakhir path sebelum .png, ganti _ dengan spasi
-function kzExtractAbilityName(url){
+function hzExtractAbilityName(url){
   if(!url) return '';
   // Bersihkan dulu karakter setelah .png (kalau ada /revision/... dst)
-  var cleaned = kzCleanPngUrl(url);
+  var cleaned = hzCleanPngUrl(url);
   // Ambil bagian nama file (setelah / terakhir)
   var filename = cleaned.split('/').pop();
   // Hapus ekstensi .png (case-insensitive)
@@ -886,8 +886,8 @@ function kzExtractAbilityName(url){
   return name.trim();
 }
 
-function kzCleanPngUrlOnBlur(){
-  var cleaned = kzCleanPngUrl(this.value);
+function hzCleanPngUrlOnBlur(){
+  var cleaned = hzCleanPngUrl(this.value);
   if(cleaned !== this.value){
     this.value = cleaned;
     scheduleLiveUpdate();
@@ -895,7 +895,7 @@ function kzCleanPngUrlOnBlur(){
 }
 // ── Nama Hero: datalist dari heroes.json + validasi ejaan ──
 var KZ_HERO_NAMES = [];
-function kzLoadHeroList(){
+function hzLoadHeroList(){
   fetch('https://www.henzscript.my.id/js/heroes.json?t='+Date.now())
     .then(function(r){ return r.json(); })
     .then(function(list){
@@ -903,14 +903,14 @@ function kzLoadHeroList(){
       KZ_HERO_NAMES = list.map(function(h){ return h.name; }).filter(Boolean);
       var dl = document.getElementById('herolink-datalist');
       if(dl) dl.innerHTML = KZ_HERO_NAMES.map(function(n){ return '<option value="'+n.replace(/"/g,'&quot;')+'">'; }).join('');
-      kzValidateHeroLink();
+      hzValidateHeroLink();
     })
     .catch(function(){
       var hint = document.getElementById('herolink-hint');
       if(hint) hint.textContent = '⚠ Gagal memuat daftar hero (cek koneksi). Isi manual tetap bisa, tapi ejaan tidak divalidasi.';
     });
 }
-function kzValidateHeroLink(){
+function hzValidateHeroLink(){
   var input = document.getElementById('herolink');
   var hint = document.getElementById('herolink-hint');
   if(!input || !hint || !KZ_HERO_NAMES.length) return;
@@ -935,18 +935,18 @@ document.addEventListener('DOMContentLoaded', function(){
   attachAllListeners();
   scheduleLiveUpdate();
   loadGhToken();
-  kzLoadHeroList();
+  hzLoadHeroList();
   var hlInput = document.getElementById('herolink');
-  if(hlInput) hlInput.addEventListener('input', kzValidateHeroLink);
+  if(hlInput) hlInput.addEventListener('input', hzValidateHeroLink);
 });
 // Fallback jika DOMContentLoaded sudah lewat
 if(document.readyState !== 'loading'){
   attachAllListeners();
   scheduleLiveUpdate();
   loadGhToken();
-  kzLoadHeroList();
+  hzLoadHeroList();
   var hlInput2 = document.getElementById('herolink');
-  if(hlInput2) hlInput2.addEventListener('input', kzValidateHeroLink);
+  if(hlInput2) hlInput2.addEventListener('input', hzValidateHeroLink);
 }
 
 // ── GITHUB TOKEN (localStorage, hanya di browser ini) ──
@@ -992,7 +992,7 @@ function addAbBlok(){
       '<div class="field"><div class="field-label" style="font-size:9px">Deskripsi Pendek <span class="field-badge">shortdescblok'+idx+'</span> <span class="field-badge auto">auto</span></div>'+
         '<input type="text" class="auto-field" id="shortdescblok'+idx+'-preview" placeholder="—"/></div>'+
       '<label class="dual-ab-check-wrap" style="margin:2px 0 0;">'+
-        '<input type="checkbox" id="dual-skill'+idx+'" onchange="kzToggleBlockDual(\'skill'+idx+'\')"/>'+
+        '<input type="checkbox" id="dual-skill'+idx+'" onchange="hzToggleBlockDual(\'skill'+idx+'\')"/>'+
         '<span>Aktifkan 2 Varian untuk Skill '+idx+'</span>'+
       '</label>'+
       '<div id="dual-skill'+idx+'-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">'+
@@ -1029,16 +1029,16 @@ function removeAbBlok(idx){
 }
 
 // ── DUAL VARIAN PER-BLOK ────────────────────
-function kzToggleBlockDual(key){
+function hzToggleBlockDual(key){
   var checkbox = document.getElementById('dual-'+key);
   var panel = document.getElementById('dual-'+key+'-fields');
   if(panel) panel.style.display = (checkbox && checkbox.checked) ? 'flex' : 'none';
-  kzUpdateGlobalTabNamesVisibility();
+  hzUpdateGlobalTabNamesVisibility();
   attachAllListeners();
   scheduleLiveUpdate();
 }
 
-function kzUpdateGlobalTabNamesVisibility(){
+function hzUpdateGlobalTabNamesVisibility(){
   var anyChecked = false;
   document.querySelectorAll('#sec-3 input[type=checkbox][id^="dual-"]').forEach(function(cb){
     if(cb.checked) anyChecked = true;
@@ -1047,7 +1047,7 @@ function kzUpdateGlobalTabNamesVisibility(){
   if(wrap) wrap.style.display = anyChecked ? 'block' : 'none';
 }
 
-function kzIsDualEnabled(key){
+function hzIsDualEnabled(key){
   var el = document.getElementById('dual-'+key);
   return !!(el && el.checked);
 }
@@ -1066,7 +1066,7 @@ function updateDlCount(){
 }
 
 // Tambah kekurangan blok saat user ketik jumlah total di input
-function kzApplyDlTotal(val){
+function hzApplyDlTotal(val){
   var target = parseInt(val);
   if(isNaN(target) || target < 2) return;
   var mid = document.getElementById('dl-middle');
@@ -1110,7 +1110,7 @@ function removeDlBlok(idx){
 }
 
 // ── DUAL DOWNLOAD ──────────────────────────
-function kzToggleDlDual(){
+function hzToggleDlDual(){
   var cb = document.getElementById('dual-dl-enabled');
   var namesWrap = document.getElementById('dual-dl-tab-names');
   var tab2Section = document.getElementById('dl-tab2-section');
@@ -1121,7 +1121,7 @@ function kzToggleDlDual(){
   scheduleLiveUpdate();
 }
 
-function kzIsDlDualEnabled(){
+function hzIsDlDualEnabled(){
   var cb = document.getElementById('dual-dl-enabled');
   return !!(cb && cb.checked);
 }
@@ -1171,19 +1171,19 @@ function v(id){ return (document.getElementById(id)||{value:''}).value||''; }
 function s57(str){ return str.length>57?str.substring(0,57)+'...':str; }
 function s82(str){ return str.length>82?str.substring(0,82)+'...':str; }
 function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function kzBuildTooltipDescHtml(text){
+function hzBuildTooltipDescHtml(text){
   text = text || '';
   var idx = text.toLowerCase().indexOf('disclaimer');
   if(idx === -1) return esc(text);
   var before = text.substring(0, idx);
   var label = text.substr(idx, 'disclaimer'.length);
   var rest = text.substring(idx + 'disclaimer'.length).replace(/^[:\s]+/, '');
-  return esc(before) + '<span class="kz-tooltip-disclaimer"><strong>'+esc(label)+' :</strong> <em>'+esc(rest)+'</em></span>';
+  return esc(before) + '<span class="hz-tooltip-disclaimer"><strong>'+esc(label)+' :</strong> <em>'+esc(rest)+'</em></span>';
 }
 
 // ── BUILD AB MIDDLE HTML ───────────────────
 // ── BUILD ABILITY ROW (reusable untuk pasif/skill/ultimate, dual-aware) ──
-function kzBuildAbilityRow(opts){
+function hzBuildAbilityRow(opts){
   var katBg = opts.katBg, katText = opts.katText;
   var idPrefix = opts.idPrefix;
   var topBorder = opts.borderTop ? 'border-top:1px solid #efefef;' : '';
@@ -1195,10 +1195,10 @@ function kzBuildAbilityRow(opts){
     var t2 = v('dual-tab2-name') || 'Tab 2';
     labelRow = '  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 20px 0;flex-wrap:wrap;">\n'
       + '    <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:'+opts.labelColor+';">'+esc(opts.label)+'</span>\n'
-      + '    <div class="kz-ab-seg kz-ab-seg-mini" data-prefix="'+idPrefix+'" role="radiogroup">\n'
-      + '      <button aria-checked="true" class="kz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="kzAbMiniSwitch(this)">'+esc(t1)+'</button>\n'
-      + '      <button aria-checked="false" class="kz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="kzAbMiniSwitch(this)">'+esc(t2)+'</button>\n'
-      + '      <div class="kz-ab-seg-pill"></div>\n'
+      + '    <div class="hz-ab-seg hz-ab-seg-mini" data-prefix="'+idPrefix+'" role="radiogroup">\n'
+      + '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t1)+'</button>\n'
+      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t2)+'</button>\n'
+      + '      <div class="hz-ab-seg-pill"></div>\n'
       + '    </div>\n'
       + '  </div>\n';
   } else {
@@ -1215,7 +1215,7 @@ function kzBuildAbilityRow(opts){
       + '      </div>\n'
       + '      <p id="'+prefix+'-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">'+esc(longDesc)+'</p>\n'
       + '      <div id="'+prefix+'-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">'+esc(longDesc)+'</div>\n'
-      + '      <button onclick="kzToggleAb(\''+prefix+'\')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:\'Manrope\',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">\n'
+      + '      <button onclick="hzToggleAb(\''+prefix+'\')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:\'Manrope\',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">\n'
       + '        <span id="'+prefix+'-lbl">Baca Selengkapnya</span>\n'
       + '        <svg id="'+prefix+'-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>\n'
       + '      </button>\n'
@@ -1235,7 +1235,7 @@ function kzBuildAbilityRow(opts){
 }
 
 // Rotasi warna untuk blok skill dinamis
-var kzDynColors = [
+var hzDynColors = [
   { bg:'#e0f7fa', text:'#006064' }, // teal
   { bg:'#fce4ec', text:'#880e4f' }, // pink
   { bg:'#e8eaf6', text:'#1a237e' }, // indigo
@@ -1245,11 +1245,11 @@ var kzDynColors = [
 
 // ── BUILD BLOK PASIF (selalu tampil) ──
 function buildAbPasif(){
-  return kzBuildAbilityRow({
-    label:'Pasif', labelColor:'#e53232', idPrefix:'kz-ab-pasif',
+  return hzBuildAbilityRow({
+    label:'Pasif', labelColor:'#e53232', idPrefix:'hz-ab-pasif',
     url:v('urlpasif'), name:v('namepasif'), kategori:v('kategoripasif')||'BUFF',
     longDesc:v('longdescblok0'), katBg:'#e8f5e9', katText:'#2e7d32', borderTop:false,
-    dual: kzIsDualEnabled('pasif'),
+    dual: hzIsDualEnabled('pasif'),
     url2:v('urlpasif_v2'), name2:v('namepasif_v2'), kategori2:v('kategoripasif_v2')||'BUFF', longDesc2:v('longdescblok0_v2')
   });
 }
@@ -1258,29 +1258,29 @@ function buildAbPasif(){
 function buildAbSkills(){
   var html = '';
 
-  html += kzBuildAbilityRow({
-    label:'Skill 1', labelColor:'#1565c0', idPrefix:'kz-ab-s1',
+  html += hzBuildAbilityRow({
+    label:'Skill 1', labelColor:'#1565c0', idPrefix:'hz-ab-s1',
     url:v('urlskill1'), name:v('nameskill1'), kategori:v('kategoriskill1')||'AOE',
     longDesc:v('longdescblok1'), katBg:'#e3f2fd', katText:'#1565c0', borderTop:true,
-    dual: kzIsDualEnabled('skill1'),
+    dual: hzIsDualEnabled('skill1'),
     url2:v('urlskill1_v2'), name2:v('nameskill1_v2'), kategori2:v('kategoriskill1_v2')||'AOE', longDesc2:v('longdescblok1_v2')
   });
 
-  html += kzBuildAbilityRow({
-    label:'Skill 2', labelColor:'#6a1b9a', idPrefix:'kz-ab-s2',
+  html += hzBuildAbilityRow({
+    label:'Skill 2', labelColor:'#6a1b9a', idPrefix:'hz-ab-s2',
     url:v('urlskill2'), name:v('nameskill2'), kategori:v('kategoriskill2')||'Mobility',
     longDesc:v('longdescblok2'), katBg:'#f3e5f5', katText:'#6a1b9a', borderTop:false,
-    dual: kzIsDualEnabled('skill2'),
+    dual: hzIsDualEnabled('skill2'),
     url2:v('urlskill2_v2'), name2:v('nameskill2_v2'), kategori2:v('kategoriskill2_v2')||'Mobility', longDesc2:v('longdescblok2_v2')
   });
 
   html += buildAbMiddle();
 
-  html += kzBuildAbilityRow({
-    label:'Ultimate', labelColor:'#e65100', idPrefix:'kz-ab-ult',
+  html += hzBuildAbilityRow({
+    label:'Ultimate', labelColor:'#e65100', idPrefix:'hz-ab-ult',
     url:v('urlultimate'), name:v('nameultimate'), kategori:v('kategoriulti')||'Burst',
     longDesc:v('longdescbloklast'), katBg:'#fff3e0', katText:'#e65100', borderTop:true, borderBottom:false,
-    dual: kzIsDualEnabled('ulti'),
+    dual: hzIsDualEnabled('ulti'),
     url2:v('urlultimate_v2'), name2:v('nameultimate_v2'), kategori2:v('kategoriulti_v2')||'Burst', longDesc2:v('longdescbloklast_v2')
   });
 
@@ -1295,12 +1295,12 @@ function buildAbMiddle(){
     var m = card.id.match(/^ab-mid-(\d+)$/);
     if(!m) return;
     var idx = m[1];
-    var col = kzDynColors[(idx - 3) % kzDynColors.length];
-    html += kzBuildAbilityRow({
-      label:'Skill '+idx, labelColor:col.text, idPrefix:'kz-ab-s'+idx,
+    var col = hzDynColors[(idx - 3) % hzDynColors.length];
+    html += hzBuildAbilityRow({
+      label:'Skill '+idx, labelColor:col.text, idPrefix:'hz-ab-s'+idx,
       url:v('urlskill'+idx), name:v('nameskill'+idx), kategori:v('kategoriskill'+idx)||'AOE',
       longDesc:v('longdescblok'+idx), katBg:col.bg, katText:col.text, borderTop:true,
-      dual: kzIsDualEnabled('skill'+idx),
+      dual: hzIsDualEnabled('skill'+idx),
       url2:v('urlskill'+idx+'_v2'), name2:v('nameskill'+idx+'_v2'), kategori2:v('kategoriskill'+idx+'_v2')||'AOE', longDesc2:v('longdescblok'+idx+'_v2')
     });
   });
@@ -1310,10 +1310,10 @@ function buildAbMiddle(){
 // ── BUILD DL MIDDLE HTML ───────────────────
 // ── BUILD SATU BARIS TABEL DOWNLOAD ───────────
 function buildDlRow(name, url, link, isLast){
-  var altR  = kzExtractHeroCode(url) || name;
+  var altR  = hzExtractHeroCode(url) || name;
   var hasLogo = /logo/i.test(name);
   var logoQBtn = hasLogo
-    ? '<button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
+    ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   var dlBtn = link
     ? '<a href="'+esc(link)+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
@@ -1373,7 +1373,7 @@ function buildDlTableWrap(tbodyHtml){
 
 // ── BUILD DOWNLOAD SECTION (single / dual) ─────
 function buildDlInject(){
-  if(!kzIsDlDualEnabled()){
+  if(!hzIsDlDualEnabled()){
     return buildDlTableWrap(buildDlTableRows(false));
   }
 
@@ -1382,41 +1382,41 @@ function buildDlInject(){
 
   var seg = '<div style="text-align:center;margin-bottom:14px;">\n'
     + '  <span style="position:relative;display:inline-block;">\n'
-    + '  <div class="kz-ab-seg" id="kz-dl-seg" role="radiogroup" style="margin:0;">\n'
-    + '    <button aria-checked="true" class="kz-ab-seg-item active" data-target="kz-dl-t1" role="radio" type="button" onclick="kzDlTabSwitch(this)">'+esc(t1Name)+'</button>\n'
-    + '    <button aria-checked="false" class="kz-ab-seg-item" data-target="kz-dl-t2" role="radio" type="button" onclick="kzDlTabSwitch(this)">'+esc(t2Name)+'</button>\n'
-    + '    <div class="kz-ab-seg-pill" id="kz-dl-seg-pill"></div>\n'
+    + '  <div class="hz-ab-seg" id="hz-dl-seg" role="radiogroup" style="margin:0;">\n'
+    + '    <button aria-checked="true" class="hz-ab-seg-item active" data-target="hz-dl-t1" role="radio" type="button" onclick="hzDlTabSwitch(this)">'+esc(t1Name)+'</button>\n'
+    + '    <button aria-checked="false" class="hz-ab-seg-item" data-target="hz-dl-t2" role="radio" type="button" onclick="hzDlTabSwitch(this)">'+esc(t2Name)+'</button>\n'
+    + '    <div class="hz-ab-seg-pill" id="hz-dl-seg-pill"></div>\n'
     + '  </div>\n'
-    + '  <button type="button" onclick="kzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="position:absolute;top:50%;left:100%;margin-left:8px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>\n'
+    + '  <button type="button" onclick="hzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="position:absolute;top:50%;left:100%;margin-left:8px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>\n'
     + '  </span>\n'
     + '</div>\n';
 
-  var t1 = '<div id="kz-dl-t1">\n' + buildDlTableWrap(buildDlTableRows(false)) + '</div>\n';
-  var t2 = '<div id="kz-dl-t2" style="display:none;">\n' + buildDlTableWrap(buildDlTableRows(true)) + '</div>\n';
+  var t1 = '<div id="hz-dl-t1">\n' + buildDlTableWrap(buildDlTableRows(false)) + '</div>\n';
+  var t2 = '<div id="hz-dl-t2" style="display:none;">\n' + buildDlTableWrap(buildDlTableRows(true)) + '</div>\n';
 
   var initScript = '<script>\n'
     + '(function(){\n'
-    + '  function kzDlSegInit(){\n'
-    + '    var seg=document.getElementById("kz-dl-seg");if(!seg)return;\n'
-    + '    var pill=document.getElementById("kz-dl-seg-pill");\n'
-    + '    var first=seg.querySelector(".kz-ab-seg-item.active");\n'
+    + '  function hzDlSegInit(){\n'
+    + '    var seg=document.getElementById("hz-dl-seg");if(!seg)return;\n'
+    + '    var pill=document.getElementById("hz-dl-seg-pill");\n'
+    + '    var first=seg.querySelector(".hz-ab-seg-item.active");\n'
     + '    if(first&&pill){pill.style.transition="none";pill.style.width=first.offsetWidth+"px";pill.style.translate=(first.offsetLeft-3)+"px";void pill.offsetWidth;pill.style.transition="";}\n'
     + '  }\n'
-    + '  if(document.readyState!=="loading")kzDlSegInit();\n'
-    + '  else document.addEventListener("DOMContentLoaded",kzDlSegInit);\n'
-    + '  window.addEventListener("resize",kzDlSegInit);\n'
+    + '  if(document.readyState!=="loading")hzDlSegInit();\n'
+    + '  else document.addEventListener("DOMContentLoaded",hzDlSegInit);\n'
+    + '  window.addEventListener("resize",hzDlSegInit);\n'
     + '})();\n'
-    + 'window.kzDlTabSwitch=function(btn){\n'
-    + '  var seg=document.getElementById("kz-dl-seg");\n'
-    + '  var pill=document.getElementById("kz-dl-seg-pill");\n'
-    + '  seg.querySelectorAll(".kz-ab-seg-item").forEach(function(b){b.classList.remove("active");b.setAttribute("aria-checked","false");});\n'
+    + 'window.hzDlTabSwitch=function(btn){\n'
+    + '  var seg=document.getElementById("hz-dl-seg");\n'
+    + '  var pill=document.getElementById("hz-dl-seg-pill");\n'
+    + '  seg.querySelectorAll(".hz-ab-seg-item").forEach(function(b){b.classList.remove("active");b.setAttribute("aria-checked","false");});\n'
     + '  btn.classList.add("active");btn.setAttribute("aria-checked","true");\n'
     + '  if(pill){pill.style.width=btn.offsetWidth+"px";pill.style.translate=(btn.offsetLeft-3)+"px";}\n'
     + '  var target=btn.getAttribute("data-target");\n'
-    + '  var t1=document.getElementById("kz-dl-t1");\n'
-    + '  var t2=document.getElementById("kz-dl-t2");\n'
-    + '  if(t1)t1.style.display=(target==="kz-dl-t1")?"block":"none";\n'
-    + '  if(t2)t2.style.display=(target==="kz-dl-t2")?"block":"none";\n'
+    + '  var t1=document.getElementById("hz-dl-t1");\n'
+    + '  var t2=document.getElementById("hz-dl-t2");\n'
+    + '  if(t1)t1.style.display=(target==="hz-dl-t1")?"block":"none";\n'
+    + '  if(t2)t2.style.display=(target==="hz-dl-t2")?"block":"none";\n'
     + '};\n'
     + '<\/script>\n';
 
@@ -1446,10 +1446,10 @@ function buildHTML(){
     .replace('<!-- AB_SKILLS_INJECT -->', skillsHtml)
     .replace('<!-- DL_INJECT -->', dlInject)
     .replace('LOGO_TOOLTIP_TITLE_INJECT', esc(v('tooltip-logo-title')))
-    .replace('<!-- LOGO_TOOLTIP_DESC_INJECT -->', kzBuildTooltipDescHtml(v('tooltip-logo-desc')))
+    .replace('<!-- LOGO_TOOLTIP_DESC_INJECT -->', hzBuildTooltipDescHtml(v('tooltip-logo-desc')))
     .replace('LOGO_TOOLTIP_IMG_INJECT', esc(v('tooltip-logo-img')))
     .replace('DLTAB_TOOLTIP_TITLE_INJECT', esc(v('tooltip-dltab-title')))
-    .replace('<!-- DLTAB_TOOLTIP_DESC_INJECT -->', kzBuildTooltipDescHtml(v('tooltip-dltab-desc')))
+    .replace('<!-- DLTAB_TOOLTIP_DESC_INJECT -->', hzBuildTooltipDescHtml(v('tooltip-dltab-desc')))
     .replace('DLTAB_TOOLTIP_IMG_INJECT', esc(v('tooltip-dltab-img')));
 
   // Ubah tombol Download menjadi "Soon!" (abu-abu, non-clickable)
@@ -1464,7 +1464,7 @@ function buildHTML(){
 }
 
 // ── BUILD CONTENT DATA (JSON) — pengganti buildHTML() untuk upload ──
-function kzCollectAbilityDynamicIndexes(){
+function hzCollectAbilityDynamicIndexes(){
   var idxs = [];
   document.querySelectorAll('#sec-3 .blok-card').forEach(function(card){
     var m = card.id.match(/^ab-mid-(\d+)$/);
@@ -1473,7 +1473,7 @@ function kzCollectAbilityDynamicIndexes(){
   idxs.sort(function(a,b){ return a-b; });
   return idxs;
 }
-function kzCollectDlDynamicIndexes(isT2){
+function hzCollectDlDynamicIndexes(isT2){
   var mid = document.getElementById(isT2 ? 'dl-middle-t2' : 'dl-middle');
   var idxs = [];
   if(mid){
@@ -1486,10 +1486,10 @@ function kzCollectDlDynamicIndexes(isT2){
   idxs.sort(function(a,b){ return a-b; });
   return idxs;
 }
-function kzCollectDlRows(pfx){
+function hzCollectDlRows(pfx){
   var rows = [];
   rows.push({ name: v(pfx+'replace1'), url: v(pfx+'urlreplace1'), link: v(pfx+'linkreplace1') });
-  kzCollectDlDynamicIndexes(pfx==='t2_').forEach(function(idx){
+  hzCollectDlDynamicIndexes(pfx==='t2_').forEach(function(idx){
     rows.push({ name: v(pfx+'replace'+idx), url: v(pfx+'urlreplace'+idx), link: v(pfx+'linkreplace'+idx) });
   });
   rows.push({ name: v(pfx+'replacelast'), url: v(pfx+'urlreplaceterakhir'), link: v(pfx+'linkreplaceterakhir') });
@@ -1513,34 +1513,34 @@ function buildContentData(){
 
   data.abilitiesPasif = {
     url: v('urlpasif'), name: v('namepasif'), kategori: v('kategoripasif'),
-    longDesc: v('longdescblok0'), dual: kzIsDualEnabled('pasif'),
+    longDesc: v('longdescblok0'), dual: hzIsDualEnabled('pasif'),
     url2: v('urlpasif_v2'), name2: v('namepasif_v2'), kategori2: v('kategoripasif_v2'), longDesc2: v('longdescblok0_v2')
   };
 
   var list = [];
   list.push({ label:'Skill 1', url:v('urlskill1'), name:v('nameskill1'), kategori:v('kategoriskill1'),
-    longDesc:v('longdescblok1'), dual:kzIsDualEnabled('skill1'),
+    longDesc:v('longdescblok1'), dual:hzIsDualEnabled('skill1'),
     url2:v('urlskill1_v2'), name2:v('nameskill1_v2'), kategori2:v('kategoriskill1_v2'), longDesc2:v('longdescblok1_v2') });
   list.push({ label:'Skill 2', url:v('urlskill2'), name:v('nameskill2'), kategori:v('kategoriskill2'),
-    longDesc:v('longdescblok2'), dual:kzIsDualEnabled('skill2'),
+    longDesc:v('longdescblok2'), dual:hzIsDualEnabled('skill2'),
     url2:v('urlskill2_v2'), name2:v('nameskill2_v2'), kategori2:v('kategoriskill2_v2'), longDesc2:v('longdescblok2_v2') });
-  kzCollectAbilityDynamicIndexes().forEach(function(idx){
+  hzCollectAbilityDynamicIndexes().forEach(function(idx){
     list.push({ label:'Skill '+idx, url:v('urlskill'+idx), name:v('nameskill'+idx), kategori:v('kategoriskill'+idx),
-      longDesc:v('longdescblok'+idx), dual:kzIsDualEnabled('skill'+idx),
+      longDesc:v('longdescblok'+idx), dual:hzIsDualEnabled('skill'+idx),
       url2:v('urlskill'+idx+'_v2'), name2:v('nameskill'+idx+'_v2'), kategori2:v('kategoriskill'+idx+'_v2'), longDesc2:v('longdescblok'+idx+'_v2') });
   });
   list.push({ label:'Ultimate', url:v('urlultimate'), name:v('nameultimate'), kategori:v('kategoriulti'),
-    longDesc:v('longdescbloklast'), dual:kzIsDualEnabled('ulti'),
+    longDesc:v('longdescbloklast'), dual:hzIsDualEnabled('ulti'),
     url2:v('urlultimate_v2'), name2:v('nameultimate_v2'), kategori2:v('kategoriulti_v2'), longDesc2:v('longdescbloklast_v2') });
   data.abilitiesList = list;
 
-  var dlDual = kzIsDlDualEnabled();
+  var dlDual = hzIsDlDualEnabled();
   data.download = {
     dual: dlDual,
     tab1Name: v('dl-tab1-name') || 'Tab 1',
     tab2Name: v('dl-tab2-name') || 'Tab 2',
-    rowsTab1: kzCollectDlRows(''),
-    rowsTab2: dlDual ? kzCollectDlRows('t2_') : []
+    rowsTab1: hzCollectDlRows(''),
+    rowsTab2: dlDual ? hzCollectDlRows('t2_') : []
   };
 
   data.tooltipLogo  = { title: v('tooltip-logo-title'),  desc: v('tooltip-logo-desc'),  img: v('tooltip-logo-img') };
@@ -1549,60 +1549,60 @@ function buildContentData(){
   return data;
 }
 
-// ── LOAD CONTENT DATA (JSON) KE FORM — pengganti kzLoadFromHtml untuk file .json ──
-function kzLoadFromJson(jsonString, filename){
+// ── LOAD CONTENT DATA (JSON) KE FORM — pengganti hzLoadFromHtml untuk file .json ──
+function hzLoadFromJson(jsonString, filename){
   var data;
   try{
     data = JSON.parse(jsonString);
   }catch(e){
-    kzShowLoadStatus(['❌ File "'+filename+'" bukan JSON yang valid: '+e.message], false, true);
+    hzShowLoadStatus(['❌ File "'+filename+'" bukan JSON yang valid: '+e.message], false, true);
     return;
   }
 
-  kzSetMode('edit');
+  hzSetMode('edit');
   var messages = ['✓ Data dimuat dari "'+filename+'".'];
 
-  kzSetField('namehero', data.namehero || '');
-  kzSetField('herolink', data.herolink || '');
-  kzSetField('urlthumbnail', data.urlthumbnail || '');
-  kzSetField('kategoriskin', data.kategoriskin || '');
-  kzSetField('keywords', data.keywords || '');
-  kzSetField('datepost', data.datepost || '');
-  kzSetField('authorname', data.authorname || 'Henz MLBB');
-  kzSetField('longstory', data.longstory || '');
+  hzSetField('namehero', data.namehero || '');
+  hzSetField('herolink', data.herolink || '');
+  hzSetField('urlthumbnail', data.urlthumbnail || '');
+  hzSetField('kategoriskin', data.kategoriskin || '');
+  hzSetField('keywords', data.keywords || '');
+  hzSetField('datepost', data.datepost || '');
+  hzSetField('authorname', data.authorname || 'Henz MLBB');
+  hzSetField('longstory', data.longstory || '');
 
   var dtn = data.dualTabNames || {};
-  kzSetField('dual-tab1-name', dtn.tab1 || 'Tab 1');
-  kzSetField('dual-tab2-name', dtn.tab2 || 'Tab 2');
+  hzSetField('dual-tab1-name', dtn.tab1 || 'Tab 1');
+  hzSetField('dual-tab2-name', dtn.tab2 || 'Tab 2');
 
   function loadAbilityFields(prefixKey, urlId, nameId, katId, descId, obj){
     obj = obj || {};
-    kzSetField(urlId, obj.url || '');
-    kzSetField(nameId, obj.name || '');
-    kzSetField(katId, obj.kategori || '');
-    kzSetField(descId, obj.longDesc || '');
+    hzSetField(urlId, obj.url || '');
+    hzSetField(nameId, obj.name || '');
+    hzSetField(katId, obj.kategori || '');
+    hzSetField(descId, obj.longDesc || '');
     if(obj.dual){
       var cb = document.getElementById('dual-'+prefixKey);
       if(cb){
         cb.checked = true;
-        kzToggleBlockDual(prefixKey);
-        kzSetField('url'+ (prefixKey==='pasif'?'pasif':(prefixKey==='ulti'?'ultimate':prefixKey)) +'_v2', obj.url2 || '');
+        hzToggleBlockDual(prefixKey);
+        hzSetField('url'+ (prefixKey==='pasif'?'pasif':(prefixKey==='ulti'?'ultimate':prefixKey)) +'_v2', obj.url2 || '');
       }
     }
   }
 
   var pasif = data.abilitiesPasif || {};
-  kzSetField('urlpasif', pasif.url || '');
-  kzSetField('namepasif', pasif.name || '');
-  kzSetField('kategoripasif', pasif.kategori || '');
-  kzSetField('longdescblok0', pasif.longDesc || '');
+  hzSetField('urlpasif', pasif.url || '');
+  hzSetField('namepasif', pasif.name || '');
+  hzSetField('kategoripasif', pasif.kategori || '');
+  hzSetField('longdescblok0', pasif.longDesc || '');
   if(pasif.dual){
     var cbP = document.getElementById('dual-pasif');
-    if(cbP){ cbP.checked = true; kzToggleBlockDual('pasif'); }
-    kzSetField('urlpasif_v2', pasif.url2 || '');
-    kzSetField('namepasif_v2', pasif.name2 || '');
-    kzSetField('kategoripasif_v2', pasif.kategori2 || '');
-    kzSetField('longdescblok0_v2', pasif.longDesc2 || '');
+    if(cbP){ cbP.checked = true; hzToggleBlockDual('pasif'); }
+    hzSetField('urlpasif_v2', pasif.url2 || '');
+    hzSetField('namepasif_v2', pasif.name2 || '');
+    hzSetField('kategoripasif_v2', pasif.kategori2 || '');
+    hzSetField('longdescblok0_v2', pasif.longDesc2 || '');
   }
 
   var list = data.abilitiesList || [];
@@ -1626,17 +1626,17 @@ function kzLoadFromJson(jsonString, filename){
 
   function loadSkillBlock(dualKey, urlId,nameId,katId,descId,url2Id,name2Id,kat2Id,desc2Id, item){
     item = item || {};
-    kzSetField(urlId, item.url || '');
-    kzSetField(nameId, item.name || '');
-    kzSetField(katId, item.kategori || '');
-    kzSetField(descId, item.longDesc || '');
+    hzSetField(urlId, item.url || '');
+    hzSetField(nameId, item.name || '');
+    hzSetField(katId, item.kategori || '');
+    hzSetField(descId, item.longDesc || '');
     if(item.dual){
       var cb = document.getElementById('dual-'+dualKey);
-      if(cb){ cb.checked = true; kzToggleBlockDual(dualKey); }
-      kzSetField(url2Id, item.url2 || '');
-      kzSetField(name2Id, item.name2 || '');
-      kzSetField(kat2Id, item.kategori2 || '');
-      kzSetField(desc2Id, item.longDesc2 || '');
+      if(cb){ cb.checked = true; hzToggleBlockDual(dualKey); }
+      hzSetField(url2Id, item.url2 || '');
+      hzSetField(name2Id, item.name2 || '');
+      hzSetField(kat2Id, item.kategori2 || '');
+      hzSetField(desc2Id, item.longDesc2 || '');
     }
   }
 
@@ -1644,53 +1644,53 @@ function kzLoadFromJson(jsonString, filename){
   var rowsT1 = dl.rowsTab1 || [];
   function loadDlRows(rows, pfx, isT2){
     if(rows[0]){
-      kzSetField(pfx+'replace1', rows[0].name || '');
-      kzSetField(pfx+'urlreplace1', rows[0].url || '');
-      kzSetField(pfx+'linkreplace1', rows[0].link || '');
+      hzSetField(pfx+'replace1', rows[0].name || '');
+      hzSetField(pfx+'urlreplace1', rows[0].url || '');
+      hzSetField(pfx+'linkreplace1', rows[0].link || '');
     }
     var last = rows.length > 1 ? rows[rows.length-1] : null;
     if(last){
-      kzSetField(pfx+'replacelast', last.name || '');
-      kzSetField(pfx+'urlreplaceterakhir', last.url || '');
-      kzSetField(pfx+'linkreplaceterakhir', last.link || '');
+      hzSetField(pfx+'replacelast', last.name || '');
+      hzSetField(pfx+'urlreplaceterakhir', last.url || '');
+      hzSetField(pfx+'linkreplaceterakhir', last.link || '');
     }
     for(var i=1; i<rows.length-1; i++){
       if(isT2) addDlBlokT2(); else addDlBlok();
       var idx = isT2 ? dlCounterT2 : dlCounter;
-      kzSetField(pfx+'replace'+idx, rows[i].name || '');
-      kzSetField(pfx+'urlreplace'+idx, rows[i].url || '');
-      kzSetField(pfx+'linkreplace'+idx, rows[i].link || '');
+      hzSetField(pfx+'replace'+idx, rows[i].name || '');
+      hzSetField(pfx+'urlreplace'+idx, rows[i].url || '');
+      hzSetField(pfx+'linkreplace'+idx, rows[i].link || '');
     }
   }
   loadDlRows(rowsT1, '', false);
 
-  kzSetField('dl-tab1-name', dl.tab1Name || 'Tab 1');
-  kzSetField('dl-tab2-name', dl.tab2Name || 'Tab 2');
+  hzSetField('dl-tab1-name', dl.tab1Name || 'Tab 1');
+  hzSetField('dl-tab2-name', dl.tab2Name || 'Tab 2');
   if(dl.dual){
     var cbDl = document.getElementById('dual-dl-enabled');
-    if(cbDl){ cbDl.checked = true; kzToggleDlDual(); }
+    if(cbDl){ cbDl.checked = true; hzToggleDlDual(); }
     loadDlRows(dl.rowsTab2 || [], 't2_', true);
   }
 
   var tl = data.tooltipLogo || {};
-  kzSetField('tooltip-logo-title', tl.title || 'Apa itu Logo?');
-  kzSetField('tooltip-logo-desc', tl.desc || '');
-  kzSetField('tooltip-logo-img', tl.img || '');
+  hzSetField('tooltip-logo-title', tl.title || 'Apa itu Logo?');
+  hzSetField('tooltip-logo-desc', tl.desc || '');
+  hzSetField('tooltip-logo-img', tl.img || '');
 
   var tdt = data.tooltipDlTab || {};
-  kzSetField('tooltip-dltab-title', tdt.title || '');
-  kzSetField('tooltip-dltab-desc', tdt.desc || '');
-  kzSetField('tooltip-dltab-img', tdt.img || '');
+  hzSetField('tooltip-dltab-title', tdt.title || '');
+  hzSetField('tooltip-dltab-desc', tdt.desc || '');
+  hzSetField('tooltip-dltab-img', tdt.img || '');
 
   attachAllListeners();
-  kzUpdateGlobalTabNamesVisibility();
+  hzUpdateGlobalTabNamesVisibility();
   updateAbCount();
   updateDlCount();
   updateDlCountT2();
-  kzValidateHeroLink();
-  kzSnapshotBaseline();
+  hzValidateHeroLink();
+  hzSnapshotBaseline();
   scheduleLiveUpdate();
-  kzShowLoadStatus(messages, false, false);
+  hzShowLoadStatus(messages, false, false);
 }
 
 
@@ -1700,14 +1700,14 @@ function updatePreview(tpl){
   if(!iframe) return;
   /* <!-- include:header.html --> dan <!-- include:footer.html --> di tpl
      hanya berupa komentar HTML, jadi otomatis tidak tampil apa pun di iframe.
-     Cukup reset padding-top kazeo-page (tadinya kompensasi tinggi header fixed)
+     Cukup reset padding-top henz-page (tadinya kompensasi tinggi header fixed)
      supaya preview tidak ada spasi kosong di atas. Style ini HANYA untuk
      iframe, tidak mengubah tpl/output asli. */
-  var previewStyle = '<style id="kz-preview-only-style">'
+  var previewStyle = '<style id="hz-preview-only-style">'
     + '*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}'
     + 'html{font-family:\'Manrope\',sans-serif;}'
     + 'body{margin:0;background:#fff;color:#333;font-family:\'Manrope\',sans-serif;}'
-    + '.kazeo-page{padding-top:20px!important}'
+    + '.henz-page{padding-top:20px!important}'
     + '</style>';
   var previewDoc = tpl.replace('</head>', previewStyle + '</head>');
   iframe.srcdoc = previewDoc;
@@ -1731,7 +1731,7 @@ function togglePreviewSize(){
     iframe.style.removeProperty('max-height');
     btn.innerHTML = '<svg width="11" height="11" fill="none" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Mobile';
   }
-  // Reload penuh srcdoc setelah ukuran iframe diubah, supaya kzResponsive()
+  // Reload penuh srcdoc setelah ukuran iframe diubah, supaya hzResponsive()
   // di dalam halaman membaca window.innerWidth yang SUDAH sesuai ukuran baru
   // sejak awal render (bukan mengandalkan resize event yang tidak konsisten).
   // Delay 350ms menunggu transition CSS width/height (300ms) selesai PENUH
@@ -1745,36 +1745,36 @@ function togglePreviewSize(){
 // ── MODE: EDIT FILE / AMBIL DARI REPO ──────
 var _kzCurrentMode = 'baru';
 
-function kzSetMode(mode){
+function hzSetMode(mode){
   _kzCurrentMode = mode;
 }
 
-function kzHandleFileUpload(e){
+function hzHandleFileUpload(e){
   var file = e.target.files[0];
   if(!file) return;
   var isJson = /\.json$/i.test(file.name);
   var reader = new FileReader();
   reader.onload = function(ev){
-    if(isJson) kzLoadFromJson(ev.target.result, file.name);
-    else kzLoadFromHtml(ev.target.result, file.name);
+    if(isJson) hzLoadFromJson(ev.target.result, file.name);
+    else hzLoadFromHtml(ev.target.result, file.name);
   };
   reader.readAsText(file, 'utf-8');
   e.target.value = '';
 }
 
 // ── AMBIL DARI REPO ─────────────────────────
-async function kzFetchFromRepo(){
+async function hzFetchFromRepo(){
   var token = (document.getElementById('gh-token').value||'').trim();
   if(!token){
-    kzShowLoadStatus(['❌ Token GitHub belum diisi. Isi dulu field "GitHub Personal Access Token" di bawah.'], false, true);
+    hzShowLoadStatus(['❌ Token GitHub belum diisi. Isi dulu field "GitHub Personal Access Token" di bawah.'], false, true);
     return;
   }
 
-  var btn = document.getElementById('kz-btn-baru');
+  var btn = document.getElementById('hz-btn-baru');
   var origHtml = btn.innerHTML;
   btn.disabled = true;
   btn.textContent = 'Mengambil daftar file...';
-  kzShowLoadStatus(['Mengambil daftar file dari repo...'], false, false);
+  hzShowLoadStatus(['Mengambil daftar file dari repo...'], false, false);
 
   try{
     var headers = { 'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json' };
@@ -1803,25 +1803,25 @@ async function kzFetchFromRepo(){
 
     var allFiles = jsonFiles.concat(htmlFiles);
     if(!allFiles.length){
-      kzShowLoadStatus(['⚠ Tidak ada file post ditemukan di public/data/posts maupun public/post.'], true, false);
+      hzShowLoadStatus(['⚠ Tidak ada file post ditemukan di public/data/posts maupun public/post.'], true, false);
       return;
     }
-    kzShowRepoFilePicker(allFiles, token);
+    hzShowRepoFilePicker(allFiles, token);
   }catch(e){
-    kzShowLoadStatus(['❌ Gagal mengambil daftar file: '+e.message], false, true);
+    hzShowLoadStatus(['❌ Gagal mengambil daftar file: '+e.message], false, true);
   }finally{
     btn.disabled = false;
     btn.innerHTML = origHtml;
   }
 }
 
-function kzShowRepoFilePicker(files, token){
+function hzShowRepoFilePicker(files, token){
   // Hapus modal lama kalau ada
-  var old = document.getElementById('kz-repo-modal');
+  var old = document.getElementById('hz-repo-modal');
   if(old) old.remove();
 
   var overlay = document.createElement('div');
-  overlay.id = 'kz-repo-modal';
+  overlay.id = 'hz-repo-modal';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;';
 
   var box = document.createElement('div');
@@ -1851,7 +1851,7 @@ function kzShowRepoFilePicker(files, token){
     item.onmouseleave = function(){ this.style.background='#fafafa'; };
     item.onclick = function(){
       overlay.remove();
-      kzFetchRepoFile(f, token);
+      hzFetchRepoFile(f, token);
     };
     list.appendChild(item);
   });
@@ -1860,16 +1860,16 @@ function kzShowRepoFilePicker(files, token){
   var cancelBtn = document.createElement('button');
   cancelBtn.style.cssText = 'padding:9px 0;border-radius:8px;border:1px solid #e0e0e0;background:transparent;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;color:#555;font-weight:600;';
   cancelBtn.textContent = 'Batal';
-  cancelBtn.onclick = function(){ overlay.remove(); kzShowLoadStatus([], false, false); };
+  cancelBtn.onclick = function(){ overlay.remove(); hzShowLoadStatus([], false, false); };
   box.appendChild(cancelBtn);
 
   overlay.appendChild(box);
-  overlay.onclick = function(e){ if(e.target===overlay){ overlay.remove(); kzShowLoadStatus([], false, false); } };
+  overlay.onclick = function(e){ if(e.target===overlay){ overlay.remove(); hzShowLoadStatus([], false, false); } };
   document.body.appendChild(overlay);
 }
 
-async function kzFetchRepoFile(file, token){
-  kzShowLoadStatus(['Mengambil isi file "'+file.name+'" dari repo...'], false, false);
+async function hzFetchRepoFile(file, token){
+  hzShowLoadStatus(['Mengambil isi file "'+file.name+'" dari repo...'], false, false);
   try{
     var res = await fetch(file.url, {
       headers:{ 'Authorization':'Bearer '+token, 'Accept':'application/vnd.github+json' }
@@ -1878,15 +1878,15 @@ async function kzFetchRepoFile(file, token){
     var data = await res.json();
     // Konten dari GitHub API di-encode base64
     var textContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
-    if(file.kind === 'json') kzLoadFromJson(textContent, file.name);
-    else kzLoadFromHtml(textContent, file.name);
+    if(file.kind === 'json') hzLoadFromJson(textContent, file.name);
+    else hzLoadFromHtml(textContent, file.name);
   }catch(e){
-    kzShowLoadStatus(['❌ Gagal mengambil file "'+file.name+'": '+e.message], false, true);
+    hzShowLoadStatus(['❌ Gagal mengambil file "'+file.name+'": '+e.message], false, true);
   }
 }
 
-function kzShowLoadStatus(messages, hasWarning, hasError){
-  var el = document.getElementById('kz-load-status');
+function hzShowLoadStatus(messages, hasWarning, hasError){
+  var el = document.getElementById('hz-load-status');
   if(!messages || !messages.length){ el.style.display = 'none'; return; }
   el.style.display = 'block';
   el.style.background = hasError ? 'rgba(229,57,53,.08)' : hasWarning ? 'rgba(255,152,0,.08)' : 'rgba(67,160,71,.08)';
@@ -1895,7 +1895,7 @@ function kzShowLoadStatus(messages, hasWarning, hasError){
   el.innerHTML = messages.map(function(m){ return '<div>'+m+'</div>'; }).join('');
 }
 
-function kzSetField(id, value){
+function hzSetField(id, value){
   var el = document.getElementById(id);
   if(!el) return false;
   el.value = value;
@@ -1911,7 +1911,7 @@ function kzSetField(id, value){
    - Kalau batch lebih SEDIKIT dari blok yg sudah ada, sisa blok kelebihan dibiarkan
      apa adanya (tidak disentuh sama sekali). */
 
-function kzGetDlMidIndices(isT2){
+function hzGetDlMidIndices(isT2){
   var midId = isT2 ? 'dl-middle-t2' : 'dl-middle';
   var mid = document.getElementById(midId);
   if(!mid) return [];
@@ -1924,7 +1924,7 @@ function kzGetDlMidIndices(isT2){
   return idxs;
 }
 
-function kzParseDlBatchLines(text){
+function hzParseDlBatchLines(text){
   var lines = text.split('\n');
   var valid = [], invalid = 0;
   lines.forEach(function(line){
@@ -1940,20 +1940,20 @@ function kzParseDlBatchLines(text){
   return { valid: valid, invalid: invalid };
 }
 
-function kzApplyDlBatch(isT2, items){
+function hzApplyDlBatch(isT2, items){
   var pfx = isT2 ? 't2_' : '';
   var n = items.length;
   var addBlokFn = isT2 ? addDlBlokT2 : addDlBlok;
 
   if(n === 1){
-    kzSetField(pfx + 'replace1', items[0].name);
-    kzSetField(pfx + 'linkreplace1', items[0].link);
+    hzSetField(pfx + 'replace1', items[0].name);
+    hzSetField(pfx + 'linkreplace1', items[0].link);
   } else {
-    kzSetField(pfx + 'replace1', items[0].name);
-    kzSetField(pfx + 'linkreplace1', items[0].link);
+    hzSetField(pfx + 'replace1', items[0].name);
+    hzSetField(pfx + 'linkreplace1', items[0].link);
 
     var middleItems = items.slice(1, n - 1);
-    var existingMid = kzGetDlMidIndices(isT2);
+    var existingMid = hzGetDlMidIndices(isT2);
     middleItems.forEach(function(item, i){
       var idx;
       if(i < existingMid.length){
@@ -1962,28 +1962,28 @@ function kzApplyDlBatch(isT2, items){
         addBlokFn(); // blok baru, icon kosong (diisi manual nanti)
         idx = isT2 ? dlCounterT2 : dlCounter;
       }
-      kzSetField(pfx + 'replace' + idx, item.name);
-      kzSetField(pfx + 'linkreplace' + idx, item.link);
+      hzSetField(pfx + 'replace' + idx, item.name);
+      hzSetField(pfx + 'linkreplace' + idx, item.link);
     });
 
     var last = items[n - 1];
-    kzSetField(pfx + 'replacelast', last.name);
-    kzSetField(pfx + 'linkreplaceterakhir', last.link);
+    hzSetField(pfx + 'replacelast', last.name);
+    hzSetField(pfx + 'linkreplaceterakhir', last.link);
   }
 
   attachAllListeners();
   if(typeof scheduleLiveUpdate === 'function') scheduleLiveUpdate();
-  if(typeof kzShowLoadStatus === 'function'){
-    kzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update. Icon perlu diisi manual satu per satu.'], false, false);
+  if(typeof hzShowLoadStatus === 'function'){
+    hzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update. Icon perlu diisi manual satu per satu.'], false, false);
   }
 }
 
-function kzOpenDlBatchModal(isT2){
-  var old = document.getElementById('kz-dl-batch-modal');
+function hzOpenDlBatchModal(isT2){
+  var old = document.getElementById('hz-dl-batch-modal');
   if(old) old.remove();
 
   var overlay = document.createElement('div');
-  overlay.id = 'kz-dl-batch-modal';
+  overlay.id = 'hz-dl-batch-modal';
   overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
 
   var box = document.createElement('div');
@@ -2002,18 +2002,18 @@ function kzOpenDlBatchModal(isT2){
   box.appendChild(desc);
 
   var textarea = document.createElement('textarea');
-  textarea.id = 'kz-dl-batch-textarea';
+  textarea.id = 'hz-dl-batch-textarea';
   textarea.placeholder = 'Default, https://sfile.co/JuSW9H6e0YX\nDefault + Logo, https://sfile.co/DaFSRY7shGA\nBasic, https://sfile.co/lgz2tvpprs4';
   textarea.style.cssText = 'width:100%;min-height:180px;padding:10px 12px;border:1px solid #e0e0e0;border-radius:8px;font-family:monospace;font-size:12.5px;resize:vertical;box-sizing:border-box;';
   box.appendChild(textarea);
 
   var previewEl = document.createElement('div');
-  previewEl.id = 'kz-dl-batch-preview';
+  previewEl.id = 'hz-dl-batch-preview';
   previewEl.style.cssText = "font-family:'Inter',sans-serif;font-size:12px;color:#888;min-height:16px;";
   box.appendChild(previewEl);
 
   textarea.oninput = function(){
-    var parsed = kzParseDlBatchLines(textarea.value);
+    var parsed = hzParseDlBatchLines(textarea.value);
     previewEl.style.color = '#888';
     if(!textarea.value.trim()){ previewEl.textContent = ''; return; }
     var msg = parsed.valid.length + ' baris valid terdeteksi';
@@ -2028,13 +2028,13 @@ function kzOpenDlBatchModal(isT2){
   applyBtn.textContent = 'Terapkan';
   applyBtn.style.cssText = "flex:1;padding:10px 0;border-radius:8px;border:none;background:#111;color:#fff;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;";
   applyBtn.onclick = function(){
-    var parsed = kzParseDlBatchLines(textarea.value);
+    var parsed = hzParseDlBatchLines(textarea.value);
     if(!parsed.valid.length){
       previewEl.style.color = '#c62828';
       previewEl.textContent = 'Tidak ada baris valid untuk diterapkan.';
       return;
     }
-    kzApplyDlBatch(isT2, parsed.valid);
+    hzApplyDlBatch(isT2, parsed.valid);
     overlay.remove();
   };
   btnRow.appendChild(applyBtn);
@@ -2053,7 +2053,7 @@ function kzOpenDlBatchModal(isT2){
 }
 
 // Ambil textContent dari elemen di DOM sementara, decode entity HTML otomatis
-function kzGetText(doc, selector){
+function hzGetText(doc, selector){
   var el = doc.querySelector(selector);
   return el ? el.textContent.trim() : null;
 }
@@ -2063,7 +2063,7 @@ function kzGetText(doc, selector){
 var _kzEditBaseline = {}; // { fieldId: nilaiSaatLoad }
 var _kzTrackingActive = false;
 
-function kzSnapshotBaseline(){
+function hzSnapshotBaseline(){
   _kzEditBaseline = {};
   var fields = document.querySelectorAll('.left-panel input[type="text"], .left-panel input[type="number"], .left-panel input[type="password"], .left-panel textarea');
   fields.forEach(function(el){
@@ -2071,44 +2071,44 @@ function kzSnapshotBaseline(){
   });
 }
 
-function kzCheckEdited(el){
+function hzCheckEdited(el){
   if(!_kzTrackingActive) return;
   var fieldDiv = el.closest('.field');
   if(!fieldDiv) return;
   var baseline = _kzEditBaseline[el.id];
   var isEdited = (baseline !== undefined) ? (el.value !== baseline) : (el.value !== '');
   if(isEdited){
-    fieldDiv.classList.add('kz-field-edited');
+    fieldDiv.classList.add('hz-field-edited');
   } else {
-    fieldDiv.classList.remove('kz-field-edited');
+    fieldDiv.classList.remove('hz-field-edited');
   }
 }
 
-function kzClearAllEditedMarks(){
-  document.querySelectorAll('.kz-field-edited').forEach(function(el){
-    el.classList.remove('kz-field-edited');
+function hzClearAllEditedMarks(){
+  document.querySelectorAll('.hz-field-edited').forEach(function(el){
+    el.classList.remove('hz-field-edited');
   });
 }
 
-function kzAttachEditedListeners(){
+function hzAttachEditedListeners(){
   var fields = document.querySelectorAll('.left-panel input[type="text"], .left-panel input[type="number"], .left-panel input[type="password"], .left-panel textarea');
   fields.forEach(function(el){
     el.removeEventListener('input', el._kzEditedHandler);
-    el._kzEditedHandler = function(){ kzCheckEdited(this); };
+    el._kzEditedHandler = function(){ hzCheckEdited(this); };
     el.addEventListener('input', el._kzEditedHandler);
   });
 }
 
-function kzLoadFromHtml(htmlString, filename){
+function hzLoadFromHtml(htmlString, filename){
   var warnings = [];
 
   var parser = new DOMParser();
   var doc = parser.parseFromString(htmlString, 'text/html');
 
-  var isValid = !!doc.getElementById('kz-hero-title') && !!doc.getElementById('kz-story-full');
+  var isValid = !!doc.getElementById('hz-hero-title') && !!doc.getElementById('hz-story-full');
   if(!isValid){
-    kzShowLoadStatus(['❌ File ini bukan hasil generate tools atau strukturnya berbeda — elemen kunci tidak ditemukan. Form tidak diubah.'], false, true);
-    kzSetMode('baru');
+    hzShowLoadStatus(['❌ File ini bukan hasil generate tools atau strukturnya berbeda — elemen kunci tidak ditemukan. Form tidak diubah.'], false, true);
+    hzSetMode('baru');
     return;
   }
 
@@ -2143,23 +2143,23 @@ function kzLoadFromHtml(htmlString, filename){
 
   // [1] NAMEHERO dari <title>
   var titleEl = doc.querySelector('title');
-  if(titleEl && titleEl.textContent.trim()) kzSetField('namehero', titleEl.textContent.trim());
+  if(titleEl && titleEl.textContent.trim()) hzSetField('namehero', titleEl.textContent.trim());
   else warnings.push('\u26a0 namehero (<title>) tidak ditemukan');
 
   // [2] THUMBNAIL
-  var heroImg = doc.querySelector('#kz-hero > img');
-  if(heroImg) kzSetField('urlthumbnail', heroImg.getAttribute('src') || '');
+  var heroImg = doc.querySelector('#hz-hero > img');
+  if(heroImg) hzSetField('urlthumbnail', heroImg.getAttribute('src') || '');
   else warnings.push('\u26a0 urlthumbnail tidak ditemukan');
 
   // [3] KATEGORISKIN, DATEPOST, AUTHORNAME
-  var heroMeta = doc.getElementById('kz-hero-meta');
+  var heroMeta = doc.getElementById('hz-hero-meta');
   if(heroMeta){
     var spans = heroMeta.querySelectorAll('span');
     var foundKat = false;
     for(var i=0;i<spans.length;i++){
       var st = (spans[i].getAttribute('style') || '');
       if(st.indexOf('FFC200') !== -1 || st.indexOf('ffc200') !== -1){
-        kzSetField('kategoriskin', spans[i].textContent.trim());
+        hzSetField('kategoriskin', spans[i].textContent.trim());
         foundKat = true; break;
       }
     }
@@ -2168,19 +2168,19 @@ function kzLoadFromHtml(htmlString, filename){
     var flexDiv = heroMeta.querySelector('div[style*="flex-wrap"]');
     if(flexDiv){
       var metaSpans = flexDiv.querySelectorAll('span');
-      if(metaSpans[0]){ var dt = textAfterSvg(metaSpans[0]); if(dt) kzSetField('datepost', dt); else warnings.push('\u26a0 datepost tidak ditemukan'); }
-      if(metaSpans[1]){ var au = textAfterSvg(metaSpans[1]); if(au) kzSetField('authorname', au); else warnings.push('\u26a0 authorname tidak ditemukan'); }
+      if(metaSpans[0]){ var dt = textAfterSvg(metaSpans[0]); if(dt) hzSetField('datepost', dt); else warnings.push('\u26a0 datepost tidak ditemukan'); }
+      if(metaSpans[1]){ var au = textAfterSvg(metaSpans[1]); if(au) hzSetField('authorname', au); else warnings.push('\u26a0 authorname tidak ditemukan'); }
     } else { warnings.push('\u26a0 datepost dan authorname tidak ditemukan'); }
-  } else { warnings.push('\u26a0 #kz-hero-meta tidak ditemukan'); }
+  } else { warnings.push('\u26a0 #hz-hero-meta tidak ditemukan'); }
 
   // [4] SHORT STORY
-  var shortStEl = doc.getElementById('kz-story-short');
-  if(shortStEl) kzSetField('shortstory-preview', shortStEl.textContent.trim());
+  var shortStEl = doc.getElementById('hz-story-short');
+  if(shortStEl) hzSetField('shortstory-preview', shortStEl.textContent.trim());
   else warnings.push('\u26a0 shortstory tidak ditemukan');
 
   // [5] LONG STORY
-  var longStEl = doc.getElementById('kz-story-full');
-  if(longStEl) kzSetField('longstory', longStEl.textContent.trim());
+  var longStEl = doc.getElementById('hz-story-full');
+  if(longStEl) hzSetField('longstory', longStEl.textContent.trim());
   else warnings.push('\u26a0 longstory tidak ditemukan');
 
   // [6] ABILITY LOADER
@@ -2194,17 +2194,17 @@ function kzLoadFromHtml(htmlString, filename){
     }
     if(flexWrap){
       var abImg = findAbilityImg(flexWrap);
-      if(abImg) kzSetField(cfg.urlField, abImg.getAttribute('src') || '');
+      if(abImg) hzSetField(cfg.urlField, abImg.getAttribute('src') || '');
       else warnings.push('\u26a0 '+cfg.urlField+' tidak ditemukan');
       var nameSpan = flexWrap.querySelector('span[style*="font-size:14px"]');
-      if(nameSpan) kzSetField(cfg.nameField, nameSpan.textContent.trim());
+      if(nameSpan) hzSetField(cfg.nameField, nameSpan.textContent.trim());
       else warnings.push('\u26a0 '+cfg.nameField+' tidak ditemukan');
       var katSpan = flexWrap.querySelector('span[style*="border-radius:20px"]');
-      if(katSpan) kzSetField(cfg.katField, katSpan.textContent.trim());
+      if(katSpan) hzSetField(cfg.katField, katSpan.textContent.trim());
       else warnings.push('\u26a0 '+cfg.katField+' tidak ditemukan');
     }
-    if(shortEl2) kzSetField(cfg.shortField, shortEl2.textContent.trim());
-    kzSetField(cfg.longField, fullDiv.textContent.trim());
+    if(shortEl2) hzSetField(cfg.shortField, shortEl2.textContent.trim());
+    hzSetField(cfg.longField, fullDiv.textContent.trim());
   }
 
   // Cek & muat varian 2 untuk satu blok (kalau ada elemen {prefix}-w2 di file)
@@ -2220,27 +2220,27 @@ function kzLoadFromHtml(htmlString, filename){
     loadAbilityBlock({ fullId: prefix+'-v2-full', shortId: prefix+'-v2-short', urlField: urlField, nameField: nameField, katField: katField, longField: longField, shortField: null });
   }
 
-  loadAbilityBlock({ fullId:'kz-ab-pasif-full', shortId:'kz-ab-pasif-short', urlField:'urlpasif',   nameField:'namepasif',   katField:'kategoripasif',  longField:'longdescblok0',   shortField:'shortdescblok0-preview' });
-  maybeLoadDualVariant('pasif', 'kz-ab-pasif', 'urlpasif_v2', 'namepasif_v2', 'kategoripasif_v2', 'longdescblok0_v2');
+  loadAbilityBlock({ fullId:'hz-ab-pasif-full', shortId:'hz-ab-pasif-short', urlField:'urlpasif',   nameField:'namepasif',   katField:'kategoripasif',  longField:'longdescblok0',   shortField:'shortdescblok0-preview' });
+  maybeLoadDualVariant('pasif', 'hz-ab-pasif', 'urlpasif_v2', 'namepasif_v2', 'kategoripasif_v2', 'longdescblok0_v2');
 
-  loadAbilityBlock({ fullId:'kz-ab-s1-full',    shortId:'kz-ab-s1-short',    urlField:'urlskill1',  nameField:'nameskill1',  katField:'kategoriskill1', longField:'longdescblok1',   shortField:'shortdescblok1-preview' });
-  maybeLoadDualVariant('skill1', 'kz-ab-s1', 'urlskill1_v2', 'nameskill1_v2', 'kategoriskill1_v2', 'longdescblok1_v2');
+  loadAbilityBlock({ fullId:'hz-ab-s1-full',    shortId:'hz-ab-s1-short',    urlField:'urlskill1',  nameField:'nameskill1',  katField:'kategoriskill1', longField:'longdescblok1',   shortField:'shortdescblok1-preview' });
+  maybeLoadDualVariant('skill1', 'hz-ab-s1', 'urlskill1_v2', 'nameskill1_v2', 'kategoriskill1_v2', 'longdescblok1_v2');
 
-  loadAbilityBlock({ fullId:'kz-ab-s2-full',    shortId:'kz-ab-s2-short',    urlField:'urlskill2',  nameField:'nameskill2',  katField:'kategoriskill2', longField:'longdescblok2',   shortField:'shortdescblok2-preview' });
-  maybeLoadDualVariant('skill2', 'kz-ab-s2', 'urlskill2_v2', 'nameskill2_v2', 'kategoriskill2_v2', 'longdescblok2_v2');
+  loadAbilityBlock({ fullId:'hz-ab-s2-full',    shortId:'hz-ab-s2-short',    urlField:'urlskill2',  nameField:'nameskill2',  katField:'kategoriskill2', longField:'longdescblok2',   shortField:'shortdescblok2-preview' });
+  maybeLoadDualVariant('skill2', 'hz-ab-s2', 'urlskill2_v2', 'nameskill2_v2', 'kategoriskill2_v2', 'longdescblok2_v2');
 
-  loadAbilityBlock({ fullId:'kz-ab-ult-full',   shortId:'kz-ab-ult-short',   urlField:'urlultimate',nameField:'nameultimate',katField:'kategoriulti',   longField:'longdescbloklast',shortField:'shortdescbloklast-preview' });
-  maybeLoadDualVariant('ulti', 'kz-ab-ult', 'urlultimate_v2', 'nameultimate_v2', 'kategoriulti_v2', 'longdescbloklast_v2');
+  loadAbilityBlock({ fullId:'hz-ab-ult-full',   shortId:'hz-ab-ult-short',   urlField:'urlultimate',nameField:'nameultimate',katField:'kategoriulti',   longField:'longdescbloklast',shortField:'shortdescbloklast-preview' });
+  maybeLoadDualVariant('ulti', 'hz-ab-ult', 'urlultimate_v2', 'nameultimate_v2', 'kategoriulti_v2', 'longdescbloklast_v2');
 
   // [7] SKILL DINAMIS (+ varian 2 per blok kalau ada)
   var dynIdx = 3;
   while(true){
-    var dynFull = doc.getElementById('kz-ab-s'+dynIdx+'-full');
+    var dynFull = doc.getElementById('hz-ab-s'+dynIdx+'-full');
     if(!dynFull) break;
     addAbBlok();
     var curIdx = abCounter - 1;
-    loadAbilityBlock({ fullId:'kz-ab-s'+dynIdx+'-full', shortId:'kz-ab-s'+dynIdx+'-short', urlField:'urlskill'+curIdx, nameField:'nameskill'+curIdx, katField:'kategoriskill'+curIdx, longField:'longdescblok'+curIdx, shortField:'shortdescblok'+curIdx });
-    maybeLoadDualVariant('skill'+curIdx, 'kz-ab-s'+dynIdx, 'urlskill'+curIdx+'_v2', 'nameskill'+curIdx+'_v2', 'kategoriskill'+curIdx+'_v2', 'longdescblok'+curIdx+'_v2');
+    loadAbilityBlock({ fullId:'hz-ab-s'+dynIdx+'-full', shortId:'hz-ab-s'+dynIdx+'-short', urlField:'urlskill'+curIdx, nameField:'nameskill'+curIdx, katField:'kategoriskill'+curIdx, longField:'longdescblok'+curIdx, shortField:'shortdescblok'+curIdx });
+    maybeLoadDualVariant('skill'+curIdx, 'hz-ab-s'+dynIdx, 'urlskill'+curIdx+'_v2', 'nameskill'+curIdx+'_v2', 'kategoriskill'+curIdx+'_v2', 'longdescblok'+curIdx+'_v2');
     dynIdx++;
   }
 
@@ -2259,37 +2259,37 @@ function kzLoadFromHtml(htmlString, filename){
       }
       var img  = r.querySelector('td:nth-child(2) img');
       var a    = r.querySelector('td:nth-child(3) a');
-      return { name: name, url: img?kzCleanPngUrl(img.getAttribute('src')||''):'', link: a?(a.getAttribute('href')||''):'' };
+      return { name: name, url: img?hzCleanPngUrl(img.getAttribute('src')||''):'', link: a?(a.getAttribute('href')||''):'' };
     }
-    if(rows.length >= 1){ var r0=readRow(rows[0]); kzSetField('replace1',r0.name); kzSetField('urlreplace1',r0.url); kzSetField('linkreplace1',r0.link); }
-    for(var ri=1;ri<rows.length-1;ri++){ addDlBlok(); var dlIdx=dlCounter; var rM=readRow(rows[ri]); kzSetField('replace'+dlIdx,rM.name); kzSetField('urlreplace'+dlIdx,rM.url); kzSetField('linkreplace'+dlIdx,rM.link); }
-    if(rows.length >= 2){ var rL=readRow(rows[rows.length-1]); kzSetField('replacelast',rL.name); kzSetField('urlreplaceterakhir',rL.url); kzSetField('linkreplaceterakhir',rL.link); }
+    if(rows.length >= 1){ var r0=readRow(rows[0]); hzSetField('replace1',r0.name); hzSetField('urlreplace1',r0.url); hzSetField('linkreplace1',r0.link); }
+    for(var ri=1;ri<rows.length-1;ri++){ addDlBlok(); var dlIdx=dlCounter; var rM=readRow(rows[ri]); hzSetField('replace'+dlIdx,rM.name); hzSetField('urlreplace'+dlIdx,rM.url); hzSetField('linkreplace'+dlIdx,rM.link); }
+    if(rows.length >= 2){ var rL=readRow(rows[rows.length-1]); hzSetField('replacelast',rL.name); hzSetField('urlreplaceterakhir',rL.url); hzSetField('linkreplaceterakhir',rL.link); }
   } else { warnings.push('\u26a0 tabel download tidak ditemukan'); }
 
   // [8b] TOOLTIP "APA ITU LOGO?"
-  var ttTitleEl = doc.querySelector('#kz-logo-tooltip-overlay .kz-tooltip-head span');
-  if(ttTitleEl) kzSetField('tooltip-logo-title', ttTitleEl.textContent.trim());
+  var ttTitleEl = doc.querySelector('#hz-logo-tooltip-overlay .hz-tooltip-head span');
+  if(ttTitleEl) hzSetField('tooltip-logo-title', ttTitleEl.textContent.trim());
   else warnings.push('\u26a0 tooltiplogotitle tidak ditemukan');
 
-  var ttDescEl = doc.querySelector('#kz-logo-tooltip-overlay .kz-tooltip-desc');
-  if(ttDescEl) kzSetField('tooltip-logo-desc', ttDescEl.textContent.trim());
+  var ttDescEl = doc.querySelector('#hz-logo-tooltip-overlay .hz-tooltip-desc');
+  if(ttDescEl) hzSetField('tooltip-logo-desc', ttDescEl.textContent.trim());
   else warnings.push('\u26a0 tooltiplogodesc tidak ditemukan');
 
-  var ttImgEl = doc.querySelector('#kz-logo-tooltip-overlay .kz-tooltip-imgwrap img');
-  if(ttImgEl) kzSetField('tooltip-logo-img', ttImgEl.getAttribute('src') || '');
+  var ttImgEl = doc.querySelector('#hz-logo-tooltip-overlay .hz-tooltip-imgwrap img');
+  if(ttImgEl) hzSetField('tooltip-logo-img', ttImgEl.getAttribute('src') || '');
   else warnings.push('\u26a0 tooltiplogoimg tidak ditemukan');
 
   // [8c] TOOLTIP "APA ITU TAB 1 & TAB 2?"
-  var ttDlTabTitleEl = doc.querySelector('#kz-dltab-tooltip-overlay .kz-tooltip-head span');
-  if(ttDlTabTitleEl) kzSetField('tooltip-dltab-title', ttDlTabTitleEl.textContent.trim());
+  var ttDlTabTitleEl = doc.querySelector('#hz-dltab-tooltip-overlay .hz-tooltip-head span');
+  if(ttDlTabTitleEl) hzSetField('tooltip-dltab-title', ttDlTabTitleEl.textContent.trim());
   else warnings.push('\u26a0 tooltipdltabtitle tidak ditemukan');
 
-  var ttDlTabDescEl = doc.querySelector('#kz-dltab-tooltip-overlay .kz-tooltip-desc');
-  if(ttDlTabDescEl) kzSetField('tooltip-dltab-desc', ttDlTabDescEl.textContent.trim());
+  var ttDlTabDescEl = doc.querySelector('#hz-dltab-tooltip-overlay .hz-tooltip-desc');
+  if(ttDlTabDescEl) hzSetField('tooltip-dltab-desc', ttDlTabDescEl.textContent.trim());
   else warnings.push('\u26a0 tooltipdltabdesc tidak ditemukan');
 
-  var ttDlTabImgEl = doc.querySelector('#kz-dltab-tooltip-overlay .kz-tooltip-imgwrap img');
-  if(ttDlTabImgEl) kzSetField('tooltip-dltab-img', ttDlTabImgEl.getAttribute('src') || '');
+  var ttDlTabImgEl = doc.querySelector('#hz-dltab-tooltip-overlay .hz-tooltip-imgwrap img');
+  if(ttDlTabImgEl) hzSetField('tooltip-dltab-img', ttDlTabImgEl.getAttribute('src') || '');
   else warnings.push('\u26a0 tooltipdltabimg tidak ditemukan');
 
   // [9] STATUS
@@ -2300,16 +2300,16 @@ function kzLoadFromHtml(htmlString, filename){
   } else {
     allMsgs.push('\u2705 Semua field berhasil dimuat dari: <strong>'+filename+'</strong>');
   }
-  kzShowLoadStatus(allMsgs, warnings.length > 0, false);
+  hzShowLoadStatus(allMsgs, warnings.length > 0, false);
 
   attachAllListeners();
   scheduleLiveUpdate();
 
   // Aktifkan tracking edited fields setelah load selesai
   _kzTrackingActive = true;
-  kzClearAllEditedMarks();
-  kzSnapshotBaseline();
-  kzAttachEditedListeners();
+  hzClearAllEditedMarks();
+  hzSnapshotBaseline();
+  hzAttachEditedListeners();
 }
 // ── GITHUB UPLOAD CONFIG ───────────────────
 var GH_OWNER  = 'fajarfauzi11';
@@ -2318,7 +2318,7 @@ var GH_BRANCH = 'main';
 var GH_API    = 'https://api.github.com';
 
 // ── HELPER: slug dari judul ────────────────
-function kzSlugify(title){
+function hzSlugify(title){
   return (title||'')
     .toLowerCase()
     .trim()
@@ -2329,22 +2329,22 @@ function kzSlugify(title){
 }
 
 // ── HELPER: base64 encode yang aman untuk unicode (emoji, é, dll) ──
-function kzBase64Encode(str){
+function hzBase64Encode(str){
   return btoa(unescape(encodeURIComponent(str)));
 }
-function kzBase64Decode(str){
+function hzBase64Decode(str){
   return decodeURIComponent(escape(atob(str)));
 }
 
 // ── HELPER: tanggal Indonesia "1 Juli 2026" ──
-function kzTanggalIndo(){
+function hzTanggalIndo(){
   var bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
   var d = new Date();
   return d.getDate()+' '+bulan[d.getMonth()]+' '+d.getFullYear();
 }
 
 // ── HELPER: log ke UI result-section ───────
-function kzLog(msg, isError){
+function hzLog(msg, isError){
   var log = document.getElementById('result-log');
   if(!log) return;
   var line = document.createElement('div');
@@ -2352,7 +2352,7 @@ function kzLog(msg, isError){
   line.textContent = msg;
   log.appendChild(line);
 }
-function kzShowResultSection(){
+function hzShowResultSection(){
   var rs = document.getElementById('result-section');
   rs.classList.remove('show');
   void rs.offsetWidth;
@@ -2360,7 +2360,7 @@ function kzShowResultSection(){
   document.getElementById('result-log').innerHTML = '';
   rs.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function kzSetStatus(text, state){
+function hzSetStatus(text, state){
   var dot = document.querySelector('#result-status .result-dot');
   var txt = document.getElementById('result-status-text');
   txt.textContent = text;
@@ -2371,7 +2371,7 @@ function kzSetStatus(text, state){
 
 // ── GITHUB API: ambil file (sha + content) ──
 // Return null jika file belum ada (404). Throw jika error lain (token salah, dll).
-async function kzGhGetFile(path, token){
+async function hzGhGetFile(path, token){
   var res = await fetch(GH_API+'/repos/'+GH_OWNER+'/'+GH_REPO+'/contents/'+path+'?ref='+GH_BRANCH, {
     headers: {
       'Authorization': 'Bearer '+token,
@@ -2387,10 +2387,10 @@ async function kzGhGetFile(path, token){
 }
 
 // ── GITHUB API: create/update file ──────────
-async function kzGhPutFile(path, contentStr, message, token, sha){
+async function hzGhPutFile(path, contentStr, message, token, sha){
   var body = {
     message: message,
-    content: kzBase64Encode(contentStr),
+    content: hzBase64Encode(contentStr),
     branch: GH_BRANCH
   };
   if(sha) body.sha = sha;
@@ -2415,26 +2415,26 @@ async function finalizeAndUpload(){
   var token = (document.getElementById('gh-token').value||'').trim();
   var btn = document.getElementById('btn-finalize');
 
-  kzShowResultSection();
-  kzSetStatus('Memproses...', 'loading');
+  hzShowResultSection();
+  hzSetStatus('Memproses...', 'loading');
 
   if(!token){
-    kzSetStatus('Gagal', 'error');
-    kzLog('Token GitHub belum diisi. Isi dulu field "GitHub Personal Access Token" di atas.', true);
+    hzSetStatus('Gagal', 'error');
+    hzLog('Token GitHub belum diisi. Isi dulu field "GitHub Personal Access Token" di atas.', true);
     return;
   }
 
   var namehero = (document.getElementById('namehero').value||'').trim();
   if(!namehero){
-    kzSetStatus('Gagal', 'error');
-    kzLog('Field "Nama Hero" (namehero) masih kosong.', true);
+    hzSetStatus('Gagal', 'error');
+    hzLog('Field "Nama Hero" (namehero) masih kosong.', true);
     return;
   }
 
-  var slug = kzSlugify(namehero);
+  var slug = hzSlugify(namehero);
   if(!slug){
-    kzSetStatus('Gagal', 'error');
-    kzLog('Judul tidak menghasilkan nama file yang valid setelah diolah. Coba isi nama hero dengan huruf/angka.', true);
+    hzSetStatus('Gagal', 'error');
+    hzLog('Judul tidak menghasilkan nama file yang valid setelah diolah. Coba isi nama hero dengan huruf/angka.', true);
     return;
   }
 
@@ -2444,16 +2444,16 @@ async function finalizeAndUpload(){
     if(!heroMatchOk){
       var lanjut = window.confirm('Nama hero "'+herolinkVal+'" tidak ditemukan di daftar hero (heroes.json).\n\nPost ini TIDAK akan muncul di halaman Daftar Hero manapun kalau dilanjutkan.\n\nKlik OK untuk tetap lanjut upload, atau Cancel untuk perbaiki dulu ejaannya.');
       if(!lanjut){
-        kzSetStatus('Dibatalkan', 'error');
-        kzLog('Upload dibatalkan — perbaiki dulu field "Nama Hero" (herolink).', true);
+        hzSetStatus('Dibatalkan', 'error');
+        hzLog('Upload dibatalkan — perbaiki dulu field "Nama Hero" (herolink).', true);
         return;
       }
     }
   } else if(!herolinkVal){
     var lanjutKosong = window.confirm('Field "Nama Hero" (herolink) masih kosong.\n\nPost ini TIDAK akan muncul di halaman Daftar Hero manapun.\n\nKlik OK kalau memang disengaja, atau Cancel untuk isi dulu.');
     if(!lanjutKosong){
-      kzSetStatus('Dibatalkan', 'error');
-      kzLog('Upload dibatalkan — isi dulu field "Nama Hero" (herolink) kalau post ini terkait hero tertentu.', true);
+      hzSetStatus('Dibatalkan', 'error');
+      hzLog('Upload dibatalkan — isi dulu field "Nama Hero" (herolink) kalau post ini terkait hero tertentu.', true);
       return;
     }
   }
@@ -2466,14 +2466,14 @@ async function finalizeAndUpload(){
 
   try{
     // 1. Cek apakah file data sudah ada di repo
-    kzLog('Mengecek apakah "'+slug+'.json" sudah ada di repo...');
+    hzLog('Mengecek apakah "'+slug+'.json" sudah ada di repo...');
     var existing;
     try{
-      existing = await kzGhGetFile(dataPath, token);
+      existing = await hzGhGetFile(dataPath, token);
     }catch(e){
-      kzSetStatus('Gagal', 'error');
-      kzLog('Gagal mengecek file di GitHub: '+e.message, true);
-      kzLog('Pastikan token valid dan punya akses "Contents: write" ke repo '+GH_OWNER+'/'+GH_REPO+'.', true);
+      hzSetStatus('Gagal', 'error');
+      hzLog('Gagal mengecek file di GitHub: '+e.message, true);
+      hzLog('Pastikan token valid dan punya akses "Contents: write" ke repo '+GH_OWNER+'/'+GH_REPO+'.', true);
       btn.disabled = false;
       return;
     }
@@ -2482,38 +2482,38 @@ async function finalizeAndUpload(){
     if(existing){
       var ok = window.confirm('File "'+slug+'.json" sudah ada di repo.\n\nKlik OK untuk OVERWRITE (timpa data lama), atau Cancel untuk batalkan upload.');
       if(!ok){
-        kzSetStatus('Dibatalkan', 'error');
-        kzLog('Upload dibatalkan oleh user karena nama file sudah ada.', true);
+        hzSetStatus('Dibatalkan', 'error');
+        hzLog('Upload dibatalkan oleh user karena nama file sudah ada.', true);
         btn.disabled = false;
         return;
       }
       overwriteSha = existing.sha;
-      kzLog('File sudah ada, akan di-overwrite.');
+      hzLog('File sudah ada, akan di-overwrite.');
     } else {
-      kzLog('Nama file belum dipakai, akan dibuat baru.');
+      hzLog('Nama file belum dipakai, akan dibuat baru.');
     }
 
     // 2. Kumpulkan data konten & upload sebagai JSON (desain/HTML dirakit oleh build.js saat deploy)
     var contentData = buildContentData();
     var contentJson = JSON.stringify(contentData, null, 2) + '\n';
-    kzLog('Mengupload "'+slug+'.json" ke '+dataPath+'...');
-    await kzGhPutFile(
+    hzLog('Mengupload "'+slug+'.json" ke '+dataPath+'...');
+    await hzGhPutFile(
       dataPath,
       contentJson,
       (overwriteSha ? 'Update post: ' : 'Add post: ')+namehero,
       token,
       overwriteSha
     );
-    kzLog('✓ Data post berhasil diupload.');
+    hzLog('✓ Data post berhasil diupload.');
 
     // 3. Update posts.json
-    kzLog('Mengambil posts.json terbaru...');
-    var jsonFile = await kzGhGetFile(jsonPath, token);
+    hzLog('Mengambil posts.json terbaru...');
+    var jsonFile = await hzGhGetFile(jsonPath, token);
     if(!jsonFile){
       throw new Error('posts.json tidak ditemukan di '+jsonPath+'. HTML sudah terupload, tapi posts.json belum diupdate — silakan tambahkan entry secara manual.');
     }
 
-    var jsonText = kzBase64Decode(jsonFile.content);
+    var jsonText = hzBase64Decode(jsonFile.content);
     var posts;
     try{
       posts = JSON.parse(jsonText);
@@ -2544,9 +2544,9 @@ async function finalizeAndUpload(){
       oldEntry.thumb = thumbVal;
       oldEntry.cat   = catVal;
       oldEntry.hero  = heroVal;
-      oldEntry.date  = kzTanggalIndo();
+      oldEntry.date  = hzTanggalIndo();
       if(keywordsVal){ oldEntry.keywords = keywordsVal; } else { delete oldEntry.keywords; }
-      kzLog('Entry "'+namehero+'" sudah ada di posts.json, akan diupdate (bukan duplikat).');
+      hzLog('Entry "'+namehero+'" sudah ada di posts.json, akan diupdate (bukan duplikat).');
     } else {
       var newEntry = {
         id: maxId + 1,
@@ -2555,7 +2555,7 @@ async function finalizeAndUpload(){
         thumb: thumbVal,
         cat: catVal,
         hero: heroVal,
-        date: kzTanggalIndo(),
+        date: hzTanggalIndo(),
         author: 'Henz',
         comments: 0
       };
@@ -2563,49 +2563,49 @@ async function finalizeAndUpload(){
       posts.unshift(newEntry);
     }
 
-    kzLog('Mengupload posts.json yang sudah diperbarui...');
-    await kzGhPutFile(
+    hzLog('Mengupload posts.json yang sudah diperbarui...');
+    await hzGhPutFile(
       jsonPath,
       JSON.stringify(posts, null, 2)+'\n',
       'Update posts.json: add '+namehero,
       token,
       jsonFile.sha
     );
-    kzLog('✓ posts.json berhasil diupdate.');
+    hzLog('✓ posts.json berhasil diupdate.');
 
     // 4. Update categories.json jika kategori baru
     if(catVal){
-      kzLog('Mengecek categories.json...');
-      var catsFile = await kzGhGetFile(categoriesPath, token);
+      hzLog('Mengecek categories.json...');
+      var catsFile = await hzGhGetFile(categoriesPath, token);
       if(catsFile){
-        var catsText = kzBase64Decode(catsFile.content);
+        var catsText = hzBase64Decode(catsFile.content);
         var cats;
         try{ cats = JSON.parse(catsText); }catch(e){ cats = null; }
         if(cats && !Object.prototype.hasOwnProperty.call(cats, catVal)){
           cats[catVal] = catImgVal;
-          await kzGhPutFile(
+          await hzGhPutFile(
             categoriesPath,
             JSON.stringify(cats, null, 2)+'\n',
             'Update categories.json: add '+catVal,
             token,
             catsFile.sha
           );
-          kzLog('✓ Kategori baru "'+catVal+'" ditambahkan ke categories.json.');
+          hzLog('✓ Kategori baru "'+catVal+'" ditambahkan ke categories.json.');
         } else if(cats){
-          kzLog('Kategori "'+catVal+'" sudah ada di categories.json, dilewati.');
+          hzLog('Kategori "'+catVal+'" sudah ada di categories.json, dilewati.');
         }
       } else {
-        kzLog('categories.json tidak ditemukan, dilewati.');
+        hzLog('categories.json tidak ditemukan, dilewati.');
       }
     }
 
-    kzSetStatus('Berhasil!', 'success');
-    kzLog('');
-    kzLog('Selesai! "'+namehero+'" akan tampil di homepage & ter-generate halamannya setelah Vercel selesai redeploy (build.js merakit HTML dari data ini + template pusat).');
+    hzSetStatus('Berhasil!', 'success');
+    hzLog('');
+    hzLog('Selesai! "'+namehero+'" akan tampil di homepage & ter-generate halamannya setelah Vercel selesai redeploy (build.js merakit HTML dari data ini + template pusat).');
 
   }catch(e){
-    kzSetStatus('Gagal', 'error');
-    kzLog('Error: '+e.message, true);
+    hzSetStatus('Gagal', 'error');
+    hzLog('Error: '+e.message, true);
   }finally{
     btn.disabled = false;
   }
@@ -2630,8 +2630,8 @@ return `<!DOCTYPE html>
 </head>
 <body class="page-post item-view">
 <!-- include:header.html -->
-<div class="kazeo-page" style="padding-left:16px;padding-right:16px;padding-top:96px;">
-<main class="kazeo-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
+<div class="henz-page" style="padding-left:16px;padding-right:16px;padding-top:96px;">
+<main class="henz-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
 <!--
 =================================================================
   BLOGGER POST TEMPLATE — Henz Officiale
@@ -2809,19 +2809,19 @@ return `<!DOCTYPE html>
 
     /* Short Story — justify bikin spasi antar kata melebar tidak rapi
        di kolom sempit, jadi di mobile kembali rata kiri saja */
-    #kz-story-short,
-    #kz-story-full,
-    #kz-ab-pasif-full,
-    #kz-ab-s1-full,
-    #kz-ab-s2-full,
-    #kz-ab-ult-full,
-    [id^="kz-ab-s"][id$="-full"] {
+    #hz-story-short,
+    #hz-story-full,
+    #hz-ab-pasif-full,
+    #hz-ab-s1-full,
+    #hz-ab-s2-full,
+    #hz-ab-ult-full,
+    [id^="hz-ab-s"][id$="-full"] {
       text-align: left !important;
     }
   }
 
   /* ── DUAL ABILITIES SEGMENTED CONTROL (scaled down dari homepage) ── */
-  .kz-ab-seg {
+  .hz-ab-seg {
     position: relative;
     display: flex;
     justify-content: center;
@@ -2835,7 +2835,7 @@ return `<!DOCTYPE html>
     border-radius: 9999px;
     padding: 3px;
   }
-  .kz-ab-seg-item {
+  .hz-ab-seg-item {
     position: relative;
     z-index: 1;
     display: inline-flex;
@@ -2855,8 +2855,8 @@ return `<!DOCTYPE html>
     white-space: nowrap;
     outline: none;
   }
-  .kz-ab-seg-item.active { color: #111; }
-  .kz-ab-seg-pill {
+  .hz-ab-seg-item.active { color: #111; }
+  .hz-ab-seg-pill {
     position: absolute;
     top: 3px; bottom: 3px; left: 3px;
     z-index: 0;
@@ -2867,24 +2867,24 @@ return `<!DOCTYPE html>
     transition: width .2s cubic-bezier(.4,0,.2,1), translate .2s cubic-bezier(.4,0,.2,1);
   }
   /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate) */
-  .kz-ab-seg-mini {
+  .hz-ab-seg-mini {
     height: 22px;
     width: fit-content;
     margin: 0;
     gap: 1px;
     padding: 2px;
   }
-  .kz-ab-seg-mini .kz-ab-seg-item {
+  .hz-ab-seg-mini .hz-ab-seg-item {
     height: 18px;
     font-size: 9.5px;
     padding: 0 9px;
   }
-  .kz-ab-seg-mini .kz-ab-seg-pill {
+  .hz-ab-seg-mini .hz-ab-seg-pill {
     top: 2px; bottom: 2px; left: 2px;
   }
 
   /* ── TOOLTIP "APA ITU LOGO?" ── */
-  .kz-tooltip-overlay {
+  .hz-tooltip-overlay {
     position: fixed;
     inset: 0;
     z-index: 9999;
@@ -2896,8 +2896,8 @@ return `<!DOCTYPE html>
     opacity: 0;
     transition: opacity .18s ease;
   }
-  .kz-tooltip-overlay.open { opacity: 1; }
-  .kz-tooltip-box {
+  .hz-tooltip-overlay.open { opacity: 1; }
+  .hz-tooltip-box {
     width: 100%;
     max-width: 340px;
     background: #fff;
@@ -2909,24 +2909,24 @@ return `<!DOCTYPE html>
     opacity: 0;
     transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s ease;
   }
-  .kz-tooltip-overlay.open .kz-tooltip-box {
+  .hz-tooltip-overlay.open .hz-tooltip-box {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
-  .kz-tooltip-head {
+  .hz-tooltip-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     padding: 20px 20px 0;
   }
-  .kz-tooltip-head span {
+  .hz-tooltip-head span {
     font-family: 'Manrope', sans-serif;
     font-size: 19px;
     font-weight: 800;
     color: #111;
   }
-  .kz-tooltip-close {
+  .hz-tooltip-close {
     background: none;
     border: none;
     cursor: pointer;
@@ -2937,17 +2937,17 @@ return `<!DOCTYPE html>
     flex-shrink: 0;
     transition: background .15s, color .15s;
   }
-  .kz-tooltip-close:hover {
+  .hz-tooltip-close:hover {
     background: #f0f0f0;
     color: #111;
   }
-  .kz-tooltip-hr {
+  .hz-tooltip-hr {
     height: 1px;
     background: #efefef;
     border: none;
     margin: 14px 20px 0;
   }
-  .kz-tooltip-desc {
+  .hz-tooltip-desc {
     font-family: 'Manrope', sans-serif;
     font-size: 12.5px;
     color: #717171;
@@ -2957,23 +2957,23 @@ return `<!DOCTYPE html>
     padding: 12px 20px 0;
     margin: 0;
   }
-  .kz-tooltip-desc em {
+  .hz-tooltip-desc em {
     font-style: italic;
   }
-  .kz-tooltip-disclaimer {
+  .hz-tooltip-disclaimer {
     display: block;
   }
-  .kz-tooltip-disclaimer strong {
+  .hz-tooltip-disclaimer strong {
     font-style: italic;
   }
-  .kz-tooltip-imgwrap {
+  .hz-tooltip-imgwrap {
     margin-top: 16px;
     width: 100%;
     aspect-ratio: 1 / 1;
     background: #ececec;
     overflow: hidden;
   }
-  .kz-tooltip-imgwrap img {
+  .hz-tooltip-imgwrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -2986,7 +2986,7 @@ return `<!DOCTYPE html>
      [B] OUTER WRAPPER
      width:100% + max-width agar pas di semua layar
      ═══════════════════════════════════════════════ -->
-<div id="kz-outer" style="font-family:'Manrope',sans-serif;width:100%;max-width:100%;box-sizing:border-box;padding-bottom:60px;display:flex;flex-direction:column;">
+<div id="hz-outer" style="font-family:'Manrope',sans-serif;width:100%;max-width:100%;box-sizing:border-box;padding-bottom:60px;display:flex;flex-direction:column;">
 
   <!-- ─────────────────────────────────────────────
        [B1] TOMBOL KEMBALI
@@ -3007,7 +3007,7 @@ return `<!DOCTYPE html>
          ✏️ EDIT: Ganti src pada <img> dengan URL gambar kamu
          Ukuran ideal: lebar bebas, tinggi min 300px
          ───────────────────────────────────────────── -->
-    <div id="kz-hero" style="position:relative;width:100%;height:450px;background:#111;overflow:hidden;">
+    <div id="hz-hero" style="position:relative;width:100%;height:450px;background:#111;overflow:hidden;">
 
       <!-- [C1] Gambar utama hero/skin -->
       <!-- ✏️ EDIT: Ganti src="" di bawah ini dengan URL gambar hero kamu -->
@@ -3024,7 +3024,7 @@ return `<!DOCTYPE html>
       <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.25) 50%,transparent 100%);pointer-events:none;"></div>
 
       <!-- [C3] Meta hero — teks di atas gambar (kiri bawah) -->
-      <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
+      <div id="hz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
         <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">kategoriskin</span>
@@ -3032,7 +3032,7 @@ return `<!DOCTYPE html>
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
              ✏️ EDIT: Ganti teks fallback jika perlu -->
-        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">namehero</div>
+        <div id="hz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">namehero</div>
 
         <!-- Info patch & brand -->
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);">
@@ -3060,7 +3060,7 @@ return `<!DOCTYPE html>
     <!-- ─────────────────────────────────────────────
          [D] BODY KONTEN — area utama artikel
          ───────────────────────────────────────────── -->
-    <div id="kz-body-konten" style="padding:28px 32px 36px;">
+    <div id="hz-body-konten" style="padding:28px 32px 36px;">
 
 
       <!-- ═══════════════════════════════════════════
@@ -3072,23 +3072,23 @@ return `<!DOCTYPE html>
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">shortstory...</div>
+        <div id="hz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">shortstory...</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">longstory</div>
+        <div id="hz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">longstory</div>
         <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #e8e8e8;">
           <button
-            id="kz-story-btn"
-            onclick="kzToggleStory()"
+            id="hz-story-btn"
+            onclick="hzToggleStory()"
             type="button"
             style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111;padding:0;"
           >
-            <span id="kz-story-label">Baca Selengkapnya</span>
-            <svg id="kz-story-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+            <span id="hz-story-label">Baca Selengkapnya</span>
+            <svg id="hz-story-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
           </button>
         </div>
       </div>
@@ -3100,11 +3100,11 @@ return `<!DOCTYPE html>
            Klik → smooth scroll ke section tabel download
            Tombol full-width di mobile, auto-width di desktop
            ═══════════════════════════════════════════ -->
-      <div id="kz-dl-btn-wrap" style="margin-bottom:28px;">
+      <div id="hz-dl-btn-wrap" style="margin-bottom:28px;">
         <a
-          id="kz-dl-btn"
+          id="hz-dl-btn"
           href="#area-download"
-          onclick="kzScrollDownload(event)"
+          onclick="hzScrollDownload(event)"
           style="display:flex;align-items:center;justify-content:center;gap:8px;background:#111;color:#fff;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;padding:13px 32px;border-radius:12px;text-decoration:none;transition:opacity .2s;"
         >
           <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:15px;height:15px;flex-shrink:0;">
@@ -3136,18 +3136,18 @@ return `<!DOCTYPE html>
              SKILL 1, 2, ULTIMATE
              Tersembunyi by default — klik "Lihat Semua Skill" untuk tampil
              ─────────────────────────────────────── -->
-        <div id="kz-ab-skills" style="display:none;">
+        <div id="hz-ab-skills" style="display:none;">
 
           <!-- AB_SKILLS_INJECT -->
 
         </div>
-        <!-- END kz-ab-skills -->
+        <!-- END hz-ab-skills -->
 
         <!-- Tombol lihat/sembunyikan Skill 1/2/Ultimate — jangan diubah -->
         <div style="padding:12px 20px;border-top:1px solid #efefef;">
-          <button onclick="kzToggleAllSkills()" type="button" style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-            <span id="kz-ab-show-lbl">Lihat Semua Skill</span>
-            <svg id="kz-ab-show-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+          <button onclick="hzToggleAllSkills()" type="button" style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+            <span id="hz-ab-show-lbl">Lihat Semua Skill</span>
+            <svg id="hz-ab-show-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
           </button>
         </div>
 
@@ -3196,7 +3196,7 @@ return `<!DOCTYPE html>
            [D4] 3 TOMBOL PANDUAN
            ✏️ EDIT: Ganti href="#" dengan URL artikel panduan kamu
            ═══════════════════════════════════════════ -->
-      <div id="kz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+      <div id="hz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
 
         <!-- ✏️ EDIT: href → link artikel cara pasang script -->
         <a href="https://www.youtube.com/watch?v=5T68xE85GTI"
@@ -3250,38 +3250,38 @@ return `<!DOCTYPE html>
     <!-- END [D] BODY KONTEN -->
 
     <!-- Slot komentar — diisi JS dari #comments Blogger -->
-    <div id="kz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
+    <div id="hz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
 
   </div>
   <!-- END [B2] CARD PUTIH -->
 
   <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
-  <div id="kz-logo-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
+  <div id="hz-logo-tooltip-overlay" class="hz-tooltip-overlay" onclick="hzCloseLogoTooltip(event)">
+    <div class="hz-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-tooltip-head">
         <span>LOGO_TOOLTIP_TITLE_INJECT</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
+        <button type="button" class="hz-tooltip-close" onclick="hzCloseLogoTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc"><!-- LOGO_TOOLTIP_DESC_INJECT --></p>
-      <div class="kz-tooltip-imgwrap"><img src="LOGO_TOOLTIP_IMG_INJECT" alt="Contoh Logo"/></div>
+      <hr class="hz-tooltip-hr"/>
+      <p class="hz-tooltip-desc"><!-- LOGO_TOOLTIP_DESC_INJECT --></p>
+      <div class="hz-tooltip-imgwrap"><img src="LOGO_TOOLTIP_IMG_INJECT" alt="Contoh Logo"/></div>
     </div>
   </div>
 
   <!-- TOOLTIP "APA ITU TAB 1 & TAB 2?" — konten diisi dari editor -->
-  <div id="kz-dltab-tooltip-overlay" class="kz-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
-    <div class="kz-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-tooltip-head">
+  <div id="hz-dltab-tooltip-overlay" class="hz-tooltip-overlay" onclick="hzCloseDlTabTooltip(event)">
+    <div class="hz-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-tooltip-head">
         <span>DLTAB_TOOLTIP_TITLE_INJECT</span>
-        <button type="button" class="kz-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
+        <button type="button" class="hz-tooltip-close" onclick="hzCloseDlTabTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <hr class="kz-tooltip-hr"/>
-      <p class="kz-tooltip-desc"><!-- DLTAB_TOOLTIP_DESC_INJECT --></p>
-      <div class="kz-tooltip-imgwrap"><img src="DLTAB_TOOLTIP_IMG_INJECT" alt="Contoh Tab"/></div>
+      <hr class="hz-tooltip-hr"/>
+      <p class="hz-tooltip-desc"><!-- DLTAB_TOOLTIP_DESC_INJECT --></p>
+      <div class="hz-tooltip-imgwrap"><img src="DLTAB_TOOLTIP_IMG_INJECT" alt="Contoh Tab"/></div>
     </div>
   </div>
 
@@ -3292,14 +3292,14 @@ return `<!DOCTYPE html>
 <!-- ═══════════════════════════════════════════════
      [E] JAVASCRIPT
      Berisi:
-     - kzResponsive()      → atur layout mobile/desktop
-     - kzAutoTitle()       → ambil judul artikel dari Blogger
-     - kzScrollDownload()  → smooth scroll animasi ke area download
-     - kzToggleAllSkills() → show/hide Skill 1/2/Ultimate
-     - kzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
-     - kzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
-     - kzToggleAb()        → expand/collapse per skill
-     - kzToggleStory()     → expand/collapse cerita
+     - hzResponsive()      → atur layout mobile/desktop
+     - hzAutoTitle()       → ambil judul artikel dari Blogger
+     - hzScrollDownload()  → smooth scroll animasi ke area download
+     - hzToggleAllSkills() → show/hide Skill 1/2/Ultimate
+     - hzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
+     - hzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
+     - hzToggleAb()        → expand/collapse per skill
+     - hzToggleStory()     → expand/collapse cerita
 
      ⚠️ Jangan ubah bagian ini
      ═══════════════════════════════════════════════ -->
@@ -3307,54 +3307,54 @@ return `<!DOCTYPE html>
 //<![CDATA[
 
 /* ── [E1] Responsive: hero height, download btn, button grid ── */
-function kzResponsive(){
+function hzResponsive(){
   var w = window.innerWidth;
 
-  /* kazeo-page padding-top: 76px mobile, 124px desktop */
-  var kazeoPage = document.querySelector('.kazeo-page');
-  if(kazeoPage) kazeoPage.style.paddingTop = w <= 768 ? '76px' : '96px';
+  /* henz-page padding-top: 76px mobile, 124px desktop */
+  var henzPage = document.querySelector('.henz-page');
+  if(henzPage) henzPage.style.paddingTop = w <= 768 ? '76px' : '96px';
 
   /* Hero height */
-  var hero = document.getElementById('kz-hero');
+  var hero = document.getElementById('hz-hero');
   if(hero) hero.style.height = w <= 600 ? '300px' : '450px';
 
   /* Hero meta padding */
-  var heroMeta = document.getElementById('kz-hero-meta');
+  var heroMeta = document.getElementById('hz-hero-meta');
   if(heroMeta) heroMeta.style.padding = w <= 600 ? '16px 20px 20px' : '24px 32px 28px';
 
   /* Hero title font size */
-  var heroTitle = document.getElementById('kz-hero-title');
+  var heroTitle = document.getElementById('hz-hero-title');
   if(heroTitle) heroTitle.style.fontSize = w <= 600 ? '22px' : '32px';
 
   /* Tombol Download: full-width di mobile, auto di desktop */
-  var dlBtn = document.getElementById('kz-dl-btn');
+  var dlBtn = document.getElementById('hz-dl-btn');
   if(dlBtn){
     dlBtn.style.width = w <= 600 ? '100%' : 'auto';
     dlBtn.style.display = w <= 600 ? 'flex' : 'inline-flex';
   }
 
   /* Button grid panduan: 3 kolom desktop → 1 kolom mobile */
-  var grid = document.getElementById('kz-btn-grid');
+  var grid = document.getElementById('hz-btn-grid');
   if(grid){
     grid.style.gridTemplateColumns = w <= 600 ? '1fr' : 'repeat(3,1fr)';
     grid.style.gap = w <= 600 ? '10px' : '12px';
   }
 
   /* Body konten padding horizontal: lebih sempit di mobile */
-  var bodyKonten = document.getElementById('kz-body-konten');
+  var bodyKonten = document.getElementById('hz-body-konten');
   if(bodyKonten){
     bodyKonten.style.paddingLeft  = w <= 384 ? '15px' : w <= 390 ? '16px' : w <= 391 ? '18px' : w <= 392 ? '19px' : w <= 600 ? '20px' : '32px';
     bodyKonten.style.paddingRight = w <= 384 ? '15px' : w <= 390 ? '16px' : w <= 391 ? '18px' : w <= 392 ? '19px' : w <= 600 ? '20px' : '32px';
   }
 
 }
-kzResponsive();
-window.addEventListener('resize', kzResponsive);
+hzResponsive();
+window.addEventListener('resize', hzResponsive);
 
 
 /* ── [E2] Auto judul: ambil dari <title> halaman Blogger ── */
-function kzAutoTitle(){
-  var el = document.getElementById('kz-hero-title');
+function hzAutoTitle(){
+  var el = document.getElementById('hz-hero-title');
   if(!el) return;
   /* Coba ambil dari elemen h3.post-title Blogger terlebih dahulu */
   var postTitleEl = document.querySelector('.post-title, h3.post-title, .entry-title');
@@ -3375,16 +3375,16 @@ function kzAutoTitle(){
   var title = sep !== -1 ? raw.substring(0, sep).trim() : raw.trim();
   if(title) el.textContent = title;
 }
-kzAutoTitle();
+hzAutoTitle();
 
 
 /* ── [E3] Smooth scroll animasi ke area-download ── */
-function kzScrollDownload(e){
+function hzScrollDownload(e){
   e.preventDefault();
   var target = document.getElementById('area-download');
   if(!target) return;
   /* Animasi bounce pada tombol */
-  var btn = document.getElementById('kz-dl-btn');
+  var btn = document.getElementById('hz-dl-btn');
   if(btn){
     btn.style.transform = 'scale(0.95)';
     btn.style.transition = 'transform .15s';
@@ -3397,10 +3397,10 @@ function kzScrollDownload(e){
 
 /* ── [E4] Toggle semua skill (Skill1/2/Ultimate) ── */
 var _kzAllSkillsScroll = null;
-function kzToggleAllSkills(){
-  var wrap = document.getElementById('kz-ab-skills');
-  var lbl  = document.getElementById('kz-ab-show-lbl');
-  var icon = document.getElementById('kz-ab-show-icon');
+function hzToggleAllSkills(){
+  var wrap = document.getElementById('hz-ab-skills');
+  var lbl  = document.getElementById('hz-ab-show-lbl');
+  var icon = document.getElementById('hz-ab-show-icon');
   if(!wrap) return;
   var isHidden = wrap.style.display === 'none' || wrap.style.display === '';
   if(isHidden){
@@ -3410,7 +3410,7 @@ function kzToggleAllSkills(){
     wrap.style.display = 'none';
     if(lbl)  lbl.textContent      = 'Lihat Semua Skill';
     if(icon) icon.style.transform = 'rotate(0deg)';
-    document.querySelectorAll('[id^="kz-ab-"][id$="-full"]').forEach(function(full){
+    document.querySelectorAll('[id^="hz-ab-"][id$="-full"]').forEach(function(full){
       if(full.style.display === 'block'){
         var baseId = full.id.replace('-full','');
         full.style.display  = 'none';
@@ -3427,15 +3427,15 @@ function kzToggleAllSkills(){
   if(icon) icon.style.transform = 'rotate(180deg)';
   // Pill segmented di dalam wrap ini sebelumnya display:none saat init pertama,
   // jadi offsetWidth/offsetLeft-nya 0 — hitung ulang sekarang setelah terlihat.
-  if(typeof kzAbSegMiniInit === 'function') kzAbSegMiniInit();
+  if(typeof hzAbSegMiniInit === 'function') hzAbSegMiniInit();
 }
 
 
 /* ── [E4b] Mini segmented control per blok (Pasif/Skill/Ultimate) — varian 2 ── */
-function kzAbSegMiniInit(){
-  document.querySelectorAll('.kz-ab-seg-mini').forEach(function(seg){
-    var pill = seg.querySelector('.kz-ab-seg-pill');
-    var first = seg.querySelector('.kz-ab-seg-item.active');
+function hzAbSegMiniInit(){
+  document.querySelectorAll('.hz-ab-seg-mini').forEach(function(seg){
+    var pill = seg.querySelector('.hz-ab-seg-pill');
+    var first = seg.querySelector('.hz-ab-seg-item.active');
     if(first && pill){
       var pad = 2;
       // Matikan transition sesaat supaya reposisi pill (mis. saat wrapper
@@ -3449,15 +3449,15 @@ function kzAbSegMiniInit(){
     }
   });
 }
-if(document.readyState !== 'loading') kzAbSegMiniInit();
-else document.addEventListener('DOMContentLoaded', kzAbSegMiniInit);
-window.addEventListener('resize', kzAbSegMiniInit);
+if(document.readyState !== 'loading') hzAbSegMiniInit();
+else document.addEventListener('DOMContentLoaded', hzAbSegMiniInit);
+window.addEventListener('resize', hzAbSegMiniInit);
 
-function kzAbMiniSwitch(btn){
-  var seg = btn.closest('.kz-ab-seg-mini');
+function hzAbMiniSwitch(btn){
+  var seg = btn.closest('.hz-ab-seg-mini');
   if(!seg) return;
-  var pill = seg.querySelector('.kz-ab-seg-pill');
-  seg.querySelectorAll('.kz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
+  var pill = seg.querySelector('.hz-ab-seg-pill');
+  seg.querySelectorAll('.hz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
   btn.classList.add('active'); btn.setAttribute('aria-checked','true');
   if(pill){
     var pad = 2;
@@ -3475,7 +3475,7 @@ function kzAbMiniSwitch(btn){
 
 /* ── [E5] Toggle expand per skill ── */
 var _kzAbScroll = {};
-function kzToggleAb(id){
+function hzToggleAb(id){
   var full  = document.getElementById(id + '-full');
   var short = document.getElementById(id + '-short');
   var lbl   = document.getElementById(id + '-lbl');
@@ -3502,11 +3502,11 @@ function kzToggleAb(id){
 
 /* ── [E6] Toggle Short Story ── */
 var _kzStoryScroll = null;
-function kzToggleStory(){
-  var full  = document.getElementById('kz-story-full');
-  var short = document.getElementById('kz-story-short');
-  var lbl   = document.getElementById('kz-story-label');
-  var icon  = document.getElementById('kz-story-icon');
+function hzToggleStory(){
+  var full  = document.getElementById('hz-story-full');
+  var short = document.getElementById('hz-story-short');
+  var lbl   = document.getElementById('hz-story-label');
+  var icon  = document.getElementById('hz-story-icon');
   if(!full) return;
   var isHidden = full.style.display === 'none' || full.style.display === '';
   if(isHidden){
@@ -3528,37 +3528,37 @@ function kzToggleStory(){
 
 
 /* ── [E7b] Tooltip "Apa itu Logo?" ── */
-function kzOpenLogoTooltip(){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
+function hzOpenLogoTooltip(){
+  var ov = document.getElementById('hz-logo-tooltip-overlay');
   if(!ov) return;
   ov.style.display = 'flex';
   void ov.offsetWidth;
   ov.classList.add('open');
 }
-function kzCloseLogoTooltip(e){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
+function hzCloseLogoTooltip(e){
+  var ov = document.getElementById('hz-logo-tooltip-overlay');
   if(!ov) return;
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
-function kzOpenDlTabTooltip(){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
+function hzOpenDlTabTooltip(){
+  var ov = document.getElementById('hz-dltab-tooltip-overlay');
   if(!ov) return;
   ov.style.display = 'flex';
   void ov.offsetWidth;
   ov.classList.add('open');
 }
-function kzCloseDlTabTooltip(e){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
+function hzCloseDlTabTooltip(e){
+  var ov = document.getElementById('hz-dltab-tooltip-overlay');
   if(!ov) return;
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
 
 
-/* ── [E7] Pindahkan #comments ke dalam card putih (kz-comments-slot) ── */
-function kzMoveComments(){
-  var slot     = document.getElementById('kz-comments-slot');
+/* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */
+function hzMoveComments(){
+  var slot     = document.getElementById('hz-comments-slot');
   var comments = document.getElementById('comments');
   if(!slot || !comments) return false;
   if(comments.parentNode === slot){
@@ -3570,13 +3570,13 @@ function kzMoveComments(){
   return true;
 }
 
-if(!kzMoveComments()){
+if(!hzMoveComments()){
   var _kzCmtTimer = setInterval(function(){
-    if(kzMoveComments()) clearInterval(_kzCmtTimer);
+    if(hzMoveComments()) clearInterval(_kzCmtTimer);
   }, 100);
   setTimeout(function(){ clearInterval(_kzCmtTimer); }, 3000);
 }
-document.addEventListener('DOMContentLoaded', kzMoveComments);
+document.addEventListener('DOMContentLoaded', hzMoveComments);
 
 //]]>
 <\/script>

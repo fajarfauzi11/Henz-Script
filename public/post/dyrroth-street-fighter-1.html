@@ -15,8 +15,8 @@
 </head>
 <body class="page-post item-view">
 <!-- include:header.html -->
-<div class="kazeo-page" style="padding-left:16px;padding-right:16px;padding-top:96px;">
-<main class="kazeo-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
+<div class="henz-page" style="padding-left:16px;padding-right:16px;padding-top:96px;">
+<main class="henz-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
 <!--
 =================================================================
   BLOGGER POST TEMPLATE — Henz Officiale
@@ -194,8 +194,8 @@
 
     /* Short Story — justify bikin spasi antar kata melebar tidak rapi
        di kolom sempit, jadi di mobile kembali rata kiri saja */
-    #kz-story-short,
-    #kz-story-full {
+    #hz-story-short,
+    #hz-story-full {
       text-align: left !important;
     }
   }
@@ -206,7 +206,7 @@
      [B] OUTER WRAPPER
      width:100% + max-width agar pas di semua layar
      ═══════════════════════════════════════════════ -->
-<div id="kz-outer" style="font-family:'Manrope',sans-serif;width:100%;max-width:100%;box-sizing:border-box;padding-bottom:60px;display:flex;flex-direction:column;">
+<div id="hz-outer" style="font-family:'Manrope',sans-serif;width:100%;max-width:100%;box-sizing:border-box;padding-bottom:60px;display:flex;flex-direction:column;">
 
   <!-- ─────────────────────────────────────────────
        [B1] TOMBOL KEMBALI
@@ -227,7 +227,7 @@
          ✏️ EDIT: Ganti src pada <img> dengan URL gambar kamu
          Ukuran ideal: lebar bebas, tinggi min 300px
          ───────────────────────────────────────────── -->
-    <div id="kz-hero" style="position:relative;width:100%;height:450px;background:#111;overflow:hidden;">
+    <div id="hz-hero" style="position:relative;width:100%;height:450px;background:#111;overflow:hidden;">
 
       <!-- [C1] Gambar utama hero/skin -->
       <!-- ✏️ EDIT: Ganti src=" di bawah ini dengan URL gambar hero kamu -->
@@ -244,7 +244,7 @@
       <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.25) 50%,transparent 100%);pointer-events:none;"></div>
 
       <!-- [C3] Meta hero — teks di atas gambar (kiri bawah) -->
-      <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
+      <div id="hz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
         <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">Street Fighter 1</span>
@@ -252,7 +252,7 @@
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
              ✏️ EDIT: Ganti teks fallback jika perlu -->
-        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Dyrroth Street Fighter 1</div>
+        <div id="hz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">Dyrroth Street Fighter 1</div>
 
         <!-- Info patch & brand -->
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);">
@@ -280,7 +280,7 @@
     <!-- ─────────────────────────────────────────────
          [D] BODY KONTEN — area utama artikel
          ───────────────────────────────────────────── -->
-    <div id="kz-body-konten" style="padding:28px 32px 36px;">
+    <div id="hz-body-konten" style="padding:28px 32px 36px;">
 
 
       <!-- ═══════════════════════════════════════════
@@ -292,11 +292,11 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;">Dyrroth, yang dahulu merupakan Pangeran Cahaya dari Kekaisaran Moniyan, kini dike...</div>
+        <div id="hz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;white-space:pre-line;text-align:justify;">Dyrroth, yang dahulu merupakan Pangeran Cahaya dari Kekaisaran Moniyan, kini dike...</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">Dyrroth, yang dahulu merupakan Pangeran Cahaya dari Kekaisaran Moniyan, kini dikenal sebagai Son of Darkness milik Abyss. Saat masih bayi, ia diculik oleh Alice dan dibawa ke Abyss untuk dibesarkan sebagai penerus kekuatan kegelapan. Di sana, ia tumbuh di bawah bimbingan Alice dan Thamuz, disambut sebagai anak istimewa yang ditakdirkan untuk memimpin Abyss. Berbeda dengan asal-usulnya sebagai manusia, Dyrroth menerima kehidupan barunya dan menganggap Abyss sebagai rumah yang sesungguhnya.
+        <div id="hz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">Dyrroth, yang dahulu merupakan Pangeran Cahaya dari Kekaisaran Moniyan, kini dikenal sebagai Son of Darkness milik Abyss. Saat masih bayi, ia diculik oleh Alice dan dibawa ke Abyss untuk dibesarkan sebagai penerus kekuatan kegelapan. Di sana, ia tumbuh di bawah bimbingan Alice dan Thamuz, disambut sebagai anak istimewa yang ditakdirkan untuk memimpin Abyss. Berbeda dengan asal-usulnya sebagai manusia, Dyrroth menerima kehidupan barunya dan menganggap Abyss sebagai rumah yang sesungguhnya.
 
 Bertahun-tahun kemudian, Dyrroth memimpin pasukan Abyss dalam rencana invasi besar ke Moniyan Empire. Kemenangan sudah berada di depan mata hingga kemunculan Putri Silvanna. Sang putri memanggilnya sebagai &quot;saudara&quot;, sebuah kata yang asing namun entah mengapa membuatnya ragu sejenak. Keraguan itu menjadi titik balik pertempuran, karena Silvanna memanfaatkan kesempatan tersebut untuk menusukkan tombak sucinya ke dada Dyrroth dan menggagalkan invasi Abyss.
 
@@ -310,13 +310,13 @@ Sebelum fajar menyingsing, Dyrroth terbangun dengan kekuatan baru. Ia tidak lagi
         <!-- Tombol toggle cerita — jangan ubah -->
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #e8e8e8;">
           <button
-            id="kz-story-btn"
-            onclick="kzToggleStory()"
+            id="hz-story-btn"
+            onclick="hzToggleStory()"
             type="button"
             style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111;padding:0;"
           >
-            <span id="kz-story-label">Baca Selengkapnya</span>
-            <svg id="kz-story-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+            <span id="hz-story-label">Baca Selengkapnya</span>
+            <svg id="hz-story-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
           </button>
         </div>
       </div>
@@ -328,11 +328,11 @@ Sebelum fajar menyingsing, Dyrroth terbangun dengan kekuatan baru. Ia tidak lagi
            Klik → smooth scroll ke section tabel download
            Tombol full-width di mobile, auto-width di desktop
            ═══════════════════════════════════════════ -->
-      <div id="kz-dl-btn-wrap" style="margin-bottom:28px;">
+      <div id="hz-dl-btn-wrap" style="margin-bottom:28px;">
         <a
-          id="kz-dl-btn"
+          id="hz-dl-btn"
           href="#area-download"
-          onclick="kzScrollDownload(event)"
+          onclick="hzScrollDownload(event)"
           style="display:flex;align-items:center;justify-content:center;gap:8px;background:#111;color:#fff;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;padding:13px 32px;border-radius:12px;text-decoration:none;transition:opacity .2s;"
         >
           <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:15px;height:15px;flex-shrink:0;">
@@ -389,19 +389,19 @@ Sebelum fajar menyingsing, Dyrroth terbangun dengan kekuatan baru. Ia tidak lagi
               </div>
 
               <!-- ✏️ EDIT: Deskripsi SINGKAT pasif — selalu terlihat (1 kalimat) -->
-              <p id="kz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">
+              <p id="hz-ab-pasif-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">
                 Ketika amarah Dyrroth mencapai 50%, dia akan meningkatkan ke...
               </p>
 
               <!-- ✏️ EDIT: Deskripsi LENGKAP pasif — muncul setelah expand -->
-              <div id="kz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">
+              <div id="hz-ab-pasif-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">
                 Ketika amarah Dyrroth mencapai 50%, dia akan meningkatkan kekuatannya.Serangan Beruntun Serangan Beruntun danLangkah Spektrum Langkah Spectre . Setelah setiap 2Serangan Dasar Serangan Dasar , Dyrroth akan melepaskan Circle Strike , memberikan (+160% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dalam lingkaran dan meregenerasi [50 + 40% dari kerusakan yang diberikan HP ] (Circle Strike tidak memiliki Efek ATK). Setiap kali dia mengenai hero musuh, cooldown dariSerangan Beruntun Serangan Beruntun danLangkah Spektrum Langkah Spectre akan dikurangi 1 detik.<br/br/>
                 <!-- ✏️ Tambah detail mekanik, scaling, atau catatan di sini -->
               </div>
 
-              <button onclick="kzToggleAb('kz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                <span id="kz-ab-pasif-lbl">Baca Selengkapnya</span>
-                <svg id="kz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+              <button onclick="hzToggleAb('hz-ab-pasif')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                <span id="hz-ab-pasif-lbl">Baca Selengkapnya</span>
+                <svg id="hz-ab-pasif-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
               </button>
 
             </div>
@@ -413,7 +413,7 @@ Sebelum fajar menyingsing, Dyrroth terbangun dengan kekuatan baru. Ia tidak lagi
              SKILL 1, 2, ULTIMATE
              Tersembunyi by default — klik "Lihat Semua Skill" untuk tampil
              ─────────────────────────────────────── -->
-        <div id="kz-ab-skills" style="display:none;">
+        <div id="hz-ab-skills" style="display:none;">
 
           <!-- ───────────────────────────────────────
                SKILL 1
@@ -434,13 +434,13 @@ Sebelum fajar menyingsing, Dyrroth terbangun dengan kekuatan baru. Ia tidak lagi
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;">AOE/Slow</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 1 -->
-                <p id="kz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth melepaskan serangan beruntun ke arah yang diten...</p>
+                <p id="hz-ab-s1-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth melepaskan serangan beruntun ke arah yang diten...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 1 -->
-                <div id="kz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth melepaskan serangan beruntun ke arah yang ditentukan. Setiap serangan beruntun memberikan 200–450 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh dan memperlambat mereka sebesar 25% selama 1,5 detik. (Kerusakan berkurang terhadap target yang sama dan hanya berkurang menjadi 75% pada minion .)
+                <div id="hz-ab-s1-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth melepaskan serangan beruntun ke arah yang ditentukan. Setiap serangan beruntun memberikan 200–450 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh dan memperlambat mereka sebesar 25% selama 1,5 detik. (Kerusakan berkurang terhadap target yang sama dan hanya berkurang menjadi 75% pada minion .)
 Abyss Enhanced : Burst Strike memiliki jangkauan yang lebih jauh, memberikan 140% dari kerusakan asli , dan efek perlambatannya berlipat ganda.<br/br/></div>
-                <button onclick="kzToggleAb('kz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                  <span id="kz-ab-s1-lbl">Baca Selengkapnya</span>
-                  <svg id="kz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                <button onclick="hzToggleAb('hz-ab-s1')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="hz-ab-s1-lbl">Baca Selengkapnya</span>
+                  <svg id="hz-ab-s1-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
                 </button>
               </div>
             </div>
@@ -466,13 +466,13 @@ Abyss Enhanced : Burst Strike memiliki jangkauan yang lebih jauh, memberikan 140
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#f3e5f5;color:#6a1b9a;">Mobility/Damage</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat skill 2 (1 kalimat) -->
-                <p id="kz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth melesat ke arah yang ditentukan. Dia akan berhen...</p>
+                <p id="hz-ab-s2-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Dyrroth melesat ke arah yang ditentukan. Dia akan berhen...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap skill 2 (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth melesat ke arah yang ditentukan. Dia akan berhenti ketika mengenai target [bukan minion], memberikan 230–355 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh. Ketika dia menggunakan skill ini lagi, dia akan mengunci target dan melepaskan Fatal Strike, memberikan [total] 345–570 (+120% Serangan Fisik Ekstra) Kerusakan Fisik . Hero atau creep musuh yang terkena Fatal Strike akan mengalami pengurangan Pertahanan Fisik sebesar 40% selama 4 detik.
+                <div id="hz-ab-s2-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Dyrroth melesat ke arah yang ditentukan. Dia akan berhenti ketika mengenai target [bukan minion], memberikan 230–355 (+60% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh. Ketika dia menggunakan skill ini lagi, dia akan mengunci target dan melepaskan Fatal Strike, memberikan [total] 345–570 (+120% Serangan Fisik Ekstra) Kerusakan Fisik . Hero atau creep musuh yang terkena Fatal Strike akan mengalami pengurangan Pertahanan Fisik sebesar 40% selama 4 detik.
 Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperlambat target sebesar 90% tambahan [selama 1 detik] dan mengurangi Pertahanan Fisik target sebesar 60% [sebagai gantinya] selama 4 detik.<br/br/></div>
-                <button onclick="kzToggleAb('kz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                  <span id="kz-ab-s2-lbl">Baca Selengkapnya</span>
-                  <svg id="kz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                <button onclick="hzToggleAb('hz-ab-s2')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="hz-ab-s2-lbl">Baca Selengkapnya</span>
+                  <svg id="hz-ab-s2-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
                 </button>
               </div>
             </div>
@@ -500,12 +500,12 @@ Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperl
                   <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#fff3e0;color:#e65100;">Burst/Slow</span>
                 </div>
                 <!-- ✏️ EDIT: Deskripsi singkat ultimate (1 kalimat) -->
-                <p id="kz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Setelah jeda singkat, Dyrroth melancarkan serangan des...</p>
+                <p id="hz-ab-ult-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;">Setelah jeda singkat, Dyrroth melancarkan serangan des...</p>
                 <!-- ✏️ EDIT: Deskripsi lengkap ultimate (mekanik, scaling, durasi, cooldown) -->
-                <div id="kz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Setelah jeda singkat, Dyrroth melancarkan serangan destruktif ke arah target (tidak dapat diinterupsi), memberikan 650–1250 (+250% Serangan Fisik Ekstra) (+20% HP musuh yang hilang) Kerusakan Fisik kepada musuh di sepanjang jalan dan memperlambat mereka sebesar 55% selama 0,8 detik.<br/br/></div>
-                <button onclick="kzToggleAb('kz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-                  <span id="kz-ab-ult-lbl">Baca Selengkapnya</span>
-                  <svg id="kz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+                <div id="hz-ab-ult-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;">Setelah jeda singkat, Dyrroth melancarkan serangan destruktif ke arah target (tidak dapat diinterupsi), memberikan 650–1250 (+250% Serangan Fisik Ekstra) (+20% HP musuh yang hilang) Kerusakan Fisik kepada musuh di sepanjang jalan dan memperlambat mereka sebesar 55% selama 0,8 detik.<br/br/></div>
+                <button onclick="hzToggleAb('hz-ab-ult')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+                  <span id="hz-ab-ult-lbl">Baca Selengkapnya</span>
+                  <svg id="hz-ab-ult-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
                 </button>
               </div>
             </div>
@@ -513,13 +513,13 @@ Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperl
           <!-- END ULTIMATE -->
 
         </div>
-        <!-- END kz-ab-skills -->
+        <!-- END hz-ab-skills -->
 
         <!-- Tombol lihat/sembunyikan Skill 1/2/Ultimate — jangan diubah -->
         <div style="padding:12px 20px;border-top:1px solid #efefef;">
-          <button onclick="kzToggleAllSkills()" type="button" style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-            <span id="kz-ab-show-lbl">Lihat Semua Skill</span>
-            <svg id="kz-ab-show-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+          <button onclick="hzToggleAllSkills()" type="button" style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+            <span id="hz-ab-show-lbl">Lihat Semua Skill</span>
+            <svg id="hz-ab-show-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
           </button>
         </div>
 
@@ -531,7 +531,7 @@ Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperl
            [D4] 3 TOMBOL PANDUAN
            ✏️ EDIT: Ganti href="#" dengan URL artikel panduan kamu
            ═══════════════════════════════════════════ -->
-      <div id="kz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+      <div id="hz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
 
         <!-- ✏️ EDIT: href → link artikel cara pasang script -->
         <a href="https://www.youtube.com/watch?v=5T68xE85GTI"
@@ -685,7 +685,7 @@ Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperl
     <!-- END [D] BODY KONTEN -->
 
     <!-- Slot komentar — diisi JS dari #comments Blogger -->
-    <div id="kz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
+    <div id="hz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
 
   </div>
   <!-- END [B2] CARD PUTIH -->
@@ -697,12 +697,12 @@ Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperl
 <!-- ═══════════════════════════════════════════════
      [E] JAVASCRIPT
      Berisi:
-     - kzResponsive()      → atur layout mobile/desktop
-     - kzAutoTitle()       → ambil judul artikel dari Blogger
-     - kzScrollDownload()  → smooth scroll animasi ke area download
-     - kzToggleAllSkills() → show/hide Skill 1/2/Ultimate
-     - kzToggleAb()        → expand/collapse per skill
-     - kzToggleStory()     → expand/collapse cerita
+     - hzResponsive()      → atur layout mobile/desktop
+     - hzAutoTitle()       → ambil judul artikel dari Blogger
+     - hzScrollDownload()  → smooth scroll animasi ke area download
+     - hzToggleAllSkills() → show/hide Skill 1/2/Ultimate
+     - hzToggleAb()        → expand/collapse per skill
+     - hzToggleStory()     → expand/collapse cerita
 
      ⚠️ Jangan ubah bagian ini
      ═══════════════════════════════════════════════ -->
@@ -710,54 +710,54 @@ Abyss Enhanced : Fatal Strike akan memberikan 150% dari kerusakan asli , memperl
 //<![CDATA[
 
 /* ── [E1] Responsive: hero height, download btn, button grid ── */
-function kzResponsive(){
+function hzResponsive(){
   var w = window.innerWidth;
 
-  /* kazeo-page padding-top: 76px mobile, 124px desktop */
-  var kazeoPage = document.querySelector('.kazeo-page');
-  if(kazeoPage) kazeoPage.style.paddingTop = w <= 768 ? '76px' : '96px';
+  /* henz-page padding-top: 76px mobile, 124px desktop */
+  var henzPage = document.querySelector('.henz-page');
+  if(henzPage) henzPage.style.paddingTop = w <= 768 ? '76px' : '96px';
 
   /* Hero height */
-  var hero = document.getElementById('kz-hero');
+  var hero = document.getElementById('hz-hero');
   if(hero) hero.style.height = w <= 600 ? '300px' : '450px';
 
   /* Hero meta padding */
-  var heroMeta = document.getElementById('kz-hero-meta');
+  var heroMeta = document.getElementById('hz-hero-meta');
   if(heroMeta) heroMeta.style.padding = w <= 600 ? '16px 20px 20px' : '24px 32px 28px';
 
   /* Hero title font size */
-  var heroTitle = document.getElementById('kz-hero-title');
+  var heroTitle = document.getElementById('hz-hero-title');
   if(heroTitle) heroTitle.style.fontSize = w <= 600 ? '22px' : '32px';
 
   /* Tombol Download: full-width di mobile, auto di desktop */
-  var dlBtn = document.getElementById('kz-dl-btn');
+  var dlBtn = document.getElementById('hz-dl-btn');
   if(dlBtn){
     dlBtn.style.width = w <= 600 ? '100%' : 'auto';
     dlBtn.style.display = w <= 600 ? 'flex' : 'inline-flex';
   }
 
   /* Button grid panduan: 3 kolom desktop → 1 kolom mobile */
-  var grid = document.getElementById('kz-btn-grid');
+  var grid = document.getElementById('hz-btn-grid');
   if(grid){
     grid.style.gridTemplateColumns = w <= 600 ? '1fr' : 'repeat(3,1fr)';
     grid.style.gap = w <= 600 ? '10px' : '12px';
   }
 
   /* Body konten padding horizontal: lebih sempit di mobile */
-  var bodyKonten = document.getElementById('kz-body-konten');
+  var bodyKonten = document.getElementById('hz-body-konten');
   if(bodyKonten){
     bodyKonten.style.paddingLeft  = w <= 600 ? '20px' : '32px';
     bodyKonten.style.paddingRight = w <= 600 ? '20px' : '32px';
   }
 
 }
-kzResponsive();
-window.addEventListener('resize', kzResponsive);
+hzResponsive();
+window.addEventListener('resize', hzResponsive);
 
 
 /* ── [E2] Auto judul: ambil dari <title> halaman Blogger ── */
-function kzAutoTitle(){
-  var el = document.getElementById('kz-hero-title');
+function hzAutoTitle(){
+  var el = document.getElementById('hz-hero-title');
   if(!el) return;
   /* Coba ambil dari elemen h3.post-title Blogger terlebih dahulu */
   var postTitleEl = document.querySelector('.post-title, h3.post-title, .entry-title');
@@ -778,16 +778,16 @@ function kzAutoTitle(){
   var title = sep !== -1 ? raw.substring(0, sep).trim() : raw.trim();
   if(title) el.textContent = title;
 }
-kzAutoTitle();
+hzAutoTitle();
 
 
 /* ── [E3] Smooth scroll animasi ke area-download ── */
-function kzScrollDownload(e){
+function hzScrollDownload(e){
   e.preventDefault();
   var target = document.getElementById('area-download');
   if(!target) return;
   /* Animasi bounce pada tombol */
-  var btn = document.getElementById('kz-dl-btn');
+  var btn = document.getElementById('hz-dl-btn');
   if(btn){
     btn.style.transform = 'scale(0.95)';
     btn.style.transition = 'transform .15s';
@@ -800,10 +800,10 @@ function kzScrollDownload(e){
 
 /* ── [E4] Toggle semua skill (Skill1/2/Ultimate) ── */
 var _kzAllSkillsScroll = null;
-function kzToggleAllSkills(){
-  var wrap = document.getElementById('kz-ab-skills');
-  var lbl  = document.getElementById('kz-ab-show-lbl');
-  var icon = document.getElementById('kz-ab-show-icon');
+function hzToggleAllSkills(){
+  var wrap = document.getElementById('hz-ab-skills');
+  var lbl  = document.getElementById('hz-ab-show-lbl');
+  var icon = document.getElementById('hz-ab-show-icon');
   if(!wrap) return;
   var isHidden = wrap.style.display === 'none' || wrap.style.display === '';
   if(isHidden){
@@ -813,7 +813,7 @@ function kzToggleAllSkills(){
     wrap.style.display = 'none';
     if(lbl)  lbl.textContent      = 'Lihat Semua Skill';
     if(icon) icon.style.transform = 'rotate(0deg)';
-    document.querySelectorAll('[id^="kz-ab-"][id$="-full"]').forEach(function(full){
+    document.querySelectorAll('[id^="hz-ab-"][id$="-full"]').forEach(function(full){
       if(full.style.display === 'block'){
         var baseId = full.id.replace('-full','');
         full.style.display  = 'none';
@@ -833,7 +833,7 @@ function kzToggleAllSkills(){
 
 /* ── [E5] Toggle expand per skill ── */
 var _kzAbScroll = {};
-function kzToggleAb(id){
+function hzToggleAb(id){
   var full  = document.getElementById(id + '-full');
   var short = document.getElementById(id + '-short');
   var lbl   = document.getElementById(id + '-lbl');
@@ -860,11 +860,11 @@ function kzToggleAb(id){
 
 /* ── [E6] Toggle Short Story ── */
 var _kzStoryScroll = null;
-function kzToggleStory(){
-  var full  = document.getElementById('kz-story-full');
-  var short = document.getElementById('kz-story-short');
-  var lbl   = document.getElementById('kz-story-label');
-  var icon  = document.getElementById('kz-story-icon');
+function hzToggleStory(){
+  var full  = document.getElementById('hz-story-full');
+  var short = document.getElementById('hz-story-short');
+  var lbl   = document.getElementById('hz-story-label');
+  var icon  = document.getElementById('hz-story-icon');
   if(!full) return;
   var isHidden = full.style.display === 'none' || full.style.display === '';
   if(isHidden){
@@ -885,9 +885,9 @@ function kzToggleStory(){
 }
 
 
-/* ── [E7] Pindahkan #comments ke dalam card putih (kz-comments-slot) ── */
-function kzMoveComments(){
-  var slot     = document.getElementById('kz-comments-slot');
+/* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */
+function hzMoveComments(){
+  var slot     = document.getElementById('hz-comments-slot');
   var comments = document.getElementById('comments');
   if(!slot || !comments) return false;
   if(comments.parentNode === slot){
@@ -899,13 +899,13 @@ function kzMoveComments(){
   return true;
 }
 
-if(!kzMoveComments()){
+if(!hzMoveComments()){
   var _kzCmtTimer = setInterval(function(){
-    if(kzMoveComments()) clearInterval(_kzCmtTimer);
+    if(hzMoveComments()) clearInterval(_kzCmtTimer);
   }, 100);
   setTimeout(function(){ clearInterval(_kzCmtTimer); }, 3000);
 }
-document.addEventListener('DOMContentLoaded', kzMoveComments);
+document.addEventListener('DOMContentLoaded', hzMoveComments);
 
 //]]>
 </script>

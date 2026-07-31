@@ -27,9 +27,9 @@ const CP_LOADMORE_LIMIT = 20;
 function buildLoadMoreParts(matchedCount) {
   const isLimited = matchedCount > CP_LOADMORE_LIMIT;
   return {
-    gridLimitClass: isLimited ? ' kz-cp-limited' : '',
+    gridLimitClass: isLimited ? ' hz-cp-limited' : '',
     loadmoreHtml: isLimited
-      ? '<div class="kz-cp-loadmore-wrap"><button type="button" class="kz-cp-loadmore-btn" data-cp-loadmore>Lihat Lebih Banyak</button></div>'
+      ? '<div class="hz-cp-loadmore-wrap"><button type="button" class="hz-cp-loadmore-btn" data-cp-loadmore>Lihat Lebih Banyak</button></div>'
       : ''
   };
 }
@@ -61,8 +61,8 @@ function parseIdDate(str) {
   return parts[2] + '-' + ID_MONTHS[parts[1]] + '-' + day;
 }
 
-/* Desain card script dipusatkan di public/js/card-template.js (dipakai juga oleh browser lewat window.kzCard) */
-const { kzBuildCard } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
+/* Desain card script dipusatkan di public/js/card-template.js (dipakai juga oleh browser lewat window.hzCard) */
+const { hzBuildCard } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
 
 const INCLUDE_RE = /<!--\s*include:([\w.-]+)\s*-->/g;
 
@@ -226,7 +226,7 @@ function generateHeroPages() {
 
     // Saran pill: cari SEMUA hero lain dgn role (atau role2) yg overlap & SUDAH punya script.
     // Tidak di-slice ke 3 di sini — semua kandidat disimpan sbg data (JSON), lalu 3 dipilih ACAK
-    // oleh JS client-side (lihat main.js: kzRenderRandomHeroSuggest) setiap halaman dibuka/refresh,
+    // oleh JS client-side (lihat main.js: hzRenderRandomHeroSuggest) setiap halaman dibuka/refresh,
     // supaya variatif tapi tetap konsisten dalam role yang sama.
     const suggestPool = matched.length ? [] : heroes.filter((other) => {
       if (other.name === h.name) return false;
@@ -241,13 +241,13 @@ function generateHeroPages() {
     }).map((other) => ({ name: other.name, slug: slugify(other.name) }));
     const suggestPoolJson = JSON.stringify(suggestPool).replace(/'/g, '&#39;');
     const suggestTipsHtml = suggestPool.length
-      ? '<div class="kz-sv-empty-tips" id="kz-hero-suggest-tips" data-suggest-pool=\'' + suggestPoolJson + '\'></div>'
+      ? '<div class="hz-sv-empty-tips" id="hz-hero-suggest-tips" data-suggest-pool=\'' + suggestPoolJson + '\'></div>'
       : '';
 
     const postsHtml = matched.length
-      ? matched.map(kzBuildCard).join('\n')
-      : '<div class="kz-sv-empty">'
-        + '<div class="kz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
+      ? matched.map(hzBuildCard).join('\n')
+      : '<div class="hz-sv-empty">'
+        + '<div class="hz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
         + '<circle cx="48" cy="48" r="34" stroke="#e6e6e6" stroke-width="7"/>'
         + '<circle cx="48" cy="48" r="34" stroke="#e53232" stroke-width="7" stroke-dasharray="40 400" stroke-linecap="round" transform="rotate(-45 48 48)"/>'
         + '<path d="M32 28h22l10 10v30H32z" stroke="#e53232" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>'
@@ -255,10 +255,10 @@ function generateHeroPages() {
         + '<line x1="40" y1="50" x2="56" y2="50" stroke="#e53232" stroke-width="3.5" stroke-linecap="round"/>'
         + '<line x1="40" y1="58" x2="56" y2="58" stroke="#e53232" stroke-width="3.5" stroke-linecap="round"/>'
         + '</svg></div>'
-        + '<div class="kz-sv-empty-title">Belum Ada Script</div>'
-        + '<p class="kz-sv-empty-sub">Kami belum punya script atau modifikasi untuk <b>' + escHtml(h.name) + '</b>. Yuk request supaya admin bisa segera menambahkannya.</p>'
+        + '<div class="hz-sv-empty-title">Belum Ada Script</div>'
+        + '<p class="hz-sv-empty-sub">Kami belum punya script atau modifikasi untuk <b>' + escHtml(h.name) + '</b>. Yuk request supaya admin bisa segera menambahkannya.</p>'
         + suggestTipsHtml
-        + '<a class="kz-sv-empty-cta" href="/request-script">Request script ini'
+        + '<a class="hz-sv-empty-cta" href="/request-script">Request script ini'
         + '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
         + '</a></div>';
     const { gridLimitClass, loadmoreHtml } = buildLoadMoreParts(matched.length);
@@ -286,9 +286,9 @@ function generateHeroPages() {
 function buildCategoryAvatarHtml(catName, initial, logosMap) {
   const logo = logosMap[catName];
   if (logo && logo.trim()) {
-    return `<img src="${escHtml(logo.trim())}" alt="${escHtml(catName)}" onerror="this.parentNode.innerHTML='&lt;div class=&quot;kz-cath-initial&quot;&gt;${escHtml(initial)}&lt;/div&gt;'"/>`;
+    return `<img src="${escHtml(logo.trim())}" alt="${escHtml(catName)}" onerror="this.parentNode.innerHTML='&lt;div class=&quot;hz-cath-initial&quot;&gt;${escHtml(initial)}&lt;/div&gt;'"/>`;
   }
-  return `<div class="kz-cath-initial">${escHtml(initial)}</div>`;
+  return `<div class="hz-cath-initial">${escHtml(initial)}</div>`;
 }
 
 function generateCategoryPages() {
@@ -322,8 +322,8 @@ function generateCategoryPages() {
     if (!slug) return;
     const matched = postsByCat[catName];
     const postsHtml = matched.length
-      ? matched.map(kzBuildCard).join('\n')
-      : '<div class="kz-cp-empty">Belum ada script untuk kategori ini.</div>';
+      ? matched.map(hzBuildCard).join('\n')
+      : '<div class="hz-cp-empty">Belum ada script untuk kategori ini.</div>';
     const { gridLimitClass, loadmoreHtml } = buildLoadMoreParts(matched.length);
     const initial = catName.trim().charAt(0).toUpperCase();
     const avatarHtml = buildCategoryAvatarHtml(catName, initial, CATEGORY_LOGOS);
@@ -347,8 +347,8 @@ function generateCategoryPages() {
   // Halaman "Semua" — seluruh post lintas kategori (dikecualikan cat internal)
   const allMatched = posts.filter((p) => !p.cat || EXCLUDED_CATS.indexOf(p.cat) === -1);
   const allPostsHtml = allMatched.length
-    ? allMatched.map(kzBuildCard).join('\n')
-    : '<div class="kz-cp-empty">Belum ada script.</div>';
+    ? allMatched.map(hzBuildCard).join('\n')
+    : '<div class="hz-cp-empty">Belum ada script.</div>';
   const allLoadMore = buildLoadMoreParts(allMatched.length);
   let allHtml = template
     .split('{{CATEGORY_NAME}}').join('Semua')
@@ -366,9 +366,9 @@ function generateCategoryPages() {
 
 /* Suntik skeleton loading ke daftar-hero.html (file statis, di-copy oleh copyRecursive).
    Jumlah placeholder per role dihitung dari heroes.json (data asli), dibatasi max 10
-   (sama dgn kzDhLimit desktop di main.js). Versi mobile (6) diatur lwt CSS nth-child,
+   (sama dgn hzDhLimit desktop di main.js). Versi mobile (6) diatur lwt CSS nth-child,
    supaya jumlah & posisi skeleton persis sama dgn yang nanti benar-benar tampil,
-   tidak ada layout shift saat kzDhInit() mengganti isinya dgn card asli. */
+   tidak ada layout shift saat hzDhInit() mengganti isinya dgn card asli. */
 function injectDaftarHeroSkeleton() {
   const filePath = path.join(OUT_DIR, 'daftar-hero.html');
   const heroesPath = path.join(SRC_DIR, 'js', 'heroes.json');
@@ -381,8 +381,8 @@ function injectDaftarHeroSkeleton() {
     const r2 = (h.role2 || '').toLowerCase();
     if (r2 && r2 !== r) byRole[r2] = (byRole[r2] || 0) + 1;
   });
-  const DH_LIMIT = 12; // samakan dgn kzDhLimit desktop di main.js
-  const skelCard = '<div class="kz-dh-skel"><div class="kz-dh-skel-avatar"></div><div class="kz-dh-skel-line"></div></div>';
+  const DH_LIMIT = 12; // samakan dgn hzDhLimit desktop di main.js
+  const skelCard = '<div class="hz-dh-skel"><div class="hz-dh-skel-avatar"></div><div class="hz-dh-skel-line"></div></div>';
   let html = fs.readFileSync(filePath, 'utf8');
   html = html.replace(/data-role-grid="([a-z]+)"><\/div>/g, (m, role) =>
     'data-role-grid="' + role + '">' + skelCard.repeat(Math.min(byRole[role] || 0, DH_LIMIT)) + '</div>');
@@ -404,14 +404,14 @@ injectDaftarHeroSkeleton();
    Post lama yang masih berupa file HTML mentah di public/post/*.html TIDAK disentuh
    fungsi ini — tetap jalan seperti biasa sampai Essen migrasikan manual lewat tool. */
 
-function kzBuildTooltipDescHtml(text) {
+function hzBuildTooltipDescHtml(text) {
   text = text || '';
   const idx = text.toLowerCase().indexOf('disclaimer');
   if (idx === -1) return escHtml(text);
   const before = text.substring(0, idx);
   const label = text.substr(idx, 'disclaimer'.length);
   const rest = text.substring(idx + 'disclaimer'.length).replace(/^[:\s]+/, '');
-  return escHtml(before) + '<span class="kz-post-tooltip-disclaimer"><strong>' + escHtml(label) + ' :</strong> <em>' + escHtml(rest) + '</em></span>';
+  return escHtml(before) + '<span class="hz-post-tooltip-disclaimer"><strong>' + escHtml(label) + ' :</strong> <em>' + escHtml(rest) + '</em></span>';
 }
 
 /* Rotasi warna untuk blok skill dinamis (di antara Skill 2 dan Ultimate) — identik dengan tool */
@@ -423,8 +423,8 @@ const KZ_DYN_COLORS = [
   { bg: '#e0f2f1', text: '#004d40' }
 ];
 
-/* Bangun 1 blok ability (Pasif/Skill/Ultimate), dual-variant-aware — port dari kzBuildAbilityRow */
-function kzBuildAbilityRow(opts) {
+/* Bangun 1 blok ability (Pasif/Skill/Ultimate), dual-variant-aware — port dari hzBuildAbilityRow */
+function hzBuildAbilityRow(opts) {
   const topBorder = opts.borderTop ? 'border-top:1px solid #efefef;' : '';
   const bottomBorder = opts.borderBottom === false ? '' : 'border-bottom:1px solid #efefef;';
 
@@ -434,10 +434,10 @@ function kzBuildAbilityRow(opts) {
     const t2 = opts.tab2Name || 'Tab 2';
     labelRow = '  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 20px 0;flex-wrap:wrap;">\n'
       + '    <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:' + opts.labelColor + ';">' + escHtml(opts.label) + '</span>\n'
-      + '    <div class="kz-ab-seg kz-ab-seg-mini" data-prefix="' + opts.idPrefix + '" role="radiogroup">\n'
-      + '      <button aria-checked="true" class="kz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="kzAbMiniSwitch(this)">' + escHtml(t1) + '</button>\n'
-      + '      <button aria-checked="false" class="kz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="kzAbMiniSwitch(this)">' + escHtml(t2) + '</button>\n'
-      + '      <div class="kz-ab-seg-pill"></div>\n'
+      + '    <div class="hz-ab-seg hz-ab-seg-mini" data-prefix="' + opts.idPrefix + '" role="radiogroup">\n'
+      + '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t1) + '</button>\n'
+      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t2) + '</button>\n'
+      + '      <div class="hz-ab-seg-pill"></div>\n'
       + '    </div>\n'
       + '  </div>\n';
   } else {
@@ -454,7 +454,7 @@ function kzBuildAbilityRow(opts) {
       + '      </div>\n'
       + '      <p id="' + prefix + '-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escHtml(longDesc) + '</p>\n'
       + '      <div id="' + prefix + '-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">' + escHtml(longDesc) + '</div>\n'
-      + '      <button onclick="kzToggleAb(\'' + prefix + '\')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:\'Manrope\',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">\n'
+      + '      <button onclick="hzToggleAb(\'' + prefix + '\')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:\'Manrope\',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">\n'
       + '        <span id="' + prefix + '-lbl">Baca Selengkapnya</span>\n'
       + '        <svg id="' + prefix + '-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>\n'
       + '      </button>\n'
@@ -480,8 +480,8 @@ function buildAbilitiesHtml(data) {
   const pasif = data.abilitiesPasif || {};
 
   const pasifCol = { bg: '#e8f5e9', text: '#2e7d32' };
-  const pasifHtml = kzBuildAbilityRow({
-    label: 'Pasif', labelColor: pasifCol.text, idPrefix: 'kz-ab-pasif',
+  const pasifHtml = hzBuildAbilityRow({
+    label: 'Pasif', labelColor: pasifCol.text, idPrefix: 'hz-ab-pasif',
     url: pasif.url || '', name: pasif.name || '', kategori: pasif.kategori || 'BUFF',
     longDesc: pasif.longDesc || '', katBg: pasifCol.bg, katText: pasifCol.text, borderTop: false,
     dual: !!pasif.dual, tab1Name: dualTab1, tab2Name: dualTab2,
@@ -492,12 +492,12 @@ function buildAbilitiesHtml(data) {
   let skillsHtml = '';
   list.forEach((item, idx) => {
     let col, idPrefix, borderTop = true, borderBottom = true;
-    if (idx === 0) { col = { bg: '#e3f2fd', text: '#1565c0' }; idPrefix = 'kz-ab-s1'; }
-    else if (idx === 1) { col = { bg: '#f3e5f5', text: '#6a1b9a' }; idPrefix = 'kz-ab-s2'; borderTop = false; }
-    else if (idx === list.length - 1) { col = { bg: '#fff3e0', text: '#e65100' }; idPrefix = 'kz-ab-ult'; borderBottom = false; }
-    else { col = KZ_DYN_COLORS[(idx - 2) % KZ_DYN_COLORS.length]; idPrefix = 'kz-ab-s' + (idx + 1); }
+    if (idx === 0) { col = { bg: '#e3f2fd', text: '#1565c0' }; idPrefix = 'hz-ab-s1'; }
+    else if (idx === 1) { col = { bg: '#f3e5f5', text: '#6a1b9a' }; idPrefix = 'hz-ab-s2'; borderTop = false; }
+    else if (idx === list.length - 1) { col = { bg: '#fff3e0', text: '#e65100' }; idPrefix = 'hz-ab-ult'; borderBottom = false; }
+    else { col = KZ_DYN_COLORS[(idx - 2) % KZ_DYN_COLORS.length]; idPrefix = 'hz-ab-s' + (idx + 1); }
 
-    skillsHtml += kzBuildAbilityRow({
+    skillsHtml += hzBuildAbilityRow({
       label: item.label || ('Skill ' + (idx + 1)), labelColor: col.text, idPrefix: idPrefix,
       url: item.url || '', name: item.name || '', kategori: item.kategori || 'AOE',
       longDesc: item.longDesc || '', katBg: col.bg, katText: col.text, borderTop: borderTop, borderBottom: borderBottom,
@@ -510,16 +510,16 @@ function buildAbilitiesHtml(data) {
 }
 
 /* Bangun 1 baris tabel download — port dari buildDlRow */
-function kzExtractHeroCode(url) {
+function hzExtractHeroCode(url) {
   if (!url) return '';
   const m = url.match(/\/(Hero\d+)-icon/i);
   return m ? m[1] : '';
 }
 function buildDlRow(name, url, link, isLast) {
-  const altR = kzExtractHeroCode(url) || name;
+  const altR = hzExtractHeroCode(url) || name;
   const hasLogo = /logo/i.test(name);
   const logoQBtn = hasLogo
-    ? '<button type="button" onclick="kzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
+    ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   const dlBtn = link
     ? '<a href="' + escHtml(link) + '" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
@@ -562,41 +562,41 @@ function buildDlInject(dl) {
 
   const seg = '<div style="text-align:center;margin-bottom:14px;">\n'
     + '  <span style="position:relative;display:inline-block;">\n'
-    + '  <div class="kz-ab-seg" id="kz-dl-seg" role="radiogroup" style="margin:0;">\n'
-    + '    <button aria-checked="true" class="kz-ab-seg-item active" data-target="kz-dl-t1" role="radio" type="button" onclick="kzDlTabSwitch(this)">' + escHtml(t1Name) + '</button>\n'
-    + '    <button aria-checked="false" class="kz-ab-seg-item" data-target="kz-dl-t2" role="radio" type="button" onclick="kzDlTabSwitch(this)">' + escHtml(t2Name) + '</button>\n'
-    + '    <div class="kz-ab-seg-pill" id="kz-dl-seg-pill"></div>\n'
+    + '  <div class="hz-ab-seg" id="hz-dl-seg" role="radiogroup" style="margin:0;">\n'
+    + '    <button aria-checked="true" class="hz-ab-seg-item active" data-target="hz-dl-t1" role="radio" type="button" onclick="hzDlTabSwitch(this)">' + escHtml(t1Name) + '</button>\n'
+    + '    <button aria-checked="false" class="hz-ab-seg-item" data-target="hz-dl-t2" role="radio" type="button" onclick="hzDlTabSwitch(this)">' + escHtml(t2Name) + '</button>\n'
+    + '    <div class="hz-ab-seg-pill" id="hz-dl-seg-pill"></div>\n'
     + '  </div>\n'
-    + '  <button type="button" onclick="kzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="position:absolute;top:50%;left:100%;margin-left:8px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>\n'
+    + '  <button type="button" onclick="hzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="position:absolute;top:50%;left:100%;margin-left:8px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>\n'
     + '  </span>\n'
     + '</div>\n';
 
-  const t1 = '<div id="kz-dl-t1">\n' + buildDlTableWrap(rowsHtml(rowsTab1)) + '</div>\n';
-  const t2 = '<div id="kz-dl-t2" style="display:none;">\n' + buildDlTableWrap(rowsHtml(rowsTab2)) + '</div>\n';
+  const t1 = '<div id="hz-dl-t1">\n' + buildDlTableWrap(rowsHtml(rowsTab1)) + '</div>\n';
+  const t2 = '<div id="hz-dl-t2" style="display:none;">\n' + buildDlTableWrap(rowsHtml(rowsTab2)) + '</div>\n';
 
   const initScript = '<script>\n'
     + '(function(){\n'
-    + '  function kzDlSegInit(){\n'
-    + '    var seg=document.getElementById("kz-dl-seg");if(!seg)return;\n'
-    + '    var pill=document.getElementById("kz-dl-seg-pill");\n'
-    + '    var first=seg.querySelector(".kz-ab-seg-item.active");\n'
+    + '  function hzDlSegInit(){\n'
+    + '    var seg=document.getElementById("hz-dl-seg");if(!seg)return;\n'
+    + '    var pill=document.getElementById("hz-dl-seg-pill");\n'
+    + '    var first=seg.querySelector(".hz-ab-seg-item.active");\n'
     + '    if(first&&pill){pill.style.transition="none";pill.style.width=first.offsetWidth+"px";pill.style.translate=(first.offsetLeft-3)+"px";void pill.offsetWidth;pill.style.transition="";}\n'
     + '  }\n'
-    + '  if(document.readyState!=="loading")kzDlSegInit();\n'
-    + '  else document.addEventListener("DOMContentLoaded",kzDlSegInit);\n'
-    + '  window.addEventListener("resize",kzDlSegInit);\n'
+    + '  if(document.readyState!=="loading")hzDlSegInit();\n'
+    + '  else document.addEventListener("DOMContentLoaded",hzDlSegInit);\n'
+    + '  window.addEventListener("resize",hzDlSegInit);\n'
     + '})();\n'
-    + 'window.kzDlTabSwitch=function(btn){\n'
-    + '  var seg=document.getElementById("kz-dl-seg");\n'
-    + '  var pill=document.getElementById("kz-dl-seg-pill");\n'
-    + '  seg.querySelectorAll(".kz-ab-seg-item").forEach(function(b){b.classList.remove("active");b.setAttribute("aria-checked","false");});\n'
+    + 'window.hzDlTabSwitch=function(btn){\n'
+    + '  var seg=document.getElementById("hz-dl-seg");\n'
+    + '  var pill=document.getElementById("hz-dl-seg-pill");\n'
+    + '  seg.querySelectorAll(".hz-ab-seg-item").forEach(function(b){b.classList.remove("active");b.setAttribute("aria-checked","false");});\n'
     + '  btn.classList.add("active");btn.setAttribute("aria-checked","true");\n'
     + '  if(pill){pill.style.width=btn.offsetWidth+"px";pill.style.translate=(btn.offsetLeft-3)+"px";}\n'
     + '  var target=btn.getAttribute("data-target");\n'
-    + '  var t1=document.getElementById("kz-dl-t1");\n'
-    + '  var t2=document.getElementById("kz-dl-t2");\n'
-    + '  if(t1)t1.style.display=(target==="kz-dl-t1")?"block":"none";\n'
-    + '  if(t2)t2.style.display=(target==="kz-dl-t2")?"block":"none";\n'
+    + '  var t1=document.getElementById("hz-dl-t1");\n'
+    + '  var t2=document.getElementById("hz-dl-t2");\n'
+    + '  if(t1)t1.style.display=(target==="hz-dl-t1")?"block":"none";\n'
+    + '  if(t2)t2.style.display=(target==="hz-dl-t2")?"block":"none";\n'
     + '};\n'
     + '</script>\n';
 
@@ -605,7 +605,7 @@ function buildDlInject(dl) {
 
 /* Ubah tombol Download jadi "Soon!" kalau href-nya kosong setelah semua token diganti
    (jaga-jaga kalau link diisi placeholder string kosong dari data lama) */
-function kzApplySoonFallback(html) {
+function hzApplySoonFallback(html) {
   return html.replace(
     /<a href="" target="_blank" rel="noopener" style="([^"]*)">\s*Download\s*<\/a>/g,
     '<span style="$1background:#e0e0e0;border-color:#e0e0e0;color:#999;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>'
@@ -664,16 +664,16 @@ function generatePostPages() {
       .split('{{AB_SKILLS_INJECT}}').join(skillsHtml)
       .split('{{DL_INJECT}}').join(dlInject)
       .split('{{LOGO_TOOLTIP_TITLE}}').join(escHtml(tooltipLogo.title || 'Apa itu Logo?'))
-      .split('{{LOGO_TOOLTIP_DESC}}').join(kzBuildTooltipDescHtml(tooltipLogo.desc || ''))
+      .split('{{LOGO_TOOLTIP_DESC}}').join(hzBuildTooltipDescHtml(tooltipLogo.desc || ''))
       .split('{{LOGO_TOOLTIP_IMG}}').join(tooltipLogo.img || '')
       .split('{{DLTAB_TOOLTIP_TITLE}}').join(escHtml(tooltipDlTab.title || 'Apa itu Tab 1 & Tab 2?'))
-      .split('{{DLTAB_TOOLTIP_DESC}}').join(kzBuildTooltipDescHtml(tooltipDlTab.desc || ''))
+      .split('{{DLTAB_TOOLTIP_DESC}}').join(hzBuildTooltipDescHtml(tooltipDlTab.desc || ''))
       .split('{{DLTAB_TOOLTIP_IMG}}').join(tooltipDlTab.img || '')
       .split('{{VIEW_ID}}').join(escHtml(viewId))
       .split('{{VIEW_SLUG}}').join(escHtml(slug))
       .split('{{CANONICAL_URL}}').join(absoluteUrl(postUrl));
 
-    html = kzApplySoonFallback(html);
+    html = hzApplySoonFallback(html);
     html = processHtml(html);
     fs.writeFileSync(path.join(postOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
     addSitemapUrl(postUrl, { lastmod: parseIdDate(data.datepost), changefreq: 'monthly', priority: 0.9, category: 'post' });

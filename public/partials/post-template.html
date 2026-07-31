@@ -24,8 +24,8 @@
 </head>
 <body class="page-post item-view">
 <!-- include:header.html -->
-<div class="kazeo-page" style="padding-left:16px;padding-right:16px;">
-<main class="kazeo-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
+<div class="henz-page" style="padding-left:16px;padding-right:16px;">
+<main class="henz-main-content" id="main" role="main" style="max-width:860px;margin:0 auto;">
 <!--
 =================================================================
   BLOGGER POST TEMPLATE — Henz Officiale
@@ -72,8 +72,8 @@
   a, button { -webkit-tap-highlight-color: transparent; outline: none; }
 
   /* Tombol Kembali - hover merah, konsisten dengan tombol back hero detail */
-  .kz-posth-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px;transition:color .15s}
-  .kz-posth-back:hover { color: #e53232; }
+  .hz-posth-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px;transition:color .15s}
+  .hz-posth-back:hover { color: #e53232; }
 
   /* Sembunyikan judul bawaan Blogger & meta di halaman artikel */
   .item-view .post-title,
@@ -207,19 +207,19 @@
 
     /* Short Story — justify bikin spasi antar kata melebar tidak rapi
        di kolom sempit, jadi di mobile kembali rata kiri saja */
-    #kz-story-short,
-    #kz-story-full,
-    #kz-ab-pasif-full,
-    #kz-ab-s1-full,
-    #kz-ab-s2-full,
-    #kz-ab-ult-full,
-    [id^="kz-ab-s"][id$="-full"] {
+    #hz-story-short,
+    #hz-story-full,
+    #hz-ab-pasif-full,
+    #hz-ab-s1-full,
+    #hz-ab-s2-full,
+    #hz-ab-ult-full,
+    [id^="hz-ab-s"][id$="-full"] {
       text-align: left !important;
     }
   }
 
   /* ── DUAL ABILITIES SEGMENTED CONTROL (scaled down dari homepage) ── */
-  .kz-ab-seg {
+  .hz-ab-seg {
     position: relative;
     display: flex;
     justify-content: center;
@@ -233,7 +233,7 @@
     border-radius: 9999px;
     padding: 3px;
   }
-  .kz-ab-seg-item {
+  .hz-ab-seg-item {
     position: relative;
     z-index: 1;
     display: inline-flex;
@@ -253,8 +253,8 @@
     white-space: nowrap;
     outline: none;
   }
-  .kz-ab-seg-item.active { color: #111; }
-  .kz-ab-seg-pill {
+  .hz-ab-seg-item.active { color: #111; }
+  .hz-ab-seg-pill {
     position: absolute;
     top: 3px; bottom: 3px; left: 3px;
     z-index: 0;
@@ -265,24 +265,24 @@
     transition: width .2s cubic-bezier(.4,0,.2,1), translate .2s cubic-bezier(.4,0,.2,1);
   }
   /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate) */
-  .kz-ab-seg-mini {
+  .hz-ab-seg-mini {
     height: 22px;
     width: fit-content;
     margin: 0;
     gap: 1px;
     padding: 2px;
   }
-  .kz-ab-seg-mini .kz-ab-seg-item {
+  .hz-ab-seg-mini .hz-ab-seg-item {
     height: 18px;
     font-size: 9.5px;
     padding: 0 9px;
   }
-  .kz-ab-seg-mini .kz-ab-seg-pill {
+  .hz-ab-seg-mini .hz-ab-seg-pill {
     top: 2px; bottom: 2px; left: 2px;
   }
 
   /* ── TOOLTIP "APA ITU LOGO?" ── */
-  .kz-post-tooltip-overlay {
+  .hz-post-tooltip-overlay {
     position: fixed;
     inset: 0;
     z-index: 9999;
@@ -294,8 +294,8 @@
     opacity: 0;
     transition: opacity .18s ease;
   }
-  .kz-post-tooltip-overlay.open { opacity: 1; }
-  .kz-post-tooltip-box {
+  .hz-post-tooltip-overlay.open { opacity: 1; }
+  .hz-post-tooltip-box {
     width: 100%;
     max-width: 340px;
     background: #fff;
@@ -307,24 +307,24 @@
     opacity: 0;
     transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s ease;
   }
-  .kz-post-tooltip-overlay.open .kz-post-tooltip-box {
+  .hz-post-tooltip-overlay.open .hz-post-tooltip-box {
     transform: scale(1) translateY(0);
     opacity: 1;
   }
-  .kz-post-tooltip-head {
+  .hz-post-tooltip-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     padding: 20px 20px 0;
   }
-  .kz-post-tooltip-head span {
+  .hz-post-tooltip-head span {
     font-family: 'Manrope', sans-serif;
     font-size: 19px;
     font-weight: 800;
     color: #111;
   }
-  .kz-post-tooltip-close {
+  .hz-post-tooltip-close {
     width: 28px;
     height: 28px;
     background: #f0f0f0;
@@ -342,22 +342,22 @@
     -webkit-tap-highlight-color: transparent;
     outline: none;
   }
-  .kz-post-tooltip-close:hover {
+  .hz-post-tooltip-close:hover {
     background: #e0e0e0;
     color: #111;
   }
-  .kz-post-tooltip-close:active {
+  .hz-post-tooltip-close:active {
     background: #d0d0d0;
     color: #111;
     transform: scale(.92);
   }
-  .kz-post-tooltip-hr {
+  .hz-post-tooltip-hr {
     height: 1px;
     background: #efefef;
     border: none;
     margin: 14px 20px 0;
   }
-  .kz-post-tooltip-desc {
+  .hz-post-tooltip-desc {
     font-family: 'Manrope', sans-serif;
     font-size: 12.5px;
     color: #717171;
@@ -367,23 +367,23 @@
     padding: 12px 20px 0;
     margin: 0;
   }
-  .kz-post-tooltip-desc em {
+  .hz-post-tooltip-desc em {
     font-style: italic;
   }
-  .kz-post-tooltip-disclaimer {
+  .hz-post-tooltip-disclaimer {
     display: block;
   }
-  .kz-post-tooltip-disclaimer strong {
+  .hz-post-tooltip-disclaimer strong {
     font-style: italic;
   }
-  .kz-post-tooltip-imgwrap {
+  .hz-post-tooltip-imgwrap {
     margin-top: 16px;
     width: 100%;
     aspect-ratio: 1 / 1;
     background: #ececec;
     overflow: hidden;
   }
-  .kz-post-tooltip-imgwrap img {
+  .hz-post-tooltip-imgwrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -396,13 +396,13 @@
      [B] OUTER WRAPPER
      width:100% + max-width agar pas di semua layar
      ═══════════════════════════════════════════════ -->
-<div id="kz-outer" style="font-family:'Manrope',sans-serif;width:100%;max-width:100%;box-sizing:border-box;padding-bottom:60px;display:flex;flex-direction:column;">
+<div id="hz-outer" style="font-family:'Manrope',sans-serif;width:100%;max-width:100%;box-sizing:border-box;padding-bottom:60px;display:flex;flex-direction:column;">
 
   <!-- ─────────────────────────────────────────────
        [B1] TOMBOL KEMBALI
        ✏️ EDIT: href="#" + onclick kembali ke halaman sebelumnya (browser history)
        ───────────────────────────────────────────── -->
-  <a href="#" onclick="history.back();return false;" class="kz-posth-back">
+  <a href="#" onclick="history.back();return false;" class="hz-posth-back">
     &#8592; Halaman Sebelumnya
   </a>
 
@@ -417,7 +417,7 @@
          ✏️ EDIT: Ganti src pada <img> dengan URL gambar kamu
          Ukuran ideal: lebar bebas, tinggi min 300px
          ───────────────────────────────────────────── -->
-    <div id="kz-hero" style="position:relative;width:100%;height:450px;background:#111;overflow:hidden;">
+    <div id="hz-hero" style="position:relative;width:100%;height:450px;background:#111;overflow:hidden;">
 
       <!-- [C1] Gambar utama hero/skin -->
       <!-- ✏️ EDIT: Ganti src=" di bawah ini dengan URL gambar hero kamu -->
@@ -434,7 +434,7 @@
       <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.25) 50%,transparent 100%);pointer-events:none;"></div>
 
       <!-- [C3] Meta hero — teks di atas gambar (kiri bawah) -->
-      <div id="kz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
+      <div id="hz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
 
         <!-- ✏️ EDIT: Kategori skin — pilihan: Starlight / Collector / Elite / Special / dll -->
         <span style="display:block;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#FFC200;margin-bottom:8px;">{{KATEGORISKIN}}</span>
@@ -442,7 +442,7 @@
         <!-- Judul hero — otomatis diisi dari judul artikel Blogger via JS (lihat bagian [E])
              Jika JS tidak berjalan, teks fallback di bawah ini yang tampil.
              ✏️ EDIT: Ganti teks fallback jika perlu -->
-        <div id="kz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">{{NAMEHERO}}</div>
+        <div id="hz-hero-title" style="font-size:32px;font-weight:900;line-height:1.2;letter-spacing:-.3px;color:#fff;margin-bottom:12px;text-shadow:0 2px 10px rgba(0,0,0,.6);">{{NAMEHERO}}</div>
 
         <!-- Info patch & brand -->
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);">
@@ -459,7 +459,7 @@
             {{AUTHORNAME}}
           </span>
 
-          <!-- View count — otomatis diisi JS dari /api/view (lihat main.js: kzLoadViewCounts) -->
+          <!-- View count — otomatis diisi JS dari /api/view (lihat main.js: hzLoadViewCounts) -->
           <span style="display:inline-flex;align-items:center;gap:5px;" data-view-id="{{VIEW_ID}}" data-view-slug="{{VIEW_SLUG}}">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
             <span data-view-count>&ndash;</span>
@@ -476,7 +476,7 @@
     <!-- ─────────────────────────────────────────────
          [D] BODY KONTEN — area utama artikel
          ───────────────────────────────────────────── -->
-    <div id="kz-body-konten" style="padding:28px 32px 36px;">
+    <div id="hz-body-konten" style="padding:28px 32px 36px;">
 
 
       <!-- ═══════════════════════════════════════════
@@ -488,23 +488,23 @@
       <div style="background:#f8f8f8;border-radius:14px;border:1px solid #efefef;padding:20px 22px;margin-bottom:24px;">
 
         <!-- ✏️ EDIT: Teks singkat yang SELALU terlihat (1-2 kalimat awal, tanpa spoiler) -->
-        <div id="kz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{SHORTSTORY}}</div>
+        <div id="hz-story-short" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;text-align:justify;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{SHORTSTORY}}</div>
 
         <!-- ✏️ EDIT: Cerita LENGKAP — hanya muncul setelah klik "Baca Selengkapnya"
              Pisahkan paragraf dengan baris kosong (Enter 2x) di field Long Story -->
-        <div id="kz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">{{LONGSTORY}}</div>
+        <div id="hz-story-full" style="font-size:13.5px;color:#666;line-height:1.75;font-weight:500;display:none;white-space:pre-line;text-align:justify;">{{LONGSTORY}}</div>
         <!-- ✏️ Tambah paragraf lagi di sini jika cerita lebih panjang -->
 
         <!-- Tombol toggle cerita — jangan ubah -->
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #e8e8e8;">
           <button
-            id="kz-story-btn"
-            onclick="kzToggleStory()"
+            id="hz-story-btn"
+            onclick="hzToggleStory()"
             type="button"
             style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#111;padding:0;"
           >
-            <span id="kz-story-label">Baca Selengkapnya</span>
-            <svg id="kz-story-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+            <span id="hz-story-label">Baca Selengkapnya</span>
+            <svg id="hz-story-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:14px;height:14px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
           </button>
         </div>
       </div>
@@ -516,11 +516,11 @@
            Klik → smooth scroll ke section tabel download
            Tombol full-width di mobile, auto-width di desktop
            ═══════════════════════════════════════════ -->
-      <div id="kz-dl-btn-wrap" style="margin-bottom:28px;">
+      <div id="hz-dl-btn-wrap" style="margin-bottom:28px;">
         <a
-          id="kz-dl-btn"
+          id="hz-dl-btn"
           href="#area-download"
-          onclick="kzScrollDownload(event)"
+          onclick="hzScrollDownload(event)"
           style="display:flex;align-items:center;justify-content:center;gap:8px;background:#111;color:#fff;font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;padding:13px 32px;border-radius:12px;text-decoration:none;transition:opacity .2s;"
         >
           <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:15px;height:15px;flex-shrink:0;">
@@ -552,18 +552,18 @@
              SKILL 1, 2, ULTIMATE
              Tersembunyi by default — klik "Lihat Semua Skill" untuk tampil
              ─────────────────────────────────────── -->
-        <div id="kz-ab-skills" style="display:none;">
+        <div id="hz-ab-skills" style="display:none;">
 
           {{AB_SKILLS_INJECT}}
 
         </div>
-        <!-- END kz-ab-skills -->
+        <!-- END hz-ab-skills -->
 
         <!-- Tombol lihat/sembunyikan Skill 1/2/Ultimate — jangan diubah -->
         <div style="padding:12px 20px;border-top:1px solid #efefef;">
-          <button onclick="kzToggleAllSkills()" type="button" style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
-            <span id="kz-ab-show-lbl">Lihat Semua Skill</span>
-            <svg id="kz-ab-show-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
+          <button onclick="hzToggleAllSkills()" type="button" style="background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">
+            <span id="hz-ab-show-lbl">Lihat Semua Skill</span>
+            <svg id="hz-ab-show-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>
           </button>
         </div>
 
@@ -577,7 +577,7 @@
            [D3b] NOTICE BOXES — Info & Lapor Bug
            ✏️ EDIT: Ganti href="#" pada link "di sini" dengan URL chat admin kamu
            ═══════════════════════════════════════════ -->
-      <div class="kz-notice-wrap" style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
+      <div class="hz-notice-wrap" style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
 
         <div style="position:relative;display:flex;align-items:flex-start;gap:16px;background:rgba(59,130,246,.10);border:1px solid rgba(59,130,246,.25);border-radius:16px;padding:18px 20px;box-shadow:0 2px 10px rgba(59,130,246,.08);">
           <div style="flex-shrink:0;position:relative;width:52px;height:52px;">
@@ -612,7 +612,7 @@
            [D4] 3 TOMBOL PANDUAN
            ✏️ EDIT: Ganti href="#" dengan URL artikel panduan kamu
            ═══════════════════════════════════════════ -->
-      <div id="kz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+      <div id="hz-btn-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
 
         <!-- ✏️ EDIT: href → link artikel cara pasang script -->
         <a href="https://www.youtube.com/watch?v=5T68xE85GTI"
@@ -666,38 +666,38 @@
     <!-- END [D] BODY KONTEN -->
 
     <!-- Slot komentar — diisi JS dari #comments Blogger -->
-    <div id="kz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
+    <div id="hz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
 
   </div>
   <!-- END [B2] CARD PUTIH -->
 
   <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
-  <div id="kz-logo-tooltip-overlay" class="kz-post-tooltip-overlay" onclick="kzCloseLogoTooltip(event)">
-    <div class="kz-post-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-post-tooltip-head">
+  <div id="hz-logo-tooltip-overlay" class="hz-post-tooltip-overlay" onclick="hzCloseLogoTooltip(event)">
+    <div class="hz-post-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-post-tooltip-head">
         <span>{{LOGO_TOOLTIP_TITLE}}</span>
-        <button type="button" class="kz-post-tooltip-close" onclick="kzCloseLogoTooltip()" aria-label="Tutup">
+        <button type="button" class="hz-post-tooltip-close" onclick="hzCloseLogoTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <hr class="kz-post-tooltip-hr"/>
-      <p class="kz-post-tooltip-desc">{{LOGO_TOOLTIP_DESC}}</p>
-      <div class="kz-post-tooltip-imgwrap"><img src="{{LOGO_TOOLTIP_IMG}}" alt="Contoh Logo"/></div>
+      <hr class="hz-post-tooltip-hr"/>
+      <p class="hz-post-tooltip-desc">{{LOGO_TOOLTIP_DESC}}</p>
+      <div class="hz-post-tooltip-imgwrap"><img src="{{LOGO_TOOLTIP_IMG}}" alt="Contoh Logo"/></div>
     </div>
   </div>
 
   <!-- TOOLTIP "APA ITU TAB 1 & TAB 2?" — konten diisi dari editor -->
-  <div id="kz-dltab-tooltip-overlay" class="kz-post-tooltip-overlay" onclick="kzCloseDlTabTooltip(event)">
-    <div class="kz-post-tooltip-box" onclick="event.stopPropagation()">
-      <div class="kz-post-tooltip-head">
+  <div id="hz-dltab-tooltip-overlay" class="hz-post-tooltip-overlay" onclick="hzCloseDlTabTooltip(event)">
+    <div class="hz-post-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-post-tooltip-head">
         <span>{{DLTAB_TOOLTIP_TITLE}}</span>
-        <button type="button" class="kz-post-tooltip-close" onclick="kzCloseDlTabTooltip()" aria-label="Tutup">
+        <button type="button" class="hz-post-tooltip-close" onclick="hzCloseDlTabTooltip()" aria-label="Tutup">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <hr class="kz-post-tooltip-hr"/>
-      <p class="kz-post-tooltip-desc">{{DLTAB_TOOLTIP_DESC}}</p>
-      <div class="kz-post-tooltip-imgwrap"><img src="{{DLTAB_TOOLTIP_IMG}}" alt="Contoh Tab"/></div>
+      <hr class="hz-post-tooltip-hr"/>
+      <p class="hz-post-tooltip-desc">{{DLTAB_TOOLTIP_DESC}}</p>
+      <div class="hz-post-tooltip-imgwrap"><img src="{{DLTAB_TOOLTIP_IMG}}" alt="Contoh Tab"/></div>
     </div>
   </div>
 
@@ -708,14 +708,14 @@
 <!-- ═══════════════════════════════════════════════
      [E] JAVASCRIPT
      Berisi:
-     - kzResponsive()      → atur layout mobile/desktop
-     - kzAutoTitle()       → ambil judul artikel dari Blogger
-     - kzScrollDownload()  → smooth scroll animasi ke area download
-     - kzToggleAllSkills() → show/hide Skill 1/2/Ultimate
-     - kzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
-     - kzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
-     - kzToggleAb()        → expand/collapse per skill
-     - kzToggleStory()     → expand/collapse cerita
+     - hzResponsive()      → atur layout mobile/desktop
+     - hzAutoTitle()       → ambil judul artikel dari Blogger
+     - hzScrollDownload()  → smooth scroll animasi ke area download
+     - hzToggleAllSkills() → show/hide Skill 1/2/Ultimate
+     - hzAbMiniSwitch()    → ganti varian 1/2 per blok abilities
+     - hzDlTabSwitch()     → ganti tab download (Tab 1 / Tab 2)
+     - hzToggleAb()        → expand/collapse per skill
+     - hzToggleStory()     → expand/collapse cerita
 
      ⚠️ Jangan ubah bagian ini
      ═══════════════════════════════════════════════ -->
@@ -723,42 +723,42 @@
 //<![CDATA[
 
 /* ── [E1] Responsive: hero height, download btn, button grid ── */
-function kzResponsive(){
+function hzResponsive(){
   var w = window.innerWidth;
 
   /* Hero meta padding */
-  var heroMeta = document.getElementById('kz-hero-meta');
+  var heroMeta = document.getElementById('hz-hero-meta');
   if(heroMeta) heroMeta.style.padding = w <= 600 ? '16px 20px 20px' : '24px 32px 28px';
 
   /* Tombol Download: full-width di mobile, auto di desktop */
-  var dlBtn = document.getElementById('kz-dl-btn');
+  var dlBtn = document.getElementById('hz-dl-btn');
   if(dlBtn){
     dlBtn.style.width = w <= 600 ? '100%' : 'auto';
     dlBtn.style.display = w <= 600 ? 'flex' : 'inline-flex';
   }
 
   /* Button grid panduan: 3 kolom desktop → 1 kolom mobile */
-  var grid = document.getElementById('kz-btn-grid');
+  var grid = document.getElementById('hz-btn-grid');
   if(grid){
     grid.style.gridTemplateColumns = w <= 600 ? '1fr' : 'repeat(3,1fr)';
     grid.style.gap = w <= 600 ? '10px' : '12px';
   }
 
   /* Body konten padding horizontal: lebih sempit di mobile */
-  var bodyKonten = document.getElementById('kz-body-konten');
+  var bodyKonten = document.getElementById('hz-body-konten');
   if(bodyKonten){
     bodyKonten.style.paddingLeft  = w <= 384 ? '15px' : w <= 390 ? '16px' : w <= 391 ? '18px' : w <= 392 ? '19px' : w <= 600 ? '20px' : '32px';
     bodyKonten.style.paddingRight = w <= 384 ? '15px' : w <= 390 ? '16px' : w <= 391 ? '18px' : w <= 392 ? '19px' : w <= 600 ? '20px' : '32px';
   }
 
 }
-kzResponsive();
-window.addEventListener('resize', kzResponsive);
+hzResponsive();
+window.addEventListener('resize', hzResponsive);
 
 
 /* ── [E2] Auto judul: ambil dari <title> halaman Blogger ── */
-function kzAutoTitle(){
-  var el = document.getElementById('kz-hero-title');
+function hzAutoTitle(){
+  var el = document.getElementById('hz-hero-title');
   if(!el) return;
   /* Coba ambil dari elemen h3.post-title Blogger terlebih dahulu */
   var postTitleEl = document.querySelector('.post-title, h3.post-title, .entry-title');
@@ -780,16 +780,16 @@ function kzAutoTitle(){
   title = title.replace(/^Script Skin\s+/i, '');
   if(title) el.textContent = title;
 }
-kzAutoTitle();
+hzAutoTitle();
 
 
 /* ── [E3] Smooth scroll animasi ke area-download ── */
-function kzScrollDownload(e){
+function hzScrollDownload(e){
   e.preventDefault();
   var target = document.getElementById('area-download');
   if(!target) return;
   /* Animasi bounce pada tombol */
-  var btn = document.getElementById('kz-dl-btn');
+  var btn = document.getElementById('hz-dl-btn');
   if(btn){
     btn.style.transform = 'scale(0.95)';
     btn.style.transition = 'transform .15s';
@@ -802,10 +802,10 @@ function kzScrollDownload(e){
 
 /* ── [E4] Toggle semua skill (Skill1/2/Ultimate) ── */
 var _kzAllSkillsScroll = null;
-function kzToggleAllSkills(){
-  var wrap = document.getElementById('kz-ab-skills');
-  var lbl  = document.getElementById('kz-ab-show-lbl');
-  var icon = document.getElementById('kz-ab-show-icon');
+function hzToggleAllSkills(){
+  var wrap = document.getElementById('hz-ab-skills');
+  var lbl  = document.getElementById('hz-ab-show-lbl');
+  var icon = document.getElementById('hz-ab-show-icon');
   if(!wrap) return;
   var isHidden = wrap.style.display === 'none' || wrap.style.display === '';
   if(isHidden){
@@ -815,7 +815,7 @@ function kzToggleAllSkills(){
     wrap.style.display = 'none';
     if(lbl)  lbl.textContent      = 'Lihat Semua Skill';
     if(icon) icon.style.transform = 'rotate(0deg)';
-    document.querySelectorAll('[id^="kz-ab-"][id$="-full"]').forEach(function(full){
+    document.querySelectorAll('[id^="hz-ab-"][id$="-full"]').forEach(function(full){
       if(full.style.display === 'block'){
         var baseId = full.id.replace('-full','');
         full.style.display  = 'none';
@@ -832,15 +832,15 @@ function kzToggleAllSkills(){
   if(icon) icon.style.transform = 'rotate(180deg)';
   // Pill segmented di dalam wrap ini sebelumnya display:none saat init pertama,
   // jadi offsetWidth/offsetLeft-nya 0 — hitung ulang sekarang setelah terlihat.
-  if(typeof kzAbSegMiniInit === 'function') kzAbSegMiniInit();
+  if(typeof hzAbSegMiniInit === 'function') hzAbSegMiniInit();
 }
 
 
 /* ── [E4b] Mini segmented control per blok (Pasif/Skill/Ultimate) — varian 2 ── */
-function kzAbSegMiniInit(){
-  document.querySelectorAll('.kz-ab-seg-mini').forEach(function(seg){
-    var pill = seg.querySelector('.kz-ab-seg-pill');
-    var first = seg.querySelector('.kz-ab-seg-item.active');
+function hzAbSegMiniInit(){
+  document.querySelectorAll('.hz-ab-seg-mini').forEach(function(seg){
+    var pill = seg.querySelector('.hz-ab-seg-pill');
+    var first = seg.querySelector('.hz-ab-seg-item.active');
     if(first && pill){
       var pad = 2;
       // Matikan transition sesaat supaya reposisi pill (mis. saat wrapper
@@ -854,15 +854,15 @@ function kzAbSegMiniInit(){
     }
   });
 }
-if(document.readyState !== 'loading') kzAbSegMiniInit();
-else document.addEventListener('DOMContentLoaded', kzAbSegMiniInit);
-window.addEventListener('resize', kzAbSegMiniInit);
+if(document.readyState !== 'loading') hzAbSegMiniInit();
+else document.addEventListener('DOMContentLoaded', hzAbSegMiniInit);
+window.addEventListener('resize', hzAbSegMiniInit);
 
-function kzAbMiniSwitch(btn){
-  var seg = btn.closest('.kz-ab-seg-mini');
+function hzAbMiniSwitch(btn){
+  var seg = btn.closest('.hz-ab-seg-mini');
   if(!seg) return;
-  var pill = seg.querySelector('.kz-ab-seg-pill');
-  seg.querySelectorAll('.kz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
+  var pill = seg.querySelector('.hz-ab-seg-pill');
+  seg.querySelectorAll('.hz-ab-seg-item').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-checked','false'); });
   btn.classList.add('active'); btn.setAttribute('aria-checked','true');
   if(pill){
     var pad = 2;
@@ -880,7 +880,7 @@ function kzAbMiniSwitch(btn){
 
 /* ── [E5] Toggle expand per skill ── */
 var _kzAbScroll = {};
-function kzToggleAb(id){
+function hzToggleAb(id){
   var full  = document.getElementById(id + '-full');
   var short = document.getElementById(id + '-short');
   var lbl   = document.getElementById(id + '-lbl');
@@ -907,11 +907,11 @@ function kzToggleAb(id){
 
 /* ── [E6] Toggle Short Story ── */
 var _kzStoryScroll = null;
-function kzToggleStory(){
-  var full  = document.getElementById('kz-story-full');
-  var short = document.getElementById('kz-story-short');
-  var lbl   = document.getElementById('kz-story-label');
-  var icon  = document.getElementById('kz-story-icon');
+function hzToggleStory(){
+  var full  = document.getElementById('hz-story-full');
+  var short = document.getElementById('hz-story-short');
+  var lbl   = document.getElementById('hz-story-label');
+  var icon  = document.getElementById('hz-story-icon');
   if(!full) return;
   var isHidden = full.style.display === 'none' || full.style.display === '';
   if(isHidden){
@@ -933,37 +933,37 @@ function kzToggleStory(){
 
 
 /* ── [E7b] Tooltip "Apa itu Logo?" ── */
-function kzOpenLogoTooltip(){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
+function hzOpenLogoTooltip(){
+  var ov = document.getElementById('hz-logo-tooltip-overlay');
   if(!ov) return;
   ov.style.display = 'flex';
   void ov.offsetWidth;
   ov.classList.add('open');
 }
-function kzCloseLogoTooltip(e){
-  var ov = document.getElementById('kz-logo-tooltip-overlay');
+function hzCloseLogoTooltip(e){
+  var ov = document.getElementById('hz-logo-tooltip-overlay');
   if(!ov) return;
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
-function kzOpenDlTabTooltip(){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
+function hzOpenDlTabTooltip(){
+  var ov = document.getElementById('hz-dltab-tooltip-overlay');
   if(!ov) return;
   ov.style.display = 'flex';
   void ov.offsetWidth;
   ov.classList.add('open');
 }
-function kzCloseDlTabTooltip(e){
-  var ov = document.getElementById('kz-dltab-tooltip-overlay');
+function hzCloseDlTabTooltip(e){
+  var ov = document.getElementById('hz-dltab-tooltip-overlay');
   if(!ov) return;
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
 
 
-/* ── [E7] Pindahkan #comments ke dalam card putih (kz-comments-slot) ── */
-function kzMoveComments(){
-  var slot     = document.getElementById('kz-comments-slot');
+/* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */
+function hzMoveComments(){
+  var slot     = document.getElementById('hz-comments-slot');
   var comments = document.getElementById('comments');
   if(!slot || !comments) return false;
   if(comments.parentNode === slot){
@@ -975,13 +975,13 @@ function kzMoveComments(){
   return true;
 }
 
-if(!kzMoveComments()){
+if(!hzMoveComments()){
   var _kzCmtTimer = setInterval(function(){
-    if(kzMoveComments()) clearInterval(_kzCmtTimer);
+    if(hzMoveComments()) clearInterval(_kzCmtTimer);
   }, 100);
   setTimeout(function(){ clearInterval(_kzCmtTimer); }, 3000);
 }
-document.addEventListener('DOMContentLoaded', kzMoveComments);
+document.addEventListener('DOMContentLoaded', hzMoveComments);
 
 //]]>
 </script>
