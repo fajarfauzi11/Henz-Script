@@ -453,7 +453,7 @@ function hzBuildAbilityRow(opts) {
       + '        <span style="font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;white-space:nowrap;background:' + opts.katBg + ';color:' + opts.katText + ';">' + escHtml(kategori) + '</span>\n'
       + '      </div>\n'
       + '      <p id="' + prefix + '-short" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + escHtml(longDesc) + '</p>\n'
-      + '      <div id="' + prefix + '-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;text-align:justify;">' + escHtml(longDesc) + '</div>\n'
+      + '      <div id="' + prefix + '-full" style="font-size:12.5px;color:#666;line-height:1.65;font-weight:500;margin:0;display:none;white-space:pre-line;">' + escHtml(longDesc) + '</div>\n'
       + '      <button onclick="hzToggleAb(\'' + prefix + '\')" type="button" style="margin-top:8px;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:\'Manrope\',sans-serif;font-size:12px;font-weight:700;color:#111;padding:0;">\n'
       + '        <span id="' + prefix + '-lbl">Baca Selengkapnya</span>\n'
       + '        <svg id="' + prefix + '-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;transition:transform .25s;"><polyline points="6,9 12,15 18,9"/></svg>\n'
