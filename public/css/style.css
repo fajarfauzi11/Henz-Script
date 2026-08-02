@@ -214,6 +214,7 @@ body.page-home .henz-page{padding-top:90px}
 @media(min-width:640px){.hz-card-divider{width:48px;margin:12px auto 20px}}
 .hz-card-meta{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:auto}
 .hz-card-author{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:#3f3f46;font-family:'Manrope',sans-serif;transition:color .15s}
+.hz-card-verified{width:12px;height:12px;flex-shrink:0}
 .hz-card-avatar{width:20px;height:20px;border-radius:50%;object-fit:cover;border:1px solid #e4e4e7;flex-shrink:0}
 .hz-card-author-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:90px}
 .hz-card-date-wrap{text-align:center;font-size:10px;font-weight:500;color:#a1a1aa;font-family:'Manrope',sans-serif}
