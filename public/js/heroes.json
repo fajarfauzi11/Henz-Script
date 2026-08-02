@@ -431,7 +431,7 @@
     "role2": "tank"
   },
   {
-    "name": "XBorg",
+    "name": "X.Borg",
     "role": "fighter",
     "image": "/img/heroes/xborg.webp"
   },
@@ -488,7 +488,7 @@
     "image": "/img/heroes/atlas.webp"
   },
   {
-    "name": "Popol and Kupa",
+    "name": "Popol & Kupa",
     "role": "marksman",
     "image": "/img/heroes/popol-and-kupa.webp"
   },
