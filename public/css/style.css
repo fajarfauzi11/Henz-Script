@@ -65,10 +65,10 @@ body.hz-scrolled .henz-header{opacity:1;pointer-events:auto}
 .henz-search-input:focus{width:135px;background:rgba(0,0,0,0.1)}
 /* ── HEADER V2 (scrolled) desktop — scoped override ── */
 @media(min-width:769px){
-  .henz-header .henz-header-inner{gap:0;padding:8px 16px;justify-content:flex-start}
-  .henz-header .henz-logo{flex-shrink:0;margin-right:16px}
-  .henz-header .henz-nav{position:static;left:auto;transform:none;flex-shrink:0;gap:18px}
-  .henz-header .henz-search-wrap{margin-left:auto;flex-shrink:0;width:140px;margin-right:0}
+  .henz-header .henz-header-inner{gap:0;padding:8px 16px}
+  .henz-header .henz-logo{flex-shrink:0;min-width:140px}
+  .henz-header .henz-nav{position:static;left:auto;transform:none;flex:1;justify-content:center;gap:18px}
+  .henz-header .henz-search-wrap{flex-shrink:0;width:140px;margin-right:0}
   .henz-header .henz-search-input{width:110px}
   .henz-header .henz-search-input:focus{width:110px}
 }
