@@ -46,18 +46,18 @@ body.hz-scrolled .hz-hv1-header{opacity:0;pointer-events:none;transform:translat
 /* HEADER V2 (pill, tampil setelah discroll) */
 .henz-header{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:940px;max-width:calc(100% - 48px);z-index:999;background:transparent;transition:all 0.3s,opacity .3s ease;opacity:0;pointer-events:none}
 body.hz-scrolled .henz-header{opacity:1;pointer-events:auto}
-.henz-header-inner{width:100%;margin:0 auto;padding:8px 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;background:hsl(0 0% 93% / 72%);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:9999px}
+.henz-header-inner{width:100%;margin:0 auto;padding:8px 20px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative;background:hsl(0 0% 93% / 72%);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:9999px}
 .henz-logo{display:flex;align-items:center;flex-shrink:0;color:#111;text-decoration:none;transition:opacity 0.2s;-webkit-tap-highlight-color:transparent}
 #hz-logo-svg-slot,.hz-logo-svg-slot{display:flex;align-items:center}
 #hz-logo-svg-slot svg,.hz-logo-svg-slot svg{display:block}
 .henz-logo:hover{opacity:0.75}
 .henz-logo-desktop-name{font-family:'Barlow','Manrope',sans-serif;font-weight:900;font-size:24px;line-height:32px;letter-spacing:-0.6px;color:#18181B;white-space:nowrap;-webkit-font-smoothing:antialiased;margin-left:8px}
 @media(max-width:768px){.henz-logo-desktop-name{display:none}}
-.henz-nav{display:flex;align-items:center;gap:20px;position:absolute;left:50%;transform:translateX(-50%)}
+.henz-nav{display:flex;align-items:center;gap:20px;flex:1;justify-content:center}
 .henz-nav a{font-family:'Manrope',sans-serif;font-weight:600;font-size:15px;color:#111;text-decoration:none;transition:opacity 0.15s;white-space:nowrap;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
 .henz-nav a:hover{opacity:0.7}
 .henz-nav a.active{font-weight:700}
-.henz-search-wrap{position:relative;flex-shrink:0;margin-right:-8px}
+.henz-search-wrap{position:relative;flex-shrink:0;margin-right:-8px;min-width:120px}
 .henz-search-form{display:flex;align-items:center;position:relative}
 .henz-search-input{background:rgba(0,0,0,0.08);border:none;border-radius:9999px;padding:8px 16px 8px 34px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:#111;width:120px;outline:none;cursor:pointer;transition:background 0.15s,width 0.2s}
 .henz-search-input::placeholder{color:#555}
