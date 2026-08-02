@@ -221,6 +221,14 @@ document.querySelectorAll('.hz-search-form-js').forEach(function(form){
   });
 });
 
+/* Placeholder henz-header v2: "Cari" → "Cari Script" saat focus */
+(function(){
+  var hv2=document.querySelector('.henz-header .henz-search-input');
+  if(!hv2)return;
+  hv2.addEventListener('focus',function(){this.placeholder='Cari Script';});
+  hv2.addEventListener('blur',function(){this.placeholder='Cari';});
+})();
+
 /* Fetch posts.json */
 function hzFetchPosts(cb){
   fetch('/js/posts.json?t='+Date.now())
