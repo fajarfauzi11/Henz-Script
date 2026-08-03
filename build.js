@@ -531,6 +531,25 @@ function buildDlRow(name, url, link, isLast) {
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">' + dlBtn + '</td>\n'
     + '</tr>\n';
 }
+
+/* Baris Tab 2 — namareplace kuning, action = tombol Salin
+   Copy payload disimpan di data-copy attribute (&#10; = newline) agar tidak
+   konflik dengan atribut onclick yang juga pakai double-quote. */
+function buildDlRowTab2(name, url, isLast) {
+  var altR = hzExtractHeroCode(url) || name;
+  var rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
+  var dataCopy = escHtml(name + '\n' + url);   // &#10; jadi newline saat getAttribute
+  var salinStyle = 'display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;white-space:nowrap;cursor:pointer;';
+  var soonStyle  = 'display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;';
+  var copyBtn = url
+    ? '<button type="button" data-copy="' + dataCopy + '" onclick="hzDlRowCopy(this)" style="' + salinStyle + '">Salin</button>'
+    : '<span style="' + soonStyle + '">—</span>';
+  return '<tr style="' + rowStyle + '">\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="font-weight:800;color:#FFC200;font-size:12px;">' + escHtml(name) + '</span></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">' + copyBtn + '</td>\n'
+    + '</tr>\n';
+}
 function buildDlTableWrap(tbodyHtml) {
   return '<div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">\n'
     + '  <div style="overflow-x:auto;width:100%;">\n'
@@ -552,6 +571,7 @@ function buildDlInject(dl) {
   const rowsTab1 = dl.rowsTab1 || [];
   const rowsTab2 = dl.rowsTab2 || [];
   const rowsHtml = (rows) => rows.map((r, i) => buildDlRow(r.name, r.url, r.link, i === rows.length - 1)).join('');
+  const rowsHtmlTab2 = (rows) => rows.map((r, i) => buildDlRowTab2(r.name, r.url, i === rows.length - 1)).join('');
 
   if (!dl.dual) {
     return buildDlTableWrap(rowsHtml(rowsTab1));
@@ -572,7 +592,7 @@ function buildDlInject(dl) {
     + '</div>\n';
 
   const t1 = '<div id="hz-dl-t1">\n' + buildDlTableWrap(rowsHtml(rowsTab1)) + '</div>\n';
-  const t2 = '<div id="hz-dl-t2" style="display:none;">\n' + buildDlTableWrap(rowsHtml(rowsTab2)) + '</div>\n';
+  const t2 = '<div id="hz-dl-t2" style="display:none;">\n' + buildDlTableWrap(rowsHtmlTab2(rowsTab2)) + '</div>\n';
 
   const initScript = '<script>\n'
     + '(function(){\n'
@@ -597,6 +617,11 @@ function buildDlInject(dl) {
     + '  var t2=document.getElementById("hz-dl-t2");\n'
     + '  if(t1)t1.style.display=(target==="hz-dl-t1")?"block":"none";\n'
     + '  if(t2)t2.style.display=(target==="hz-dl-t2")?"block":"none";\n'
+    + '};\n'
+    + 'window.hzDlRowCopy=function(btn){\n'
+    + '  if(!navigator.clipboard)return;\n'
+    + '  var t=btn.getAttribute("data-copy");\n'
+    + '  navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent="Tersalin!";setTimeout(function(){btn.textContent=o;},1500);});\n'
     + '};\n'
     + '</script>\n';
 
