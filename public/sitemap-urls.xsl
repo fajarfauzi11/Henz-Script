@@ -31,7 +31,7 @@
   <p class="brand">Henz MLBB</p>
   <h1>XML <span>Sitemap</span></h1>
   <p>Berisi <xsl:value-of select="count(sitemap:urlset/sitemap:url)"/> URL, dibuat otomatis sesuai standar <a href="https://www.sitemaps.org/" target="_blank">sitemaps.org</a>.</p>
-  <p class="back"><a href="/sitemap.xml">&#8592; Kembali ke Sitemap Index</a></p>
+  <p class="back"><a href="/sitemap_index.xml">&#8592; Kembali ke Sitemap Index</a></p>
   <table>
     <tr><th>URL</th><th>Freq</th><th>Prioritas</th><th>Terakhir Diubah</th></tr>
     <xsl:for-each select="sitemap:urlset/sitemap:url">
