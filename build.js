@@ -11,7 +11,7 @@ const OUT_DIR = path.join(__dirname, 'dist');
 const PARTIALS_DIR = path.join(SRC_DIR, 'partials');
 
 /* Domain resmi — dipakai buat canonical, Open Graph, dan sitemap.xml */
-const BASE_URL = 'https://www.henzscript.my.id';
+const BASE_URL = 'https://www.henzscript.com';
 /* Cache-busting: setiap kali build.js dijalankan, semua link css/js dapat query ?v=xxx baru,
    jadi browser TIDAK BOLEH pakai cache lama begitu file di-deploy ulang. Ini akar solusi dari
    berulangnya kasus "user test pakai file/versi lama yang ke-cache di browser". */

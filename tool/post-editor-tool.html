@@ -896,7 +896,7 @@ function hzCleanPngUrlOnBlur(){
 // ── Nama Hero: datalist dari heroes.json + validasi ejaan ──
 var KZ_HERO_NAMES = [];
 function hzLoadHeroList(){
-  fetch('https://www.henzscript.my.id/js/heroes.json?t='+Date.now())
+  fetch('https://www.henzscript.com/js/heroes.json?t='+Date.now())
     .then(function(r){ return r.json(); })
     .then(function(list){
       if(!Array.isArray(list)) return;
