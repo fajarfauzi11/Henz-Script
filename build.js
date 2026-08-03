@@ -553,7 +553,7 @@ function buildDlRowTab2(name, url, link, isLast) {
 function buildDlTableWrap(tbodyHtml) {
   return '<div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">\n'
     + '  <div style="overflow-x:auto;width:100%;">\n'
-    + '    <table style="width:100%;border-collapse:collapse;table-layout:fixed;font-family:\'Manrope\',sans-serif;font-size:13px;">\n'
+    + '    <table style="width:100%;border-collapse:collapse;font-family:\'Manrope\',sans-serif;font-size:13px;">\n'
     + '      <thead>\n'
     + '        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">\n'
     + '          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>\n'
@@ -591,8 +591,23 @@ function buildDlInject(dl) {
     + '  </span>\n'
     + '</div>\n';
 
-  const t1 = '<div id="hz-dl-t1">\n' + buildDlTableWrap(rowsHtml(rowsTab1)) + '</div>\n';
-  const t2 = '<div id="hz-dl-t2" style="display:none;">\n' + buildDlTableWrap(rowsHtmlTab2(rowsTab2)) + '</div>\n';
+  // Single table, dua <tbody> — browser hitung lebar kolom dari semua baris sekaligus
+  // sehingga Tab 1 & Tab 2 selalu punya kolom identik tanpa perlu table-layout:fixed
+  const dualTable = '<div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">\n'
+    + '  <div style="overflow-x:auto;width:100%;">\n'
+    + '    <table style="width:100%;border-collapse:collapse;font-family:\'Manrope\',sans-serif;font-size:13px;">\n'
+    + '      <thead>\n'
+    + '        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">\n'
+    + '          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>\n'
+    + '          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Icon</th>\n'
+    + '          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:30%;">Action</th>\n'
+    + '        </tr>\n'
+    + '      </thead>\n'
+    + '      <tbody id="hz-dl-t1">\n' + rowsHtml(rowsTab1) + '      </tbody>\n'
+    + '      <tbody id="hz-dl-t2" style="display:none;">\n' + rowsHtmlTab2(rowsTab2) + '      </tbody>\n'
+    + '    </table>\n'
+    + '  </div>\n'
+    + '</div>\n';
 
   const initScript = '<script>\n'
     + '(function(){\n'
@@ -615,12 +630,12 @@ function buildDlInject(dl) {
     + '  var target=btn.getAttribute("data-target");\n'
     + '  var t1=document.getElementById("hz-dl-t1");\n'
     + '  var t2=document.getElementById("hz-dl-t2");\n'
-    + '  if(t1)t1.style.display=(target==="hz-dl-t1")?"block":"none";\n'
-    + '  if(t2)t2.style.display=(target==="hz-dl-t2")?"block":"none";\n'
+    + '  if(t1)t1.style.display=(target==="hz-dl-t1")?"table-row-group":"none";\n'
+    + '  if(t2)t2.style.display=(target==="hz-dl-t2")?"table-row-group":"none";\n'
     + '};\n'
     + '</script>\n';
 
-  return seg + t1 + t2 + initScript;
+  return seg + dualTable + initScript;
 }
 
 /* Ubah tombol Download jadi "Soon!" kalau href-nya kosong setelah semua token diganti
