@@ -1117,7 +1117,53 @@ function hzToggleDlDual(){
   var on = cb && cb.checked;
   if(namesWrap) namesWrap.style.display = on ? 'block' : 'none';
   if(tab2Section) tab2Section.style.display = on ? 'block' : 'none';
+  if(on) hzSyncTab2FromTab1();
   attachAllListeners();
+  scheduleLiveUpdate();
+}
+
+// Saat checkbox Tab 2 pertama kali diaktifkan dan Tab 2 masih kosong,
+// otomatis copy nama & icon dari Tab 1 (link download dikosongkan = Soon!).
+// Jika Tab 2 sudah ada isi sebelumnya, tidak ditimpa.
+// _hzSkipTab2Sync diset true saat load JSON agar tidak bentrok dengan loadDlRows.
+function hzSyncTab2FromTab1(){
+  if(window._hzSkipTab2Sync) return;
+
+  // Cek apakah Tab 2 sudah ada data
+  var t2first = document.getElementById('t2_replace1');
+  var t2last  = document.getElementById('t2_replacelast');
+  var mid2    = document.getElementById('dl-middle-t2');
+  var hasData = (t2first && t2first.value.trim() !== '')
+             || (t2last  && t2last.value.trim()  !== '')
+             || (mid2 && mid2.querySelectorAll('.blok-card').length > 0);
+  if(hasData) return;
+
+  // Populate blok pertama
+  hzSetField('t2_replace1',    v('replace1'));
+  hzSetField('t2_urlreplace1', v('urlreplace1'));
+  // t2_linkreplace1 sengaja dikosongkan → render sebagai Soon!
+
+  // Populate blok tengah — ikuti jumlah & urutan blok Tab 1
+  var mid1 = document.getElementById('dl-middle');
+  if(mid1){
+    mid1.querySelectorAll('.blok-card').forEach(function(card){
+      var m = card.id.match(/^dl-mid-(\d+)$/);
+      if(!m) return;
+      var idx = m[1];
+      addDlBlokT2();
+      var newIdx = dlCounterT2;
+      hzSetField('t2_replace'    + newIdx, v('replace'    + idx));
+      hzSetField('t2_urlreplace' + newIdx, v('urlreplace' + idx));
+      // t2_linkreplace{newIdx} sengaja dikosongkan
+    });
+  }
+
+  // Populate blok terakhir
+  hzSetField('t2_replacelast',        v('replacelast'));
+  hzSetField('t2_urlreplaceterakhir', v('urlreplaceterakhir'));
+  // t2_linkreplaceterakhir sengaja dikosongkan
+
+  updateDlCountT2();
   scheduleLiveUpdate();
 }
 
@@ -1309,9 +1355,10 @@ function buildAbMiddle(){
 
 // ── BUILD DL MIDDLE HTML ───────────────────
 // ── BUILD SATU BARIS TABEL DOWNLOAD ───────────
-function buildDlRow(name, url, link, isLast){
+function buildDlRow(name, url, link, isLast, isT2){
   var altR  = hzExtractHeroCode(url) || name;
   var hasLogo = /logo/i.test(name);
+  var nameColor = isT2 ? '#FFC200' : '#111';
   var logoQBtn = hasLogo
     ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
@@ -1320,7 +1367,7 @@ function buildDlRow(name, url, link, isLast){
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   var rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="'+rowStyle+'">\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">'+esc(name)+'</span>'+logoQBtn+'</span></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:'+nameColor+';font-size:12px;">'+esc(name)+'</span>'+logoQBtn+'</span></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="'+esc(url)+'" alt="'+esc(altR)+'" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">'+dlBtn+'</td>\n'
     + '</tr>\n';
@@ -1333,7 +1380,7 @@ function buildDlTableRows(isT2){
   var html = '';
 
   // Blok pertama
-  html += buildDlRow(v(pfx+'replace1'), v(pfx+'urlreplace1'), v(pfx+'linkreplace1'), false);
+  html += buildDlRow(v(pfx+'replace1'), v(pfx+'urlreplace1'), v(pfx+'linkreplace1'), false, isT2);
 
   // Blok tengah dinamis
   var mid = document.getElementById(midId);
@@ -1343,12 +1390,12 @@ function buildDlTableRows(isT2){
       var m = card.id.match(isT2 ? /dl-mid-t2-(\d+)/ : /dl-mid-(\d+)/);
       if(!m) return;
       var idx = m[1];
-      html += buildDlRow(v(pfx+'replace'+idx), v(pfx+'urlreplace'+idx), v(pfx+'linkreplace'+idx), false);
+      html += buildDlRow(v(pfx+'replace'+idx), v(pfx+'urlreplace'+idx), v(pfx+'linkreplace'+idx), false, isT2);
     });
   }
 
   // Blok terakhir
-  html += buildDlRow(v(pfx+'replacelast'), v(pfx+'urlreplaceterakhir'), v(pfx+'linkreplaceterakhir'), true);
+  html += buildDlRow(v(pfx+'replacelast'), v(pfx+'urlreplaceterakhir'), v(pfx+'linkreplaceterakhir'), true, isT2);
 
   return html;
 }
@@ -1357,7 +1404,7 @@ function buildDlTableRows(isT2){
 function buildDlTableWrap(tbodyHtml){
   return '<div style="border:1px solid #e8e8e8;border-radius:16px;overflow:hidden;">\n'
     + '  <div style="overflow-x:auto;width:100%;">\n'
-    + '    <table style="width:100%;border-collapse:collapse;font-family:\'Manrope\',sans-serif;font-size:13px;">\n'
+    + '    <table style="width:100%;border-collapse:collapse;table-layout:fixed;font-family:\'Manrope\',sans-serif;font-size:13px;">\n'
     + '      <thead>\n'
     + '        <tr style="background:#fafafa;border-bottom:1px solid #e8e8e8;">\n'
     + '          <th style="padding:11px 14px;text-align:center;font-size:9px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#aaa;width:40%;">Replaces</th>\n'
@@ -1668,7 +1715,12 @@ function hzLoadFromJson(jsonString, filename){
   hzSetField('dl-tab2-name', dl.tab2Name || 'Tab 2');
   if(dl.dual){
     var cbDl = document.getElementById('dual-dl-enabled');
-    if(cbDl){ cbDl.checked = true; hzToggleDlDual(); }
+    if(cbDl){
+      cbDl.checked = true;
+      window._hzSkipTab2Sync = true;   // cegah sync saat load — Tab 2 akan diisi dari JSON
+      hzToggleDlDual();
+      window._hzSkipTab2Sync = false;
+    }
     loadDlRows(dl.rowsTab2 || [], 't2_', true);
   }
 
