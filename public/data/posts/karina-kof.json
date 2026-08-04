@@ -1,0 +1,136 @@
+{
+  "namehero": "Karina KOF",
+  "herolink": "Karina",
+  "urlthumbnail": "https://i.ibb.co/jZhCNShs/karina-kof.webp",
+  "kategoriskin": "KOF",
+  "keywords": "Karina Leona",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Karina adalah pembunuh terbaik dari bangsa Dark Elf, yang sejak kecil hidup bersama adiknya, Selena. Meski dilatih menjadi pembunuh berdarah dingin, Karina selalu menunjukkan kasih sayang yang tulus kepada Selena. Ia bahkan merahasiakan profesinya agar sang adik tidak pernah terlibat dalam dunia pembunuhan dan konflik yang dipenuhi kegelapan.\n\nSetelah Shadow Swamp jatuh ke dalam pengaruh Abyss, bangsa Elf berubah menjadi Dark Elf yang terpaksa hidup di bawah bayang-bayang para iblis. Karina terus menjalankan misi berbahaya demi melindungi kaumnya, sementara Selena mulai curiga dengan luka-luka yang selalu dibawa kakaknya setiap kali pulang. Rasa khawatir itu mendorong Selena diam-diam mengikuti Karina, hingga akhirnya menyaksikan sendiri kehidupan kakaknya sebagai seorang pembunuh.\n\nMerasa dirinya terlalu lemah untuk melindungi orang yang paling ia sayangi, Selena memutuskan mencari kekuatan. Namun pemimpin suku mereka yang telah dikuasai Abyss justru menjadikannya sebagai persembahan. Ketika Karina datang untuk menyelamatkannya, semuanya sudah terlambat. Selena telah kehilangan jati dirinya dan berubah menjadi pelayan Abyss yang dipenuhi kekuatan gelap.\n\nKarina terpaksa mengangkat senjata melawan adiknya sendiri demi menghentikan amukan Abyss. Namun, kekuatan baru Selena jauh melampaui dugaannya. Karina kalah dan tidak mampu membawa pulang adik yang selama ini ingin ia lindungi. Kekalahan itu menjadi penyesalan terbesar dalam hidupnya.\n\nSejak hari itu, Karina meninggalkan Shadow Swamp dan mengembara di Land of Despair untuk memburu para iblis yang telah merenggut Selena darinya. Dengan kebencian kepada Abyss sebagai sumber kekuatannya, ia terus bertarung sambil memegang satu harapan: suatu hari nanti, ia akan menyelamatkan Selena dan membawa adiknya pulang.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Shadow_Combo.png",
+    "name": "Shadow Combo",
+    "kategori": "Buff",
+    "longDesc": "Serangan beruntun ketiga Karina pada musuh yang sama memberikan tambahan True Damage sebesar 50 ditambah 5 (+2,5% Total Magic Power) % dari HP yang hilang (hingga 2000 True Damage terhadap creep).\nJika targetnya adalah hero musuh, cooldown skill non-Ultimate Karina dikurangi 1,5 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Dance_of_Blades.png",
+      "name": "Dance of Blades",
+      "kategori": "Buff/Speed Up",
+      "longDesc": "Karina memasuki kondisi Tarian Pedang selama 3,5 detik, di mana ia mendapatkan tambahan 45% Kecepatan Gerak , memblokir semua Serangan Dasar yang masuk, dan memantulkan 100–200 (+30% Total Kekuatan Sihir) Kerusakan Sihir kembali ke penyerang (efek pantulan kerusakan memiliki waktu pendinginan 0,4 detik).\nSerangan Dasar Karina dalam durasi tersebut memberikan 150–255 (+55% Total Kekuatan Sihir) Kerusakan Sihir , memperlambat target sebesar 45% selama 1 detik, dan dijamin menghasilkan serangan kritis . Menggunakan Serangan Dasar yang ditingkatkan atauSerangan Bayangan Shadow Assault mengakhiriDance of Bladeslebih awal.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6e/Dance_of_Death.png",
+      "name": "Dance of Death",
+      "kategori": "AOE",
+      "longDesc": "Karina melancarkan tebasan berputar, memberikan 375–600 (+125% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dekatnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/66/Shadow_Assault.png",
+      "name": "Shadow Assault",
+      "kategori": "Burst/Mobility",
+      "longDesc": "Karina melesat ke arah hero musuh target, memberikan 350–750 (+160% Total Kekuatan Sihir) Kerusakan Sihir , menerapkan Tanda Bayangan pada mereka, dan meninggalkan Wujud Bayangan di belakang mereka. Tanda Bayangan dan Wujud Bayangan keduanya bertahan selama 5 detik. Jika musuh mati dalam durasi tersebut, cooldown skill ini akan direset.\nGunakan Lagi: Karina melesat kembali ke lokasi Wujud Bayangan , memberikan 150–250 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8a/Hero081-icon.png",
+        "link": "https://sfile.co/JoILTBpSr7M"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8a/Hero081-icon.png",
+        "link": "https://sfile.co/5sN31i7pOvC"
+      },
+      {
+        "name": "Elite Phantom",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero082-icon.png",
+        "link": "https://sfile.co/cRGDCHlneI1"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c2/Hero083-icon.png",
+        "link": "https://sfile.co/QBdl0wxN3T5"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c1/Hero084-icon.png",
+        "link": "https://sfile.co/vAwtSL6DJIt"
+      },
+      {
+        "name": "Elite Spider",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b1/Hero085-icon.png",
+        "link": "https://sfile.co/XW6vr2SogQN"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7e/Hero086-icon.png",
+        "link": "https://sfile.co/grtqdDO5D0T"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero088-icon.png",
+        "link": "https://sfile.co/sn1Zfb7vNsF"
+      },
+      {
+        "name": "Blood Moon",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Hero089-icon.png",
+        "link": "https://sfile.co/ZAwFDxRdLzz"
+      },
+      {
+        "name": "Blood Moon + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Hero089-icon.png",
+        "link": "https://sfile.co/7Ogkag4CQ7R"
+      },
+      {
+        "name": "MCGG",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2f/Hero100811-icon.png",
+        "link": "https://sfile.co/VzGuOlrbwA3"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
