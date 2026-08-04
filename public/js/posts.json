@@ -1,5 +1,17 @@
 [
   {
+    "id": 33,
+    "title": "Sun Annual Starlight",
+    "url": "/post/sun-annual-starlight",
+    "thumb": "https://i.ibb.co/NDgWLbN/sun-annual-starlight.webp",
+    "cat": "Annual Starlight",
+    "hero": "Sun",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Sun Queller of Chaos"
+  },
+  {
     "id": 32,
     "title": "Moskov All Star",
     "url": "/post/moskov-all-star",
