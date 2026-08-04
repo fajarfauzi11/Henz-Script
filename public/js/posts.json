@@ -1,5 +1,17 @@
 [
   {
+    "id": 30,
+    "title": "Gord Legend",
+    "url": "/post/gord-legend",
+    "thumb": "https://i.ibb.co/HLYzzT5K/gord-legend.webp",
+    "cat": "Legend",
+    "hero": "Gord",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Gord Conqueror"
+  },
+  {
     "id": 29,
     "title": "Alpha Legend",
     "url": "/post/alpha-legend",
