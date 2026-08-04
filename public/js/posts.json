@@ -1,5 +1,17 @@
 [
   {
+    "id": 26,
+    "title": "Minotaur Zodiac",
+    "url": "/post/minotaur-zodiac",
+    "thumb": "https://i.ibb.co/LXz5g6xT/minotaur-zodiac.webp",
+    "cat": "Zodiac",
+    "hero": "Minotaur",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Minotaur Taurus"
+  },
+  {
     "id": 25,
     "title": "Freya Legend",
     "url": "/post/freya-legend",
