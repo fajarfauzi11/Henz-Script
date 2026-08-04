@@ -1,5 +1,17 @@
 [
   {
+    "id": 19,
+    "title": "Alucard Legend",
+    "url": "/post/alucard-legend",
+    "thumb": "https://i.ibb.co/6R80yFqM/alucard-legend.webp",
+    "cat": "Legend",
+    "hero": "Alucard",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Alucard Obsidian Blade"
+  },
+  {
     "id": 18,
     "title": "Tigreal Collector",
     "url": "/post/tigreal-collector",
