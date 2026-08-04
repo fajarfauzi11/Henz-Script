@@ -1,0 +1,136 @@
+{
+  "namehero": "Cyclops Spongebob",
+  "herolink": "Cyclops",
+  "urlthumbnail": "https://i.ibb.co/qMh5PSnj/cyclops-spongebob.webp",
+  "kategoriskin": "Spongebob",
+  "keywords": "Cyclops Spongebob Squarpants",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Cyclops berasal dari Land of the Giants, sebuah wilayah misterius di timur jauh Land of Dawn. Meski terlahir sebagai bagian dari ras raksasa, tubuhnya jauh lebih kecil dibandingkan para Giant lainnya. Karena tidak memiliki kekuatan fisik seperti kaumnya, Cyclops memilih jalan yang berbeda dan mengabdikan dirinya untuk mempelajari langit serta pergerakan bintang sejak masih kecil.\n\nDari pengamatannya, Cyclops menemukan bahwa setiap planet bergerak dalam orbit yang teratur dan gerakan tersebut menyimpan kekuatan sihir yang luar biasa. Dengan menciptakan sebuah hourglass sebagai media untuk mengendalikan energi itu, ia berhasil menguasai kekuatan kosmik dan dikenal di tanah kelahirannya sebagai Starsoul Magician. Berkat sihir bintang tersebut, Cyclops mampu melakukan perjalanan melintasi ruang angkasa dengan mudah.\n\nSemakin lama mempelajari alam semesta, Cyclops menyadari bahwa pergerakan planet tidak pernah berhenti. Selama orbit terus berputar, sumber kekuatannya pun tidak akan pernah habis. Hal itu membuatnya menjadi penyihir yang sangat kuat sekaligus hampir tak terkalahkan. Namun, kekuatan luar biasa itu justru membuatnya merasa kesepian karena tidak ada lagi lawan yang mampu menandinginya.\n\nDalam salah satu perjalanannya melintasi angkasa, Cyclops tiba di Land of Dawn dan terkejut menemukan begitu banyak petarung hebat. Ia melihat dunia baru itu sebagai tempat yang sempurna untuk menguji kekuatannya. Dengan penuh rasa percaya diri, Cyclops memutuskan menetap dan menantang siapa pun yang dianggap cukup kuat untuk menjadi lawannya.\n\nSejak saat itu, Cyclops menjelajahi Land of Dawn sebagai penyihir bintang yang membawa kekuatan pergerakan planet ke setiap pertarungan. Ia percaya bahwa ke mana pun ia pergi, kemenangan akan selalu mengikutinya, dan ia bertekad mengukir namanya sebagai salah satu pahlawan terhebat yang pernah ada.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/00/Starlit_Hourglass.png",
+    "name": "Starlit Hourglass",
+    "kategori": "Buff",
+    "longDesc": "Setiap kali Cyclops mengenai musuh dengan skill-nya, semua cooldown skill-nya akan berkurang sebesar 0,5 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Stardust_Shock.png",
+      "name": "Stardust Shock",
+      "kategori": "AOE",
+      "longDesc": "Cyclops melemparkan dua Cakram Debu Bintang, masing-masing memberikan 275–400 (+60% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang berada di jalurnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Planets_Attack.png",
+      "name": "Planets Attack",
+      "kategori": "Burst",
+      "longDesc": "Cyclops memunculkan Bola Cahaya Bintang di sekelilingnya sambil mendapatkan peningkatan Kecepatan Gerak sebesar 30% selama 2 detik. Bola-bola tersebut akan secara otomatis mencari dan menyerang musuh di dekatnya (memprioritaskan hero musuh), meledak saat bertabrakan dan memberikan 200–350 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh. Musuh yang terkena beberapa bola akan menerima kerusakan yang lebih sedikit setelah serangan pertama.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a8/Star_Power_Lockdown.png",
+      "name": "Star Power Lockdown",
+      "kategori": "CC/Damage",
+      "longDesc": "Cyclops menciptakan Bola Planet dan mengirimkannya ke arah hero musuh atau Creep target, memberikan 500–800 (+220% Total Kekuatan Sihir) Kerusakan Sihir dan melumpuhkan mereka selama 1-2 detik (meningkat seiring jarak tempuh).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero331-icon.png",
+        "link": "https://sfile.co/ExBxYVEdwoo"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero331-icon.png",
+        "link": "https://sfile.co/VaFoBvbpZzK"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/05/Hero332-icon.png",
+        "link": "https://sfile.co/hup1DF8PYOP"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/05/Hero332-icon.png",
+        "link": "https://sfile.co/lV3mGmOBx7Z"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e9/Hero333-icon.png",
+        "link": "https://sfile.co/xTbTQrDFZ1M"
+      },
+      {
+        "name": "SABER",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/17/Hero334-icon.png",
+        "link": "https://sfile.co/GwnfBiOJL61"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Hero335-icon.png",
+        "link": "https://sfile.co/j0qyCKhdxV0"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero336-icon.png",
+        "link": "https://sfile.co/0iaPP6VJbGY"
+      },
+      {
+        "name": "Star Wars",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/be/Hero337-icon.png",
+        "link": "https://sfile.co/NFe27u2NadZ"
+      },
+      {
+        "name": "Halloween",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e9/Hero338-icon.png",
+        "link": "https://sfile.co/cIwblpeFDcz"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7b/Hero339-icon.png",
+        "link": "https://sfile.co/qkD6aicj4Se"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
