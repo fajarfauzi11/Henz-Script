@@ -1,0 +1,121 @@
+{
+  "namehero": "Alice Collector",
+  "herolink": "Alice",
+  "urlthumbnail": "https://i.ibb.co/8L71xskt/alice-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Alice Dreaming Monarch",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Alice adalah putri di luar nikah dari keluarga bangsawan Antalus yang mewarisi bakat luar biasa dalam sihir gelap. Sejak kecil ia percaya bahwa ayahnya mencintainya, karena selalu menceritakan kejayaan keluarga dan mempercayakan berbagai misi rahasia kepadanya. Demi mendapatkan pengakuan dan kasih sayang, Alice rela menjadi senjata keluarga, menggunakan sihirnya untuk menyingkirkan musuh-musuh House Antalus.\n\nDalam sebuah misi, Alice ditangkap oleh Monastery of Light dan disiksa, tetapi ia tetap menolak membocorkan rahasia keluarganya. Saat dipenjara, seorang sosok misterius mengungkapkan bahwa dirinya selama ini hanyalah pion yang dikorbankan demi ambisi keluarga. Alice tidak mempercayainya, hingga berhasil melarikan diri dan tanpa sengaja mendengar sendiri bahwa ayahnya memang sengaja menyerahkannya kepada Monastery of Light sebagai bagian dari rencana untuk mengembalikan kejayaan House Antalus.\n\nPengkhianatan itu menghancurkan seluruh keyakinannya tentang cinta dan keluarga. Di tengah keputusasaan, sebuah bola misterius memancarkan kekuatan Abyss yang mengubah darahnya menjadi darah iblis. Alice berubah menjadi Queen of Blood, membantai keluarganya sendiri dan mengubah kerabat yang masih hidup menjadi Blood Demon yang sepenuhnya tunduk padanya. Mahkota kebanggaan keluarga Antalus pun ia kenakan sebagai hiasan di kakinya, sebagai simbol penghinaan terhadap kehormatan bangsawan yang penuh kemunafikan.\n\nSetelah meninggalkan Moniyan Empire, Alice memimpin para Blood Demon menuju Abyss dan membangun wilayah kekuasaannya sendiri di Sanguine Lair. Namun baginya, semua itu masih belum cukup. Ia tidak lagi ingin menjadi pion yang dimanfaatkan orang lain, melainkan penguasa yang mengendalikan takdir semua orang. Dengan memimpin pasukan Abyss, Alice bertekad menghancurkan Moniyan Empire dan merebut puncak kekuasaan.\n\nBagi Alice, cinta hanyalah kebohongan yang digunakan untuk mengendalikan orang lain. Setelah kehilangan segalanya karena pengkhianatan, ia membuang rasa cinta dan kebencian dari hatinya. Kini, yang tersisa hanyalah hasrat akan kekuasaan, karena menurutnya hanya kekuatan yang mampu bertahan selamanya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d5/Crimson_Blood_Banquet.png",
+    "name": "Crimson Blood Banquet",
+    "kategori": "AOE/Heal",
+    "longDesc": "Saat skill Alice mengenai target, dia mendapatkan 1 tumpukan Crimson , yang berlangsung selama 4 detik. Setelah Crimson mencapai 2 tumpukan, Blood Banquet aktif, memberikan 25 (+30% Total Kekuatan Sihir) ditambah 0,5%~2,5% dari HP Maksimum target (meningkat sesuai level) sebagai Kerusakan Sihir kepada unit di dekatnya (mengenai hero dengan skill akan memperbarui durasi) dan memulihkan 10 (+3% HP Ekstra) untuk Alice setiap 0,5 detik.\nSaat Blood Banquet aktif, Alice mendapatkan 8% Kecepatan Gerak . Blood Banquet dapat memberikan hingga 70 (+10*Level Hero) Kerusakan Sihir kepada creep.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Crimson_Gleam.png",
+      "name": "Crimson Gleam",
+      "kategori": "Mobility/AOE",
+      "longDesc": "Alice menembakkan energi darah ke depan, memberikan 100–200 (+50% Total Kekuatan Sihir) Kerusakan Sihir . Sebelum energi darah menghilang, kemampuan ini dapat digunakan lagi untuk mengaktifkan Bayangan Merah , memungkinkan Alice untuk berteleportasi ke lokasi energi darah tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Doom_Waltz.png",
+      "name": "Doom Waltz",
+      "kategori": "Slow/AOE",
+      "longDesc": "Alice melakukan tarian mematikan, memberikan 350–550 (+130% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dekatnya dan memperlambat mereka sebesar 70% selama 1 detik. Jika Blood Banquet aktif pada saat ini, tarian ini juga membakar musuh, memberikan 300% dari kerusakan Blood Banquet dan menyembuhkan Alice dengan jumlah yang sama.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Throne_of_Ruin.png",
+      "name": "Throne of Ruin",
+      "kategori": "CC/AOE",
+      "longDesc": "Alice melingkupi dirinya dengan darah, mendapatkan Kekebalan Kontrol dan Pengurangan Kerusakan 50% sambil memperlambat dirinya sendiri sebesar 50%. Setelah 1,5 detik, dia turun dengan kekuatan, memberikan 500–700 (+150% Total Kekuatan Sihir) (+20% HP Ekstra) Kerusakan Sihir kepada semua musuh dalam jangkauan dan melumpuhkan mereka selama 1 detik.\nSaat mengisi daya Ultimate-nya, Alice hanya dapat menggunakan Scarlet Shadow.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fd/Hero041-icon.png",
+        "link": "https://sfile.co/PH8ReojLPIM"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fd/Hero041-icon.png",
+        "link": "https://sfile.co/LAAfzeNImaa"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Hero042-icon.png",
+        "link": "https://sfile.co/viCmnFmT2hU"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero043-icon.png",
+        "link": "https://sfile.co/TAYlrawZUp1"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fe/Hero044-icon.png",
+        "link": "https://sfile.co/I4w9Y3ORkEV"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/57/Hero045-icon.png",
+        "link": "https://sfile.co/Qa5oYbCRvhn"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Hero046-icon.png",
+        "link": "https://sfile.co/8k9Ut2kXBnG"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c5/Hero047-icon.png",
+        "link": "https://sfile.co/fDbRXosJPjD"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
