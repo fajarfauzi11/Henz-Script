@@ -1,0 +1,126 @@
+{
+  "namehero": "Gatotkaca Luckybox",
+  "herolink": "Gatotkaca",
+  "urlthumbnail": "https://i.ibb.co/TBNc0BT7/gatotkaca-luckybox.webp",
+  "kategoriskin": "Luckybox",
+  "keywords": "Gatotkaca Sentinel",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Gatotkaca adalah putra Bima dan Arimbi dari semesta Arcadhem (Arcapada). Sejak kecil, ia telah dipilih menjadi awara para dewa, mengabdikan dirinya untuk melindungi tanah kelahirannya dari berbagai ancaman.\n\nDalam sebuah pertempuran besar, Gatotkaca pernah mengalami kekalahan telak hingga berada di ambang kematian. Namun, nasibnya belum berakhir. Demi menyelamatkannya, ia menjalani latihan dan penempaan di Candradimuka, kawah suci milik para dewa yang mampu membangkitkan kekuatan luar biasa. Dari sanalah ia terlahir kembali sebagai pejuang yang jauh lebih kuat daripada sebelumnya.\n\nSetelah menyelesaikan penempaan tersebut, Gatotkaca memperoleh Antakusuma Armo serta Brajamusti–Brajadenta Gauntlets, perlengkapan sakti yang memberinya kekuatan luar biasa. Dengan kekuatan itu, ia mampu terbang melintasi langit secepat kilat, memiliki daya tahan yang luar biasa, serta kekuatan fisik yang sanggup menghadapi musuh-musuh terkuat.\n\nSebagai Ksatria Pringgadani, Gatotkaca mendedikasikan hidupnya untuk memburu dan mengalahkan para Asura, musuh bebuyutan yang terus mengancam kedamaian negerinya. Ia menjadi pelindung rakyat sekaligus simbol harapan bagi mereka yang membutuhkan keberanian untuk menghadapi kejahatan.\n\nDi dunia Mobile Legends, Gatotkaca digambarkan sebagai lambang keberanian, kesetiaan, dan pengorbanan. Karakternya diadaptasi dari serial komik Garudayana karya Is Yuniarto, yang terinspirasi dari kisah pewayangan tradisional Indonesia, menjadikannya salah satu hero yang membawa unsur budaya Nusantara ke dalam Land of Dawn.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Steel_Bones.png",
+    "name": "Steel Bones",
+    "kategori": "Buff/Heal",
+    "longDesc": "Gatotkaca memperoleh [1] Pertahanan Fisik setara dengan 2% dari HP yang hilang (hingga 100). Untuk setiap 300 kerusakan yang diterimanya (dihitung sebelum pengurangan kerusakan), ia memperoleh 5 Amarah (hingga 100). Setelah mencapai lebih dari 25 Amarah, Serangan Dasar Gatotkaca berikutnya menjadi ditingkatkan, mengonsumsi semua Amarah untuk memberikan Kerusakan Sihir tambahan dan memulihkan diri. Kerusakan tambahan tersebut meningkat seiring dengan Amarah, level, dan Kekuatan Sihirnya.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Blast_Iron_Fist.png",
+      "name": "Blast Iron Fist",
+      "kategori": "AOE/Slow",
+      "longDesc": "Gatotkaca membanting tanah, menciptakan zona hancur di arah target sambil memberikan 200–300 (+150% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dalamnya. Musuh di zona hancur akan menerima 100–150 (+20% Total Kekuatan Sihir) Kerusakan Sihir per detik dan diperlambat sebesar 30%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ef/Unbreakable.png",
+      "name": "Unbreakable",
+      "kategori": "CC/Mobility",
+      "longDesc": "Gatotkaca memulai pengaktifan skill, lalu berlari ke arah target sambil meneriakkan seruan perang, memaksa musuh di jalurnya untuk menyerangnya dan memberikan 200–300 (+100% Total Kekuatan Sihir) Kerusakan Sihir selama 1,5 detik. Jarak lari meningkat seiring dengan waktu pengaktifan skill. Membatalkan Skill mengurangi 50% dari sisa Cooldown.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Avatar_of_the_Guardian.png",
+      "name": "Avatar of the Guardian",
+      "kategori": "CC/Mobility",
+      "longDesc": "Gatotkaca melompat ke lokasi target, memberikan 500–1000 (+300% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dekatnya dan membuat mereka terlempar ke udara selama 1 detik. Musuh di dekat pusat area akan terlempar ke udara untuk durasi yang lebih lama, sementara musuh di pinggiran akan ditarik ke tengah. Kamera akan bergerak mengikuti indikator skill tetapi tidak akan memberikan penglihatan tambahan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cb/Hero411-icon.png",
+        "link": "https://sfile.co/KUCAkUTpjQT"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cb/Hero411-icon.png",
+        "link": "https://sfile.co/PB0XURXYZ27"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Hero412-icon.png",
+        "link": "https://sfile.co/zXEd8RZZ9rM"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Hero412-icon.png",
+        "link": "https://sfile.co/HCtojnaizBa"
+      },
+      {
+        "name": "Elite Arhat",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/71/Hero413-icon.png",
+        "link": "https://sfile.co/PhKPF0b548x"
+      },
+      {
+        "name": "Elite Spark",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero416-icon.png",
+        "link": "https://sfile.co/X08lB5bS88T"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/98/Hero417-icon.png",
+        "link": "https://sfile.co/LGd3leYWVjt"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cb/Hero418-icon.png",
+        "link": "https://sfile.co/pEuFpglyZBB"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Hero419-icon.png",
+        "link": "https://sfile.co/iKtQOeEGud2"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
