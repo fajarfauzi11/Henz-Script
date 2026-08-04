@@ -2408,6 +2408,15 @@ function hzTanggalIndo(){
   return d.getDate()+' '+bulan[d.getMonth()]+' '+d.getFullYear();
 }
 
+// Ambil tanggal dari field datepost (strip prefix seperti "Update ", "Diperbarui ", dll).
+// Format hasil: "D Bulan YYYY" — kompatibel dengan hzShortDate() dan parseIdDate().
+// Fallback ke hari ini jika datepost kosong atau tidak match pola tanggal.
+function hzDateFromDatepost(){
+  var raw = (v('datepost')||'').trim();
+  var m = raw.match(/(\d{1,2}\s+[A-Za-z]+\s+\d{4})/);
+  return m ? m[1] : hzTanggalIndo();
+}
+
 // ── HELPER: log ke UI result-section ───────
 function hzLog(msg, isError){
   var log = document.getElementById('result-log');
@@ -2609,7 +2618,7 @@ async function finalizeAndUpload(){
       oldEntry.thumb = thumbVal;
       oldEntry.cat   = catVal;
       oldEntry.hero  = heroVal;
-      oldEntry.date  = hzTanggalIndo();
+      oldEntry.date  = hzDateFromDatepost();
       if(keywordsVal){ oldEntry.keywords = keywordsVal; } else { delete oldEntry.keywords; }
       hzLog('Entry "'+namehero+'" sudah ada di posts.json, akan diupdate (bukan duplikat).');
     } else {
@@ -2620,7 +2629,7 @@ async function finalizeAndUpload(){
         thumb: thumbVal,
         cat: catVal,
         hero: heroVal,
-        date: hzTanggalIndo(),
+        date: hzDateFromDatepost(),
         author: 'Henz',
         comments: 0
       };
