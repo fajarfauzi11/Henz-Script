@@ -1,0 +1,141 @@
+{
+  "namehero": "Moskov All Star",
+  "herolink": "Moskov",
+  "urlthumbnail": "https://i.ibb.co/gZBPqmCG/moskov-allstar.webp",
+  "kategoriskin": "All Star",
+  "keywords": "Moskov Infernal Wyrmlord",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Moskov adalah seorang pejuang tangguh dari gurun yang gugur dalam pertempuran melawan rivalnya, Khaleed. Sejak kecil ia dibesarkan dalam budaya peperangan antarsuku yang berlangsung turun-temurun, sehingga mengabdikan hidupnya demi kehormatan suku. Dalam pertempuran terakhir, meski kalah jumlah dan mengetahui peluang menang sangat kecil, Moskov tetap bertarung hingga tubuhnya dipenuhi tombak dan akhirnya tewas di medan perang.\n\nNamun setelah kematiannya, jiwa Moskov tidak menuju tempat peristirahatan yang ia bayangkan. Ia justru terperangkap di dalam pusaran kegelapan raksasa yang tersembunyi di bawah gurun. Di sanalah ia mengetahui kebenaran mengerikan bahwa peperangan tanpa akhir di antara suku-suku gurun bukanlah sekadar kebencian turun-temurun, melainkan hasil manipulasi kekuatan gelap yang selama berabad-abad memanen kematian, amarah, dan penderitaan untuk memperkuat dirinya.\n\nPusaran tersebut mengungkapkan bahwa ia hanyalah inti dari senjata kegelapan yang dahulu disegel oleh tiran gurun, Khufra, di bawah Reruntuhan Tivacan. Khufra sengaja membiarkan peperangan antarsuku terus terjadi agar pusaran itu terus menyerap energi kegelapan sebagai persiapan kebangkitannya. Menyadari bahwa seluruh hidupnya hanyalah bagian dari rencana kejam tersebut, kebencian Moskov berubah menjadi hasrat membalas dendam, bukan hanya kepada Khaleed, tetapi juga kepada Khufra yang menjadi dalang di balik semua tragedi.\n\nMelihat tekad Moskov, pusaran kegelapan menawarkan kekuatan sebagai imbalan atas kebebasannya. Moskov kemudian mencabut inti pusaran tersebut, yaitu Spear of Quiescence, dan menerima kekuatan kegelapan yang membentuk kembali tubuhnya. Ia terlahir kembali sebagai prajurit bayangan dengan kekuatan yang jauh melampaui manusia biasa, sementara pusaran itu akhirnya terbebas dari penjara yang telah mengurungnya selama berabad-abad.\n\nKini Moskov mengembara di hamparan gurun sebagai sosok yang dipenuhi amarah dan dendam. Berbekal Spear of Quiescence dan kekuatan kegelapan yang mengalir dalam dirinya, ia memburu Khufra untuk mengakhiri siklus peperangan yang telah menghancurkan tanah kelahirannya. Bagi Moskov, balas dendam bukan lagi sekadar urusan pribadi, melainkan jalan untuk membebaskan gurun dari takdir kelam yang telah mengikatnya selama berabad-abad.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ea/Spear_of_Quiescence.png",
+    "name": "Spear of Quiescence",
+    "kategori": "Buff",
+    "longDesc": "Serangan Dasar Moskov dapat menembus target dan memberikan [(+65% (+3% × Level Hero) Serangan Fisik ) Kerusakan Fisik Kritis ] kepada musuh di belakangnya (mewarisi Efek Serangan). Setiap Serangan Dasar yang mengenai target mengurangi waktu pendinginan dari Pejalan Jurang dan Tombak Kesengsaraan dengan selisih 0,5 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fa/Abyss_Walker.png",
+      "name": "Abyss Walker",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Moskov berteleportasi ke lokasi target, meningkatkan Kecepatan Serangannya menjadi 1,15–1,5 kali selama 3 detik. Sementara itu, Serangan Dasarnya memberikan 10% lebih banyak kerusakan pada musuh di belakang target utama.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c1/Spear_of_Misery.png",
+      "name": "Spear of Misery",
+      "kategori": "CC/Damage",
+      "longDesc": "Moskov melancarkan serangan kuat ke hero musuh atau Creep target, memberikan 300–450 (+60% Total Serangan Fisik) Kerusakan Fisik , mendorong mereka mundur , dan mengungkapkan posisi mereka selama 5 detik.\nJika target bertabrakan dengan hero musuh saat terdorong mundur, keduanya akan menerima 200–275 (+30% Serangan Fisik Tambahan) Kerusakan Fisik dan terkena stun selama 1,5 detik. Jika musuh terdorong ke dinding, mereka juga akan terkena stun dengan durasi yang sama.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a0/Spear_of_Destruction.png",
+      "name": "Spear of Destruction",
+      "kategori": "Slow/Teleport",
+      "longDesc": "Setelah jeda singkat, Moskov melemparkan Tombak Penghancur ke arah target, memberikan 340–500 (+100% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di jalurnya dan kepada hero musuh pertama yang terkena. Setelah mengenai hero musuh, tombak tersebut menusuk mereka dan memberikan 10% Kerusakan Fisik kepada musuh di belakang mereka. Target dan musuh yang terkena kerusakan tusukan akan diperlambat sebesar 50% selama 1 detik (durasi perlambatan meningkat seiring dengan waktu tempuh tombak, hingga 3 detik).\nKetika Tombak Penghancur mengenai hero musuh pertama, ia menciptakan bayangan di belakang mereka dan memperbarui cooldown dari Penjelajah Jurang Abyss Walker\nGunakan Lagi: Moskov merapal mantra Penjelajah Jurang Abyss Walker dari lokasi bayangan (memiliki cooldown yang sama dengan skill normal).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2e/Hero311-icon.png",
+        "link": "https://sfile.co/eGo2C2iwNEQ"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2e/Hero311-icon.png",
+        "link": "https://sfile.co/seQT9YdmwC6"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero312-icon.png",
+        "link": "https://sfile.co/TlMpM3uLcUt"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero312-icon.png",
+        "link": "https://sfile.co/yGSVk5CtwRc"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero313-icon.png",
+        "link": "https://sfile.co/7zFSPokcXO9"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero314-icon.png",
+        "link": "https://sfile.co/ZHaKesxjQHB"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9c/Hero315-icon.png",
+        "link": "https://sfile.co/WEODDzwPiub"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e8/Hero316-icon.png",
+        "link": "https://sfile.co/pPzu1H24OIR"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6b/Hero317-icon.png",
+        "link": "https://sfile.co/MyS6aRKfRcY"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f8/Hero318-icon.png",
+        "link": "https://sfile.co/aUcPDcNF0ZJ"
+      },
+      {
+        "name": "Abyss",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9e/Hero319-icon.png",
+        "link": "https://sfile.co/oCAstjC5nEO"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/70/Hero103110-icon.png",
+        "link": "https://sfile.co/ViMGDYliMrD"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
