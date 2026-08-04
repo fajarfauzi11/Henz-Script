@@ -1,0 +1,126 @@
+{
+  "namehero": "Rafaela Epic",
+  "herolink": "Rafaela",
+  "urlthumbnail": "https://i.ibb.co/1tVncQg3/rafaela-epic.webp",
+  "kategoriskin": "Epic",
+  "keywords": "Rafaela Flower Fairy",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Rafaela adalah malaikat yang lahir bersama saudara kembarnya, Argus, melalui kehendak Lord of Light. Meskipun berasal dari rahim yang sama, keduanya menerima perlakuan yang sangat berbeda. Rafaela dipuja sebagai malaikat suci yang membawa harapan bagi umat manusia, sementara Argus, karena terlahir sebagai laki-laki, disembunyikan dari sorotan dan tidak pernah memperoleh pengakuan yang sama. Meski demikian, keduanya tumbuh dengan ikatan yang sangat erat dan berjanji untuk bersama-sama melindungi dunia dari kegelapan.\n\nSeiring waktu, Rafaela menjadi simbol cahaya yang dicintai semua orang, sedangkan Argus terus hidup dalam bayang-bayang saudara perempuannya. Rafaela berkali-kali mencoba membela Argus, tetapi tidak pernah berhasil mengubah pandangan orang-orang terhadapnya. Perlakuan yang tidak adil itu perlahan mengubah cara pandang Argus terhadap manusia. Jika Rafaela percaya bahwa kebaikan manusia hanya ternoda oleh pengaruh Abyss, Argus justru menganggap sifat egois manusia sebagai akar dari segala ketidakadilan. Perbedaan keyakinan itu akhirnya menciptakan jarak di antara keduanya.\n\nDalam sebuah pertempuran melawan pasukan Abyss, Argus mengejar kemenangan hingga terjebak dalam perangkap musuh. Ia kembali dengan membawa pedang iblis yang dipenuhi energi kegelapan. Rafaela berusaha menyelamatkan dan memurnikan saudaranya, tetapi Argus menolak, menyerang pasukan di sekitarnya, lalu menghilang. Sejak saat itu, Monastery of Light mengklaim bahwa Argus memang telah ditakdirkan untuk jatuh ke dalam kegelapan, sementara Rafaela mulai meragukan keyakinan yang selama ini ia pegang dan meninggalkan biara demi mencari saudaranya.\n\nBeberapa bulan kemudian, Rafaela akhirnya menemukan Argus di Barren Lands. Namun, sosok yang berdiri di hadapannya bukan lagi malaikat yang ia kenal. Cahaya dan sayap emas Argus telah berubah menjadi aura gelap dengan sayap hitam khas Abyss. Sebagai pelindung cahaya, Rafaela tahu ia seharusnya menghentikan Argus, tetapi kenangan masa kecil dan kasih sayang kepada saudaranya membuatnya tidak sanggup mengangkat senjatanya. Argus pun pergi tanpa sepatah kata, semakin tenggelam ke dalam kegelapan.\n\nSejak saat itu, Rafaela dikenal sebagai malaikat yang dihormati dan dipuja di seluruh Moniyan Empire, menjadi lambang harapan serta pelindung umat manusia. Namun di balik semua pujian itu, ia terus memikul penyesalan yang tidak pernah hilang. Di saat seluruh dunia melihatnya sebagai penyelamat, Rafaela hanya berharap suatu hari nanti dapat menyelamatkan satu orang yang paling berharga baginya, saudaranya sendiri, Argus.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Divine_Resurrection.png",
+    "name": "Divine Resurrection",
+    "kategori": "Buff",
+    "longDesc": "Secara berkala, Rafaela dapat menggunakan kemampuan khusus untuk langsung membangkitkan kembali hero sekutu yang gugur setelah pengaktifan singkat. Hero sekutu yang dibangkitkan akan muncul kembali di markas dan mendapatkan peningkatan Kecepatan Gerak. Waktu pendinginan kemampuan ini ditentukan oleh waktu pendinginan\ndasarnya dan sisa waktu kemunculan kembali hero yang dibangkitkan. Kemampuan ini tidak dipengaruhi oleh Pengurangan Waktu Pendinginan.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Light_of_Retribution.png",
+      "name": "Light of Retribution",
+      "kategori": "AOE/Slow",
+      "longDesc": "Rafaela menyerang tiga musuh terdekat dengan Cahaya Pembalasan, memberikan mereka 225–500 (+120% Total Kekuatan Sihir) Kerusakan Sihir , secara singkat mengungkapkan posisi mereka, dan memperlambat mereka sebesar 40% selama 1,5 detik. Musuh yang terkena Cahaya Pembalasan lagi dalam waktu 5 detik akan menerima kerusakan tambahan 20% (efek ini dapat ditumpuk hingga 3 kali).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Holy_Healing.png",
+      "name": "Holy Healing",
+      "kategori": "Heal/Speed Up",
+      "longDesc": "Rafaela menggunakan Cahaya Suci , memulihkan 100–125 (+35% Total Kekuatan Sihir) HP kepada hero sekutu di dekatnya, ditambah 150–250 (+45% Total Kekuatan Sihir) HP tambahan untuk dirinya sendiri dan hero sekutu yang paling terluka dalam jangkauan. Juga meningkatkan Kecepatan Gerak hero sekutu di dekatnya sebesar 30% dan memberikan Kekebalan terhadap Efek Lambat selama 1 detik.\nSetiap 20 poin Kekuatan Sihir akan menambah 1% pada bonus Kecepatan Gerak , hingga maksimal 80%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Holy_Baptism.png",
+      "name": "Holy Baptism",
+      "kategori": "CC/AOE",
+      "longDesc": "Rafaela melepaskan kekuatan sejati Cahaya Suci ke arah target, memberikan 460–660 (+120% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh dalam garis lurus dan membuat mereka terkena efek setrum selama 1,5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Hero141-icon.png",
+        "link": "https://sfile.co/R1Dx0eszYpq"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Hero141-icon.png",
+        "link": "https://sfile.co/VdTIfTKd7YC"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3e/Hero142-icon.png",
+        "link": "https://sfile.co/1K9tSkvEiIx"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e7/Hero144-icon.png",
+        "link": "https://sfile.co/RtBe7BS5nJP"
+      },
+      {
+        "name": "SABER",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Savior_Icon.png",
+        "link": "https://sfile.co/q10j0GvDBYf"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c9/Hero146-icon.png",
+        "link": "https://sfile.co/kRUA23PSG8T"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero147-icon.png",
+        "link": "https://sfile.co/pzox2Xw3ZBi"
+      },
+      {
+        "name": "Allstar",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/95/Hero148-icon.png",
+        "link": "https://sfile.co/vTZbwT79Opa"
+      },
+      {
+        "name": "Lunar Fest",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero149-icon.png",
+        "link": "https://sfile.co/wstbxG039HH"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
