@@ -1,0 +1,141 @@
+{
+  "namehero": "Freya Legend",
+  "herolink": "Freya",
+  "urlthumbnail": "https://i.ibb.co/0V1Q7pjz/freya-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Freya Galactic Vanquisher",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Freya adalah seorang pejuang dari Northern Vale yang mewarisi tekad para Valkyrie, para pelindung legendaris Sessrumnir. Setelah kakaknya, Skuld, yang merupakan Valkyrie sebelumnya gugur dalam sebuah misi dan Aurora Heart relik suci yang menjadi sumber kekuatan Northern Vale menghilang, banyak orang mulai menyalahkan Skuld atas kegagalan tersebut. Freya menolak mempercayai tuduhan itu. Demi memulihkan kehormatan sang kakak dan menemukan Aurora Heart yang hilang, ia memulai perjalanan panjang melintasi badai salju sambil terus melindungi siapa pun yang membutuhkan pertolongan.\n\nDalam perjalanannya, Freya mulai memahami arti sebenarnya dari gelar Valkyrie. Bagi rakyat biasa, Valkyrie adalah penyelamat. Bagi para prajurit, Valkyrie adalah simbol kejayaan. Dari Sessrumnir, ia juga mengetahui asal-usul para Valkyrie: ribuan tahun lalu, Sigrun, Valkyrie pertama, menggunakan Aurora Heart untuk menghidupkan kembali tungku suci yang menjaga kehidupan Northern Vale. Sejak saat itu, setiap Valkyrie bertugas melindungi tanah air mereka sekaligus menjaga Aurora Heart agar api tungku tersebut tidak pernah padam.\n\nTak lama kemudian, Freya akhirnya menemukan kebenaran di balik kematian Skuld. Sekelompok pengikut God of Light ternyata telah menjebak Skuld, mencuri Aurora Heart, dan berusaha menghancurkan tungku suci Sessrumnir agar kekuatan Northern Vale lenyap. Ketika Freya tiba, Sessrumnir telah porak-poranda dan para pejuang Northern Vale berada di ambang kekalahan. Di hadapannya terbentang dua pilihan: mengejar para pelaku demi membalas kematian kakaknya, atau menyelamatkan tungku suci yang menjadi harapan seluruh Northern Vale.\n\nFreya memilih menjalankan tugas seorang Valkyrie. Menyadari bahwa tungku suci membutuhkan sumber kekuatan baru untuk tetap menyala, ia dengan rela mengorbankan dirinya dan melompat ke dalam api tungku. Pengorbanannya membuatnya diakui oleh seluruh roh Valkyrie yang telah gugur sebelumnya. Senjatanya ditempa kembali menjadi halberd yang lebih kuat, sementara sepasang sayap emas tumbuh di punggungnya. Freya pun terlahir kembali sebagai Valkyrie baru, bukan karena Aurora Heart, melainkan karena keberanian dan pengorbanannya sendiri.\n\nKini Freya menjadi pelindung baru Northern Vale sekaligus penerus sejati warisan Valkyrie. Dengan tombak di tangannya dan aurora sebagai penuntun, ia memburu para pengikut God of Light yang melarikan diri, sekaligus bersumpah untuk mempertahankan Northern Vale hingga akhir hayatnya. Baginya, menjadi Valkyrie bukan sekadar gelar, melainkan pengabdian tanpa pamrih demi tanah kelahirannya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Power_of_Einherjar.png",
+    "name": "Power of Einherjar",
+    "kategori": "Buff",
+    "longDesc": "Freya mendapatkan 1 Bola Suci dengan setiap Serangan Dasar (hingga 6 Bola Suci ). Menggunakan 1 Bola Suci memberi Freya 100% Kecepatan Serangan untuk Serangan Dasar berikutnya (maksimal 6 tumpukan). Bola Suci akan pulih secara bertahap saat di luar pertempuran.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/55/Leap_of_Faith.png",
+      "name": "Leap of Faith",
+      "kategori": "CC/Shield",
+      "longDesc": "Freya melompat ke area target dan menghantam tanah dengan perisainya, mendapatkan 500–900 (+100% Total Serangan Fisik) perisai dan memberikan 200–300 (+80% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di dalam area tersebut sambil membuat mereka terlempar ke udara selama 0,4 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Valkyrie_Slash.png",
+      "name": "Valkyrie Slash",
+      "kategori": "Mobility/Damage",
+      "longDesc": "Freya menerjang ke depan dan menebas, memberikan kerusakan 150–300 dan memperlambat musuh sebesar 30% selama 0,5 detik. Skill ini tidak memiliki cooldown dasar tetapi mengonsumsi 2 Sacred Orb setiap kali digunakan.\nSkill ini memberikan 50% kerusakan pada creep.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1a/Valkyrie_Descent.png",
+      "name": "Valkyrie Descent",
+      "kategori": "Morph/Buff",
+      "longDesc": "Freya memilih area target dan terjun ke bawah sebagai Valkyrie (mendapatkan Kekebalan Kontrol dan Pengurangan Kerusakan 50%), memberikan 300–550 (+75% Total Serangan Fisik) Kerusakan Fisik dan 40% perlambatan kepada musuh di jalurnya dan di titik pendaratan selama 2 detik.\nSetelah mendarat, Freya memasuki keadaan Valkyrie selama 12 detik, di mana Serangan Dasarnya memberikan 30-60 kerusakan tambahan (kerusakan tambahan tidak dapat menghasilkan Serangan Kritis) dan dia memulihkan 60–120 (+40% Total Serangan Fisik) per Serangan Dasar , dan Serangan Dasarnya memberikan kerusakan area.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero221-icon.png",
+        "link": "https://sfile.co/ri6QcuYruok"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero221-icon.png",
+        "link": "https://sfile.co/J56MC81AoWn"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Hero222-icon.png",
+        "link": "https://sfile.co/qOUOAJax3xe"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Hero222-icon.png",
+        "link": "https://sfile.co/hWnQaeAN9bP"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/03/Hero223-icon.png",
+        "link": "https://sfile.co/VQ3fxo8wEqg"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Hero224-icon.png",
+        "link": "https://sfile.co/njOj4GcNem3"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/87/Hero225-icon.png",
+        "link": "https://sfile.co/CFgL8XOVhgP"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Hero226-icon.png",
+        "link": "https://sfile.co/uipbVuURIFU"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Hero227-icon.png",
+        "link": "https://sfile.co/rFH8rDTKBGu"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero228-icon.png",
+        "link": "https://sfile.co/MXF0vd6wRZd"
+      },
+      {
+        "name": "SABER",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Manhunter_Icon.png",
+        "link": "https://sfile.co/9cT91Kq3ctJ"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Hero102211-icon.png",
+        "link": "https://sfile.co/xxBykepj800"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
