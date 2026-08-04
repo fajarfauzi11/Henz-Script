@@ -1,0 +1,131 @@
+{
+  "namehero": "Estes Champion",
+  "herolink": "Estes",
+  "urlthumbnail": "https://i.ibb.co/ccQK0Nyf/estes-champion.webp",
+  "kategoriskin": "Champion",
+  "keywords": "Estes Blacklist International",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Estes adalah Raja Moon Elf yang lahir dari Tree of Life di Emerald Woodland, hutan suci yang menjadi asal mula bangsa elf di sebelah barat Moonlake. Sebagai penguasa para Moon Elf, ia memimpin rakyatnya dengan kebijaksanaan dan kekuatan cahaya bulan. Namun pada Perang Besar Kedua, Estes mengalami luka yang sangat parah hingga terpaksa memasuki tidur panjang di Emerald Woodland untuk memulihkan diri.\n\nSelama Estes tertidur, bangsa Moon Elf kehilangan pemimpin mereka. Di saat yang sama, peperangan antara manusia dan orc mulai merambat hingga mengancam kedamaian Emerald Woodland. Demi melindungi tanah kelahirannya, Miya memimpin para Moon Elf dan berjuang mempertahankan hutan suci sambil menunggu sang raja kembali.\n\nAncaman yang lebih besar kemudian muncul ketika Abyss mulai bangkit kembali. Blood Queen Alice berhasil menggoda sebagian elf muda untuk berpaling kepada kegelapan, sehingga keberadaan bangsa Moon Elf kembali berada di ambang kehancuran. Bahaya tersebut akhirnya membangunkan Estes lebih awal pada suatu malam yang dipenuhi petir dan badai.\n\nSetelah terbangun, Estes kembali memimpin rakyatnya dengan sifatnya yang tegas namun penuh belas kasih. Berbekal kekuatan suci cahaya bulan dan Moonlight Code, ia memperkuat sekutu-sekutunya sekaligus melindungi bangsa Moon Elf dari ancaman yang datang dari segala penjuru.\n\nSejak saat itu, Estes kembali menjadi pelindung Emerald Woodland dan simbol harapan bagi para Moon Elf. Ia bersumpah akan mengusir siapa pun yang berani mengotori tanah suci mereka serta menjaga warisan bangsanya agar tetap lestari di bawah cahaya bulan.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b7/Scripture_of_the_Moon_Elf.png",
+    "name": "Scripture of the Moon Elf",
+    "kategori": "Buff",
+    "longDesc": "Kitab Peri Bulan perlahan mengisi Estes dengan energi. Ketika energi mencapai 100 tumpukan, Serangan Dasar Estes akan ditingkatkan, memberikan 250 (+100% Total Serangan Fisik) (+150% Total Kekuatan Sihir) Kerusakan Sihir pada target dan 125 (+50% Total Serangan Fisik) (+75% Total Kekuatan Sihir) Kerusakan Sihir pada musuh di dekatnya, serta memperlambat mereka sebesar 60% selama 1,5 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Moonlight_Immersion.png",
+      "name": "Moonlight Immersion",
+      "kategori": "Heal/Buff",
+      "longDesc": "Estes memulihkan 250–325 (+110% Total Kekuatan Sihir) HP untuk hero target secara instan dan terhubung dengan mereka selama 3 detik, perlahan memulihkan 325–400 (+60% Total Kekuatan Sihir) HP kepada target. Terhubung dengan hero sekutu juga akan meningkatkan Pertahanan Hybrid Estes sebesar 20–45 dan Kecepatan Gerak sebesar 15%, serta kecepatan pengisian energi dari Kitab Peri Bulan.\nTerlalu jauh dari target akan memutuskan hubungan.\n( Ditingkatkan: Estes memulihkan 500–700 (+220% Total Kekuatan Sihir) HP untuk hero target secara instan, dan terhubung dengan mereka selama 3 detik, perlahan memulihkan 1170–1470 (+210% Total Kekuatan Sihir) HP kepada target sebanyak 15 kali…)",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2f/Domain_of_Moon_Goddess.png",
+      "name": "Domain of Moon Goddess",
+      "kategori": "Slow/AOE",
+      "longDesc": "Estes menjatuhkan pancaran cahaya bulan ke area target, memberikan 350–600 (+70% Total Kekuatan Sihir) Kerusakan Sihir kepada unit musuh di dalamnya. Setelah itu, ia berubah menjadi wilayah Dewi Bulan dan mengungkapkan musuh di dalamnya [selama 1,5 detik]. Musuh akan diperlambat sebesar 90% selama 1,5 detik ketika mereka menyentuh tepi area wilayah tersebut. (Efek perlambatan akan berkurang seiring waktu.) [ durasi diperlukan ].",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/db/Blessing_of_Moon_Goddess.png",
+      "name": "Blessing of Moon Goddess",
+      "kategori": "Buff/Heal",
+      "longDesc": "Estes menghadirkan versi yang lebih baik.Perendaman Cahaya Bulan Efek \"Moonlight Immersion\" akan mengenai semua hero sekutu di dekatnya. Dalam 8 detik berikutnya, efek \"Moonlight Immersion\" akan ditingkatkan dan Estes akan terus memulihkan 1230–1470 (+210% Total Magic Power) HP.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero341-icon.png",
+        "link": "https://sfile.co/165vGR4lHGk"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero341-icon.png",
+        "link": "https://sfile.co/0eOVK9VXcKI"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Hero342-icon.png",
+        "link": "https://sfile.co/KNxDMig8kRU"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Hero342-icon.png",
+        "link": "https://sfile.co/iiWiV1xRLKa"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f8/Hero343-icon.png",
+        "link": "https://sfile.co/0LpV2fdbvMZ"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Hero344-icon.png",
+        "link": "https://sfile.co/OUEjIfHGegc"
+      },
+      {
+        "name": "Special Crow",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/69/Hero345-icon.png",
+        "link": "https://sfile.co/24xkWR8m4sU"
+      },
+      {
+        "name": "Dragon Tamer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8f/Hero346-icon.png",
+        "link": "https://sfile.co/qqgGddPBdj8"
+      },
+      {
+        "name": "Special Arcane",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/81/Hero348-icon.png",
+        "link": "https://sfile.co/JwEIhkQSnmT"
+      },
+      {
+        "name": "SPARKLE",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/95/Hero349-icon.png",
+        "link": "https://sfile.co/vvUetYjkeXu"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
