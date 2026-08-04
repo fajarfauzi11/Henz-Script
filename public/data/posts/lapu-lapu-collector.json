@@ -1,0 +1,121 @@
+{
+  "namehero": "Lapu-Lapu Collector",
+  "herolink": "Lapu-Lapu",
+  "urlthumbnail": "https://i.ibb.co/x8q6bSgQ/lapu-lapu-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Lapu Lapu Collector, Lapu Lapu Adlaw's Chosen",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Lapu-Lapu adalah pejuang legendaris dari bangsa Dorik yang tinggal di Kepulauan Vonetis, sebuah kepulauan terpencil yang jauh dari konflik dunia luar. Selama bertahun-tahun, ia dikenal sebagai prajurit bayaran paling tangguh yang berpindah dari satu suku ke suku lain. Namun setelah menyaksikan begitu banyak peperangan dan kematian, Lapu-Lapu kehilangan keyakinannya pada perang. Ia kembali ke kampung halamannya dan memilih menjalani kehidupan sederhana sebagai pemburu bersama keluarganya.\n\nKedamaian itu tidak bertahan lama ketika sekelompok panglima perang yang membelot dari Moniyan Empire menginvasi Kepulauan Vonetis. Pasukan mereka yang terlatih dengan cepat menaklukkan banyak wilayah, sementara suku-suku Dorik yang terpecah tidak mampu memberikan perlawanan berarti. Meski berbagai suku meminta bantuannya, Lapu-Lapu menolak ikut berperang demi kepentingan para pemimpin suku dan memilih tetap netral, bahkan sempat membuat perjanjian damai dengan pasukan Moniyan.\n\nNamun, keserakahan para penjajah membuat perjanjian itu tidak berarti. Saat Lapu-Lapu sedang pergi, pasukan Moniyan menyerbu desanya, menghancurkan rumah-rumah, serta membuat keluarganya menderita. Pengkhianatan tersebut membangkitkan amarahnya. Demi melindungi tanah air dan orang-orang yang dicintainya, ia membentuk pasukan perlawanan kecil yang memanfaatkan hutan dan pegunungan sebagai medan perang, melancarkan serangan gerilya yang terus mengganggu markas dan jalur logistik musuh.\n\nMenyadari bahwa perang gerilya saja tidak cukup untuk mengusir penjajah, Lapu-Lapu mulai menyatukan seluruh suku Dorik yang masih memiliki semangat melawan. Ia melatih pria dan wanita tanpa memandang asal-usul mereka hingga menjadi pasukan yang disiplin dan tangguh. Bagi Lapu-Lapu, mereka bukanlah pemberontak yang haus kekuasaan, melainkan rakyat biasa yang berjuang demi mempertahankan kebebasan tanah kelahiran mereka.\n\nPertempuran terakhir terjadi ketika Lapu-Lapu memancing pasukan Moniyan ke kaki sebuah gunung. Saat musuh mengira pasukannya telah terjebak, Lapu-Lapu diam-diam memimpin para prajuritnya menuruni tebing menggunakan tali dari tanaman merambat dan melancarkan serangan mendadak pada malam hari. Dalam kekacauan itu, ia berhasil menebas kepala panglima perang Moniyan. Kehilangan pemimpin mereka, pasukan penjajah akhirnya dipukul mundur hingga kembali ke daratan utama. Berkat kepemimpinan dan keberaniannya, Kepulauan Vonetis kembali menjadi tanah yang bebas, dan Lapu-Lapu dikenang sebagai pahlawan yang melindungi rakyat serta kebebasan negerinya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/99/Homeland_Defender.png",
+    "name": "Homeland Defender",
+    "kategori": "Buff/Shield",
+    "longDesc": "Setiap kali Lapu-Lapu memberikan damage, ia mendapatkan 10 Berkah Keberanian (dikurangi setengahnya dari unit non-hero). Ketika Berkah Keberaniannya penuh, Serangan Dasar berikutnya atau Justice Blades akan ditingkatkan, memberikan Lapu-Lapu perisai yang dapat menyerap 250(+65 × Level Pahlawan)kerusakan selama 2,5 detik. Serangan Dasar yang ditingkatkan akan menyebabkan dia melesat ke arah target, memberikan Kerusakan Fisik sebesar (+150% Total Serangan Fisik) . Serangan Dasar ini tidak dapat menghasilkan serangan kritis. Peningkatan Justice Blades akan memperlambat target sebesar 60% selama 1 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/84/Justice_Blades.png",
+      "name": "Justice Blades",
+      "kategori": "AOE",
+      "longDesc": "Lapu-Lapu melepaskan dua bumerang ke arah target. Setiap bumerang memberikan 175–300 (+50% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena saat bumerang tersebut meluncur keluar dan kembali. Musuh yang terkena kedua bumerang menerima 50% kerusakan dari bumerang kedua.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Land_Shaker.png",
+      "name2": "Land Shaker",
+      "kategori2": "CC/AOE",
+      "longDesc2": "Lapu-Lapu channels for 0.7 seconds, slowing enemies in the target direction by 60%. He Then slams his heavy sword to the ground dealing 250–400 (+100% Total Physical Attack) Physical Damage to enemies hit and stunning them for 1 second."
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/aa/Jungle_Warrior.png",
+      "name": "Jungle Warrior",
+      "kategori": "Mobility/Damage",
+      "longDesc": "Lapu-Lapu melesat ke arah target, memberikan 100–200 (+50% Total Serangan Fisik) Kerusakan Fisik kepada musuh di sepanjang jalan.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/4/41/Storm_Sword.png",
+      "name2": "Storm Sword",
+      "kategori2": "Reduce DMG/AOE",
+      "longDesc2": "Lapu-Lapu mengayunkan pedang beratnya, memberikan 250–400 (+100% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dekatnya.\nUntuk setiap hero musuh yang terkena, ia mendapatkan pengurangan kerusakan sebesar 10% selama 4 detik."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Bravest_Fighter.png",
+      "name": "Bravest Fighter",
+      "kategori": "Morph/Mobility",
+      "longDesc": "Lapu-Lapu melompat ke lokasi target sambil menggabungkan pedang kembarnya menjadi satu, memberikan 300–500 (+80% Total Serangan Fisik) Kerusakan Fisik saat mendarat dan memperlambat mereka sebesar 60% selama 1 detik. Lapu-Lapu memperoleh 3 kali Berkah Keberanian dari skill ini dan skill dalam keadaan transformasi. Selama 10 detik berikutnya, Lapu-Lapu memasuki Sikap Pedang Besar dan memperoleh peningkatan skill, 30-60 Pertahanan Fisik & Sihir tambahan , dan kerusakan Serangan Dasarnya meningkat menjadi 120%.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Raging_Slash.png",
+      "name2": "Raging Slash",
+      "kategori2": "Burst/Mobility",
+      "longDesc2": "Lapu-Lapu mengayunkan pedang beratnya 3 kali. Dua tebasan pertama memberikan 300–480 (+140% Total Serangan Fisik) Kerusakan Fisik , dan tebasan ketiga memberikan 450–720 (+210% Total Serangan Fisik) Kerusakan Fisik kepada musuh di area yang luas. Lapu-Lapu memperoleh Kekebalan Kontrol selama proses tersebut dan dapat mengubah arah serangannya serta bergerak dalam jarak pendek pada setiap serangan."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ee/Hero371-icon.png",
+        "link": "https://sfile.co/Yw5rPXvUg8i"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ee/Hero371-icon.png",
+        "link": "https://sfile.co/eVzkuVE5nSJ"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero372-icon.png",
+        "link": "https://sfile.co/E6i7zR5ToZS"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero372-icon.png",
+        "link": "https://sfile.co/wYo4Bz9rae9"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/75/Hero373-icon.png",
+        "link": "https://sfile.co/Fo5sUnGZjJ0"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fc/Hero374-icon.png",
+        "link": "https://sfile.co/RLfUI3LP3hz"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Hero375-icon.png",
+        "link": "https://sfile.co/rirCndRqVb9"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero376-icon.png",
+        "link": "https://sfile.co/89Vht1xpQY2"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
