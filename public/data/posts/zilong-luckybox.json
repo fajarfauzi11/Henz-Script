@@ -1,0 +1,146 @@
+{
+  "namehero": "Zilong Luckybox",
+  "herolink": "Zilong",
+  "urlthumbnail": "https://i.ibb.co/gMkRHpfs/zilong-luckybox.webp",
+  "kategoriskin": "Luckybox",
+  "keywords": "Zilong Changbanpo Commander",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Zilong adalah penjaga Dragon Altar sekaligus salah satu Oriental Fighter yang mewarisi kekuatan Cloud Dragon. Sejak kecil ia dibesarkan di Tianyin Swordmaster Sect, sebuah perguruan yang terkenal dengan ilmu pedangnya. Namun, berbeda dari murid lainnya, Zilong memilih berlatih menggunakan tombak. Meski tidak memiliki guru maupun kitab teknik tombak, ia terus mengulang gerakan dasar tanpa henti selama bertahun-tahun. Banyak orang menganggapnya tidak berbakat dan mempertanyakan pilihannya, hingga akhirnya ia memutuskan meninggalkan perguruan untuk mencari jalannya sendiri.\n\nTak lama kemudian, sahabat lamanya Ling bersama Baxia datang menemuinya. Baxia mengungkapkan bahwa Zilong telah dipilih sebagai pewaris Cloud Dragon, salah satu dari Empat Immortal yang kekuatannya diwariskan kepada para Oriental Fighter untuk melindungi Cadia Riverlands. Di bawah bimbingan Baxia, Zilong berlatih di Dragon Altar bersama Ling. Walaupun Ling berkembang jauh lebih cepat dan selalu mengalahkannya dalam setiap latihan, Zilong tetap tekun mengasah kemampuan tombaknya tanpa pernah menyerah.\n\nSuatu hari, Ling menyentuh segel Black Dragon di Dragon Altar hingga memicu pertarungan dengan Baxia. Demi menghentikan konflik tanpa melukai keduanya, Zilong secara tidak sadar membangkitkan sebagian kekuatan Cloud Dragon. Tombaknya berubah menjadi kekuatan yang luar biasa hingga mampu menahan serangan Ling dan Baxia sekaligus. Di saat itulah ia menyadari bahwa dirinya benar-benar telah dipilih sebagai penerus Cloud Dragon.\n\nDalam penglihatan yang ia alami setelah pertarungan, roh Cloud Dragon kembali mengajukan pertanyaan yang selama ini selalu menghantuinya, \"Mengapa kau memilih tombak?\" Setelah merenungkannya, Zilong akhirnya menemukan jawabannya. Baginya, tombak bukan sekadar senjata, melainkan bagian dari dirinya sendiri. Selama ia mengikuti kata hati dan menggunakan tombaknya untuk melindungi orang-orang yang berharga, itulah jalan hidup yang sesungguhnya.\n\nSejak saat itu, Zilong resmi mewarisi Great Dragon Spear dan menjadi Oriental Fighter yang menjaga Dragon Altar. Ia tidak pernah mengejar ketenaran ataupun kekuasaan. Selama masih bernapas, Zilong akan terus berdiri di garis depan demi melindungi Cadia Riverlands, menjaga kedamaian negeri itu dengan tombak yang telah menjadi bagian dari jiwanya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a8/Dragon_Flurry.png",
+    "name": "Dragon Flurry",
+    "kategori": "Buff/Heal",
+    "longDesc": "Setelah memberikan kerusakan 3 kali dengan Serangan Dasar atau skill, Zilong memicu Dragon Flurry pada Serangan Dasar berikutnya , mengenai target 3 kali. Setiap serangan memberikan 80 (+30% Total Serangan Fisik) Kerusakan Serangan Dasar dan menyembuhkan dirinya sendiri sebesar 50 (+20% Total Serangan Fisik) HP . Serangan Dasar Zilong memberikan 100 (+80% Total Serangan Fisik) Kerusakan Fisik. Jika HP target di bawah 50%, semua kerusakan yang diberikan oleh skill dan Serangan Dasar Zilong meningkat sebesar 30.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c2/Spear_Flip.png",
+      "name": "Spear Flip",
+      "kategori": "CC/Damage",
+      "longDesc": "Zilong melemparkan musuh target ke atas kepalanya, memberikan 250–350 (+80% Total Serangan Fisik) Kerusakan Fisik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b6/Spear_Strike.png",
+      "name": "Spear Strike",
+      "kategori": "Mobility/Debuff",
+      "longDesc": "Zilong menerjang musuh target, memberikan 250–450 (+60% Total Serangan Fisik) Kerusakan Fisik dan mengurangi Pertahanan Fisik mereka sebesar 15–30 selama 2 detik.\nCooldown Spear Strike direset setiap kali Zilong membunuh musuh.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b0/Supreme_Warrior.png",
+      "name": "Supreme Warrior",
+      "kategori": "Speed Up/Buff",
+      "longDesc": "Zilong menghilangkan semua efek perlambatan pada dirinya sendiri dan mendapatkan 40% Kecepatan Gerak , 35%–55% Kecepatan Serangan , dan Kekebalan Perlambatan selama 7,5 detik. Selama durasi tersebut, ia dapat mengaktifkan Dragon Furry setelah setiap 2 Serangan Dasar (bukan 3 seperti sebelumnya).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Hero161-icon.png",
+        "link": "https://sfile.co/8zZeJyJHtA2"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Hero161-icon.png",
+        "link": "https://sfile.co/B85U05j9v3u"
+      },
+      {
+        "name": "Elite Warrior",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Hero162-icon.png",
+        "link": "https://sfile.co/pyZNBh2af5D"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Hero163-icon.png",
+        "link": "https://sfile.co/cmpvIIJFQ1Q"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Hero164-icon.png",
+        "link": "https://sfile.co/O8lXYtnastn"
+      },
+      {
+        "name": "Elite Lancer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6e/Hero165-icon.png",
+        "link": "https://sfile.co/MZM8hRFIQsU"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b6/Hero167-icon.png",
+        "link": "https://sfile.co/F78j4WMeFUW"
+      },
+      {
+        "name": "Loyal Spear",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f7/Hero168-icon.png",
+        "link": "https://sfile.co/WUPFq6ardqJ"
+      },
+      {
+        "name": "Loyal Spear + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f7/Hero168-icon.png",
+        "link": "https://sfile.co/ceP5cWWfhBt"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero169-icon.png",
+        "link": "https://sfile.co/A7hLugilfmt"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/52/Hero101610-icon.png",
+        "link": "https://sfile.co/0nW4n3CgNPy"
+      },
+      {
+        "name": "515",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero101611-icon.png",
+        "link": "https://sfile.co/WRonRZNOxdE"
+      },
+      {
+        "name": "Lunar Fest",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero101612-icon.png",
+        "link": "https://sfile.co/FJdXUKy07mX"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
