@@ -1,0 +1,141 @@
+{
+  "namehero": "Clint Soul Vessel",
+  "herolink": "Clint",
+  "urlthumbnail": "https://i.ibb.co/Gv9L74fx/clint-soul-vessel.webp",
+  "kategoriskin": "Soul Vessels",
+  "keywords": "Clint Vessel of Ruin",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Clint adalah seorang sheriff di sebuah kota kecil di perbatasan Moniyan dan Agelta yang terkenal karena kecepatan serta ketepatan tembakannya. Ia menjadikan hukum sebagai pedoman hidup dan tanpa ragu melindungi penduduk dari para perampok maupun bandit. Selama bertahun-tahun, keberaniannya membuat kota itu menjadi tempat yang damai dan aman.\n\nSuatu malam, sekelompok gangster menyerbu kota dan membantai beberapa penduduk di sebuah kedai minuman. Clint segera menghadapi mereka dan berhasil mengalahkan hampir seluruh kelompok tersebut. Keesokan harinya, ia bersiap menjatuhkan hukuman gantung kepada pemimpin mereka yang bernama Blandy. Namun, Blandy mengungkapkan bahwa dirinya adalah keponakan Waldo Kane, penguasa kejam Los Pecados. Ancaman balas dendam Kane membuat seluruh penduduk ketakutan dan memohon agar Blandy dibebaskan.\n\nBagi Clint, membebaskan seorang penjahat berarti mengkhianati keadilan. Ia tetap memenjarakan Blandy dan bersikeras melaksanakan hukuman. Tiga hari kemudian, pasukan Kane mengepung kota dan menuntut pembebasan Blandy serta sejumlah besar uang tebusan. Alih-alih melawan bersama Clint, para penduduk justru menyalahkannya karena dianggap membawa bencana. Mereka mencopot jabatannya sebagai sheriff, mengusirnya dari kota, lalu membebaskan Blandy demi menyelamatkan diri.\n\nNamun pengorbanan mereka sia-sia. Blandy mengingkari janjinya, mengambil alih kota, dan mulai membakar serta menghancurkan tempat itu. Meski telah dikhianati oleh orang-orang yang selama ini ia lindungi, Clint tidak sanggup membiarkan para penjahat bertindak sesuka hati. Ia kembali seorang diri dan menghajar para gangster dengan kemampuan menembaknya yang luar biasa hingga mereka terpaksa mundur sambil membawa Blandy yang terluka.\n\nSetelah kota berhasil diselamatkan, para penduduk menyadari kesalahan mereka dan memohon agar Clint kembali menjadi sheriff. Namun Clint memilih pergi meninggalkan kota pada malam itu juga. Ia tahu selama Waldo Kane masih berkuasa di Los Pecados, ancaman terhadap orang-orang tak bersalah tidak akan pernah berakhir. Karena itu, Clint memulai perjalanannya menuju Kota Dosa untuk mengakhiri kekuasaan Kane sekali dan untuk selamanya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9a/Double_Shot.png",
+    "name": "Double Shot",
+    "kategori": "Burst",
+    "longDesc": "Setelah setiap penggunaan skill, Serangan Dasar Clint berikutnya dalam 4 detik akan menembus barisan musuh, memberikan 150 (+100% Total Serangan Fisik) Kerusakan Fisik . Kerusakan ini dapat memicu efek serangan, dan bagian yang terkena Serangan Fisik dapat menghasilkan Serangan Kritis.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Quick_Draw.png",
+      "name": "Quick Draw",
+      "kategori": "AOE",
+      "longDesc": "Clint menembakkan 5 peluru secara beruntun ke arah target, masing-masing memberikan 250–400 (+85% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena.\nPeluru akan menyebar merata ke musuh dalam area berbentuk kipas. Musuh yang terkena beberapa peluru akan menerima kerusakan [11%–16%] setelah peluru pertama.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/57/Trapping_Recoil.png",
+      "name": "Trapping Recoil",
+      "kategori": "Mobility/CC",
+      "longDesc": "Clint menembakkan jaring jebakan ke arah target, sedikit melompat mundur sambil memberikan 140–240 (+30% Total Serangan Fisik) (+150% Total Kekuatan Sihir) Kerusakan Fisik kepada musuh pertama yang terkena dan melumpuhkannya selama 1,2 detik.\nBerhasil mengenai musuh mengurangi cooldown skill ini sebesar 40%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/be/Grenade_Bombardment.png",
+      "name": "Grenade Bombardment",
+      "kategori": "AOE/Slow",
+      "longDesc": "Clint melemparkan granat ke arah target yang akan meledak pada musuh pertama yang terkena, memberikan 280–400 (+100% Total Serangan Fisik) Kerusakan Fisik dan memperlambat mereka sebesar 50% selama 0,5 detik.\nClint mendapatkan pengisian ulang granat setiap 10–5 detik (hingga 3 kali).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero131-icon.png",
+        "link": "https://sfile.co/y5sSlfWbvw9"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero131-icon.png",
+        "link": "https://sfile.co/3nf011rGKK7"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/aa/Hero132-icon.png",
+        "link": "https://sfile.co/jHBBZkpuZfW"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d7/Hero133-icon.png",
+        "link": "https://sfile.co/ThwMCdFw86w"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero134-icon.png",
+        "link": "https://sfile.co/WxLLFrn9NgF"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1f/Hero135-icon.png",
+        "link": "https://sfile.co/kfQq3dlonZt"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ea/Hero136-icon.png",
+        "link": "https://sfile.co/l2EezcWiuic"
+      },
+      {
+        "name": "M2",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/81/Hero137-icon.png",
+        "link": "https://sfile.co/e3BcsGm7BWU"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/23/Hero138-icon.png",
+        "link": "https://sfile.co/tsVGC4WGlRn"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Hero139-icon.png",
+        "link": "https://sfile.co/SWAT2vpczKj"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8d/Hero101310-icon.png",
+        "link": "https://sfile.co/1KsiIfVnprZ"
+      },
+      {
+        "name": "Mythic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero101312-icon.png",
+        "link": "https://sfile.co/lbVHqC7u4QC"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
