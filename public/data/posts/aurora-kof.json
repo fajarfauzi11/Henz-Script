@@ -1,0 +1,126 @@
+{
+  "namehero": "Aurora KOF",
+  "herolink": "Aurora",
+  "urlthumbnail": "https://i.ibb.co/v88f05R/aurora-kof.webp",
+  "kategoriskin": "KOF",
+  "keywords": "Aurora Kula Diamond",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Aurora adalah Maiden of the Glacier, sosok legendaris dari Northern Vale yang menguasai Frost Magic dan dipercaya mampu menghadiahkan keabadian kepada manusia. Sejak kecil ia terlahir dengan kekuatan es yang tak mampu dikendalikan hingga tubuhnya terus tersiksa oleh hawa dingin. Demi menyelamatkannya, para pengikut God of Light membawa Aurora ke Queen's Peak. Di sana ia menerima kekuatan cahaya yang memberinya kehidupan abadi, sementara ibunya harus merelakan kepergiannya dan akhirnya gugur di tengah badai salju saat berusaha menemuinya untuk terakhir kali.\n\nAurora kemudian tertidur di puncak Queen's Peak selama seribu tahun. Ketika akhirnya terbangun, seluruh ingatannya telah memudar dan ia hanya mewarisi sebuah tugas dari kekuatan cahaya: memberikan keabadian kepada dunia. Namun Aurora tidak memahami arti sebenarnya dari keabadian. Ia pun mengembara melintasi Northern Vale, menyaksikan doa, harapan, serta penderitaan manusia yang terus datang dan pergi seiring berlalunya waktu.\n\nDalam perjalanannya, Aurora kembali ke tempat asalnya dan menemukan jejak kenangan terakhir sang ibu yang selama ini hilang. Ia menyaksikan bagaimana ibunya rela berpisah demi menyelamatkan hidupnya, lalu mengorbankan dirinya sendiri di tengah badai salju. Dari kenangan itulah Aurora akhirnya memahami bahwa keabadian bukanlah hidup tanpa akhir, melainkan kenangan, kasih sayang, dan emosi yang terus hidup meski waktu telah berlalu. Senyum terakhir ibunya menjadi bukti bahwa perasaan yang singkat dapat bertahan selamanya.\n\nSetelah menemukan jawaban tersebut, Aurora memutuskan untuk memenuhi tugasnya dengan caranya sendiri. Ia menjadi dewi penjaga Queen's Peak yang menerima mereka yang berada di ambang kematian. Siapa pun yang mendaki puncak itu dan diterima olehnya akan menyerahkan seluruh kenangan, harapan, cinta, dan penyesalannya kepada Aurora. Semua perasaan itu akan ia simpan selamanya, sehingga meskipun raga mereka telah tiada, jejak kehidupan mereka tetap hidup dalam keabadian.\n\nSejak saat itu, nama Aurora menjadi legenda di seluruh Northern Vale. Orang-orang percaya bahwa Maiden of the Glacier akan selalu menjaga kenangan setiap jiwa yang datang kepadanya. Dengan Frost Magic yang dimilikinya, Aurora bukan hanya membekukan salju dan es, tetapi juga menjaga kenangan paling berharga umat manusia agar tidak pernah hilang ditelan waktu.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Pride_of_Ice.png",
+    "name": "Pride of Ice",
+    "kategori": "Death Immune",
+    "longDesc": "Setelah menerima kerusakan fatal, Aurora membekukan dirinya sendiri selama 1,5 detik, menjadi tak terkalahkan selama waktu ini dan secara bertahap memulihkan 30% HP Maksimum. Efek ini memiliki waktu pendinginan 150 detik. Efek pembekuan Aurora juga dapat memengaruhi Turret.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/25/Hailstone_Blast.png",
+      "name": "Hailstone Blast",
+      "kategori": "AOE/Slow",
+      "longDesc": "Aurora memanggil meteorit es untuk menghantam lokasi target, memberikan 350–550 (+90% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat target yang terkena sebesar 40% selama 1 detik. Setelah itu, 5 butir hujan es jatuh, masing-masing memberikan 40–60 (+10% Total Kekuatan Sihir) Kerusakan Sihir .",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e9/Frosty_Breeze.png",
+      "name": "Frosty Breeze",
+      "kategori": "AOE/CC",
+      "longDesc": "Aurora meniupkan Angin Beku dalam area berbentuk kipas ke arah target, memberikan 225–375 (+75% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena, membekukan mereka selama 1 detik, dan menciptakan area beku di ujung serangan yang memberikan total 225–375 (+75% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di area tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6e/Frigid_Glacier.png",
+      "name": "Frigid Glacier",
+      "kategori": "CC/AOE",
+      "longDesc": "Aurora menciptakan jalur es ke arah target, memberikan 100–200 (+40% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di jalur tersebut dan mengurangi Kecepatan Gerak mereka sebesar 80% selama 1,2 detik. Jalur es tersebut secara bertahap berubah menjadi gletser yang menyebar hingga mencapai ukuran maksimum dan hancur, memberikan 600–1200 (+150% Total Kekuatan Sihir) Kerusakan Sihir kepada semua musuh di area tersebut dan membekukan target selama 1 detik. Setiap 100 Kekuatan Sihir yang dimiliki Aurora akan meningkatkan durasi pembekuan sebesar 0,2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2c/Hero361-icon.png",
+        "link": "https://sfile.co/qZmpcVuJ3ru"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2c/Hero361-icon.png",
+        "link": "https://sfile.co/akHHM6ilgR3"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Hero362-icon.png",
+        "link": "https://sfile.co/fdHDiOzxoXH"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Hero362-icon.png",
+        "link": "https://sfile.co/akwyeHGpYuC"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Hero363-icon.png",
+        "link": "https://sfile.co/eLtJQRr6miC"
+      },
+      {
+        "name": "Lunar Fest",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ad/Hero364-icon.png",
+        "link": "https://sfile.co/bdNFzgrPfiu"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/49/Hero365-icon.png",
+        "link": "https://sfile.co/6Kp4htt77mL"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero367-icon.png",
+        "link": "https://sfile.co/uNCA4iRynf4"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero368-icon.png",
+        "link": "https://sfile.co/0S202an6L98"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
