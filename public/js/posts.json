@@ -1,5 +1,17 @@
 [
   {
+    "id": 31,
+    "title": "Johnson Legend",
+    "url": "/post/johnson-legend",
+    "thumb": "https://i.ibb.co/zVCPtmQN/johnson-legend.webp",
+    "cat": "Legend",
+    "hero": "Johnson",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Johnson Sovereign of Realms"
+  },
+  {
     "id": 30,
     "title": "Gord Legend",
     "url": "/post/gord-legend",
