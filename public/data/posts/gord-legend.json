@@ -1,0 +1,131 @@
+{
+  "namehero": "Gord Legend",
+  "herolink": "Gord",
+  "urlthumbnail": "https://i.ibb.co/HLYzzT5K/gord-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Gord Conqueror",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Gord adalah salah satu penyihir paling berbakat yang pernah dimiliki Magic Academy. Sejak kecil, ia memiliki kemampuan luar biasa dalam mengendalikan energi arcane, membuatnya mampu menguasai berbagai sihir tingkat tinggi di usia muda. Namun, bakat tersebut juga membuatnya semakin sombong dan haus akan kekuatan yang lebih besar.\n\nSuatu hari, Gord menemukan sebuah buku terlarang yang menjelaskan cara mengubah tubuh manusia menjadi wadah energi mistik murni. Tanpa menghiraukan peringatan orang lain, ia mulai melakukan eksperimen pada dirinya sendiri. Awalnya percobaan itu berhasil dan kekuatan sihirnya meningkat drastis. Namun, energi mistik tersebut perlahan lepas kendali hingga mengancam menghancurkan tubuhnya.\n\nDalam upaya menyelamatkan dirinya, Gord mencoba menggabungkan energi arcane dengan sihir kuno. Bukannya berhasil, kedua kekuatan itu justru saling bertabrakan dan membuat tubuhnya hampir hancur serta dikuasai energi iblis. Beruntung, Elward, kepala penyihir Magic Academy, datang tepat waktu dan berhasil menstabilkan energi di dalam tubuh Gord. Meski selamat, tubuhnya berubah menjadi setengah merah dan setengah biru, serta ia kehilangan kemampuan untuk mengendalikan energi mistik murni sepenuhnya.\n\nMelihat Gord terpuruk, Elward terus memberinya semangat hingga ia bangkit kembali. Menyadari bahwa impiannya untuk mencapai puncak sihir arcane telah sirna, Gord menerima tawaran Elward untuk menjadi pengajar di Magic Academy. Ia berharap dapat membimbing generasi penyihir berikutnya agar tidak mengulangi kesalahan yang pernah ia lakukan.\n\nSejak saat itu, Gord dikenal sebagai dekan Icarus School sekaligus salah satu profesor paling disiplin di Magic Academy. Dengan pengalaman pahit yang pernah dialaminya, ia mendedikasikan hidupnya untuk mengajarkan bahwa kekuatan sejati bukan hanya berasal dari bakat, tetapi juga dari kemampuan mengendalikan ambisi dan memahami batas diri sendiri.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/69/Mystic_Favor.png",
+    "name": "Mystic Favor",
+    "kategori": "Buff/Slow",
+    "longDesc": "Setelah Gord mengenai musuh 4 kali dengan Serangan Dasar atau skill dalam waktu singkat, serangan berikutnya pada target akan memberikan tambahan 140 (+60% Total Kekuatan Sihir) True Damage dan memperlambat mereka sebesar 20% selama 1 detik (efek perlambatan dapat menumpuk hingga 2 kali).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/68/Mystic_Projectile.png",
+      "name": "Mystic Projectile",
+      "kategori": "CC",
+      "longDesc": "Gord memunculkan Bola Mistik yang memantul ke arah target dan meledak pada musuh pertama yang terkena, memberikan 270–495 (+80% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di area tersebut, sekaligus membuat mereka terp stunned dan mengungkapkan lokasi mereka selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8b/Mystic_Injunction.png",
+      "name": "Mystic Injunction",
+      "kategori": "AOE",
+      "longDesc": "Gord menciptakan medan energi di area target, memberikan 55–105 (+16% Total Kekuatan Sihir) Kerusakan Sihir setiap 0,3 detik kepada musuh di dalam area tersebut (hingga 13 kali).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5d/Mystic_Gush.png",
+      "name": "Mystic Gush",
+      "kategori": "Burst",
+      "longDesc": "Gord melepaskan pancaran energi ke arah target, memberikan 110–210 (+32% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena setiap 0,2 detik (hingga 16 kali).\nArah pancaran dapat disesuaikan menggunakan Joystick.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Hero231-icon.png",
+        "link": "https://sfile.co/ANkUi9FSsP0"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Hero231-icon.png",
+        "link": "https://sfile.co/sZcCu8fWdl0"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/55/Hero232-icon.png",
+        "link": "https://sfile.co/05FNnGgDA0Y"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/55/Hero232-icon.png",
+        "link": "https://sfile.co/dI5FNXAUJDy"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/41/Hero233-icon.png",
+        "link": "https://sfile.co/8XSd0N4PvHR"
+      },
+      {
+        "name": "Annual Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d6/Hero235-icon.png",
+        "link": "https://sfile.co/VRUBocMY65e"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hero236-icon.png",
+        "link": "https://sfile.co/jUe3N5WD7pd"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero237-icon.png",
+        "link": "https://sfile.co/fwwxPFO3Xvl"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4c/Hero238-icon.png",
+        "link": "https://sfile.co/ok7373WSn2P"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1a/Hero239-icon.png",
+        "link": "https://sfile.co/BnoBIPo5Ode"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
