@@ -1,5 +1,17 @@
 [
   {
+    "id": 21,
+    "title": "Akai Kung Fu Panda",
+    "url": "/post/akai-kung-fu-panda",
+    "thumb": "https://i.ibb.co/70BQskc/akai-kungfu-panda.webp",
+    "cat": "Kung Fu Panda",
+    "hero": "Akai",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Akai Kungfu Panda"
+  },
+  {
     "id": 20,
     "title": "Karina KOF",
     "url": "/post/karina-kof",
