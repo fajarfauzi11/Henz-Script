@@ -1,0 +1,141 @@
+{
+  "namehero": "Franco Legend",
+  "herolink": "Franco",
+  "urlthumbnail": "https://i.ibb.co/mF0WNshd/franco-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Franco King of Hell",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Franco adalah seorang pejuang dari Northern Vale yang dikenal sebagai musuh bebuyutan Bane. Terlahir di suku pesisir Frozen Sea, Franco memiliki tubuh yang jauh lebih kecil dibandingkan orang-orang di sekitarnya. Meski ayah dan saudara-saudaranya merupakan pelaut serta pemburu harpun yang disegani, Franco terus diremehkan dan dianggap tidak pantas menjadi seorang prajurit. Namun, ia tetap bercita-cita menjadi pejuang terhebat di Northern Vale dan membuktikan bahwa keberanian tidak ditentukan oleh ukuran tubuh.\n\nTidak tahan menghadapi ejekan dan diskriminasi, Franco meninggalkan kampung halamannya dan mengasingkan diri ke pegunungan Northern Vale. Selama bertahun-tahun ia bertahan hidup di alam liar sambil melatih kekuatan fisik dan kemampuan bertarungnya hingga jauh melampaui manusia biasa. Saat ia kembali, kampung halamannya sedang diserang armada bajak laut Bane yang berusaha menguasai seluruh pesisir Frozen Sea. Dengan menggunakan jangkar raksasanya, Franco mengalahkan pasukan Bane dan membuat seluruh sukunya sadar bahwa pahlawan yang menyelamatkan mereka adalah Franco, anak kecil yang dahulu selalu diremehkan.\n\nSejak saat itu, Franco memimpin berbagai suku dan pelaut Northern Vale untuk melawan kekuasaan Bane. Ia mengubah kapal-kapal nelayan menjadi kapal perang dan berkali-kali menghancurkan armada bajak laut musuh. Meski Bane sempat berhasil menjebaknya dan melukainya, Franco berhasil selamat, sementara semakin banyak orang bergabung di bawah kepemimpinannya untuk mengakhiri tirani sang kapten bajak laut.\n\nMenyadari bahwa kekuatan Franco terus berkembang, Bane berpura-pura mengajak berdamai dan mengusulkan pencarian Twilight Orb bersama. Di balik rencananya, Bane berniat memanfaatkan armada Moniyan Empire untuk menghancurkan Franco. Namun Franco telah mengetahui tipu muslihat tersebut. Ia diam-diam menyusup ke armada Black Sharks dan, saat pertempuran laut pecah, memerintahkan pasukannya menyerang kapal utama Bane dari belakang. Serangan itu menenggelamkan Behemoth beserta Bane ke dasar laut.\n\nSetelah kemenangan tersebut, Franco mempersatukan seluruh wilayah pesisir Northern Vale, mengusir sisa-sisa pasukan bajak laut, membangun kembali pelabuhan, dan menghidupkan kembali perdagangan. Atas jasanya, ia dianugerahi gelar Frozen Warrior dan dikenang sebagai pahlawan yang membawa kedamaian bagi Northern Vale. Namun kedamaian itu tidak berlangsung lama, karena Franco kemudian mengetahui bahwa Bane ternyata masih hidup, memperoleh kekuatan baru, dan sedang mempersiapkan kebangkitannya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Wasteland_Force.png",
+    "name": "Wasteland Force",
+    "kategori": "Buff",
+    "longDesc": "Jika tidak menerima kerusakan dalam 5 detik, Franco mendapatkan 10% Kecepatan Gerak , memulihkan 1% HP Maksimum per detik, dan mulai mengumpulkan Wasteland Force (hingga 10 tumpukan).\nFranco akan menggunakan semua tumpukan Wasteland Force pada penggunaan skill berikutnya untuk meningkatkan damage skill hingga 150%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Iron_Hook.png",
+      "name": "Iron Hook",
+      "kategori": "CC/Damage",
+      "longDesc": "Franco meluncurkan kait besi ke arah target. Kait tersebut akan menjerat unit musuh pertama yang terkena, memberikan 400–650 (+100% Total Serangan Fisik) Kerusakan Fisik sambil menyeret mereka ke arah Franco.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Fury_Shock.png",
+      "name": "Fury Shock",
+      "kategori": "Slow",
+      "longDesc": "Franco menyerang, memberikan Kerusakan Fisik sebesar 300–450 ditambah 4% dari HP Maksimumnya kepada musuh di dekatnya dan memperlambat mereka sebesar 70% selama 1,5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0d/Bloody_Hunt.png",
+      "name": "Bloody Hunt",
+      "kategori": "Burst/CC",
+      "longDesc": "Franco menekan hero musuh target selama 1,8 detik dan menyerang mereka 6 kali selama durasi tersebut, setiap serangan memberikan 50 (+70% Total Serangan Fisik) Kerusakan Fisik .",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/25/Hero101-icon.png",
+        "link": "https://sfile.co/8KSlR5PUbKG"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/25/Hero101-icon.png",
+        "link": "https://sfile.co/RnmpTeNcH6y"
+      },
+      {
+        "name": "Special Masterchef",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero102-icon.png",
+        "link": "https://sfile.co/M9XXJnFM5ZD"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/82/Hero103-icon.png",
+        "link": "https://sfile.co/urQAfwy3DDd"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/45/Hero104-icon.png",
+        "link": "https://sfile.co/RJNSa131AgX"
+      },
+      {
+        "name": "Halloween",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b7/Hero105-icon.png",
+        "link": "https://sfile.co/G5z7le5xWEW"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Hero106-icon.png",
+        "link": "https://sfile.co/H1dI3kkwUb5"
+      },
+      {
+        "name": "Blazing Axe",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1a/Hero107-icon.png",
+        "link": "https://sfile.co/FtyOEHP15MA"
+      },
+      {
+        "name": "Bone Crusher",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero108-icon.png",
+        "link": "https://sfile.co/quQh28NBdvk"
+      },
+      {
+        "name": "Bone Crusher + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero108-icon.png",
+        "link": "https://sfile.co/b2e4BxpPdi3"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9f/Hero101010-icon.png",
+        "link": "https://sfile.co/Ox4qwP3Houn"
+      },
+      {
+        "name": "Special Captain",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e8/Hero101011-icon.png",
+        "link": "https://sfile.co/Ju90OpF8dLG"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
