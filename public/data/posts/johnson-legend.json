@@ -1,0 +1,131 @@
+{
+  "namehero": "Johnson Legend",
+  "herolink": "Johnson",
+  "urlthumbnail": "https://i.ibb.co/zVCPtmQN/johnson-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Johnson Sovereign of Realms",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Johnson berasal dari planet Varis, sebuah dunia yang menjadikan balap mobil sebagai olahraga paling bergengsi. Sejak kecil ia bekerja sebagai pengemudi pengantar barang, sementara ajang balap hanya dikuasai oleh kalangan kaya. Berkat bakat mengemudinya yang luar biasa, Johnson berhasil memenangkan perlombaan resmi pertama yang diikutinya, menjadikannya rakyat biasa pertama yang mampu mengalahkan para pembalap elit. Kemenangannya membuatnya menjadi simbol harapan bagi masyarakat kelas bawah, tetapi juga memancing kebencian dari para bangsawan.\n\nSebelum menjadi pembalap terkenal, Johnson pernah menyelamatkan seorang pria tua yang dikejar penagih utang. Dengan kecepatan luar biasa, ia membawa pria itu berkeliling kota hingga sang pria merasakan sendiri arti sejati dari kecepatan. Bertahun-tahun kemudian, Johnson kembali menyelamatkan pria yang sama dari kecelakaan, tetapi kali ini tubuhnya telah berubah menjadi manusia setengah mesin. Perubahan itu terjadi setelah ia mengalami kecelakaan mobil yang hampir merenggut nyawanya. Demi bertahan hidup, Johnson menjalani operasi eksperimental yang menggabungkan tubuhnya dengan mobil kesayangannya, menjadikan mesin sebagai jantung dan rangka karbon sebagai tubuh barunya.\n\nMeski kini menjadi cyborg, Johnson tidak pernah kehilangan semangatnya untuk melaju lebih cepat. Dengan tubuh barunya, ia kembali mengikuti dunia balap dan terus memecahkan batas kecepatan. Setelah berhasil memenangkan perlombaan terbesar di Varis, tubuh mekanisnya secara tidak sengaja mengaktifkan sebuah perangkat slip-space yang tersembunyi di dalam sasisnya, membuka celah ruang-waktu tepat di garis finis.\n\nDi hadapan ribuan penonton, Johnson menghilang ke dalam cahaya tanpa sempat menerima trofi juaranya. Kepergiannya membuat namanya menjadi legenda di Varis. Banyak orang tidak percaya dengan kisah bahwa ia telah menembus ruang angkasa, kecuali pria tua yang pernah dua kali diselamatkannya. Baginya, Johnson telah membuktikan bahwa kecepatan sejati mampu melampaui batas dunia.\n\nJohnson akhirnya tiba di Land of Dawn, tepatnya di Eruditio, sebuah dunia yang sama sekali asing baginya. Namun, alih-alih merasa bingung, ia justru melihatnya sebagai kesempatan untuk menemukan jalan baru, lawan baru, dan batas kecepatan yang lebih tinggi. Dengan raungan mesin yang menjadi jantungnya, Johnson terus melaju, siap menantang siapa pun yang cukup berani untuk berpacu dengannya.",
+  "dualTabNames": {
+    "tab1": "Default",
+    "tab2": "Car"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/05/Electro_Airbag.png",
+    "name": "Electro Airbag",
+    "kategori": "Shield",
+    "longDesc": "Saat HP Johnson turun di bawah 30%, ia mendapatkan perisai sebesar 300 (+700% Total Pertahanan Fisik) selama 10 detik. Waktu pendinginan: 100,0 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bb/Impact_Wrench.png",
+      "name": "Impact Wrench",
+      "kategori": "CC/AOE",
+      "longDesc": "Johnson melemparkan kunci inggrisnya ke arah lokasi target, memberikan 120–220 (+220% Total Pertahanan Fisik) Kerusakan Sihir kepada musuh di jalurnya. Musuh di sekitar titik pendaratan akan terkena efek setrum selama 0,8 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Electromagnetic_Waves.png",
+      "name": "Electromagnetic Waves",
+      "kategori": "AOE/Slow",
+      "longDesc": "Johnson mengangkat perisainya, terus menerus memberikan 80–180 (+60% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh dalam area berbentuk kipas ke arah target dan memperlambat mereka sebesar 20%. Setiap serangan juga meningkatkan kerusakan yang diterima musuh selanjutnya dari skill tersebut sebesar 15% (hingga 45%). Kerusakan ini meningkat sebesar 60% terhadap creep.\nJohnson dapat menggunakan Serangan Dasar dan skill selama durasi tersebut.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/9/9a/Nitrous.png",
+      "name2": "Nitrous",
+      "kategori2": "Speed Up",
+      "longDesc2": "Tahan skill \"Nitrous\" untuk meningkatkan kecepatan hingga 5 detik, akselerasi akan berhenti seketika setelah dilepaskan."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3f/Full_Throttle.png",
+      "name": "Full Throttle",
+      "kategori": "Morph/CC",
+      "longDesc": "Johnson berubah menjadi mobil dan mulai berakselerasi seiring waktu. Seorang hero sekutu dapat menggunakan Hop In saat berada di dekat Johnson untuk menaiki mobil (hanya 1 hero sekutu yang dapat menumpang bersama Johnson). Mobil akan meledak saat mengenai hero musuh atau rintangan, memberikan 300–400 (+240% Total Pertahanan Fisik) Kerusakan Sihir –450–600 (+360% Total Pertahanan Fisik) Kerusakan Sihir kepada musuh di dekatnya, membuat mereka pingsan selama 0,5–1 detik (skala dengan kecepatan mobil sebelum benturan), [ kecepatan tidak diketahui ] dan menciptakan zona listrik di lokasi tersebut. Zona tersebut terus menerus memberikan 60–80 (+20% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat musuh di dalamnya. Saat dalam wujud mobil, ketuk Rem untuk berhenti mendadak atau tahanakan terus meningkatkan kecepatan hingga 5 detik. Lokasi Johnson akan terungkap kepada musuh selama 3 detik saat menggunakan skill ini.\nPasif: Pertahanan Fisik Johnson meningkat sebesar 10%–30%.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Brake.png",
+      "name2": "Brake",
+      "kategori2": "Cancel/CC",
+      "longDesc2": "Deskripsi yang sama seperti Full Throttle."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero321-icon.png",
+        "link": "https://sfile.co/65BCx3eG0Lb"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero321-icon.png",
+        "link": "https://sfile.co/rIK6anSvO6u"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e7/Hero322-icon.png",
+        "link": "https://sfile.co/RjejIrQyIJa"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e7/Hero322-icon.png",
+        "link": "https://sfile.co/etZ7O6e06Jd"
+      },
+      {
+        "name": "SABER",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8f/Automata_Icon.png",
+        "link": "https://sfile.co/vwzM574h3Vv"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/99/Hero324-icon.png",
+        "link": "https://sfile.co/2giSXyXBMdY"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0d/Hero325-icon.png",
+        "link": "https://sfile.co/hRdjp5yvJ8p"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0f/Hero326-icon.png",
+        "link": "https://sfile.co/TlnXPgDgFRR"
+      },
+      {
+        "name": "Transformers",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8d/Hero327-icon.png",
+        "link": "https://sfile.co/kE1ms4cJ5TN"
+      },
+      {
+        "name": "Anniversary",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0a/Hero328-icon.png",
+        "link": "https://sfile.co/IL4BtPjxk0d"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
