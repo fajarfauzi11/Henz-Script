@@ -1,5 +1,17 @@
 [
   {
+    "id": 25,
+    "title": "Freya Legend",
+    "url": "/post/freya-legend",
+    "thumb": "https://i.ibb.co/0V1Q7pjz/freya-legend.webp",
+    "cat": "Legend",
+    "hero": "Freya",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Freya Galactic Vanquisher"
+  },
+  {
     "id": 24,
     "title": "Eudora Covenant",
     "url": "/post/eudora-covenant",
