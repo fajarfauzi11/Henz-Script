@@ -1,5 +1,17 @@
 [
   {
+    "id": 32,
+    "title": "Moskov All Star",
+    "url": "/post/moskov-all-star",
+    "thumb": "https://i.ibb.co/gZBPqmCG/moskov-allstar.webp",
+    "cat": "All Star",
+    "hero": "Moskov",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Moskov Infernal Wyrmlord"
+  },
+  {
     "id": 31,
     "title": "Johnson Legend",
     "url": "/post/johnson-legend",
