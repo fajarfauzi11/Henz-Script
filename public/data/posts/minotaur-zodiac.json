@@ -1,0 +1,116 @@
+{
+  "namehero": "Minotaur Zodiac",
+  "herolink": "Minotaur",
+  "urlthumbnail": "https://i.ibb.co/LXz5g6xT/minotaur-zodiac.webp",
+  "kategoriskin": "Zodiac",
+  "keywords": "Minotaur Taurus",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Minotaur adalah pangeran Kerajaan Minoa, sebuah negeri maju yang pernah berdiri megah di Agelta Drylands. Sebagai pewaris takhta, ia dikenal sebagai petarung terkuat di kerajaannya. Namun, di balik kekuatannya, Minotaur memiliki sifat yang mudah terbawa amarah. Ayahnya, sang raja, khawatir sifat tersebut akan membuatnya tidak layak menjadi pemimpin. Karena itu, sang raja mengatur sebuah ujian, di mana Minotaur harus mengalahkan seorang petarung misterius untuk membuktikan dirinya pantas menjadi penerus takhta.\n\nDalam pertarungan itu, Minotaur untuk pertama kalinya merasakan kekalahan. Dikuasai rasa malu dan amarah, ia menyerang lawannya secara brutal bahkan setelah duel berakhir. Saat topeng lawannya terlepas, Minotaur baru menyadari bahwa orang yang dipukulinya hingga sekarat adalah ayahnya sendiri. Sebelum mengembuskan napas terakhir, sang raja masih sempat berpesan agar Minotaur memikul tanggung jawab sebagai raja dan meneruskan kejayaan Minoa. Dipenuhi penyesalan, Minotaur mengasingkan diri ke Minoan Labyrinth untuk bertobat dan melatih dirinya agar mampu mengendalikan amarahnya.\n\nSelama bertahun-tahun di dalam Labyrinth, Minotaur berhasil menguasai emosinya dan mampu menggunakan kekuatan amarahnya tanpa kehilangan kendali. Namun, ketika ia masih menjalani pengasingan, bencana besar terjadi. Ledakan Twilight Orb menghancurkan seluruh Kerajaan Minoa hingga tak bersisa. Minotaur yang mencoba keluar untuk menyelamatkan negerinya justru terjebak ketika pecahan Twilight Orb menyegel Labyrinth, membuatnya tertidur selama waktu yang sangat lama.\n\nSetelah segel itu akhirnya terbuka, Minotaur terbangun di dunia yang telah berubah. Aldous, penjaga Labyrinth, memberitahunya bahwa Minoa telah lama musnah dan seluruh peradabannya telah lenyap ditelan waktu. Meski demikian, Minotaur menolak menerima kenyataan tersebut. Ia masih memegang teguh pesan terakhir ayahnya untuk meneruskan kejayaan Minoa.\n\nDengan tekad yang tidak pernah padam, Minotaur meninggalkan Labyrinth dan memulai perjalanan melintasi hamparan pasir Agelta Drylands. Ia bersumpah akan menemukan keturunannya yang mungkin masih hidup dan membangun kembali Kerajaan Minoa, demi menghidupkan kembali kejayaan tanah air yang telah lama hilang.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7b/Rage_Incarnate.png",
+    "name": "Rage Incarnate",
+    "kategori": "Buff",
+    "longDesc": "Saat Minotaur menggunakan skill, ia akan mendapatkan Motivasi selama 3 detik dan menyembuhkan dirinya sendiri sebesar 5 (+1 × Level Hero) % dari damage yang diberikan oleh hero musuh. Efek ini berlipat ganda dalam keadaan Mengamuk.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b9/Despair_Stomp.png",
+      "name": "Despair Stomp",
+      "kategori": "CC/Slow",
+      "longDesc": "Minotaur melompat ke lokasi target , memberikan 280–355 (+60% Total Serangan Fisik) Kerusakan Fisik kepada musuh di area tersebut dan membuat mereka terlempar ke udara untuk sementara waktu . Musuh yang terkena akan diperlambat sebesar 40% sementara Minotaur meningkatkan Serangan Dasarnya untuk memberikan (+3% Total HP) Kerusakan Fisik tambahan selama 2 detik.\nMengamuk: Meningkatkan jangkauan AOE dan kerusakan yang diberikan sebesar (+3% Total HP) Kerusakan Fisik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3e/Motivation_Rage.png",
+      "name": "Motivation Rage",
+      "kategori": "Heal/Buff",
+      "longDesc": "Minotaur memotivasi dirinya sendiri dan hero terdekat yang terluka, memulihkan 220–320 (+60% Total Kekuatan Sihir) HP untuk mereka dan menyembuhkan dirinya sendiri berdasarkan [8%] [ verifikasi diperlukan ] HP yang hilang.\nMengamuk: Minotaur menyembuhkan dirinya sendiri dan sekutu di dekatnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Minoan_Fury.png",
+      "name": "Minoan Fury",
+      "kategori": "CC",
+      "longDesc": "Minotaur memasuki Keadaan Mengamuk dan menghantam tanah 3 kali. Dua pukulan pertama memberikan 180–300 (+85% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dekatnya dan memperlambat mereka sebesar 60%, sedangkan pukulan terakhir memberikan 200–300 (+85% Total Serangan Fisik) Kerusakan Sejati , dan membuat target terlempar ke udara selama 0,8 detik. Minotaur kebal terhadap efek pengendalian selama serangan ini.\nKeadaan Mengamuk berlangsung selama 12 detik dan meningkatkan kemampuan Minotaur selama durasi tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero191-icon.png",
+        "link": "https://sfile.co/vwbw7xVYlH3"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero191-icon.png",
+        "link": "https://sfile.co/CbMzz8304sv"
+      },
+      {
+        "name": "Elite Bursting",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8d/Hero192-icon.png",
+        "link": "https://sfile.co/0OCuV0ED3kd"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a0/Hero193-icon.png",
+        "link": "https://sfile.co/ZdW1kgtLNsH"
+      },
+      {
+        "name": "Elite Sacred",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero194-icon.png",
+        "link": "https://sfile.co/edm7W35r7GR"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5a/Hero196-icon.png",
+        "link": "https://sfile.co/DrSpTxzMVdU"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0b/Hero197-icon.png",
+        "link": "https://sfile.co/0c0WTzs8rkI"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
