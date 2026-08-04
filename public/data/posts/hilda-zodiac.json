@@ -1,0 +1,121 @@
+{
+  "namehero": "Hilda Zodiac",
+  "herolink": "Hilda",
+  "urlthumbnail": "https://i.ibb.co/xtWzM60W/hilda-zodiac.webp",
+  "kategoriskin": "Zodiac",
+  "keywords": "Hilda Aries",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Hilda adalah seorang pejuang dari Garland Tribe yang berasal dari Megalith Wasteland, wilayah tandus di antara Northern Vale dan Moniyan Plain. Sejak kecil, ia dibesarkan sebagai penerus Power of Megalith, gelar yang diwariskan kepada pemimpin suku yang mampu mewarisi kekuatan batu megalit kuno. Setelah ibunya gugur melindungi suku, seluruh harapan Garland Tribe tertuju pada Hilda yang tumbuh menjadi petarung terkuat di antara mereka.\n\nSaat upacara pewarisan tiba, Hilda gagal mengangkat batu suci Megalith. Seorang tetua kemudian mengungkapkan bahwa Hilda sebenarnya bukan keturunan asli Garland Tribe, melainkan bayi terlantar yang diadopsi ibunya bertahun-tahun lalu. Kekecewaan rakyat berubah menjadi kemarahan, dan Hilda yang selama ini dianggap harapan suku justru diusir serta dicemooh. Sebelum pergi, ia terus mengingat pesan terakhir ibunya bahwa **Power of Megalith bukan sekadar warisan darah, melainkan hati yang sekuat batu raksasa**.\n\nHilda kemudian mengembara ke berbagai penjuru Land of Dawn sebagai seorang tentara bayaran. Selama bertahun-tahun menghadapi peperangan dan berbagai cobaan, ia terus menempa dirinya tanpa pernah menyerah. Pengalaman tersebut menjadikannya sosok pejuang yang jauh lebih kuat, bukan hanya secara fisik, tetapi juga dalam tekad dan kepemimpinannya. Meski telah meninggalkan tanah kelahirannya, hatinya selalu tertinggal di Megalith Wasteland.\n\nSuatu hari, Hilda menyelamatkan seorang budak yang ternyata berasal dari Garland Tribe. Dari orang itu ia mengetahui bahwa penerus baru yang dipilih berdasarkan garis keturunan telah gagal memimpin, hingga seluruh suku akhirnya ditaklukkan dan diperbudak oleh suku lain. Tanpa menyimpan dendam atas perlakuan masa lalu, Hilda kembali ke tanah kelahirannya, membebaskan rakyatnya, mengalahkan para penjajah, dan memimpin pembangunan kembali Garland Tribe.\n\nMelihat pengorbanan dan keberaniannya, rakyat akhirnya menyadari bahwa seorang pemimpin sejati tidak ditentukan oleh garis keturunan, melainkan oleh keberanian dan keteguhan hati. Mereka memohon agar Hilda menjadi pemimpin baru dan mewarisi gelar Power of Megalith. Namun Hilda memilih kembali mengembara, karena ia percaya setiap generasi memiliki makna berbeda dari kekuatan Megalith. Warisan yang diberikan ibunya adalah hati yang tak tergoyahkan, sedangkan makna sejati yang menjadi miliknya sendiri masih terus ia cari di sepanjang perjalanannya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Blessing_of_Wilderness.png",
+    "name": "Blessing of Wilderness",
+    "kategori": "Buff/AOE",
+    "longDesc": "Hilda memulihkan 2% HP per detik saat berada di dalam semak. Memasuki semak akan meningkatkan serangannya berikutnya.Serangan Dasar , yang memberikan 110(+12 × Level Hero) (+130% Total Serangan Fisik) Kerusakan Fisik pada target,mengurangiKecepatan Geraktargetsebesar 40%, dan memberikan 40(+10 × Level Hero) (+100% Total Serangan Fisik) Kerusakan Fisik pada musuh di belakang target. Setelah menggunakan Serangan Dasar yang ditingkatkan, efek ini memasuki cooldown 6 detik. Serangan dasar dan skill Hilda memberikan Tanda Gurun saat mengenai target, yang berlangsung hingga 4 detik dan dapat ditumpuk hingga 6 kali. Setiap tumpukanmengurangiPertahanan FisikdanPertahanan Sihirhero musuhsebesar 3%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Combat_Ritual.png",
+      "name": "Combat Ritual",
+      "kategori": "Speed Up/Buff",
+      "longDesc": "Hilda mendapatkan peningkatan Kecepatan Gerak sebesar 60% selama 3 detik dan menerima perisai yang menyerap kerusakan setara dengan 10% HP Maksimum , yang berlangsung selama 3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f8/Art_of_Hunting.png",
+      "name": "Art of Hunting",
+      "kategori": "Damage/CC",
+      "longDesc": "Hilda mengunci target musuh, setiap kali memberikan 220–420 (+100% Total Serangan Fisik) Kerusakan Fisik . Skill dapat dilepaskan maksimal 3 kali. Serangan ke-2 akan memberikan kerusakan pada area di sekitar target, dan serangan ke-3 akan mendorong mundur target dan musuh di sekitarnya untuk sementara waktu.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3f/Power_of_Wildness.png",
+      "name": "Power of Wildness",
+      "kategori": "Burst/CC",
+      "longDesc": "Hilda [melompat ke depan dan] melancarkan tebasan kuat ke musuh target, memberikan 600–1000 (+250% Serangan Fisik Ekstra) Kerusakan Fisik dan membuat mereka pingsan selama 0,2 detik. Musuh di dekatnya juga menerima 60% kerusakan. Setiap tumpukan Tanda Alam Liar membuat Kekuatan Alam Liar memberikan 2,5% dari HP Maksimum target sebagai kerusakan tambahan. Pada tumpukan maksimum, Power of Wildness memberikan tambahan damage sebesar 20% dari HP Maksimum target.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hero351-icon.png",
+        "link": "https://sfile.co/QjJL2vWfBkK"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hero351-icon.png",
+        "link": "https://sfile.co/QinIGNQg2lm"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ec/Hero352-icon.png",
+        "link": "https://sfile.co/xFtNQGGB37k"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ec/Hero352-icon.png",
+        "link": "https://sfile.co/MhMvT1PF99P"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/aa/Hero353-icon.png",
+        "link": "https://sfile.co/u6o3dp8mv2T"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d7/Hero354-icon.png",
+        "link": "https://sfile.co/YSO39fePlTq"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero356-icon.png",
+        "link": "https://sfile.co/UaIoKa4pVnG"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero357-icon.png",
+        "link": "https://sfile.co/QOk0o5kfkAR"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
