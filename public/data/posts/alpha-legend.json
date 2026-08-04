@@ -1,0 +1,136 @@
+{
+  "namehero": "Alpha Legend",
+  "herolink": "Alpha",
+  "urlthumbnail": "https://i.ibb.co/Q3frffV7/alpha-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Alpha Revenant of Roses",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Alpha adalah cyborg murni yang diciptakan oleh Laboratory 1718 melalui proyek Alpha-Beta. Setelah ilmuwan Octavius gagal meyakinkan para petinggi laboratorium untuk mengembangkan manusia mekanis yang memiliki kesadaran, kesempatan itu akhirnya datang ketika Saber menghancurkan sebagian besar fasilitas laboratorium dan menggagalkan proyek senjata manusia. Di tengah kekacauan tersebut, proyek Alpha-Beta dijadikan harapan baru, dan Alpha pun diciptakan sebagai senjata mekanis paling sempurna yang sepenuhnya setia kepada Laboratory 1718.\n\nMeski memiliki tubuh mekanis yang sangat canggih, Alpha lahir dengan kesadaran layaknya manusia yang baru mengenal dunia. Ia ditemani Beta, mesin tempur yang merupakan pasangan sekaligus \"saudaranya\" dalam proyek Alpha-Beta. Keduanya memiliki hubungan kesadaran yang sangat kuat, seolah berbagi satu jiwa yang sama sejak pertama kali diciptakan.\n\nKebencian Alpha terhadap Saber bermula ketika ia mengingat malam pelarian Saber dari laboratorium. Saat itu, Saber menghancurkan Beta yang masih berada dalam tahap pengembangan. Melalui ikatan kesadaran mereka, Alpha merasakan sendiri ketakutan, rasa sakit, dan kehancuran yang dialami Beta. Perasaan asing itu kemudian berkembang menjadi kebencian yang begitu kuat, mendorong Alpha menjadikan Saber sebagai target balas dendamnya.\n\nDalam misi pertamanya, Alpha akhirnya berhasil menemukan Saber dan bertarung dengannya. Namun, ia justru kalah telak. Saat Saber hendak memberikan serangan terakhir, Beta mengorbankan dirinya untuk melindungi Alpha. Melihat pengorbanan tersebut, Saber tidak jadi membunuh mereka. Sebelum pergi, ia mengejek Alpha sebagai mesin tanpa jiwa yang tidak akan pernah mampu mengalahkannya, lalu menghilang ke dalam hujan.\n\nSejak saat itu, Alpha terus memburu Saber demi membalas dendam sekaligus mencari arti dari kata \"jiwa\" yang diucapkan musuhnya. Sedikit demi sedikit, ia mulai mengembangkan kesadaran dan kehendaknya sendiri, hingga mempertanyakan alasan keberadaannya. Dalam pencariannya, Alpha menyimpulkan bahwa kekuatan adalah jalan untuk menemukan jiwanya, dan ia tidak akan berhenti berkembang sampai mampu mengalahkan Saber.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Beta%2C_Advance%21.png",
+    "name": "Beta, Advance!",
+    "kategori": "Damage/Slow",
+    "longDesc": "Saat Alpha menggunakan skill, Beta akan dipanggil untuk menyerang. [Musuh non-minion] yang terkena serangan Beta 2 kali akan Terkunci .\nTerkunci : Setelah Alpha memberikan damage pada target, Beta akan menembakkan laser ke arah mereka, memberikan 80 (+8 × Level Hero) (+100% Serangan Fisik Ekstra) True Damage dan memberikan efek perlambatan [90% selama 0,2 detik] yang kuat untuk sementara waktu.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Rotary_Impact.png",
+      "name": "Rotary Impact",
+      "kategori": "AOE/Slow",
+      "longDesc": "Alpha melepaskan gelombang energi ke arah target, memberikan 100–200 (+90% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di jalurnya dan memperlambat mereka sebesar 40% selama 1 detik.\nBeta kemudian menyerang musuh di sepanjang jalur yang sama, memberikan 60–120 (+30% Serangan Fisik Ekstra) Kerusakan Sejati.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Force_Swing.png",
+      "name": "Force Swing",
+      "kategori": "AOE,Heal",
+      "longDesc": "Setelah jeda singkat, Alpha mengayunkan pedangnya ke arah target, memberikan 250–500 (+100% Total Serangan Fisik) Kerusakan Fisik kepada musuh di area berbentuk kipas dan memulihkan 100–200 (+30% Serangan Fisik Ekstra) HP untuk setiap musuh yang terkena.\nBeta kemudian menyerang musuh di area yang sama, memberikan 60–120 (+30% Serangan Fisik Ekstra) Kerusakan Sejati.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Spear_of_Alpha.png",
+      "name": "Spear of Alpha",
+      "kategori": "Mobility/CC",
+      "longDesc": "Beta menerjang ke lokasi target, memberikan 100–200 (+20% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena dan membuat mereka pingsan selama 1 detik. Alpha kemudian melompat ke lokasi yang sama, melemparkan musuh di jalurnya ke udara dan membawa mereka ke lokasi pendaratan. Alpha kemudian membanting ke bawah, memberikan 250–500 (+100% Total Serangan Fisik) Kerusakan Fisik dan memperlambat musuh sebesar 40% selama 1,5 detik.\nBeta kemudian menyerang musuh di area yang sama sebanyak 5 kali, memberikan 15–30 (+30% Serangan Fisik Ekstra) Kerusakan Sejati.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/38/Hero281-icon.png",
+        "link": "https://sfile.co/Qr0RJrMZLEU"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/38/Hero281-icon.png",
+        "link": "https://sfile.co/VKiKzRRGNIP"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9f/Hero282-icon.png",
+        "link": "https://sfile.co/u7zav5xTDcj"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/76/Hero283-icon.png",
+        "link": "https://sfile.co/YK1r3lPydAx"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/76/Hero283-icon.png",
+        "link": "https://sfile.co/BaNZ15pkWSS"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Hero284-icon.png",
+        "link": "https://sfile.co/8vKJkG5CFG8"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d0/Hero285-icon.png",
+        "link": "https://sfile.co/3J63AJKb2K9"
+      },
+      {
+        "name": "Abyss",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3d/Hero286-icon.png",
+        "link": "https://sfile.co/arITGeN5Uls"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8a/Hero287-icon.png",
+        "link": "https://sfile.co/O4ckJkj578c"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/87/Hero288-icon.png",
+        "link": "https://sfile.co/Gsit1VSvWA2"
+      },
+      {
+        "name": "Epic ",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero102810-icon.png",
+        "link": ""
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
