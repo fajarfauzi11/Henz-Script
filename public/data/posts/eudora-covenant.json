@@ -1,0 +1,131 @@
+{
+  "namehero": "Eudora Covenant",
+  "herolink": "Eudora",
+  "urlthumbnail": "https://i.ibb.co/5hY7mDVW/eudora-covenant.webp",
+  "kategoriskin": "Covenants",
+  "keywords": "Eudora Midnight's Allure",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Eudora adalah seorang Light Elf yang lahir di sebuah desa dekat Monastery of Light, tempat prasangka terhadap kaum Elf masih sangat kuat. Sejak kecil ia sering diejek dan dikucilkan karena telinganya yang runcing dan matanya yang berbeda dari manusia. Kesepian, Eudora hanya memiliki setangkai bunga Silver Song sebagai teman bercerita. Namun ketika bunga itu dirusak oleh anak-anak desa, amarah yang selama ini ia pendam meledak dan membangkitkan kekuatan sihir petir yang luar biasa hingga hampir menghancurkan desa. Sejak saat itu, keluarganya terpaksa terus berpindah-pindah karena Eudora kesulitan mengendalikan emosinya.\n\nKehidupan mereka akhirnya berubah ketika Theresa, seorang mentor dari Magic Academy, menemukan bakat sihir Eudora dan mengajaknya belajar di akademi. Di bawah bimbingan Theresa, Eudora berkembang menjadi penyihir berbakat dan menguasai berbagai ilmu sihir tingkat tinggi. Ia kemudian menjadi salah satu pengajar terbaik di Ulturia School. Meski dihormati oleh banyak orang, luka batin akibat diskriminasi di masa kecil masih membuatnya menyembunyikan telinga Elf-nya dengan rambut panjang.\n\nSaat Theresa memutuskan pensiun dan menunjuk Eudora sebagai kepala Ulturia School, keputusan itu memicu penolakan besar. Banyak orang menolak menerima seorang Elf sebagai pemimpin sekolah sihir dan anggota komite akademik. Keraguan serta prasangka itu membangkitkan kembali trauma masa kecil Eudora hingga kekuatan petirnya kembali lepas kendali, menyebabkan upacara serah terima jabatan berakhir dalam kekacauan. Merasa tidak lagi memiliki tempat di akademi, Eudora memutuskan untuk mengundurkan diri dan pergi.\n\nTheresa menghentikannya dan memberikan sebuah True-sight Mirror, cermin yang memperlihatkan jati diri seseorang. Melalui cermin itu, Eudora menyadari bahwa selama ini dirinya terlalu terikat pada penilaian orang lain. Ia akhirnya menerima identitasnya sebagai seorang Light Elf dan berdamai dengan masa lalunya. Setelah menemukan ketenangan dalam dirinya, Eudora memotong rambut panjangnya, memperlihatkan telinga Elf-nya dengan bangga, lalu kembali ke Ulturia School.\n\nSejak saat itu, Eudora memimpin Ulturia School sebagai dekan baru, menggantikan Theresa. Ia membuktikan bahwa kemampuan dan karakter seseorang tidak ditentukan oleh rasnya, melainkan oleh tekad dan keberaniannya untuk menerima jati diri. Kini, Eudora dikenal sebagai salah satu penyihir petir terkuat di Moniyan sekaligus simbol bahwa seorang Light Elf juga mampu menjadi pemimpin yang dihormati.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Superconductor.png",
+    "name": "Superconductor",
+    "kategori": "Buff",
+    "longDesc": "Keahlian Eudora menimbulkanSuperkonduktor Superkonduktor selama 3 detik pada unit non-minion yang terkena dan dapat memicu efek tambahan terhadap musuh yang terkena dampaknya.Superkonduktor Superkonduktor .",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e6/Forked_Lightning.png",
+      "name": "Forked Lightning",
+      "kategori": "AOE",
+      "longDesc": "Eudora melemparkan Petir Bercabang dalam area berbentuk kipas, memberikan 275–500 (+100% Total Kekuatan Sihir) Kerusakan Sihir (meningkat menjadi 200% terhadap minion ) kepada musuh di dalamnya.\nSaat mengenai target yang terkena efekSuperkonduktor Superkonduktor . Eudora membentuk rantai petir dengan target, mendapatkan peningkatanKecepatan Gerakselama rantai berlangsung hingga 1 detik.\nRantai petir memberikan 10–20 (+4% Total Kekuatan Sihir) Kerusakan Sihir dari waktu ke waktu dan tambahan 275–500 (+100% Total Kekuatan Sihir) Kerusakan Sihir saat berakhir. Jika serangan ini mengenai target, maka cooldown skill akan berkurang sebesar 1,5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d7/Ball_Lightning.png",
+      "name": "Ball Lightning",
+      "kategori": "CC/Damage",
+      "longDesc": "Eudora melemparkan bola petir ke arah musuh target, mengurangi Pertahanan Sihir mereka sebesar 10-25 selama 1,8 detik, memberikan 300–400 (+50% Total Kekuatan Sihir) Kerusakan Sihir , dan membuat mereka pingsan selama 1 detik.\nJika target terpengaruh olehSuperkonduktor Superkonduktor , bola petir ini mengurangi Pertahanan Sihir musuh di dekatnya, memberikan kerusakan area yang berpusat pada target, dan membuat semua musuh di dekatnya terkena efek setrum.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Thunder%27s_Wrath.png",
+      "name": "Thunder's Wrath",
+      "kategori": "Burst",
+      "longDesc": "Eudora memanggil semburan petir ke area target, memberikan 600–1000 (+160% Total Kekuatan Sihir) Kerusakan Sihir kepada target di tengah. Kemudian petir itu menyerang target di luar pusat, memberikan 300–500 (+100% Total Kekuatan Sihir) Kerusakan Sihir .\nSetiap kali Amukan Petir mengenai target yang terkena efeknyaSuperkonduktor Superkonduktor , ini memicuLedakan Petiryang berpusat diSuperkonduktor Target superkonduktor setelah penundaan singkat, memberikan 300–550 (+110% Total Kekuatan Sihir) Kerusakan Sihir.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2a/Hero151-icon.png",
+        "link": "https://sfile.co/pYkdfBeiNAt"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2a/Hero151-icon.png",
+        "link": "https://sfile.co/NkCiuSBTh2q"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/74/Hero152-icon.png",
+        "link": "https://sfile.co/FK4MfQSrx8m"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/74/Hero152-icon.png",
+        "link": "https://sfile.co/XAW3nelxacP"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3e/Hero153-icon.png",
+        "link": "https://sfile.co/YBfYm2BeMdy"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero154-icon.png",
+        "link": "https://sfile.co/x9W6Iq2Afo7"
+      },
+      {
+        "name": "Limited",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero155-icon.png",
+        "link": "https://sfile.co/9sPz5aOrops"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/79/Hero156-icon.png",
+        "link": "https://sfile.co/YmsbWTpnnUe"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/07/Hero157-icon.png",
+        "link": "https://sfile.co/bp4plWgUR4P"
+      },
+      {
+        "name": "Atomic Pop",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e4/Hero158-icon.png",
+        "link": "https://sfile.co/Y5neGqJ44qC"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
