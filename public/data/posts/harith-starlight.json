@@ -1,0 +1,136 @@
+{
+  "namehero": "Harith Starlight",
+  "herolink": "Harith",
+  "urlthumbnail": "https://i.ibb.co/9Kk195D/harith-starlight.webp",
+  "kategoriskin": "Starlight",
+  "keywords": "Harith Rebel Emberfang",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Key_Insight.png",
+    "name": "Key Insight",
+    "kategori": "Buff",
+    "longDesc": "Harith memperoleh 7% Hybrid Lifesteal untuk setiap Hero lawan yang ada di sekitar, dapat di-Stack hingga 35%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0f/Synchro_Fission.png",
+      "name": "Synchro Fission",
+      "kategori": "AOE",
+      "longDesc": "Harith menciptakan bayangan dirinya di kejauhan. Harith dan bayangannya kemudian melepaskan Synchro Fission ke arah satu sama lain, memberikan 150 (+60% Total Magic Power) Magic Damage ke semua unit lawan di sepanjang jalurnya.\n\nLedakan akan terjadi ketika 2 gelombang energi bertabrakan, memberikan 450 (+180% Total Magic Power) Magic Damage ke semua lawan di area tersebut.\nSkill ini memberikan 60% damage tambahan ke creep (hingga 1500 damage).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6e/Chrono_Dash.png",
+      "name": "Chrono Dash",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Harith melompat ke arah target, mendapatkan 120 (+120% Total Magic Power) shield yang dapat di-stack hingga 3 kali dan memperkuat Basic Attack berikutnya. Basic Attack-nya yang diperkuat memberikan 200 (+100% Total Physical Attack)(+60% Total Magic Power) Magic Damage dan menyebabkan slow ke lawan sebesar 40%. Mengenai lawan akan mengurangi cooldown dari Chrono Dash sebanyak 3 detik.\n\nBasic Attack yang diperkuat hanya memberikan 50 (+100% Total Physical Attack)(+100% Total Magic Power) Magic Damage ke Turret.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/20/Zaman_Force.png",
+      "name": "Zaman Force",
+      "kategori": "Buff/Slow",
+      "longDesc": "Harith memanggil Zaman Force dan menciptakan retakan multidimensi. Saat tercipta, retakan ini mengurangi cooldown Chrono Dash sebanyak 4 detik. Retakan tersebut menyebabkan 40% slow secara terus-menerus ke hero lawan di area.\n\nKetika Harith bersentuhan dengan retakan saat menggunakan Chrono Dash, akan mengurangi cooldown Synchro Fission sebanyak 1 detik dan Chrono Dash sebanyak 3 detik. Harith mendapatkan 15% Resilience saat berada di atas retakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5a/Hero731-icon.png",
+        "link": "https://sfile.co/ZCRUx0gImsl"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5a/Hero731-icon.png",
+        "link": "https://sfile.co/fC9Buv0tys7"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d6/Hero732-icon.png",
+        "link": "https://sfile.co/Y8KDGBvJ2bz"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d6/Hero732-icon.png",
+        "link": "https://sfile.co/b2bpJmeqTW8"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/69/Hero733-icon.png",
+        "link": "https://sfile.co/tw20EmjchKj"
+      },
+      {
+        "name": "515",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/db/Hero734-icon.png",
+        "link": "https://sfile.co/gpj1VVU3bA7"
+      },
+      {
+        "name": "Lightborn",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1f/Hero735-icon.png",
+        "link": "https://sfile.co/KRQAdJ3FiYM"
+      },
+      {
+        "name": "Champion",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero736-icon.png",
+        "link": "https://sfile.co/SuKl3oYEX5f"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Hero737-icon.png",
+        "link": "https://sfile.co/Zg2XBpOGyIV"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/53/Hero738-icon.png",
+        "link": "https://sfile.co/A2A1adZThNt"
+      },
+      {
+        "name": "HxH",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b6/Hero739-icon.png",
+        "link": "https://sfile.co/LaDia1fgWFS"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
