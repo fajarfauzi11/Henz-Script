@@ -1,0 +1,163 @@
+{
+  "namehero": "Pharsa Neobeast",
+  "herolink": "Pharsa",
+  "urlthumbnail": "https://i.ibb.co/tpfgsDD7/pharsa-neobeast.webp",
+  "kategoriskin": "Neobeast V2",
+  "keywords": "",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Pharsa adalah putri dari Crow Clan, ras kuno yang tinggal di Askati Forest dan menguasai Sky Magic, sihir yang memungkinkan mereka berubah menjadi burung dan menyerang musuh dari jarak yang sangat jauh. Sejak lahir, Pharsa memiliki darah yang bermutasi dan dipercaya menyimpan kekuatan luar biasa, tetapi tidak seorang pun berhasil membangkitkan potensi tersebut.\n\nDarah istimewa itu justru membuat Pharsa menjadi incaran banyak pihak yang ingin memanfaatkan kekuatannya. Hingga pada hari pernikahannya, penyihir Abyss bernama Alice menyerbu Askati Forest. Serangan itu menghancurkan kampung halamannya dan menewaskan banyak anggota Crow Clan, termasuk orang-orang yang ia cintai.\n\nDi tengah keputusasaan akibat kehancuran tersebut, kekuatan dalam darah Pharsa akhirnya terbangun. Rambutnya berubah, penglihatannya hilang, dan ia memperoleh kekuatan sihir yang luar biasa. Dengan kekuatan itu, Pharsa berhasil mengusir Alice dari Askati Forest, meskipun harus kehilangan kedua matanya sebagai harga yang harus dibayar.\n\nMelihat Pharsa hidup dalam kegelapan, Verri, pria yang dicintainya, memutuskan untuk mengorbankan dirinya. Ia menggunakan sihir Crow Clan untuk mengikat hidupnya dengan Pharsa dan berubah menjadi seekor gagak bernama Verri, sehingga Pharsa dapat melihat dunia melalui mata sang gagak.\n\nMeski telah memperoleh kekuatan yang luar biasa, Pharsa tidak pernah menganggapnya sebagai anugerah. Ia lebih memilih kehidupan damai bersama keluarganya daripada kekuatan yang harus dibayar dengan kehancuran rumahnya dan kehilangan penglihatannya. Kini, bersama Verri, Pharsa terus memburu Alice demi membalas dendam atas tragedi yang menghancurkan hidupnya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Spiritual_Unity.png",
+    "name": "Spiritual Unity",
+    "kategori": "Damage/Slow",
+    "longDesc": "Setiap 8 detik, Verri memasuki kondisi Berburu dan membantu Pharsa dalam serangan berikutnya terhadap hero musuh, memberikan tambahan 8% Kerusakan Sihir yang setara dengan HP Maksimum target (+1% untuk setiap 200 Kekuatan Sihir yang dimiliki) dan memperlambat mereka sebesar 60% selama 1 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Curse_of_Crow.png",
+      "name": "Curse of Crow",
+      "kategori": "CC/Damage",
+      "longDesc": "Pharsa melepaskan ledakan sihir ke lokasi target, memberikan 300–425 (+120% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena dan menandai mereka selama 4 detik. Serangan Pharsa selanjutnya terhadap musuh yang ditandai akan menghilangkan tanda tersebut dan membuat mereka pingsan selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Energy_Impact.png",
+      "name": "Energy Impact",
+      "kategori": "AOE",
+      "longDesc": "Pharsa melepaskan energi sihir ke arah target, memberikan 475–700 (+145% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Feathered_Air_Strike.png",
+      "name": "Feathered Air Strike",
+      "kategori": "Burst",
+      "longDesc": "Pasif : Setiap kenaikan level keterampilan ini mengurangiPersatuan Spiritual Interval Persatuan Spiritual berkurang 1 detik. Aktif: Pharsa terbang selama 8 detik dan membombardir lokasi target, memberikan 530–870 (+160% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dalam area tersebut. Skill ini dapat digunakan hingga 4 kali dalam durasi tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ef/Wings_by_Wings.png",
+      "name": "Wings by Wings",
+      "kategori": "Morph/Speed Up",
+      "longDesc": "Pharsa berubah menjadi kabut dan membungkus dirinya di sekitar Verri, mendapatkan tambahan 150% Kecepatan Gerak (berkurang seiring waktu) dan kemampuan untuk terbang melintasi medan. Kondisi ini berlangsung hingga 5 detik atau sampai dia menggunakan Serangan Dasar atau skill, atau dikendalikanPharsa berubah menjadi kabut dan membungkus dirinya di sekitar Verri, mendapatkan tambahan 150% Kecepatan Gerak (berkurang seiring waktu) dan kemampuan untuk terbang melintasi medan. Kondisi ini berlangsung hingga 5 detik atau sampai dia menggunakan Serangan Dasar atau skill, atau dikendalikan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ef/Hero521-icon.png",
+        "link": "https://sfile.co/C5Tj5xxKiSt"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ef/Hero521-icon.png",
+        "link": "https://sfile.co/CyGGLdJ29Yy"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero522-icon.png",
+        "link": "https://sfile.co/ZFYuaUPmDAO"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero522-icon.png",
+        "link": "https://sfile.co/k7d5ZCsycic"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero523-icon.png",
+        "link": "https://sfile.co/M9DdIQUFf7L"
+      },
+      {
+        "name": "Indigo Aviatrix",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero524-icon.png",
+        "link": "https://sfile.co/KDurS8lut7K"
+      },
+      {
+        "name": "Indigo Aviatrix + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero524-icon.png",
+        "link": "https://sfile.co/k1hy9bn7fAp"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero525-icon.png",
+        "link": "https://sfile.co/nrrsaHQGUcv"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/22/Hero526-icon.png",
+        "link": "https://sfile.co/yMhoe24dH8E"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero527-icon.png",
+        "link": "https://sfile.co/B7C6hZI7uAH"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fb/Hero528-icon.png",
+        "link": "https://sfile.co/jeEOsP2awia"
+      },
+      {
+        "name": "MSC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ce/Hero529-icon.png",
+        "link": "https://sfile.co/KUnRqvpOPih"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/26/Hero105210-icon.png",
+        "link": "https://sfile.co/8e0XtTraUbP"
+      },
+      {
+        "name": "Rolling Tides",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/48/Hero105212-icon.png",
+        "link": "https://sfile.co/Iyh96LlNP7r"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
