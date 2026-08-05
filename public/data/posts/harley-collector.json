@@ -1,0 +1,136 @@
+{
+  "namehero": "Harley Collector",
+  "herolink": "Harley",
+  "urlthumbnail": "https://i.ibb.co/tw4SpWHJ/harley-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Harley Dream Caster",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Harley adalah pewaris Castle Grandrock sekaligus putra tunggal Duke Vance. Berbeda dengan harapan ayahnya, Harley tidak menunjukkan bakat luar biasa dalam sihir maupun pertarungan sehingga dianggap tidak layak menjadi penerus keluarga. Akibatnya, Duke Vance mengabaikannya dan lebih memilih memperkuat kekuasaan politiknya melalui pernikahan serta calon pewaris lain. Di tengah perlakuan dingin itu, hanya Lesley, kakak angkatnya, yang selalu menemani dan menyayanginya.\n\nBerharap mendapat perhatian sang ayah, Harley mulai mempelajari berbagai trik sulap dan berpura-pura memiliki kemampuan sihir. Ia sering mempertunjukkan \"keajaiban\" seperti mengeluarkan burung, kelinci, atau bunga mawar dari topi. Meski semua itu hanyalah ilusi, Lesley tetap mendukungnya agar Harley tidak kehilangan harapan. Namun, kabar bahwa Harley adalah penyihir muda akhirnya menyebar hingga ke telinga musuh politik Duke Vance.\n\nPada suatu malam, Harley diculik dan dijadikan sandera untuk memeras Duke Vance. Sayangnya, ayahnya menolak bernegosiasi dan menganggap Harley hanyalah bidak yang bisa dikorbankan. Menolak membiarkan adiknya mati, Lesley melanggar perintah Duke Vance dan seorang diri menyerbu tempat Harley ditahan. Meski berhasil mengalahkan banyak musuh, Lesley terluka parah dan bahkan kehilangan penglihatan di mata kirinya akibat sebuah anak panah.\n\nMelihat Lesley berada di ambang kematian, kekuatan sihir sejati Harley akhirnya bangkit. Api ajaib membakar tali yang mengikat tubuhnya, dan dengan kekuatan yang baru terbangun itu, Harley menghanguskan para musuh hanya dengan lambaian tangan. Bersama-sama, Harley dan Lesley berhasil meloloskan diri dari kepungan. Momen tersebut membuktikan bahwa Harley memang memiliki bakat sihir luar biasa yang selama ini hanya tertidur dan baru muncul saat ia berada dalam bahaya besar.\n\nSetelah kejadian itu, Lesley membawa Harley ke Magic Academy, tempat terbaik bagi para penyihir untuk mengembangkan kemampuan mereka. Ia memutuskan Harley tidak akan kembali ke Castle Grandrock demi masa depan yang lebih baik. Sebelum pergi, Lesley meninggalkan sepucuk surat yang berisi pesan agar Harley hidup dengan baik dan menunggu hingga suatu hari ia datang menjemputnya. Sementara itu, Duke Vance yang mengetahui kebangkitan kekuatan Harley diam-diam mengubah rencana politiknya. Mulai saat itu, seluruh rencananya akan berpusat pada Harley, pewaris yang sebelumnya ia anggap tidak berharga.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Magic_Master.png",
+    "name": "Magic Master",
+    "kategori": "Debuff",
+    "longDesc": "Penguasaan sihir Harley memungkinkannya Serangan Dasar memberikan 60 (+50%Total Serangan Fisik) (+60%Total Kekuatan Sihir) Kerusakan Sihir . Serangannya mengurangi Pertahanan Sihir musuh sebesar 2 selama 3 detik saat mengenai target (hingga 10 tumpukan).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3f/Poker_Trick.png",
+      "name": "Poker Trick",
+      "kategori": "AOE/Buff",
+      "longDesc": "Harley melemparkan 3-5 gelombang kartu ke arah target, masing-masing memberikan 130-210 (+25% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh pertama yang terkena dan memberinya tambahan 10% Kecepatan Serangan selama 3 detik setelah mengenai target (hingga 5-10 tumpukan). Musuh yang terkena lebih dari 3 kali akan menerima kerusakan yang lebih sedikit dari serangan berikutnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/36/Space_Escape.png",
+      "name": "Space Escape",
+      "kategori": "Mobility/Speed Up",
+      "longDesc": "Harley berteleportasi ke arah yang ditentukan, meninggalkan topi ajaib di tempatnya, meningkatkan Kecepatan Geraknya sebesar 30% selama 2 detik.\n\nGunakan Lagi: Gunakan lagi dalam waktu 4 detik untuk kembali ke tempat topi berada dan kehilangan peningkatan kecepatan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/52/Deadly_Magic.png",
+      "name": "Deadly Magic",
+      "kategori": "Burst/Slow",
+      "longDesc": "Harley melemparkan cincin api ajaib ke hero musuh target (dapat diblokir oleh hero lain), memberikan kerusakan sihir sebesar 200-400 (+60% Total Kekuatan Sihir) dan memperlambat mereka sebesar 40% selama 1,5 detik. Cincin sihir tersebut tetap berada di sekitar musuh selama 4 detik, di mana Harley dapat menyerang cincin sihir tersebut untuk memberikan kerusakan pada musuh dengan skill-nya. Cincin sihir akan meledak di akhir durasi, memberikan kerusakan sihir sebesar 100-200 (+30% Total Kekuatan Sihir) ditambah 50% dari kerusakan yang diterima musuh dalam durasi tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero421-icon.png",
+        "link": "https://sfile.co/dQqha1C5D9v"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero421-icon.png",
+        "link": "https://sfile.co/PchiEz7Vzp4"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4b/Hero422-icon.png",
+        "link": "https://sfile.co/7LeuOEFlnse"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4b/Hero422-icon.png",
+        "link": "https://sfile.co/4n9CSnwY8qA"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero423-icon.png",
+        "link": "https://sfile.co/qQibt67vaKT"
+      },
+      {
+        "name": "Special Referee",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c1/Hero424-icon.png",
+        "link": "https://sfile.co/UsBEEwmEJAm"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero425-icon.png",
+        "link": "https://sfile.co/Wd7hya6hM25"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Octopus_Icon.png",
+        "link": "https://sfile.co/3iUEpJgCU2z"
+      },
+      {
+        "name": "Special Pulsar",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero428-icon.png",
+        "link": "https://sfile.co/DqKWwJZlylW"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b0/Hero429-icon.png",
+        "link": "https://sfile.co/0U90yuhPxgj"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Hero104210-icon.png",
+        "link": "https://sfile.co/Quk7gqXSSX9"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
