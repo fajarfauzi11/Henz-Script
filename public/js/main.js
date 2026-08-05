@@ -653,13 +653,24 @@ function hzDhInit(heroes){
 
 /* Load More — Detail Hero & Kategori Skin.
    Semua card sudah ada di HTML sejak build (baik utk SEO), card ke-21 dst
-   cuma disembunyikan via CSS (.hz-cp-limited). Klik tombol = lepas class itu, tidak perlu fetch ulang. */
+   cuma disembunyikan via CSS (.hz-cp-limited + nth-child(n+21)). Tiap klik
+   nambah HZ_CP_BATCH card (override display inline, menang atas rule CSS),
+   tombol tetap tampil selama masih ada card yang disembunyikan. */
+var HZ_CP_BATCH=20;
 document.querySelectorAll('[data-cp-loadmore]').forEach(function(btn){
+  var wrap=btn.closest('.hz-cp-loadmore-wrap');
+  var grid=wrap?wrap.previousElementSibling:null;
+  if(!grid||!grid.classList.contains('hz-cp-grid'))return;
+  var cards=grid.querySelectorAll('.hz-card');
+  var shown=HZ_CP_BATCH;
   btn.addEventListener('click',function(){
-    var grid=document.querySelector('.hz-cp-grid.hz-cp-limited');
-    if(grid)grid.classList.remove('hz-cp-limited');
-    var wrap=btn.closest('.hz-cp-loadmore-wrap');
-    if(wrap)wrap.remove();
+    var next=Math.min(shown+HZ_CP_BATCH,cards.length);
+    for(var i=shown;i<next;i++){cards[i].style.display='flex';}
+    shown=next;
+    if(shown>=cards.length){
+      grid.classList.remove('hz-cp-limited');
+      wrap.remove();
+    }
   });
 });
 
