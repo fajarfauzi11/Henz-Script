@@ -1,0 +1,126 @@
+{
+  "namehero": "Lylia Neobeast",
+  "herolink": "Lylia",
+  "urlthumbnail": "https://i.ibb.co/WWkGF7rS/lylia-neobeast.webp",
+  "kategoriskin": "Neobeasts",
+  "keywords": "",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Lylia adalah keturunan dari penyihir besar Magic Academy dan dikenal sebagai \"Little Witch\". Meskipun masih muda, ia memiliki bakat luar biasa dalam sihir dan telah menguasai kemampuan mengendalikan makhluk misterius bernama Gloom. Namun, bakatnya dalam Dark Magic membuatnya sering dianggap berbahaya oleh banyak orang.\n\nRatusan tahun lalu, terjadi konflik besar antara White Mage dan Dark Mage yang dikenal sebagai Rift War. Para Dark Mage menggunakan sihir terlarang bernama Alien Space Summoning, sebuah sihir yang mampu membuka portal ke dunia lain dan memanggil makhluk asing. Karena dianggap terlalu berbahaya, eksperimen tersebut dilarang dan para Dark Mage akhirnya diasingkan, sementara Magic Academy berada di bawah kendali White Magic.\n\nDi tengah ancaman Void Monster yang kembali muncul dan mulai mendekati Magic Academy, Lylia menjadi salah satu penyihir muda paling berbakat sekaligus paling nakal. Ia percaya bahwa Dark Magic tidak selalu jahat dan menjadi penerus terakhir dari Alien Space Summoning. Karena kemampuannya yang berbeda dari penyihir lain, Lylia sering disalahpahami, dijauhi, bahkan dianggap sebagai penyihir kecil yang berbahaya.\n\nSuatu hari, Lylia menemukan salah satu Void Monster yang memiliki kekuatan besar. Alih-alih takut, ia melihat sisi lain makhluk itu dan menjadikannya teman. Ia memberinya nama Gloom. Namun ketika Lylia mencoba memperkenalkannya kepada penyihir lain, mereka tidak percaya bahwa ia bisa menjinakkan makhluk tersebut. Menganggap Gloom sebagai ancaman, para penyihir mencoba menangkapnya, membuat Gloom marah dan mulai menyerang Magic Academy.\n\nDengan bantuan sihir Lylia, Gloom membuka portal dan memanggil lebih banyak Void Monster hingga situasi menjadi kacau. Awalnya Lylia merasa senang karena bisa membuktikan kekuatannya, tetapi ketika melihat para monster mulai membahayakan semua orang, ia menyadari kesalahannya. Saat Eudora dan para penyihir lain berada dalam bahaya, Lylia menggunakan kekuatan Dark Magic miliknya untuk menyegel para monster kembali ke dalam Gloom dan menyelamatkan mereka. Sejak saat itu, Eudora menyadari bahwa kebaikan atau kejahatan bukan ditentukan oleh jenis sihirnya, melainkan oleh orang yang menggunakannya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9c/Angry_Gloom.png",
+    "name": "Angry Gloom",
+    "kategori": "Buff/Speed Up",
+    "longDesc": "Lylia mendapatkan peningkatan 15% Movement Speed dari Gloom. Setiap penguatan Gloom akan meningkatkan bonus ini sebesar 5%.\nGloom mendapatkan penguatan setiap kali dia menelan Shadow Energy, hingga 5 kali. Level yang lebih tinggi meningkatkan damage ledakan Shadow Energy.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Magic_Shockwave.png",
+      "name": "Magic Shockwave",
+      "kategori": "AOE/Slow",
+      "longDesc": "Lylia melepaskan Gloom bersama gelombang serangan, memberikan 250 (+100% Total Magic Power) Magic Damage ke lawan dalam garis lurus dan menyebabkan 30% slow ke lawan selama 1.5 detik.\nJika Gloom menyentuh Shadow Energy, dia akan melahap dan meledakkannya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0c/Shadow_Energy.png",
+      "name": "Shadow Energy",
+      "kategori": "AOE/Slow",
+      "longDesc": "Lylia memusatkan Shadow Energy di area target, memberikan 90 (+50% Total Magic Power) Magic Damage ke lawan yang terkena dan menyebabkan 80% slow secara singkat.\nShadow Energy meledak jika ditelan oleh Gloom, memberikan 220 (+115% Total Magic Power) Magic Damage ke lawan di sekitar. Setiap penguatan Gloom meningkatkan damage ledakan sebesar 20% (hingga 80%).\nGloom memulihkan 20% dari waktu pengisian Shadow Energy saat mengenai hero lawan.\nLylia memulai pertandingan dengan skill Shadow Energy, mengisi satu penggunaan skill setiap 6 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Black_Shoes.png",
+      "name": "Black Shoes",
+      "kategori": "Buff/Mobility",
+      "longDesc": "Lylia langsung kembali ke lokasi Black Shoes pada 4 detik yang lalu, memulihkan HP dan Mana-nya ke kondisi sebelumnya dan memulihkan 10% Max HP tambahan.\nDia juga mendapatkan 20% Movement Speed tambahan selama 2 detik.\nPrioritas Skill",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png",
+        "link": "https://sfile.co/XMazAN5sEiv"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero861-icon.png",
+        "link": "https://sfile.co/vRYF4rulUjV"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3a/Hero862-icon.png",
+        "link": "https://sfile.co/MRIwqP3D8cx"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3a/Hero862-icon.png",
+        "link": "https://sfile.co/I5OYYwqqAF5"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ee/Hero863-icon.png",
+        "link": "https://sfile.co/F6ElyQAXFTh"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/df/Hero864-icon.png",
+        "link": "https://sfile.co/fof84ADypX1"
+      },
+      {
+        "name": "Halloween",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0a/Hero865-icon.png",
+        "link": "https://sfile.co/oFfjIYD3OpB"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero867-icon.png",
+        "link": "https://sfile.co/lNZXhaZdQZN"
+      },
+      {
+        "name": "Covenant",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/26/Hero869-icon.png",
+        "link": "https://sfile.co/f6L7IJlMqdM"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
