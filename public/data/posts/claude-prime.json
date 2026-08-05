@@ -1,0 +1,146 @@
+{
+  "namehero": "Claude Prime",
+  "herolink": "Claude",
+  "urlthumbnail": "https://i.ibb.co/s9GNTKw9/claude-prime.webp",
+  "kategoriskin": "Prime",
+  "keywords": "Claude Cosmic Blaze",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Claude adalah seorang pencuri ulung yang berasal dari Los Pecados, kota tanpa hukum yang dipenuhi kejahatan. Sejak kecil ia hidup sebagai yatim piatu dan belajar bertahan hidup dengan mencuri, berjudi, berbohong, serta bertarung. Berkat bakat luar biasanya sebagai pencopet, Claude berhasil memimpin sekelompok anak jalanan hingga menarik perhatian Waldo Kane, seorang kriminal ambisius yang memanfaatkan mereka demi memperluas kekuasaannya.\n\nKane menjanjikan kehidupan yang lebih baik jika Claude berhasil menjalankan misi mencuri di Castle Grandrock. Namun semua itu hanyalah jebakan. Claude dikhianati, ditangkap, lalu dijebloskan ke penjara sementara Kane menggunakan dirinya sebagai kambing hitam demi mencapai ambisinya menguasai Los Pecados.\n\nDi dalam penjara, Claude bertemu dengan Merlin, sang legenda pencuri yang memilih menghabiskan masa pensiunnya di balik jeruji. Merlin melihat potensi besar dalam diri Claude dan mewariskan seluruh teknik mencuri, melarikan diri, serta bertarung miliknya. Sebagai balasannya, Claude harus meninggalkan jejak namanya di setiap kota di Land of Dawn. Setelah dua tahun berlatih, Claude berhasil melarikan diri dan memenuhi janjinya kepada Merlin.\n\nDalam perjalanannya, Claude bertemu seekor monyet cerdas bernama Dexter yang kemudian menjadi partner setianya. Bersama Dexter, namanya semakin dikenal sebagai pencuri legendaris yang hanya menerima pekerjaan dengan bayaran besar dan menargetkan orang-orang jahat.\n\nLima tahun kemudian, Claude kembali ke Los Pecados dan mendapati Kane telah menjadi penguasa kota, sementara anak-anak jalanan tetap hidup dalam penderitaan seperti dahulu. Merasa telah dikhianati dan dimanfaatkan, Claude mencuri teknologi canggih milik Dr. Rooney dari Eruditio, lalu kembali bersama Dexter untuk membalas dendam kepada Waldo Kane dan menggulingkan kekuasaannya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Battle_Side-by-side.png",
+    "name": "Battle Side-by-side",
+    "kategori": "Buff",
+    "longDesc": "Dexter melancarkan serangan tambahan setiap kali Claude melakukan serangan. Serangan Dasar mengenai sasaran, memberikan 20 (+35% Total Serangan Fisik) Kerusakan Fisik pada target yang sama. Serangan Dasar milik Dexter juga dapat memicu efek serangan Claude dengan efektivitas 30%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8f/Art_of_Thievery.png",
+      "name": "Art of Thievery",
+      "kategori": "AOE/Buff",
+      "longDesc": "Claude menyerang musuh di area berbentuk kipas di depannya, memberikan 160–285 (+40% Total Serangan Fisik) Kerusakan Fisik dan mengurangi Kecepatan Gerak mereka sebesar 20% dan Kecepatan Serangan sebesar 10%. Untuk setiap target yang terkena, Claude mendapatkan tambahan 3% Kecepatan Gerak dan Kecepatan Serangan (dua kali lipat jika targetnya adalah hero musuh, hingga 5 tumpukan) selama 6 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/51/Battle_Mirror_Image.png",
+      "name": "Battle Mirror Image",
+      "kategori": "Summon/Mobility",
+      "longDesc": "Claude meninggalkan bayangan cermin Dexter di lokasi yang ditentukan. Bayangan cermin Dexter secara otomatis menyerang musuh. Bertahan selama 5,5 detik. Claude dapat mengaktifkan kemampuan ini lagi untuk bertukar tempat dengan bayangan cermin. Kemampuan Serangan Dasar Dexter memberikan 20 (+35% Total Serangan Fisik) Kerusakan Fisik dan dapat memicu efek serangan Claude.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0c/Blazing_Duet.png",
+      "name": "Blazing Duet",
+      "kategori": "Burst/Shield",
+      "longDesc": "Claude dan Dexter menembak musuh di dekatnya dengan cepat selama 3 detik, memberikan 100–130 (+10% Total Serangan Fisik) Kerusakan Fisik hingga ke dua target setiap kali mereka menembak. Skill ini mendapat manfaat dari efek Serangan Dasar Claude dan memberinya perisai yang dapat menyerap 20 (+3% Total Serangan Fisik) kerusakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/29/Hero651-icon.png",
+        "link": "https://sfile.co/1oCuKemFk6Y"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/29/Hero651-icon.png",
+        "link": "https://sfile.co/y3OaaG4aPh0"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Hero652-icon.png",
+        "link": "https://sfile.co/QB5aovPTfcm"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Hero652-icon.png",
+        "link": "https://sfile.co/magUgXP14or"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Hero653-icon.png",
+        "link": "https://sfile.co/vYWazZqDtNa"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/10/Hero654-icon.png",
+        "link": "https://sfile.co/Z93gMjhyB6y"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero655-icon.png",
+        "link": "https://sfile.co/uqqWbaRI7MX"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b6/Hero657-icon.png",
+        "link": "https://sfile.co/hHkkrg0EuFG"
+      },
+      {
+        "name": "MSC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d0/Hero656-icon.png",
+        "link": "https://sfile.co/4ILubDAzLCW"
+      },
+      {
+        "name": "Blazing Trace",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dc/Hero658-icon.png",
+        "link": "https://sfile.co/9xJOJ0qUv8p"
+      },
+      {
+        "name": "Sanrio",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7a/Hero659-icon.png",
+        "link": "https://sfile.co/yAtseIS3gjQ"
+      },
+      {
+        "name": "Vallentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero106510-icon.png",
+        "link": "https://sfile.co/M9ZuCzTN0in"
+      },
+      {
+        "name": "M6",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero106511-icon.png",
+        "link": "https://sfile.co/LT6tbJOtIm3"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
