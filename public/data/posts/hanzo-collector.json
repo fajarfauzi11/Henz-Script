@@ -1,0 +1,111 @@
+{
+  "namehero": "Hanzo Collector",
+  "herolink": "Hanzo",
+  "urlthumbnail": "https://i.ibb.co/5h9hNFPx/hanzo-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Hanzo Soulfire Netherlord",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Hanzo adalah ninja jenius dari Shadow Sect, salah satu faksi dalam Scarlet Shadow di Cadia Riverlands. Sejak kecil ia diadopsi oleh klan dan dibesarkan dengan ajaran Nindo, yaitu menjunjung keadilan, mengutamakan tugas, serta rela berkorban demi melindungi rahasia Sacred Tools. Berkat kemampuan dan dedikasinya, Hanzo tumbuh menjadi ninja terbaik yang sangat dihormati.\n\nSelama bertahun-tahun, Hanzo menjalankan berbagai misi berbahaya tanpa pernah gagal. Namun, ia mulai curiga ketika banyak ninja yatim piatu yang dibesarkan bersama dirinya menghilang secara misterius. Saat menyelidiki kejadian tersebut, Hanzo menemukan bahwa para tetua Shadow Sect diam-diam mengorbankan anggotanya sendiri untuk membangkitkan kekuatan pedang iblis Ame no Habakiri.\n\nDi tempat terlarang, Hanzo bertemu Kuren, pewaris Scarlet Shadow, yang mengungkapkan bahwa ia berniat menghentikan praktik kejam tersebut setelah menjadi pemimpin klan. Namun bagi Hanzo, penjelasan itu tidak cukup. Ia menganggap seluruh Scarlet Shadow telah mengkhianati ajaran Nindo yang selama ini ia pegang, sehingga klan itu tidak lagi layak dipertahankan.\n\nDengan amarah yang membara, Hanzo memilih mengambil Ame no Habakiri. Kekuatan iblis di dalam pedang itu berusaha melahap jiwanya, tetapi tekad dan kebenciannya justru berhasil menaklukkan senjata tersebut. Setelah memperoleh kekuatan barunya, Hanzo membunuh Kuren dan meninggalkan Scarlet Shadow, memutus seluruh ikatan dengan masa lalunya.\n\nSejak saat itu, Hanzo berjalan di jalan kegelapan sebagai seorang Akuma yang menggunakan kekuatan Ame no Habakiri. Ia percaya bahwa satu-satunya cara menghapus kebusukan Scarlet Shadow adalah dengan menghancurkannya dari dalam. Demi mencapai tujuannya, Hanzo tidak ragu mengorbankan siapa pun yang menghalangi jalannya, menjadikannya salah satu ninja paling berbahaya di Land of Dawn.",
+  "dualTabNames": {
+    "tab1": "Hanzo",
+    "tab2": "Hanekage"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d0/Ame_no_Habakiri.png",
+    "name": "Ame no Habakiri",
+    "kategori": "Buff",
+    "longDesc": "Damage yang diberikan oleh Basic Attack dan skill Hanzo menerapkan satu stack Dark Ninjutsu pada target, maksimal 5 stack. Ninjutsu: Demon Feast hanya bisa digunakan pada target dengan stack penuh Dark Ninjutsu.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7a/Ninjutsu_Demon_Feast.png",
+      "name": "Ninjutsu Demon Feast",
+      "kategori": "Burst",
+      "longDesc": "Skill ini hanya bisa digunakan pada target dengan stack Dark Ninjutsu maksimum. Ketika digunakan pada creep, Hanzo akan langsung melahap dan mencernanya selama beberapa saat untuk memulihkan 20% HP. Ketika digunakan pada Turtle, Lord, atau hero lawan, dia akan memberikan 600 (+120% Extra Physical Attack) Physical Damage, memulihkan 10% HP, dan mengurangi 60% cooldown skill ini.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/6/6d/Forbidden_Ninjutsu_Soul_Snatch.png",
+      "name2": "Forbidden Ninjutsu Soul Snatch",
+      "kategori2": "Damage",
+      "longDesc2": "Hanekage menerjang ke hero lawan, memberikan 300 (+60% Extra Physical Attack) Physical Damage ke target setelah jeda singkat. Setiap stack Dark Ninjutsu pada target akan meningkatkan damage ini sebesar 20%.\n\nSaat stack Dark Ninjutsu pada target mencapai maksimum, akan memberikan damage tambahan sebesar 15 (+2% Extra Physical Attack)% dari Max HP target (mengabaikan 30% Physical Defense target) dan memulihkan 20% HP untuk Hanzo.\n\nSkill ini bisa digunakan ke Turtle atau Lord (memberikan hingga 1000 damage)."
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4c/Ninjutsu_Dark_Mist.png",
+      "name": "Ninjutsu Dark Mist",
+      "kategori": "AOE/Slow",
+      "longDesc": "Hanzo menerjang ke arah target, meninggalkan kabut gelap di depan yang memberikan 90 (+45% Extra Physical Attack) Physical Damage ke lawan di area setiap 0.5 detik, hingga 5 kali (damage ini dihitung sebagai damage Basic Attack tapi tidak bisa memberikan Damage Critical). Kabut gelap menyebabkan 40% slow ke lawan di area dan memberikan Hanzo 20% Movement Speed.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Forbidden_Ninjutsu_Black_Mist.png",
+      "name2": "Forbidden Ninjutsu Black Mist",
+      "kategori2": "AOE/CC",
+      "longDesc2": "Hanekage menerjang ke arah target, menyebabkan airborne ke lawan di jalurnya selama 0.4 detik dan memberikan 405 (+45% Extra Physical Attack) Physical Damage (memulihkan 200 Energy jika mengenai hero lawan), meninggalkan Kabut Gelap di area yang dia lewati.\nKabut tersebut memberikan 135 (+45% Extra Physical Attack) Physical Damage ke lawan di area setiap 0.5 detik (hingga 4 kali) dan menyebabkan 40% slow ke lawan di area.\n\nDamage ini dianggap sebagai Damage Basic Attack, tetapi tidak bisa memberikan Damage Critical."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ee/Kinjutsu_Pinnacle_Ninja.png",
+      "name": "Kinjutsu Pinnacle Ninja",
+      "kategori": "Morph/Mobility",
+      "longDesc": "Berubah menjadi Hanekage, mengonsumsi 170 Energy per detik. Mendapatkan 20 Energy ketika unit non-hero tereliminasi dan 200 Energy ketika hero tereliminasi di sekitarnya. Mendapatkan 15 Energy ketika menyerang hero, dan 45 Energy ketika menyerang Turtle atau Lord. Ketika Energy habis, tubuhnya akan perlahan tertarik ke posisi Hanekage.\n\nSaat dalam mode Hanekage, tubuhnya menjadi kebal serangan. Hanekage mengabaikan rintangan serta mendapatkan 50% Movement Speed dan 30% Attack Speed.\n\nGunakan Kembali atau Saat Tereliminasi: Hanekage kembali ke tubuhnya, memulihkan 16% HP dan menjadi tidak bisa ditargetkan saat kembali. Jika Hanekage tereliminasi, Hanzo akan terkena 50% slow dan posisinya terungkap selama 6 detik, dan cooldown skill ini akan digandakan.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/0/0c/Ninjutsu_Flee_Return.png",
+      "name2": "Ninjutsu Flee Return",
+      "kategori2": "Morph",
+      "longDesc2": "Hanekage kembali ke tubuh Hanzo dan keluar dari wujud Hanekage."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero691-icon.png",
+        "link": "https://sfile.co/mPEOfpi9jEb"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero691-icon.png",
+        "link": "https://sfile.co/qX0jmS8ZtxW"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero692-icon.png",
+        "link": "https://sfile.co/GqzxqF3s6mo"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero692-icon.png",
+        "link": "https://sfile.co/4rrSwHPMRzI"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a8/Hero693-icon.png",
+        "link": "https://sfile.co/9nWZ4eVSqDa"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/14/Hero694-icon.png",
+        "link": "https://sfile.co/WkNmCnTJXkc"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
