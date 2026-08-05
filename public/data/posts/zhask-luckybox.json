@@ -1,0 +1,133 @@
+{
+  "namehero": "Zhask Luckybox",
+  "herolink": "Zhask",
+  "urlthumbnail": "https://i.ibb.co/NPkrXN5/zhask-luckybox.webp",
+  "kategoriskin": "Luckybox",
+  "keywords": "Zhask Bone Flamen",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Zhask adalah raja dari Swarm, ras makhluk penghancur yang berasal dari planet Kastiya. Berbeda dengan peradaban lain yang berkembang melalui pengetahuan, Swarm bertahan hidup dengan menaklukkan, berkembang biak, dan melahap seluruh kehidupan di setiap planet yang mereka datangi. Sebagai pemimpinnya, Zhask memimpin invasi tanpa henti demi memperluas kekuasaan Swarm ke seluruh penjuru alam semesta.\n\nMeskipun planet Kastiya akhirnya dihancurkan oleh bangsa Mithlora, kehancuran itu tidak menghentikan Swarm. Justru Zhask menganggap setiap planet baru sebagai Kastiya berikutnya. Selama Swarm masih dapat berkembang biak, mereka akan terus menyebarkan kehancuran. Karena ancaman tersebut, bangsa Mithlora mengirim pemburu terkuat mereka, Yve, untuk memburu Zhask dan menghentikan invasinya.\n\nDengan kecerdikan dan kemampuan memimpin Swarm, Zhask selalu berhasil lolos dari kejaran Yve. Setiap kali Yve tiba, yang tersisa hanyalah planet-planet yang telah hancur dan seluruh penghuninya telah dimusnahkan oleh Swarm. Zhask menikmati pengejaran itu dan terus berpindah dari satu dunia ke dunia lain untuk memperluas koloninya.\n\nDalam salah satu perjalanannya melintasi ruang dan waktu, Zhask tiba di Land of Dawn. Kedatangannya membawa bencana besar bagi Northern Vale, menghancurkan desa-desa dan memaksa banyak penduduk mengungsi. Namun, untuk pertama kalinya ia menghadapi perlawanan yang jauh lebih kuat dari dugaannya. Tobias mengorbankan nyawanya untuk melawan Swarm, sementara Aurora berhasil memberikan luka parah kepada Zhask hingga ia gagal melarikan diri melalui Celah Waktu.\n\nKini Zhask bersembunyi di Land of Dawn untuk memulihkan kekuatannya sambil menunggu kesempatan menyerang kembali. Di saat yang sama, Yve akhirnya berhasil melacak keberadaannya dan tiba di dunia tersebut. Pertemuan dua musuh bebuyutan ini menjadi awal dari pertarungan besar yang akan menentukan nasib Land of Dawn sekaligus keseimbangan alam semesta.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Decimation_%28Zhask%29.png",
+    "name": "Decimation %28Zhask%29",
+    "kategori": "Summon",
+    "longDesc": "Saat mati, Zhask memanggil Nightmaric Spawn yang mengamuk di tempat itu, yang secara bertahap kehilangan HP dari waktu ke waktu hingga mati.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/45/Nightmaric_Spawn.png",
+      "name": "Nightmaric Spawn",
+      "kategori": "Summon",
+      "longDesc": "Zhask memanggil Nightmaric Spawn yang mewarisi 55%–100% atributnya ( HP , Pertahanan Hybrid , Kekuatan Sihir ). Nightmaric Spawn akan secara otomatis menyerang musuh di dekatnya dengan menembakkanSinar Kematianke target, memberikan 55 (+20% × Kecepatan Serangan Ekstra) (+20% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat mereka hingga 30% selama 0,6 detik. Jika Zhask terlalu jauh dari Nightmaric Spawn, ia akan menghilang. Sinar Kematian dianggap sebagai Serangan Dasar tetapi tidak dapatmenghasilkan Serangan Kritis. Peningkatan Fusion:Kerusakan Nightmaric Spawn meningkat menjadi 180%, dan dapat diposisikan ulang.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dc/Mind_Eater.png",
+      "name": "Mind Eater",
+      "kategori": "CC/AOE",
+      "longDesc": "Zhask menembakkan rudal mental yang menembus ke arah yang ditentukan, memberikan 300–540 (+100% Total Kekuatan Sihir) Kerusakan Sihir . Setelah itu, Nightmaric Spawn akan menyerang musuh dengan Mind Eater sebesar 120 (+80% Total Kekuatan Sihir) Kerusakan Sihir dan membuat musuh pingsan selama 0,5 detik.\nFusion Enhanced: Meningkatkan kerusakan yang diberikan oleh Mind Eater sebesar 540–975 (+180% Total Kekuatan Sihir) Kerusakan Sihir.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hive_Clones.png",
+      "name": "Hive Clones",
+      "kategori": "Slow/Damage",
+      "longDesc": "Zhask melepaskan kawanan (6) Klon Sarang ke arah yang ditargetkan. Klon akan meledak dan memberikan 55–100 (+18% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang bersentuhan, mengurangi Kecepatan Gerak mereka sebesar 80% selama 1 detik.\nJika Klon Sarang tidak menemukan target, mereka akan menggali ke dalam tanah dan menyergap musuh yang lewat.\nPeningkatan Fusi : Zhask melepaskan beberapa (15) kawanan Klon Sarang.\nKerusakan selanjutnya yang diberikan kepada target yang sama berkurang menjadi 20%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6d/Dominator%27s_Descent.png",
+      "name": "Dominator's Descent",
+      "kategori": "Morph/Buff",
+      "longDesc": "Zhask memilih posisi yang ditentukan untuk memanggil Nightmaric Spawn dan menyatu dengannya. Nightmaric Spawn dapat mewarisi 100% atributnya dan mendapatkan atribut tambahan. Keterampilannya ditingkatkan selama periode penyatuan.\nGunakan Lagi: Zhask segera melepaskan diri dari Nightmaric Spawn dan kehilangan peningkatan tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero501-icon.png",
+        "link": "https://sfile.co/uArHCh7UxBy"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero501-icon.png",
+        "link": "https://sfile.co/VgjHnDrFU6N"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero502-icon.png",
+        "link": "https://sfile.co/ZrSzXWlK90h"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero502-icon.png",
+        "link": "https://sfile.co/VgjHnDrFU6N"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Hero504-icon.png",
+        "link": "https://sfile.co/syWbWZCSBPD"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d9/Hero505-icon.png",
+        "link": "https://sfile.co/AZ02q2ODcp9"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero506-icon.png",
+        "link": "https://sfile.co/UaTNJsxdQ0n"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero507-icon.png",
+        "link": "https://sfile.co/XKSGdfG3WC3"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
