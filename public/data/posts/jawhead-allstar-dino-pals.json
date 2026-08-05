@@ -1,0 +1,136 @@
+{
+  "namehero": "Jawhead Allstar Dino Pals",
+  "herolink": "Jawhead",
+  "urlthumbnail": "https://i.ibb.co/0jSWtrr7/jawhead-allstar.webp",
+  "kategoriskin": "Dino Pals",
+  "keywords": "Jawhead Proto Guardian",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Jawhead adalah robot cerdas bernama SMART-01 yang diciptakan oleh Profesor Henry dan istrinya, dua ilmuwan dari Dawn Council yang mengembangkan berbagai teknologi canggih. Berbeda dari robot biasa, Jawhead memiliki kecerdasan tinggi, kemampuan tempur yang luar biasa, serta dapat bertindak sesuai kesadaran pemiliknya melalui teknologi sinkronisasi genetik.\n\nSetelah SMART-01 berhasil diselesaikan, Dawn Council berniat menggunakan teknologinya sebagai senjata perang dan memproduksinya secara massal. Namun, Henry dan istrinya menolak menyerahkan hasil penelitian mereka. Demi mencegah teknologi tersebut disalahgunakan, mereka memerintahkan Jawhead untuk menghancurkan seluruh data penelitian sebelum akhirnya menghilang secara misterius.\n\nSejak saat itu, Jawhead mengabdikan dirinya untuk melindungi putri kecil pasangan tersebut, Ailee. Gadis itu tidak mengetahui alasan di balik hilangnya kedua orang tuanya. Yang ia tahu hanyalah Jawhead selalu berada di sisinya, menjaganya seperti seorang ayah. Bahkan, Jawhead memanggilnya \"Honey\", panggilan yang dahulu sering digunakan oleh ayahnya.\n\nSatu-satunya petunjuk yang ditinggalkan Henry dan istrinya hanyalah sebuah jam saku yang selalu dibawa Ailee ke mana pun ia pergi. Berbekal petunjuk tersebut, Ailee dan Jawhead memulai perjalanan bersama untuk mencari keberadaan kedua orang tuanya dan mengungkap misteri di balik hilangnya mereka.\n\nMeski diciptakan sebagai robot dengan persenjataan canggih, Jawhead lebih memilih menggunakan kekuatannya untuk melindungi orang yang paling berharga baginya. Bagi Ailee, Jawhead bukan sekadar mesin, melainkan sahabat sekaligus keluarga yang selalu menemaninya di setiap langkah.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Mecha_Suppression.png",
+    "name": "Mecha Suppression",
+    "kategori": "Buff",
+    "longDesc": "Serangan Jawhead memberikan tumpukan Mecha Suppression saat mengenai target (hingga 10 tumpukan). Setiap tumpukan berlangsung selama 3 detik dan meningkatkan kerusakan serangan dasar Jawhead ke musuh sebesar 8%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6f/Smart_Missiles.png",
+      "name": "Smart Missiles",
+      "kategori": "Burst",
+      "longDesc": "Jawhead meluncurkan hingga 12 rudal secara acak ke musuh terdekat selama 5 detik, setiap rudal memberikan 135–260 (+30% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c4/Ejector.png",
+      "name": "Ejector",
+      "kategori": "Shield/CC",
+      "longDesc": "Jawhead mendapatkan peningkatan Kecepatan Gerak sebesar 30% dan perisai sebesar 250–600 (+180% Total Serangan Fisik) selama S detik. Gunakan Lagi: Jawhead melemparkan unit terdekat (memprioritaskan hero) ke lokasi target, memberikan 300–500 (+80% Total Serangan Fisik) Kerusakan Fisik kepada musuh di area tersebut dan membuat mereka terkena stun selama 0,5 detik. Dapat digunakan pada hero sekutu dan mereka tidak akan menerima kerusakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Unstoppable_Force.png",
+      "name": "Unstoppable Force",
+      "kategori": "Mobility/CC",
+      "longDesc": "Jawhead menerjang hero musuh target, memberikan 350–600 (+150% Total Serangan Fisik) Kerusakan Fisik dan membuat mereka pingsan sesaat. [ durasi tidak diketahui ] Musuh di sekitar target terlempar ke belakang dan menerima jumlah kerusakan yang sama. Jawhead kebal terhadap efek kontrol selama menerjang.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero541-icon.png",
+        "link": "https://sfile.co/gVFDrNK4EFe"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero541-icon.png",
+        "link": "https://sfile.co/siLDdbwmxy2"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Hero542-icon.png",
+        "link": "https://sfile.co/oIf7hYm3bYe"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Hero542-icon.png",
+        "link": "https://sfile.co/poGGPjLz2Yg"
+      },
+      {
+        "name": "MSC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Hero543-icon.png",
+        "link": "https://sfile.co/mXJPglJVBTP"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero544-icon.png",
+        "link": "https://sfile.co/Pq5zYHJMu5y"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero545-icon.png",
+        "link": "https://sfile.co/Iqmj5p6T4iy"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/31/Hero546-icon.png",
+        "link": "https://sfile.co/H4Yx4qNtqsw"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f2/Hero547-icon.png",
+        "link": "https://sfile.co/T0kug6B39Yj"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0f/Hero548-icon.png",
+        "link": "https://sfile.co/KBwG1FVfXLK"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero549-icon.png",
+        "link": "https://sfile.co/81HlwxsRROE"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
