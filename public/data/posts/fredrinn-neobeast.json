@@ -1,0 +1,128 @@
+{
+  "namehero": "Fredrinn Neobeast",
+  "herolink": "Fredrinn",
+  "urlthumbnail": "https://i.ibb.co/N6GWCJG2/da65cbc11419.webp",
+  "kategoriskin": "Neobeasts",
+  "keywords": "",
+  "datepost": "Update 6 Agustus 2026 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Fredrinn adalah putra Duke Vance, seorang bangsawan berpengaruh dari Castle Grandrock. Namun sejak kecil, ia tidak tertarik pada kehidupan bangsawan yang penuh aturan dan politik. Mendambakan kebebasan dan petualangan, Fredrinn melarikan diri dari rumah dan menjelajahi berbagai wilayah berbahaya di Land of Dawn. Berkat keberanian, kecerdasan, dan instingnya yang tajam, namanya perlahan dikenal sebagai seorang petualang berbakat, meskipun tidak banyak yang mengetahui latar belakang bangsawannya.\n\nDalam setiap petualangannya, Fredrinn selalu ditemani sahabat terbaiknya, Fray. Keduanya menjelajahi reruntuhan kuno dan tempat-tempat yang belum pernah dipetakan. Suatu hari, mereka menemukan sebuah altar kuno dengan kristal misterius di tengahnya. Meski Fray memperingatkannya, rasa penasaran membuat Fredrinn menyentuh kristal tersebut, tanpa sadar membangkitkan kekuatan kuno yang tersegel selama berabad-abad.\n\nKemunculan kekuatan itu menyebabkan altar runtuh dan menjebak mereka berdua. Di tengah bencana tersebut, Fray memilih mengorbankan dirinya demi menyelamatkan Fredrinn. Ia menancapkan pecahan kristal ke dada sahabatnya, membuat kekuatan kristal menyatu dengan jantung Fredrinn dan melindunginya dari kehancuran. Ketika Fredrinn sadar kembali, Fray telah menghilang tanpa jejak. Yang tersisa hanyalah sebuah kompas sihir milik Fray.\n\nSaat membuka kompas itu, Fredrinn menemukan bahwa jarumnya masih bergerak, menandakan Fray mungkin masih hidup. Sejak saat itu, ia mendedikasikan hidupnya untuk mencari keberadaan sahabatnya. Demi mendapatkan informasi sebanyak mungkin, Fredrinn menetap di Los Pecados dan menjadi penaksir harta karun yang terkenal. Ia membangun jaringan informasi yang luas dan mengumpulkan kekayaan untuk mendukung pencariannya.\n\nSeiring waktu, Fredrinn dikenal sebagai sosok yang cerdik, mahal, dan sangat profesional dalam pekerjaannya, hingga dijuluki sebagai \"money-grubber\" oleh banyak orang. Berbagai rumor beredar, bahkan ada yang menuduhnya mengorbankan Fray demi mendapatkan kristal di dadanya. Namun kenyataannya, luka dan kristal yang menyatu dengan jantungnya adalah pengingat atas pengorbanan sahabat yang pernah menyelamatkannya. Hingga kini, Fredrinn masih terus mengikuti petunjuk dari kompas ajaib itu, bertekad menemukan Fray selama jarumnya masih bergerak.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Crystalline_Armor.png",
+    "name": "Crystalline Armor",
+    "kategori": "Buff/Heal",
+    "longDesc": "Fredrinn memperoleh 1 Combo Point yang bertahan selama 5 detik setiap kali Skill-nya mengenai lawan non-Minion, hingga 4 Combo Point. Ultimate-nya mengonsumsi jumlah Combo Point yang berbeda.\n\nFredrinn menyimpan 100% Damage yang dia terima sebagai Crystal Energy, yang berkurang secara perlahan setelah 5 detik sebesar 10% Max HP setiap detik.\nFredrinn dapat mengubah Crystal Energy yang tersimpan menjadi 20% HP dari Damage yang dia berikan (10% untuk Damage yang diberikan ke Minion). Memperoleh Combo Point akan mereset waktu pengurangan ini.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Piercing_Strike.png",
+      "name": "Piercing Strike",
+      "kategori": "Damage",
+      "longDesc": "Fredrinn menusukkan pedangnya ke arah yang ditentukan, memberikan 125 (+7% Total HP) (+120% Extra Physical Attack) Physical Damage ke lawan yang terkena dan menyebabkan 30% slow selama 2 detik. Basic Attack berikutnya memperoleh jangkauan serangan tambahan dan memberikan 85 (+100% Total Physical Attack) Physical Damage.\nSkill ini memberikan 170% damage kepada lawan non-hero.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Brave_Assault.png",
+      "name": "Brave Assault",
+      "kategori": "Mobility/CC",
+      "longDesc": "Fredrinn bergerak ke arah yang ditentukan, memberikan 140 (+80% Extra Physical Attack) Physical Damage kepada lawan Non-Minion pertama yang terkena Hit. Basic Attack berikutnya menyebabkan Airborne kepada target selama 0.3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Energy_Eruption.png",
+      "name": "Energy Eruption",
+      "kategori": "CC/AOE",
+      "longDesc": "Fredrinn memberikan 210 (+100% Extra Physical Attack) Physical Damage dan menyebabkan Taunt ke lawan yang berada di sekitarnya selama 1 detik. Mengenai unit non-Minion memberikan Fredrinn 25 Physical Defense & Magic Defense selama 3 detik dan mengurangi 75% Cooldown Piercing Strike dan Brave Assault.\nSkill ini menggunakan 1 Combo Point.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/97/Appraiser%27s_Wrath.png",
+      "name": "Appraiser's Wrath",
+      "kategori": "Burst/AOE",
+      "longDesc": "Fredrinn menghantamkan pedangnya ke arah target (skill ini hanya bisa dibatalkan oleh Suppress), memberikan 600 + 21% dari Crystal Energy sebagai Physical Damage ke lawan di area setelah jeda singkat. Lawan yang berada di area tengah menerima 175% damage. Skill ini menggandakan rasio konversi berdasarkan damage yang diberikan ke hero lawan dari Crystal Energy yang tersimpan menjadi HP.\nSkill ini menggunakan 3 Combo Point.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero1171-icon.png",
+        "link": "https://sfile.co/0g26MNhUwAp"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero1171-icon.png",
+        "link": "https://sfile.co/4My3xWrvIqj"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero1172-icon.png",
+        "link": "https://sfile.co/JD29MfyiXjR"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero1172-icon.png",
+        "link": "https://sfile.co/TJEGQg4riB0"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3b/Hero1173-icon.png",
+        "link": "https://sfile.co/jntzzbFT3NZ"
+      },
+      {
+        "name": "SPARKLE",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero1175-icon.png",
+        "link": "https://sfile.co/HpAsyUiulwV"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7e/Hero1176-icon.png",
+        "link": "https://sfile.co/xJ2J3fx23yT"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
