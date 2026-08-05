@@ -1,0 +1,116 @@
+{
+  "namehero": "Diggie Epic",
+  "herolink": "Diggie",
+  "urlthumbnail": "https://i.ibb.co/6JBrxx82/diggie-epic.webp",
+  "kategoriskin": "Epic",
+  "keywords": "Diggie Fairytaler",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Diggie adalah seekor burung hantu cerdas yang berasal dari Eruditio, kota para ilmuwan dan pemikir terbaik di Land of Dawn. Meski bertubuh kecil dan sering diremehkan, Diggie dikenal sebagai salah satu ahli chronoscience, cabang ilmu yang mempelajari waktu. Ketertarikannya pada jam dan mekanisme waktu membuatnya percaya bahwa masih banyak rahasia alam semesta yang tersembunyi di balik pergerakan waktu.\n\nMelalui penemuannya yang disebut Time Nest, Diggie berhasil mengendalikan aliran waktu. Alat tersebut memungkinkannya memutar kembali waktu, memanipulasi perjalanannya, bahkan membawa orang lain melintasi waktu tanpa terpengaruh oleh kekuatan luar. Berkat penemuan luar biasa ini, Diggie menjadi ilmuwan yang disegani meskipun penampilannya tampak sederhana.\n\nDi balik sifatnya yang ceria dan tingkah lakunya yang lucu, Diggie merupakan sosok yang sangat cerdas dan penuh perhitungan. Ia lebih memilih menyelesaikan masalah dengan kecerdikan daripada kekuatan fisik. Namun, siapa pun yang meremehkannya harus berhati-hati, karena Diggie memiliki senjata khas berupa Time Bomb yang mampu menghukum musuh dengan ledakan berbasis manipulasi waktu.\n\nDalam kisah terbaru Eruditio, Diggie juga dikenal sebagai salah satu anggota Eruditio Rangers. Ketika kota Eruditio dilanda krisis besar, ia berperan sebagai ahli strategi sekaligus kurir informasi. Dengan kecerdasan dan kecepatan berpikirnya, Diggie membantu Layla dan rekan-rekannya kembali bersatu untuk menghadapi ancaman yang mengancam Eruditio.\n\nKini, Diggie terus mendedikasikan hidupnya untuk meneliti misteri waktu. Dengan kecerdasan, rasa ingin tahu yang tak pernah padam, dan kemampuan mengendalikan waktu melalui Time Nest, ia menjadi salah satu ilmuwan paling unik di Land of Dawn, membuktikan bahwa tubuh kecil tidak pernah membatasi besarnya pengaruh seseorang.",
+  "dualTabNames": {
+    "tab1": "Default",
+    "tab2": "Egg Form"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Young_Again.png",
+    "name": "Young Again",
+    "kategori": "Buff",
+    "longDesc": "Setelah mati , Diggie membalikkan waktu dan berubah menjadi bentuk telur, di mana ia dapat terus bergerak dan memperoleh serangkaian keterampilan baru. Ia tidak dapat menjadi target dalam bentuk telur dan akan hidup kembali setelah beberapa waktu.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4b/Auto_Alarm_Bomb.png",
+      "name": "Auto Alarm Bomb",
+      "kategori": "AOE/Slow",
+      "longDesc": "Diggie melemparkan alarm burung hantu ke lokasi target. Alarm tersebut kemudian akan tetap diam selama 25 detik atau hingga bereaksi terhadap musuh pertama dalam jangkauan, mengejar mereka dan meledak saat bertabrakan. Ledakan tersebut memberikan 500–600 (+100% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dekatnya dan memperlambat mereka sebesar 30%. Diggie mendapatkan 2 tumpukan Percikan Berbahaya setiap kali hero musuh terkena ledakan (hingga 60 tumpukan), setiap tumpukan meningkatkan kerusakan skill sebesar 1%. Diggie kehilangan setengah dari tumpukan saat mati , tetapi dapat memperoleh 1 tumpukan Percikan Berbahaya setiap kali skill-nya mengenai hero musuh saat dalam bentuk telur.\nHingga 5 alarm burung hantu dapat ada secara bersamaan.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/5/53/Disdain.png",
+      "name2": "Disdain",
+      "kategori2": "Damage",
+      "longDesc2": "Diggie menunjukkan rasa jijik yang serius terhadap musuh, memberikan sedikit kerusakan pada musuh di sekitarnya sambil melampiaskan amarahnya."
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Reverse_Time.png",
+      "name": "Reverse Time",
+      "kategori": "CC/Damage",
+      "longDesc": "Diggie menandai hero musuh target selama 4 detik dan menariknya kembali ke lokasi sebelumnya setelah durasi berakhir, memberikan 150–400 (+100% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambatnya sebesar 80%.\nJika musuh bergerak keluar dari lingkaran, tarikan akan terpicu lebih awal.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/3/3e/Egg_Dance.png",
+      "name2": "Egg Dance",
+      "kategori2": "Damage",
+      "longDesc2": "Diggie dengan gembira menari tarian khas kota kelahirannya, sambil memberikan sedikit kerusakan pada musuh."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a2/Time_Journey.png",
+      "name": "Time Journey",
+      "kategori": "CC Immune/Speed Up",
+      "longDesc": "Diggie menghilangkan semua debuff pada hero sekutu di dekatnya (termasuk dirinya sendiri) dan memberi mereka perisai sebesar 650–880 (+300% Total Kekuatan Sihir) dan Kekebalan Kontrol selama 3 detik. Dia juga mendapatkan peningkatan Kecepatan Gerak sebesar 50% selama 0,5 detik.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Victory_Prayer.png",
+      "name2": "Victory Prayer",
+      "kategori2": "Buff",
+      "longDesc2": "Diggie berguling-guling di tanah, berdoa agar markas musuh segera meledak. Mereka bilang itu mustahil terjadi."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero481-icon.png",
+        "link": "https://sfile.co/OiUu3IUoc7i"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero481-icon.png",
+        "link": "https://sfile.co/KhWcnrRKE1r"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/99/Hero482-icon.png",
+        "link": "https://sfile.co/HB7rMHqKFip"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/99/Hero482-icon.png",
+        "link": "https://sfile.co/OSQ8AwgqixJ"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Hero483-icon.png",
+        "link": "https://sfile.co/0F75Tfip5Aq"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e8/Hero484-icon.png",
+        "link": "https://sfile.co/tmdBIu59gC1"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero486-icon.png",
+        "link": "https://sfile.co/skAtivel7sX"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
