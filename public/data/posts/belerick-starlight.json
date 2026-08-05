@@ -1,0 +1,121 @@
+{
+  "namehero": "Belerick Starlight",
+  "herolink": "Belerick",
+  "urlthumbnail": "https://i.ibb.co/hkxKQPz/belerick-starlight.webp",
+  "kategoriskin": "Starlight",
+  "keywords": "Belerick Smouldering Fortress",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Belerick merupakan makhluk elemental kuno yang lahir sejak awal terciptanya Land of Dawn. Ia diciptakan oleh Ancient Ones bersama berbagai makhluk elemental lainnya sebagai penerus kehidupan di dunia. Sejak masih berupa tunas pohon, Belerick dipilih untuk menerima esensi kehidupan dan kekuatan alam, yang memberinya kebijaksanaan, kemampuan bereinkarnasi, serta kekuatan untuk menjaga keseimbangan alam.\n\nDi bawah bimbingan Ancient Ones, Belerick hidup bersama para makhluk elemental di Pegunungan Lantis, sebuah wilayah yang dipenuhi kehidupan dan energi alam. Selama masa itu, mereka hidup damai dan berkembang di bawah perlindungan para pencipta dunia, hingga akhirnya masa kedamaian tersebut berakhir ketika Endless War melanda Land of Dawn.\n\nSaat perang besar pecah, Ancient Ones meninggalkan dunia menuju Celestial Palace, sementara para makhluk elemental kehilangan perlindungan mereka. Banyak dari mereka gugur akibat peperangan yang terus menyebar ke seluruh penjuru dunia. Belerick yang selamat terpaksa meninggalkan kampung halamannya dan mengembara tanpa tempat untuk kembali.\n\nSelama perjalanan panjangnya, Belerick menyaksikan kehancuran yang disebabkan oleh perang. Ia tumbuh dari tunas kecil menjadi pohon raksasa yang kuat, tetapi juga harus kehilangan banyak teman dan sesama makhluk elemental. Meski dipenuhi kesedihan, ia tidak pernah kehilangan harapan dan terus menggunakan kekuatannya untuk melindungi kehidupan serta membantu siapa pun yang membutuhkan.\n\nKetika Era of Strife mencapai puncaknya, Ancient Ones akhirnya turun tangan dengan memanfaatkan kekuatan Twilight Orbs untuk menghentikan peperangan. Sebagai salah satu makhluk tertua yang masih bertahan hidup, Belerick tetap mengabdikan dirinya untuk menjaga keseimbangan alam. Dengan hati yang penuh kasih, ia terus menjadi pelindung kehidupan dan simbol harapan bagi seluruh makhluk di Land of Dawn.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b2/Deadly_Thorns.png",
+    "name": "Deadly Thorns",
+    "kategori": "Buff",
+    "longDesc": "Untuk setiap 50 kerusakan yang ditimbulkan pada Belerick, ia memiliki peluang 25% untuk menembak unit musuh terdekat, memberikan Kerusakan Sihir sebesar 55 (+5 × Level Hero) ditambah 1,8% dari HP Maksimumnya (meningkat seiring level). Dalam setiap 0,4 detik, serangan ini hanya dapat dipicu sekali. HP yang diperolehnya dari Peralatan dan Emblem meningkat sebesar 30%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/af/Ancient_Seed.png",
+      "name": "Ancient Seed",
+      "kategori": "CC/AOE",
+      "longDesc": "Belerick melepaskan sulur-sulur ke arah yang ditentukan, memberikan 200 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di jalur tersebut dan memperlambat mereka sebesar 25%. Sementara itu, ia meninggalkan Benih Kuno di jalur tersebut, dan setelah 1 detik, benih-benih ini akan memberikan 200 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di jalur tersebut dan memprovokasi mereka selama 1,2 detik. Kepada minion, akan diberikan kerusakan ekstra sebesar 80%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/66/Nature%27s_Strike.png",
+      "name": "Nature's Strike",
+      "kategori": "Speed Up/Heal",
+      "longDesc": "Belerick meningkatkan Kecepatan Geraknya sebesar 80% dan memperkuat Serangan Dasar berikutnya. (Peningkatan Kecepatan Gerak akan berkurang dalam 2 detik.) Serangan Dasar yang ditingkatkan ini memberikan 300 (+60% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat target sebesar 60% selama 1,4 detik. Belerick juga meregenerasi HP sebesar 240 ditambah 10% dari HP yang hilang. Setiap kali Deadly Thorns diaktifkan, kurangi waktu pendinginan skill ini sebanyak 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a8/Wrath_of_Dryad.png",
+      "name": "Wrath of Dryad",
+      "kategori": "CC/AOE",
+      "longDesc": "Belerick memunculkan sulur-sulur yang menyebar di sekitarnya, memberikan 100 (+30% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di area tersebut sebanyak 4 kali dan mengejek mereka selama 1,5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d7/Hero701-icon.png",
+        "link": "https://sfile.co/5jTHlogXsE5"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d7/Hero701-icon.png",
+        "link": "https://sfile.co/UrWXY1JbRam"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero702-icon.png",
+        "link": "https://sfile.co/uSj0y4DdTiT"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero702-icon.png",
+        "link": "https://sfile.co/dCZPrjLvCzN"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Hero703-icon.png",
+        "link": "https://sfile.co/vcZv0Q5yW06"
+      },
+      {
+        "name": "Special The Deep",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/76/Hero704-icon.png",
+        "link": "https://sfile.co/dC1WrvYbAfm"
+      },
+      {
+        "name": "Special Emerald",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ec/Hero705-icon.png",
+        "link": "https://sfile.co/sYdtYpZoiGg"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7e/Hero706-icon.png",
+        "link": "https://sfile.co/xLgc3D61mLQ"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
