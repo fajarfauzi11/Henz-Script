@@ -1,5 +1,17 @@
 [
   {
+    "id": 40,
+    "title": "Harley Collector",
+    "url": "/post/harley-collector",
+    "thumb": "https://i.ibb.co/tw4SpWHJ/harley-collector.webp",
+    "cat": "Collector",
+    "hero": "Harley",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Harley Dream Caster"
+  },
+  {
     "id": 39,
     "title": "Gatotkaca Luckybox",
     "url": "/post/gatotkaca-luckybox",
