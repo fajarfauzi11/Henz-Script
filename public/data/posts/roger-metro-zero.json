@@ -8,8 +8,8 @@
   "authorname": "Henz MLBB",
   "longstory": "Roger adalah mantan prajurit Kekaisaran Moniyan yang memilih hidup sebagai pemburu di tepi Black Forest setelah meninggalkan medan perang. Hutan tersebut dipenuhi kawanan serigala buas yang dipimpin oleh Whitefang, Raja Serigala yang telah memperoleh kekuatan sihir kuno. Ketika kawanan itu mulai menyerang desa-desa di sekitar hutan, Roger memutuskan untuk memburu Whitefang demi melindungi masyarakat.\n\nDalam salah satu serangan, Roger menemukan Whitefang dan kawanannya sedang mengamuk di sebuah desa. Ia berhasil menyelamatkan seorang gadis kecil bernama Ruby dari cengkeraman Whitefang, meski harus menerima luka parah akibat cakar dan gigitan sang Raja Serigala. Berkat keberaniannya, Whitefang dan para serigala mundur, tetapi Roger menyadari kebencian Whitefang belum berakhir.\n\nKarena khawatir serigala akan kembali, Roger melatih para penduduk desa, termasuk Ruby, agar mampu mempertahankan diri. Namun tidak lama kemudian, tubuhnya mulai mengalami perubahan aneh. Luka yang ditinggalkan Whitefang ternyata membawa kutukan manusia serigala yang perlahan mengubah dirinya.\n\nSaat bulan purnama tiba, Roger akhirnya berubah menjadi manusia serigala. Ia menyadari bahwa kutukan itu tidak dapat dilawan, bahkan oleh seseorang yang berhati baik sekalipun. Takut kehilangan kendali dan melukai orang-orang yang ingin ia lindungi, Roger memutuskan meninggalkan desa dan menjalani hidup dalam kesendirian.\n\nKini Roger mengembara sebagai manusia sekaligus manusia serigala. Meski harus hidup dengan kutukan yang sama seperti musuhnya, ia tidak pernah melupakan tujuannya. Dengan tekad yang tak tergoyahkan, Roger terus memburu Whitefang dan berusaha memusnahkan ancaman para manusia serigala, sambil mencari cara untuk mengakhiri kutukan yang telah mengubah hidupnya selamanya.",
   "dualTabNames": {
-    "tab1": "Tab 1",
-    "tab2": "Tab 2"
+    "tab1": "Human Form",
+    "tab2": "Wolf Form"
   },
   "abilitiesPasif": {
     "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Full_Moon_Curse.png",
@@ -91,7 +91,7 @@
         "link": "https://sfile.co/HCUkfcfaCb5"
       },
       {
-        "name": "Old Starlight",
+        "name": "Starlight",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero394-icon.png",
         "link": "https://sfile.co/RIuzMKiWX8b"
       },
