@@ -1,0 +1,131 @@
+{
+  "namehero": "Grock Collector Titan",
+  "herolink": "Grock",
+  "urlthumbnail": "https://i.ibb.co/VcKb0SR1/grock-collector-titan.webp",
+  "kategoriskin": "Collector Titans",
+  "keywords": "Grock Tremor of the Deep",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Grock adalah manusia batu raksasa yang berasal dari pegunungan kuno di Land of Dawn. Ia merupakan salah satu Stone Titan, ras purba yang memiliki hubungan erat dengan alam dan dipercaya pernah membuat perjanjian dengan para Ancient Ones. Dengan tubuh yang hampir tak bisa ditembus serangan fisik, Grock memiliki kekuatan luar biasa, tetapi sifatnya sangat lembut dan damai.\n\nSelama bertahun-tahun, Grock menjalankan tugas sebagai penjaga sebuah benteng kuno yang tersembunyi jauh di dalam pegunungan. Benteng tersebut diyakini milik para Ancient Ones, ras legendaris yang telah ada sejak zaman sebelum peradaban modern. Grock menjaga tempat itu dengan penuh kesetiaan sambil menjalani kebiasaan rasnya yang gemar tidur dalam waktu yang sangat lama.\n\nStone Titan dikenal sangat menyukai tidur hingga mampu berhibernasi selama berbulan-bulan. Namun, ketika Grock terbangun dari tidurnya kali ini, ia mendapati benteng yang dijaganya telah ditinggalkan. Para Ancient Ones menghilang tanpa jejak, meninggalkan Grock seorang diri tanpa mengetahui ke mana mereka pergi.\n\nTidak ingin mengabaikan tanggung jawabnya, Grock memutuskan melakukan perjalanan untuk mencari para pemilik benteng. Demi memastikan rumah mereka tetap aman, ia bahkan mengangkat seluruh benteng tersebut di atas pundaknya dan membawanya berkeliling Land of Dawn. Kesetiaannya kepada Ancient Ones jauh lebih besar daripada keinginannya untuk kembali beristirahat.\n\nKini, Grock terus mengembara sambil memikul benteng kuno di punggungnya, berharap suatu hari dapat menemukan para Ancient Ones dan mengembalikan rumah mereka. Dengan hati yang baik, kekuatan yang luar biasa, dan kesetiaan yang tak tergoyahkan, Grock menjadi pelindung raksasa yang selalu menepati janji yang telah dibuatnya sejak zaman kuno.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/eb/Bastion_of_Stone.png",
+    "name": "Bastion of Stone",
+    "kategori": "Buff",
+    "longDesc": "Grock mendapatkan Perisai setara dengan 10% dari HP Maksimumnya dan meningkatkan Serangan Dasar berikutnya untuk memberikan Kerusakan Fisik setara dengan 4 (+2% Total Pertahanan Fisik) % dari HP Maksimum target (dibatasi hingga 300 (+20 × Level Hero) terhadap unit non-hero). Efek ini memiliki waktu pendinginan 18-12 detik (berkurang seiring level), yang berkurang 200% saat berada di dekat medan. Grock mendapatkan Kekebalan Kontrol saat menggunakan skill dan 30 (+6 × Level Hero) % Pertahanan Fisik ekstra saat Perisai aktif.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7f/Mighty_Swing.png",
+      "name": "Mighty Swing",
+      "kategori": "CC/AOE",
+      "longDesc": "Grock menyerang dengan kekuatan dahsyat, memberikan 240–440 (+100% Serangan Fisik Ekstra) Kerusakan Fisik . Musuh yang terhalang akan terlempar ke udara dan menerima Kerusakan Fisik ekstra sebesar 4 (+2% Total Pertahanan Fisik) % dari HP Maksimum mereka (dibatasi hingga 300 (+20 × Level Hero) terhadap unit non-hero). Jika tidak ada halangan di belakang, musuh hanya akan terpental sedikit.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fd/Earthen_Rampart.png",
+      "name": "Earthen Rampart",
+      "kategori": "CC/AOE",
+      "longDesc": "Setelah jeda singkat, Grock memunculkan dinding batu di area target, memberikan 100–200 (+60% Serangan Fisik Ekstra) Kerusakan Fisik dan mendorong musuh ke arahnya.\nGunakan Lagi : Batalkan dinding lebih awal.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/72/Tectonic_Charge.png",
+      "name": "Tectonic Charge",
+      "kategori": "Mobility/AOE",
+      "longDesc": "Grock menerjang ke depan, memberikan 100 (+50% Total Serangan Fisik) Kerusakan Fisik kepada musuh di jalurnya. Setelah mengenai medan, dia langsung berhenti dan memicu ledakan besar yang melontarkan musuh di dekatnya ke udara selama 1 detik dan memberikan (+300% Total Serangan Fisik) . Jika skill ini tidak mengenai medan, 50% dari cooldown-nya dikembalikan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Hero441-icon.png",
+        "link": "https://sfile.co/eAtGyN2tU1D"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Hero441-icon.png",
+        "link": "https://sfile.co/9dA73Cgkp3e"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c0/Hero442-icon.png",
+        "link": "https://sfile.co/slSljYH2iLO"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c0/Hero442-icon.png",
+        "link": "https://sfile.co/PeVz3b39Nyk"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Hero443-icon.png",
+        "link": "https://sfile.co/P70aIUHeDpB"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero444-icon.png",
+        "link": "https://sfile.co/epID9z94h0d"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/55/Hero445-icon.png",
+        "link": "https://sfile.co/xneaUMnFFyh"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero446-icon.png",
+        "link": "https://sfile.co/YBvosFiPPnt"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Hero447-icon.png",
+        "link": "https://sfile.co/UjDdXSCxZzS"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8d/Hero448-icon.png",
+        "link": "https://sfile.co/BSkduy4riJQ"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
