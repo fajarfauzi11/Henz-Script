@@ -1,0 +1,151 @@
+{
+  "namehero": "Hanabi Soul Vessel",
+  "herolink": "Hanabi",
+  "urlthumbnail": "https://i.ibb.co/4n4KPq9g/hanabi-soul-vessel.webp",
+  "kategoriskin": "Soul Vessels",
+  "keywords": "Hanabi Vessel of Rage",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Hanabi adalah pemimpin Scarlet Sect di Scarlet Shadow, sebuah klan ninja di Cadia Riverlands. Sejak kecil ia dipilih sebagai pewaris Higanbana, salah satu dari Tujuh Senjata Legendaris Scarlet Shadow. Demi meneruskan kehendak ayahnya dan membawa Scarlet Sect menuju kemenangan, Hanabi mengabdikan seluruh hidupnya untuk mengejar kekuatan, hingga menutup hati dari segala emosi dan perasaan.\n\nBakat luar biasa membuat Hanabi selalu menang dalam setiap pertandingan, tetapi kemunculan Hayabusa mengubah segalanya. Berulang kali dikalahkan olehnya, Hanabi menjadi semakin terobsesi untuk menjadi lebih kuat. Ia percaya bahwa kemenangan adalah segalanya dan terus memaksakan diri demi mencapai kekuatan sejati Higanbana.\n\nKetika Hanzo mencuri pedang Ame no Habakiri, Hanabi ikut memburunya bersama Hayabusa. Dalam pertarungan, ia hampir tewas dan tanpa sadar menyerahkan dirinya kepada Higanbana demi memperoleh kekuatan. Jiwanya terseret ke dunia di dalam senjata tersebut, tempat arwah-arwah yang dipenuhi penyesalan terperangkap selamanya. Di sana, Hanabi menyadari bahwa kekuatan yang lahir dari obsesi semata hanya akan menghancurkan pemiliknya.\n\nBerkat suara Hayabusa yang membangunkannya dari ilusi, Hanabi berhasil memahami rahasia Higanbana. Ia mengetahui bahwa senjata itu menyimpan penyesalan pemimpin pertama Scarlet Sect yang kehilangan orang yang dicintainya karena terlalu terobsesi mengejar kekuasaan. Setelah menerima sisi emosional dalam dirinya, Hanabi akhirnya benar-benar diakui sebagai pemilik Higanbana.\n\nSejak saat itu, Hanabi tidak lagi hidup hanya demi kemenangan. Ia memahami bahwa ada hal-hal yang lebih berharga daripada menjadi yang terkuat. Dengan Higanbana di tangannya dan tekad yang lebih matang, Hanabi memimpin Scarlet Sect sambil melindungi orang-orang yang ia hargai dan terus mengejar Hanzo bersama Hayabusa.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Ninjutsu_Petal_Barrage.png",
+    "name": "Ninjutsu: Petal Barrage",
+    "kategori": "Buff",
+    "longDesc": "Serangan Dasar dan Skill Hanabi akan meluncurkan Petal Blades setelah mengenai target, memantul hingga 4 kali ke musuh di dekatnya (pantulan pertama memberikan 40% dari kerusakan, dan pantulan berikutnya memberikan 85% dari kerusakan sebelumnya). Pantulan dari Serangan Dasarnya mewarisi sebagian dari Efek Serangan.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5d/Ninjutsu_Equinox.png",
+      "name": "Ninjutsu: Equinox",
+      "kategori": "Shield/Buff",
+      "longDesc": "Pasif: Ninjutsu rahasia Bayangan Merah membuat Hanabi kebal terhadap efek pengendalian saat ia memiliki perisai dari sumber mana pun. \nAktif: Hanabi mendapatkan perisai 300–600 (+40% Total Serangan Fisik) selama 5 detik. Saat perisai aktif, Hanabi mendapatkan 20% Kecepatan Gerak, 25% Kecepatan Serangan, dan 20% dari kerusakan yang ditimbulkan juga akan ditambahkan ke perisai ini (hanya 10% dari kerusakan yang ditimbulkan pada unit non-hero). Perisai tidak dapat melebihi 50% dari HP maksimal Hanabi.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Ninjutsu_Soul_Scroll.png",
+      "name": "Ninjutsu: Soul Scroll",
+      "kategori": "AOE",
+      "longDesc": "Hanabi menembakkan Kunai energi ke arah yang ditargetkan, memberikan 450–600 (+80% Total Serangan Fisik) Kerusakan Fisik kepada musuh di sepanjang jalur dan mengurangi Kecepatan Gerak mereka sebesar 60% selama 1 detik. Unit musuh yang terkena juga akan ditandai, memungkinkan Kerusakan Pantulan Hanabi berikutnya dari Serangan Dasar untuk memberikan 30–180 (+100% Total Serangan Fisik) Kerusakan Fisik pada mereka tanpa pengurangan kerusakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Forbidden_Jutsu_Higanbana.png",
+      "name": "Forbidden Jutsu: Higanbana",
+      "kategori": "CC/AOE",
+      "longDesc": "Hanabi melemparkan Higanbana ke arah yang ditargetkan, memberikan 300–500 (+50% Total Serangan Fisik) Kerusakan Fisik kepada hero musuh pertama yang terkena dan melumpuhkannya selama 0,8 detik. Setelah 1 detik, Higanbana akan mekar di lokasi serangan pertama, memberikan 300–500 (+50% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dekatnya. Serangan berikutnya pada target yang sama mengurangi kerusakan sebesar 20%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero601-icon.png",
+        "link": "https://sfile.co/GxxaowfpcSq"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero601-icon.png",
+        "link": "https://sfile.co/LAmW5ra4gok"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2f/Hero602-icon.png",
+        "link": "https://sfile.co/j9TyMRAxNj4"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2f/Hero602-icon.png",
+        "link": "https://sfile.co/WJ8BtHybfX1"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e4/Hero603-icon.png",
+        "link": "https://sfile.co/IzEkc4gW6XG"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d9/Nephila_Icon.png",
+        "link": "https://sfile.co/mrOgXiyjtfw"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Hero605-icon.png",
+        "link": "https://sfile.co/NMScCOycCgm"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1f/Hero606-icon.png",
+        "link": "https://sfile.co/RKrC2yJoGHg"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Hero607-icon.png",
+        "link": "https://sfile.co/81zeKq8BHnx"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/be/Hero608-icon.png",
+        "link": "https://sfile.co/FHryZH3XaU7"
+      },
+      {
+        "name": "Allstar",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Hero609-icon.png",
+        "link": "https://sfile.co/CvHj4nOVoMk"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8d/Hero106011-icon.png",
+        "link": "https://sfile.co/RPSzuXY3vGl"
+      },
+      {
+        "name": "Golden Month Icon",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b9/Hero106012.png",
+        "link": "https://sfile.co/66KvoOhII5n"
+      },
+      {
+        "name": "Golden Month Crescent",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9a/Hero106013.png",
+        "link": "https://sfile.co/lc1QnzdIkA8"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
