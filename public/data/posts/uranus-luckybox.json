@@ -1,0 +1,121 @@
+{
+  "namehero": "Uranus Luckybox",
+  "herolink": "Uranus",
+  "urlthumbnail": "https://i.ibb.co/C5V9P427/uranus-luckybox.webp",
+  "kategoriskin": "Luckybox",
+  "keywords": "Uranus Video-Game Dominator",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Uranus adalah penjaga mekanis yang diciptakan oleh penguasa Celestial Palace, kota kuno yang melayang di langit Land of Dawn dan dipercaya pernah menjadi tempat tinggal para dewa. Dengan memanfaatkan teknologi kuno, sang penguasa menciptakan Uranus untuk menjaga istana tersebut dan menunggu hingga muncul penguasa baru yang layak mewarisinya.\n\nSelama berabad-abad, Celestial Palace tetap tersembunyi dan Uranus tertidur jauh di dalam kota itu. Keadaan berubah ketika para cendekiawan Land of Dawn berhasil menemukan dan membuka gerbang menuju Celestial Palace. Penemuan tersebut memicu perebutan kekuasaan antara Dawn Zenith dan Dark Abyss, yang sama-sama ingin menguasai kota legendaris itu.\n\nPertempuran besar yang berlangsung tanpa henti menghasilkan ledakan energi yang sangat besar. Energi tersebut mengaktifkan kembali sistem pertahanan Celestial Palace dan diubah menjadi petir murni yang mengalir ke tubuh Uranus, membangunkannya dari tidur panjang.\n\nSetelah terbangun, Uranus melihat Celestial Palace telah dipenuhi para penyusup yang saling berperang. Sesuai tugas yang telah diberikan kepadanya sejak diciptakan, ia menganggap semua pihak sebagai ancaman yang harus disingkirkan. Dengan tubuh yang diperkuat energi petir dan aether, Uranus turun ke medan perang untuk melindungi kota kuno yang telah dijaganya selama ribuan tahun.\n\nHingga kini, Uranus tetap menjalankan misinya sebagai pelindung Celestial Palace. Ia akan terus mengusir siapa pun yang berusaha mengganggu kedamaian kota suci tersebut, sembari menunggu munculnya penguasa sejati yang pantas mewarisi Celestial Palace.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/71/Radiance.png",
+    "name": "Radiance",
+    "kategori": "Heal",
+    "longDesc": "Uranus menyerap energi yang dihasilkan oleh serangan yang masuk untuk memperkuat dirinya, meregenerasi sejumlah HP setiap 0,8 detik. Setiap tumpukan bertahan selama 10 detik. Saat mencapai tumpukan maksimal (20), Uranus meregenerasi 48-224 HP (berskala dengan level).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/61/Ionic_Edge.png",
+      "name": "Ionic Edge",
+      "kategori": "AOE/Slow",
+      "longDesc": "Uranus melepaskan dua bilah energi yang mengorbit di sekelilingnya, memberikan 155–255 (+30% Total Kekuatan Sihir) Kerusakan Sihir kepada target musuh dan memperlambat mereka sebesar 30% selama 2 detik. Setiap kali skill ini memberikan kerusakan pada target, mereka akan ditandai dengan tumpukan selama 6 detik (maksimal 1 tumpukan per target per penggunaan). Setiap tumpukan meningkatkan kerusakan skill ini sebesar 40% (hingga maksimal 320%). Setiap bilah energi hanya akan memberikan kerusakan pada target yang sama sekali.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/71/Transcendent_Ward.png",
+      "name": "Transcendent Ward",
+      "kategori": "Mobility/Shield",
+      "longDesc": "Uranus bergerak menuju lokasi target, memberikan 80–200 (+20% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalan, dan 160–400 (+80% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di lokasi target serta memperlambat mereka sebesar 25%. Uranus juga menghasilkan perisai sebesar 300–750 (+200% Total Kekuatan Sihir) selama 4 detik. Perisai tersebut meledak di akhir durasinya atau saat hancur, memberikan 300–750 (+150% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dekatnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Consecration.png",
+      "name": "Consecration",
+      "kategori": "Buff/Speed Up",
+      "longDesc": "Uranus melepaskan energi yang tersimpan di dalam tubuhnya, menghilangkan efek perlambatan pada dirinya sendiri, memulihkan 200-400 HP, dan mendapatkan 60% Kecepatan Gerak selama 8 detik (berkurang seiring waktu). Uranus secara langsung mendapatkan 5-15 tumpukan Radiance, meningkatkan perisai yang diterima dan regenerasi HP sebesar 20% selama 8 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero591-icon.png",
+        "link": "https://sfile.co/seTKZ0Ar3m7"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero591-icon.png",
+        "link": "https://sfile.co/X1JQQRtXeFD"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero592-icon.png",
+        "link": "https://sfile.co/TKf8MXbZDqG"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero592-icon.png",
+        "link": "https://sfile.co/cz0uhNpDfdr"
+      },
+      {
+        "name": "Rising",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Hero593-icon.png",
+        "link": "https://sfile.co/95AkPkKVOOt"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5c/Hero595-icon.png",
+        "link": "https://sfile.co/TAHFsUa8VFY"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Hero596-icon.png",
+        "link": "https://sfile.co/ymdxCvYhcmW"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6f/Hero597-icon.png",
+        "link": "https://sfile.co/nz2362LX7mA"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
