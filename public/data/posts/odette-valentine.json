@@ -1,0 +1,136 @@
+{
+  "namehero": "Odette Valentine",
+  "herolink": "Odette",
+  "urlthumbnail": "https://i.ibb.co/FkjvnLPp/odette-valentine.webp",
+  "kategoriskin": "Valentine V2",
+  "keywords": "Odette Song of Devotion",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Odette adalah putri dari Pangeran Alvin yang tinggal di Swan Castle, wilayah keluarga kerajaan Moniyan yang terkenal akan sifat romantisnya. Meski dikenal sebagai putri yang anggun, lembut, dan penurut, Odette sebenarnya sangat penasaran dengan dunia di luar kastil. Sejak kecil ia hidup dalam lingkungan yang damai dan terlindungi, sehingga selalu memimpikan petualangan yang belum pernah ia rasakan.\n\nRasa ingin tahunya membuat Odette diam-diam menyelinap keluar dari kastil untuk menjelajahi desa dan pasar di sekitarnya. Karena kepolosannya, ia sering melakukan hal-hal lucu, seperti mencoba membeli roti dengan sekantong emas atau memberikan seluruh perhiasannya kepada seorang pengemis. Namun, suatu hari petualangannya berubah menjadi berbahaya ketika ia diganggu oleh sekelompok preman di sebuah kedai.\n\nDi saat genting, Lancelot datang menyelamatkannya meski dirinya sendiri terluka parah. Demi menyelamatkan sang ksatria, Odette melanggar aturan keluarganya dengan membawa Lancelot secara diam-diam ke Swan Castle. Di sana, ia merawat luka-lukanya menggunakan sihir penyembuhan keluarganya dan setia menemaninya hingga pulih.\n\nSelama masa pemulihan, hubungan mereka semakin dekat. Lancelot sering memainkan harpa dan menceritakan kisah-kisah petualangannya, membuat Odette semakin merindukan kebebasan di luar kastil. Seiring waktu, lagu-lagu yang dimainkan Lancelot berubah menjadi ungkapan perasaan kepada seorang putri. Berkat bantuan pelayan kepercayaannya, Odette akhirnya menyadari bahwa Lancelot sedang jatuh cinta kepadanya, dan perlahan ia pun mulai menyadari perasaan yang sama.\n\nNamun, sebelum Odette sempat mengungkapkan isi hatinya, Lancelot pergi meninggalkan Swan Castle hanya dengan sebuah surat. Kepergiannya membuat Odette memahami bahwa ia benar-benar mencintainya. Bertekad mengikuti jejak pria yang dicintainya, Odette meninggalkan Swan Castle dan memulai petualangannya sendiri, mencari Lancelot sekaligus mengejar kehidupan yang selama ini hanya ia impikan.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Lakeshore_Ambience.png",
+    "name": "Lakeshore Ambience",
+    "kategori": "Buff",
+    "longDesc": "Setelah setiap penggunaan skill, giliran Odette berikutnya Serangan dasar atau skill akan mengeluarkan gelombang suara yang memantul antara dirinya dan musuh, setiap pantulan memberikan 140(+4 × Level Hero) (+50% Total Kekuatan Sihir) Kerusakan Sihir.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5a/Avian_Authority.png",
+      "name": "Avian Authority",
+      "kategori": "AOE/Slow",
+      "longDesc": "Odette memusatkan energi untuk memanggil seekor angsa yang menyerang musuh, memberikan 300–550 (+150% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat mereka sebesar 30%. Berlangsung selama 2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/37/Blue_Nova.png",
+      "name": "Blue Nova",
+      "kategori": "CC/Damage",
+      "longDesc": "Odette melepaskan serangkaian bola energi sihir ke depan, memberikan 250–400 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang terkena dan melumpuhkan mereka selama 1,5 detik. Bola energi lain kemudian akan muncul dan menyerang musuh terdekat (memprioritaskan hero musuh), memberikan 250–400 (+50% Total Kekuatan Sihir) Kerusakan Sihir dan melumpuhkan mereka selama 1,5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e0/Swan_Song.png",
+      "name": "Swan Song",
+      "kategori": "Burst/Mobility",
+      "longDesc": "Odette mengumpulkan energi dan mulai menyalurkannya, mendapatkan perisai 1200–1800 (+150% Total Kekuatan Sihir) , dan memberikan total Kerusakan Sihir 2000–3000 (+750% Total Kekuatan Sihir) kepada musuh di area tersebut selama 5 detik. (Dia memberikan kerusakan setiap 0,5 detik). Kecepatan dan jumlah pantulan Gelombang suara Lakeshore Ambience di area tersebut juga meningkat saat skill aktif.\nGunakan Lagi: dalam 5 detik untuk melompat ke arah yang ditentukan tanpa mengganggu pengaktifan. Skill ini membutuhkan pengaktifan terus-menerus dan akan terganggu jika Odette dikendalikan olehCCsepertiSuppression, terpengaruh olehefek terbang,berubah bentuk, atau saat Odette melakukan tindakan lain.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero461-icon.png",
+        "link": "https://sfile.co/PfmeV6f4t3w"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero461-icon.png",
+        "link": "https://sfile.co/ZXnNhOx8Otd"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero462-icon.png",
+        "link": "https://sfile.co/nJBUTYAPqSe"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero462-icon.png",
+        "link": "https://sfile.co/bnEZRv8FGJa"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1d/Hero463-icon.png",
+        "link": "https://sfile.co/T4qpIIm2az3"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/77/Hero464-icon.png",
+        "link": "https://sfile.co/VHycM7cMfyD"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/49/Hero465-icon.png",
+        "link": "https://sfile.co/FBhk8vXEGsF"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fb/Hero466-icon.png",
+        "link": "https://sfile.co/UcF1HDih4lo"
+      },
+      {
+        "name": "Lunar Fest",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6c/Hero467-icon.png",
+        "link": "https://sfile.co/ZFZ0NEkT4Xo"
+      },
+      {
+        "name": "Create",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Hero468-icon.png",
+        "link": "https://sfile.co/qiDxl7ggu95"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero469-icon.png",
+        "link": "https://sfile.co/mT0jKBiQzgJ"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
