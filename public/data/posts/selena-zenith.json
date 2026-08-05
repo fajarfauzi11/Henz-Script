@@ -1,0 +1,136 @@
+{
+  "namehero": "Selena Zenith",
+  "herolink": "Selena",
+  "urlthumbnail": "https://i.ibb.co/zW1d5tH9/selena-zenith.webp",
+  "kategoriskin": "Zenith",
+  "keywords": "Selena Curse of Cinder",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Selena adalah seorang Dark Elf yang sejak kecil hidup di bawah perlindungan kakaknya, Karina. Karena tidak ingin terus menjadi beban bagi sang kakak, Selena mendambakan kekuatan yang lebih besar. Keinginannya itu membawanya pada takdir kelam ketika ia dijadikan tumbal oleh para pemuja Abyss dan dilemparkan ke Shadow Abyss, jurang terdalam yang menjadi tempat bersemayamnya kekuatan kegelapan.\n\nDi dasar jurang, Selena dipersembahkan kepada Abyss Devil, makhluk yang tercipta dari energi kegelapan murni. Saat tubuhnya hampir sepenuhnya dikuasai oleh kekuatan Abyss, cahaya biru misterius tiba-tiba muncul dan melindunginya. Kekuatan tersebut bertabrakan dengan energi Abyss di dalam tubuh Selena hingga menciptakan keseimbangan yang tidak pernah terjadi sebelumnya.\n\nKetika terbangun, Selena telah berubah. Kulitnya menjadi kebiruan, matanya bersinar merah, dan Abyss Devil justru tunduk di sisinya. Kehendak Shadow Abyss melihat potensi luar biasa dalam dirinya dan memilih Selena sebagai penerus sekaligus suara dari Abyss. Sejak saat itu, ia kehilangan seluruh ingatan tentang masa lalunya dan mampu mengendalikan kekuatan gelap sesuka hati.\n\nSebagai wakil dari Shadow Abyss, Selena memimpin para iblis dengan kekuatan yang bahkan membuat Alice, Ratu Blood Demon, merasa waspada. Di dalam dirinya hidup dua kekuatan yang saling bertentangan, yaitu energi Abyss dan perlindungan misterius dari Moon Goddess, menjadikannya sosok yang sangat unik sekaligus berbahaya.\n\nKini, Selena dikenal sebagai salah satu pejuang terkuat Shadow Abyss. Dengan wujud iblis yang mengerikan dan kemampuan mengendalikan kegelapan, ia menjalankan kehendak Abyss sambil menyimpan kekuatan luar biasa yang berasal dari keseimbangan dua kekuatan yang berlawanan.",
+  "dualTabNames": {
+    "tab1": "Elven Form",
+    "tab2": "Abyssal Form"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/44/Symbiosis.png",
+    "name": "Symbiosis",
+    "kategori": "Buff",
+    "longDesc": "Selena dapat beralih dengan bebas antara dua wujudnya. Wujud Elf : Selena menerapkan \"Abyssal Mark\" dengan keahliannya. Tanda tersebut dapat menumpuk hingga 2 kali. Saat \"Abyssal Trap\" mengenai musuh, dan langsung menambahkan \"Tanda Jurang\". Wujud Jurang: Semua kerusakan akan mengonsumsi 1 tumpukan \"Tanda Jurang\" untuk memberikan tambahan 225(+15 × Level Hero) (+40% Total Kekuatan Sihir) Kerusakan Sihir. \"Abyssal Mark\" memberikan tambahan 285% kerusakan pada unit non-hero.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Abyssal_Trap.png",
+      "name": "Abyssal Trap",
+      "kategori": "Summon/Slow",
+      "longDesc": "Selena memanggil Iblis Jurang untuk bersembunyi di lokasi yang ditentukan. Iblis Jurang akan menempel pada musuh mana pun yang mendekati lokasi tersebut dan memperlambat mereka sebesar 50%. Setelah 3 detik, Iblis Jurang memberikan 350–550 (+150% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh dan musuh lain di dekatnya serta memperlambat mereka sebesar 50% selama 1 detik. Iblis Jurang bertahan hingga 60 detik. Hingga 3 Iblis Jurang dapat ada secara bersamaan. Setiap Iblis Jurang tambahan meningkatkan kerusakan akhir sebesar 50%.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/6/6c/Soul_Eater.png",
+      "name2": "Soul Eater",
+      "kategori2": "Burst/Shield",
+      "longDesc2": "Selena memperkuat cakarnya dengan kekuatan Abyss, menyebabkan serangan dasar berikutnya memberikan tambahan 200–350 (+130% Total Kekuatan Sihir) Kerusakan Sihir , sekaligus memberikan Perisai yang menyerap 300–400 (+150% Total Kekuatan Sihir) kerusakan."
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c2/Abyssal_Arrow.png",
+      "name": "Abyssal Arrow",
+      "kategori": "CC/Speed Up",
+      "longDesc": "Selena menembakkan panah sihir ke arah yang ditentukan, memberikan kerusakan 250–400 (+20% Total Kekuatan Sihir) hingga 500–800 (+40% Total Kekuatan Sihir) kepada hero musuh pertama yang terkena dan membuatnya terkena efek setrum selama 0,5 detik hingga 2,5 detik. Durasi stun dan kerusakan meningkat seiring dengan jarak yang ditempuh panah. Panah tersebut menyerap Abyssal Trap akan melayang saat bergerak dan karenanya akan memberikan efek \"Abyssal Traps\" pada target musuh saat mengenainya. Jika musuh terkena stun selama 0,9 detik atau lebih, Kecepatan Gerakakan meningkat sebesar 40% selama 2 detik.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/3/3e/Garotte.png",
+      "name2": "Garotte",
+      "kategori2": "Mobility/Buff",
+      "longDesc2": "Selena bergerak ke arah yang ditentukan, memberikan 150–350 (+50% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di sepanjang jalan. Jika kerusakan ini memicu efek \"Abyssal Mark\", cooldown-nya akan direset segera."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b4/Primal_Darkness.png",
+      "name": "Primal Darkness",
+      "kategori": "Morph/Speed Up",
+      "longDesc": "Selena memasuki Bentuk Abyssal dan meningkatkan Kecepatan Geraknya sebesar 30% selama 0,8 detik. Langsung mereset cooldown dari \"Soul Eater\" dan \"Garotte\" .Wujud Abyssal: Selena memperoleh kemampuan baru. Miliknya Serangan Dasar akan memberikan tambahan Kerusakan Sihir sebesar (+25% dari Total Kekuatan Sihir). Pasif: Selena mendapatkan tambahan 5-20 Kekuatan Sihir.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/f/f3/Blessing_of_the_Moon_Goddess.png",
+      "name2": "Blessing of the Moon Goddess",
+      "kategori2": "Morph/Speed Up",
+      "longDesc2": "Selena memasuki Wujud Peri dan meningkatkan Kecepatan Geraknya sebesar 30%. Berlangsung selama 0,8 detik. Segera mereset cooldown dari \"Abyssal Trap\" dan \"Abyssal Arrow\" .\nPasif: Selena mendapatkan tambahan 5-20 Kekuatan Sihir."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Hero631-icon.png",
+        "link": "https://sfile.co/yskOQhfou0h"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Hero631-icon.png",
+        "link": "https://sfile.co/wm7hf1fhzfG"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero632-icon.png",
+        "link": "https://sfile.co/NpIXNDewCKE"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero632-icon.png",
+        "link": "https://sfile.co/UfSA02nvdab"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b0/Hero633-icon.png",
+        "link": "https://sfile.co/ZANVQ2LX6aW"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b8/Hero634-icon.png",
+        "link": "https://sfile.co/jvrOzVkz0oM"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero635-icon.png",
+        "link": "https://sfile.co/ZUE6T0zfuQ5"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Hero636-icon.png",
+        "link": "https://sfile.co/g1SQD4yqNOA"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/14/Hero637-icon.png",
+        "link": "https://sfile.co/AlQVzMQc8lf"
+      },
+      {
+        "name": "STUN",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero638-icon.png",
+        "link": "https://sfile.co/hntzWeODg98"
+      },
+      {
+        "name": "Abyss",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/aa/Hero639-icon.png",
+        "link": "https://sfile.co/vz0L1EHjTlU"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
