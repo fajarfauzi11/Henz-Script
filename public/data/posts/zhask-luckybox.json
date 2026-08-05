@@ -13,7 +13,7 @@
   },
   "abilitiesPasif": {
     "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Decimation_%28Zhask%29.png",
-    "name": "Decimation %28Zhask%29",
+    "name": "Decimation",
     "kategori": "Summon",
     "longDesc": "Saat mati, Zhask memanggil Nightmaric Spawn yang mengamuk di tempat itu, yang secara bertahap kehilangan HP dari waktu ke waktu hingga mati.",
     "dual": false,
@@ -28,7 +28,7 @@
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/45/Nightmaric_Spawn.png",
       "name": "Nightmaric Spawn",
       "kategori": "Summon",
-      "longDesc": "Zhask memanggil Nightmaric Spawn yang mewarisi 55%–100% atributnya ( HP , Pertahanan Hybrid , Kekuatan Sihir ). Nightmaric Spawn akan secara otomatis menyerang musuh di dekatnya dengan menembakkanSinar Kematianke target, memberikan 55 (+20% × Kecepatan Serangan Ekstra) (+20% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat mereka hingga 30% selama 0,6 detik. Jika Zhask terlalu jauh dari Nightmaric Spawn, ia akan menghilang. Sinar Kematian dianggap sebagai Serangan Dasar tetapi tidak dapatmenghasilkan Serangan Kritis. Peningkatan Fusion:Kerusakan Nightmaric Spawn meningkat menjadi 180%, dan dapat diposisikan ulang.",
+      "longDesc": "Zhask memanggil Nightmaric Spawn yang mewarisi 55%–100% atributnya ( HP , Pertahanan Hybrid , Kekuatan Sihir ). Nightmaric Spawn akan secara otomatis menyerang musuh di dekatnya dengan menembakkan Sinar Kematian ke target, memberikan 55 (+20% × Kecepatan Serangan Ekstra) (+20% Total Kekuatan Sihir) Kerusakan Sihir dan memperlambat mereka hingga 30% selama 0,6 detik. Jika Zhask terlalu jauh dari Nightmaric Spawn, ia akan menghilang. Sinar Kematian dianggap sebagai Serangan Dasar tetapi tidak dapatmenghasilkan Serangan Kritis. Peningkatan Fusion:Kerusakan Nightmaric Spawn meningkat menjadi 180%, dan dapat diposisikan ulang.",
       "dual": false,
       "url2": "",
       "name2": "",
@@ -52,7 +52,7 @@
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hive_Clones.png",
       "name": "Hive Clones",
       "kategori": "Slow/Damage",
-      "longDesc": "Zhask melepaskan kawanan (6) Klon Sarang ke arah yang ditargetkan. Klon akan meledak dan memberikan 55–100 (+18% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang bersentuhan, mengurangi Kecepatan Gerak mereka sebesar 80% selama 1 detik.\nJika Klon Sarang tidak menemukan target, mereka akan menggali ke dalam tanah dan menyergap musuh yang lewat.\nPeningkatan Fusi : Zhask melepaskan beberapa (15) kawanan Klon Sarang.\nKerusakan selanjutnya yang diberikan kepada target yang sama berkurang menjadi 20%.",
+      "longDesc": "Zhask melepaskan kawanan (6) Klon Sarang ke arah yang ditargetkan. Klon akan meledak dan memberikan 55–100 (+18% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh yang bersentuhan, mengurangi Kecepatan Gerak mereka sebesar 80% selama 1 detik. Jika Klon Sarang tidak menemukan target, mereka akan menggali ke dalam tanah dan menyergap musuh yang lewat.\nPeningkatan Fusi : Zhask melepaskan beberapa (15) kawanan Klon Sarang.\nKerusakan selanjutnya yang diberikan kepada target yang sama berkurang menjadi 20%.",
       "dual": false,
       "url2": "",
       "name2": "",
@@ -85,7 +85,7 @@
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero501-icon.png",
-        "link": "https://sfile.co/VgjHnDrFU6N"
+        "link": "https://sfile.co/5fqAB5xmH3j"
       },
       {
         "name": "Basic",
