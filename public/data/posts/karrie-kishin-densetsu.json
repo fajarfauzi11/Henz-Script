@@ -1,0 +1,146 @@
+{
+  "namehero": "Karrie Kishin Densetsu",
+  "herolink": "Karrie",
+  "urlthumbnail": "https://i.ibb.co/VWwQgpnG/karrie-kishin-densetsu.webp",
+  "kategoriskin": "Kishin Densetsu",
+  "keywords": "Karrie Breath of Naraka",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Karrie berasal dari Kekaisaran Alaghat, sebuah peradaban maju yang dihuni oleh ras Yasson, makhluk humanoid dengan kaki unik yang membuat mereka sangat lincah dan unggul dalam pertempuran. Sejak kecil, Karrie menunjukkan bakat luar biasa sebagai petarung sehingga ia dibesarkan oleh kekaisaran sebagai prajurit elit. Latihan tanpa henti menjadikannya pemimpin perang yang tangguh, tetapi juga menghilangkan sebagian besar emosinya hingga ia lebih menyerupai mesin perang daripada manusia.\n\nKepercayaan dirinya yang berlebihan akhirnya membawanya pada kekalahan. Dalam sebuah pertempuran, Karrie mengalami luka yang sangat parah dan berada di ambang kematian. Saat itulah seorang nabi dari dimensi lain menyelamatkannya dengan menggabungkan kesadarannya ke dalam pikiran Karrie, membuat suara sang nabi terus hidup di dalam dirinya.\n\nSang nabi memperingatkan bahwa Kekaisaran Alaghat akan segera mengalami kehancuran dan ras Yasson akan musnah. Pada awalnya Karrie menolak mempercayai ramalan tersebut. Namun setelah kembali ke tanah kelahirannya dan menyaksikan berbagai tanda yang mengarah pada bencana, ia mulai menyadari bahwa peringatan itu mungkin benar.\n\nDemi menyelamatkan bangsanya, Karrie memutuskan untuk mengikuti petunjuk sang nabi. Ia meninggalkan Alaghat dan memulai perjalanan menuju Land of Dawn, berharap dapat menemukan cara untuk mengubah takdir yang telah diramalkan. Perjalanan ini juga menjadi kesempatan baginya untuk menemukan kembali arti dari dirinya, setelah bertahun-tahun hidup hanya sebagai alat perang.\n\nKini Karrie bertarung bukan lagi demi kejayaan kekaisaran semata, melainkan untuk melawan takdir yang telah ditentukan. Dengan kemampuan tempurnya yang luar biasa serta pengetahuan dari sang nabi, ia bertekad menghentikan kehancuran Alaghat dan membuktikan bahwa masa depan tidak harus mengikuti ramalan.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Lightwheel_Mark.png",
+    "name": "Lightwheel Mark",
+    "kategori": "Buff",
+    "longDesc": "Serangan dasar dan skill Karrie memberikan satu tumpukan Lightwheel Mark saat mengenai target. Setelah target memiliki 5 tumpukan Lightwheel Mark, tanda tersebut akan berubah menjadi roda cahaya, memberikan True Damage sebesar 6%-8% dari Max HP target (hanya hingga 300 damage terhadap Creep).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/be/Spinning_Lightwheel.png",
+      "name": "Spinning Lightwheel",
+      "kategori": "AOE/Slow",
+      "longDesc": "Karrie melepaskan bola energi yang bergelombang ke arah target, memberikan 250–375 (+90% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di jalurnya. Bola tersebut akan berhenti setelah mengenai hero musuh atau mencapai jarak tempuh maksimumnya, terus menerus memberikan 150–200 (+20% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di dekatnya dan memperlambat mereka sebesar 80% selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Phantom_Step.png",
+      "name": "Phantom Step",
+      "kategori": "Mobility/Damage",
+      "longDesc": "Karrie melesat ke arah target sambil melemparkan roda cahaya ke musuh terdekat, memberikan 150–275 (+70% Serangan Fisik Ekstra) Kerusakan Fisik dan menerapkan tumpukan Tanda Roda Cahaya pada mereka.\nSaat dalam keadaan Menggunakan Dua Senjata, Karrie melemparkan dua roda cahaya sebagai gantinya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Speedy_Lightwheel.png",
+      "name": "Speedy Lightwheel",
+      "kategori": "Buff/Burst",
+      "longDesc": "Karrie memasuki kondisi Dual Wield selama 6 detik, di mana dia mendapatkan peningkatan Kecepatan Gerak sebesar 20% dan melemparkan dua roda cahaya dengan setiap Serangan Dasar, masing-masing memberikan 50-70% kerusakan Serangan Dasar dan mewarisi sebagian dari Efek Serangan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero401-icon.png",
+        "link": "https://sfile.co/eEeCJ0dS6qY"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero401-icon.png",
+        "link": "https://sfile.co/t7JPh605FlT"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Hero402-icon.png",
+        "link": "https://sfile.co/1RYF6oGBNdY"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Hero402-icon.png",
+        "link": "https://sfile.co/qVmyBW5V4lN"
+      },
+      {
+        "name": "Elite Bladed",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Hero403-icon.png",
+        "link": "https://sfile.co/CWzi3UR74u4"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero404-icon.png",
+        "link": "https://sfile.co/uEDh6Cqy91K"
+      },
+      {
+        "name": "Halloween",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/66/Hero405-icon.png",
+        "link": "https://sfile.co/eqXsKpp5eCq"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero406-icon.png",
+        "link": "https://sfile.co/m55oXHFuYwu"
+      },
+      {
+        "name": "Epic Gill",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/77/Hero407-icon.png",
+        "link": "https://sfile.co/4vFlEjWFF9T"
+      },
+      {
+        "name": "Annual Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/21/Hero408-icon.png",
+        "link": "https://sfile.co/WKfHL8DVuVW"
+      },
+      {
+        "name": "Elite Wheel",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero409-icon.png",
+        "link": "https://sfile.co/UJi84vNrb5O"
+      },
+      {
+        "name": "Epic Ice",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/86/Hero104010-icon.png",
+        "link": "https://sfile.co/AkOJNFatLtj"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero104012-icon.png",
+        "link": "https://sfile.co/zBbQ6djlYr2"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
