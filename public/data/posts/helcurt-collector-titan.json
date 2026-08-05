@@ -1,0 +1,121 @@
+{
+  "namehero": "Helcurt Collector Titan",
+  "herolink": "Helcurt",
+  "urlthumbnail": "https://i.ibb.co/4ZFp7v4m/helcurt-collector-titan.webp",
+  "kategoriskin": "Collector Titans",
+  "keywords": "Helcurt Kaiju of the Deep",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Helcurt adalah pembunuh bayangan dari Styx Clan, salah satu klan paling mematikan di Abyss yang terkenal karena kemampuan mengendap-endap dan membunuh tanpa jejak. Namun, setelah klannya memberontak melawan Lord of the Abyss, mereka kalah dan dihukum dengan kutukan darah yang memaksa seluruh anggota Styx Clan tunduk sepenuhnya kepada sang penguasa. Sejak lahir, Helcurt pun telah dicap sebagai keturunan pengkhianat.\n\nSemasa perang besar di Abyss, Helcurt hanya memiliki satu tujuan, yaitu bertahan hidup. Ia menyaksikan anggota klannya dijadikan umpan perang dan tewas satu per satu, tetapi berhasil selamat dari medan pertempuran. Karena kemampuannya, Lord of the Abyss mengangkatnya menjadi anggota Tribunal, pasukan yang bertugas memburu dan mengeksekusi para pengkhianat. Ironisnya, korban pertama yang harus ia bunuh adalah anggota klannya sendiri.\n\nDemi terus hidup, Helcurt menjalankan setiap perintah tanpa ragu, meski harus menghabisi saudara-saudaranya sendiri. Selama ribuan tahun, ia hidup sebagai pembunuh dalam bayang-bayang, menandai setiap tahun yang berhasil dilewatinya dengan sebuah simpul pada seutas tali. Baginya, setiap simpul menjadi bukti bahwa ia masih bertahan hidup di tengah dunia yang penuh kegelapan.\n\nKetika Lord of the Abyss kehilangan kendali akibat kutukan 310CX-i, para iblis yang dipimpin Thamuz melancarkan pemberontakan. Helcurt yang saat itu memimpin Tribunal menjadi benteng terakhir sang penguasa. Namun, setelah mengingat seluruh penderitaan yang dialaminya, ia memilih mengkhianati tuannya sendiri. Dengan memaksa darah kutukan keluar dari tubuhnya hingga tulangnya berubah menjadi bilah tajam, Helcurt berhasil menyerang dan membunuh Lord of the Abyss.\n\nSejak awal Helcurt memang terlahir sebagai pengkhianat di mata Abyss. Namun baginya, mengkhianati siapa pun demi mempertahankan hidup adalah satu-satunya jalan yang pernah ia miliki. Kini ia bebas dari belenggu kutukan, tetapi tetap menjadi sosok pemburu yang hidup dalam kegelapan, setia hanya pada naluri untuk terus bertahan hidup.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9f/Shadow_of_Styx.png",
+    "name": "Shadow of Styx",
+    "kategori": "Buff",
+    "longDesc": "Helcurt tetap dalam kondisi Prowler hingga terlihat oleh tim musuh, mendapatkan tambahan 15% Kecepatan Gerak , dan terus meregenerasi HP (+30% Total Serangan Fisik) jika dia belum memberikan kerusakan apa pun. Dia mendapatkan tambahan 50% Kecepatan Serangan dan 50% Kecepatan Gerak (berkurang seiring waktu) selama 4 detik setelah terdeteksi dan meninggalkan status Pengintai 0,75 detik kemudian.\nSetiap hero yang terbunuh setelah terkena serangan Helcurt akan meninggalkan kabut gelap yang meledak dan menyebar dengan waktu pendinginan 10 detik. Helcurt menyembunyikan dirinya saat berada di dalam kabut gelap tersebut.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/72/Hidden_Terror.png",
+      "name": "Hidden Terror",
+      "kategori": "Mobility/CC",
+      "longDesc": "Pasif : Saat Helcurt dalam keadaan Prowler , skill ini menakutkan hero musuh yang terkena dan cooldown-nya berkurang 3 kali lebih cepat.\nAktif : Helcurt berteleportasi ke lokasi target dan memberikan 150–300 (+70% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dalam area tersebut, mengurangi Kecepatan Gerak mereka sebesar 60% selama 0,75 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7a/Deadly_Stinger.png",
+      "name": "Deadly Stinger",
+      "kategori": "Burst",
+      "longDesc": "Pasif: Helcurt memperoleh satu Deadly Stinger untuk setiap 1,5 detik yang dihabiskan dalam Prowler atau pada setiap Serangan Dasar. Hingga 5 sengat dapat disimpan.\nAktif: Helcurt menembakkan semua Deadly Stinger diluncurkan ke depan, masing-masing memberikan 180–280 (+42% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh (Minion dan Creephanya menerima 70% dari kerusakan).\nDeadly Stinger dihitung sebagai Serangan Dasar, tetapi tidak dapat menghasilkan Serangan Kritis.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Dark_Night_Falls.png",
+      "name": "Dark Night Falls",
+      "kategori": "Buff/Debuff",
+      "longDesc": "Helcurt memanggil Malam Gelap , mengurangi jangkauan pandang semua musuh dan membuat mereka kehilangan pandangan terhadap sekutu mereka selama 3 detik. Selama Malam Gelap , Helcurt mendapatkan peningkatan Kecepatan Gerak sebesar 40%.\nMalam Gelap memudahkan Helcurt untuk keluar dari jangkauan pandang musuh.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/eb/Hero511-icon.png",
+        "link": "https://sfile.co/ZjUBTfHThha"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/eb/Hero511-icon.png",
+        "link": "https://sfile.co/Lwm8YPvSOdD"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a3/Hero512-icon.png",
+        "link": "https://sfile.co/UF0g3x2N5Jk"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a3/Hero512-icon.png",
+        "link": "https://sfile.co/jetruTxiWfk"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero513-icon.png",
+        "link": "https://sfile.co/0n0kpuVEkR4"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d0/Hero514-icon.png",
+        "link": "https://sfile.co/tz96zqoc1pF"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Hero515-icon.png",
+        "link": "https://sfile.co/uCdQnHepVUl"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero516-icon.png",
+        "link": "https://sfile.co/2vCfA1Ejcxp"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
