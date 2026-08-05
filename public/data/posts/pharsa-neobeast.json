@@ -2,7 +2,7 @@
   "namehero": "Pharsa Neobeast",
   "herolink": "Pharsa",
   "urlthumbnail": "https://i.ibb.co/tpfgsDD7/pharsa-neobeast.webp",
-  "kategoriskin": "Neobeast V2",
+  "kategoriskin": "Neobeasts V2",
   "keywords": "",
   "datepost": "Update 6 Agustus 2026",
   "authorname": "Henz MLBB",
@@ -48,11 +48,11 @@
       "longDesc2": ""
     },
     {
-      "label": "Ultimate",
+      "label": "Skill 3",
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Feathered_Air_Strike.png",
       "name": "Feathered Air Strike",
       "kategori": "Burst",
-      "longDesc": "Pasif : Setiap kenaikan level keterampilan ini mengurangiPersatuan Spiritual Interval Persatuan Spiritual berkurang 1 detik. Aktif: Pharsa terbang selama 8 detik dan membombardir lokasi target, memberikan 530–870 (+160% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dalam area tersebut. Skill ini dapat digunakan hingga 4 kali dalam durasi tersebut.",
+      "longDesc": "Pasif : Setiap kenaikan level keterampilan ini mengurangi Persatuan Spiritual Interval Persatuan Spiritual berkurang 1 detik. Aktif: Pharsa terbang selama 8 detik dan membombardir lokasi target, memberikan 530–870 (+160% Total Kekuatan Sihir) Kerusakan Sihir kepada musuh di dalam area tersebut. Skill ini dapat digunakan hingga 4 kali dalam durasi tersebut.",
       "dual": false,
       "url2": "",
       "name2": "",
@@ -60,11 +60,11 @@
       "longDesc2": ""
     },
     {
-      "label": "Special",
+      "label": "Ultimate",
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ef/Wings_by_Wings.png",
       "name": "Wings by Wings",
       "kategori": "Morph/Speed Up",
-      "longDesc": "Pharsa berubah menjadi kabut dan membungkus dirinya di sekitar Verri, mendapatkan tambahan 150% Kecepatan Gerak (berkurang seiring waktu) dan kemampuan untuk terbang melintasi medan. Kondisi ini berlangsung hingga 5 detik atau sampai dia menggunakan Serangan Dasar atau skill, atau dikendalikanPharsa berubah menjadi kabut dan membungkus dirinya di sekitar Verri, mendapatkan tambahan 150% Kecepatan Gerak (berkurang seiring waktu) dan kemampuan untuk terbang melintasi medan. Kondisi ini berlangsung hingga 5 detik atau sampai dia menggunakan Serangan Dasar atau skill, atau dikendalikan.",
+      "longDesc": "Pharsa berubah menjadi kabut dan membungkus dirinya di sekitar Verri, mendapatkan tambahan 150% Kecepatan Gerak (berkurang seiring waktu) dan kemampuan untuk terbang melintasi medan. Kondisi ini berlangsung hingga 5 detik atau sampai dia menggunakan Serangan Dasar atau skill, atau dikendalikan Pharsa berubah menjadi kabut dan membungkus dirinya di sekitar Verri, mendapatkan tambahan 150% Kecepatan Gerak (berkurang seiring waktu) dan kemampuan untuk terbang melintasi medan. Kondisi ini berlangsung hingga 5 detik atau sampai dia menggunakan Serangan Dasar atau skill, atau dikendalikan.",
       "dual": false,
       "url2": "",
       "name2": "",
