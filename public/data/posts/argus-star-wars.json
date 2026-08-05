@@ -1,0 +1,116 @@
+{
+  "namehero": "Argus Star Wars",
+  "herolink": "Argus",
+  "urlthumbnail": "https://i.ibb.co/WpjmVsLh/argus-star-wars.webp",
+  "kategoriskin": "Star Wars",
+  "keywords": "Argus Darth Vader",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Argus dan Rafaela adalah saudara kembar yang lahir dengan darah suci para malaikat. Namun, karena legenda menyebutkan bahwa semua malaikat seharusnya perempuan, keberadaan Argus sebagai malaikat laki-laki dirahasiakan oleh Monastery of Light. Sementara Rafaela dipuja sebagai lambang cahaya, Argus dipaksa hidup di balik bayang-bayang, menggunakan kekuatannya untuk melawan Abyss tanpa pernah mendapatkan pengakuan.\n\nMeski diperlakukan tidak adil, Argus tetap setia pada Cahaya dan selalu bertarung demi melindungi dunia bersama Rafaela. Namun, keduanya memiliki pandangan yang berbeda terhadap manusia. Rafaela percaya bahwa manusia masih dapat ditebus, sedangkan Argus memandang manusia sebagai sumber utama peperangan, keserakahan, dan kekacauan yang membuka jalan bagi kekuatan Abyss.\n\nSuatu hari, saat mengejar pasukan iblis, Argus menemukan pedang iblis legendaris. Ketika menggenggamnya, ingatan masa lalunya terbuka. Ia mengetahui bahwa dirinya bukan malaikat murni, melainkan putra dari seorang manusia yang dibunuh oleh para Sacrist demi menjaga rahasia Monastery of Light. Ibunya dipaksa melahirkan anak suci, sementara kedua orang tuanya menjadi korban demi mempertahankan kekuasaan dan doktrin mereka.\n\nKebenaran tersebut menghancurkan keyakinan Argus terhadap Cahaya. Di saat yang sama, kutukan dari pedang iblis yang dikuasai Dewa Kehancuran, Cyd, mulai merasuki pikirannya dan memperbesar amarah serta kebenciannya kepada umat manusia. Meski Rafaela berusaha menghentikannya, Argus memilih meninggalkan saudarinya dan berjalan di jalan kegelapan.\n\nSejak saat itu, sayap sucinya berubah menjadi sayap hitam yang memancarkan aura kegelapan. Argus meninggalkan identitasnya sebagai pelindung Cahaya dan menjadi Dark Angel, sosok yang membawa kutukan dan kehancuran. Kini, ia mengembara dengan pedang iblis di tangannya, memikul dendam terhadap umat manusia dan takdir yang telah merenggut segala sesuatu yang pernah ia percayai.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/90/Warmonger.png",
+    "name": "Warmonger",
+    "kategori": "Buff/Mobility",
+    "longDesc": "Saat pedang Argus mencapai 100 Energi Kejahatan [ jumlah tidak diketahui ] , ia akan melancarkan Tebasan Iblis dengan Serangan Dasar berikutnya, memberikan 80 (+50% Total Serangan Fisik) Kerusakan Fisik dan memulihkan 100 (+10% Total Serangan Fisik) HP . Serangan ini mengabaikan 30% Pertahanan Fisik target.\n\nPedang Iblis Argus mendapatkan 5 Energi Kebencian per detik, dan setiap Serangan Dasarnya memberikan 25 Energi Kebencian. ( serangan kritis memberikan tambahan 25 energi) Batas energi maksimal adalah 200. Setiap Serangan Iblis menghabiskan 100 energi.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e6/Demonic_Grip.png",
+      "name": "Demonic Grip",
+      "kategori": "Mobility/Debuff",
+      "longDesc": "Argus mengulurkan tangan iblis ke arah target, memberikan 125–250 (+60% Total Serangan Fisik) Kerusakan Fisik kepada hero atau creep musuh pertama yang terkena, membuat mereka terkena stun selama 0,7 detik dan menarik mereka serta target ke arah yang lain, kemudian target diperlambat sebesar 40% selama 2 detik. Jika tidak ada musuh yang terkena, Argus menarik dirinya sendiri ke arah tujuan tangan tersebut. Gunakan Lagi: Argus melesat dan menyerang ke arah target, memberikan 175–300 (+100% Total Serangan Fisik) Kerusakan Fisik kepada musuh di sepanjang jalur.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/30/Meteoric_Sword.png",
+      "name": "Meteoric Sword",
+      "kategori": "Damage/Buff",
+      "longDesc": "Setelah jeda singkat, Argus menusukkan Pedang Iblisnya ke arah target, memberikan 60–180 (+100% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Waktu pengisian daya berkurang seiring peningkatan Kecepatan Serangan. Argus Fighter: Jika hero musuh terkena serangannya, ia langsung mendapatkan 100 Energi Malice dan menjadi lebih kuat selama 3 detik. Saat dalam kondisi kuat, ia mendapatkan peningkatan Kecepatan Serangan sebesar 30-55%, dan Demonic Slash memulihkan 50 Energi Malice. Pedang Meteorik dihitung sebagai Serangan Dasar, dapat memicu Efek Serangan, dan dapat menghasilkan Serangan Kritis.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Eternal_Evil.png",
+      "name": "Eternal Evil",
+      "kategori": "Death Immune/Buff",
+      "longDesc": "Argus menghunus Pedang Meteoriknya dan menghilangkan semua debuff (kecuali Penindasan ) pada dirinya sendiri, memberikan 150–300 (+50% Total Serangan Fisik) Kerusakan Fisik dan mendapatkan Kekebalan Kematian selama 4 detik. Ketika kondisi ini berakhir, ia mengubah semua kerusakan yang diberikan kepada hero selama durasi ini menjadi HP. Pasif: Jika Argus menerima kerusakan fatal saat Kejahatan Abadi tidak dalam masa pendinginan, Kejahatan Abadi akan aktif secara otomatis tetapi hanya memberikan Kekebalan Kematian selama 3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Hero451-icon.png",
+        "link": "https://sfile.co/wPjDusvNZP2"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Hero451-icon.png",
+        "link": "https://sfile.co/tOjtsU6gDmU"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero452-icon.png",
+        "link": "https://sfile.co/w3BXS5EkWMD"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero452-icon.png",
+        "link": "https://sfile.co/Ihtda6uAQnY"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero453-icon.png",
+        "link": "https://sfile.co/noP3p0q3BNU"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Hero454-icon.png",
+        "link": "https://sfile.co/4xfGWK6T8SY"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ec/Hero457-icon.png",
+        "link": "https://sfile.co/p9FHhKKdLnA"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
