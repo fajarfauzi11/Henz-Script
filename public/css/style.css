@@ -310,7 +310,7 @@ body.page-home .henz-page{padding-top:90px}
   .hz-cp-wrap{padding:20px 1rem 28px;padding-top:0}
   .hz-cp-hero{padding:0 0 20px;margin-top:0}
   .hz-cp-tabs-wrap{padding:12px 14px;border-radius:16px;margin-top:0;margin-left:-10px;margin-right:-10px}
-  .hz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:8px}
+  .hz-cp-tabs{grid-template-columns:repeat(2,1fr);gap:13px}
   .hz-cp-tab{padding:11px 8px;font-size:13px}
   .hz-cp-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 }
