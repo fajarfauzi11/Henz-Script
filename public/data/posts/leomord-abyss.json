@@ -1,0 +1,136 @@
+{
+  "namehero": "Leomord Abyss",
+  "herolink": "Leomord",
+  "urlthumbnail": "https://i.ibb.co/zTdXKVMx/leomord-abyss.webp",
+  "kategoriskin": "Abyss",
+  "keywords": "Leomord Shadow Knight",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Leomord adalah seorang ksatria setia dari Ridgeburg, benteng perbatasan Moniyan Empire yang selama ribuan tahun menjaga dunia dari ancaman Abyss. Sejak kecil, ia dibesarkan bersama Atticus, pewaris Duke Ridgeburg, sebagai pengawal sekaligus sahabat terdekatnya. Bersama kudanya, Barbiel, Leomord tumbuh menjadi prajurit tangguh dan akhirnya diangkat sebagai Sworn Knight yang bersumpah akan melindungi Atticus hingga akhir hayatnya.\n\nKetika Atticus memimpin ekspedisi untuk menyelidiki kemunculan iblis di perbatasan, Leomord diperintahkan tetap tinggal di Ridgeburg demi melindungi Putri Vexana yang akan menjadi calon istri sang Duke. Setelah dua tahun tanpa kabar, Atticus akhirnya kembali. Namun ia dan seluruh pasukannya telah berubah menjadi makhluk Abyss akibat kutukan yang mereka bawa pulang.\n\nDi tengah kekacauan yang menghancurkan Ridgeburg, Atticus yang masih memiliki sedikit kesadaran memohon kepada Leomord untuk mengakhiri hidupnya. Demi menyelamatkan kota dan memenuhi makna sejati sumpahnya, Leomord dengan berat hati menusukkan Pedang Sumpah ke dada sahabat yang telah dianggapnya sebagai saudara. Sebelum mengembuskan napas terakhir, Atticus memperingatkan tentang ancaman kabut kutukan yang kemudian menyelimuti Ridgeburg.\n\nDemi mempertahankan kota, Ridgeburg akhirnya tenggelam dalam Mist dan berubah menjadi Necrokeep, tempat yang terkutuk serta ditinggalkan oleh kehidupan maupun kematian. Leomord dan Vexana ikut terjebak dalam kutukan tersebut, hidup dalam keadaan setengah mati selama lebih dari seratus tahun sambil menjaga sisa-sisa kota dari ancaman yang datang.\n\nHingga kini, Leomord tetap berdiri sebagai ksatria penjaga Necrokeep. Meski cahaya telah lama meninggalkannya, ia tidak pernah mengingkari sumpahnya. Bersama Barbiel, ia terus menjaga Ridgeburg dan berharap suatu hari nanti dapat mematahkan kutukan Mist serta mengembalikan tanah kelahirannya seperti sediakala.",
+  "dualTabNames": {
+    "tab1": "Default",
+    "tab2": "Mounted State"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/The_Oath_Keeper.png",
+    "name": "The Oath Keeper",
+    "kategori": "Buff",
+    "longDesc": "Serangan Dasar dan skill Leomord memberinya 25 energi Oath Keeper setiap kali memberikan damage pada target. Ketika energi ini mencapai 100, Serangan Dasar berikutnya memberikan 200% Critical Damage dan memulihkan 100 (+10 × Level Hero) (+15% HP Ekstra) . Serangan Dasar Leomord biasanya tidak dapat menghasilkan Critical Damage, dan setiap 1% Critical Chance diubah menjadi 1% Critical Damage. Status Berkuda : Setiap perolehan energi Oath Keeper meningkat sebesar 200%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Momentum.png",
+      "name": "Momentum",
+      "kategori": "AOE/Slow",
+      "longDesc": "Leomord memulai channeling [selama 1 detik], memperlambat musuh di arah target sebesar 25%. Ketika channeling selesai atau ter interrupted, dia menusukkan pedangnya ke arah yang sama, memberikan hingga 500–800 (+180% Total Physical Attack) Physical Damage kepada musuh yang terkena (skala dengan waktu channeling) [ perhitungan diperlukan ] dan memperlambat mereka sebesar 40% selama 1 detik. Leomord dapat menggunakan skill ini lagi untuk membatalkan channeling dan langsung melakukan tusukan.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Phantom_Stomp.png",
+      "name2": "Phantom Stomp",
+      "kategori2": "AOE/Slow",
+      "longDesc2": "Barbiel melompat ke depan, memberikan 325–600 (+120% Total Serangan Fisik) Kerusakan Fisik kepada unit musuh di area pendaratan di depannya, sambil memperlambat mereka sebesar 40% selama 1 detik."
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Decimation_Assault.png",
+      "name": "Decimation Assault",
+      "kategori": "Mobility/Slow",
+      "longDesc": "Leomord menyerang ke arah yang ditentukan, memberikan 300–400 (+50% Total Serangan Fisik) Kerusakan Fisik kepada musuh di sepanjang jalan dan memperlambat mereka sebesar 30% selama 1 detik.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Phantom_Charge.png",
+      "name2": "Phantom Charge",
+      "kategori2": "CC/Mobility",
+      "longDesc2": "Barbiel menerjang maju ke arah yang ditentukan, dan mendorong mundur semua musuh di jalurnya, memberikan 300–500 (+80% Total Serangan Fisik) Kerusakan Fisik."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Phantom_Steed.png",
+      "name": "Phantom Steed",
+      "kategori": "Summon/Morph",
+      "longDesc": "Leomord memanggil Barbiel untuk menyerbu ke arahnya, memberikan Template:Sscale kepada semua musuh di jalurnya. Jika Barbiel bersentuhan dengan Leomord, mereka akan memasuki Keadaan Berkuda, mendapatkan 50% Kecepatan Gerak yang berkurang selama 2 detik.\nKeadaan Berkuda : Leomord mendapatkan serangkaian keterampilan baru, dan Serangan Dasarnya dapat digunakan saat bergerak dan mengenai area melingkar untuk memberikan kerusakan area. Leomord juga mendapatkan tambahan 70 Kecepatan Gerak dan 30–110 Pertahanan Fisik & Sihir . Ini berlangsung selama 10 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Hero671-icon.png",
+        "link": "https://sfile.co/WNwM3bydzcu"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Hero671-icon.png",
+        "link": "https://sfile.co/PVjR07v0JMn"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2e/Hero672-icon.png",
+        "link": "https://sfile.co/hdrFBdLxBBx"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2e/Hero672-icon.png",
+        "link": "https://sfile.co/RgMjy29aAjs"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Hero673-icon.png",
+        "link": "https://sfile.co/iXE90m8oTRR"
+      },
+      {
+        "name": "MSC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hero674-icon.png",
+        "link": "https://sfile.co/uTPh6bJH9Uk"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero675-icon.png",
+        "link": "https://sfile.co/myrwS4Qqkmk"
+      },
+      {
+        "name": "Halloween",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/23/Hero676-icon.png",
+        "link": "https://sfile.co/PVErxu8Tvxr"
+      },
+      {
+        "name": "Ducati",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero678-icon.png",
+        "link": "https://sfile.co/3hEUzwS11S2"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3f/Hero679-icon.png",
+        "link": "https://sfile.co/iZgiwerjGeW"
+      },
+      {
+        "name": "Lunar Fest",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5b/Hero106710-icon.png",
+        "link": "https://sfile.co/DsXW1L2QKqK"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
