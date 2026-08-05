@@ -1,0 +1,126 @@
+{
+  "namehero": "Irithel Ducati",
+  "herolink": "Irithel",
+  "urlthumbnail": "https://i.ibb.co/qMwZZ0rX/irithel-ducati.webp",
+  "kategoriskin": "Ducati",
+  "keywords": "Irithel Monster SP Rider",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Irithel adalah seorang elf berambut merah yang menjadi penjaga Moonlit Forest. Sejak bayi, hidupnya dipenuhi penderitaan. Lahir di bawah bulan merah dengan tanda merah misterius di tubuhnya, ia dianggap sebagai pertanda buruk dan dibuang oleh kaumnya. Bayi Irithel kemudian dijadikan umpan oleh para pemburu untuk menjebak smilodon, makhluk buas yang akan datang ketika mendengar tangisan bayi. Namun takdir membawanya bertemu seekor Primal Matriarch, induk smilodon yang baru saja kehilangan anaknya karena dibunuh para pemburu.\n\nAlih-alih memangsa bayi itu, naluri keibuan sang Primal Matriarch muncul ketika melihat Irithel yang kelaparan. Ia melindungi bayi elf tersebut dari para pemburu dan membesarkannya seperti anak kandung sendiri. Bersama satu-satunya anak smilodon yang masih hidup, Irithel tumbuh di hutan, belajar berburu, bertahan hidup, dan menjaga wilayah mereka dari para penyusup. Anak smilodon itu kelak diberi nama Leo, yang kemudian menjadi sahabat sekaligus keluarga terdekatnya.\n\nKarena pernah menjadi korban kekejaman manusia, Irithel tumbuh dengan kebencian dan ketidakpercayaan terhadap dunia luar. Pandangannya mulai berubah setelah bertemu Nana, seorang gadis Leonin yang ramah dan penuh kebaikan. Dengan sabar, Nana mengajarkan bahasa manusia kepada Irithel dan memperkenalkannya pada arti persahabatan. Berkat Nana pula, sahabat smilodon Irithel diberi nama Leo. Meski akhirnya mereka harus berpisah, kenangan akan persahabatan itu mengubah hati Irithel dan membuatnya tidak lagi memandang semua orang luar sebagai musuh.\n\nSeiring berjalannya waktu, sang Primal Matriarch menua dan membawa Irithel ke pemakaman para smilodon, tempat para leluhur mereka beristirahat. Di sanalah induk angkatnya menghembuskan napas terakhir di pangkuan Irithel. Sebelum meninggal, Irithel mengetahui rahasia para smilodon: ketika mereka mati, tulang roh mereka melepaskan kekuatan sihir yang akan kembali menyuburkan hutan. Tulang belulang itulah yang menjadi warisan terakhir dari sang ibu kepada putrinya.\n\nDengan restu Estes dan Miya, Irithel menempa senjata dari cabang Tree of Life serta tulang roh milik ibunya, menciptakan crossbow ajaib yang selalu menemaninya. Bersama Leo, ia terus menjaga Moonlit Forest dari setiap pemburu dan penyusup yang mengancam kehidupan hutan. Bagi Irithel, setiap kali ia menggenggam crossbow tersebut, ia dapat merasakan kehadiran ibunya yang selalu melindungi mereka, menjadikan dirinya dan Leo penjaga hutan yang ditakuti sekaligus dihormati.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b8/Jungle_Heart.png",
+    "name": "Jungle Heart",
+    "kategori": "Buff",
+    "longDesc": "Kerja sama tim yang sempurna antara Irithel dan Leo memungkinkannya untuk menembak sambil bergerak. Setiap Serangan Dasar akan menembakkan 2 anak panah (tetapi membutuhkan waktu lebih lama untuk diisi ulang) yang memberikan Kerusakan Fisik (+55% dari Total Serangan Fisik) per anak panah (mewarisi sebagian [55%] dari Efek Serangan ). Bergerak akan membangun Hati Hutan, hingga maksimum 10 unit, dan menyebabkan Serangan Dasar berikutnya melepaskan 1 anak panah tambahan.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/af/Strafe.png",
+      "name": "Strafe",
+      "kategori": "AOE/Debuff",
+      "longDesc": "Irithel meluncurkan rentetan anak panah ke area target, memberikan 330–530 (+60% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dalam area tersebut dan mengurangi Pertahanan Fisik mereka sebesar 15–40 selama 3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Force_of_the_Queen.png",
+      "name": "Force of the Queen",
+      "kategori": "Slow/AOE",
+      "longDesc": "Leo mengeluarkan raungan yang melengking, memberikan 200–350 (+60% Total Serangan Fisik) Kerusakan Fisik kepada musuh di dekatnya dan memperlambat mereka sebesar 40% selama 2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/63/Heavy_Crossbow.png",
+      "name": "Heavy Crossbow",
+      "kategori": "Buff/Mobility",
+      "longDesc": "Irithel memerintahkan Leo untuk melompat ke arah target dan memperkuat panahnya selama 10 detik. Selama durasi tersebut, dia mendapatkan tambahan 30 Kecepatan Gerak dan Serangan Dasarnya menembakkan anak panah yang diperkuat, memberikan 120 (+60–80% Total Serangan Fisik) Kerusakan Fisik kepada target dan unit di dekatnya.Jungle Heart juga terakumulasi lebih cepat selama durasi tersebut.[ jumlah tidak diketahui ]",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Hero431-icon.png",
+        "link": "https://sfile.co/yAd5lB9RKe3"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Hero431-icon.png",
+        "link": "https://sfile.co/U1e3yiucgZl"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero432-icon.png",
+        "link": "https://sfile.co/mvpiMzEFrl1"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero432-icon.png",
+        "link": "https://sfile.co/103eWyGJbAu"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero433-icon.png",
+        "link": "https://sfile.co/DoFxpmfXmwR"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/75/Hero434-icon.png",
+        "link": "https://sfile.co/moJSiQWvGb1"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Hero435-icon.png",
+        "link": "https://sfile.co/k5lv0ZVjNAf"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/32/Hero436-icon.png",
+        "link": "https://sfile.co/dWt7LNNjRAg"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/41/Hero438-icon.png",
+        "link": "https://sfile.co/4OciPpoFkmo"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
