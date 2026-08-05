@@ -1,0 +1,141 @@
+{
+  "namehero": "Roger Metro Zero",
+  "herolink": "Roger",
+  "urlthumbnail": "https://i.ibb.co/k6B2B8j5/roger-metro-zero.webp",
+  "kategoriskin": "Metro Zero",
+  "keywords": "Roger Invoker's Restraint",
+  "datepost": "Update 6 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Roger adalah mantan prajurit Kekaisaran Moniyan yang memilih hidup sebagai pemburu di tepi Black Forest setelah meninggalkan medan perang. Hutan tersebut dipenuhi kawanan serigala buas yang dipimpin oleh Whitefang, Raja Serigala yang telah memperoleh kekuatan sihir kuno. Ketika kawanan itu mulai menyerang desa-desa di sekitar hutan, Roger memutuskan untuk memburu Whitefang demi melindungi masyarakat.\n\nDalam salah satu serangan, Roger menemukan Whitefang dan kawanannya sedang mengamuk di sebuah desa. Ia berhasil menyelamatkan seorang gadis kecil bernama Ruby dari cengkeraman Whitefang, meski harus menerima luka parah akibat cakar dan gigitan sang Raja Serigala. Berkat keberaniannya, Whitefang dan para serigala mundur, tetapi Roger menyadari kebencian Whitefang belum berakhir.\n\nKarena khawatir serigala akan kembali, Roger melatih para penduduk desa, termasuk Ruby, agar mampu mempertahankan diri. Namun tidak lama kemudian, tubuhnya mulai mengalami perubahan aneh. Luka yang ditinggalkan Whitefang ternyata membawa kutukan manusia serigala yang perlahan mengubah dirinya.\n\nSaat bulan purnama tiba, Roger akhirnya berubah menjadi manusia serigala. Ia menyadari bahwa kutukan itu tidak dapat dilawan, bahkan oleh seseorang yang berhati baik sekalipun. Takut kehilangan kendali dan melukai orang-orang yang ingin ia lindungi, Roger memutuskan meninggalkan desa dan menjalani hidup dalam kesendirian.\n\nKini Roger mengembara sebagai manusia sekaligus manusia serigala. Meski harus hidup dengan kutukan yang sama seperti musuhnya, ia tidak pernah melupakan tujuannya. Dengan tekad yang tak tergoyahkan, Roger terus memburu Whitefang dan berusaha memusnahkan ancaman para manusia serigala, sambil mencari cara untuk mengakhiri kutukan yang telah mengubah hidupnya selamanya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Full_Moon_Curse.png",
+    "name": "Full Moon Curse",
+    "kategori": "Buff",
+    "longDesc": "Roger dapat dengan bebas beralih antara wujud manusia dan serigala.\nDalam wujud manusia, Serangan Dasar dan skill Roger memberikan damage tambahan sebesar [ (+4% HP Saat Ini target) .]\nDalam wujud serigala, Serangan Dasar dan skill Roger memberikan damage tambahan sebesar [ (+4% HP yang Hilang target) .]\nEfek ini hanya dapat memberikan damage tambahan hingga 60 terhadap Creep.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c1/Open_Fire.png",
+      "name": "Open Fire",
+      "kategori": "Damage/Debuff",
+      "longDesc": "Roger melepaskan dua tembakan cepat ke arah target, memberikan total 250–500 (+125% Total Serangan Fisik) Kerusakan Fisik kepada musuh yang terkena. Tembakan pertama adalah jaring pemburu yang memperlambat musuh sebesar 80% selama 1,5 detik, sedangkan tembakan kedua adalah peluru yang mengurangi Pertahanan Fisik musuh sebesar 10–30 selama 5 detik.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Lycan_Pounce.png",
+      "name2": "Lycan Pounce",
+      "kategori2": "Mobility/Burst",
+      "longDesc2": "Roger menerjang musuh, menjadi tak tertarget sambil memberikan 250–500 (+125% Total Serangan Fisik) Kerusakan Fisik hingga ke 3 musuh di area tersebut.\nMendapatkan kill atau assist akan mengurangi cooldown skill ini sebesar 80%."
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1d/Hunter%27s_Steps.png",
+      "name": "Hunter's Steps",
+      "kategori": "Speed Up",
+      "longDesc": "Roger mendapatkan peningkatan Kecepatan Gerak sebesar 20%–40% dan Kecepatan Serangan sebesar 20%–40% selama 2,5 detik.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Bloodthirsty_Howl.png",
+      "name2": "Bloodthirsty Howl",
+      "kategori2": "Buff/Speed Up",
+      "longDesc2": "Roger mengeluarkan lolongan, meningkatkan Kecepatan Serangannya menjadi 1,15–1,4 kali selama 5 detik. Dalam durasi ini, ia mendapatkan 50% Kecepatan Gerak jika hero musuh dengan HP di bawah 40% berada dalam jangkauan pandangannya."
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b2/Wolf_Transformation.png",
+      "name": "Wolf Transformation",
+      "kategori": "Morph/Mobility",
+      "longDesc": "Roger menerjang ke arah target dan berubah menjadi wujud serigala, memberikan 150–300 (+100% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh yang terkena dan memperlambat musuh sebesar 90% selama 0,8 detik. Pasif: Dalam wujud Serigala, Roger mendapatkan 20–65 Pertahanan Fisik dan Sihir serta 25 Kecepatan Gerak.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/5/57/Restore_Human_Form.png",
+      "name2": "Restore Human Form",
+      "kategori2": "Morph/Mobility",
+      "longDesc2": "Roger berguling ke arah target dan kembali ke wujud manusia, mendapatkan perisai sebesar 200–350 (+200% Serangan Fisik Ekstra) selama 1,5 detik."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/97/Hero391-icon.png",
+        "link": "https://sfile.co/anT9zy06DPg"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/97/Hero391-icon.png",
+        "link": "https://sfile.co/eXSsotZWi0s"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Hero392-icon.png",
+        "link": "https://sfile.co/VTN2BFJGMIu"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Hero392-icon.png",
+        "link": "https://sfile.co/zUELiW1Jxfq"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/67/Hero393-icon.png",
+        "link": "https://sfile.co/HCUkfcfaCb5"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero394-icon.png",
+        "link": "https://sfile.co/RIuzMKiWX8b"
+      },
+      {
+        "name": "Epic Phantom",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/36/Hero395-icon.png",
+        "link": "https://sfile.co/CCFUyuqLZXc"
+      },
+      {
+        "name": "Epic Cyborg",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero396-icon.png",
+        "link": "https://sfile.co/g4HUo5KrTmA"
+      },
+      {
+        "name": "M3",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero397-icon.png",
+        "link": "https://sfile.co/wy2R3WCvmP6"
+      },
+      {
+        "name": "Prime",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6d/Hero398-icon.png",
+        "link": "https://sfile.co/g1z6iCdBnZw"
+      },
+      {
+        "name": "Transformers",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero399-icon.png",
+        "link": "https://sfile.co/KpjbPlo6Ovb"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/58/Hero103911-icon.png",
+        "link": "https://sfile.co/qz1aWOiWSLo"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
