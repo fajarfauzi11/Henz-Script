@@ -1,5 +1,17 @@
 [
   {
+    "id": 45,
+    "title": "Diggie Epic",
+    "url": "/post/diggie-epic",
+    "thumb": "https://i.ibb.co/6JBrxx82/diggie-epic.webp",
+    "cat": "Epic",
+    "hero": "Diggie",
+    "date": "6 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Diggie Fairytaler"
+  },
+  {
     "id": 44,
     "title": "Argus Star Wars",
     "url": "/post/argus-star-wars",
