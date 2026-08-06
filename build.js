@@ -432,11 +432,16 @@ function hzBuildAbilityRow(opts) {
   if (opts.dual) {
     const t1 = opts.tab1Name || 'Tab 1';
     const t2 = opts.tab2Name || 'Tab 2';
+    let segButtons = '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t1) + '</button>\n'
+      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t2) + '</button>\n';
+    if (opts.dual3) {
+      const t3 = opts.tab3Name || 'Tab 3';
+      segButtons += '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="3" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t3) + '</button>\n';
+    }
     labelRow = '  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 20px 0;flex-wrap:wrap;">\n'
       + '    <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:' + opts.labelColor + ';">' + escHtml(opts.label) + '</span>\n'
       + '    <div class="hz-ab-seg hz-ab-seg-mini" data-prefix="' + opts.idPrefix + '" role="radiogroup">\n'
-      + '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t1) + '</button>\n'
-      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t2) + '</button>\n'
+      + segButtons
       + '      <div class="hz-ab-seg-pill"></div>\n'
       + '    </div>\n'
       + '  </div>\n';
@@ -466,6 +471,9 @@ function hzBuildAbilityRow(opts) {
   if (opts.dual) {
     body = '  <div id="' + opts.idPrefix + '-w1" style="display:block;">\n' + contentBlock(opts.url, opts.name, opts.kategori, opts.longDesc, opts.idPrefix) + '  </div>\n'
       + '  <div id="' + opts.idPrefix + '-w2" style="display:none;">\n' + contentBlock(opts.url2, opts.name2, opts.kategori2, opts.longDesc2, opts.idPrefix + '-v2') + '  </div>\n';
+    if (opts.dual3) {
+      body += '  <div id="' + opts.idPrefix + '-w3" style="display:none;">\n' + contentBlock(opts.url3, opts.name3, opts.kategori3, opts.longDesc3, opts.idPrefix + '-v3') + '  </div>\n';
+    }
   } else {
     body = contentBlock(opts.url, opts.name, opts.kategori, opts.longDesc, opts.idPrefix);
   }
@@ -477,6 +485,7 @@ function hzBuildAbilityRow(opts) {
 function buildAbilitiesHtml(data) {
   const dualTab1 = (data.dualTabNames && data.dualTabNames.tab1) || 'Tab 1';
   const dualTab2 = (data.dualTabNames && data.dualTabNames.tab2) || 'Tab 2';
+  const dualTab3 = (data.dualTabNames && data.dualTabNames.tab3) || 'Tab 3';
   const pasif = data.abilitiesPasif || {};
 
   const pasifCol = { bg: '#e8f5e9', text: '#2e7d32' };
@@ -485,7 +494,9 @@ function buildAbilitiesHtml(data) {
     url: pasif.url || '', name: pasif.name || '', kategori: pasif.kategori || 'BUFF',
     longDesc: pasif.longDesc || '', katBg: pasifCol.bg, katText: pasifCol.text, borderTop: false,
     dual: !!pasif.dual, tab1Name: dualTab1, tab2Name: dualTab2,
-    url2: pasif.url2 || '', name2: pasif.name2 || '', kategori2: pasif.kategori2 || 'BUFF', longDesc2: pasif.longDesc2 || ''
+    url2: pasif.url2 || '', name2: pasif.name2 || '', kategori2: pasif.kategori2 || 'BUFF', longDesc2: pasif.longDesc2 || '',
+    dual3: !!pasif.dual3, tab3Name: dualTab3,
+    url3: pasif.url3 || '', name3: pasif.name3 || '', kategori3: pasif.kategori3 || 'BUFF', longDesc3: pasif.longDesc3 || ''
   });
 
   const list = data.abilitiesList || [];
@@ -502,7 +513,9 @@ function buildAbilitiesHtml(data) {
       url: item.url || '', name: item.name || '', kategori: item.kategori || 'AOE',
       longDesc: item.longDesc || '', katBg: col.bg, katText: col.text, borderTop: borderTop, borderBottom: borderBottom,
       dual: !!item.dual, tab1Name: dualTab1, tab2Name: dualTab2,
-      url2: item.url2 || '', name2: item.name2 || '', kategori2: item.kategori2 || 'AOE', longDesc2: item.longDesc2 || ''
+      url2: item.url2 || '', name2: item.name2 || '', kategori2: item.kategori2 || 'AOE', longDesc2: item.longDesc2 || '',
+      dual3: !!item.dual3, tab3Name: dualTab3,
+      url3: item.url3 || '', name3: item.name3 || '', kategori3: item.kategori3 || 'AOE', longDesc3: item.longDesc3 || ''
     });
   });
 

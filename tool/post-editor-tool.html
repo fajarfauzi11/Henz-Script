@@ -267,6 +267,12 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
           <input type="text" id="dual-tab2-name" value="Tab 2" placeholder="misal: Beast Form" oninput="scheduleLiveUpdate()"/>
         </div>
       </div>
+      <div id="dual-tab3-name-wrap" style="display:none;">
+        <div class="field" style="margin:10px 0 0;">
+          <div class="field-label" style="font-size:10px;">Nama Varian 3</div>
+          <input type="text" id="dual-tab3-name" value="Tab 3" placeholder="misal: Varian 3" oninput="scheduleLiveUpdate()"/>
+        </div>
+      </div>
     </div>
 
     <!-- PASIF -->
@@ -308,6 +314,26 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
       </div>
       <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Pasif (Varian 2) <span class="field-badge">longdescblok0_v2</span></div>
         <textarea id="longdescblok0_v2" rows="3" placeholder="Deskripsi skill pasif varian 2..."></textarea>
+      </div>
+    </div>
+    <div id="dual-pasif-v3-wrap" style="display:none;">
+      <label class="dual-ab-check-wrap" style="margin-top:8px;">
+        <input type="checkbox" id="dual-pasif-v3" onchange="hzToggleBlockV3('pasif')"/>
+        <span>Aktifkan Varian 3 untuk Pasif</span>
+      </label>
+      <div id="dual-pasif-v3-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
+        <div class="field"><div class="field-label" style="font-size:10px;">Logo Pasif (Varian 3) <span class="field-badge">urlpasif_v3</span></div>
+          <input type="text" id="urlpasif_v3" placeholder="https://i.ibb.co/xxx/pasif3.png"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Nama Pasif (Varian 3) <span class="field-badge">namepasif_v3</span></div>
+          <input type="text" id="namepasif_v3" placeholder="Nama skill pasif varian 3"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Kategori Pasif (Varian 3) <span class="field-badge">kategoripasif_v3</span></div>
+          <input type="text" class="auto-field" id="kategoripasif_v3" value="BUFF"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Pasif (Varian 3) <span class="field-badge">longdescblok0_v3</span></div>
+          <textarea id="longdescblok0_v3" rows="3" placeholder="Deskripsi skill pasif varian 3..."></textarea>
+        </div>
       </div>
     </div>
 
@@ -354,6 +380,26 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
         <textarea id="longdescblok1_v2" rows="3" placeholder="Deskripsi skill 1 varian 2..."></textarea>
       </div>
     </div>
+    <div id="dual-skill1-v3-wrap" style="display:none;">
+      <label class="dual-ab-check-wrap" style="margin-top:8px;">
+        <input type="checkbox" id="dual-skill1-v3" onchange="hzToggleBlockV3('skill1')"/>
+        <span>Aktifkan Varian 3 untuk Skill 1</span>
+      </label>
+      <div id="dual-skill1-v3-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
+        <div class="field"><div class="field-label" style="font-size:10px;">Logo Skill 1 (Varian 3) <span class="field-badge">urlskill1_v3</span></div>
+          <input type="text" id="urlskill1_v3" placeholder="https://i.ibb.co/xxx/skill1-3.png"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Nama Skill 1 (Varian 3) <span class="field-badge">nameskill1_v3</span></div>
+          <input type="text" id="nameskill1_v3" placeholder="Nama skill 1 varian 3"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Kategori Skill 1 (Varian 3) <span class="field-badge">kategoriskill1_v3</span></div>
+          <input type="text" class="auto-field" id="kategoriskill1_v3" value="AOE"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Skill 1 (Varian 3) <span class="field-badge">longdescblok1_v3</span></div>
+          <textarea id="longdescblok1_v3" rows="3" placeholder="Deskripsi skill 1 varian 3..."></textarea>
+        </div>
+      </div>
+    </div>
 
     <div class="divider"></div>
 
@@ -396,6 +442,26 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
       </div>
       <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Skill 2 (Varian 2) <span class="field-badge">longdescblok2_v2</span></div>
         <textarea id="longdescblok2_v2" rows="3" placeholder="Deskripsi skill 2 varian 2..."></textarea>
+      </div>
+    </div>
+    <div id="dual-skill2-v3-wrap" style="display:none;">
+      <label class="dual-ab-check-wrap" style="margin-top:8px;">
+        <input type="checkbox" id="dual-skill2-v3" onchange="hzToggleBlockV3('skill2')"/>
+        <span>Aktifkan Varian 3 untuk Skill 2</span>
+      </label>
+      <div id="dual-skill2-v3-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
+        <div class="field"><div class="field-label" style="font-size:10px;">Logo Skill 2 (Varian 3) <span class="field-badge">urlskill2_v3</span></div>
+          <input type="text" id="urlskill2_v3" placeholder="https://i.ibb.co/xxx/skill2-3.png"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Nama Skill 2 (Varian 3) <span class="field-badge">nameskill2_v3</span></div>
+          <input type="text" id="nameskill2_v3" placeholder="Nama skill 2 varian 3"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Kategori Skill 2 (Varian 3) <span class="field-badge">kategoriskill2_v3</span></div>
+          <input type="text" class="auto-field" id="kategoriskill2_v3" value="Mobility"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Skill 2 (Varian 3) <span class="field-badge">longdescblok2_v3</span></div>
+          <textarea id="longdescblok2_v3" rows="3" placeholder="Deskripsi skill 2 varian 3..."></textarea>
+        </div>
       </div>
     </div>
 
@@ -454,6 +520,26 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
       </div>
       <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Ultimate (Varian 2) <span class="field-badge">longdescbloklast_v2</span></div>
         <textarea id="longdescbloklast_v2" rows="3" placeholder="Deskripsi ultimate varian 2..."></textarea>
+      </div>
+    </div>
+    <div id="dual-ulti-v3-wrap" style="display:none;">
+      <label class="dual-ab-check-wrap" style="margin-top:8px;">
+        <input type="checkbox" id="dual-ulti-v3" onchange="hzToggleBlockV3('ulti')"/>
+        <span>Aktifkan Varian 3 untuk Ultimate</span>
+      </label>
+      <div id="dual-ulti-v3-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">
+        <div class="field"><div class="field-label" style="font-size:10px;">Logo Ultimate (Varian 3) <span class="field-badge">urlultimate_v3</span></div>
+          <input type="text" id="urlultimate_v3" placeholder="https://i.ibb.co/xxx/ultimate3.png"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Nama Ultimate (Varian 3) <span class="field-badge">nameultimate_v3</span></div>
+          <input type="text" id="nameultimate_v3" placeholder="Nama ultimate varian 3"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Kategori Ultimate (Varian 3) <span class="field-badge">kategoriulti_v3</span></div>
+          <input type="text" class="auto-field" id="kategoriulti_v3" value="Burst"/>
+        </div>
+        <div class="field"><div class="field-label" style="font-size:10px;">Deskripsi Ultimate (Varian 3) <span class="field-badge">longdescbloklast_v3</span></div>
+          <textarea id="longdescbloklast_v3" rows="3" placeholder="Deskripsi ultimate varian 3..."></textarea>
+        </div>
       </div>
     </div>
 
@@ -818,7 +904,9 @@ function attachAllListeners(){
     'urlskill2':     'nameskill2',
     'urlultimate':   'nameultimate',
     'urlpasif_v2':   'namepasif_v2',
-    'urlultimate_v2':'nameultimate_v2'
+    'urlultimate_v2':'nameultimate_v2',
+    'urlpasif_v3':   'namepasif_v3',
+    'urlultimate_v3':'nameultimate_v3'
   };
   Object.keys(abilityUrlNameMap).forEach(function(urlId){
     var urlEl = document.getElementById(urlId);
@@ -1005,6 +1093,22 @@ function addAbBlok(){
         '<div class="field"><div class="field-label" style="font-size:9px">Deskripsi (Varian 2) <span class="field-badge">longdescblok'+idx+'_v2</span></div>'+
           '<textarea id="longdescblok'+idx+'_v2" rows="3" placeholder="Deskripsi skill '+idx+' varian 2..."></textarea></div>'+
       '</div>'+
+      '<div id="dual-skill'+idx+'-v3-wrap" style="display:none;">'+
+        '<label class="dual-ab-check-wrap" style="margin:8px 0 0;">'+
+          '<input type="checkbox" id="dual-skill'+idx+'-v3" onchange="hzToggleBlockV3(\'skill'+idx+'\')"/>'+
+          '<span>Aktifkan Varian 3 untuk Skill '+idx+'</span>'+
+        '</label>'+
+        '<div id="dual-skill'+idx+'-v3-fields" style="display:none;flex-direction:column;gap:10px;padding:12px 14px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.14);border-radius:8px;">'+
+          '<div class="field"><div class="field-label" style="font-size:9px">Logo (Varian 3) <span class="field-badge">urlskill'+idx+'_v3</span></div>'+
+            '<input type="text" id="urlskill'+idx+'_v3" placeholder="https://i.ibb.co/xxx/skill'+idx+'-3.png"/></div>'+
+          '<div class="field"><div class="field-label" style="font-size:9px">Nama (Varian 3) <span class="field-badge">nameskill'+idx+'_v3</span></div>'+
+            '<input type="text" id="nameskill'+idx+'_v3" placeholder="Nama skill '+idx+' varian 3"/></div>'+
+          '<div class="field"><div class="field-label" style="font-size:9px">Kategori (Varian 3) <span class="field-badge">kategoriskill'+idx+'_v3</span></div>'+
+            '<input type="text" class="auto-field" id="kategoriskill'+idx+'_v3" value="AOE"/></div>'+
+          '<div class="field"><div class="field-label" style="font-size:9px">Deskripsi (Varian 3) <span class="field-badge">longdescblok'+idx+'_v3</span></div>'+
+            '<textarea id="longdescblok'+idx+'_v3" rows="3" placeholder="Deskripsi skill '+idx+' varian 3..."></textarea></div>'+
+        '</div>'+
+      '</div>'+
     '</div>';
   // insert before the divider before ultimate
   var dividers = document.querySelectorAll('#sec-3 .divider');
@@ -1032,6 +1136,25 @@ function removeAbBlok(idx){
 function hzToggleBlockDual(key){
   var checkbox = document.getElementById('dual-'+key);
   var panel = document.getElementById('dual-'+key+'-fields');
+  var on = !!(checkbox && checkbox.checked);
+  if(panel) panel.style.display = on ? 'flex' : 'none';
+  var v3Wrap = document.getElementById('dual-'+key+'-v3-wrap');
+  if(v3Wrap) v3Wrap.style.display = on ? 'block' : 'none';
+  if(!on){
+    // Varian 2 dimatikan → Varian 3 ikut dimatikan (tidak masuk akal ada Varian 3 tanpa Varian 2)
+    var v3cb = document.getElementById('dual-'+key+'-v3');
+    if(v3cb) v3cb.checked = false;
+    var v3panel = document.getElementById('dual-'+key+'-v3-fields');
+    if(v3panel) v3panel.style.display = 'none';
+  }
+  hzUpdateGlobalTabNamesVisibility();
+  attachAllListeners();
+  scheduleLiveUpdate();
+}
+
+function hzToggleBlockV3(key){
+  var checkbox = document.getElementById('dual-'+key+'-v3');
+  var panel = document.getElementById('dual-'+key+'-v3-fields');
   if(panel) panel.style.display = (checkbox && checkbox.checked) ? 'flex' : 'none';
   hzUpdateGlobalTabNamesVisibility();
   attachAllListeners();
@@ -1040,15 +1163,26 @@ function hzToggleBlockDual(key){
 
 function hzUpdateGlobalTabNamesVisibility(){
   var anyChecked = false;
+  var anyV3Checked = false;
   document.querySelectorAll('#sec-3 input[type=checkbox][id^="dual-"]').forEach(function(cb){
-    if(cb.checked) anyChecked = true;
+    if(cb.checked){
+      anyChecked = true;
+      if(/-v3$/.test(cb.id)) anyV3Checked = true;
+    }
   });
   var wrap = document.getElementById('dual-tab-names');
   if(wrap) wrap.style.display = anyChecked ? 'block' : 'none';
+  var tab3Wrap = document.getElementById('dual-tab3-name-wrap');
+  if(tab3Wrap) tab3Wrap.style.display = anyV3Checked ? 'block' : 'none';
 }
 
 function hzIsDualEnabled(key){
   var el = document.getElementById('dual-'+key);
+  return !!(el && el.checked);
+}
+
+function hzIsV3Enabled(key){
+  var el = document.getElementById('dual-'+key+'-v3');
   return !!(el && el.checked);
 }
 
@@ -1239,11 +1373,16 @@ function hzBuildAbilityRow(opts){
   if(opts.dual){
     var t1 = v('dual-tab1-name') || 'Tab 1';
     var t2 = v('dual-tab2-name') || 'Tab 2';
+    var segButtons = '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t1)+'</button>\n'
+      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t2)+'</button>\n';
+    if(opts.dual3){
+      var t3 = v('dual-tab3-name') || 'Tab 3';
+      segButtons += '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="3" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t3)+'</button>\n';
+    }
     labelRow = '  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 20px 0;flex-wrap:wrap;">\n'
       + '    <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:'+opts.labelColor+';">'+esc(opts.label)+'</span>\n'
       + '    <div class="hz-ab-seg hz-ab-seg-mini" data-prefix="'+idPrefix+'" role="radiogroup">\n'
-      + '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t1)+'</button>\n'
-      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">'+esc(t2)+'</button>\n'
+      + segButtons
       + '      <div class="hz-ab-seg-pill"></div>\n'
       + '    </div>\n'
       + '  </div>\n';
@@ -1273,6 +1412,9 @@ function hzBuildAbilityRow(opts){
   if(opts.dual){
     body = '  <div id="'+idPrefix+'-w1" style="display:block;">\n' + contentBlock(opts.url,opts.name,opts.kategori,opts.longDesc, idPrefix) + '  </div>\n'
          + '  <div id="'+idPrefix+'-w2" style="display:none;">\n' + contentBlock(opts.url2,opts.name2,opts.kategori2,opts.longDesc2, idPrefix+'-v2') + '  </div>\n';
+    if(opts.dual3){
+      body += '  <div id="'+idPrefix+'-w3" style="display:none;">\n' + contentBlock(opts.url3,opts.name3,opts.kategori3,opts.longDesc3, idPrefix+'-v3') + '  </div>\n';
+    }
   } else {
     body = contentBlock(opts.url,opts.name,opts.kategori,opts.longDesc, idPrefix);
   }
@@ -1296,7 +1438,9 @@ function buildAbPasif(){
     url:v('urlpasif'), name:v('namepasif'), kategori:v('kategoripasif')||'BUFF',
     longDesc:v('longdescblok0'), katBg:'#e8f5e9', katText:'#2e7d32', borderTop:false,
     dual: hzIsDualEnabled('pasif'),
-    url2:v('urlpasif_v2'), name2:v('namepasif_v2'), kategori2:v('kategoripasif_v2')||'BUFF', longDesc2:v('longdescblok0_v2')
+    url2:v('urlpasif_v2'), name2:v('namepasif_v2'), kategori2:v('kategoripasif_v2')||'BUFF', longDesc2:v('longdescblok0_v2'),
+    dual3: hzIsV3Enabled('pasif'),
+    url3:v('urlpasif_v3'), name3:v('namepasif_v3'), kategori3:v('kategoripasif_v3')||'BUFF', longDesc3:v('longdescblok0_v3')
   });
 }
 
@@ -1309,7 +1453,9 @@ function buildAbSkills(){
     url:v('urlskill1'), name:v('nameskill1'), kategori:v('kategoriskill1')||'AOE',
     longDesc:v('longdescblok1'), katBg:'#e3f2fd', katText:'#1565c0', borderTop:true,
     dual: hzIsDualEnabled('skill1'),
-    url2:v('urlskill1_v2'), name2:v('nameskill1_v2'), kategori2:v('kategoriskill1_v2')||'AOE', longDesc2:v('longdescblok1_v2')
+    url2:v('urlskill1_v2'), name2:v('nameskill1_v2'), kategori2:v('kategoriskill1_v2')||'AOE', longDesc2:v('longdescblok1_v2'),
+    dual3: hzIsV3Enabled('skill1'),
+    url3:v('urlskill1_v3'), name3:v('nameskill1_v3'), kategori3:v('kategoriskill1_v3')||'AOE', longDesc3:v('longdescblok1_v3')
   });
 
   html += hzBuildAbilityRow({
@@ -1317,7 +1463,9 @@ function buildAbSkills(){
     url:v('urlskill2'), name:v('nameskill2'), kategori:v('kategoriskill2')||'Mobility',
     longDesc:v('longdescblok2'), katBg:'#f3e5f5', katText:'#6a1b9a', borderTop:false,
     dual: hzIsDualEnabled('skill2'),
-    url2:v('urlskill2_v2'), name2:v('nameskill2_v2'), kategori2:v('kategoriskill2_v2')||'Mobility', longDesc2:v('longdescblok2_v2')
+    url2:v('urlskill2_v2'), name2:v('nameskill2_v2'), kategori2:v('kategoriskill2_v2')||'Mobility', longDesc2:v('longdescblok2_v2'),
+    dual3: hzIsV3Enabled('skill2'),
+    url3:v('urlskill2_v3'), name3:v('nameskill2_v3'), kategori3:v('kategoriskill2_v3')||'Mobility', longDesc3:v('longdescblok2_v3')
   });
 
   html += buildAbMiddle();
@@ -1327,7 +1475,9 @@ function buildAbSkills(){
     url:v('urlultimate'), name:v('nameultimate'), kategori:v('kategoriulti')||'Burst',
     longDesc:v('longdescbloklast'), katBg:'#fff3e0', katText:'#e65100', borderTop:true, borderBottom:false,
     dual: hzIsDualEnabled('ulti'),
-    url2:v('urlultimate_v2'), name2:v('nameultimate_v2'), kategori2:v('kategoriulti_v2')||'Burst', longDesc2:v('longdescbloklast_v2')
+    url2:v('urlultimate_v2'), name2:v('nameultimate_v2'), kategori2:v('kategoriulti_v2')||'Burst', longDesc2:v('longdescbloklast_v2'),
+    dual3: hzIsV3Enabled('ulti'),
+    url3:v('urlultimate_v3'), name3:v('nameultimate_v3'), kategori3:v('kategoriulti_v3')||'Burst', longDesc3:v('longdescbloklast_v3')
   });
 
   return html;
@@ -1347,7 +1497,9 @@ function buildAbMiddle(){
       url:v('urlskill'+idx), name:v('nameskill'+idx), kategori:v('kategoriskill'+idx)||'AOE',
       longDesc:v('longdescblok'+idx), katBg:col.bg, katText:col.text, borderTop:true,
       dual: hzIsDualEnabled('skill'+idx),
-      url2:v('urlskill'+idx+'_v2'), name2:v('nameskill'+idx+'_v2'), kategori2:v('kategoriskill'+idx+'_v2')||'AOE', longDesc2:v('longdescblok'+idx+'_v2')
+      url2:v('urlskill'+idx+'_v2'), name2:v('nameskill'+idx+'_v2'), kategori2:v('kategoriskill'+idx+'_v2')||'AOE', longDesc2:v('longdescblok'+idx+'_v2'),
+      dual3: hzIsV3Enabled('skill'+idx),
+      url3:v('urlskill'+idx+'_v3'), name3:v('nameskill'+idx+'_v3'), kategori3:v('kategoriskill'+idx+'_v3')||'AOE', longDesc3:v('longdescblok'+idx+'_v3')
     });
   });
   return html;
@@ -1568,30 +1720,41 @@ function buildContentData(){
 
   data.dualTabNames = {
     tab1: v('dual-tab1-name') || 'Tab 1',
-    tab2: v('dual-tab2-name') || 'Tab 2'
+    tab2: v('dual-tab2-name') || 'Tab 2',
+    tab3: v('dual-tab3-name') || 'Tab 3'
   };
 
   data.abilitiesPasif = {
     url: v('urlpasif'), name: v('namepasif'), kategori: v('kategoripasif'),
     longDesc: v('longdescblok0'), dual: hzIsDualEnabled('pasif'),
-    url2: v('urlpasif_v2'), name2: v('namepasif_v2'), kategori2: v('kategoripasif_v2'), longDesc2: v('longdescblok0_v2')
+    url2: v('urlpasif_v2'), name2: v('namepasif_v2'), kategori2: v('kategoripasif_v2'), longDesc2: v('longdescblok0_v2'),
+    dual3: hzIsV3Enabled('pasif'),
+    url3: v('urlpasif_v3'), name3: v('namepasif_v3'), kategori3: v('kategoripasif_v3'), longDesc3: v('longdescblok0_v3')
   };
 
   var list = [];
   list.push({ label:'Skill 1', url:v('urlskill1'), name:v('nameskill1'), kategori:v('kategoriskill1'),
     longDesc:v('longdescblok1'), dual:hzIsDualEnabled('skill1'),
-    url2:v('urlskill1_v2'), name2:v('nameskill1_v2'), kategori2:v('kategoriskill1_v2'), longDesc2:v('longdescblok1_v2') });
+    url2:v('urlskill1_v2'), name2:v('nameskill1_v2'), kategori2:v('kategoriskill1_v2'), longDesc2:v('longdescblok1_v2'),
+    dual3:hzIsV3Enabled('skill1'),
+    url3:v('urlskill1_v3'), name3:v('nameskill1_v3'), kategori3:v('kategoriskill1_v3'), longDesc3:v('longdescblok1_v3') });
   list.push({ label:'Skill 2', url:v('urlskill2'), name:v('nameskill2'), kategori:v('kategoriskill2'),
     longDesc:v('longdescblok2'), dual:hzIsDualEnabled('skill2'),
-    url2:v('urlskill2_v2'), name2:v('nameskill2_v2'), kategori2:v('kategoriskill2_v2'), longDesc2:v('longdescblok2_v2') });
+    url2:v('urlskill2_v2'), name2:v('nameskill2_v2'), kategori2:v('kategoriskill2_v2'), longDesc2:v('longdescblok2_v2'),
+    dual3:hzIsV3Enabled('skill2'),
+    url3:v('urlskill2_v3'), name3:v('nameskill2_v3'), kategori3:v('kategoriskill2_v3'), longDesc3:v('longdescblok2_v3') });
   hzCollectAbilityDynamicIndexes().forEach(function(idx){
     list.push({ label:'Skill '+idx, url:v('urlskill'+idx), name:v('nameskill'+idx), kategori:v('kategoriskill'+idx),
       longDesc:v('longdescblok'+idx), dual:hzIsDualEnabled('skill'+idx),
-      url2:v('urlskill'+idx+'_v2'), name2:v('nameskill'+idx+'_v2'), kategori2:v('kategoriskill'+idx+'_v2'), longDesc2:v('longdescblok'+idx+'_v2') });
+      url2:v('urlskill'+idx+'_v2'), name2:v('nameskill'+idx+'_v2'), kategori2:v('kategoriskill'+idx+'_v2'), longDesc2:v('longdescblok'+idx+'_v2'),
+      dual3:hzIsV3Enabled('skill'+idx),
+      url3:v('urlskill'+idx+'_v3'), name3:v('nameskill'+idx+'_v3'), kategori3:v('kategoriskill'+idx+'_v3'), longDesc3:v('longdescblok'+idx+'_v3') });
   });
   list.push({ label:'Ultimate', url:v('urlultimate'), name:v('nameultimate'), kategori:v('kategoriulti'),
     longDesc:v('longdescbloklast'), dual:hzIsDualEnabled('ulti'),
-    url2:v('urlultimate_v2'), name2:v('nameultimate_v2'), kategori2:v('kategoriulti_v2'), longDesc2:v('longdescbloklast_v2') });
+    url2:v('urlultimate_v2'), name2:v('nameultimate_v2'), kategori2:v('kategoriulti_v2'), longDesc2:v('longdescbloklast_v2'),
+    dual3:hzIsV3Enabled('ulti'),
+    url3:v('urlultimate_v3'), name3:v('nameultimate_v3'), kategori3:v('kategoriulti_v3'), longDesc3:v('longdescbloklast_v3') });
   data.abilitiesList = list;
 
   var dlDual = hzIsDlDualEnabled();
@@ -1634,6 +1797,7 @@ function hzLoadFromJson(jsonString, filename){
   var dtn = data.dualTabNames || {};
   hzSetField('dual-tab1-name', dtn.tab1 || 'Tab 1');
   hzSetField('dual-tab2-name', dtn.tab2 || 'Tab 2');
+  hzSetField('dual-tab3-name', dtn.tab3 || 'Tab 3');
 
   function loadAbilityFields(prefixKey, urlId, nameId, katId, descId, obj){
     obj = obj || {};
@@ -1663,6 +1827,14 @@ function hzLoadFromJson(jsonString, filename){
     hzSetField('namepasif_v2', pasif.name2 || '');
     hzSetField('kategoripasif_v2', pasif.kategori2 || '');
     hzSetField('longdescblok0_v2', pasif.longDesc2 || '');
+    if(pasif.dual3){
+      var cbP3 = document.getElementById('dual-pasif-v3');
+      if(cbP3){ cbP3.checked = true; hzToggleBlockV3('pasif'); }
+      hzSetField('urlpasif_v3', pasif.url3 || '');
+      hzSetField('namepasif_v3', pasif.name3 || '');
+      hzSetField('kategoripasif_v3', pasif.kategori3 || '');
+      hzSetField('longdescblok0_v3', pasif.longDesc3 || '');
+    }
   }
 
   var list = data.abilitiesList || [];
@@ -1670,21 +1842,22 @@ function hzLoadFromJson(jsonString, filename){
     messages.push('⚠ abilitiesList kurang dari 3 item (minimal Skill 1, Skill 2, Ultimate) — sebagian field mungkin kosong.');
   }
   // Skill 1
-  if(list[0]) loadSkillBlock('skill1', 'urlskill1','nameskill1','kategoriskill1','longdescblok1','urlskill1_v2','nameskill1_v2','kategoriskill1_v2','longdescblok1_v2', list[0]);
+  if(list[0]) loadSkillBlock('skill1', 'urlskill1','nameskill1','kategoriskill1','longdescblok1','urlskill1_v2','nameskill1_v2','kategoriskill1_v2','longdescblok1_v2','urlskill1_v3','nameskill1_v3','kategoriskill1_v3','longdescblok1_v3', list[0]);
   // Skill 2
-  if(list[1]) loadSkillBlock('skill2', 'urlskill2','nameskill2','kategoriskill2','longdescblok2','urlskill2_v2','nameskill2_v2','kategoriskill2_v2','longdescblok2_v2', list[1]);
+  if(list[1]) loadSkillBlock('skill2', 'urlskill2','nameskill2','kategoriskill2','longdescblok2','urlskill2_v2','nameskill2_v2','kategoriskill2_v2','longdescblok2_v2','urlskill2_v3','nameskill2_v3','kategoriskill2_v3','longdescblok2_v3', list[1]);
   // Ultimate = item terakhir
   var ultimateItem = list.length > 2 ? list[list.length-1] : null;
-  if(ultimateItem) loadSkillBlock('ulti', 'urlultimate','nameultimate','kategoriulti','longdescbloklast','urlultimate_v2','nameultimate_v2','kategoriulti_v2','longdescbloklast_v2', ultimateItem);
+  if(ultimateItem) loadSkillBlock('ulti', 'urlultimate','nameultimate','kategoriulti','longdescbloklast','urlultimate_v2','nameultimate_v2','kategoriulti_v2','longdescbloklast_v2','urlultimate_v3','nameultimate_v3','kategoriulti_v3','longdescbloklast_v3', ultimateItem);
   // Dynamic middle = index 2 s/d length-2 (di antara Skill 2 dan Ultimate)
   for(var i=2; i<list.length-1; i++){
     addAbBlok(); // bikin blok DOM baru dulu (idx otomatis lanjut dari abCounter)
     var newIdx = abCounter - 1;
     loadSkillBlock('skill'+newIdx, 'urlskill'+newIdx,'nameskill'+newIdx,'kategoriskill'+newIdx,'longdescblok'+newIdx,
-      'urlskill'+newIdx+'_v2','nameskill'+newIdx+'_v2','kategoriskill'+newIdx+'_v2','longdescblok'+newIdx+'_v2', list[i]);
+      'urlskill'+newIdx+'_v2','nameskill'+newIdx+'_v2','kategoriskill'+newIdx+'_v2','longdescblok'+newIdx+'_v2',
+      'urlskill'+newIdx+'_v3','nameskill'+newIdx+'_v3','kategoriskill'+newIdx+'_v3','longdescblok'+newIdx+'_v3', list[i]);
   }
 
-  function loadSkillBlock(dualKey, urlId,nameId,katId,descId,url2Id,name2Id,kat2Id,desc2Id, item){
+  function loadSkillBlock(dualKey, urlId,nameId,katId,descId,url2Id,name2Id,kat2Id,desc2Id,url3Id,name3Id,kat3Id,desc3Id, item){
     item = item || {};
     hzSetField(urlId, item.url || '');
     hzSetField(nameId, item.name || '');
@@ -1697,6 +1870,14 @@ function hzLoadFromJson(jsonString, filename){
       hzSetField(name2Id, item.name2 || '');
       hzSetField(kat2Id, item.kategori2 || '');
       hzSetField(desc2Id, item.longDesc2 || '');
+      if(item.dual3){
+        var cb3 = document.getElementById('dual-'+dualKey+'-v3');
+        if(cb3){ cb3.checked = true; hzToggleBlockV3(dualKey); }
+        hzSetField(url3Id, item.url3 || '');
+        hzSetField(name3Id, item.name3 || '');
+        hzSetField(kat3Id, item.kategori3 || '');
+        hzSetField(desc3Id, item.longDesc3 || '');
+      }
     }
   }
 
@@ -2282,22 +2463,41 @@ function hzLoadFromHtml(htmlString, filename){
     if(panel) panel.style.display = 'flex';
     var namesWrap = document.getElementById('dual-tab-names');
     if(namesWrap) namesWrap.style.display = 'block';
+    var v3Wrap = document.getElementById('dual-'+key+'-v3-wrap');
+    if(v3Wrap) v3Wrap.style.display = 'block';
     loadAbilityBlock({ fullId: prefix+'-v2-full', shortId: prefix+'-v2-short', urlField: urlField, nameField: nameField, katField: katField, longField: longField, shortField: null });
+  }
+
+  // Cek & muat varian 3 untuk satu blok (kalau ada elemen {prefix}-w3 di file)
+  function maybeLoadV3Variant(key, prefix, urlField, nameField, katField, longField){
+    var w3 = doc.getElementById(prefix+'-w3');
+    if(!w3) return;
+    var cb = document.getElementById('dual-'+key+'-v3');
+    if(cb) cb.checked = true;
+    var panel = document.getElementById('dual-'+key+'-v3-fields');
+    if(panel) panel.style.display = 'flex';
+    var tab3Wrap = document.getElementById('dual-tab3-name-wrap');
+    if(tab3Wrap) tab3Wrap.style.display = 'block';
+    loadAbilityBlock({ fullId: prefix+'-v3-full', shortId: prefix+'-v3-short', urlField: urlField, nameField: nameField, katField: katField, longField: longField, shortField: null });
   }
 
   loadAbilityBlock({ fullId:'hz-ab-pasif-full', shortId:'hz-ab-pasif-short', urlField:'urlpasif',   nameField:'namepasif',   katField:'kategoripasif',  longField:'longdescblok0',   shortField:'shortdescblok0-preview' });
   maybeLoadDualVariant('pasif', 'hz-ab-pasif', 'urlpasif_v2', 'namepasif_v2', 'kategoripasif_v2', 'longdescblok0_v2');
+  maybeLoadV3Variant('pasif', 'hz-ab-pasif', 'urlpasif_v3', 'namepasif_v3', 'kategoripasif_v3', 'longdescblok0_v3');
 
   loadAbilityBlock({ fullId:'hz-ab-s1-full',    shortId:'hz-ab-s1-short',    urlField:'urlskill1',  nameField:'nameskill1',  katField:'kategoriskill1', longField:'longdescblok1',   shortField:'shortdescblok1-preview' });
   maybeLoadDualVariant('skill1', 'hz-ab-s1', 'urlskill1_v2', 'nameskill1_v2', 'kategoriskill1_v2', 'longdescblok1_v2');
+  maybeLoadV3Variant('skill1', 'hz-ab-s1', 'urlskill1_v3', 'nameskill1_v3', 'kategoriskill1_v3', 'longdescblok1_v3');
 
   loadAbilityBlock({ fullId:'hz-ab-s2-full',    shortId:'hz-ab-s2-short',    urlField:'urlskill2',  nameField:'nameskill2',  katField:'kategoriskill2', longField:'longdescblok2',   shortField:'shortdescblok2-preview' });
   maybeLoadDualVariant('skill2', 'hz-ab-s2', 'urlskill2_v2', 'nameskill2_v2', 'kategoriskill2_v2', 'longdescblok2_v2');
+  maybeLoadV3Variant('skill2', 'hz-ab-s2', 'urlskill2_v3', 'nameskill2_v3', 'kategoriskill2_v3', 'longdescblok2_v3');
 
   loadAbilityBlock({ fullId:'hz-ab-ult-full',   shortId:'hz-ab-ult-short',   urlField:'urlultimate',nameField:'nameultimate',katField:'kategoriulti',   longField:'longdescbloklast',shortField:'shortdescbloklast-preview' });
   maybeLoadDualVariant('ulti', 'hz-ab-ult', 'urlultimate_v2', 'nameultimate_v2', 'kategoriulti_v2', 'longdescbloklast_v2');
+  maybeLoadV3Variant('ulti', 'hz-ab-ult', 'urlultimate_v3', 'nameultimate_v3', 'kategoriulti_v3', 'longdescbloklast_v3');
 
-  // [7] SKILL DINAMIS (+ varian 2 per blok kalau ada)
+  // [7] SKILL DINAMIS (+ varian 2/3 per blok kalau ada)
   var dynIdx = 3;
   while(true){
     var dynFull = doc.getElementById('hz-ab-s'+dynIdx+'-full');
@@ -2306,6 +2506,7 @@ function hzLoadFromHtml(htmlString, filename){
     var curIdx = abCounter - 1;
     loadAbilityBlock({ fullId:'hz-ab-s'+dynIdx+'-full', shortId:'hz-ab-s'+dynIdx+'-short', urlField:'urlskill'+curIdx, nameField:'nameskill'+curIdx, katField:'kategoriskill'+curIdx, longField:'longdescblok'+curIdx, shortField:'shortdescblok'+curIdx });
     maybeLoadDualVariant('skill'+curIdx, 'hz-ab-s'+dynIdx, 'urlskill'+curIdx+'_v2', 'nameskill'+curIdx+'_v2', 'kategoriskill'+curIdx+'_v2', 'longdescblok'+curIdx+'_v2');
+    maybeLoadV3Variant('skill'+curIdx, 'hz-ab-s'+dynIdx, 'urlskill'+curIdx+'_v3', 'nameskill'+curIdx+'_v3', 'kategoriskill'+curIdx+'_v3', 'longdescblok'+curIdx+'_v3');
     dynIdx++;
   }
 
@@ -3540,10 +3741,11 @@ function hzAbMiniSwitch(btn){
   }
   var prefix = seg.getAttribute('data-prefix');
   var variant = btn.getAttribute('data-variant');
-  var w1 = document.getElementById(prefix + '-w1');
-  var w2 = document.getElementById(prefix + '-w2');
-  if(w1) w1.style.display = (variant === '1') ? 'block' : 'none';
-  if(w2) w2.style.display = (variant === '2') ? 'block' : 'none';
+  seg.querySelectorAll('.hz-ab-seg-item').forEach(function(b){
+    var v = b.getAttribute('data-variant');
+    var w = document.getElementById(prefix + '-w' + v);
+    if(w) w.style.display = (v === variant) ? 'block' : 'none';
+  });
 }
 
 

@@ -873,10 +873,11 @@ function hzAbMiniSwitch(btn){
   }
   var prefix = seg.getAttribute('data-prefix');
   var variant = btn.getAttribute('data-variant');
-  var w1 = document.getElementById(prefix + '-w1');
-  var w2 = document.getElementById(prefix + '-w2');
-  if(w1) w1.style.display = (variant === '1') ? 'block' : 'none';
-  if(w2) w2.style.display = (variant === '2') ? 'block' : 'none';
+  seg.querySelectorAll('.hz-ab-seg-item').forEach(function(b){
+    var v = b.getAttribute('data-variant');
+    var w = document.getElementById(prefix + '-w' + v);
+    if(w) w.style.display = (v === variant) ? 'block' : 'none';
+  });
 }
 
 
