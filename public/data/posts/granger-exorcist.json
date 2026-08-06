@@ -15,7 +15,7 @@
     "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b0/Capriccio.png",
     "name": "Capriccio",
     "kategori": "Damage/Buff",
-    "longDesc": "Senjata dan Meriam Pemburu Iblis unik milik Granger ditenagai oleh Energi Iblis. Kedua senjatanya memiliki batas Energi awal sebesar 800. Senjatanya memulihkan 8% Energi per detik sementara Meriamnya memulihkan 2% Energi per detik. Setiap pembunuhan Minion / Creep akan secara permanen meningkatkan batas Energi Senjata dan Meriam Granger sebesar 6/6, dan langsung memulihkan Energinya masing-masing sebesar 5%/5%. Setiap pembunuhan atau assist pada hero musuh akan secara permanen meningkatkan batas Energinya sebesar 12 dan langsung memulihkan 10% Energi. Setiap pengurangan cooldown\n1% yang diperoleh Granger dikonversi menjadi 2 Serangan Fisik . Biaya Energi Iblis tidak terpengaruh oleh pengurangan biaya energi.",
+    "longDesc": "Pistol dan Meriam Pemburu Iblis milik Granger diperkuat dengan Demonic Energy. Kedua senjatanya pada awalnya memiliki 800 max Energy. Pistol memulihkan 8% Energy setiap detik sementara Meriam memulihkan 2% Energy setiap detik. Mengeliminasi Minion / Creep akan meningkatkan max Energy senjata tersebut sebesar 6 / 6 secara permanen, dan memulihkan 5% / 5% Energy senjata secara langsung. Setiap eliminasi atau assist pada hero lawan akan meningkatkan 12 max Energy kedua senjata secara permanen dan memulihkan 10% Energy secara langsung.\n\nSetiap 1% Pengurangan Cooldown dikonversi menjadi 2 Physical Attack. Biaya penggunaan Demonic Energy tidak dipengaruhi oleh efek Pengurangan Penggunaan Energy.",
     "dual": false,
     "url2": "",
     "name2": "",
@@ -28,7 +28,7 @@
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Rhapsody.png",
       "name": "Rhapsody",
       "kategori": "Burst",
-      "longDesc": "Granger menembakkan 6 tembakan dengan cepat menggunakan Senjatanya , di mana setiap tembakan memberikan 60–120 (+50% Total Serangan Fisik) Kerusakan Fisik dan mengonsumsi 70 Energi Senjata. Peluru terakhir dijamin menghasilkan Serangan Kritis . Setiap peluru memberikan tambahan 70 kerusakan pada Creep dan Minion . Saat menembak, Kecepatan Gerak Granger meningkat sebesar 15%.\nGranger berhenti menembak ketika kehabisan Energi, atau ketika skill diaktifkan kembali.Rapsodi Rhapsody memilikiwaktu pendinginandan dapat digunakan setelahSenjatanyamelebihi 420.",
+      "longDesc": "Granger melepaskan 6 tembakan beruntun dengan Pistol miliknya, setiap tembakan memberikan 60 (+45% Total Physical Attack) Physical Damage dan menghabiskan 70 Energy Pistol. Tembakan terakhir dijamin memberikan Damage Critical. Saat menembak, Movement Speed Granger meningkat 10%.\n\nGranger berhenti menembak saat dia kehabisan Energy, atau saat skill digunakan kembali. Rhapsody tidak memiliki cooldown dan bisa digunakan saat Energy Pistol miliknya melebihi 420.",
       "dual": false,
       "url2": "",
       "name2": "",
@@ -40,7 +40,7 @@
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Rondo.png",
       "name": "Rondo",
       "kategori": "Mobility/Buff",
-      "longDesc": "Granger menggunakan kelincahan Demon Hunter-nya untuk melesat ke arah target, dan langsung memulihkan 15%-25% Energi untuk Senjatanya .\nRondo Rondo dapat dilemparkan saat sedang melakukan channeling.Rapsodi Rapsodi . Setiap kali Rapsodi mengenai musuh,Cooldownberkurang sebesar 0,5 detik.",
+      "longDesc": "Granger berpindah ke arah target, langsung memulihkan 15% Energy untuk Pistol miliknya.\n\nRondo bisa digunakan saat Rhapsody berlangsung. Setiap kali Rhapsody mengenai lawan, Cooldown Rondo berkurang selama 0.5 detik.",
       "dual": false,
       "url2": "",
       "name2": "",
@@ -52,7 +52,7 @@
       "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/61/Death_Sonata.png",
       "name": "Death Sonata",
       "kategori": "Burst/Slow",
-      "longDesc": "Granger menembakkan Meriamnya ke arah target, memberikan 150–300 (+100% Total Serangan Fisik) Kerusakan Fisik kepada hero musuh pertama yang terkena dan target lain dalam radius ledakan. Target yang terkena akan diperlambat dan terungkap untuk durasi singkat. Granger dapat berguling ke arah Joystick setelah setiap tembakan.\nDeath Sonata dapat diaktifkan saat menembak.Rapsodi Rhapsody . Death Sonata memiliki waktu pendinginansingkatdan mengonsumsi 250 Energi Meriam Granger per tembakan.",
+      "longDesc": "Granger menembakkan Meriam miliknya ke arah target, memberikan 150 (+110% Total Physical Attack) Physical Damage ke hero lawan pertama yang terkena dan target lainnya dalam radius ledakan. Target yang terserang akan terkena slow secara singkat. Granger bisa bergerak sesuai arah Joystick setelah setiap tembakan. Death Sonata bisa digunakan sambil menembakkan Rhapsody. Death Sonata punya cooldown singkat dan mengonsumsi 250 Energy Meriam setiap tembakan.",
       "dual": false,
       "url2": "",
       "name2": "",
@@ -63,7 +63,7 @@
   "download": {
     "dual": true,
     "tab1Name": "Tanpa Fix Ulti",
-    "tab2Name": "Fix Ulti",
+    "tab2Name": "Dengan Fix Ulti",
     "rowsTab1": [
       {
         "name": "Default",
@@ -216,7 +216,7 @@
   },
   "tooltipDlTab": {
     "title": "Apa itu Fix Ulti?",
-    "desc": "",
-    "img": ""
+    "desc": "Fix Ulti pada Granger Exorcist adalah memperbaiki efek tangan yang muncul setelah menggunakan skill03 atau ultimate.",
+    "img": "https://i.ibb.co/b5pth8wB/tooltip-granger-exorcist.webp"
   }
 }
