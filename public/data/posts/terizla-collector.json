@@ -1,0 +1,142 @@
+{
+  "namehero": "Terizla Collector",
+  "herolink": "Terizla",
+  "urlthumbnail": "https://i.ibb.co/wN21XCSR/terizla-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Terizla Soulblight Tyrant",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Terizla dulunya adalah seorang pandai besi legendaris sekaligus pemimpin Free Smiths Guild di Kota Lumina. Ia menentang campur tangan Gereja terhadap para pandai besi dan memperjuangkan kebebasan mereka untuk berkarya. Selain dikenal karena keberaniannya melawan otoritas Gereja, Terizla juga dihormati berkat keterampilan menempa yang luar biasa, menghasilkan senjata dan perlengkapan berkualitas tinggi yang terkenal di seluruh Kekaisaran Moniyan.\n\nKesuksesan Terizla memicu rasa iri para pesaingnya. Mereka menyuap beberapa muridnya untuk melaporkan kepada Gereja bahwa Terizla menggunakan sihir hitam dalam proses menempa. Tepat pada hari ulang tahun putranya yang keenam, saat Terizla pulang membawa hadiah berupa patung keluarganya, ia disergap oleh pasukan Raven dan ksatria Gereja. Di hadapan matanya sendiri, markas Free Smiths' Guild dibakar habis, sementara istri, anak, dan rekan-rekannya tewas dalam pembantaian yang kejam.\n\nTerizla kemudian dipenjara jauh di bawah Monastery of Light dengan rantai yang bahkan dibuat dari besi hasil tempaannya sendiri. Dipenuhi kebencian dan keputusasaan, ia bersumpah akan membalas semua perlakuan Gereja. Pada saat itulah Alice, Ratu Iblis, datang menawarinya kesempatan untuk membalas dendam dengan syarat ia bergabung dengan Abyss. Terizla menerima tawaran tersebut dan meninggalkan kehidupan lamanya sebagai seorang pandai besi yang dihormati.\n\nSejak bergabung dengan Abyss, Terizla menggunakan keahlian menempa untuk menciptakan senjata-senjata terkutuk bagi pasukan iblis. Ia hidup menyendiri di bengkel Abyss, hanya ditemani patung keluarganya dan bayangan istrinya yang selalu menghantui pikirannya. Rasa kehilangan yang mendalam berubah menjadi kebencian tanpa batas terhadap Gereja dan seluruh pengikut Cahaya, bahkan ia menjadikan musuh-musuh yang tertangkap sebagai bahan untuk menciptakan senjata mengerikan.\n\nLambat laun, Terizla dikenal sebagai Executioner of the Abyss, algojo yang ditakuti di seluruh Land of Dawn. Bengkelnya dipenuhi darah para korban, sementara satu-satunya tujuan hidupnya hanyalah membalas dendam. Ia bersumpah suatu hari akan menghancurkan Gereja dan Kekaisaran Moniyan dengan tangannya sendiri, demi menenangkan arwah keluarga dan rekan-rekannya yang telah dibantai.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c3/Body_of_Smith.png",
+    "name": "Body of Smith",
+    "kategori": "Buff",
+    "longDesc": "Terizla memperoleh 1% Pengurangan Damage tambahan (hingga 20 (+1*Hero Level)%) untuk setiap 2.5% HP yang hilang.\nDia tidak dapat memperoleh Attack Speed tambahan dan akan mengonversikan setiap 1% Attack Speed tambahan yang dia peroleh menjadi 1 Physical Attack tambahan.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3d/Revenge_Strike.png",
+      "name": "Revenge Strike",
+      "kategori": "AOE/Speed Up",
+      "longDesc": "Terizla membelah tanah dengan menggunakan palunya dan menciptakan retakan tanah yang menyebar, memberikan 300 (+80% Extra Physical Attack) Physical Damage. Setelah retakan mengenai target pertama, retakan akan menetap pada target dan menyebabkan efek Slow sebesar 15%. Pada saat yang bersamaan, Movement Speed Terizla akan meningkat sebesar 15%. Berlangsung selama 3.5 detik. Retakan pada target akan meledak, memberikan 300 (+80% Extra Physical Attack) dan 20% HP lawan yang hilang sebagai Physical Damage.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Execution_Strike.png",
+      "name": "Execution Strike",
+      "kategori": "Burst/Slow",
+      "longDesc": "Terizla mengayunkan palunya di area depannya. Skill ini dapat digunakan hingga 3 kali. 2 serangan pertama memberikan 90 (+135% Total Physical Attack) Physical Damage, sementara serangan ketiga memberikan 225 (+220% Total Physical Attack) Physical Damage. Lawan yang terkena serangan akan terkena 20% Slow selama 1.25 detik (Efek Slow dapat di-Stack).\nHanya memberikan 80% Damage ke Minion.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/49/Penalty_Zone.png",
+      "name": "Penalty Zone",
+      "kategori": "CC/AOE",
+      "longDesc": "Terizla melompat ke area target, memberikan 300 (+100% Total Physical Attack) Physical Damage dan menyebabkan Airborne selama 0.6 detik. Kemudian dia memanggil Scaffold dan menyebabkan 25% Slow ke lawan. Scaffold akan menarik Hero lawan dalam jangkauan beberapa kali sambil memberikan 150 (+30% Total Physical Attack) Physical Damage pada setiap tarikan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ab/Hero821-icon.png",
+        "link": "https://sfile.co/xQlH9hT5x9v"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ab/Hero821-icon.png",
+        "link": "https://sfile.co/Q1xt8lYbCYj"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/01/Hero822-icon.png",
+        "link": "https://sfile.co/EmXGtnaHXTV"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/01/Hero822-icon.png",
+        "link": "https://sfile.co/zK80OwvSRUM"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0e/Hero823-icon.png",
+        "link": "https://sfile.co/WufZylbqVCQ"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/83/Hero824-icon.png",
+        "link": "https://sfile.co/u1yKqvpmejZ"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/54/Hero825-icon.png",
+        "link": "https://sfile.co/hlbpt9FL0hi"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/30/Hero826-icon.png",
+        "link": "https://sfile.co/RsJX6hcD1mC"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
