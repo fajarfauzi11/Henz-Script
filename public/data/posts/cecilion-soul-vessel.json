@@ -1,0 +1,164 @@
+{
+  "namehero": "Cecilion Soul Vessel",
+  "herolink": "Cecilion",
+  "urlthumbnail": "https://i.ibb.co/8DnbFv3v/cecilion-soul-vessel.webp",
+  "kategoriskin": "Soul Vessels",
+  "keywords": "Cecilion Vessel of Gluttony",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Cecilion adalah seorang Blood Demon yang hidup menyamar sebagai penyanyi opera terkenal di Avalor. Ketampanan dan bakatnya membuat pertunjukannya selalu dipenuhi penonton, tetapi di balik popularitasnya ia menjalani kehidupan yang sangat sepi. Kaumnya telah lama diburu oleh Abyss dan dijauhi manusia, sehingga Cecilion menyembunyikan identitasnya agar dapat hidup di tengah masyarakat. Hingga akhirnya, ia bertemu dengan Carmilla, seorang gadis bangsawan yang langsung mencuri hatinya.\n\nMeski sadar bahwa hubungan antara manusia dan Blood Demon hampir mustahil, Cecilion tetap mengikuti kata hatinya. Ia dan Carmilla saling jatuh cinta dan diam-diam bertemu setelah setiap pertunjukan. Namun, ayah Carmilla, Earl Ansaac, menentang hubungan mereka karena menganggap Cecilion hanyalah seorang aktor biasa. Ia memenjarakan Carmilla, menutup gedung opera, mengusir Cecilion, dan memaksa putrinya menikah dengan Baron Tawil, seorang jenderal Kekaisaran Moniyan.\n\nMerasa tidak akan pernah bisa memberikan kehidupan yang layak bagi Carmilla, Cecilion memutuskan untuk mengakhiri hubungan mereka. Sebelum meninggalkan kota, ia hanya meninggalkan setangkai mawar dan sepucuk surat di jendela Carmilla. Namun, Carmilla tidak pernah peduli apakah Cecilion adalah manusia atau Blood Demon. Karena putus asa dipisahkan dari orang yang dicintainya, ia memilih mengakhiri hidupnya pada hari pernikahannya.\n\nKetika mengetahui kematian Carmilla, Cecilion dipenuhi penyesalan yang mendalam. Ia membawa jasad Carmilla pergi dan menghidupkannya kembali menggunakan darahnya sendiri. Kebangkitan itu membuat Carmilla berubah menjadi Blood Demon, sehingga keduanya kini memiliki kehidupan abadi bersama. Sejak saat itu, mereka menghilang dari Castle Aberleen dan hanya menyisakan legenda tentang sepasang kekasih yang terlihat berpelukan di atas menara kastel pada malam hari.\n\nKini, Cecilion dan Carmilla menjalani kehidupan sebagai buronan yang diburu manusia maupun Abyss. Demi melindungi cinta mereka, mereka menyamar sebagai manusia biasa dan terus berpindah dari satu tempat ke tempat lain. Namun, jika identitas mereka terbongkar, Cecilion tidak akan ragu melepaskan kekuatan sejatinya sebagai Blood Demon untuk membinasakan siapa pun yang mengancam dirinya maupun Carmilla. Bagi Cecilion, cinta adalah alasan untuk terus hidup, sekaligus kekuatan yang membuatnya sanggup menghadapi seluruh dunia.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/55/Overflowing.png",
+    "name": "Overflowing",
+    "kategori": "Buff",
+    "longDesc": "Cecilion memperoleh 10 Max Mana tambahan dan memulihkan 10 Mana setiap kali Skill-nya mengenai lawan. Cooldown: 1 detik.\n\nCecilion memiliki Max Mana dan Pemulihan Mana yang lebih tinggi, dan Damage Skill-nya berskala dengan Max Mana-nya.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Bat_Impact.png",
+      "name": "Bat Impact",
+      "kategori": "AOE/Speed Up",
+      "longDesc": "Cecilion memerintahkan kelelawar raksasa untuk menyerang ke arah target, memperoleh 30% Movement Speed tambahan selama 1 detik, memberikan 85 (+70% Total Magic Power) (+7% Total Mana) Magic Damage ke lawan di jalurnya. Kelelawar juga memberikan 170 (+140% Total Magic Power) (+14% Total Mana) Magic Damage tambahan ke lawan yang berada di dekat titik serangan, serta menerapkan efek Overflowing sebanyak 1 kali.\n\nDalam 6 detik, setiap kali Cecilion menggunakan Skill ini, penggunaan Mana akan meningkat sebanyak 1.5 kali (hingga 4 Stack).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Sanguine_Claws.png",
+      "name": "Sanguine Claws",
+      "kategori": "CC/AOE",
+      "longDesc": "Cecilion memanggil sepasang Claw ke lokasi target. Setelah jeda singkat, Claw akan bergerak ke arah satu sama lain dan menarik lawan di sepanjang jalur ke tengah, memberikan 200 (+45% Total Magic Power) (+1.2% Total Mana) Magic Damage dan menyebabkan Immobilize ke mereka selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0f/Bats_Feast.png",
+      "name": "Bats Feast",
+      "kategori": "Burst/Speed Up",
+      "longDesc": "Cecilion melepaskan kekuatan Blood Demon, memperoleh 60% Movement Speed (berkurang seiring waktu) dan Kebal Slow selama 1.5 detik. Sementara itu, dia melepaskan 36 energi darah ke lawan di sekitarnya, setiap energi darah memberikan 35 (+8% Total Magic Power) (+0.3% Total Mana) Magic Damage dan menyebabkan 3% Slow (hingga 30%) ke lawan selama 1 detik.\n\nSetiap energi darah juga memulihkan 10 + 1% dari HP Cecilion yang hilang.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Moonlit_Waltz.png",
+      "name": "Moonlit Waltz",
+      "kategori": "Shield/Slow",
+      "longDesc": "Ketika Carmilla berada di dekatnya, Cecilion dapat memanggilnya untuk menjadi Vermil Shadow untuk merasukinya, memberikan 520-800 Shield (berskala dengan level Carmilla).\nCarmilla dapat memilih lokasi target dan mendarat di sana, memperoleh Shield yang sama, memberikan 520-800 Magic Damage (berskala dengan level) kepada lawan yang berada dalam area efek, dan menyebabkan 30% Slow kepada mereka selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero911-icon.png",
+        "link": "https://sfile.co/jTSKZDieCc2"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Hero911-icon.png",
+        "link": "https://sfile.co/hcHeBhsbMhS"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero912-icon.png",
+        "link": "https://sfile.co/2dcewRyxOOS"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero912-icon.png",
+        "link": "https://sfile.co/QuKQXuDqgZi"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9a/Hero913-icon.png",
+        "link": "https://sfile.co/0pF2LEnMzvP"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/18/Hero914-icon.png",
+        "link": "https://sfile.co/3pceeJfWdyg"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1a/Hero915-icon.png",
+        "link": "https://sfile.co/xAzXS7JDQvS"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero916-icon.png",
+        "link": "https://sfile.co/dZFCFr311II"
+      },
+      {
+        "name": "HxH",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/65/Hero917-icon.png",
+        "link": "https://sfile.co/96khtXJHbTX"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
