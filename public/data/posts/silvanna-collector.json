@@ -1,0 +1,157 @@
+{
+  "namehero": "Silvanna Collector",
+  "herolink": "Silvanna",
+  "urlthumbnail": "https://i.ibb.co/fL1mXtd/silvanna-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Silvanna Queen Frost",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Silvanna adalah putri Kerajaan Moniyan yang dikenal memiliki hati penuh keadilan dan belas kasih. Kehidupannya berubah ketika adiknya, sang pangeran, menghilang tanpa jejak. Peristiwa itu membuat keluarganya larut dalam kesedihan, sementara sang ratu jatuh sakit akibat terus berharap putranya kembali. Sejak saat itu, Silvanna bertekad untuk melakukan sesuatu demi kerajaan dan rakyatnya.\n\nSaat beranjak dewasa, Silvanna memutuskan meninggalkan kenyamanan hidup sebagai putri dan bergabung dengan Imperial Knights. Ia menjalani latihan yang sangat keras tanpa perlakuan istimewa sebagai anggota keluarga kerajaan. Berkat tekad, disiplin, dan pengorbanannya, Silvanna tumbuh menjadi ksatria wanita terkuat di pasukan Moniyan. Meski begitu, Tigreal masih menolak mengizinkannya bertempur di garis depan karena ingin melindungi pewaris kerajaan.\n\nKetika pasukan Abyss menyerang wilayah Moniyan, Tigreal memimpin para ksatria menuju medan perang dan memerintahkan Silvanna tetap tinggal. Namun, demi membuktikan kemampuannya, Silvanna diam-diam memasuki Imperial Sanctuary, tempat suci yang dipenuhi makhluk berbahaya. Keputusannya membuat Tigreal segera kembali bersama pasukan elit untuk menyelamatkannya.\n\nDi dalam Imperial Sanctuary, Silvanna menghadapi penjaga kuat yang melindungi Seed of Light. Meski terluka dan berada di ambang kekalahan, ia tetap teguh pada keyakinannya bahwa hanya dengan restu God of Light ia dapat menjadi Holy Knight sejati dan melindungi kerajaannya. Keberanian serta tekadnya akhirnya menyentuh hati God of Light, yang menganugerahkan sebagian kekuatannya kepada Silvanna.\n\nDengan kekuatan baru tersebut, Silvanna berhasil mengalahkan sang penjaga dan membantu mengakhiri serangan pasukan Abyss. Kemenangan itu membawa kedamaian kembali ke Moniyan sekaligus mengangkat namanya sebagai pahlawan kerajaan. Sejak saat itu, Silvanna tidak hanya dikenal sebagai putri Moniyan, tetapi juga sebagai pelindung kerajaan yang memimpin rakyatnya dengan keberanian, kekuatan, dan rasa tanggung jawab.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7f/Knightess%27_Resolve.png",
+    "name": "Knightess' Resolve",
+    "kategori": "Buff/Debuff",
+    "longDesc": "Basic Attack Silvanna memberikan 25 (+45% Total Physical Attack) (+75% Total Magic Power) Magic Damage.\nSerangan Silvanna meninggalkan Mark ke Hero lawan selama 5 detik saat mengenainya, setiap Mark mengurangi 3 -6 Physical & Magic Defense mereka (hingga 5 Stack).\nSkill dan Basic Attack Silvanna memberikan 30% Damage tambahan pada Hero lawan dengan jumlah Mark maksimal.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Cometic_Lance_2.png",
+      "name": "Cometic Lance",
+      "kategori": "Mobility/CC",
+      "longDesc": "Silvanna berlari ke depan. Saat mencapai jangkauan maksimum atau mengenai lawan selain Minion, dia mengayunkan tombaknya, memberikan 250 (+100% Total Magic Power) Magic Damage dan menyebabkan Stun ke lawan di sekitar selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8b/Spiral_Strangling.png",
+      "name": "Spiral Strangling",
+      "kategori": "AOE/Shield",
+      "longDesc": "Silvanna menyerang ke arah target dan memutar tombaknya sebanyak 6 kali serta memperoleh 350 (+150% Total Magic Power) Shield. Setiap putaran memberikan 165 (+45% Total Magic Power) Magic Damage dan sedikit menarik target ke tengah. Putaran akan bertambah 1 kali untuk setiap 50% Attack Speed tambahan yang ia miliki.\n\nSkill hanya memberikan 50% Damage ke Minion.\n\nSpiral Strangling dihitung sebagai Basic Attack tetapi tidak dapat memberikan Damage Critical.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8a/Imperial_Justice.png",
+      "name": "Imperial Justice",
+      "kategori": "CC/AOE",
+      "longDesc": "Silvanna melompat ke lokasi target dan menciptakan Circle of Light saat mendarat, memberikan 350 (+110% Total Magic Power) Magic Damage ke lawan di area, menyebabkan 40% Slow selama 1.5 detik, dan menjebak Hero lawan terdekat dalam area selama 3.5 detik. (Skill ini tidak dapat diganggu).\n\nSilvanna memperoleh 100% Attack Speed dan 40% Lifesteal saat di dalam area.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Hero901-icon.png",
+        "link": "https://sfile.co/VSea2xV4Ecr"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Hero901-icon.png",
+        "link": "https://sfile.co/5SIpBhvKczJ"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/37/Hero902-icon.png",
+        "link": "https://sfile.co/qk2cQYLM238"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/37/Hero902-icon.png",
+        "link": "https://sfile.co/deFQwjQLFQd"
+      },
+      {
+        "name": "Elite Justice",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero903-icon.png",
+        "link": "https://sfile.co/kVI3gV9Zjmh"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e8/Hero904-icon.png",
+        "link": "https://sfile.co/M6lVoPR6LZi"
+      },
+      {
+        "name": "Elite Cop",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero906-icon.png",
+        "link": "https://sfile.co/FSbrH47EVCa"
+      },
+      {
+        "name": "Elite Lancer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e6/Hero907-icon.png",
+        "link": "https://sfile.co/nuNhxbn7VDk"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Hero908-icon.png",
+        "link": "https://sfile.co/0NepcnBxrqk"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/20/Hero909-icon.png",
+        "link": "https://sfile.co/fHCGu3D19xp"
+      },
+      {
+        "name": "Mystic Meow",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/df/Hero109010-icon.png",
+        "link": "https://sfile.co/6uMj5XpR7jd"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
