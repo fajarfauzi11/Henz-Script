@@ -1,0 +1,147 @@
+{
+  "namehero": "Badang Sagittarius Seiya",
+  "herolink": "Badang",
+  "urlthumbnail": "https://i.ibb.co/rGY5GjXY/badang-sagitarius-seiya.webp",
+  "kategoriskin": "Saint Seiya",
+  "keywords": "",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Badang berasal dari sebuah desa kecil di Kepulauan Vonetis, wilayah selatan Land of Dawn. Ia hanyalah seorang penduduk desa biasa, tetapi memiliki kekuatan fisik luar biasa, keberanian, dan rasa keadilan yang tinggi. Badang dikenal selalu membantu warga serta melindungi desanya dari berbagai ancaman binatang buas.\n\nSuatu hari, kehidupan desa terganggu ketika hasil tangkapan ikan menghilang dan peralatan para nelayan hancur. Warga percaya semua itu adalah ulah monster air yang mengutuk desa mereka. Tidak percaya pada takhayul, Badang memutuskan menyelidiki sendiri penyebab kejadian tersebut dengan memasang jebakan di sungai.\n\nRencananya berhasil memancing kemunculan monster air yang ternyata sangat kuat. Pertarungan sengit pun terjadi hingga Badang terluka parah. Dengan sisa tenaganya, ia berhasil mengalahkan makhluk itu. Namun, alih-alih menghabisinya, Badang mendengar pengakuan bahwa monster tersebut sebenarnya adalah roh air yang berubah menjadi ganas setelah terpengaruh energi jahat dari pegunungan di selatan.\n\nTersentuh oleh kebaikan Badang yang memilih mengampuninya, roh air itu kembali ke wujud aslinya dan menghadiahkan sebuah kekuatan luar biasa. Luka Badang sembuh seketika, sementara kedua lengannya memperoleh tenaga yang jauh melampaui manusia biasa. Dengan kekuatan barunya, Badang kembali membantu desa hingga kehidupan para penduduk kembali normal.\n\nMeski desanya telah aman, Badang menyadari bahwa sumber kejahatan sebenarnya masih berada di pegunungan selatan yang telah tercemar oleh kekuatan Abyss. Demi mencegah bencana serupa terjadi lagi, ia meninggalkan kampung halamannya dan memulai perjalanan menuju Land of Dawn untuk menghancurkan sumber kegelapan tersebut.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Chivalry_Fist.png",
+    "name": "Chivalry Fist",
+    "kategori": "CC/Damage",
+    "longDesc": "Mendapatkan 1 stack Chivalry Fist untuk setiap Basic Attack yang terkena target. Setelah mendapatkan 4 stack, Basic Attack berikutnya memberikan 50 (+30% Total Physical Attack) Physical Damage tambahan ke lawan yang terkena dan menyebabkan knockback. Lawan yang terkena knockback dan mengenai rintangan akan terkena stun selama 0.6 detik (Minion dan Creep akan langsung terkena stun).\nFist Wind dari skill akan langsung mengaktifkan efek ini, dan Fist Wind dari Ultimate meningkatkan durasi stun menjadi 1 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/55/Fist_Wind.png",
+      "name": "Fist Wind",
+      "kategori": "AOE/Slow",
+      "longDesc": "Badang mengeluarkan Fist Wind ke arah target, memberikan 125 (+90% Total Physical Attack) Physical Damage ke lawan yang terkena, menyebabkan 30% Slow selama 1.5 detik, dan menyebabkan Knockback. Fist Wind akan meledak setelah mengenai rintangan, memberikan 100 (+60% Total Physical Attack) Physical Damage ke lawan di sekitar. Fist Wind dapat mengaktifkan efek Basic Attack dan memberikan Badang 1 Stack Chivalry Fist ketika digunakan.\nBadang dapat menyimpan hingga 2 penggunaan Fist Wind dan memulihkan 1 penggunaan setiap 10.4 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ce/Fist_Break.png",
+      "name": "Fist Break",
+      "kategori": "Mobility/CC",
+      "longDesc": "Badang berlari ke arah target, memberikan 230 (+50% Total Physical Attack) Physical Damage ke lawan yang berada di jalurnya, memperoleh 350 (+150% Total Physical Attack) Shield selama 5 detik. Badang akan berhenti ketika mengenai Hero lawan, menyebabkan Knockback dan menciptakan rintangan di belakang mereka selama 4 detik. Memberikan 130 (+30% Total Physical Attack) Physical Damage ke lawan yang mengenai rintangan.\n\nGunakan Kembali: Badang menghapus rintangan yang dia ciptakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Fist_Crack.png",
+      "name": "Fist Crack",
+      "kategori": "Burst/AOE",
+      "longDesc": "Badang mengeluarkan pukulan bertubi-tubi ke arah target, memberikan 60 (+54% Total Physical Attack) Physical Damage beberapa kali ke lawan yang terkena (dapat mengaktifkan efek Basic Attack). Fist Wind akan meledak saat mengenai rintangan, memberikan 30 (+27% Total Physical Attack) Physical Damage ke lawan di sekitarnya.\nBadang menjadi kebal Crowd Control selama durasi ini.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero771-icon.png",
+        "link": "https://sfile.co/v1xkmHovNan"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero771-icon.png",
+        "link": "https://sfile.co/xgdSuwklZZC"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero772-icon.png",
+        "link": "https://sfile.co/UopO009f2qa"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero772-icon.png",
+        "link": "https://sfile.co/5NXgJKw5up1"
+      },
+      {
+        "name": "Special Susanoo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/61/Hero773-icon.png",
+        "link": "https://sfile.co/BcRU6wb8lrS"
+      },
+      {
+        "name": "Zodaic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ac/Hero774-icon.png",
+        "link": "https://sfile.co/KYMrNkouI40"
+      },
+      {
+        "name": "Special Steel",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/04/Hero775-icon.png",
+        "link": "https://sfile.co/vZtRjpUwUvJ"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9b/Hero776-icon.png",
+        "link": "https://sfile.co/DhRal95xMbK"
+      },
+      {
+        "name": "Pegasus Seiya",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/18/Hero777-icon.png",
+        "link": "https://sfile.co/ve9Txco5N7I"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
