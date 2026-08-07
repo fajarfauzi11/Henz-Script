@@ -1,0 +1,142 @@
+{
+  "namehero": "Thamuz Nexus Sea",
+  "herolink": "Thamuz",
+  "urlthumbnail": "https://i.ibb.co/9mBN16gG/thamuz-nexus-sea.webp",
+  "kategoriskin": "Nexus Sea",
+  "keywords": "Thamuz The Annihilator",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Thamuz adalah pemimpin para Fire Demon yang berasal dari kedalaman Abyss. Dahulu ia hanyalah seorang jenderal yang memimpin pasukannya di berbagai peperangan, menggunakan sepasang sabit yang ditempa dari obsidian dan lava. Karena kekuatan serta kebijaksanaannya, ia dipercaya menjadi penerus Lord of Lava dan memikul tanggung jawab menjaga Heart of Lava, sumber kehidupan seluruh Fire Demon.\n\nSetelah menjadi pemimpin, Thamuz berusaha membangkitkan kembali kejayaan kaumnya yang terus melemah akibat Endless War. Ia menyaksikan banyak ras musnah karena perang yang dipicu para dewa, sementara Fire Demon kehilangan semakin banyak anggota hingga Heart of Lava perlahan mendingin. Sejak saat itu, Thamuz percaya bahwa penderitaan Abyss hanya bisa diakhiri dengan menghancurkan tatanan lama.\n\nBersama para pemberontak, Thamuz memimpin serangan ke Night Palace dan menghadapi penguasa Abyss. Dalam pertempuran besar itu, ia berhasil membunuh sang penguasa, sementara para pemberontak juga berhasil menjatuhkan God of Light dan God of Darkness. Dengan darah penguasa Abyss sebagai sumber kekuatan baru, Thamuz bertekad membangun era baru bagi Abyss agar mampu berdiri sejajar dengan dunia permukaan.\n\nNamun harapannya tidak bertahan lama. Kutukan dalam darah penguasa Abyss mulai menyebar, membuat banyak makhluk Abyss kehilangan kewarasan dan berubah menjadi monster. Bahkan Heart of Lava ikut tercemar, menyebabkan Fire Demon satu per satu jatuh ke dalam kegilaan. Di tengah kekacauan itu, Thamuz terus bertarung demi mencegah kekuatan penguasa lama jatuh ke tangan makhluk yang lebih berbahaya.\n\nSeiring berjalannya waktu, Thamuz meyakini bahwa hanya kekuatan mutlak yang mampu menyelamatkan Abyss dari kehancuran. Ia pun bertekad menjadi dewa, bahkan melampaui para dewa itu sendiri. Demi mewujudkan cita-citanya, Thamuz terus memimpin Fire Demon dalam peperangan tanpa akhir, bertekad menjadi \"matahari baru\" bagi Abyss dan memastikan api kaumnya tidak akan pernah padam.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/af/Grand_Lord_Lava.png",
+    "name": "Grand Lord Lava",
+    "kategori": "Debuff",
+    "longDesc": "Basic Attack berpeluang 10%–60% (berskala dengan Lava's Rage) menciptakan Lava Energy di bawah target yang meledak setelah jeda singkat, memberikan 55 (+60% Total Physical Attack)(+8*Hero Level) True Damage. Basic Attack yang tidak memicu Lava Energy akan meningkatkan Lava's Rage Thamuz.\n\nMendapatkan 25% Movement Speed saat tidak memegang Scythe. Setelah mengambil kembali Scythe, Basic Attack berikutnya akan menyebabkan 30% slow ke target dan dijamin mengaktifkan Lava Energy.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/44/Molten_Scythes.png",
+      "name": "Molten Scythes",
+      "kategori": "AOE/Slow",
+      "longDesc": "Thamuz melemparkan Scythe ke arah target. Setelah bergerak sejauh jarak tertentu atau mengenai hero lawan pertama, memberikan 120 (+60% Total Physical Attack) Physical Damage. Kemudian, Scythe menyebabkan 30% slow ke lawan di sekitar dan memberikan 45 (+20% Extra Physical Attack) Physical Damage setiap 0.5 detik.\n\nSetelah‌ ‌terpisah dari Thamuz selama beberapa saat atau mencapai jarak tertentu, Scythe akan kembali padanya, menyeret lawan di sepanjang jalur ke arah Thamuz. Thamuz bisa bergerak menuju Scythe atau menggunakan skill lagi untuk mengambilnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/51/Chasm_Trample.png",
+      "name": "Chasm Trample",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Thamuz melompat ke arah yang telah ditentukan untuk memberikan 230 (+60% Extra Physical Attack) Physical Damage dan menyebabkan 25% Slow kepada unit lawan ketika mendarat. Berlangsung selama 2 detik.\nJika Scythe masih bergerak, Scythe akan kembali ke Thamuz dan Cooldown Molten Scythes akan langsung direset.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Cauterant_Inferno.png",
+      "name": "Cauterant Inferno",
+      "kategori": "AOE/Buff",
+      "longDesc": "Menyemburkan lava di dalam tubuhnya, memberikan 300 (+80% Total Physical Attack) Physical Damage ke lawan di sekitar dan menciptakan Cauterant Zone di sekelilingnya. Cauterant Zone berlangsung selama 9 detik dan memberikan 30 (+10% Extra Physical Attack) Physical Damage setiap 0.5 detik ke lawan di dalam area.\n\nThamuz juga mendapatkan 800 (+50% Max HP Tambahan) Max HP tambahan, langsung memulihkan HP dengan jumlah yang sama, dan mendapatkan 60% Attack Speed. Setiap kali Basic Attack atau Scythe memberikan damage, dia memulihkan 1.5% Max HP.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/17/Hero721-icon.png",
+        "link": "https://sfile.co/BqGP9PYfV1L"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/17/Hero721-icon.png",
+        "link": "https://sfile.co/7Q9WLwhVtUl"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8b/Hero722-icon_%28unreleased_revamp%29.png",
+        "link": "https://sfile.co/OcwRpumi5mq"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8b/Hero722-icon_%28unreleased_revamp%29.png",
+        "link": "https://sfile.co/g1VOzueqope"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/37/Hero723-icon.png",
+        "link": "https://sfile.co/hhC7EXHj1hq"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Hero724-icon.png",
+        "link": "https://sfile.co/aR2Rd6mMovi"
+      },
+      {
+        "name": "Kungfu Panda",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7d/Hero725-icon.png",
+        "link": "https://sfile.co/GRleEZiOz6z"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6b/Hero726-icon.png",
+        "link": "https://sfile.co/Rna4kRWeLIa"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
