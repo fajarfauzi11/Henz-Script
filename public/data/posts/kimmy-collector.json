@@ -1,0 +1,157 @@
+{
+  "namehero": "Kimmy Collector",
+  "herolink": "Kimmy",
+  "urlthumbnail": "https://i.ibb.co/prRtSXy5/kimmy-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Kimmy Starbound Sentry",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Kimmy lahir dari keluarga militer terpandang di Moniyan Empire dan sejak kecil bercita-cita menjadi prajurit hebat seperti ayahnya. Namun, sang ayah menolak keinginannya karena berharap Kimmy menjalani hidup yang damai. Meski begitu, Kimmy tidak pernah menyerah. Ia diam-diam mempelajari ilmu militer sambil mengembangkan minat besarnya terhadap teknologi dan penemuan.\n\nSaat menempuh pendidikan di Eruditio, Kimmy bertemu Beatrix yang kemudian menjadi sahabat dekatnya. Keduanya sama-sama menyukai teknologi dan senjata canggih. Berkat bakat serta kecerdasannya, Kimmy mampu menguasai berbagai prototipe senjata dengan cepat, hingga akhirnya memutuskan diam-diam bergabung dengan pasukan Moniyan demi mengejar impiannya.\n\nDi awal masa dinasnya, Kimmy sering diremehkan karena usianya yang masih muda dan latar belakangnya sebagai siswi Eruditio. Namun, ia membuktikan kemampuannya melalui berbagai latihan dan berhasil menjadi yang terbaik dalam latihan taktis militer. Bakatnya juga membuatnya menjadi pengguna pertama yang mampu mengendalikan senjata Hoverjet Blaster bertenaga Starlium secara maksimal.\n\nDalam misi penyelamatan pertamanya, Kimmy berhasil menyusup ke markas musuh seorang diri, membebaskan para ilmuwan dan prajurit yang ditawan, serta memimpin serangan yang menghancurkan markas lawan. Saat mengevakuasi para sandera, ia terkejut menemukan ayahnya termasuk di antara mereka yang berhasil diselamatkan.\n\nMeski menyadari putrinya telah menjadi seorang prajurit, sang ayah hanya memberi hormat layaknya kepada rekan sesama tentara dan mendorongnya untuk terus mengabdi. Sejak saat itu, Kimmy semakin yakin bahwa dirinya telah membuktikan kemampuan dan pilihannya. Dengan kecerdasan, teknologi ciptaannya, dan semangat yang tak pernah padam, ia terus terbang lebih tinggi demi melindungi Moniyan Empire.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Aerial_Dominance.png",
+    "name": "Aerial Dominance",
+    "kategori": "Damage",
+    "longDesc": "Kimmy bisa bergerak sambil membidik ke arah berbeda saat menggunakan Spray Gun, tetapi tidak bisa mengunci serangan ke target tertentu. Setiap Chemical Bolt memberikan (+18% Total Physical Attack) (+24% Total Magic Power) Magic Damage. Mengenai hero lawan atau unit non-hero memulihkan 6 / 3 Starlium. Saat penuh, Kimmy akan terus mengonsumsi Starlium untuk memperkuat Basic Attack, memberikan (+22.5% Total Physical Attack) (+30% Total Magic Power) damage dan menembus target (Basic Attack yang diperkuat hanya mendapatkan 50% Spell Vamp).\nKimmy bisa bergerak sambil menembak dan tidak bisa mendapatkan Bonus Attack Speed. Setiap 1% Attack Speed yang didapatkan akan dikonversi menjadi 1 Magic Power.\nBasic Attack hanya memberikan 60% damage ke Turret.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a1/Anti-Grav_Thruster.png",
+      "name": "Anti-Grav Thruster",
+      "kategori": "Speed Up/Buff",
+      "longDesc": "Kimmy menggunakan jetpack untuk terbang, menghapus dan menjadi kebal terhadap efek slow. Dia bisa menembus rintangan dan mendapatkan 120% Movement Speed tambahan yang berkurang dalam 1 detik. Selama terbang, dia terus-menerus menembakkan 4 Chemical Bolt ke lawan di sekitar, masing-masing memberikan 20 (+25% Total Physical Attack) (+30% Total Magic Power) Magic Damage dan menyebabkan 50% slow selama 0.5 detik.\nKimmy tidak mengonsumsi Starlium selama terbang.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Starlium_Beam.png",
+      "name": "Starlium Beam",
+      "kategori": "CC/Damage",
+      "longDesc": "Kimmy menembakkan Starlium Beam ke arah target, menyebabkan immobilize ke lawan di jalurnya dan memberikan 300 (+50% Total Physical Attack) (+60% Total Magic Power) Magic Damage selama 1 detik.\nSetiap hero lawan yang terkena memberikan 20 Starlium.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Traction_Pulse.png",
+      "name": "Traction Pulse",
+      "kategori": "AOE/CC",
+      "longDesc": "Mengumpulkan kekuatan dan menembakkan Traction Pulse ke arah target yang akan meledak saat mengenai lawan atau mencapai jangkauan maksimum, memberikan 150 (+45% Total Physical Attack) (+54% Total Magic Power) Magic Damage dan menciptakan medan energi yang menyebabkan 50% slow ke lawan di dalamnya.\n\nSetelah 1 detik, medan tersebut menyusut, menarik semua hero lawan ke tengahnya dan memberikan Magic Damage sebesar 15% dari HP mereka saat ini sambil menyebabkan 50% slow selama 2 detik. Setiap hero lawan yang terkena akan memberikan 40 Starlium.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hero711-icon.png",
+        "link": "https://sfile.co/q7gs04h8e92"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hero711-icon.png",
+        "link": "https://sfile.co/TAtn0zDO5QQ"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero712-icon.png",
+        "link": "https://sfile.co/dswCfVkR7Kr"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero712-icon.png",
+        "link": "https://sfile.co/KikbhzmgoC0"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/64/Hero713-icon.png",
+        "link": "https://sfile.co/BtzYK3xiUst"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero714-icon.png",
+        "link": "https://sfile.co/1MUAB3gWYWY"
+      },
+      {
+        "name": "Special Leader",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/42/Hero715-icon.png",
+        "link": "https://sfile.co/P7rvPE8nPeB"
+      },
+      {
+        "name": "Dragon Tamer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/20/Hero716-icon.png",
+        "link": "https://sfile.co/h7t3karLFem"
+      },
+      {
+        "name": "Star Wars",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/48/Hero717-icon.png",
+        "link": "https://sfile.co/mbI4lquxJNG"
+      },
+      {
+        "name": "Special Nova",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Hero718-icon.png",
+        "link": "https://sfile.co/7uuVlP3Idsd"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero719-icon.png",
+        "link": "https://sfile.co/TEOlEOslNT9"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
