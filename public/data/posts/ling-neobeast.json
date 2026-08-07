@@ -1,0 +1,157 @@
+{
+  "namehero": "Ling Neobeast",
+  "herolink": "Ling",
+  "urlthumbnail": "https://i.ibb.co/bj5MNW4k/ling-neobeast.webp",
+  "kategoriskin": "Neobeasts V2",
+  "keywords": "",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Ling adalah anggota berbakat dari Finch Sect, kelompok pembunuh rahasia yang terkenal di Cadia Riverlands. Sejak kecil ia dilatih menjadi pembunuh tanpa kebebasan untuk menentukan jalan hidupnya sendiri. Keahliannya melampaui murid lain, membuatnya dijuluki sebagai ninja terbaik di sekte tersebut. Meski selalu berhasil menyelesaikan misi, Ling mulai mempertanyakan arti hidupnya setelah bertemu Zilong, seorang pendekar yang hidup mengikuti keyakinannya sendiri.\n\nDalam sebuah misi untuk membunuh Baxia, penjaga Dragon Altar, Ling mengalami kekalahan telak dan hampir kehilangan nyawanya. Di ambang kematian, roh Vermilion Bird muncul dan menyelamatkannya. Baxia kemudian membawa Ling ke Dragon Altar, tempat ia hidup bersama Baxia dan Zilong. Selama berada di sana, Ling merasakan kehidupan yang damai dan mulai memahami arti persahabatan, kebebasan, serta alasan seseorang bertarung.\n\nNamun, kesetiaannya kepada Finch Sect belum benar-benar berakhir. Atas perintah sang tetua, Ling menyusup ke Dragon Altar untuk mencari segel terlarang. Aksinya diketahui Baxia dan memicu pertarungan sengit yang akhirnya dihentikan oleh Zilong. Dari kejadian itu, Ling menyadari bahwa baik Finch Sect maupun Dragon Altar sama-sama memiliki tujuan masing-masing, sementara dirinya masih terjebak dalam belenggu masa lalu.\n\nBeberapa tahun kemudian, Finch Sect bersekutu dengan Yu Zhong untuk menyerang Dragon Altar. Ling ikut dalam serangan tersebut, tetapi kembali dikalahkan oleh Zilong. Saat kehilangan arah, ia kembali bertemu dengan roh Vermilion Bird. Untuk pertama kalinya, roh itu berbicara dan menjelaskan bahwa penjara sejati bukanlah tempat, melainkan hati yang tidak bebas. Vermilion Bird mengungkapkan bahwa kekuatannya selama ini diberikan kepada Ling agar ia dapat hidup dan menemukan jalannya sendiri.\n\nSetelah memahami kebenaran itu, Ling akhirnya melepaskan belenggu yang selama ini mengikatnya. Ia menerima warisan kekuatan Vermilion Bird, bukan sebagai alat untuk membunuh, melainkan sebagai simbol kebebasan dan harapan. Dengan semangat baru dan sayap biru yang membara, Ling meninggalkan masa lalunya sebagai pembunuh Finch Sect dan terbang bebas sebagai Cyan Finch, siap melindungi Cadia Riverlands dengan kehendaknya sendiri.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/68/Cloud_Walker.png",
+    "name": "Cloud Walker",
+    "kategori": "Buff",
+    "longDesc": "Skill Lightness Ling yang luar biasa memungkinkan dia untuk melompat di antara dinding. Dia memperoleh 4 Lightness Point tambahan setiap detik ketika dia berada di dinding dan 5 Lightness Point tambahan setiap kali dia memberikan Damage.\n\nLing memperoleh Critical Chance sebanyak 1.6 kali dari semua sumber tetapi hanya memiliki 140% Critical Damage.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/14/Finch_Poise.png",
+      "name": "Finch Poise",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Pasif: Critical Chance Ling meningkat sebesar 2.5%.\nAktif: Ling melompat ke dinding yang ditentukan dan memasuki mode Half-Stealth, memulihkan Lightness Point lebih cepat dan mendapatkan 30% Movement Speed. Menerima damage membuatnya keluar dari mode Half-Stealth. Menerima efek crowd control membuatnya jatuh ke tanah dan terkena 30% slow selama 2 detik. Saat dia menggunakan skill ini untuk melompat dari satu dinding ke dinding lainnya, tidak akan ada cooldown dan mode Half-Stealth di-refresh.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ae/Defiant_Sword.png",
+      "name": "Defiant Sword",
+      "kategori": "Mobility/Damage",
+      "longDesc": "Ling berlari ke arah target dan menusuk lawan di sekitar, memberikan 300 (+50% Total Physical Attack) Physical Damage.\nJika Ling menggunakan Skill ini saat berada di dinding (tidak menggunakan Energy), dia akan melompat ke lokasi target, memberikan 300 (+50% Total Physical Attack) Physical Damage ke lawan di area dan menyebabkan 30% Slow selama 1.5 detik.\nDefiant Sword dianggap sebagai Basic Attack.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/30/Tempest_of_Blades.png",
+      "name": "Tempest of Blades",
+      "kategori": "Burst/CC",
+      "longDesc": "Ling melompat ke udara, menjadi kebal serangan dan mendapatkan 10% Movement Speed tambahan selama 1.5 detik. Dia mengabaikan rintangan saat di udara. Kemudian, dia mendarat di tanah, memberikan 250 (+100% Total Physical Attack) Physical Damage dan menyebabkan 40% slow selama 1.5 detik ke lawan di area, menyebabkan airborne ke lawan yang berada di tengah area serangan selama 1 detik, dan menciptakan Sword Field selama 8 detik.\n\nEmpat Tempest of Blades juga akan muncul di tepi Sword Field. Ling bisa mengambilnya untuk mengurangi cooldown Finch Poise selama 4 detik, mereset cooldown Defiant Sword, dan mendapatkan 25 Lightness Point.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero841-icon.png",
+        "link": "https://sfile.co/mZMRZkOSpeY"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero841-icon.png",
+        "link": "https://sfile.co/HuCAQi1X226"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Hero842-icon.png",
+        "link": "https://sfile.co/5GGVM3a9Gt0"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Hero842-icon.png",
+        "link": "https://sfile.co/Fm0bJ2PIyuy"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Hero843-icon.png",
+        "link": "https://sfile.co/Dn8bbqzOCBV"
+      },
+      {
+        "name": "Dragon Tamer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero844-icon.png",
+        "link": "https://sfile.co/vPZTa7BE5mE"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Hero845-icon.png",
+        "link": "https://sfile.co/emmtbmgbOL2"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero846-icon.png",
+        "link": "https://sfile.co/R4N5gp5sy79"
+      },
+      {
+        "name": "M World",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero847-icon.png",
+        "link": "https://sfile.co/dgNiP8fXdjt"
+      },
+      {
+        "name": "Kung Fu Panda",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c3/Hero848-icon.png",
+        "link": "https://sfile.co/UsvLEKH8XOQ"
+      },
+      {
+        "name": "Rolling Tides",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Hero108411.png",
+        "link": "https://sfile.co/2cLhezRu66G"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
