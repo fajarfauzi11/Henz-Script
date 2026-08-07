@@ -1,0 +1,142 @@
+{
+  "namehero": "Kadita Starlight",
+  "herolink": "Kadita",
+  "urlthumbnail": "https://i.ibb.co/fGYbHH5M/kadita-starlight.webp",
+  "kategoriskin": "Starlight",
+  "keywords": "Kadita Maiden of the Tide",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Kadita adalah putri mahkota dari sebuah kerajaan kecil di Kepulauan Vonetis. Ia dikenal karena kecantikan, kebijaksanaan, dan kebaikan hatinya, sehingga sangat dicintai oleh rakyat. Namun, kedudukannya sebagai pewaris takhta memicu rasa iri dari salah satu anggota keluarga kerajaan yang kemudian bersekutu dengan seorang penyihir ilmu hitam untuk mengutuknya. Kutukan tersebut merenggut kecantikannya dan membuat tubuhnya dipenuhi penyakit misterius.\n\nSeluruh tabib dan orang-orang bijak di kerajaan telah berusaha menghilangkan kutukan itu, tetapi tidak ada yang berhasil. Seiring berjalannya waktu, kasih sayang rakyat terhadap Kadita perlahan memudar. Kehilangan kepercayaan diri dan merasa putus asa, ia akhirnya memilih mengakhiri hidupnya dengan menjatuhkan diri ke lautan di Selatan yang sedang dilanda badai.\n\nNamun, lautan justru memberinya kehidupan baru. Kadita diselamatkan oleh para Elf Laut yang menggunakan kekuatan Trisula Laut untuk memurnikan kutukan tersebut. Meski bekas penderitaannya tidak sepenuhnya hilang, ia terlahir kembali dengan kekuatan luar biasa untuk mengendalikan lautan dan memperoleh wujud baru sebagai seorang putri duyung.\n\nSetelah kebangkitannya, Kadita diangkat sebagai Ratu Laut Selatan. Ia mampu menguasai ombak, badai, dan arus laut, serta melindungi wilayah kekuasaannya dari siapa pun yang berniat mengganggu. Para pelaut di seluruh Land of Dawn mulai menghormati sekaligus takut pada penguasa lautan yang memiliki kekuatan dahsyat itu.\n\nSejak saat itu, berbagai legenda tentang Kadita terus menyebar. Konon, ia memiliki tujuh tombak legendaris yang masing-masing menyimpan kekuatan berbeda untuk menghukum para penyusup yang mengancam Laut Selatan. Dari seorang putri yang dikhianati dan kehilangan segalanya, Kadita bangkit menjadi penguasa lautan yang disegani dan pelindung abadi wilayahnya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/43/Thalassophobia.png",
+    "name": "Thalassophobia",
+    "kategori": "Heal",
+    "longDesc": "Kadita mendapatkan Blessing of the Ocean setiap 30 detik. Menerima damage dari hero lawan akan mengaktifkan Blessing tersebut selama 4 detik.\n\nSaat durasi berakhir, dia memulihkan 65% dari HP yang hilang selama durasi ini (damage dari minion dan creep tidak akan mengaktifkan efek ini).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/40/Ocean_Ode.png",
+      "name": "Ocean Ode",
+      "kategori": "Mobility/AOE",
+      "longDesc": "Kadita memanggil gelombang laut untuk membawanya ke arah target dan kembali, memberikan 250 (+90% Total Magic Power) Magic Damage ke lawan yang terkena dan menyebabkan 30% Slow ke mereka. Saat di dalam gelombang, dia menjadi kebal terhadap Crowd Control dan memperoleh 50% Pengurangan Damage. Skill ini dapat melewati halangan dan rintangan.\n\nGunakan Kembali: Kadita keluar dari ombak tanpa mengganggu pergerakan ombak.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6d/Breath_of_the_Ocean.png",
+      "name": "Breath of the Ocean",
+      "kategori": "AOE/CC",
+      "longDesc": "Setelah jeda singkat, Kadita memanggil ombak yang menyembur di lokasi target, memberikan 350 (+140% Total Magic Power) Magic Damage ke lawan yang terkena dan menyebabkan Airborne selama 1 detik.\n\nKadita dapat menggunakan Skill ini selama Ocean Ode untuk memanggil ombak dengan jeda semburan yang lebih singkat.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a0/Rough_Waves.png",
+      "name": "Rough Waves",
+      "kategori": "Burst/Invincible",
+      "longDesc": "Kadita menyelam dan mengeluarkan ombak ke semua arah (skill ini hanya bisa dibatalkan oleh Suppress), setiap ombak memberikan 270 (+60% Total Magic Power) Magic Damage dan menyebabkan 30% slow ke lawan. Lawan yang terkena beberapa ombak akan menerima damage tambahan. Setelah jeda singkat, ombak akan kembali ke Kadita, setiap ombak memberikan 180 (+40% Total Magic Power) Magic Damage ke lawan yang terkena.\n\nKetika menyelam, Kadita tidak bisa ditargetkan dan mendapatkan 60% Movement Speed.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/46/Hero751-icon.png",
+        "link": "https://sfile.co/p1ikByLz0z0"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/46/Hero751-icon.png",
+        "link": "https://sfile.co/K6dpuvYl2mK"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Hero752-icon.png",
+        "link": "https://sfile.co/FSfynYYxjhw"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Hero752-icon.png",
+        "link": "https://sfile.co/DFd60NRV6Ca"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Hero753-icon.png",
+        "link": "https://sfile.co/qWVmmpQVodS"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e0/Hero754-icon.png",
+        "link": ""
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6c/Hero755-icon.png",
+        "link": "https://sfile.co/3wNs7g090eq"
+      },
+      {
+        "name": "Create",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f2/Hero756-icon.png",
+        "link": "https://sfile.co/fAruQCC7Hg5"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
