@@ -1,0 +1,179 @@
+{
+  "namehero": "Lunox Legend",
+  "herolink": "Lunox",
+  "urlthumbnail": "https://i.ibb.co/whPDtfyT/lunox-legend.webp",
+  "kategoriskin": "Legend",
+  "keywords": "Lunox Divine Goddess",
+  "datepost": "Update 7 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Lunox adalah gadis misterius yang lahir dengan kekuatan sihir luar biasa. Ia memiliki kemampuan unik untuk memproyeksikan dunia mimpinya ke dunia nyata, sehingga mimpi yang ia ciptakan dapat memengaruhi bahkan mengubah kenyataan. Kekuatan ini membuatnya menjadi sosok yang mampu menjaga keseimbangan antara energi Order dan Chaos.\n\nSejak zaman kuno, kekuatan Order dan Chaos terus bertarung tanpa henti hingga membawa dunia ke ambang kehancuran. Lunox menjadi salah satu dari sedikit makhluk yang mampu bertahan dari konflik tersebut. Berkat kekuatan dunia mimpinya, ia dipercaya memiliki kemampuan untuk menahan benturan kedua energi itu agar tidak menghancurkan Land of Dawn.\n\nSuatu hari, sebuah suara misterius memintanya menggunakan dunia mimpinya untuk menyeimbangkan Order dan Chaos. Lunox menerima tugas tersebut demi melindungi dunia yang ia cintai, meski harus membayar harga yang sangat besar. Ia menyerap kedua kekuatan itu ke dalam dunia mimpinya agar pertarungan mereka tidak lagi terjadi di dunia nyata.\n\nBeban dari kekuatan Order dan Chaos yang terus mengalir ke dalam mimpinya akhirnya membuat Lunox tertidur dalam tidur yang sangat panjang. Ia kemudian berubah menjadi salah satu Twilight Orb, artefak kuno yang menyimpan kekuatan besar dan terlupakan oleh sejarah.\n\nMeski tertidur, takdir Lunox belum berakhir. Suatu hari nanti ia akan terbangun kembali untuk melanjutkan misinya menjaga keseimbangan dunia. Bersama kekuatan yang dimilikinya, Lunox ditakdirkan mencari Twilight Orbs lainnya dan memastikan keseimbangan antara Order dan Chaos tetap terjaga di Land of Dawn.",
+  "dualTabNames": {
+    "tab1": "Defualt",
+    "tab2": "Power of Order",
+    "tab3": "Power of Chaos"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7f/Dreamland_Twist.png",
+    "name": "Dreamland Twist",
+    "kategori": "Buff",
+    "longDesc": "Lunox dipengaruhi oleh kekuatan Chaos dan Order.\nSaat menggunakan Power of Order, dia mendapatkan 0.5% Spell Vamp untuk setiap 1% Magic Penetration.\nSaat menggunakan Power of Chaos, dia mendapatkan 0.5% Magic Penetration untuk setiap 1% Spell Vamp.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Starlight_Pulse.png",
+      "name": "Starlight Pulse",
+      "kategori": "AOE/Heal",
+      "longDesc": "Lunox memanggil hujan cahaya bintang ke lawan di sekitar, memberikan 200 (+110% Total Magic Power) Magic Damage. Cahaya bintang tersebut kemudian kembali ke Lunox, masing-masing memulihkan 75 (+30% Total Magic Power) HP (digandakan jika mengenai hero lawan).\n\nSkill ini memiliki cooldown yang sama dengan Chaos Assault. Skill ini memberikan Power of Order dan mengakhiri mode Power of Chaos.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Chaos_Assault.png",
+      "name": "Chaos Assault",
+      "kategori": "Damage",
+      "longDesc": "Lunox melepaskan Chaos Energy ke lawan, memberikan Magic Damage sebesar 250 (+120% Total Magic Power) (+2.5% Max HP target). Memberikan 1.5% Max HP sebagai damage tambahan ke creep.\n\nSkill ini berbagi cooldown dengan Starlight Pulse. Menggunakan skill ini akan memberikan Power of Chaos dan mengakhiri mode Power of Order.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Cosmic_Fission.png",
+      "name": "Cosmic Fission",
+      "kategori": "Slow/AOE",
+      "longDesc": "Lunox menyalurkan kekuatan Order dan Chaos ke arah target, memberikan 300 (+150% Total Magic Power) Magic Damage ke lawan di sepanjang jalurnya dan menyebabkan 40% slow selama 2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/27/Order_%26_Chaos.png",
+      "name": "Order & Chaos",
+      "kategori": "Invincible/Mobility",
+      "longDesc": "Lunox dipengaruhi oleh kekuatan Chaos dan Order.\n\nKetika Power of Order lebih dominan, dia bisa menggunakan Brilliance untuk menjadi kebal serangan dan memberikan damage berkelanjutan ke lawan di sekitar.\nKetika Power of Chaos lebih dominan, dia bisa menggunakan Darkening untuk berpindah ke arah target dan mengurangi cooldown Chaos Assault secara drastis selama beberapa saat.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/e/eb/Power_of_Order_Brilliance.png",
+      "name2": "Power of Order: Brilliance",
+      "kategori2": "Invincible/AOE",
+      "longDesc2": "Lunox menciptakan Light Barrier, menjadi kebal serangan dan tidak bisa ditargetkan selama 2.5 detik, dan mendapatkan 30% Movement Speed. Light Barrier akan bergerak bersamanya, memberikan 100 (+50% Total Magic Power) Magic Damage ke lawan di sekitar setiap 0.5 detik.",
+      "dual3": true,
+      "url3": "https://static.wikia.nocookie.net/mobile-legends/images/2/29/Power_of_Chaos_Darkening.png",
+      "name3": "Power of Chaos: Darkening",
+      "kategori3": "Mobility/Burst",
+      "longDesc3": "Lunox berpindah ke arah target, memberikan 250 (+100% Total Magic Power) Magic Damage ke lawan di sekitar dan menyebabkan 30% slow selama 4 detik.\n\nSelama 4 detik berikutnya, Lunox memperkuat Power of Chaos, mengurangi cooldown Chaos Assault secara drastis (tidak terpengaruh oleh Pengurangan Cooldown). Menggunakan Starlight Pulse akan mengakhiri mode penguatan."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero681-icon.png",
+        "link": "https://sfile.co/lBKFkkLT6n8"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero681-icon.png",
+        "link": "https://sfile.co/Nw4pah7F4PL"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero682-icon.png",
+        "link": "https://sfile.co/B2n3mMc8WRe"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero682-icon.png",
+        "link": "https://sfile.co/t8jI2kXBtvK"
+      },
+      {
+        "name": "Elite Cosmic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4d/Hero683-icon.png",
+        "link": "https://sfile.co/nxNfnSZSK19"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f5/Hero684-icon.png",
+        "link": "https://sfile.co/mMab1zn9Xdl"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/81/Hero685-icon.png",
+        "link": "https://sfile.co/nt60zyo84ax"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Hero686-icon.png",
+        "link": "https://sfile.co/HYAA8WjX3tr"
+      },
+      {
+        "name": "Epic Eternity",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/11/Hero687-icon.png",
+        "link": "https://sfile.co/bGdvZlfUXQn"
+      },
+      {
+        "name": "Epic Revelation",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b6/Hero688-icon.png",
+        "link": "https://sfile.co/ZOlhLIYCQEv"
+      },
+      {
+        "name": "Elite Nature's",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/24/Hero106810-icon.png",
+        "link": "https://sfile.co/pGZmvD57nOK"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Hero106811-icon.png",
+        "link": "https://sfile.co/HTLccLnFVTI"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
