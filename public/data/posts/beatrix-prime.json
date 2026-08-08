@@ -1,0 +1,147 @@
+{
+  "namehero": "Beatrix Prime",
+  "herolink": "Beatrix",
+  "urlthumbnail": "https://i.ibb.co/Z6K6YRyw/beatrix-prime.webp",
+  "kategoriskin": "Prime",
+  "keywords": "Beatrix Stellar Brilliance",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "",
+  "dualTabNames": {
+    "tab1": "Renner",
+    "tab2": "Bennet",
+    "tab3": "Wesker"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Mechanical_Genius_%28Renner%29.png",
+    "name": "Mechanical Genius",
+    "kategori": "BUFF",
+    "longDesc": "Bakat Beatrix dalam bidang mekanika membuatnya bisa menciptakan 4 senjata kuat.\n\nRenner Basic Attack - Longshot: Menembakkan peluru yang kuat ke arah target, memberikan (+365% Total Physical Attack) - (+400% Total Physical Attack) Physical Damage ke target pertama yang terkena (75% damage terhadap creep). Tembakan ini bisa dihindari atau dihalangi.\n\nBeatrix tidak bisa memberikan damage critical. Dia mengonversi setiap 1% Critical Chance menjadi 2 Physical Attack.\nDia mendapatkan Spell Vamp sebesar 100% dari Lifesteal-nya.",
+    "dual": true,
+    "url2": "https://static.wikia.nocookie.net/mobile-legends/images/0/0d/Mechanical_Genius_%28Bennett%29.png",
+    "name2": "Mechanical Genius",
+    "kategori2": "Buff",
+    "longDesc2": "Bakat Beatrix dalam bidang mekanika membuatnya bisa menciptakan 4 senjata kuat.\n\nBennett Basic Attack - Area Bombing: Membombardir area, memberikan (+230% Total Physical Attack) - (+300% Total Physical Attack) Physical Damage ke semua lawan dalam jangkauan dan menyebabkan 40% slow selama 0.5 detik (75% damage terhadap creep).\n\nBeatrix tidak bisa memberikan damage critical. Dia mengonversikan setiap 1% Critical Chance menjadi 2 Physical Attack.\nDia mendapatkan 100% Spell Vamp dari Lifesteal-nya.",
+    "dual3": true,
+    "url3": "https://static.wikia.nocookie.net/mobile-legends/images/d/db/Mechanical_Genius_%28Wesker%29.png",
+    "name3": "Mechanical Genius",
+    "kategori3": "Buff",
+    "longDesc3": "Bakat Beatrix dalam bidang mekanika membuatnya bisa menciptakan 4 senjata kuat.\n\nWesker Basic Attack - Proximity Advantage: Menembakkan 5 peluru ke target, masing-masing memberikan (+178% Total Physical Attack) - (+220% Total Physical Attack) Physical Damage (75% damage terhadap creep) dan mewarisi sebagian dari Efek Basic Attack. Damage terhadap target yang terkena beberapa peluru akan berkurang menjadi 25%.\n\nBeatrix tidak bisa memberikan damage critical. Dia mengonversikan setiap 1% Critical Chance menjadi 2 Physical Attack.\nDia mendapatkan 100% Spell Vamp dari Lifesteal-nya."
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/30/Masterful_Gunner.png",
+      "name": "Masterful Gunner",
+      "kategori": "Morph/Buff",
+      "longDesc": "Pasif: Beatrix bisa membawa 2 senjata sekaligus, meningkatkan Physical Attack-nya sebesar 5.\nAktif: Beatrix membutuhkan 0.5 detik untuk mengganti senjata utamanya dengan senjata kedua, mendapatkan Basic Attack dan Ultimate baru.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Tactical_Reposition.png",
+      "name": "Tactical Reposition",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Beatrix berguling menyamping ke depan, dan mengisi peluru senjata saat ini hingga penuh.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c9/Renner%27s_Apathy.png",
+      "name": "Renner's Apathy",
+      "kategori": "Burst",
+      "longDesc": "Beatrix membidik lawan dengan Renner. Saat menggunakan Skill ini, dia memberikan 700 (+280% Total Physical Attack) Physical Damage ke lawan pertama yang terkena.\n\nBeatrix dapat membidik selama 8 detik, dan dia dapat membatalkannya lebih awal untuk mengurangi 50% Cooldown.\n\nTembakan ini dapat menembus Minion dan hanya memberikan 75% Damage ke unit Non-Hero.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/b/b2/Bennett%27s_Rage.png",
+      "name2": "Bennett's Rage",
+      "kategori2": "AOE/Slow",
+      "longDesc2": "Beatrix memusatkan amarahnya dan menggunakan Bennett untuk mengebom area target sebanyak 5 kali. Setiap bom menyebabkan 40% Slow ke lawan dan memberikan 580 (+225% Total Physical Attack) Physical Damage (Damage yang berhasil mengenai lawan yang sama berturut-turut akan berkurang menjadi 20%), berlangsung selama 1 detik.\n\nSkill ini hanya memberikan 75% Damage ke unit Non-Hero.",
+      "dual3": true,
+      "url3": "https://static.wikia.nocookie.net/mobile-legends/images/a/a3/Wesker%27s_Elation.png",
+      "name3": "Wesker's Elation",
+      "kategori3": "Burst/AOE",
+      "longDesc3": "Bakat Beatrix dalam bidang mekanika membuatnya bisa menciptakan 4 senjata kuat.\n\nWesker Basic Attack - Proximity Advantage: Menembakkan 5 peluru ke target, masing-masing memberikan (+178% Total Physical Attack) - (+220% Total Physical Attack) Physical Damage (75% damage terhadap creep) dan mewarisi sebagian dari Efek Basic Attack. Damage terhadap target yang terkena beberapa peluru akan berkurang menjadi 25%.\n\nBeatrix tidak bisa memberikan damage critical. Dia mengonversikan setiap 1% Critical Chance menjadi 2 Physical Attack.\nDia mendapatkan 100% Spell Vamp dari Lifesteal-nya."
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero1051-icon.png",
+        "link": "https://sfile.co/bMW7NDOJtUV"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero1051-icon.png",
+        "link": "https://sfile.co/a5oqWGSegtO"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Hero1052-icon.png",
+        "link": "https://sfile.co/BqC75JDQ7kP"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Hero1052-icon.png",
+        "link": "https://sfile.co/6EBhOzOqAPj"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/10/Hero1053-icon.png",
+        "link": "https://sfile.co/BwE285DLYN9"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4a/Hero1054-icon.png",
+        "link": "https://sfile.co/5JACBGsnqWE"
+      },
+      {
+        "name": "M4",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero1055-icon.png",
+        "link": "https://sfile.co/nBJBhQoHvhB"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5d/Hero1057-icon.png",
+        "link": "https://sfile.co/UmWjofenWsB"
+      },
+      {
+        "name": "FMVP",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero1059-icon.png",
+        "link": "https://sfile.co/iIjvN3XuhsD"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
