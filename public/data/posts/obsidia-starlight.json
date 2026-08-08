@@ -1,0 +1,122 @@
+{
+  "namehero": "Obsidia Starlight",
+  "herolink": "Obsidia",
+  "urlthumbnail": "https://i.ibb.co/sd2Kdk5d/obsidia-starlight.webp",
+  "kategoriskin": "Starlight",
+  "keywords": "Obsidia Magitech Wraith",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Di kedalaman Abyss yang gelap, Obsidia memburu para Spawn of Decay. Mereka adalah iblis yang telah dikorupsi oleh kekuatan God of Darkness, kehilangan akal, kehendak, dan jati diri hingga berubah menjadi boneka tanpa jiwa. Setiap kali Obsidia menemukan mereka, ia melihat kembali kekuatan gelap yang pernah mengubah hidupnya sebelum kematian dan kebangkitannya.\n\nPada zaman dahulu, ras Obsidia hidup di wilayah bawah tanah yang miskin dan terasing. Ketika kaumnya berada di ambang kepunahan, God of Darkness menawarkan kekuatan untuk membangun kerajaan. Obsidia menerima tawaran itu dan menggunakan kekuatan tersebut untuk menyatukan berbagai ras bawah tanah. Ia menamai kerajaannya Abyss dan menjadi penguasa pertamanya.\n\nNamun, Obsidia segera menyadari bahwa Abyss hanyalah alat bagi God of Darkness dalam perang melawan God of Light. Rakyatnya dikorbankan tanpa henti, sementara mereka yang menerima kekuatan gelap perlahan kehilangan kehendak dan jati diri. Menyadari bahwa dewa tersebut telah mengingkari janjinya, Obsidia berbalik melawannya dan memberikan serangan dahsyat sebelum akhirnya terluka parah. Saat kematiannya mendekat, ia membiarkan para penghuni Abyss mengambil darah dan kekuatannya, hingga dirinya menyatu dengan Abyss dan menjadi sumber kekuatannya.\n\nRibuan tahun kemudian, Obsidia kembali terbangun karena sisa kekuatan God of Darkness di tempat peristirahatan tubuhnya. Ia melihat bagaimana darahnya telah digunakan untuk menciptakan Spawn of Decay, membuat mereka semakin kuat sekaligus menghancurkan pikiran dan kehendak mereka. Melihat semua itu mengingatkan Obsidia pada masa lalunya sendiri dan membuatnya sadar bahwa God of Darkness masih menggunakan Abyss untuk kepentingannya.\n\nKini Obsidia kembali menjalankan perburuan. Ia bertekad memburu setiap Spawn of Decay, mengembalikan kejayaan Abyss, dan menyiapkan perang untuk membunuh sang dewa. Bagi Obsidia, Abyss bukan sekadar kerajaan yang pernah ia bangun, melainkan bagian dari dirinya sendiri. Dan kali ini, ia akan memastikan tidak ada seorang pun yang mengambil alihnya lagi.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Return_to_Bone.png",
+    "name": "Return to Bone",
+    "kategori": "Buff",
+    "longDesc": "Obsidia mendapatkan Bone Energy setiap kali memberikan damage. Basic Attack memberikan 1 Energy terhadap unit non-hero dan 2 terhadap unit hero. Skill memberikan Bone Energy sebesar 3 kali jumlah yang diberikan Basic Attack terhadap tipe unit yang sama. Tidak mendapatkan Bone Energy ketika memberikan damage ke creep.\n\nKetika Bone Energy mencapai 30, akan terbentuk 1 Bone Shard (hingga 25 shard). Mengeliminasi hero lawan akan memberikan 1 Bone Shard. Ketika Obsidia menggunakan Basic Attack, semua Bone Shard akan menyerang target, masing-masing memberikan (+6% Total Physical Attack) Physical Damage (mewarisi 6% Efek Basic Attack).\n\nBasic Attack Obsidia memberikan 70 (+70% Total Physical Attack) Physical Damage (mewarisi 100% Efek Basic Attack).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Abyssal_Bone_Needle.png",
+      "name": "Abyssal Bone Needle",
+      "kategori": "Damage/AOE",
+      "longDesc": "Obsidia mengeluarkan sebuah Abyssal Bone Needle, memberikan 325 (+80% Total Physical Attack) Physical Damage ke lawan yang terkena dan mengaktifkan Return to Bone ke hero lawan pertama yang terkena.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Phantom_Shadowmeld.png",
+      "name": "Phantom Shadowmeld",
+      "kategori": "Speed Up",
+      "longDesc": "Obsidia turun ke Abyss dan memasuki Mode Shadowmeld, mendapatkan 500% Movement Speed selama 0.3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hunt_of_Bone.png",
+      "name": "Hunt of Bone",
+      "kategori": "CC/Mobility",
+      "longDesc": "Obsidia menembakkan Bones of Wrath ke arah target, memberikan 125 (+60% Extra Physical Attack) Physical Damage dan menyebabkan stun singkat ke hero lawan pertama yang terkena, lalu menarik dirinya mendekati target. Bones of Wrath mengikat Obsidia ke hero lawan, mencegah Obsidia bergerak menjauhinya dengan jarak lebih dari 4 unit. Saat terikat, hero lawan tidak bisa menggunakan skill perpindahan, dan pergerakannya akan menyeret Obsidia. Selama skill berlangsung, Obsidia mendapatkan 5 Bone Shard dan 30% Attack Speed untuk sementara. Efek ini berlangsung selama 3 detik.\n\nSaat terikat, Obsidia bisa bergerak menembus rintangan dan menggunakan Basic Attack sambil bergerak. Phantom Shadowmeld diperkuat, durasinya meningkat menjadi 1 detik dan cooldown berkurang menjadi 33%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9b/Hero1301-icon.png",
+        "link": "https://sfile.co/0V38bsPtHuu"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9b/Hero1301-icon.png",
+        "link": "https://sfile.co/jMxijF0MXqt"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/43/Hero1302-icon.png",
+        "link": "https://sfile.co/Iv0dlMXRcC4"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/43/Hero1302-icon.png",
+        "link": "https://sfile.co/BVQ3v0SMzj"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
