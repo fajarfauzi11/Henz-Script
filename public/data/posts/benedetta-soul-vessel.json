@@ -1,0 +1,152 @@
+{
+  "namehero": "Benedetta Soul Vessel",
+  "herolink": "Benedetta",
+  "urlthumbnail": "https://i.ibb.co/TDKkzrRg/benedetta-soul-vessel.webp",
+  "kategoriskin": "Soul Vessels",
+  "keywords": "Benedetta Vessel of Pride",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Setelah Abyss kembali, wilayah selatan Land of Dawn berubah menjadi tanah tandus yang dikenal sebagai Despair Place. Di tengah kehancuran tersebut, Benedetta menjadi sosok yang membawa harapan bagi para penyintas. Sebagai pemimpin kelompok ranger, ia berjuang melawan monster di sekitar Rantha Mountains dan melindungi permukiman manusia yang masih bertahan. Dengan pedang panjang warisan ayahnya yang ia beri nama Alecto, Benedetta dikenal sebagai Shadow Ranger dan pelindung Despair Place.\n\nKebencian Benedetta terhadap Moniyan Empire berawal dari nasib ayahnya, seorang prajurit berpangkat rendah yang tewas dalam perang. Setelah pasukannya dikalahkan, mereka dituduh melakukan pemberontakan sehingga tidak mendapatkan kehormatan atas pengorbanannya. Berbeda dengan anak-anak perwira seperti Alucard yang mendapat perlindungan dari Monastery of Light, Benedetta harus tumbuh tanpa orang tuanya dan berjuang sendiri. Sejak kecil, ia bertekad menjadi Warrior of Light, mengembalikan kehormatan ayahnya, sekaligus membalas kematiannya.\n\nNamun, ketika Benedetta mencoba bergabung dengan pasukan Kekaisaran, ia ditolak karena merupakan keturunan seorang prajurit yang dianggap pemberontak. Kecewa dan marah, Benedetta meninggalkan Moniyan dan pergi menuju Barren Lands untuk memburu monster seorang diri. Di sana, ia terkejut melihat masih ada manusia yang bertahan hidup di tengah kehancuran. Meskipun hidup dalam kondisi sulit, mereka tetap bekerja keras, membangun kehidupan, dan melindungi keluarga mereka dari ancaman Abyss.\n\nSeiring waktu, Benedetta menyadari bahwa ia tidak mungkin menghadapi Abyss sendirian. Ia kemudian bertemu sekelompok ranger yang sedang melawan monster demi melindungi permukiman. Keberanian, persatuan, dan semangat mereka menyentuh hati Benedetta. Ia akhirnya memahami bahwa kemenangan atas Abyss bukan hanya bergantung pada senjata, tetapi juga pada harapan dan tekad manusia untuk terus bertahan. Benedetta pun memilih tinggal dan membentuk kelompok ranger bersama mereka.\n\nDi bawah kepemimpinannya, para ranger berhasil mengalahkan banyak monster di sekitar Rantha Mountains dan membantu membangun kembali permukiman manusia. Mereka melewati berbagai pertempuran dan pengorbanan, tetapi tetap percaya bahwa suatu hari kehidupan akan kembali tumbuh di Barren Lands. Namun, perjuangan Benedetta memiliki tujuan yang lebih besar: menghancurkan monster sekaligus mengembalikan kehormatan ayahnya. Ia ingin membuktikan kepada para penguasa Moniyan bahwa kehormatan bukanlah sesuatu yang diberikan oleh orang lain, melainkan sesuatu yang diperjuangkan dan diperoleh melalui tindakan. Perjuangannya pun menjadi bukan hanya perang melawan Abyss, tetapi juga perlawanan terhadap Kekaisaran yang pernah mengabaikan keluarganya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Elapsed_Daytime.png",
+    "name": "Elapsed Daytime",
+    "kategori": "Mobility/Damage",
+    "longDesc": "Tahan tombol Basic Attack untuk memasuki mode Swordout dan mengumpulkan Sword Intent. Setelah terisi penuh, lepaskan tombol untuk melancarkan Swordout Slash ke arah di depannya dan menerjang ke depan, memberikan (+215% Total Physical Attack) Physical Damage ke lawan di jalurnya (dihitung sebagai damage skill dan berkurang menjadi 50% terhadap minion dan creep).\n\nBenedetta hanya bisa melancarkan Swordout Slash saat Sword Intent penuh dan dia berada dalam mode Swordout.\n\nBenedetta juga mendapatkan Sword Intent dengan memberikan damage menggunakan Basic Attack dan skill-nya.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e6/Phantom_Slash.png",
+      "name": "Phantom Slash",
+      "kategori": "AOE/Mobility",
+      "longDesc": "Benedetta mundur dengan cepat dan meninggalkan bayangan di depan. Setelah jeda singkat, bayangannya menebas ke depan dalam area berbentuk kipas, memberikan 200 (+75% Total Physical Attack) Physical Damage dan menyebabkan 60% Slow kepada lawan selama 0.5 detik.\n\nSementara itu, Benedetta berlari ke depan untuk menebas, memberikan 75 (+100% Total Physical Attack) Physical Damage. (Jika target terkena Hit oleh bayangannya, Damage yang diberikan Benedetta akan meningkat menjadi 200%).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/15/An_Eye_for_An_Eye.png",
+      "name": "An Eye for An Eye",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Benedetta mengangkat senjatanya untuk bertahan, menjadi Kebal terhadap Crowd Control dan memblokir semua Damage selama 0.8 detik. Setelah ini, dia menyerang ke arah target, memberikan 300 (+80% Total Physical Attack) Physical Damage.\n\nJika Benedetta berhasil menghindari Damage selama bertahan, dia akan memperoleh Sword Intent penuh. Jika dia berhasil menghindari Crowd Control apa pun, serangan berikutnya akan menyebabkan Stun ke target selama 1.5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d3/Alecto_Final_Blow.png",
+      "name": "Alecto: Final Blow",
+      "kategori": "Burst/Mobility",
+      "longDesc": "Benedetta menggenggam Alecto, bergerak ke depan (Benedetta tidak dapat ditargetkan saat bergerak), dan menebas setelah jeda singkat, meledakkan Sword Intent di jalurnya. Selama 2.5 detik, Sword Intent memberikan hingga total 1560 (+1105% Extra Physical Attack) Physical Damage ke lawan dan menyebabkan 50% Slow ke lawan di dalamnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/47/Hero971-icon.png",
+        "link": "https://sfile.co/JuSW9H6e0YX"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/47/Hero971-icon.png",
+        "link": "https://sfile.co/DaFSRY7shGA"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/af/Hero972-icon.png",
+        "link": "https://sfile.co/lgz2tvpprs4"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/af/Hero972-icon.png",
+        "link": "https://sfile.co/tJVyFuld4E9"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b9/Hero973-icon.png",
+        "link": "https://sfile.co/d5GU4q2PXMQ"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Hero974-icon.png",
+        "link": "https://sfile.co/XpyndvUrzgY"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a1/Hero975-icon.png",
+        "link": "https://sfile.co/064dGl3EK7n"
+      },
+      {
+        "name": "Ducati",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2e/Hero976-icon.png",
+        "link": "https://sfile.co/AUouHp6bLol"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e0/Hero977-icon.png",
+        "link": "https://sfile.co/OPlPPUg4ZIs"
+      },
+      {
+        "name": "Covenant",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4b/Hero978-icon.png",
+        "link": "https://sfile.co/g2xNDHvfJkI"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
