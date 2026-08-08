@@ -1,0 +1,147 @@
+{
+  "namehero": "Brody Neobeast",
+  "herolink": "Brody",
+  "urlthumbnail": "https://i.ibb.co/gBcxn0x/brody-neobeast.webp",
+  "kategoriskin": "Neobeasts V2",
+  "keywords": "",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Brody adalah seorang pria misterius yang kehilangan ingatannya dan mengembara di Barren Lands. Dengan tangan kanannya yang telah terkorosi oleh kekuatan Abyss, ia hanya memiliki potongan ingatan dan sebuah suara di dalam kepalanya yang terus memintanya untuk memburu para Demon. Suatu hari, Brody menyelamatkan seorang tetua dari serangan Demon dan tanpa sadar melepaskan kekuatan besar dari tangan kanannya.\n\nSetelah menyelamatkan sang tetua, Brody diterima oleh penduduk desa dan menjadi pelindung mereka. Ia terus melawan serangan Demon yang datang dari Abyss, dan setiap pertempuran perlahan mengembalikan potongan masa lalunya. Namun, semakin kuat kekuatannya digunakan, semakin besar pula rasa sakit yang menjalar dari tangan kanannya ke seluruh tubuhnya.\n\nDalam salah satu pertempuran, Brody bertemu Benedetta dan bersama-sama mereka melawan gerombolan Demon. Ketika para Demon menyandera penduduk desa, Brody kehilangan kendali atas kekuatannya dan menghancurkan salah satu Demon dengan tangan kanannya. Setelah pertarungan berakhir, kenangan masa lalunya akhirnya mulai tersusun kembali, mengungkap tragedi yang selama ini ia lupakan.\n\nDahulu, Brody berasal dari sebuah desa di kaki gunung berapi yang terus dihantui Abyss. Karena ingin melindungi kampung halamannya, ia pergi memburu para Demon seorang diri. Namun, tanpa disadarinya, para Demon mengikuti jejaknya kembali ke desa dan menghancurkan tempat itu. Para penduduk yang selamat kemudian terkorupsi oleh kekuatan Abyss, hingga Brody terpaksa mengakhiri penderitaan mereka. Dalam amarah dan penyesalannya, ia membunuh Demon terakhir dengan tangan kanannya, tetapi darah Demon tersebut justru mengorupsi tubuhnya dan memberinya kekuatan yang sekarang ia miliki.\n\nBrody akhirnya memahami bahwa rasa sakit di tangan kanannya adalah harga dari kesalahan masa lalunya. Ia kehilangan keluarga, teman, dan kampung halamannya, tetapi kali ini ia tidak lagi sendirian. Setelah melihat Benedetta dan penduduk desa yang masih membutuhkan perlindungannya, Brody menemukan tujuan baru. Ia mungkin telah kehilangan rumahnya, tetapi ia akan terus bertarung untuk melindungi tempat yang kini ia anggap sebagai rumah keduanya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Abyss_Corrosion.png",
+    "name": "Abyss Corrosion",
+    "kategori": "Buff",
+    "longDesc": "Dengan Basic Attack yang beresonansi dengan Kekuatan Abyss di tubuhnya, Brody bisa bergerak ketika menggunakan Basic Attack (yang akan berhenti ketika menggunakan skill), tetapi memiliki Animasi Basic Attack yang lebih lama dan Bonus Attack Speed yang lebih rendah. Setiap Basic Attack memberikan (+140% Total Physical Attack) (+45*Hero Level) Physical Damage (skala damage dengan level tidak bisa menjadi critical), meningkatkan 30% Movement Speed (yang akan berkurang dengan cepat dalam 1.2 detik), dan meninggalkan 1 stack Abyss Mark ke lawan, hingga 4 stack.\nSetiap stack Abyss Mark meningkatkan 5% damage yang diberikan Brody ke target dan 5% Movement Speed.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f3/Abyss_Impact.png",
+      "name": "Abyss Impact",
+      "kategori": "AOE/SLow",
+      "longDesc": "Brody melepaskan gelombang serangan ke arah target, memberikan 200 (+170% Total Physical Attack) Physical Damage dan menyebabkan 30% slow ke lawan selama 1.2 detik sambil menerapkan 1 stack Abyss Mark.\n\nUntuk setiap lawan yang terkena gelombang serangan, mereka akan menerima 5% slow tambahan dan 1 stack Abyss Mark tambahan (maksimal 45% slow dan 4 stack).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a2/Corrosive_Strike.png",
+      "name": "Corrosive Strike",
+      "kategori": "Mobility/CC",
+      "longDesc": "Brody menerjang ke arah lawan, memberikan 200 (+70% Total Physical Attack) Physical Damage ke target, menyebabkan Stun ke target selama 0.8 detik, dan meninggalkan 1 Stack Abyss Mark pada target.\nSaat mengenai target, dia dapat bergerak sekali lagi sesuai arah pergerakannya, memperoleh 45% Movement Speed yang akan berkurang dengan cepat dalam 1.2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Torn-Apart_Memory.png",
+      "name": "Torn-Apart Memory",
+      "kategori": "Burst/AOE",
+      "longDesc": "Brody mengunci serangan pada semua target yang berada dalam jarak 8 unit, memberikan 216 (+165% Extra Physical Attack) Physical Damage ke mereka. Jika target memiliki Abyss Mark, semua Abyss Mark akan direset, memberikan Physical Damage setara dengan 94 (+72% Extra Physical Attack) + 4% HP target yang hilang untuk setiap Stack yang target miliki.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Hero1001-icon.png",
+        "link": "https://sfile.co/OvSrOXuxQjl"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Hero1001-icon.png",
+        "link": "https://sfile.co/qSZigFf29Mn"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a6/Hero1002-icon.png",
+        "link": "https://sfile.co/KpZz6yzvzZm"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a6/Hero1002-icon.png",
+        "link": "https://sfile.co/ggl4JSqhj6p"
+      },
+      {
+        "name": "STUN",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero1003-icon.png",
+        "link": "https://sfile.co/1h9oB2IEYrD"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5d/Hero1004-icon.png",
+        "link": "https://sfile.co/jn5adQXyV5f"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero1005-icon.png",
+        "link": "https://sfile.co/MlpfxOWY0W8"
+      },
+      {
+        "name": "MPL",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c5/Hero1006-icon.png",
+        "link": "https://sfile.co/WS3QDUCxwPn"
+      },
+      {
+        "name": "Champion",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Hero1007-icon.png",
+        "link": "https://sfile.co/O6Hy5bjZkEA"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
