@@ -1,0 +1,147 @@
+{
+  "namehero": "Atlas Collector",
+  "herolink": "Atlas",
+  "urlthumbnail": "https://i.ibb.co/jPnnHncV/atlas-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Atlas Mecha Infernus",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Atlas adalah makhluk laut purba yang hidup di Abysmal Sea, wilayah terdalam dan paling misterius di Land of Dawn. Tempat ini dipenuhi kegelapan, tekanan ekstrem, dan arus kuat yang membuat manusia tidak mampu bertahan di dalamnya. Atlas dan makhluk sejenisnya merupakan salah satu bentuk kehidupan tertua di dunia, yang dahulu dipenjara oleh Ancient Ones karena dianggap terlalu berbahaya setelah memperoleh kekuatan dengan memangsa makhluk elemental.\n\nSelama berabad-abad, kehidupan di Abysmal Sea berjalan mengikuti hukum alam. Namun, perang dan perkembangan peradaban di permukaan perlahan mengubah kondisi laut hingga menjadi semakin buruk. Makhluk-makhluk di dalamnya mulai melemah dan mati. Atlas menyadari bahwa mereka tidak dapat terus bertahan dalam keadaan tersebut dan mulai mencari cara untuk melarikan diri dari penjara yang telah membatasi mereka selama ribuan tahun.\n\nAtlas kemudian menyadari bahwa tubuh makhluk laut tidak mampu menembus Injunction yang menghalangi jalan keluar. Ia membutuhkan tubuh yang lebih kuat dan kokoh. Dalam reruntuhan peradaban kuno di dasar laut, Atlas menemukan Mecha Sentry, sebuah mesin perang raksasa peninggalan Iceland Golems. Ia masuk ke dalam mesin tersebut dan menggunakan tentakelnya untuk mengendalikan setiap bagian, menyatukan tubuh makhluk laut dengan armor mekanis yang telah lama terlupakan.\n\nDengan kekuatan Mecha Sentry, Atlas akhirnya berhasil menembus Injunction dan muncul ke permukaan sebagai Ironclad Kraken. Setelah bebas, ia menjelajahi berbagai lautan dan mempelajari dunia yang sebelumnya tidak pernah dikenalnya. Kemampuannya mengendalikan Mecha Sentry juga semakin berkembang, seolah-olah mesin tersebut memang diciptakan untuk menjadi tubuhnya.\n\nNamun, Atlas tidak melupakan saudara-saudaranya yang masih terperangkap di Abysmal Sea. Ia bertekad menghancurkan Injunction dan membebaskan seluruh kaumnya dari penjara tersebut. Untuk mewujudkan rencananya, Atlas mencari harta misterius yang dipercaya para bajak laut tersembunyi di lautan Northern Vale. Harta tersebut memiliki kekuatan regenerasi yang luar biasa dan diyakini mampu mengubah ekosistem seluruh lautan, menjadikannya kunci bagi Atlas untuk menyelamatkan kaumnya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/64/Frigid_Breath.png",
+    "name": "Frigid Breath",
+    "kategori": "Buff/Debuff",
+    "longDesc": "Setiap kali menggunakan skill, Atlas mengeluarkan Frigid Breath di sekitarnya selama 5 detik. Movement Speed lawan yang terkena efek Frigid Breath akan berkurang secara bertahap dalam 2 detik, kemudian mereka akan terkena freeze selama 0.5 detik.\n\nAtlas mendapatkan 20 (+0.5% Max HP Tambahan) Physical & Magic Defense tambahan ketika Frigid Breath aktif.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Annihilate.png",
+      "name": "Annihilate",
+      "kategori": "AOE",
+      "longDesc": "Atlas menghantam tanah dan menciptakan 3 ledakan, memberikan 400 (+100% Total Magic Power) Magic Damage ke lawan.\n\nMode Ejected: Jika Atlas terpisah dari Mecha Sentry-nya, dia dan Mecha-nya akan menggunakan Annihilate secara bersamaan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Perfect_Match.png",
+      "name": "Perfect Match",
+      "kategori": "Mobility/CC",
+      "longDesc": "Atlas memasuki Mode Ejected, mendapatkan 40% Movement Speed dan kebal Efek Slow. Dalam mode ini, Mecha Sentry akan mengikuti Atlas dengan kecepatan yang perlahan meningkat (hanya bisa dibatalkan oleh efek Suppress). Setelah keduanya bergabung kembali, Atlas akan kembali ke dalam Mecha, memberikan 320 (+80% Total Magic Power) Magic Damage dan menyebabkan stun selama 0.8 detik ke lawan di sekitarnya.\nMode Ejected: Atlas dan Mecha-nya berbagi bar HP yang sama dan mengurangi 50% damage yang diterima selama dalam mode ini.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/41/Fatal_Links.png",
+      "name": "Fatal Links",
+      "kategori": "CC/AOE",
+      "longDesc": "Atlas melemparkan rantai ke sekitarnya dan mulai mengumpulkan kekuatan (hanya bisa dibatalkan oleh efek Suppress), memberikan 225 (+75% Total Magic Power) Magic Damage dan menyebabkan 40% slow ke lawan yang terkena selama 3 detik.\nGunakan skill kembali ketika mengumpulkan kekuatan: Atlas akan menarik semua target ke arahnya dan melemparkan mereka ke lokasi yang ditentukan, memberikan 360 (+180% Total Magic Power) Magic Damage.\nGunakan skill di Mode Ejected: Mecha Sentry akan langsung kembali ke Atlas, tetapi efek stun akan diganti menjadi 40% Efek Slow.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6e/Hero931-icon.png",
+        "link": "https://sfile.co/jI4322uHKoU"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6e/Hero931-icon.png",
+        "link": "https://sfile.co/a4kVsGd6fHv"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/82/Hero932-icon.png",
+        "link": "https://sfile.co/FuT8l8rGIqa"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/82/Hero932-icon.png",
+        "link": "https://sfile.co/Xj2fiFeaZZr"
+      },
+      {
+        "name": "Elite Turbine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fe/Hero933-icon.png",
+        "link": "https://sfile.co/UwYxqh3ePjd"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/76/Hero934-icon.png",
+        "link": "https://sfile.co/evmzk5jzvvr"
+      },
+      {
+        "name": "MSC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/28/Hero935-icon.png",
+        "link": "https://sfile.co/AuZmXZExRUB"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fb/Hero937-icon.png",
+        "link": "https://sfile.co/RvoVFhRRJQ0"
+      },
+      {
+        "name": "Elite Lurker",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f3/Hero938-icon.png",
+        "link": "https://sfile.co/kEtwK4tZBRR"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
