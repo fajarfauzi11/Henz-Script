@@ -1,0 +1,159 @@
+{
+  "namehero": "Popol & Kupa Collector",
+  "herolink": "Popol & Kupa",
+  "urlthumbnail": "https://i.ibb.co/LdMty7D8/popol-collector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Popol and Kupa, Popol dan Kupa Spirit of the Brush",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Popol adalah seorang anak dari suku Feldan di Northern Vale yang dikenal nakal, penuh imajinasi, dan memiliki ambisi besar untuk menjadi pahlawan. Namun, tidak ada yang menganggap serius impiannya. Karena merasa tidak dihargai, Popol sering melakukan berbagai macam kenakalan untuk menarik perhatian, tetapi justru membuatnya semakin dijauhi oleh orang-orang di desanya.\n\nSuatu malam, Popol memutuskan membuktikan dirinya dengan pergi sendirian ke pegunungan untuk memburu seekor Icefield Dire Wolf. Namun, bukannya menemukan buruan, ia justru jatuh ke dalam sebuah perangkap. Di dasar perangkap itu, Popol menemukan seekor serigala yang terluka dan kelaparan. Alih-alih membunuhnya, Popol melihat kesepian yang sama dalam diri serigala tersebut dan memilih untuk menolongnya.\n\nPopol kemudian memberinya nama Kupa. Meski awalnya saling curiga, keduanya perlahan menjadi dekat. Popol berbagi makanan yang ia bawa, sementara Kupa mulai mempercayai manusia yang berbeda dari para pemburu yang selama ini dikenalnya. Dalam keterasingan mereka, Popol dan Kupa akhirnya menemukan teman yang selama ini sama-sama mereka butuhkan.\n\nNamun, persediaan makanan mereka semakin menipis hingga sekelompok burung pemakan bangkai datang menyerang. Popol berusaha melawan dengan tombaknya, sementara Kupa yang masih terluka hanya mampu bertarung dengan satu kaki. Ketika keadaan semakin terdesak, Popol mengorbankan dirinya dengan berusaha membuka perangkap agar Kupa bisa melarikan diri. Melihat Popol dalam bahaya, Kupa akhirnya bangkit dan menyerang balik.\n\nSejak saat itu, Popol dan Kupa menjadi pasangan yang tak terpisahkan. Mereka menjelajahi wilayah beku Northern Vale dan menghadapi berbagai bahaya bersama. Apa yang awalnya dimulai dari pertemuan dua sosok yang sama-sama kesepian, akhirnya berubah menjadi sebuah persahabatan yang kuat—membuktikan bahwa seorang anak pemberani dan seekor Icefield Wolf dapat menjadi partner terbaik dalam sebuah petualangan.",
+  "dualTabNames": {
+    "tab1": "Default",
+    "tab2": "Alpha Wolf Form",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/We_Are_Friends.png",
+    "name": "We Are Friends",
+    "kategori": "Buff",
+    "longDesc": "Kupa memulihkan 10% Max HP setiap detik setelah tidak menerima damage selama 5 detik. Saat Kupa tereliminasi, Popol bisa menggunakan Pray selama 3 detik untuk membangkitkan Kupa kembali ke medan tempur. Cooldown: 30 detik.\nSetiap 3 serangan berturut-turut dari Kupa akan memperkuat Basic Attack Popol berikutnya, memberikan (+220% Total Physical Attack) Physical Damage. Kupa mempunyai 2500 (+1200% Total Physical Attack) Max HP dan mewarisi 100% dari atribut lainnya serta efek pasif equipment milik Popol (kecuali efek equipment Jungle dan Roam).\nKupa memberikan 120% damage tambahan terhadap Creep.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/71/Bite_%27em%2C_Kupa%21.png",
+      "name": "Bite 'em, Kupa!",
+      "kategori": "Damage/CC",
+      "longDesc": "Popol melempar tombak ke target, memberikan 80 (+100% Total Physical Attack) Physical Damage dan memerintahkan Kupa untuk menyerang target, memberikan 70 (+75% Total Physical Attack) Physical Damage tambahan. Kupa akan terus menyerang target selama 3 detik.\nMode Alpha Wolf: Kupa menyebabkan stun ke lawan selama 1 detik dan menggigit mereka 3 kali berturut-turut.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/6/63/Bite_%27em%2C_Kupa%21_%28Alpha_Wolf_Form%29.png",
+      "name2": "Bite 'em, Kupa!",
+      "kategori2": "Damage/CC",
+      "longDesc2": "Popol melempar tombak ke target, memberikan 80 (+100% Total Physical Attack) Physical Damage dan memerintahkan Kupa untuk menyerang target, memberikan 70 (+75% Total Physical Attack) Physical Damage tambahan. Kupa akan terus menyerang target selama 3 detik.\nMode Alpha Wolf: Kupa menyebabkan stun ke lawan selama 1 detik dan menggigit mereka 3 kali berturut-turut.",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0e/Kupa%2C_Help%21.png",
+      "name": "Kupa, Help!",
+      "kategori": "CC/AOE",
+      "longDesc": "Popol memanggil Kupa kembali ke sisinya, mendapatkan 240 (+200% Extra Physical Attack) shield sambil memberikan 240 (+50% Total Physical Attack) Physical Damage ke lawan di sekitar dan menyebabkan 35% slow ke mereka selama 0.5 detik. Kupa akan membantu Popol untuk menyerang lawan di sekitar selama 3 detik.\nMode Alpha Wolf: Kupa kembali ke Popol, menyebabkan airborne lawan di sekitar selama 0.2 detik. Shield dan damage meningkat menjadi 125%.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Kupa%2C_Help%21_%28Alpha_Wolf_Form%29.png",
+      "name2": "Kupa, Help!",
+      "kategori2": "CC/AOE",
+      "longDesc2": "Popol memanggil Kupa kembali ke sisinya, mendapatkan 240 (+200% Extra Physical Attack) shield sambil memberikan 240 (+50% Total Physical Attack) Physical Damage ke lawan di sekitar dan menyebabkan 35% slow ke mereka selama 0.5 detik. Kupa akan membantu Popol untuk menyerang lawan di sekitar selama 3 detik.\nMode Alpha Wolf: Kupa kembali ke Popol, menyebabkan airborne lawan di sekitar selama 0.2 detik. Shield dan damage meningkat menjadi 125%.",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/18/Popol%27s_Surprise.png",
+      "name": "Popol's Surprise",
+      "kategori": "Summon/CC",
+      "longDesc": "Popol memasang perangkap yang akan aktif dalam beberapa waktu setelah lawan menginjaknya, memberikan 70 (+20% Total Magic Power) Magic Damage dan menyebabkan Immobilize selama 1 detik, dan menciptakan Frost Zone selama 4 detik. Movement Speed lawan di dalam Frost Zone berkurang sebesar 20%.\nPopol dapat menyimpan hingga 3 perangkap dan mendapatkan 1 perangkap setiap 22 detik. Popol dapat memasang hingga 3 perangkap di pertarungan, masing-masing bertahan selama 60 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cd/We_Are_Angry%21.png",
+      "name": "We Are Angry!",
+      "kategori": "Buff",
+      "longDesc": "Popol & Kupa memasuki Mode Enraged selama 12 detik:\nPopol & Kupa memperoleh 15% Movement Speed tambahan serta meningkatkan Attack Speed-nya menjadi 1.3 kali.\nKupa memasuki Mode Alpha Wolf, memperoleh 1500 Max HP, dan memperkuat Skill lainnya. Kupa juga memulihkan HP-nya hingga penuh.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ab/Hero941-icon.png",
+        "link": "https://sfile.co/vAqbyf9dfAH"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ab/Hero941-icon.png",
+        "link": "https://sfile.co/48esCKLReS5"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b8/Hero942-icon.png",
+        "link": "https://sfile.co/3VypeENOYRL"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b8/Hero942-icon.png",
+        "link": "https://sfile.co/lb4zGEJNO5a"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1b/Hero943-icon.png",
+        "link": "https://sfile.co/QNMuYFEDzyi"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/03/Hero944-icon.png",
+        "link": "https://sfile.co/wVtGX9WonPr"
+      },
+      {
+        "name": "Transformers",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Hero945-icon.png",
+        "link": "https://sfile.co/fXmh0JjBEqT"
+      },
+      {
+        "name": "Allstar",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero947-icon.png",
+        "link": "https://sfile.co/PEjaKh8LYtC"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
