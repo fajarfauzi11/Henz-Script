@@ -1,0 +1,164 @@
+{
+  "namehero": "Yu Zhong Exorcist",
+  "herolink": "Yu Zhong",
+  "urlthumbnail": "https://i.ibb.co/Ngbr0rhC/yu-zhong-exorcist.webp",
+  "kategoriskin": "Exorcists",
+  "keywords": "",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Yu Zhong adalah reinkarnasi dari Black Dragon yang memiliki ambisi besar untuk menyatukan Cadia Riverlands. Sejak kecil, ia dibawa ke Dragon Altar dan dilatih oleh Baxia, salah satu Oriental Fighters. Namun, seiring kekuatannya berkembang, Yu Zhong mulai mempertanyakan ajaran sang Great Dragon. Ia percaya bahwa kedamaian saja tidak cukup untuk melindungi Cadia Riverlands dari ancaman di masa depan.\n\nBayangan Black Dragon perlahan memengaruhi dirinya. Yu Zhong mulai percaya bahwa masyarakat harus menjadi kuat agar mampu melindungi diri mereka sendiri. Menurutnya, pengorbanan diperlukan untuk menciptakan dunia yang lebih aman. Perbedaan pandangan ini akhirnya membuatnya berhadapan dengan Baxia. Dalam pertarungan sengit, Yu Zhong dikalahkan dan terjatuh dari gunung, hampir kehilangan nyawanya.\n\nDi tengah kondisinya yang kritis, Yu Zhong diselamatkan oleh Wanwan, seorang gadis muda dari Tang Clan. Persahabatan mereka perlahan membuat sisi kemanusiaan Yu Zhong kembali muncul. Namun, ia tetap tidak meninggalkan ambisinya. Setelah bertahun-tahun berlatih dan mengembara bersama Luo Yi, Yu Zhong akhirnya kembali ke Dragon Altar untuk membebaskan kekuatan Black Dragon yang telah tersegel selama seribu tahun.\n\nSaat segel dibuka, Reverse Scale milik Black Dragon akhirnya kembali ke tangannya. Namun, bersamaan dengan itu, Evil God Lieh juga muncul dan berusaha mengambil alih tubuh serta pikirannya, seperti yang pernah dilakukannya kepada Black Dragon sebelumnya. Yu Zhong hampir kehilangan kendali, tetapi Wanwan berhasil menemukan Dragon Altar menggunakan Dragon Orb yang sebelumnya diberikan kepadanya.\n\nDengan bantuan kekuatan yang telah ia simpan di dalam Dragon Orb, Yu Zhong berhasil mendapatkan kembali jati dirinya dan mengalahkan Lieh. Kini, ia telah sepenuhnya menjadi Black Dragon dan siap menjalankan ambisinya untuk menaklukkan serta menyatukan Cadia Riverlands. Bagi Yu Zhong, perubahan besar tidak dapat dihindari dan era baru Cadia Riverlands akan segera dimulai.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/00/Cursing_Touch.png",
+    "name": "Cursing Touch",
+    "kategori": "BUFF",
+    "longDesc": "Yu Zhong meninggalkan Sha Residue ke Hero lawan setiap kali dia memberikan Damage ke mereka. Sha Residue meledak saat mencapai 5 Stack pada target. Kemudian dia mulai menggunakan 1 Stack setiap 0.4 detik untuk memberikan Physical Damage setara dengan 20 (+20% Extra Physical Attack) + 2.5% dari HP target yang hilang ke target. Setiap Stack yang digunakan memulihkan 6% HP Yu Zhong yang hilang. Ketika Sha Residue meledak, Yu Zhong juga memperoleh 30% Movement Speed selama 3 detik.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Dragon_Tail.png",
+      "name": "Dragon Tail",
+      "kategori": "AOE",
+      "longDesc": "Yu Zhong menanamkan kekuatan ke dalam jubah dan mengubahnya menjadi senjata, yang mulai menyerang lawan di sekitar setelah jeda singkat. Area di dalam jubah memberikan 220 (+100% Extra Physical Attack) Physical Damage, sedangkan ujungnya yang dipertajam memberikan 275% Damage dan meninggalkan 2 Stack Sha Residue.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/20/Soul_Grip.png",
+      "name": "Soul Grip",
+      "kategori": "SlowMobility",
+      "longDesc": "Yu Zhong melepaskan Dragon Soul, memberikan 150 (+120% Extra Physical Attack) Physical Damage ke seluruh lawan di depan dan menyebabkan 60% Slow ke mereka selama 1 detik.\n\nSetelah mengenai lawan, Basic Attack Yu Zhong berikutnya akan diperkuat, memberikan 108 (+100% Total Physical Attack) Physical Damage. Ketika mengenai beberapa lawan, Basic Attack yang diperkuat akan memberikan beberapa Stack Sha Residue dan memberikan hingga 200% Damage.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 3",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Furious_Dive.png",
+      "name": "Furious Dive",
+      "kategori": "Mobility/CC",
+      "longDesc": "Yu Zhong melompat ke area yang telah ditentukan dengan kekuatan penuh, memberikan 180 (+90% Extra Physical Attack) Physical Damage. Dia dapat berlari sekali lagi ke arah pergerakan.\nSetelah jeda singkat, lawan yang berada di dalam area efek akan menerima efek Airborne selama 0.6 detik dan 180 (+90% Extra Physical Attack) Physical Damage tambahan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5c/Black_Dragon_Form.png",
+      "name": "Black Dragon Form",
+      "kategori": "Morph/Buff",
+      "longDesc": "Setelah mengumpulkan kekuatan selama 0.6 detik, Yu Zhong berubah menjadi Mode Black Dragon. Hingga 7 detik, dia tidak dapat menggunakan skill tetapi dapat bergerak bebas dan menyebabkan knockback ke hero lawan di jalurnya serta memberikan 180 (+80% Total Physical Attack) Physical Damage. Dia juga memperoleh 1000 (+200% Extra Physical Attack) Max HP, menjadi kebal crowd control, dan mengabaikan rintangan saat di Mode ini.\nSetelah durasi Mode Black Dragon berakhir, Yu Zhong memasuki Mode Dragonoid, meningkatkan jangkauan semua skill selama 10 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/53/Hero951-icon.png",
+        "link": "https://sfile.co/fcg8eNdPMCn"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/53/Hero951-icon.png",
+        "link": "https://sfile.co/AJihqBVncjr"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Hero952-icon.png",
+        "link": "https://sfile.co/gwIieSwLupK"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Hero952-icon.png",
+        "link": "https://sfile.co/Xl2UyxBgGQS"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/45/Hero953-con.png",
+        "link": "https://sfile.co/DWfxVyDk5ex"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Hero954-icon.png",
+        "link": "https://sfile.co/75JTFIC3mbH"
+      },
+      {
+        "name": "M5",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero957-icon.png",
+        "link": "https://sfile.co/oKKSeAdkyhR"
+      },
+      {
+        "name": "Prime",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6c/Hero958-icon.png",
+        "link": "https://sfile.co/X6KF4Znusmo"
+      },
+      {
+        "name": "Allstar",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/76/Hero959-icon.png",
+        "link": "https://sfile.co/UwxFMghqS86"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
