@@ -1,0 +1,152 @@
+{
+  "namehero": "Luo Yi Collector",
+  "herolink": "Luo Yi",
+  "urlthumbnail": "https://i.ibb.co/d4b6LMXb/luo-yi-colllector.webp",
+  "kategoriskin": "Collector",
+  "keywords": "Luo Yi Elysium Guardian",
+  "datepost": "Update 8 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Luo Yi adalah satu-satunya sosok di Cadia Riverlands yang benar-benar memahami rahasia Yin dan Yang. Sejak kecil, ia menjadi penerus Grand Sorceress Zhu'an dan menghabiskan hidupnya mempelajari kedua kekuatan tersebut. Hingga suatu hari, ia mengikuti sebuah roh menuju Cliff of Endless Lights dan melihat visi tentang masa lalu, ketika para Ancient Ones hidup dalam keharmonisan Yin dan Yang.\n\nDalam penglihatannya, Luo Yi menyaksikan Fu Yang dan Su Yin, leluhur Cadia Riverlands sekaligus bagian dari Four Immortals, memimpin penduduk melawan Twin Gods of Light and Darkness. Ia juga melihat bagaimana keduanya mengorbankan diri demi melindungi dunia. Dari sana, Luo Yi menyadari bahwa Cadia Riverlands saat ini hanyalah bayangan dari utopia yang pernah ada.\n\nSetelah mengetahui dirinya sebagai keturunan Ancient Ones, Luo Yi meninggalkan Zhu'an dan memulai perjalanan untuk mencari cara mengembalikan keseimbangan Yin dan Yang. Perjalanannya kemudian mempertemukannya dengan Yu Zhong, reinkarnasi dari Black Dragon. Melihat kekuatan dan ambisinya, Luo Yi memutuskan untuk menjadi strateginya dan membantu Yu Zhong membangkitkan kembali kekuatan Black Dragon.\n\nDengan kekuatan Yin dan Yang yang dikuasainya, Luo Yi membantu Yu Zhong memperoleh kekuatan penuh Black Dragon. Bagi Yu Zhong, ini adalah langkah menuju ambisinya untuk menguasai Cadia Riverlands. Namun bagi Luo Yi, semua itu hanyalah bagian dari rencana yang jauh lebih besar.\n\nDi balik kesetiaannya kepada Yu Zhong, Luo Yi memiliki tujuan sendiri: mengembalikan Cadia Riverlands ke keadaan ideal seperti pada zaman Ancient Ones. Ia percaya bahwa dunia hanya dapat mencapai kedamaian sejati ketika Yin dan Yang kembali berada dalam keseimbangan sempurna. Dengan kekuatannya sendiri, Luo Yi bertekad memulihkan Yin dan Yang ke bentuk aslinya dan menciptakan dunia yang damai untuk selamanya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Duality.png",
+    "name": "Duality",
+    "kategori": "Burst/CC",
+    "longDesc": "Skill Luo Yi akan menciptakan mark \"Yin\" dan \"Yang\" di medan tempur, masing-masing berlangsung selama hingga 6 detik.\nYin-Yang Reaction terjadi setiap kali dua pembawa mark yang berbeda saling mendekat, memberikan 300 (+25*Hero Level) (+190% Total Magic Power) Magic Damage dan menyebabkan stun kepada mereka selama 0.3 detik.\nSetiap kali Luo Yi meninggalkan mark baru kepada pembawa mark, dia akan mendapatkan shield sebesar 300 (+10*Hero Level) (+150% Total Magic Power) (maksimal 3 stack) dan 50% Movement Speed tambahan (semakin berkurang dengan cepat dalam 2 detik).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Dispersion.png",
+      "name": "Dispersion",
+      "kategori": "AOE",
+      "longDesc": "Luo Yi mengeluarkan energi Yin/Yang ke arah target, memberikan 285 (+135% Total Magic Power) Magic Damage ke lawan pertama yang terkena dan lawan yang berada di belakangnya. Hero lawan yang terkena skill ini akan menerima mark Sigil of Yin/Yang.\nLuo Yi bisa menyimpan hingga 4 penggunaan Dispersion dan memperoleh 1 penggunaan setiap 8 detik. Dia juga langsung memperoleh 1 penggunaan setiap kali Yin-Yang Reaction aktif.\nMode skill akan berubah setiap kali penggunaan skill.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c9/Rotation.png",
+      "name": "Rotation",
+      "kategori": "AOE/Slow",
+      "longDesc": "Luo Yi memanggil Fire of Yang / Aqua of Yin di area yang ditentukan, memberikan 250 (+50% Total Magic Power) Magic Damage ke lawan yang terkena dan menyebabkan 60% slow selama 0.5 detik.\nFire of Yang / Aqua of Yin akan terus berada di lokasi selama 6 detik, memberikan 50 (+10% Total Magic Power) Magic Damage setiap 0.7 detik. Area ini juga bisa memicu Yin-Yang Reaction dengan Sigil yang berbeda.\nMode skill akan berubah setiap kali skill digunakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/74/Diversion.png",
+      "name": "Diversion",
+      "kategori": "Teleport",
+      "longDesc": "Pasif: Pengurangan Cooldown Luo Yi meningkat sebesar 6%.\nAktif: Luo Yi menciptakan Lingkaran Teleportasi di sekitarnya dan menandai lokasi target (dalam jarak 28 unit) sebagai tujuannya. Setelah jeda 3 detik, hero rekan di dalam Lingkaran tersebut akan berpindah ke lokasi tujuan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Hero961-icon.png",
+        "link": "https://sfile.co/UopQGU3gUe7"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f0/Hero961-icon.png",
+        "link": "https://sfile.co/KKwggLbmIiL"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero962-icon.png",
+        "link": "https://sfile.co/IDNomw6nBHL"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero962-icon.png",
+        "link": "https://sfile.co/edAEx72YF46"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fb/Hero963-icon.png",
+        "link": "https://sfile.co/2BJVEcqQzbs"
+      },
+      {
+        "name": "Lunar Fest",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b4/Hero964-icon.png",
+        "link": "https://sfile.co/1L0Npi6ZtzK"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Hero965-icon.png",
+        "link": "https://sfile.co/CtgL096J63q"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0a/Hero967-icon.png",
+        "link": "https://sfile.co/yybw8NxT6MW"
+      },
+      {
+        "name": "Create Matron",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d7/Hero968-icon.png",
+        "link": ""
+      },
+      {
+        "name": "Create Dragon",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero969-icon.png",
+        "link": ""
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
