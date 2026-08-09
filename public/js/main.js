@@ -5,6 +5,34 @@
 var hzYrEl=document.getElementById('hz-year');
 if(hzYrEl)hzYrEl.textContent=new Date().getFullYear();
 
+/* ── Tombol "Kembali" yang aman ──
+   Dipakai oleh semua tombol back di situs (post, hero, kategori, hasil pencarian).
+   Masalah yang diperbaiki:
+   1) User masuk dari Google Search → klik "Kembali" selama ini malah balik ke
+      halaman hasil pencarian Google (karena history.back() polos ikut riwayat
+      browser, padahal riwayat itu isinya Google, bukan halaman HenzScript lain).
+   2) User masuk dari link WhatsApp/YouTube/link eksternal lain → sering kali
+      TIDAK ADA riwayat sama sekali (tab/webview baru), jadi history.back()
+      tidak bereaksi apa-apa.
+   Solusi: cek document.referrer. Kalau referrer-nya dari domain HenzScript
+   sendiri, aman pakai history.back() seperti biasa. Kalau bukan (termasuk
+   kosong / dari luar situs), langsung arahkan ke fallbackUrl (biasanya "/"
+   atau halaman listing yang relevan) alih-alih diam saja atau nyasar keluar. */
+window.hzSmartBack = function(fallbackUrl){
+  fallbackUrl = fallbackUrl || '/';
+  var ref = document.referrer;
+  if(ref){
+    try{
+      if(new URL(ref).hostname === window.location.hostname){
+        history.back();
+        return false;
+      }
+    }catch(e){ /* referrer tidak valid sebagai URL → anggap tidak aman, lanjut fallback di bawah */ }
+  }
+  window.location.href = fallbackUrl;
+  return false;
+};
+
 /* Mobile Nav Drawer (Header V2 - pill) */
 (function(){
   var btn=document.getElementById('henz-menu-btn');
@@ -550,7 +578,7 @@ if(document.getElementById('hz-search-heading')){
   var qVal=urlParams.get('q')||'';
   var qLower=qVal.toLowerCase();
   shWrap.style.display='block';
-  shWrap.innerHTML='<a class="hz-sh-back" href="/" onclick="history.back();return false;">'
+  shWrap.innerHTML='<a class="hz-sh-back" href="/" onclick="return hzSmartBack(this.getAttribute(\'href\'));">'
     +'&#8592; Halaman Sebelumnya</a>'
     +'<h1>Hasil pencarian untuk: <em>&ldquo;'+qVal.replace(/</g,'&lt;')+'&rdquo;</em></h1>'
     +'<p class="hz-sh-count" id="hz-sh-count">Memuat...</p>';

@@ -409,9 +409,13 @@
 
   <!-- ─────────────────────────────────────────────
        [B1] TOMBOL KEMBALI
-       ✏️ EDIT: href="#" + onclick kembali ke halaman sebelumnya (browser history)
+       ✏️ EDIT: href="/" = fallback kalau user datang dari luar situs (Google
+       Search, WhatsApp, YouTube, dll) atau tidak ada riwayat browser sama
+       sekali. Kalau user datang dari halaman lain di HenzScript sendiri,
+       tombol ini otomatis pakai history.back() seperti biasa (lihat
+       hzSmartBack() di main.js).
        ───────────────────────────────────────────── -->
-  <a href="#" onclick="history.back();return false;" class="hz-posth-back">
+  <a href="/" onclick="return hzSmartBack(this.getAttribute('href'));" class="hz-posth-back">
     &#8592; Halaman Sebelumnya
   </a>
 

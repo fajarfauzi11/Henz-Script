@@ -375,9 +375,11 @@
 
   <!-- ─────────────────────────────────────────────
        [B1] TOMBOL KEMBALI
-       ✏️ EDIT: href="#" + onclick kembali ke halaman sebelumnya (browser history)
+       ✏️ EDIT: href="/" = fallback kalau user datang dari luar situs (Google
+       Search, WhatsApp, YouTube, dll) atau tidak ada riwayat browser sama
+       sekali. Lihat hzSmartBack() di main.js.
        ───────────────────────────────────────────── -->
-  <a href="#" onclick="history.back();return false;" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px;">
+  <a href="/" onclick="return hzSmartBack(this.getAttribute('href'));" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#888;text-decoration:none;margin-bottom:20px;">
     &#8592; Halaman Sebelumnya
   </a>
 
