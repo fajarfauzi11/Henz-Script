@@ -266,13 +266,19 @@
     background: #fff;
     transition: width .2s cubic-bezier(.4,0,.2,1), translate .2s cubic-bezier(.4,0,.2,1);
   }
-  /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate) */
+  /* Versi mini — dipakai inline di sebelah label tiap blok abilities (Pasif/Skill/Ultimate).
+     Bisa menampung sampai 7 varian: kalau tidak muat 1 baris, boleh wrap ke baris berikutnya
+     (nama varian panjang / jumlah varian banyak). Pill indicator ikut pindah baris lewat
+     translate X+Y yang dihitung ulang di hzAbSegMiniInit()/hzAbMiniSwitch(). */
   .hz-ab-seg-mini {
-    height: 22px;
+    height: auto;
+    min-height: 22px;
     width: fit-content;
+    max-width: 100%;
     margin: 0;
-    gap: 1px;
+    gap: 3px 1px;
     padding: 2px;
+    flex-wrap: wrap;
   }
   .hz-ab-seg-mini .hz-ab-seg-item {
     height: 18px;
@@ -280,7 +286,8 @@
     padding: 0 9px;
   }
   .hz-ab-seg-mini .hz-ab-seg-pill {
-    top: 2px; bottom: 2px; left: 2px;
+    top: 2px; left: 2px;
+    height: 18px;
   }
 
   /* ── TOOLTIP "APA ITU LOGO?" ── */
@@ -850,7 +857,9 @@ function hzAbSegMiniInit(){
       // tidak ikut animasi width/translate dari 0.
       pill.style.transition = 'none';
       pill.style.width = first.offsetWidth + 'px';
-      pill.style.translate = (first.offsetLeft - pad) + 'px';
+      // translate X+Y (bukan cuma X) — perlu Y juga karena kalau tombolnya banyak
+      // (sampai 7 varian) bisa wrap ke baris ke-2/3, jadi pill harus ikut turun baris.
+      pill.style.translate = (first.offsetLeft - pad) + 'px ' + (first.offsetTop - pad) + 'px';
       void pill.offsetWidth; // force reflow
       pill.style.transition = '';
     }
@@ -869,7 +878,9 @@ function hzAbMiniSwitch(btn){
   if(pill){
     var pad = 2;
     pill.style.width = btn.offsetWidth + 'px';
-    pill.style.translate = (btn.offsetLeft - pad) + 'px';
+    // translate X+Y — kalau tombol yang diklik ada di baris ke-2/3 (wrap karena banyak varian),
+    // pill harus ikut turun, tidak cuma geser horizontal.
+    pill.style.translate = (btn.offsetLeft - pad) + 'px ' + (btn.offsetTop - pad) + 'px';
   }
   var prefix = seg.getAttribute('data-prefix');
   var variant = btn.getAttribute('data-variant');

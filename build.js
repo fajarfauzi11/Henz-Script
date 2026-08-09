@@ -423,21 +423,39 @@ const KZ_DYN_COLORS = [
   { bg: '#e0f2f1', text: '#004d40' }
 ];
 
-/* Bangun 1 blok ability (Pasif/Skill/Ultimate), dual-variant-aware — port dari hzBuildAbilityRow */
+/* Batas maksimum jumlah varian per blok ability (Pasif/Skill/Ultimate). Dulu 3, sekarang 7. */
+const KZ_MAX_ABILITY_VARIANTS = 7;
+
+/* Bangun 1 blok ability (Pasif/Skill/Ultimate), multi-variant-aware (varian 1 s/d 7) — port dari hzBuildAbilityRow */
 function hzBuildAbilityRow(opts) {
   const topBorder = opts.borderTop ? 'border-top:1px solid #efefef;' : '';
   const bottomBorder = opts.borderBottom === false ? '' : 'border-bottom:1px solid #efefef;';
 
-  let labelRow;
+  /* Kumpulkan daftar varian yang aktif. Varian 1 selalu aktif (base/default).
+     Varian 2 aktif kalau opts.dual true. Varian 3-7 aktif kalau opts.dualN true,
+     berurutan (berhenti di angka pertama yang false) — konsisten dengan cascading
+     logic di post-editor-tool.html yang menjamin tidak ada "lubang" (mis. varian 4
+     aktif tapi varian 3 tidak). */
+  const activeVariants = [1];
   if (opts.dual) {
-    const t1 = opts.tab1Name || 'Tab 1';
-    const t2 = opts.tab2Name || 'Tab 2';
-    let segButtons = '      <button aria-checked="true" class="hz-ab-seg-item active" data-variant="1" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t1) + '</button>\n'
-      + '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="2" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t2) + '</button>\n';
-    if (opts.dual3) {
-      const t3 = opts.tab3Name || 'Tab 3';
-      segButtons += '      <button aria-checked="false" class="hz-ab-seg-item" data-variant="3" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(t3) + '</button>\n';
+    activeVariants.push(2);
+    for (let n = 3; n <= KZ_MAX_ABILITY_VARIANTS; n++) {
+      if (opts['dual' + n]) activeVariants.push(n);
+      else break;
     }
+  }
+
+  function tabNameFor(v) {
+    return (v === 1 ? opts.tab1Name : opts['tab' + v + 'Name']) || ('Tab ' + v);
+  }
+
+  let labelRow;
+  if (activeVariants.length > 1) {
+    let segButtons = '';
+    activeVariants.forEach((v, i) => {
+      const isActive = i === 0;
+      segButtons += '      <button aria-checked="' + (isActive ? 'true' : 'false') + '" class="hz-ab-seg-item' + (isActive ? ' active' : '') + '" data-variant="' + v + '" role="radio" type="button" onclick="hzAbMiniSwitch(this)">' + escHtml(tabNameFor(v)) + '</button>\n';
+    });
     labelRow = '  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 20px 0;flex-wrap:wrap;">\n'
       + '    <span style="font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:' + opts.labelColor + ';">' + escHtml(opts.label) + '</span>\n'
       + '    <div class="hz-ab-seg hz-ab-seg-mini" data-prefix="' + opts.idPrefix + '" role="radiogroup">\n'
@@ -467,13 +485,20 @@ function hzBuildAbilityRow(opts) {
       + '  </div>\n';
   }
 
+  function fieldsFor(v) {
+    if (v === 1) return { url: opts.url, name: opts.name, kategori: opts.kategori, longDesc: opts.longDesc };
+    return { url: opts['url' + v], name: opts['name' + v], kategori: opts['kategori' + v], longDesc: opts['longDesc' + v] };
+  }
+
   let body;
-  if (opts.dual) {
-    body = '  <div id="' + opts.idPrefix + '-w1" style="display:block;">\n' + contentBlock(opts.url, opts.name, opts.kategori, opts.longDesc, opts.idPrefix) + '  </div>\n'
-      + '  <div id="' + opts.idPrefix + '-w2" style="display:none;">\n' + contentBlock(opts.url2, opts.name2, opts.kategori2, opts.longDesc2, opts.idPrefix + '-v2') + '  </div>\n';
-    if (opts.dual3) {
-      body += '  <div id="' + opts.idPrefix + '-w3" style="display:none;">\n' + contentBlock(opts.url3, opts.name3, opts.kategori3, opts.longDesc3, opts.idPrefix + '-v3') + '  </div>\n';
-    }
+  if (activeVariants.length > 1) {
+    body = '';
+    activeVariants.forEach((v, i) => {
+      const f = fieldsFor(v);
+      const prefix = v === 1 ? opts.idPrefix : opts.idPrefix + '-v' + v;
+      const displayStyle = i === 0 ? 'display:block;' : 'display:none;';
+      body += '  <div id="' + opts.idPrefix + '-w' + v + '" style="' + displayStyle + '">\n' + contentBlock(f.url, f.name, f.kategori, f.longDesc, prefix) + '  </div>\n';
+    });
   } else {
     body = contentBlock(opts.url, opts.name, opts.kategori, opts.longDesc, opts.idPrefix);
   }
@@ -481,23 +506,40 @@ function hzBuildAbilityRow(opts) {
   return '<div style="' + topBorder + bottomBorder + '">\n' + labelRow + body + '</div>\n';
 }
 
+/* Ambil field opts varian N (2-7) dari sebuah blok data (pasif atau item skill).
+   defaultKat dipakai sebagai fallback kategori (BUFF utk pasif, AOE utk skill, dst). */
+function hzExtraVariantOpts(block, n, defaultKat) {
+  return {
+    ['dual' + n]: !!block['dual' + n],
+    ['url' + n]: block['url' + n] || '',
+    ['name' + n]: block['name' + n] || '',
+    ['kategori' + n]: block['kategori' + n] || defaultKat,
+    ['longDesc' + n]: block['longDesc' + n] || ''
+  };
+}
+
 /* Bangun seluruh section Abilities (Pasif selalu tampil + Skill/Ultimate di grup tersembunyi) */
 function buildAbilitiesHtml(data) {
-  const dualTab1 = (data.dualTabNames && data.dualTabNames.tab1) || 'Tab 1';
-  const dualTab2 = (data.dualTabNames && data.dualTabNames.tab2) || 'Tab 2';
-  const dualTab3 = (data.dualTabNames && data.dualTabNames.tab3) || 'Tab 3';
+  const dualTabNames = data.dualTabNames || {};
+  const tabNameOpts = {};
+  for (let n = 1; n <= KZ_MAX_ABILITY_VARIANTS; n++) {
+    tabNameOpts['tab' + n + 'Name'] = dualTabNames['tab' + n] || ('Tab ' + n);
+  }
+
   const pasif = data.abilitiesPasif || {};
 
   const pasifCol = { bg: '#e8f5e9', text: '#2e7d32' };
-  const pasifHtml = hzBuildAbilityRow({
+  let pasifOpts = Object.assign({
     label: 'Pasif', labelColor: pasifCol.text, idPrefix: 'hz-ab-pasif',
     url: pasif.url || '', name: pasif.name || '', kategori: pasif.kategori || 'BUFF',
     longDesc: pasif.longDesc || '', katBg: pasifCol.bg, katText: pasifCol.text, borderTop: false,
-    dual: !!pasif.dual, tab1Name: dualTab1, tab2Name: dualTab2,
-    url2: pasif.url2 || '', name2: pasif.name2 || '', kategori2: pasif.kategori2 || 'BUFF', longDesc2: pasif.longDesc2 || '',
-    dual3: !!pasif.dual3, tab3Name: dualTab3,
-    url3: pasif.url3 || '', name3: pasif.name3 || '', kategori3: pasif.kategori3 || 'BUFF', longDesc3: pasif.longDesc3 || ''
-  });
+    dual: !!pasif.dual,
+    url2: pasif.url2 || '', name2: pasif.name2 || '', kategori2: pasif.kategori2 || 'BUFF', longDesc2: pasif.longDesc2 || ''
+  }, tabNameOpts);
+  for (let n = 3; n <= KZ_MAX_ABILITY_VARIANTS; n++) {
+    pasifOpts = Object.assign(pasifOpts, hzExtraVariantOpts(pasif, n, 'BUFF'));
+  }
+  const pasifHtml = hzBuildAbilityRow(pasifOpts);
 
   const list = data.abilitiesList || [];
   let skillsHtml = '';
@@ -508,15 +550,18 @@ function buildAbilitiesHtml(data) {
     else if (idx === list.length - 1) { col = { bg: '#fff3e0', text: '#e65100' }; idPrefix = 'hz-ab-ult'; borderBottom = false; }
     else { col = KZ_DYN_COLORS[(idx - 2) % KZ_DYN_COLORS.length]; idPrefix = 'hz-ab-s' + (idx + 1); }
 
-    skillsHtml += hzBuildAbilityRow({
+    let itemOpts = Object.assign({
       label: item.label || ('Skill ' + (idx + 1)), labelColor: col.text, idPrefix: idPrefix,
       url: item.url || '', name: item.name || '', kategori: item.kategori || 'AOE',
       longDesc: item.longDesc || '', katBg: col.bg, katText: col.text, borderTop: borderTop, borderBottom: borderBottom,
-      dual: !!item.dual, tab1Name: dualTab1, tab2Name: dualTab2,
-      url2: item.url2 || '', name2: item.name2 || '', kategori2: item.kategori2 || 'AOE', longDesc2: item.longDesc2 || '',
-      dual3: !!item.dual3, tab3Name: dualTab3,
-      url3: item.url3 || '', name3: item.name3 || '', kategori3: item.kategori3 || 'AOE', longDesc3: item.longDesc3 || ''
-    });
+      dual: !!item.dual,
+      url2: item.url2 || '', name2: item.name2 || '', kategori2: item.kategori2 || 'AOE', longDesc2: item.longDesc2 || ''
+    }, tabNameOpts);
+    for (let n = 3; n <= KZ_MAX_ABILITY_VARIANTS; n++) {
+      itemOpts = Object.assign(itemOpts, hzExtraVariantOpts(item, n, 'AOE'));
+    }
+
+    skillsHtml += hzBuildAbilityRow(itemOpts);
   });
 
   return { pasifHtml, skillsHtml };
