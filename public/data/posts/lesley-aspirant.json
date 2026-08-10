@@ -1,0 +1,256 @@
+{
+  "namehero": "Lesley Aspirant",
+  "herolink": "Lesley",
+  "urlthumbnail": "https://i.ibb.co/qw5kCph/lesley-aspirant.webp",
+  "kategoriskin": "Aspirants",
+  "keywords": "Lesley Deadeye Spectre",
+  "datepost": "Update 10 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Lesley adalah putri angkat keluarga bangsawan Vance dan seorang penembak jitu yang bekerja dari balik bayangan. Setelah ayahnya, yang bertugas menjaga keluarga Vance, tewas dalam serangan keluarga rival, Lesley mengambil senapan panjang milik ayahnya dan melanjutkan tugas terakhirnya. Dengan air mata yang mengalir, ia menembak satu per satu para penyerang hingga tidak ada yang tersisa.\n\nSetelah kejadian itu, keluarga Vance mengangkat Lesley sebagai anak mereka. Ia kemudian dipercaya untuk menjaga Harley, pewaris tunggal keluarga Vance yang memiliki bakat sihir luar biasa namun sering membuat masalah. Bagi Lesley, Harley bukan hanya adik angkat, tetapi juga satu-satunya sosok yang mampu membuatnya tetap merasakan kehangatan setelah kehilangan ayahnya.\n\nKetika Harley pergi ke Land of Dawn setelah mengalahkan penguasa Dark Magic, Lesley memutuskan untuk mengikutinya. Dengan membawa senapan warisan keluarganya, ia menempuh perjalanan panjang hingga akhirnya menemukan Harley. Namun, Lesley menyadari bahwa adiknya telah berubah menjadi lebih dewasa setelah melewati berbagai pengalaman.\n\nLesley memilih untuk tidak mengganggu perjalanan Harley. Sebaliknya, ia terus mengawasinya dari kejauhan dan melindunginya secara diam-diam. Setiap kali monster yang terkena sihir Harley muncul, sebuah peluru hitam akan melesat dari kegelapan dan menghantam mereka dengan tepat. Perlahan, kisah tentang seorang penyihir muda yang selalu ditemani penembak jitu misterius mulai menyebar di seluruh Land of Dawn.\n\nSejak saat itu, Lesley menjadi pelindung yang tak terlihat bagi Harley. Ia tidak membutuhkan pengakuan ataupun pujian, karena selama adiknya tetap aman, berada di balik bayangan sudah lebih dari cukup. Dengan senapan warisan ayahnya di tangan, Lesley terus menjalankan tugasnya sebagai penembak jitu keluarga Vance yang selalu mengawasi dari kejauhan.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Lethal_Shot.png",
+    "name": "Lethal Shot",
+    "kategori": "Buff",
+    "longDesc": "Jika Lesley tidak menerima damage selama 5 detik, Basic Attack berikutnya mendapatkan jangkauan tambahan dan 50% Critical Chance serta memberikan 100 (+100% Total Physical Attack) True Damage (memberikan 20% damage tambahan ke minion).\nSetiap Physical Penetration tetap dan setiap 1% Physical Penetration Lesley akan dikonversi menjadi 1% Critical Damage, tapi Critical Damage dasarnya berkurang menjadi 130%.\nBasic Attack Lesley memulihkan 5 energy dan Lethal Shot memulihkan energy sebanyak dua kali lipat. Efek Lethal Shot akan langsung aktif setelah Lesley menggunakan skill.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/32/Master_of_Camouflage.png",
+      "name": "Master of Camouflage",
+      "kategori": "Camouflage/Buff",
+      "longDesc": "Lesley memasuki Mode Camouflage, memperoleh Regen Energi dua kali lipat, 40% Movement Speed tambahan, serta 85 Physical Attack tambahan.\n\nMode ini berlangsung selama 3 detik atau hingga Lesley menerima atau memberikan Damage. Lawan dapat mendeteksi posisi Lesley melalui distorsi dari lingkungan di sekeliling mereka.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Tactical_Grenade.png",
+      "name": "Tactical Grenade",
+      "kategori": "CC/Mobility",
+      "longDesc": "Lesley melemparkan granat ke arah target sambil sedikit melompat ke belakang, memberikan 150 (+50% Total Physical Attack) Physical Damage ke lawan di area dan menyebabkan Knockback ke mereka.\n\nLesley dapat menggunakan Skill pada saat Mode Ultimate Snipe untuk membatalkan Mode ini dan langsung menembakkan Fatal Bullet ke target. Serangan hanya akan diaktifkan ketika terdapat sisa Fatal Bullet yang belum ditembakkan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/95/Ultimate_Snipe.png",
+      "name": "Ultimate Snipe",
+      "kategori": "Burst",
+      "longDesc": "Pasif: Critical Chance Lesley meningkat sebesar 10%.\nAktif: Lesley mengunci serangan ke hero lawan dan menembakkan 4 Fatal Bullet secara berturut-turut, masing-masing memberikan 250 (+80% Extra Physical Attack) (+5% HP target yang hilang) Physical Damage dan memulihkan 10 energy saat mengenai lawan (Peluru bisa dihalangi oleh hero lawan lainnya).\nJika skill ini diganggu, setiap peluru yang tersisa akan mengurangi 10% cooldown skill.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/82/Hero531-icon.png",
+        "link": "https://sfile.co/v5T5RzpDTKL"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/82/Hero531-icon.png",
+        "link": "https://sfile.co/FPnqRj2zUoc"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4d/Hero532-icon.png",
+        "link": "https://sfile.co/JK8sk1r3bVB"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4d/Hero532-icon.png",
+        "link": "https://sfile.co/Aq29bpC8AH2"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/be/Hero533-icon.png",
+        "link": "https://sfile.co/C2qe2p52mAX"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/97/Hero534-icon.png",
+        "link": "https://sfile.co/cRIrlYQMb4K"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b4/Hero535-icon.png",
+        "link": "https://sfile.co/bAJa4wCHNEh"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/72/Hero536-icon.png",
+        "link": "https://sfile.co/OATROCclNeR"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/81/Hero537-icon.png",
+        "link": ""
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9e/Hero538-icon.png",
+        "link": "https://sfile.co/YIgVqQDFhSr"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b4/Hero539-icon.png",
+        "link": "https://sfile.co/oyJOVr8slo2"
+      },
+      {
+        "name": "Annual Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero105310-icon.png",
+        "link": "https://sfile.co/rXLyO82Lup6"
+      },
+      {
+        "name": "Mystic Meow",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fb/Hero105312-icon.png",
+        "link": "https://sfile.co/ou8vK07HhVQ"
+      },
+      {
+        "name": "Covenant",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero105313-icon.png",
+        "link": "https://sfile.co/HeHVOERRjXP"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
