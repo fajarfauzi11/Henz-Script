@@ -1,0 +1,251 @@
+{
+  "namehero": "Angela Aspirant",
+  "herolink": "Angela",
+  "urlthumbnail": "https://i.ibb.co/QFFSTksh/angela-aspirant.webp",
+  "kategoriskin": "Aspirants",
+  "keywords": "Angela Cyber Cherubin",
+  "datepost": "Update 10 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Angela adalah manusia buatan yang diciptakan oleh Dr. Baker, salah satu pendiri Laboratory 1718. Berbeda dari eksperimen lainnya, Angela dibuat tanpa menggunakan tubuh maupun jiwa manusia, hanya dari kerangka mekanis, benang penggerak, dan kulit sintetis. Dr. Baker percaya bahwa cinta dan harapan adalah penemuan terbesar manusia, sehingga ia menanamkan kisah-kisah penuh makna ke dalam diri Angela dan memberinya kehidupan.\n\nSejak terbangun sebagai Peace Android Prototype 1, Angela belajar memahami dunia di bawah bimbingan Dr. Baker. Ia tumbuh sebagai android yang polos dan penuh rasa ingin tahu, berusaha memenuhi harapan penciptanya. Bagi Angela, Dr. Baker bukan sekadar ilmuwan, tetapi sosok ayah yang memberinya kehidupan dan mengajarinya tentang dunia.\n\nNamun, keberadaan Angela akhirnya diketahui oleh para ilmuwan Laboratory 1718. Mereka menganggap penciptaan jiwa buatan sebagai bentuk pengkhianatan terhadap tujuan laboratorium yang berfokus pada eksperimen senjata manusia. Mereka pun mengirim Alpha dan Beta, ciptaan Dr. Baker sebelumnya, untuk mengejar sang ilmuwan dan menghancurkan rahasia temuannya.\n\nSaat para pengejar semakin mendekat, Dr. Baker memasukkan Angela ke dalam sebuah kapsul penerbangan. Ia memerintahkannya untuk mencari sahabatnya, Dr. Rooney, yang dipercaya dapat melindunginya. Angela pun terpaksa meninggalkan satu-satunya sosok yang ia kenal sebagai keluarga.\n\nNamun, kapsul tersebut terkena badai dahsyat dan jatuh di wilayah terpencil Land of Dawn. Setelah keluar dari reruntuhan, Angela memulai perjalanan sendirian untuk menemukan Dr. Rooney sekaligus menyelamatkan Dr. Baker. Dengan jiwa buatan yang diciptakan dari cinta dan harapan, sang android kecil pun memulai petualangannya di dunia yang belum pernah ia kenal.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7b/Smart_Heart.png",
+    "name": "Smart Heart",
+    "kategori": "Speed Up",
+    "longDesc": "Setiap kali Angela menggunakan Skill, Movement Speed-nya meningkat sebesar 5% selama 4 detik, hingga 20%. Teman satu tim yang dimasuki juga memperoleh Bonus Movement Speed tersebut.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/88/Love_Waves.png",
+      "name": "Love Waves",
+      "kategori": "Heal/AOE",
+      "longDesc": "Melepaskan Love Waves ke arah target, memberikan 170 (+80% Total Magic Power) Magic Damage, mengungkapkan posisi mereka secara singkat, dan menerapkan stack Lover's Mark (maksimal 5 stack). Setiap stack Lover's Mark meningkatkan 20% damage dan menyebabkan 8% slow selama 3 detik.\nLove Waves juga memulihkan 150 (+75% Total Magic Power) HP hero rekan yang terkena. Penggunaan skill ini bisa disimpan hingga 5, dan waktu pengisiannya dipengaruhi oleh Pengurangan Cooldown.\nSaat menempel pada rekan, cooldown skill ini berkurang 50%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a6/Puppet-on-a-String.png",
+      "name": "Puppet-on-a-String",
+      "kategori": "Slow/CC",
+      "longDesc": "Angela melemparkan Puppet String ke target lawan (kecuali minion), memberikan 300 (+40% Total Magic Power) Magic Damage dan menyebabkan slow secara perlahan ke lawan hingga sebesar 80%. Jika lawan masih terhubung dengan Puppet String setelah 3 detik, lawan akan terkena immobilize selama 1.5 detik dan menerima 450 (+60% Total Magic Power) Magic Damage.\n\nSetiap stack Lover's Mark meningkatkan damage akhir sebesar 20%.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a0/Heartguard.png",
+      "name": "Heartguard",
+      "kategori": "Attach/Shield",
+      "longDesc": "Angela mulai mengumpulkan kekuatan, memberikan 600 (+150% Total Magic Power) shield ke hero rekan tanpa ada batasan jarak. Setelah menempel pada rekan, shield tetap ada hingga terlepas. Setelah selesai mengumpulkan kekuatan, dia menempelkan diri ke hero rekan selama 20 detik. Selama durasi ini, dia bisa mengeluarkan skill tanpa Mana.\nGunakan skill ini lagi untuk membatalkan pengumpulan kekuatan atau melepaskan dirinya. Mode menempel akan berakhir lebih cepat jika hero rekan tereliminasi.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero551-icon.png",
+        "link": "https://sfile.co/3OaMVKtOO56"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero551-icon.png",
+        "link": "https://sfile.co/EnvMZln3Ayp"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Hero552-icon.png",
+        "link": "https://sfile.co/OMDNy61sQgO"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Hero552-icon.png",
+        "link": "https://sfile.co/4X4AxWSx6K6"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b8/Hero553-icon.png",
+        "link": "https://sfile.co/VQtnkFMbz6c"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Hero554-icon.png",
+        "link": "https://sfile.co/CMjJDxfJ32d"
+      },
+      {
+        "name": "Halloween",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d4/Hero555-icon.png",
+        "link": "https://sfile.co/cefLJnK19O9"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/35/Hero556-icon.png",
+        "link": "https://sfile.co/qA6ZDsSW3mM"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fd/Hero557-icon.png",
+        "link": "https://sfile.co/McuQCCtXs3S"
+      },
+      {
+        "name": "Sanrio",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/64/Hero558-icon.png",
+        "link": "https://sfile.co/9LJhdrOIW2C"
+      },
+      {
+        "name": "Annual Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e4/Hero105510-icon.png",
+        "link": "https://sfile.co/G7XyUyr8KmS"
+      },
+      {
+        "name": "Kishin Densetsu",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ec/Hero105511-icon.png",
+        "link": "https://sfile.co/ETD9WGKrM3k"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/65/Hero105512-icon.png",
+        "link": "https://sfile.co/hP4M2UNt3Vs"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
