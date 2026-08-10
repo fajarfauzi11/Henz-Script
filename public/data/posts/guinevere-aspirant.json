@@ -1,0 +1,251 @@
+{
+  "namehero": "Guinevere Aspirant",
+  "herolink": "Guinevere",
+  "urlthumbnail": "https://i.ibb.co/60CzxVTZ/guinevere-aspirant.webp",
+  "kategoriskin": "Aspirants",
+  "keywords": "Guinevere Daybreak Halo",
+  "datepost": "Update 10 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Guinevere adalah putri bungsu House Baroque, salah satu keluarga bangsawan ternama di Land of Dawn. Berbeda dari keluarganya yang terkenal dengan kemampuan berpedang, Guinevere justru memiliki bakat luar biasa dalam bidang sihir. Sejak kecil, ia belajar di Magic Academy dan terus mengembangkan kekuatannya.\n\nPada usia sepuluh tahun, Guinevere berhasil menggabungkan kemampuan persepsi spiritual dengan energi super dan menciptakan berbagai efek sihir baru. Ia begitu menyukai eksperimen hingga sering menjadikan kakaknya, Lancelot, sebagai sasaran percobaan. Meski sering dibuat kesal oleh tingkah adiknya, Lancelot tetap sangat menyayangi Guinevere dan selalu menjaganya.\n\nNamun, kehidupan Guinevere mulai berubah ketika House Paxley, keluarga bangsawan dengan status dan kekuatan sihir tinggi, mengajukan pernikahan dengan House Baroque. Ayah Guinevere sangat tertarik dengan hubungan tersebut karena dapat meningkatkan kedudukan keluarga mereka.\n\nGuinevere sendiri menolak keras rencana tersebut. Ia tidak ingin hidupnya ditentukan hanya demi kepentingan politik dan dijadikan alat untuk memperkuat hubungan antarkeluarga bangsawan. Di tengah tekanan tersebut, ia mulai memikirkan satu-satunya orang yang mungkin dapat membantunya.\n\nAkhirnya, Guinevere memutuskan untuk mencari kakaknya, Lancelot. Dengan bakat sihir, keberanian, dan sifatnya yang tidak mudah menyerah, ia bersiap meninggalkan kehidupan yang telah ditentukan keluarganya dan memulai perjalanan untuk menentukan takdirnya sendiri.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/21/Super_Magic.png",
+    "name": "Super Magic",
+    "kategori": "Buff/Damage",
+    "longDesc": "Guinevere memberikan 25% damage tambahan ke lawan yang terkena airborne dan memberikan (+80% Total Physical Attack) (+60% Total Magic Power) Magic Damage dengan Basic Attack-nya.\nGuinevere membentuk Super Magic setiap kali memberikan damage. Saat terisi penuh, Basic Attack selanjutnya akan mengejar lawan, memberikan 80 (+100% Total Physical Attack) (+90% Total Magic Power) Magic Damage dan memulihkan 80 + 8% dari HP-nya yang hilang.\nLawan yang terkena skill atau Basic Attack diperkuat akan menerima mark selama 5 detik. Lawan dengan 3 mark akan terkena airborne saat terkena Violet Requiem.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Energy_Wave.png",
+      "name": "Energy Wave",
+      "kategori": "Damage/Buff",
+      "longDesc": "Guinevere mengeluarkan bola energi ke arah target, memberikan 300 (+125% Total Magic Power) Magic Damage dan menyebabkan 25% Slow ke lawan selama 1.2 detik.\nMengenai lawan akan mengurangi Cooldown dari semua Skill sebanyak 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bd/Spatial_Migration.png",
+      "name": "Spatial Migration",
+      "kategori": "Mobility/CC",
+      "longDesc": "Guinevere melompat ke lokasi target, memberikan 250 (+80% Total Magic Power) Magic Damage. Menyebabkan airborne selama 1 detik ke hero lawan dan Creep yang terkena dan menerima 125 (+50% Total Magic Power) Magic Damage tambahan.\nGunakan Kembali: Guinevere berpindah ke arah target dan meninggalkan bayangannya. Jika bayangannya menerima damage dari hero, memulihkan Super Magic dan meledak setelah 1.5 detik, memberikan 100 (+30% Total Magic Power) Magic Damage ke lawan di sekitar.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/04/Violet_Requiem.png",
+      "name": "Violet Requiem",
+      "kategori": "Burst/CC",
+      "longDesc": "Guinevere menciptakan sebuah medan di sekelilingnya, menjadi kebal Crowd Control saat menyerang lawan di sekitar 11 kali selama 2 detik, memberikan total 880 (+385% Total Magic Power) Magic Damage.\nLawan yang terkena Airborne akan terkena Airborne lagi, hingga 8 kali.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Hero801-icon.png",
+        "link": "https://sfile.co/syaJzHn9DY1"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Hero801-icon.png",
+        "link": "https://sfile.co/1mjrVQ3T597"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/38/Hero802-icon.png",
+        "link": "https://sfile.co/jG3eYOg8iCf"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/38/Hero802-icon.png",
+        "link": "https://sfile.co/VI5fJZQ8VlE"
+      },
+      {
+        "name": "KOF",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c4/Hero803-icon.png",
+        "link": "https://sfile.co/8t7HMya23nK"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7d/Hero804-icon.png",
+        "link": "https://sfile.co/1bXLEAZYx5v"
+      },
+      {
+        "name": "Special Amethyst",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/72/Hero805-icon.png",
+        "link": "https://sfile.co/tmeGTvtcO91"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d6/Hero806-icon.png",
+        "link": "https://sfile.co/3WnCmbZ0I0I"
+      },
+      {
+        "name": "Special Sakura",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f1/Hero807-icon.png",
+        "link": "https://sfile.co/4GX7LpPmx6w"
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7b/Hero808-icon.png",
+        "link": "https://sfile.co/c3T6CZFfMC8"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Hero809-icon.png",
+        "link": "https://sfile.co/EUj1WVLQ8ys"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero108010-icon.png",
+        "link": "https://sfile.co/Yyxgn2U6GYh"
+      },
+      {
+        "name": "Street Fighter",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/69/Hero108013-icon.png",
+        "link": ""
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
