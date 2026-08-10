@@ -1,0 +1,256 @@
+{
+  "namehero": "Lancelot Dawning Star",
+  "herolink": "Lancelot",
+  "urlthumbnail": "https://i.ibb.co/vvm7V5rj/lancelot-dawning-star.webp",
+  "kategoriskin": "Dawning Stars",
+  "keywords": "Lancelot Swordmaster",
+  "datepost": "Update 10 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Lancelot adalah putra sulung House Baroque dan seorang pendekar pedang berbakat yang sejak kecil dikenal angkuh dan pemberontak. Ketika ayahnya memaksanya menjalani pernikahan politik demi menyelamatkan keluarga dari keterpurukan, Lancelot menolak dan meninggalkan rumah. Ia kemudian mengembara, mengikuti berbagai turnamen, dan hidup sebagai pendekar yang terkenal dengan julukan Blade of Roses.\n\nDalam pengembaraannya, Lancelot tiba di Azure Lake dan terlibat dalam perkelahian di sebuah kedai setelah mencoba menolong seorang gadis dari para pemabuk. Karena terluka parah, ia hampir kehilangan nyawanya sebelum akhirnya diselamatkan oleh Odette, sang putri dari Swan Castle. Odette merawatnya secara diam-diam hingga kondisinya pulih, dan Lancelot kemudian menyadari bahwa gadis yang ia selamatkan di kedai ternyata adalah sang putri.\n\nSelama tinggal di Swan Castle, Lancelot awalnya masih menyembunyikan identitasnya dan membanggakan berbagai kisah petualangannya kepada Odette. Namun, kepolosan dan rasa ingin tahu Odette perlahan membuatnya berubah. Untuk pertama kalinya, Lancelot merasa bersalah atas kebohongan dan kehidupan liarnya. Ia pun menyadari bahwa dirinya telah jatuh cinta kepada Odette, meski belum mampu mengungkapkan perasaannya secara langsung.\n\nSuatu hari, Lancelot mengetahui bahwa seorang bangsawan telah melamar Odette. Terkejut dan takut kehilangan sang putri, ia memutuskan untuk meninggalkan Swan Castle. Dalam sebuah surat, Lancelot berjanji akan menjelajahi berbagai negeri dan kembali suatu hari nanti sebagai seorang ksatria sejati, agar ia dapat mengungkapkan perasaannya kepada Odette dengan layak.\n\nSejak saat itu, Lancelot meninggalkan kehidupan lamanya dan memulai perjalanan besar melintasi Land of Dawn. Pendekar yang dahulu hanya mengejar ketenaran dan kesenangan kini memiliki tujuan baru: menjadi sosok yang pantas berdiri di sisi Odette. Di tengah peperangan yang mulai berkecamuk, Blade of Roses pun bersiap menulis kisah kepahlawanannya sendiri.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/42/Soul_Cutter.png",
+    "name": "Soul Cutter",
+    "kategori": "Buff",
+    "longDesc": "Setiap kali Lancelot melakukan Dash, meningkatkan 7.5% Damage-nya selama 4 detik, hingga 30%.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/35/Puncture.png",
+      "name": "Puncture",
+      "kategori": "Mobility/AOE",
+      "longDesc": "Lancelot menerjang ke arah target, memberikan 150 (+50% Total Physical Attack) Physical Damage ke lawan di jalurnya dan menerapkan Sword Mark ke lawan pertama yang tidak terkena mark. Sword Mark bertahan selama 3 detik.\n\nCooldown skill akan direset apabila Lancelot berhasil menerapkan Sword Mark pada lawan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/32/Thorned_Rose.png",
+      "name": "Thorned Rose",
+      "kategori": "AOE/Slow",
+      "longDesc": "Lancelot menyerang ke arah target 3 kali, setiap serangan memberikan 220 (+120% Extra Physical Attack) Physical Damage ke lawan yang terkena (damage akan berkurang ketika mengenai lebih dari 1 lawan). Dia tidak bisa ditargetkan selama skill ini berlangsung. Lawan di tengah area menerima 3 serangan dan terkena 20% slow selama 0.5 detik. Efek slow bisa di-stack.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Phantom_Execution.png",
+      "name": "Phantom Execution",
+      "kategori": "Burst/Mobility",
+      "longDesc": "Setelah jeda singkat, Lancelot melakukan Executioner's Strike ke arah target, memberikan 350 (+170% Total Physical Attack) Physical Damage ke lawan yang terkena. Dia menjadi Invincible saat melakukan Executioner's Strike.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/29/Hero471-icon.png",
+        "link": "https://sfile.co/enZwJpSaURt"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/29/Hero471-icon.png",
+        "link": "https://sfile.co/WxikogpcprP"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero472-icon.png",
+        "link": "https://sfile.co/A2Ax1ZztrWh"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero472-icon.png",
+        "link": "https://sfile.co/6ZffYxMScx0"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/99/Hero473-icon.png",
+        "link": "https://sfile.co/JSUoOkmfXeB"
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0d/Hero474-icon.png",
+        "link": "https://sfile.co/wZ6FrPTImNb"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/18/Hero475-icon.png",
+        "link": "https://sfile.co/sD9QQieD5hV"
+      },
+      {
+        "name": "Zodiac",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Hero476-icon.png",
+        "link": "https://sfile.co/DP2G6wdLbGv"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero477-icon.png",
+        "link": "https://sfile.co/cxglPg7GrMq"
+      },
+      {
+        "name": "Champion",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Hero479-icon.png",
+        "link": "https://sfile.co/2FX4J7fFZD9"
+      },
+      {
+        "name": "Dragon Tamer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/48/Hero104710-icon.png",
+        "link": "https://sfile.co/JK6HkcvVFxn"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/28/Hero104711-icon.png",
+        "link": "https://sfile.co/mYVApnRV0tu"
+      },
+      {
+        "name": "Kishhin Densetsu",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cd/Hero104712-icon.png",
+        "link": "https://sfile.co/RvQ5Vl84rU9"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero104713.png",
+        "link": "https://sfile.co/6jhENbvhs9A"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
