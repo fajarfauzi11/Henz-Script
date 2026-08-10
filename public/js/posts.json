@@ -1,5 +1,17 @@
 [
   {
+    "id": 90,
+    "title": "Ruby Aspirant",
+    "url": "/post/ruby-aspirant",
+    "thumb": "https://i.ibb.co/9HmQZBMx/ruby-aspirant.webp",
+    "cat": "Aspirants",
+    "hero": "Ruby",
+    "date": "10 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Ruby Mecha Maiden"
+  },
+  {
     "id": 89,
     "title": "Lesley Aspirant",
     "url": "/post/lesley-aspirant",
