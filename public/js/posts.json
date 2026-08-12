@@ -1,5 +1,17 @@
 [
   {
+    "id": 100,
+    "title": "Guinevere KOF",
+    "url": "/post/guinevere-kof",
+    "thumb": "https://i.ibb.co/6RnGHxgP/guinevere-kof.webp",
+    "cat": "KOF",
+    "hero": "Guinevere",
+    "date": "12 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Guinevere Athena Asamiya"
+  },
+  {
     "id": 99,
     "title": "Chou KOF",
     "url": "/post/chou-kof",
