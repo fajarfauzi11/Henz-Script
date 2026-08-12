@@ -1,0 +1,251 @@
+{
+  "namehero": "Valir KOF",
+  "herolink": "Valir",
+  "urlthumbnail": "https://i.ibb.co/hFpWnk5j/valir-kof.webp",
+  "kategoriskin": "KOF",
+  "keywords": "Valir Kyo Kusanagi",
+  "datepost": "Update 12 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Valir berasal dari Agelta dan memiliki bakat luar biasa dalam mengendalikan energi api. Saat belajar di Magic Academy di bawah bimbingan Gord, ia menggabungkan sihir api dari kampung halamannya dengan arcane magic. Gord menganggap tindakan tersebut sebagai penghinaan terhadap arcane, hingga pertarungan antara guru dan murid membuat Valir meninggalkan akademi.\n\nValir kemudian menetap di Inferno of Fire selama lima tahun untuk mengasah kekuatannya, sambil tetap memegang janji sepuluh tahun bersama sahabatnya, Vale. Ia berusaha menyatukan arcane flame magic dengan api dari gunung berapi tersebut agar dapat menjadi Son of Flames, meski tubuhnya harus menanggung panas dan tekanan yang luar biasa.\n\nDi tengah proses tersebut, Vale akhirnya datang dan keduanya terlibat pertarungan antara api dan angin. Mereka tidak benar-benar ingin saling membunuh, tetapi kekuatan mereka justru membuat gunung berapi semakin tidak stabil. Pertarungan itu kemudian dihentikan oleh kedatangan Gord yang ingin menghapus kekuatan arcane Valir karena menganggapnya telah menyimpang.\n\nVale berusaha melindungi Valir dari Gord, tetapi Valir menolak belas kasihan tersebut. Terdesak oleh konflik antara gurunya, sahabatnya, dan masa lalu keluarganya, Valir akhirnya berhasil menyatukan api arcane dengan Inferno of Fire. Kekuatan tersebut mengubah tubuhnya dan membuat matanya menyala seperti api, sekaligus menjadikannya jauh lebih kuat.\n\nPertarungan Valir, Vale, dan Gord semakin memperparah kondisi gunung hingga akhirnya terjadi keruntuhan besar. Valir menghilang dan tidak ditemukan, tetapi Vale yakin ia masih hidup dan bahwa janji sepuluh tahun mereka belum berakhir. Namun, ia menyadari bahwa ketika mereka bertemu lagi lima tahun kemudian, hubungan mereka mungkin tidak lagi sebagai saudara dan sahabat, melainkan sebagai dua kekuatan yang harus bertarung demi hidup mereka.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Ashing.png",
+    "name": "Ashing",
+    "kategori": "CC/Damage",
+    "longDesc": "Skill Valir menerapkan 1 stack Ablaze ke lawan yang terkena, memberikan Magic Damage sebesar 1 (+0.2% Total Magic Power)% dari Max HP lawan setiap detik selama 3 detik.\n\nPada 3 stack, api meledak, memberikan Magic Damage sebesar 5 (+1% Total Magic Power)% dari Max HP target dan menyebabkan stun selama 1 detik (satu target hanya bisa terkena stun oleh skill Valir setiap 7 detik).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5f/Burst_Fireball.png",
+      "name": "Burst Fireball",
+      "kategori": "AOE/Slow",
+      "longDesc": "Menembakkan bola api yang meledak setelah mengenai target pertama, memberikan 235 (+80% Total Magic Power) Magic Damage dan menyebabkan 30% slow selama 1 detik. Sisa api di tanah akan meledak setelah 1 detik, memberikan 118 (+40% Total Magic Power) Magic Damage.\n\nMengisi ulang 1 bola api setiap 9 detik (hingga 2 jumlah penggunaan). Mengenai hero lawan atau creep legend dengan skill ini akan segera memulihkan 1 jumlah penggunaan, sementara mengenai minion akan memulihkan 4 detik waktu pengisian ulang.\n\nVengeance Flame: Meningkatkan 30% jangkauan serangan Burst Fireball.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7f/Searing_Torrent.png",
+      "name": "Searing Torrent",
+      "kategori": "CC/AOE",
+      "longDesc": "Valir mengeluarkan semburan api ke arah target, memberikan 200 (+60% Total Magic Power) Magic Damage dan menyebabkan knockback hingga ke ujung jalurnya.\n\nVengeance Flame: Semburan api membentuk dinding api di ujung jalurnya yang berlangsung selama 4 detik, memberikan 100 (+30% Total Magic Power) Magic Damage ke lawan di sekitar setiap 1 detik.\n\nLawan yang terkena semburan atau dinding api akan terkena 25% slow selama 1 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Vengeance_Flame.png",
+      "name": "Vengeance Flame",
+      "kategori": "Remove CC/Buff",
+      "longDesc": "Valir menghapus semua debuff pada dirinya dan mendapatkan 40% Movement Speed yang berkurang seiring waktu selama 3 detik. Sementara itu, dia memanggil 4 Vengeance Flames yang memperkuat Burst Fireball dan Searing Torrent selama 9 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero571-icon.png",
+        "link": "https://sfile.co/ahATOlyAsq6"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero571-icon.png",
+        "link": "https://sfile.co/ounPGTThqr3"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dc/Hero572-icon.png",
+        "link": "https://sfile.co/KI0x0WdxfON"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dc/Hero572-icon.png",
+        "link": "https://sfile.co/CexecRU7DF5"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/30/Hero573-icon.png",
+        "link": "https://sfile.co/woFiNalJdAb"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/93/Hero574-icon.png",
+        "link": "https://sfile.co/f5XTz53b89V"
+      },
+      {
+        "name": "Dragon Tamer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/16/Hero575-icon.png",
+        "link": "https://sfile.co/Z9i13icfaws"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero576-icon.png",
+        "link": "https://sfile.co/hvLX3IJf1La"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/50/Hero577-icon.png",
+        "link": "https://sfile.co/37iHcqUkkMY"
+      },
+      {
+        "name": "Phoenix Ikki",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3e/Hero578-icon.png",
+        "link": "https://sfile.co/5YeVfkJji0R"
+      },
+      {
+        "name": "Leo Ikki",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6a/Hero579-icon.png",
+        "link": "https://sfile.co/kfmSTblyqg2"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2a/Hero105710-icon.png",
+        "link": "https://sfile.co/GFlyPsp019t"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/42/Hero105712-icon.png",
+        "link": "https://sfile.co/U629hhBUPqA"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
