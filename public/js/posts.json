@@ -1,5 +1,17 @@
 [
   {
+    "id": 102,
+    "title": "Valir KOF",
+    "url": "/post/valir-kof",
+    "thumb": "https://i.ibb.co/hFpWnk5j/valir-kof.webp",
+    "cat": "KOF",
+    "hero": "Valir",
+    "date": "12 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Valir Kyo Kusanagi"
+  },
+  {
     "id": 101,
     "title": "Dyrroth KOF",
     "url": "/post/dyrroth-kof",
