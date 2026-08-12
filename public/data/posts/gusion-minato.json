@@ -1,0 +1,256 @@
+{
+  "namehero": "Gusion Minato",
+  "herolink": "Gusion",
+  "urlthumbnail": "https://i.ibb.co/Dxj1dt7/gusion-minato.webp",
+  "kategoriskin": "NARUTO",
+  "keywords": "Gusion Minato Namikaze",
+  "datepost": "Update 13 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Gusion lahir di House Paxley, keluarga penyihir paling berpengaruh di Moniyan Empire yang telah menjaga wilayah selatan selama beberapa generasi. Berbeda dengan anggota keluarganya yang menguasai sihir, Gusion justru lebih berbakat menggunakan belati. Sejak kecil ia menunjukkan kemampuan luar biasa dalam mengendalikan senjata, bahkan sering membuat para pengasuh dan gurunya kewalahan dengan kenakalannya.\n\nPara tetua keluarga memaksanya meninggalkan belati dan fokus mempelajari sihir. Meski memiliki bakat besar dalam sihir cahaya, Gusion membenci aturan yang kaku dan hafalan mantra yang rumit. Ia lebih suka menggabungkan kekuatan sihir dengan teknik bertarung menggunakan belati, menciptakan gaya bertarung yang belum pernah ada sebelumnya. Namun, cara itu dianggap memalukan oleh keluarganya.\n\nSatu-satunya orang yang selalu dekat dengannya adalah kakaknya, Aamon. Namun setelah menjadi kepala keluarga, Aamon mulai mengutamakan tradisi House Paxley. Ia mencoba membujuk Gusion untuk mengikuti jalan keluarga dan menyembunyikan keinginannya demi menjaga kehormatan keluarga. Gusion kecewa karena merasa kakaknya tidak lagi memahami dirinya.\n\nPada upacara kedewasaannya, Gusion mengejutkan semua orang dengan mengalahkan para penyihir muda menggunakan perpaduan sihir dan belati. Ketika para tetua menganggap tindakannya sebagai bentuk pemberontakan dan hendak menghukumnya, Aamon mengambil keputusan yang tidak terduga. Demi menyelamatkan adiknya, ia mengumumkan bahwa Gusion diusir dari House Paxley karena telah melanggar aturan keluarga.\n\nTanpa menoleh ke belakang, Gusion meninggalkan keluarganya untuk mengejar jalan yang ia pilih sendiri. Ia yakin bahwa suatu hari nanti dunia akan mengakui kemampuannya sebagai petarung yang memadukan sihir dan belati. Sementara itu, Aamon hanya bisa memandang kepergian adiknya dan berkata dalam hati bahwa mengusir Gusion adalah satu-satunya cara untuk memberinya kebebasan yang selama ini ia inginkan.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Dagger_Specialist.png",
+    "name": "Dagger Specialist",
+    "kategori": "Buff/Heal",
+    "longDesc": "Setiap penggunaan Skill akan menambahkan kekuatan ke belati milik Gusion (dapat di-Stack hingga 4 kali). Setiap Stack memperkuat Basic Attack berikutnya untuk memberikan Damage tambahan setara dengan 3% Max HP target, dan memulihkan 50 (+25% Total Magic Power) HP untuk dirinya sendiri.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Sword_Spike.png",
+      "name": "Sword Spike",
+      "kategori": "Damage/Mobility",
+      "longDesc": "Gusion melemparkan belati ke arah target, memberikan 200 (+50% Total Magic Power) Magic Damage dan meninggalkan Mark pada lawan pertama yang terkena.\n\nGunakan Kembali: Gusion bergerak ke belakang lawan yang terkena Mark, memberikan 200 (+100% Total Magic Power) Magic Damage ke mereka. Skill ini tidak dapat dibatalkan saat Gusion bergerak ke belakang lawan yang terkena Mark.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c8/Shadowblade_Slaughter.png",
+      "name": "Shadowblade Slaughter",
+      "kategori": "AOE/Slow",
+      "longDesc": "Gusion melemparkan sekumpulan belati ke arah target, setiap belati memberikan 100 (+40% Total Magic Power) Magic Damage dan menyebabkan 6% Slow ke lawan yang terkena selama 2 detik (efek Slow dari setiap belati dapat di-Stack, hingga 30%).\n\nGunakan Kembali: Gusion memanggil kembali semua belatinya, setiap belati memberikan 65 (+40% Total Magic Power) Magic Damage ke lawan di jalurnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/52/Incandescence.png",
+      "name": "Incandescence",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Gusion berpindah ke lokasi target, mereset Cooldown Sword Spike dan Shadowblade Slaughter. Jika Shadowblade Slaughter digunakan sekali sebelum Cooldown-nya direset, Gusion dapat melemparkan lima belati lagi pada penggunaan Shadowblade Slaughter berikutnya, dan akan memanggil kembali total sepuluh belati.\n\nGunakan Kembali: Gusion berlari ke arah yang ditentukan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Hero561-icon.png",
+        "link": "https://sfile.co/h6YYtaZTH6M"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Hero561-icon.png",
+        "link": "https://sfile.co/Seta5hjEQt7"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero562-icon.png",
+        "link": "https://sfile.co/CKNRSfm2vDL"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero562-icon.png",
+        "link": "https://sfile.co/Dn03FvJXrAW"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/94/Hero563-icon.png",
+        "link": "https://sfile.co/Y2lLLvuzUFk"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/64/Hero564-icon.png",
+        "link": "https://sfile.co/NMPbgD5rgcU"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/df/Hero565-icon.png",
+        "link": "https://sfile.co/6CnG1YFVjBm"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0d/Emperor_Scorpion_Icon.png",
+        "link": "https://sfile.co/cw02CcpQLzr"
+      },
+      {
+        "name": "KOF",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero567-icon.png",
+        "link": "https://sfile.co/v6oO4W5oM8g"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e3/Hero568-icon.png",
+        "link": "https://sfile.co/97ADL5IaCfI"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Hero569-icon.png",
+        "link": "https://sfile.co/sgGyflemIqc"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero105610-icon.png",
+        "link": "https://sfile.co/wLBtwnum5ii"
+      },
+      {
+        "name": "11.11",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/90/Hero105611-icon.png",
+        "link": "https://sfile.co/ZgVQdhoD2lO"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4c/Hero105613-icon.png",
+        "link": "https://sfile.co/Qm3eVWipUKm"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
