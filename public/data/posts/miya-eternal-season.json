@@ -1,0 +1,261 @@
+{
+  "namehero": "Miya Eternal Season",
+  "herolink": "Miya",
+  "urlthumbnail": "https://i.ibb.co/GvpQwHXm/miya-eternal-season.webp",
+  "kategoriskin": "Eternal Seasons",
+  "keywords": "Miya Arrow of Spring",
+  "datepost": "Update 15 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Miya adalah seorang Moon Elf yang lahir di akhir Era of Strife dan menyaksikan penderitaan bangsanya akibat perang melawan Abyss. Setelah Moon Goddess menciptakan Lunar Aegis yang melindungi Azrya Woodlands, para Moon Elf akhirnya dapat hidup dengan damai. Miya kemudian menjadi Moon Priestess dan menjaga hutan bersama saudaranya, Estes, yang terus mengajarkan kepadanya arti perdamaian, kebaikan, dan kemurnian.\n\nKetika Estes tertidur untuk menghemat energi Lunar Aegis, Miya mengambil alih tanggung jawab melindungi Moonlit Forest. Ia menjadi prajurit sekaligus harapan bagi bangsanya, berkali-kali mengusir pasukan Orc dan iblis yang mencoba menembus perlindungan hutan. Namun, Miya selalu menghindari perang besar karena percaya bahwa perdamaian adalah keinginan Estes dan tidak ingin bangsanya kembali mengalami kengerian perang.\n\nSeiring waktu, serangan Abyss semakin sering terjadi dan Miya mulai menyadari bahwa hanya bertahan di dalam hutan tidak akan menghentikan ancaman tersebut. Meski begitu, ia tetap ragu untuk membawa bangsanya berperang. Baginya, memilih perang berarti mengkhianati pesan Estes yang selama ini menjadi pedomannya.\n\nKeraguan itu akhirnya berakhir ketika pasukan Orc menyerang Moonlit Forest dengan kekuatan yang jauh lebih brutal. Lunar Aegis ditembus, hutan terbakar, dan para Moon Elf terpaksa melarikan diri dari rumah mereka. Miya memohon jawaban kepada Estes melalui Tree of Life, tetapi tidak mendapat respons. Saat melihat tanah suci mereka hampir hancur, Miya akhirnya memahami arti perang yang sebenarnya: ketika sebuah bangsa dipaksa bertempur demi mempertahankan rumah dan kelangsungan hidupnya.\n\nMiya kemudian mengajak bangsanya untuk berdiri dan mempertahankan Moonlit Forest. Ratusan Moon Elf menjawab panggilannya, sementara Tree of Life menggunakan energinya untuk memadamkan api dan memperkuat para pejuang. Bersama-sama, mereka melancarkan serangan balik dan berhasil mengusir pasukan Abyss dari hutan. Miya akhirnya memahami pesan Estes: perdamaian memang harus diperjuangkan, tetapi ketika perang sudah datang ke depan pintu mereka, ia harus berani berdiri dan melindungi rumah serta rakyatnya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d8/Moon_Blessing.png",
+    "name": "Moon Blessing",
+    "kategori": "Buff",
+    "longDesc": "Setiap kali Basic Attack Miya mengenai target, dia memperoleh 5% Attack Speed selama 4 detik. Dapat di-Stack hingga 5 kali.\n\nSetelah Stack penuh, Miya memanggil Moonlight Shadow di setiap Basic Attack yang memberikan 30 (+25% Total Physical Attack) Physical Damage dan mewarisi sebagian Efek Basic Attack.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0e/Moon_Arrow.png",
+      "name": "Moon Arrow",
+      "kategori": "Buff/AOE",
+      "longDesc": "Miya menembakkan dua anak panah tambahan di setiap Basic Attack, memberikan 10 (+100% Total Physical Attack) Physical Damage ke target dan 30% Damage ke target di sekitar. Efek ini berlangsung selama 4 detik. Setiap anak panah tambahan mewarisi sebagian Efek Basic Attack.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Arrow_of_Eclipse.png",
+      "name": "Arrow of Eclipse",
+      "kategori": "CC/AOE",
+      "longDesc": "Miya menembakkan anak panah yang diperkuat ke area yang ditentukan, memberikan 270 (+45% Total Physical Attack) Physical Damage dan menyebabkan efek Immobilize kepada lawan di area selama 1.2 detik. Kemudian anak panah terbagi menjadi 6 anak panah kecil yang menyebar, setiap anak panah memberikan 40 (+20% Total Physical Attack) Physical Damage kepada lawan pertama yang terkena Hit dan menyebabkan efek Slow kepada mereka sebesar 30% selama 2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ec/Hidden_Moonlight.png",
+      "name": "Hidden Moonlight",
+      "kategori": "Conceal/Remove CC",
+      "longDesc": "Miya menghapus semua Debuff pada dirinya dan memasuki Mode Conceal, memperoleh 65% Movement Speed tambahan. Mode ini berlangsung selama 2 detik atau hingga dia melakukan serangan.\n\nMiya memperoleh Stack penuh dari Moon Blessing saat Mode Conceal berakhir.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Hero011-icon.png",
+        "link": "https://sfile.co/NFGLVbYRhaa"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/8c/Hero011-icon.png",
+        "link": "https://sfile.co/Cal8S3vz5hO"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9e/Hero012-icon.png",
+        "link": "https://sfile.co/05T0YkRtgTu"
+      },
+      {
+        "name": "Christmas",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero013-icon.png",
+        "link": "https://sfile.co/hYp8buu0rbx"
+      },
+      {
+        "name": "Old Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero014-icon.png",
+        "link": "https://sfile.co/ElSBdmeMhre"
+      },
+      {
+        "name": "Limited",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/65/Hero015-icon.png",
+        "link": "https://sfile.co/lrXYFwoTQIH"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/43/Hero016-icon.png",
+        "link": "https://sfile.co/oK7sPCcMKI9"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/17/Hero017-icon.png",
+        "link": "https://sfile.co/fpdTQy8s0co"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/43/Hero018-icon.png",
+        "link": "https://sfile.co/f5Mp8ije4Gl"
+      },
+      {
+        "name": "Jungle Ranger",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Hero019-icon.png",
+        "link": "https://sfile.co/zU2OCoZswSs"
+      },
+      {
+        "name": "Jungle Ranger + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b3/Hero019-icon.png",
+        "link": "https://sfile.co/SIw0pSCMD10"
+      },
+      {
+        "name": "Anniversary",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/6f/Hero100110-icon.png",
+        "link": "https://sfile.co/WlzZKUqq6ql"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Hero100111-icon.png",
+        "link": "https://sfile.co/D90gukASB6x"
+      },
+      {
+        "name": "Atomic Pop",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e8/Hero100112-icon.png",
+        "link": "https://sfile.co/Bv8eZNaY3S7"
+      },
+      {
+        "name": "New Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero100114-icon.png",
+        "link": "https://sfile.co/0xT3DtkTTh1"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
