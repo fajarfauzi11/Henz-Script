@@ -1,5 +1,17 @@
 [
   {
+    "id": 123,
+    "title": "Nolan Nexus Sea",
+    "url": "/post/nolan-nexus-sea",
+    "thumb": "https://i.ibb.co/ynbm7xqk/nolan-nexus-sea.webp",
+    "cat": "Nexus Sea",
+    "hero": "Nolan",
+    "date": "17 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Nolan The Navigator, Nolan 11.11"
+  },
+  {
     "id": 122,
     "title": "Bane Epic Soul Defiler",
     "url": "/post/bane-epic-soul-defiler",
