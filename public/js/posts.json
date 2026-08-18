@@ -1,5 +1,17 @@
 [
   {
+    "id": 124,
+    "title": "Granger Collector",
+    "url": "/post/granger-collector",
+    "thumb": "https://i.ibb.co/zTq3k711/granger-collector.webp",
+    "cat": "Collector",
+    "hero": "Granger",
+    "date": "18 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Granger Agent Z"
+  },
+  {
     "id": 123,
     "title": "Nolan Nexus Sea",
     "url": "/post/nolan-nexus-sea",
