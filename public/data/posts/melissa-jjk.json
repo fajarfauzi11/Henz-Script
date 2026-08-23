@@ -1,0 +1,257 @@
+{
+  "namehero": "Melissa JJK",
+  "herolink": "Melissa",
+  "urlthumbnail": "https://i.ibb.co/xSKGN1x8/melissa-jjk.webp",
+  "kategoriskin": "Jujutsu Kaisen",
+  "keywords": "Melissa Nobara Kugisaki",
+  "datepost": "Update 23 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Melissa adalah anak tidak sah dari seorang bangsawan yang tumbuh bersama ibunya di Lumina City. Mereka hidup sederhana dengan menjalankan toko jahit kecil, dan meski miskin, sang ibu selalu berusaha memberikan kebahagiaan untuk Melissa. Salah satu kenangan paling berharga bagi Melissa adalah boneka kain buatan ibunya yang selalu ia anggap sebagai pengingat akan kasih sayang sang ibu.\n\nSetelah ibunya meninggal, Melissa dibawa oleh ayahnya ke keluarga bangsawan dan mengetahui bahwa dirinya adalah bagian dari keluarga Paxley. Namun, sebagai anak tidak sah, ia tidak pernah benar-benar diterima. Saudari tirinya bahkan sering menyiksanya dan suatu hari merobek boneka kesayangannya. Dari kejadian itu, Melissa secara tidak sengaja menemukan bahwa tusukan pada boneka tersebut dapat memberikan efek kepada saudari tirinya.\n\nMelissa kemudian menggunakan kemampuan tersebut untuk membalas perlakuan saudari tirinya. Setelah kejadian di pesta kedewasaan sang saudari, Melissa melarikan diri dari rumah ayahnya dan kembali ke jalanan Lumina City. Pada suatu malam, ia bermimpi berbicara dengan boneka miliknya menggunakan suara sang ibu. Saat terbangun sendirian, kekuatan sihir gelap yang diwarisi dari ibunya akhirnya muncul dalam dirinya.\n\nSetelah mendapatkan kekuatannya, Melissa membuka kembali sebuah toko jahit kecil yang dibuat menyerupai toko milik ibunya. Namun, toko tersebut bukan sekadar tempat menjahit. Dengan jarum terkutuk dan kecerdikannya, Melissa membantu orang-orang menyelesaikan berbagai masalah dengan cara-cara yang tidak biasa, bahkan sering kali membuat orang yang menjadi sasarannya menyesal telah berurusan dengannya.\n\nMeski baru berusia 16 tahun, reputasi Melissa sebagai pemecah masalah mulai menyebar hingga ke kalangan bangsawan Lumina City. Di balik sikapnya yang sinis dan sifatnya yang suka membuat masalah, Melissa sebenarnya masih membawa kenangan tentang ibunya dan boneka kesayangannya. Kini, siapa pun yang memiliki masalah sulit di Lumina City dapat mencari Melissa's Tailor dan meminta bantuan sang gadis dengan jarum terkutuk.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/86/Doll_Buster.png",
+    "name": "Doll Buster",
+    "kategori": "Buff",
+    "longDesc": "\"Toko penjahitku itu nomor satu dalam hal membenahi dan 'memperbaiki' boneka. Aku benar kan, Muddles?\"\n\n(Melissa memberikan 125% Damage ke Minion, Creep, dan Unit yang Dipanggil).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Falling%21.png",
+      "name": "Falling!",
+      "kategori": "Mobility/Buff",
+      "longDesc": "\"Lihat aku meluncur ke depan dan meningkatkan Attack Speed selama 3 detik— Ah, membosankan sekali ....\"\n\n\"Muddles, ke arah sana!\"\n\"Cuddles, kemari!\"",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/41/Eyes_on_You%21.png",
+      "name": "Eyes on You!",
+      "kategori": "Debuff/AOE",
+      "longDesc": "Begini rencananya: Lempar Muddles untuk menahan para penjahat, lalu ... aku akan muncul!\n\"Aku menyerang para penjahat, sementara Giggles menyerang Muddles untuk menghukum mereka! Hee, fantastis!\"\n\n(Muddles memberikan 175 (+50% Total Physical Attack) Physical Damage pada serangan pertama dan menghubungkan lawan di sekitar hingga selama 6 detik. Lawan yang terhubung akan terkena 60% slow yang akan berkurang dalam 1.5 detik dan bisa melepas hubungannya dengan bergerak keluar dari jangkauannya. Muddles akan kembali ke Melissa lebih awal saat tidak ada lawan di sekitarnya dan akan langsung kembali apabila dia berada terlalu jauh. Ketika Muddles berada di medan tempur, kamu bisa mengetuk tombol Serang Minion untuk langsung menyerang Muddles, meskipun tidak bisa mengaktifkan damage serangan ganda. Giggles hanya mengenai Muddles saat Melissa memiliki target untuk Basic Attack miliknya.)",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e4/Go_Away%21.png",
+      "name": "Go Away!",
+      "kategori": "Summon/Buff",
+      "longDesc": "\"Cuddles, lindungi aku! Selama 4 detik, jangan biarkan orang jahat mendekat. Kecuali aku bilang sebaliknya!\"\n\n(Saat diaktifkan, mendapatkan 300 (+200% Extra Physical Attack) shield dan menyebabkan knockback ke lawan di area, memberikan 500 (+100% Total Magic Power) Magic Damage. Lawan yang mencoba memasuki area akan terkena knockback, menerima 50 (+10% Total Magic Power) Magic Damage dan terkena slow singkat. Skill pergerakan akan digagalkan kecuali target memiliki efek Kebal Crowd Control.\nArea ini akan bergerak bersama Melissa sekali, ketika dia akan keluar dari batas area.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": true,
+    "tab1Name": "Tanpa Vignate",
+    "tab2Name": "Dengan Vignate",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero1141-icon.png",
+        "link": "https://sfile.co/JMpoAPS2Ojx"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero1141-icon.png",
+        "link": "https://sfile.co/fUPyt33H2qN"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero1142-icon.png",
+        "link": "https://sfile.co/nBYAGLygoku"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero1142-icon.png",
+        "link": "https://sfile.co/kC282cAQsJa"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero1144-icon.png",
+        "link": "https://sfile.co/APOQbGN6cLo"
+      },
+      {
+        "name": "SPARKLE",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero1145-icon.png",
+        "link": "https://sfile.co/cZUkqVBXVij"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/81/Hero1146-icon.png",
+        "link": "https://sfile.co/GPhsX0G0gxf"
+      }
+    ],
+    "rowsTab2": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero1141-icon.png",
+        "link": "https://sfile.co/ZLiD4Flnnu4"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Hero1141-icon.png",
+        "link": "https://sfile.co/VRN411CwSpC"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero1142-icon.png",
+        "link": "https://sfile.co/mKspRxyYe2r"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f6/Hero1142-icon.png",
+        "link": "https://sfile.co/jqRjXZmLbfT"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/60/Hero1144-icon.png",
+        "link": "https://sfile.co/wpkN0ahtKSV"
+      },
+      {
+        "name": "SPARKLE",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero1145-icon.png",
+        "link": "https://sfile.co/Iuk8ZqUiaxN"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/81/Hero1146-icon.png",
+        "link": "https://sfile.co/HfcEIDKSUvf"
+      }
+    ]
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab Vignate?",
+    "desc": "Vignate adalah efek yang muncul di pinggir layar setelah mengeluarkan skill tertentu, biasanya ultimate.",
+    "img": ""
+  }
+}
