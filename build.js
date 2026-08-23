@@ -19,8 +19,22 @@ const CACHE_BUST = Date.now();
 function injectCacheBust(html) {
   return html
     .replace(/(href="\/css\/style\.css)(")/g, `$1?v=${CACHE_BUST}$2`)
-    .replace(/(src="\/js\/main\.js)(")/g, `$1?v=${CACHE_BUST}$2`)
-    .replace(/(src="\/js\/card-template\.js)(")/g, `$1?v=${CACHE_BUST}$2`);
+    .replace(/(src="\/js\/app\.js)(")/g, `$1?v=${CACHE_BUST}$2`);
+}
+/* Gabungan browser bundle: card-template.js (harus lebih dulu, karena main.js
+   memakai window.hzCard yang dibentuk file ini) + main.js, ditulis ulang tiap
+   build ke dist/js/app.js supaya browser cuma perlu 1 request JS, bukan 2.
+   File sumber public/js/card-template.js & public/js/main.js TETAP ada apa
+   adanya (card-template.js masih dipakai build.js sendiri lewat require() di
+   bawah), cuma browser tidak lagi diarahkan ke keduanya secara terpisah. */
+function buildAppBundle() {
+  const cardTemplateSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'card-template.js'), 'utf8');
+  const mainSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'main.js'), 'utf8');
+  const bundle = cardTemplateSrc + '\n' + mainSrc;
+  const jsOutDir = path.join(OUT_DIR, 'js');
+  fs.mkdirSync(jsOutDir, { recursive: true });
+  fs.writeFileSync(path.join(jsOutDir, 'app.js'), bundle, 'utf8');
+  console.log('built: js/app.js (gabungan card-template.js + main.js, ' + bundle.length + ' bytes)');
 }
 /* Batas card yang langsung tampil di detail hero & kategori skin sebelum "Lihat Lebih Banyak" */
 const CP_LOADMORE_LIMIT = 20;
@@ -107,6 +121,7 @@ function copyRecursive(srcDir, outDir) {
 console.log('Building site...');
 if (fs.existsSync(OUT_DIR)) fs.rmSync(OUT_DIR, { recursive: true, force: true });
 copyRecursive(SRC_DIR, OUT_DIR);
+buildAppBundle();
 
 /* Halaman post itu file statis manual (bukan template), jadi canonical+OG-nya
    disuntik otomatis di sini dengan mencocokkan <title> ke posts.json.

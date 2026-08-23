@@ -1,11 +1,13 @@
 /* card-template.js — Satu-satunya sumber desain "hz-card" (script card).
    Dipakai di 2 environment:
-   - Browser: dimuat via <script src="/js/card-template.js"> (lihat partials/footer.html),
-     lalu main.js akses lewat window.hzCard.
+   - Browser: TIDAK lagi dimuat lewat <script> terpisah. Isi file ini digabung
+     otomatis oleh build.js (fungsi buildAppBundle) ke dalam dist/js/app.js,
+     bareng main.js, supaya browser cuma 1x request JS. main.js tetap akses
+     lewat window.hzCard seperti biasa, cuma sumbernya sekarang 1 file gabungan.
    - Build-time (Node): di-require oleh build.js buat generate halaman
-     kategori & hero detail secara statis.
+     kategori & hero detail secara statis. Bagian ini TIDAK berubah.
    Ubah desain card di sini -> otomatis nyebar ke beranda, search, kategori, dan hero detail
-   begitu build.js dijalankan ulang.
+   begitu build.js dijalankan ulang (dan otomatis ikut ke app.js juga).
 */
 (function(global){
   var MONTHS_SHORT={'Januari':'Jan','Februari':'Feb','Maret':'Mar','April':'Apr','Mei':'Mei','Juni':'Jun','Juli':'Jul','Agustus':'Agu','September':'Sep','Oktober':'Okt','November':'Nov','Desember':'Des'};
