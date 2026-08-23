@@ -147,7 +147,7 @@
   "tooltipLogo": {
     "title": "Apa itu Logo?",
     "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
-    "img": "/img/tooltip-logo.webp"
+    "img": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/tooltip-logo.webp"
   },
   "tooltipDlTab": {
     "title": "Apa itu Tab 1 & Tab 2?",
