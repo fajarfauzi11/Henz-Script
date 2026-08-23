@@ -139,7 +139,7 @@ function injectPostSeoTags() {
     }
 
     const canonicalUrl = absoluteUrl(post.url);
-    const ogImage = post.thumb ? absoluteUrl(post.thumb) : absoluteUrl('/favicon.png');
+    const ogImage = post.thumb ? absoluteUrl(post.thumb) : 'https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/favicon.png';
     const ogDesc = 'Download script skin ' + title + ' terbaru dari Henz MLBB, mudah dipasang dan selalu update.';
 
     const tags = '<link rel="canonical" href="' + canonicalUrl + '"/>\n'
