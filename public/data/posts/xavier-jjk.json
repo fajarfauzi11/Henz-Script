@@ -1,0 +1,257 @@
+{
+  "namehero": "Xavier JJK",
+  "herolink": "Xavier",
+  "urlthumbnail": "https://i.ibb.co/232Yyrnw/xavier-jjk.webp",
+  "kategoriskin": "Jujutsu Kaisen",
+  "keywords": "Xavier Gojo Satoru",
+  "datepost": "Update 23 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Xavier adalah anggota Knights of Light yang dikenal sebagai Arbiter of Light termuda. Lahir dari keluarga pedagang di Lumina City dan memiliki darah Light Elf dari ibunya, ia memiliki kecerdasan luar biasa serta kemampuan Mystic Magic. Setelah bergabung dengan Monastery of Light, bakatnya berkembang pesat hingga ia direkrut ke Knights of Light dan mendapat banyak penghargaan atas jasanya.\n\nSalah satu misi terbesar Xavier adalah menumpas Free Smiths' Guild yang dianggap sebagai kelompok sesat. Namun, setelah berhasil menembus benteng mereka, Xavier menemukan bahwa tempat itu dipenuhi wanita, anak-anak, dan orang tua. Ia kemudian mengetahui bahwa misi tersebut sebenarnya bertujuan merebut rahasia para pandai besi, sementara pasukan Ravens melakukan pembantaian terhadap para penghuni benteng. Menyadari kebusukan di balik perintah tersebut, Xavier menghentikan Ravens dan menyelamatkan seorang anak bernama Julian.\n\nTindakannya membuat Xavier dianggap berpihak kepada para heretik dan dikirim ke perbatasan untuk menjalankan misi melawan Abyss. Selama sepuluh tahun, ia terus dihantui oleh kejadian di benteng tersebut hingga kehilangan semangat terhadap tugasnya. Setelah dipanggil kembali untuk menjaga Lumina City, Xavier mulai melihat lebih jelas ketidakadilan dan propaganda yang dilakukan Church, membuat keyakinannya terhadap institusi tersebut semakin goyah.\n\nMeski masih terikat oleh sumpahnya untuk melayani Light, Xavier terus mengalami konflik antara kewajiban dan hati nuraninya. Ia menjalankan tugas sekadarnya sambil menunggu kesempatan untuk menentukan jalan hidupnya sendiri. Hingga suatu hari, ia diperintahkan untuk memburu dua orang yang dianggap heretik, Yin dan Melissa, yang sedang dikejar oleh para demon.\n\nKetika melihat Yin terluka karena melindungi Melissa, Xavier teringat pada ibu yang pernah ia lihat melindungi anaknya di benteng sepuluh tahun sebelumnya. Ia sadar bahwa kali ini dirinya memiliki pilihan untuk menentukan apa yang benar, bukan sekadar mengikuti perintah. Untuk pertama kalinya, Xavier memutuskan bahwa jalan yang akan ia pilih sepenuhnya berada di tangannya sendiri.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/85/Transcendence.png",
+    "name": "Transcendence",
+    "kategori": "Buff",
+    "longDesc": "Ketika skill Xavier mengenai hero lawan, dia mendapatkan 50% Movement Speed selama 1.2 detik (berkurang seiring waktu) dan 1 stack energy. Pada 3 stack, skill berikutnya akan memicu mode Transcendence.\n\nTranscendence: Dalam mode ini, cooldown Skill 1 dan 2 milik Xavier berkurang 4 detik, dan cooldown Ultimate-nya berkurang 36 detik. Transcendence berlangsung selama 5 detik dan bisa diperpanjang selama 1 detik setiap kali skill-nya mengenai lawan.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/98/Infinite_Extension.png",
+      "name": "Infinite Extension",
+      "kategori": "AOE/Slow",
+      "longDesc": "Xavier menembakkan Mystic Bullet yang memberikan 480 (+100% Total Magic Power) Magic Damage kepada lawan yang dilewatinya.\n\nJarak terbang Mystic Bullet akan meningkat setiap kali mengenai lawan atau Mystic Barrier (hingga 5 kali).",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ad/Mystic_Field.png",
+      "name": "Mystic Field",
+      "kategori": "AOE",
+      "longDesc": "Xavier memanggil Mystic Barrier yang bertahan selama 5 detik. Lawan yang menyentuhnya akan menerima 220 (+65% Total Magic Power) Magic Damage dan terkena 50% slow, sementara rekan akan mendapatkan 50% Movement Speed tambahan (berkurang dalam 1.2 detik).\n\nSaat terkena skill Xavier lainnya, Mystic Barrier akan meluas menjadi Mystic Field selama 3 detik, memberikan 220 (+65% Total Magic Power) Magic Damage ke lawan di dalamnya dan menyebabkan immobilize selama 0.8 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9a/Dawning_Light.png",
+      "name": "Dawning Light",
+      "kategori": "Burst/Buff",
+      "longDesc": "Xavier melepaskan pancaran Mystic Magic ke arah target, memberikan 600 (+180% Total Magic Power) Magic Damage ke semua lawan di jalurnya.\n\nSetelah penggunaan, dia juga langsung memasuki Mode Transcendence dan mereset durasi Mode tersebut.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": true,
+    "tab1Name": "Tanpa Vignate",
+    "tab2Name": "Dengan Vignate",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero1151-icon.png",
+        "link": "https://sfile.co/EiuSmcjtWZE"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero1151-icon.png",
+        "link": "https://sfile.co/0BZ2Vl0xYza"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero1152-icon.png",
+        "link": "https://sfile.co/aDJvs7ax3jc"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero1152-icon.png",
+        "link": "https://sfile.co/K7JtfIrcH4H"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero1154-icon.png",
+        "link": "https://sfile.co/odhcFCkuLtE"
+      },
+      {
+        "name": "BTC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero1155-icon.png",
+        "link": "https://sfile.co/WgiDCaa8q1W"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4d/Hero1156-icon.png",
+        "link": "https://sfile.co/PSH12NVW4ng"
+      }
+    ],
+    "rowsTab2": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero1151-icon.png",
+        "link": "https://sfile.co/KdvwuGqQVU7"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero1151-icon.png",
+        "link": "https://sfile.co/caoYi8mm1dx"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero1152-icon.png",
+        "link": "https://sfile.co/RinR2Gdm2dM"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/34/Hero1152-icon.png",
+        "link": "https://sfile.co/3HTF5OkPSVT"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero1154-icon.png/revision/latest?cb=20241013073226",
+        "link": "https://sfile.co/Qf5BHT7lo0Q"
+      },
+      {
+        "name": "BTC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bf/Hero1155-icon.png/revision/latest?cb=20230805044012",
+        "link": "https://sfile.co/FzamnOsxPXu"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4d/Hero1156-icon.png/revision/latest?cb=20251107123323",
+        "link": "https://sfile.co/RxVOBPXGqr4"
+      }
+    ]
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
