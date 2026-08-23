@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
         views[it.id] = typeof v === 'number' ? v : parseInt(v, 10) || 0;
       });
 
-      res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=60');
+      res.setHeader('Cache-Control', 's-maxage=120, stale-while-revalidate=300');
       res.status(200).json({ views });
       return;
     }

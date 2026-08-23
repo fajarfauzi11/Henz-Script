@@ -335,6 +335,19 @@ if(seg&&pill){
 }
 
 /* View Count — hzSlugFromUrl & hzFormatViewCount sekarang dari window.hzCard (card-template.js) */
+/* Terapkan angka views (dari data yang SUDAH ada di tangan) ke semua elemen [data-view-id]
+   di dalam scope tertentu, TANPA fetch baru. Dipisah dari hzLoadViewCounts supaya bisa
+   dipakai ulang di homepage (1 hasil fetch dipakai buat slider Terbaru & Terpopuler
+   sekaligus) — lihat blok "Load Sliders" di bawah. */
+function hzApplyViewCounts(root,views){
+  var scope=root||document;
+  var els=scope.querySelectorAll('[data-view-id]');
+  els.forEach(function(el){
+    var id=el.getAttribute('data-view-id');
+    var span=el.querySelector('[data-view-count]');
+    if(span)span.textContent=window.hzCard.hzFormatViewCount((views&&views[id])||0);
+  });
+}
 function hzLoadViewCounts(root){
   var scope=root||document;
   var els=scope.querySelectorAll('[data-view-id]');
@@ -348,18 +361,18 @@ function hzLoadViewCounts(root){
   if(!items.length)return;
   fetch('/api/view?items='+encodeURIComponent(items.join(',')))
     .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
-    .then(function(data){
-      var views=(data&&data.views)||{};
-      els.forEach(function(el){
-        var id=el.getAttribute('data-view-id');
-        var span=el.querySelector('[data-view-count]');
-        if(span)span.textContent=window.hzCard.hzFormatViewCount(views[id]||0);
-      });
-    })
+    .then(function(data){hzApplyViewCounts(scope,(data&&data.views)||{});})
     .catch(function(){});
 }
-document.addEventListener('DOMContentLoaded',function(){hzLoadViewCounts();});
-if(document.readyState==='complete'||document.readyState==='interactive')hzLoadViewCounts();
+/* Homepage menangani view count sendiri lewat 1 fetch gabungan di blok "Load Sliders"
+   di bawah (dijalankan setelah slide selesai dirender dari data async). Trigger otomatis
+   generik ini sengaja DILEWATI khusus di homepage, supaya tidak ada celah timing yang
+   bisa memicu /api/view kedua kalinya di sana. Halaman lain (hero/post/kategori/search)
+   tetap pakai jalur ini seperti biasa karena kartu-kartunya sudah ada di HTML sejak awal. */
+if(!document.getElementById('hz-swiper-latest')){
+  document.addEventListener('DOMContentLoaded',function(){hzLoadViewCounts();});
+  if(document.readyState==='complete'||document.readyState==='interactive')hzLoadViewCounts();
+}
 
 if(document.body.classList.contains('page-post')){
   hzFetchPosts(function(posts){
@@ -384,15 +397,17 @@ if(document.getElementById('hz-swiper-latest')){
     var latestSlides=[];
     for(var i=0;i<Math.min(posts.length,10);i++)latestSlides.push(hzBuildSlide(posts[i]));
     hzSwapSlides(hzSwiperLatest,latestSlides);
-    hzLoadViewCounts();
 
     function renderPopular(sortedPosts){
       var popularSlides=[];
       for(var i=0;i<Math.min(sortedPosts.length,10);i++)popularSlides.push(hzBuildSlide(sortedPosts[i]));
       hzSwapSlides(hzSwiperPopular,popularSlides);
-      hzLoadViewCounts();
     }
 
+    /* Satu fetch ini dipakai utk 2 keperluan sekaligus: (1) mengurutkan "Terpopuler",
+       (2) menampilkan angka view di slider "Terbaru" MAUPUN "Terpopuler" — supaya
+       homepage cukup 1x panggil /api/view (dulu 3x: 1x buat Terbaru, 1x buat sortir,
+       1x lagi buat Terpopuler — padahal datanya sama). */
     var items=posts.map(function(p){return p.id+':'+window.hzCard.hzSlugFromUrl(p.url);});
     fetch('/api/view?items='+encodeURIComponent(items.join(',')))
       .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
@@ -402,10 +417,12 @@ if(document.getElementById('hz-swiper-latest')){
           return (parseInt(views[b.id],10)||0)-(parseInt(views[a.id],10)||0);
         });
         renderPopular(sortedByViews);
+        hzApplyViewCounts(document,views);
       })
       .catch(function(){
         var sortedByComments=posts.slice().sort(function(a,b){return parseInt(b.comments||0)-parseInt(a.comments||0);});
         renderPopular(sortedByComments);
+        hzLoadViewCounts();
       });
   });
 }
