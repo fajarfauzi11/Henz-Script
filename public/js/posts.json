@@ -1,5 +1,17 @@
 [
   {
+    "id": 133,
+    "title": "Valir Legend",
+    "url": "/post/valir-legend",
+    "thumb": "https://i.ibb.co/pjkpyMm8/valir-legend.webp",
+    "cat": "Legend",
+    "hero": "Valir",
+    "date": "24 Agustus 2026",
+    "author": "Henz",
+    "comments": 0,
+    "keywords": "Valir Infernal Blaze"
+  },
+  {
     "id": 132,
     "title": "Sun Collector",
     "url": "/post/sun-collector",
