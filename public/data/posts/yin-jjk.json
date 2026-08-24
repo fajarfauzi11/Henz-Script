@@ -1,0 +1,257 @@
+{
+  "namehero": "Yin JJK",
+  "herolink": "Yin",
+  "urlthumbnail": "https://i.ibb.co/qYj8G7kh/yin-jjk.webp",
+  "kategoriskin": "Jujutsu Kaisen",
+  "keywords": "Yin Yuji Itadori",
+  "datepost": "Update 24 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Yin ditemukan oleh para pertapa di Floral Falls ketika masih bayi, hanyut dalam keranjang bambu tanpa nama maupun asal-usul. Ia kemudian dibesarkan oleh para pertapa yang mengajarinya ilmu bela diri sekaligus prinsip kesatria. Kehidupan Yin mulai berubah ketika ia bertemu Wanwan, yang membuatnya mengenal dunia luar dan merasakan kebebasan.\n\nSetelah Wanwan pergi untuk menjalankan tugasnya, Yin mulai merasa gelisah dan ingin melihat dunia di luar Floral Falls. Pada suatu hari, energi jahat misterius masuk ke tubuhnya dan mengambil alih kesadarannya. Yin tak mampu mengendalikan dirinya dan hampir mencelakai orang-orang di sekitarnya.\n\nDalam keadaan terdesak, Wanwan datang dan membangkitkan kembali tekad Yin untuk melawan kekuatan jahat tersebut. Yin akhirnya berhasil merebut kembali kendali atas tubuhnya, tetapi Yu Zhong kemudian mengungkapkan bahwa sosok jahat yang bersemayam di dalam dirinya adalah Lieh, sang Evil God. Jika tidak dikendalikan, Lieh dapat menjadi ancaman besar bagi Floral Falls dan seluruh Cadia Riverlands.\n\nMenyadari bahaya yang ada dalam dirinya, Yin memilih meninggalkan Floral Falls agar tidak membahayakan orang-orang yang ia sayangi. Yu Zhong menyarankannya pergi ke Moniyan Empire untuk mencari cara mengalahkan Lieh. Meski para pertapa khawatir membiarkannya menghadapi beban tersebut sendirian, White Ape menghormati keputusan Yin untuk menjalani jalannya sendiri.\n\nYin pun meninggalkan Floral Falls dan memulai perjalanan menuju dunia yang lebih luas. Ia tahu bahwa semakin sering bertarung, Lieh justru dapat memperoleh kembali kekuatannya, tetapi Yin tetap memilih menggunakan kekuatan tersebut untuk melindungi orang lain. Dengan tekad dan prinsipnya sebagai seorang kesatria, Yin berusaha menemukan cara untuk mengalahkan Evil God yang bersemayam di dalam dirinya.",
+  "dualTabNames": {
+    "tab1": "Yin",
+    "tab2": "Lieh",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ad/Leave_It_to_Me.png",
+    "name": "Leave It to Me",
+    "kategori": "Buff",
+    "longDesc": "Jika tidak ada Hero satu tim dalam jarak 4 Unit dari Yin, Damage-nya meningkat menjadi 120% dan memperoleh 8% Spell Vamp.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Charged_Punch.png",
+      "name": "Charged Punch",
+      "kategori": "Burst/Speed Up",
+      "longDesc": "Yin mendapatkan 60% Movement Speed tambahan (berkurang selama 3 detik).\nSelama durasi ini, Basic Attack berikutnya akan diperkuat, memberikan 25 (+100% Total Physical Attack) Physical Damage. Jika Basic Attack yang diperkuat mengenai lawan, Yin akan melancarkan pukulan kuat ke depan, memberikan 360 (+200% Extra Physical Attack) Physical Damage ke lawan di sepanjang jalurnya.\nBerhasil melancarkan pukulan kuat akan mengurangi cooldown skill ini sebesar 35%.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/0/04/Frenzy_Strike.png",
+      "name2": "Frenzy Strike",
+      "kategori2": "Burst",
+      "longDesc2": "Lieh menghantam lawan di depannya 9 kali. Selama durasi ini, dia menjadi kebal crowd control, dan kecepatan hantamannya meningkat secara bertahap. Setiap hantaman memberikan 120 (+100% Extra Physical Attack) Physical Damage dan menyebabkan 75% slow ke lawan selama 0.2 detik.\nSetelah 0.8 detik, Lieh bisa bergerak atau menggunakan skill untuk membatalkan skill lebih awal.",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/ad/Instant_Blast.png",
+      "name": "Instant Blast",
+      "kategori": "Mobility/CC",
+      "longDesc": "Yin berlari ke depan, meninggalkan Golden Ring di belakang dan memberikan 75 (+35% Extra Physical Attack) Physical Damage ke lawan di jalurnya. Dia memperoleh 30% Pengurangan Damage tambahan selama 4 detik jika mengenai Hero lawan.\nSetelah 1 detik, Golden Ring akan menyusul Yin, memberikan 150 (+70% Extra Physical Attack) Physical Damage ke lawan yang dilewatinya dan menyebabkan Stun selama 1 detik.",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/d/df/Instant_Blast_2.png",
+      "name2": "Instant Blast",
+      "kategori2": "Mobility/CC",
+      "longDesc2": "Lieh melakukan tendangan ke depan, meninggalkan Golden Ring di belakang sementara memberikan 75 (+35% Extra Physical Attack) Physical Damage kepada lawan di sepanjang jalur. Lawan yang terkena akan sedikit terkena Knockback. Dia memperoleh 30% Pengurangan Damage tambahan selama 4 detik jika ada hero lawan yang terkena.\nSetelah 1 detik, Golden Ring akan menyusul Lieh, memberikan 150 (+70% Extra Physical Attack) Physical Damage kepada lawan yang dilewatinya dan menyebabkan Stun kepada mereka selama 1 detik.",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a8/My_Turn.png",
+      "name": "My Turn",
+      "kategori": "CC/Buff",
+      "longDesc": "Setelah jeda singkat, Yin mengunci hero lawan (tidak termasuk peliharaan atau klon) dan menariknya ke dalam domain selama 8 detik dan berubah menjadi Lieh. Saat berada di domain, keduanya tidak bisa dipengaruhi oleh skill hero lainnya.\nLieh punya skill yang lebih kuat dan 50 Physical & Magic Defense tambahan yang berlangsung selama 8 detik.\nDomain akan berakhir lebih awal jika salah satu tereliminasi. Jika Lieh berhasil mengeliminasi lawan, dia akan memulihkan 20% Max HP-nya, meninggalkan domain sekaligus mereset cooldown Frenzy Strike dan Instant Blast, serta terus bertarung sebagai Lieh selama 8 detik.\nJika Yin gagal menarik target ke domain, skill akan memasuki cooldown selama 3 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": true,
+    "tab1Name": "Tanpa Vignate",
+    "tab2Name": "Dengan Vignate",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Hero1131-icon.png",
+        "link": "https://sfile.co/ieXoceHY8bI"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Hero1131-icon.png",
+        "link": "https://sfile.co/oD9rQ9ItP7A"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero1132-icon.png",
+        "link": "https://sfile.co/whSM7pRYHSb"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero1132-icon.png",
+        "link": "https://sfile.co/MoSmejGaFKO"
+      },
+      {
+        "name": "M World",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Yin_%28M-World_Yin%29.png",
+        "link": "https://sfile.co/08EAa7Ehb0p"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero1135-icon.png",
+        "link": "https://sfile.co/CnXeXEkCtZG"
+      },
+      {
+        "name": "AoT",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero1136-icon.png",
+        "link": "https://sfile.co/XndCTU3hFKP"
+      }
+    ],
+    "rowsTab2": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Hero1131-icon.png",
+        "link": "https://sfile.co/sM3cssLQsau"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b5/Hero1131-icon.png",
+        "link": "https://sfile.co/tK6yw09soPC"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero1132-icon.png",
+        "link": "https://sfile.co/negqLcbvVkf"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero1132-icon.png",
+        "link": "https://sfile.co/steBbNaMmQ7"
+      },
+      {
+        "name": "M World",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Yin_%28M-World_Yin%29.png",
+        "link": "https://sfile.co/hdB0Fnj728K"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero1135-icon.png",
+        "link": "https://sfile.co/xiv0uHm4xIN"
+      },
+      {
+        "name": "AoT",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero1136-icon.png",
+        "link": "https://sfile.co/OaW04d9PTc7"
+      }
+    ]
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Vignate?",
+    "desc": "",
+    "img": ""
+  }
+}
