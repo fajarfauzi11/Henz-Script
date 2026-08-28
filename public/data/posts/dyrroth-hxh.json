@@ -1,0 +1,277 @@
+{
+  "namehero": "Dyrroth HxH",
+  "herolink": "Dyrroth",
+  "urlthumbnail": "https://i.ibb.co/nq6c0NCs/dyrroth-kof.webp",
+  "kategoriskin": "Hunter x Hunter",
+  "keywords": "Dyrroth Gon",
+  "datepost": "Update 28 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Dyrroth adalah seorang pangeran Moniyan yang diculik Alice sejak masih bayi dan dibesarkan di Abyss. Di sana, ia tumbuh bersama Alice dan Thamuz, hingga menganggap Abyss sebagai satu-satunya rumah yang ia kenal. Meski bukan terlahir sebagai iblis, Dyrroth menerima kehidupan brutal Abyss dan perlahan berubah menjadi Son of Darkness.\n\nBertahun-tahun kemudian, Dyrroth memimpin pasukan Abyss dalam invasi ke Moniyan Empire. Di tengah pertempuran, Princess Silvanna muncul dan memanggilnya sebagai kakaknya. Kata \"saudara\" membuat Dyrroth sempat ragu, tetapi Silvanna tetap menyerangnya dengan tombak suci hingga ia terluka parah.\n\nAlice kemudian menyelamatkan Dyrroth dan membawanya kembali ke Sanguine Lair. Di sana, Dyrroth mengingat masa lalunya: ia dibesarkan oleh Alice, dilatih oleh Thamuz, dan disambut oleh para penghuni Abyss sebagai Son of Darkness. Baginya, ikatan dengan Moniyan tidak lagi berarti, karena Abyss telah menjadi tempat yang ia anggap sebagai rumah.\n\nNamun, Dyrroth masih menginginkan kekuatan yang lebih besar. Ia memasuki kolam darah iblis untuk memperkuat tubuh dan senjatanya, meskipun transformasi tersebut seharusnya tidak dapat dibatalkan. Di dalamnya, kekuatan cahaya dari masa lalunya dan kegelapan Abyss bertabrakan hingga akhirnya menyatu dalam dirinya.\n\nSetelah terlahir kembali dengan kekuatan yang jauh lebih besar, Dyrroth menetapkan tujuan untuk kembali ke Moniyan Empire. Ia ingin membuktikan kekuatannya sebagai Prince of the Abyss sekaligus memutuskan seluruh ikatan darah yang menghubungkannya dengan masa lalunya.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/53/Wrath_of_the_Abyss.png",
+    "name": "Wrath of the Abyss",
+    "kategori": "Buff/Heal",
+    "longDesc": "Memperkuat Burst Strike dan Spectre Step ketika Rage Dyrroth mencapai 50%.\n\nMelancarkan Circle Strike setiap 2 Basic Attack, memberikan (+150% Total Physical Attack) - (+180% Total Physical Attack) (berskala dengan level) Physical Damage ke lawan di dalam lingkaran dan memulihkan 7% - 10% Max HP (berskala dengan level, berkurang setengah terhadap minion). Serangan ini tidak mengaktifkan Efek Basic Attack.\nSetiap kali memberikan damage ke lawan, cooldown Burst Strike dan Spectre Step berkurang 1 detik.\n\nDyrroth memulihkan 2% - 5% Rage per detik (berskala dengan level).",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/96/Burst_Strike.png",
+      "name": "Burst Strike",
+      "kategori": "AOE/Slow",
+      "longDesc": "Dyrroth mengeluarkan serangan ledakan ke arah yang ditentukan. Setiap ledakan memberikan 240 (+60% Total Physical Attack) Physical Damage ke lawan dan menyebabkan 25% slow selama 1.5 detik. (Damage akan berkurang saat mengenai target yang sama dan hanya memberikan 75% damage ke minion).\n\nPenguatan Abyss: Jangkauan serangan ledakan meningkat, memberikan 140% dari damage aslinya, dan efek slow menjadi dua kali lipat.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/09/Spectre_Step.png",
+      "name": "Spectre Step",
+      "kategori": "Mobility/Damage",
+      "longDesc": "Menerjang ke arah yang ditentukan dan berhenti saat mencapai jarak terjauh atau mengenai hero lawan atau Creep, memberikan 230 (+60% Extra Physical Attack) Physical Damage dan sedikit menyebabkan knockback. Saat skill ini digunakan lagi, dia akan mengunci serangan ke target dan mengeluarkan Fatal Strike, memberikan 345 (+120% Extra Physical Attack) Physical Damage dan mengurangi 40% Physical Defense target selama 4 detik.\nPenguatan Abyss: Fatal Strike akan menjangkau lebih jauh dan memberikan 150% dari damage awal, menyebabkan 90% slow tambahan dan mengurangi 60% Physical Defense target selama 4 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/ff/Abysm_Strike.png",
+      "name": "Abysm Strike",
+      "kategori": "Burst/Slow",
+      "longDesc": "Setelah jeda singkat, Dyrroth mengeluarkan serangan yang kuat ke arah target (skill ini hanya bisa dibatalkan oleh Suppress), memberikan 650 (+250% Extra Physical Attack) + 25% dari HP target yang hilang sebagai Physical Damage ke lawan di jalurnya, dan menyebabkan 55% slow selama 0.8 detik. Skill ini memberikan hingga 1500 damage ke lawan non-hero.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": true,
+    "tab1Name": "Tanpa Vignate",
+    "tab2Name": "Dengan Vignate",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero851-icon.png",
+        "link": "https://sfile.co/vTEG4tDNUEX"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero851-icon.png",
+        "link": "https://sfile.co/TV3xDYX6Aqj"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png",
+        "link": "https://sfile.co/gBiAYUBk4W7"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png",
+        "link": "https://sfile.co/3hi9Duan1xj"
+      },
+      {
+        "name": "KOf",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/86/Hero853-icon.png",
+        "link": "https://sfile.co/BtCL5MLmbgo"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Hero854-icon.png",
+        "link": "https://sfile.co/pq9GiHlSiN1"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero856-icon.png",
+        "link": "https://sfile.co/ncjeL6Iz1P2"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero857-icon.png",
+        "link": "https://sfile.co/FnqE97AcMKi"
+      },
+      {
+        "name": "Street Fighter",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero859-icon.png",
+        "link": ""
+      }
+    ],
+    "rowsTab2": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero851-icon.png",
+        "link": "https://sfile.co/X9vygazaRUt"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/62/Hero851-icon.png",
+        "link": "https://sfile.co/Qz0vTOfDv0T"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png",
+        "link": "https://sfile.co/0ocIEBqyfpA"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cf/Hero852-icon.png",
+        "link": "https://sfile.co/SIzZk6KZZRY"
+      },
+      {
+        "name": "KOf",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/86/Hero853-icon.png",
+        "link": "https://sfile.co/Mh0ZZ5uqMBh"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f9/Hero854-icon.png",
+        "link": "https://sfile.co/5BCyg07Zaq3"
+      },
+      {
+        "name": "VENOM",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a7/Hero856-icon.png",
+        "link": "https://sfile.co/dqINAi7XwSL"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/13/Hero857-icon.png",
+        "link": "https://sfile.co/Ab72QtpixnM"
+      },
+      {
+        "name": "Street Fighter",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/33/Hero859-icon.png",
+        "link": ""
+      }
+    ]
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Vignate?",
+    "desc": "Vignate adalah efek yang muncul di pinggir layar setelah mengeluarkan skill tertentu, biasanya ultimate.",
+    "img": "https://i.ibb.co/JwM4PS4D/tooltip-vignate-dyrroth-hxh.webp"
+  }
+}
