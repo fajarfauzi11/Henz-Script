@@ -1,0 +1,251 @@
+{
+  "namehero": "Alucard Luckybox",
+  "herolink": "Alucard",
+  "urlthumbnail": "https://i.ibb.co/B20HMgVz/alucard-luckybox.webp",
+  "kategoriskin": "Luckybox",
+  "keywords": "Alucard Child of the Fall",
+  "datepost": "Update 30 Agustus 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Alucard adalah putra seorang prajurit Resimen Kedua Moniyan yang menghilang dalam pertempuran besar melawan Abyss. Setelah ayahnya dinyatakan gugur dan Resimen Kedua justru dicap sebagai pasukan pembangkang, Alucard tumbuh dengan kebencian mendalam terhadap para iblis. Demi membalas dendam dan memulihkan kehormatan ayahnya, ia bergabung dengan Monastery of Light dan berlatih hingga menjadi murid terbaik. Di sana, Tigreal yang pernah bertempur bersama ayahnya sering membimbingnya dan akhirnya mewariskan pedang milik sang ayah.\n\nSaat dewasa, Alucard diangkat menjadi Arbiter of Ligh dan mulai memburu iblis di seluruh Land of Dawn. Berkat bakat dan tekadnya, ia segera dikenal sebagai salah satu pemburu iblis terkuat. Namun dalam sebuah misi, ia terluka oleh pedang iblis sehingga tangan kanannya terinfeksi kekuatan kegelapan. Untuk mencegah kutukan itu menyebar, seorang pandai besi yang ternyata merupakan penyintas Resimen Kedua membuatkan sepasang pelindung tangan khusus, sekaligus mengungkapkan kebenaran tentang pertempuran yang merenggut ayahnya.\n\nAlucard akhirnya mengetahui bahwa kehancuran Resimen Kedua bukan disebabkan oleh pembangkangan, melainkan kesalahan para petinggi militer yang haus akan kejayaan. Ayahnya justru mengorbankan diri bersama beberapa prajurit lain demi menyelamatkan Tigreal dan pasukan utama. Saat Alucard menuntut penjelasan, Tigreal mengakui rasa bersalahnya dan mengungkapkan bahwa ia dipaksa merahasiakan kebenaran demi kepentingan para petinggi kerajaan. Meski marah, Alucard tidak sanggup membalas dendam kepada orang yang selama ini ia hormati.\n\nAlucard kemudian meminta Moniyan Empire memulihkan nama baik ayahnya, tetapi permintaannya ditolak oleh para bangsawan dan petinggi militer. Di saat yang sama, Monastery of Light mulai menganggap tangan kanannya yang telah terpengaruh kekuatan iblis sebagai sesuatu yang sesat. Dikhianati oleh kerajaan dan dijauhi gereja yang pernah menjadi rumahnya, Alucard memutuskan meninggalkan Monastery of Light dan bertarung dengan caranya sendiri.\n\nSejak itu, Alucard mengembara seorang diri memburu iblis di seluruh Land of Dawn sambil mencari petunjuk tentang keberadaan ayahnya yang masih ia yakini belum benar-benar mati. Dengan tangan kanan yang dipenuhi kekuatan kegelapan namun tetap berada di bawah kendalinya, Alucard menjadi legenda sebagai pemburu iblis yang selalu muncul saat Abyss mengancam, memusnahkan setiap iblis yang ditemuinya tanpa ampun.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/04/Pursuit.png",
+    "name": "Pursuit",
+    "kategori": "Buff",
+    "longDesc": "Setelah setiap penggunaan skill, Serangan Dasar Alucard berikutnya memungkinkannya untuk melesat ke lokasi target dan memberikan Kerusakan Fisik sebesar (+140% dari Total Serangan Fisik) .",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2d/Groundsplitter.png",
+      "name": "Groundsplitter",
+      "kategori": "Mobility/AOE",
+      "longDesc": "Alucard berguling ke lokasi target dan membanting pedangnya ke tanah, memberikan 270–370 (+110% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh yang terkena dan memperlambat mereka sebesar 40% selama 2 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1d/Whirling_Smash.png",
+      "name": "Whirling Smash",
+      "kategori": "AOE",
+      "longDesc": "Alucard melancarkan tebasan berputar, memberikan 345–570 (+120% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh di dekatnya.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a0/Fission_Wave.png",
+      "name": "Fission Wave",
+      "kategori": "Buff/Burst",
+      "longDesc": "Pasif: Alucard secara permanen mendapatkan tambahan 10%-30% Hybrid Lifesteal .\nAktif: Alucard menyerap energi musuh di area target, mengurangi Kecepatan Gerak mereka sebesar 30% dan Pertahanan Hybrid sebesar 10-20. Alucard mendapatkan 10-20 Pertahanan Hybrid untuk setiap hero musuh yang terkena dan mengurangi cooldown skill lainnya menjadi 50% selama 6 detik.\nGunakan Lagi : Alucard melepaskan gelombang kejut ke arah target, memberikan 400–700 (+200% Serangan Fisik Ekstra) Kerusakan Fisik kepada musuh yang terkena.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tab 1",
+    "tab2Name": "Tab 2",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Hero071-icon.png",
+        "link": "https://sfile.co/Z2ELYUFXkuX"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c7/Hero071-icon.png",
+        "link": "https://sfile.co/uqTWvQ7v3b5"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e7/Hero072-icon.png",
+        "link": "https://sfile.co/SNebe1AF8kM"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e7/Hero072-icon.png",
+        "link": "https://sfile.co/UVMh9qX6AZl"
+      },
+      {
+        "name": "Season",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/73/Hero073-icon.png",
+        "link": "https://sfile.co/KYVkStehhoj"
+      },
+      {
+        "name": "Sarlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Hero075-icon.png",
+        "link": "https://sfile.co/BqdP2XydqGa"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/64/Hero076-icon.png",
+        "link": "https://sfile.co/TMURd8ZXA4c"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c4/Hero077-icon.png",
+        "link": "https://sfile.co/e04oElmY8on"
+      },
+      {
+        "name": "Empire Agent",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero078-icon.png",
+        "link": "https://sfile.co/vcYeTKotvrJ"
+      },
+      {
+        "name": "Empire Agent + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero078-icon.png",
+        "link": "https://sfile.co/ApI8Pq00gft"
+      },
+      {
+        "name": "Lightborn",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/91/Hero079-icon.png",
+        "link": "https://sfile.co/zRg40TMNsdV"
+      },
+      {
+        "name": "Star Wars",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/50/Hero100710-icon.png",
+        "link": "https://sfile.co/QkmN8fyNDlL"
+      },
+      {
+        "name": "Special",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero100711-icon.png",
+        "link": "https://sfile.co/9rfsnsfWGJd"
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Tab 1 & Tab 2?",
+    "desc": "",
+    "img": ""
+  }
+}
