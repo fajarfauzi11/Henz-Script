@@ -4,13 +4,17 @@
   "urlthumbnail": "https://i.ibb.co/bj5MNW4k/ling-neobeast.webp",
   "kategoriskin": "Neobeasts V2",
   "keywords": "",
-  "datepost": "Update 7 Agustus 2026",
+  "datepost": "Update 31 Agustus 2026",
   "authorname": "Henz MLBB",
   "longstory": "Ling adalah anggota berbakat dari Finch Sect, kelompok pembunuh rahasia yang terkenal di Cadia Riverlands. Sejak kecil ia dilatih menjadi pembunuh tanpa kebebasan untuk menentukan jalan hidupnya sendiri. Keahliannya melampaui murid lain, membuatnya dijuluki sebagai ninja terbaik di sekte tersebut. Meski selalu berhasil menyelesaikan misi, Ling mulai mempertanyakan arti hidupnya setelah bertemu Zilong, seorang pendekar yang hidup mengikuti keyakinannya sendiri.\n\nDalam sebuah misi untuk membunuh Baxia, penjaga Dragon Altar, Ling mengalami kekalahan telak dan hampir kehilangan nyawanya. Di ambang kematian, roh Vermilion Bird muncul dan menyelamatkannya. Baxia kemudian membawa Ling ke Dragon Altar, tempat ia hidup bersama Baxia dan Zilong. Selama berada di sana, Ling merasakan kehidupan yang damai dan mulai memahami arti persahabatan, kebebasan, serta alasan seseorang bertarung.\n\nNamun, kesetiaannya kepada Finch Sect belum benar-benar berakhir. Atas perintah sang tetua, Ling menyusup ke Dragon Altar untuk mencari segel terlarang. Aksinya diketahui Baxia dan memicu pertarungan sengit yang akhirnya dihentikan oleh Zilong. Dari kejadian itu, Ling menyadari bahwa baik Finch Sect maupun Dragon Altar sama-sama memiliki tujuan masing-masing, sementara dirinya masih terjebak dalam belenggu masa lalu.\n\nBeberapa tahun kemudian, Finch Sect bersekutu dengan Yu Zhong untuk menyerang Dragon Altar. Ling ikut dalam serangan tersebut, tetapi kembali dikalahkan oleh Zilong. Saat kehilangan arah, ia kembali bertemu dengan roh Vermilion Bird. Untuk pertama kalinya, roh itu berbicara dan menjelaskan bahwa penjara sejati bukanlah tempat, melainkan hati yang tidak bebas. Vermilion Bird mengungkapkan bahwa kekuatannya selama ini diberikan kepada Ling agar ia dapat hidup dan menemukan jalannya sendiri.\n\nSetelah memahami kebenaran itu, Ling akhirnya melepaskan belenggu yang selama ini mengikatnya. Ia menerima warisan kekuatan Vermilion Bird, bukan sebagai alat untuk membunuh, melainkan sebagai simbol kebebasan dan harapan. Dengan semangat baru dan sayap biru yang membara, Ling meninggalkan masa lalunya sebagai pembunuh Finch Sect dan terbang bebas sebagai Cyan Finch, siap melindungi Cadia Riverlands dengan kehendaknya sendiri.",
   "dualTabNames": {
     "tab1": "Tab 1",
     "tab2": "Tab 2",
-    "tab3": "Tab 3"
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
   },
   "abilitiesPasif": {
     "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/68/Cloud_Walker.png",
@@ -26,7 +30,27 @@
     "url3": "",
     "name3": "",
     "kategori3": "BUFF",
-    "longDesc3": ""
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
   },
   "abilitiesList": [
     {
@@ -44,7 +68,27 @@
       "url3": "",
       "name3": "",
       "kategori3": "AOE",
-      "longDesc3": ""
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
     },
     {
       "label": "Skill 2",
@@ -61,7 +105,27 @@
       "url3": "",
       "name3": "",
       "kategori3": "Mobility",
-      "longDesc3": ""
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
     },
     {
       "label": "Ultimate",
@@ -78,7 +142,27 @@
       "url3": "",
       "name3": "",
       "kategori3": "Burst",
-      "longDesc3": ""
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
     }
   ],
   "download": {
@@ -89,22 +173,22 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero841-icon.png",
-        "link": "https://sfile.co/mZMRZkOSpeY"
+        "link": "https://sfile.co/dGX5Dfw5nHI"
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero841-icon.png",
-        "link": "https://sfile.co/HuCAQi1X226"
+        "link": "https://sfile.co/snzglNGjIEf"
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Hero842-icon.png",
-        "link": "https://sfile.co/5GGVM3a9Gt0"
+        "link": "https://sfile.co/9g1eJcYocwR"
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Hero842-icon.png",
-        "link": "https://sfile.co/Fm0bJ2PIyuy"
+        "link": "https://sfile.co/2EOYAswgBgv"
       },
       {
         "name": "Starlight",
