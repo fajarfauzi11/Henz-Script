@@ -743,13 +743,16 @@ function hzRenderRandomHeroSuggest(){
 hzRenderRandomHeroSuggest();
 
 /* ── Welcome Popup (ajakan subscribe YouTube) ──
-   Muncul sekali seumur browser/device (localStorage, tanpa versioning).
-   Markup ada di footer.html (global, semua halaman) supaya tetap muncul
-   walau user landing pertama kali bukan lewat homepage (misal dari Google
-   langsung ke halaman post/hero). Flag di-set begitu popup ditampilkan,
-   bukan saat ditutup, supaya refresh saat popup masih terbuka tidak
-   membuatnya muncul lagi. */
-window.hzOpenWelcomePopup = function(){
+   Muncul SETIAP SESI BARU (sessionStorage: hilang saat tab/browser ditutup,
+   tapi TIDAK muncul lagi kalau cuma refresh/pindah halaman dalam sesi yang
+   sama). Mulai kemunculan ke-2 (sesi ke-2 dst), ditambahkan checkbox
+   "Sudah Subscribe, Jangan Tampilkan Lagi" — jumlah sesi yang sudah pernah
+   menampilkan popup disimpan permanen di localStorage supaya tahu kapan
+   harus mulai menampilkan checkbox itu. Kalau checkbox dicentang, popup
+   berhenti tampil selamanya (localStorage optout, menang atas semuanya).
+   Batas maksimal: 5 sesi/kemunculan — setelah itu berhenti otomatis
+   walau checkbox tidak pernah dicentang. */
+window.hzOpenWelcomePopup = function(showOptout){
   var overlay = document.getElementById('hz-welcome-popup-overlay');
   if(!overlay)return;
   var imgEl = document.getElementById('hz-welcome-popup-img');
@@ -757,6 +760,8 @@ window.hzOpenWelcomePopup = function(){
     var imgWrap = imgEl.closest('.hz-tooltip-imgwrap');
     if(imgWrap)imgWrap.style.display = imgEl.getAttribute('src') ? 'block' : 'none';
   }
+  var optoutRow = document.getElementById('hz-welcome-popup-optout-row');
+  if(optoutRow)optoutRow.style.display = showOptout ? 'flex' : 'none';
   overlay.style.display = 'flex';
   requestAnimationFrame(function(){ overlay.classList.add('open'); });
 };
@@ -767,13 +772,39 @@ window.hzCloseWelcomePopup = function(){
   setTimeout(function(){ overlay.style.display = 'none'; }, 180);
 };
 (function(){
-  var FLAG_KEY = 'hz_welcome_popup_seen';
+  var OPTOUT_KEY = 'hz_welcome_popup_optout';
+  var SESSION_SHOWN_KEY = 'hz_welcome_popup_shown';
+  var SESSION_COUNT_KEY = 'hz_welcome_popup_session_count';
+  var MAX_SESSIONS = 5;
   var overlay = document.getElementById('hz-welcome-popup-overlay');
   if(!overlay)return;
-  try{ if(localStorage.getItem(FLAG_KEY))return; }catch(e){ return; }
+
+  var checkbox = document.getElementById('hz-welcome-popup-optout-checkbox');
+  if(checkbox){
+    checkbox.addEventListener('change', function(){
+      try{
+        if(checkbox.checked){ localStorage.setItem(OPTOUT_KEY, '1'); }
+        else{ localStorage.removeItem(OPTOUT_KEY); }
+      }catch(e){}
+    });
+  }
+
+  try{
+    if(localStorage.getItem(OPTOUT_KEY))return;
+    if(sessionStorage.getItem(SESSION_SHOWN_KEY))return;
+  }catch(e){ return; }
+
+  var sessionCount = 0;
+  try{ sessionCount = parseInt(localStorage.getItem(SESSION_COUNT_KEY), 10) || 0; }catch(e){}
+  if(sessionCount >= MAX_SESSIONS)return;
+  var showOptout = sessionCount >= 1;
+
   setTimeout(function(){
-    window.hzOpenWelcomePopup();
-    try{ localStorage.setItem(FLAG_KEY, '1'); }catch(e){}
+    window.hzOpenWelcomePopup(showOptout);
+    try{
+      sessionStorage.setItem(SESSION_SHOWN_KEY, '1');
+      localStorage.setItem(SESSION_COUNT_KEY, String(sessionCount + 1));
+    }catch(e){}
   }, 600);
 })();
 
