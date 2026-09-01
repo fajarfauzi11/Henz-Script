@@ -742,4 +742,39 @@ function hzRenderRandomHeroSuggest(){
 }
 hzRenderRandomHeroSuggest();
 
+/* ── Welcome Popup (ajakan subscribe YouTube) ──
+   Muncul sekali seumur browser/device (localStorage, tanpa versioning).
+   Markup ada di footer.html (global, semua halaman) supaya tetap muncul
+   walau user landing pertama kali bukan lewat homepage (misal dari Google
+   langsung ke halaman post/hero). Flag di-set begitu popup ditampilkan,
+   bukan saat ditutup, supaya refresh saat popup masih terbuka tidak
+   membuatnya muncul lagi. */
+window.hzOpenWelcomePopup = function(){
+  var overlay = document.getElementById('hz-welcome-popup-overlay');
+  if(!overlay)return;
+  var imgEl = document.getElementById('hz-welcome-popup-img');
+  if(imgEl){
+    var imgWrap = imgEl.closest('.hz-tooltip-imgwrap');
+    if(imgWrap)imgWrap.style.display = imgEl.getAttribute('src') ? 'block' : 'none';
+  }
+  overlay.style.display = 'flex';
+  requestAnimationFrame(function(){ overlay.classList.add('open'); });
+};
+window.hzCloseWelcomePopup = function(){
+  var overlay = document.getElementById('hz-welcome-popup-overlay');
+  if(!overlay)return;
+  overlay.classList.remove('open');
+  setTimeout(function(){ overlay.style.display = 'none'; }, 180);
+};
+(function(){
+  var FLAG_KEY = 'hz_welcome_popup_seen';
+  var overlay = document.getElementById('hz-welcome-popup-overlay');
+  if(!overlay)return;
+  try{ if(localStorage.getItem(FLAG_KEY))return; }catch(e){ return; }
+  setTimeout(function(){
+    window.hzOpenWelcomePopup();
+    try{ localStorage.setItem(FLAG_KEY, '1'); }catch(e){}
+  }, 600);
+})();
+
 })();

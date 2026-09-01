@@ -468,6 +468,15 @@ body.page-search .henz-page{padding-top:87px}
   .hz-tooltip-head span{font-size:22px}
   .hz-tooltip-desc{font-size:14px}
 }
+
+/* WELCOME POPUP SUBSCRIBE BUTTON */
+.hz-welcome-popup-btnwrap{padding:16px 20px 20px}
+.hz-welcome-popup-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:12px;border:none;background:#E24B4A;color:#fff;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;transition:opacity .2s;-webkit-tap-highlight-color:transparent}
+.hz-welcome-popup-btn:hover{opacity:.85}
+.hz-welcome-popup-btn svg{flex-shrink:0}
+@media(min-width:901px){
+  .hz-welcome-popup-btn{padding:15px;font-size:14px}
+}
 .hz-rq-name{font-size:20px;font-weight:800;color:#111;margin:0 0 8px;font-family:'Manrope',sans-serif;line-height:1.2;letter-spacing:-.3px}
 .hz-rq-desc{font-size:13.5px;color:#888;line-height:1.65;margin:0 0 28px;font-family:'Manrope',sans-serif;flex:1}
 .hz-rq-divider{width:32px;height:2px;border-radius:2px;margin-bottom:16px}
