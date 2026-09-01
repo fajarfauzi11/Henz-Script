@@ -1,0 +1,256 @@
+{
+  "namehero": "Granger M7",
+  "herolink": "Granger",
+  "urlthumbnail": "https://i.ibb.co/YTkTFGz3/granger-m7.webp",
+  "kategoriskin": "M7",
+  "keywords": "Granger Thunder Ascendant",
+  "datepost": "Update 1 September 2026",
+  "authorname": "Henz MLBB",
+  "longstory": "Granger adalah seorang pemburu iblis yang hidup di antara manusia dan Abyss. Di balik sikapnya yang pendiam, ia terus dihantui suara jeritan iblis dan kenangan kelam yang tak pernah berhenti menggema di kepalanya. Baginya, hanya dentuman tembakan dan ratapan para iblis yang mampu meredam penderitaan yang selalu mengganggunya.\n\nSaat masih kecil, desa tempat tinggal Granger diserang oleh iblis. Orang tuanya menyembunyikannya di bawah lantai rumah sebelum mereka sendiri dibunuh. Sejak malam itu, jeritan orang tuanya dan auman para iblis terus menghantui pikirannya. Hingga suatu hari, ia bertemu seorang pendeta bisu yang memainkan lagu \"Hymn of Light\" dengan biola. Alunan musik itu menjadi satu-satunya hal yang mampu menenangkan luka batin Granger. Sang pendeta kemudian membawanya ke Monastery of Light dan mengajarinya bahwa ketulusan hati lebih penting daripada bakat.\n\nMeski tidak berbakat memainkan biola, Granger menunjukkan kemampuan luar biasa dalam memburu iblis. Ia direkrut menjadi Demon Hunter dan diberi sepasang senjata khusus yang mampu menyerap energi iblis untuk dijadikan peluru pemusnah. Walaupun beberapa pemburu lain, termasuk Alucard, mengajaknya bertarung bersama, Granger memilih bekerja sendirian karena masih belum bisa melepaskan trauma masa lalunya.\n\nKedamaian itu berakhir ketika Dyrroth memimpin pasukan Abyss menyerang Moniyan Empire. Saat Granger kembali ke biara, ia hanya menemukan bangunan yang telah hancur dan gurunya tergeletak tak bernyawa. Kematian satu-satunya orang yang pernah membawanya keluar dari kegelapan membuat luka lama kembali terbuka. Dalam amarahnya, Granger membantai seluruh iblis yang berada di sekitarnya, menyadari bahwa hanya suara tembakan dan jeritan para iblis yang mampu membungkam suara-suara di kepalanya.\n\nSejak saat itu, Granger sepenuhnya mengabdikan dirinya sebagai Demon Hunter. Ia menamai pistolnya Dirge, sementara meriam yang disimpan di dalam kotak biola milik gurunya diberi nama Requiem. Dengan membalut kedua tangannya agar tetap bersih dari noda darah, ia terus berburu iblis. Bagi Granger, setiap peluru yang ditembakkan bukan hanya untuk memusnahkan Abyss, tetapi juga sebuah requiem bagi orang-orang yang telah ia kehilangan.",
+  "dualTabNames": {
+    "tab1": "Tab 1",
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
+  },
+  "abilitiesPasif": {
+    "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/b0/Capriccio.png",
+    "name": "Capriccio",
+    "kategori": "Damage/Buff",
+    "longDesc": "Pistol dan Meriam Pemburu Iblis milik Granger diperkuat dengan Demonic Energy. Kedua senjatanya pada awalnya memiliki 800 max Energy. Pistol memulihkan 8% Energy setiap detik sementara Meriam memulihkan 2% Energy setiap detik. Mengeliminasi Minion / Creep akan meningkatkan max Energy senjata tersebut sebesar 6 / 6 secara permanen, dan memulihkan 5% / 5% Energy senjata secara langsung. Setiap eliminasi atau assist pada hero lawan akan meningkatkan 12 max Energy kedua senjata secara permanen dan memulihkan 10% Energy secara langsung.\n\nSetiap 1% Pengurangan Cooldown dikonversi menjadi 2 Physical Attack. Biaya penggunaan Demonic Energy tidak dipengaruhi oleh efek Pengurangan Penggunaan Energy.",
+    "dual": false,
+    "url2": "",
+    "name2": "",
+    "kategori2": "BUFF",
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
+  },
+  "abilitiesList": [
+    {
+      "label": "Skill 1",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Rhapsody.png",
+      "name": "Rhapsody",
+      "kategori": "Burst",
+      "longDesc": "Granger melepaskan 6 tembakan beruntun dengan Pistol miliknya, setiap tembakan memberikan 60 (+45% Total Physical Attack) Physical Damage dan menghabiskan 70 Energy Pistol. Tembakan terakhir dijamin memberikan Damage Critical. Saat menembak, Movement Speed Granger meningkat 10%.\n\nGranger berhenti menembak saat dia kehabisan Energy, atau saat skill digunakan kembali. Rhapsody tidak memiliki cooldown dan bisa digunakan saat Energy Pistol miliknya melebihi 420.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "AOE",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
+    },
+    {
+      "label": "Skill 2",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Rondo.png",
+      "name": "Rondo",
+      "kategori": "Mobility/Buff",
+      "longDesc": "Granger berpindah ke arah target, langsung memulihkan 15% Energy untuk Pistol miliknya.\n\nRondo bisa digunakan saat Rhapsody berlangsung. Setiap kali Rhapsody mengenai lawan, Cooldown Rondo berkurang selama 0.5 detik.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Mobility",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
+    },
+    {
+      "label": "Ultimate",
+      "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/61/Death_Sonata.png",
+      "name": "Death Sonata",
+      "kategori": "Burst/Slow",
+      "longDesc": "Granger menembakkan Meriam miliknya ke arah target, memberikan 150 (+110% Total Physical Attack) Physical Damage ke hero lawan pertama yang terkena dan target lainnya dalam radius ledakan. Target yang terserang akan terkena slow secara singkat. Granger bisa bergerak sesuai arah Joystick setelah setiap tembakan. Death Sonata bisa digunakan sambil menembakkan Rhapsody. Death Sonata punya cooldown singkat dan mengonsumsi 250 Energy Meriam setiap tembakan.",
+      "dual": false,
+      "url2": "",
+      "name2": "",
+      "kategori2": "Burst",
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
+    }
+  ],
+  "download": {
+    "dual": false,
+    "tab1Name": "Tanpa Fix Ulti",
+    "tab2Name": "Dengan Fix Ulti",
+    "rowsTab1": [
+      {
+        "name": "Default",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7c/Hero791-icon.png",
+        "link": "https://sfile.co/FSD8kxh8ajy"
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7c/Hero791-icon.png",
+        "link": "https://sfile.co/CUPuyq2SxRz"
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Hero792-icon.png",
+        "link": "https://sfile.co/IUB58CKS1Yq"
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/39/Hero792-icon.png",
+        "link": "https://sfile.co/Jc2ZK8OU33I"
+      },
+      {
+        "name": "Elite",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/43/Hero793-icon.png",
+        "link": "https://sfile.co/2PWGXjW7Pg3"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3f/Hero794-icon.png",
+        "link": "https://sfile.co/ectR3Mi8FOu"
+      },
+      {
+        "name": "Lightborn",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1d/Hero795-icon.png",
+        "link": "https://sfile.co/XzCXfHmL1Wi"
+      },
+      {
+        "name": "Collector",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fc/Hero796-icon.png",
+        "link": "https://sfile.co/2PCMDjdLm25"
+      },
+      {
+        "name": "Legend",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/08/Hero797-icon.png",
+        "link": "https://sfile.co/LdawlapNXvp"
+      },
+      {
+        "name": "Transformers",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3d/Hero798-icon.png",
+        "link": "https://sfile.co/amEaSaHwa4k"
+      },
+      {
+        "name": "Create",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/0b/Hero799-icon.png",
+        "link": "https://sfile.co/ZvHEJaexkAt"
+      },
+      {
+        "name": "Exorcist",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/41/Hero107910-icon.png",
+        "link": "https://sfile.co/QSPnAz8gUbA"
+      },
+      {
+        "name": "Valentine",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero107911-icon.png",
+        "link": "https://sfile.co/DRZBlkG2oGQ"
+      },
+      {
+        "name": "Prime",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d8/Hero107913-icon.png",
+        "link": ""
+      }
+    ],
+    "rowsTab2": []
+  },
+  "tooltipLogo": {
+    "title": "Apa itu Logo?",
+    "desc": "Logo adalah tag skin yang ada di atas kanan card potret hero. Bisa itu collector, legend, atau yang lainnya, sesuai dengan kategori skin script.\n\nDisclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gameplay.",
+    "img": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/tooltip-logo.webp"
+  },
+  "tooltipDlTab": {
+    "title": "Apa itu Fix Ulti?",
+    "desc": "Fix Ulti pada Granger Exorcist adalah memperbaiki efek tangan yang muncul setelah menggunakan skill03 atau ultimate.",
+    "img": "https://i.ibb.co/BVS7Tq2Y/tooltip-granger-exorcist-v2.webp"
+  }
+}
