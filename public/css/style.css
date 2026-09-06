@@ -471,7 +471,7 @@ body.page-search .henz-page{padding-top:87px}
 
 /* WELCOME POPUP SUBSCRIBE BUTTON */
 .hz-welcome-popup-btnwrap{padding:16px 20px 20px}
-.hz-welcome-popup-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:12px;border:none;background:##4ae256;color:#fff;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;transition:opacity .2s;-webkit-tap-highlight-color:transparent}
+.hz-welcome-popup-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:12px;border:none;background:#4ae256;color:#fff;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;text-align:center;cursor:pointer;text-decoration:none;transition:opacity .2s;-webkit-tap-highlight-color:transparent}
 .hz-welcome-popup-btn:hover{opacity:.85}
 .hz-welcome-popup-btn svg{flex-shrink:0}
 .hz-welcome-popup-optout-row{display:none;padding:14px 20px 0}
