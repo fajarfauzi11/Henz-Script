@@ -1,0 +1,703 @@
+[
+  {
+    "name": "Miya",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/miya.webp"
+  },
+  {
+    "name": "Balmond",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/balmond.webp"
+  },
+  {
+    "name": "Saber",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/saber.webp"
+  },
+  {
+    "name": "Alice",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/alice.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Nana",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/nana.webp"
+  },
+  {
+    "name": "Tigreal",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/tigreal.webp"
+  },
+  {
+    "name": "Alucard",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/alucard.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Karina",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/karina.webp"
+  },
+  {
+    "name": "Akai",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/akai.webp"
+  },
+  {
+    "name": "Franco",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/franco.webp"
+  },
+  {
+    "name": "Bane",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/bane.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Bruno",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/bruno.webp"
+  },
+  {
+    "name": "Clint",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/clint.webp"
+  },
+  {
+    "name": "Rafaela",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/rafaela.webp"
+  },
+  {
+    "name": "Eudora",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/eudora.webp"
+  },
+  {
+    "name": "Zilong",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/zilong.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Fanny",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/fanny.webp"
+  },
+  {
+    "name": "Layla",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/layla.webp"
+  },
+  {
+    "name": "Minotaur",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/minotaur.webp",
+    "role2": "support"
+  },
+  {
+    "name": "Lolita",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lolita.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "Hayabusa",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/hayabusa.webp"
+  },
+  {
+    "name": "Freya",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/freya.webp"
+  },
+  {
+    "name": "Gord",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/gord.webp"
+  },
+  {
+    "name": "Natalia",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/natalia.webp"
+  },
+  {
+    "name": "Kagura",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/kagura.webp"
+  },
+  {
+    "name": "Chou",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/chou.webp"
+  },
+  {
+    "name": "Sun",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/sun.webp"
+  },
+  {
+    "name": "Alpha",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/alpha.webp"
+  },
+  {
+    "name": "Ruby",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/ruby.webp"
+  },
+  {
+    "name": "Yi Sun-shin",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/yi-sun-shin.webp",
+    "role2": "marksman"
+  },
+  {
+    "name": "Moskov",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/moskov.webp"
+  },
+  {
+    "name": "Johnson",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/johnson.webp",
+    "role2": "support"
+  },
+  {
+    "name": "Cyclops",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/cyclops.webp"
+  },
+  {
+    "name": "Estes",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/estes.webp"
+  },
+  {
+    "name": "Hilda",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/hilda.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "Aurora",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/aurora.webp"
+  },
+  {
+    "name": "Lapu-Lapu",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lapu-lapu.webp"
+  },
+  {
+    "name": "Vexana",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/vexana.webp"
+  },
+  {
+    "name": "Roger",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/roger.webp",
+    "role2": "marksman"
+  },
+  {
+    "name": "Karrie",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/karrie.webp"
+  },
+  {
+    "name": "Gatotkaca",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/gatotkaca.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Harley",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/harley.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Irithel",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/irithel.webp"
+  },
+  {
+    "name": "Grock",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/grock.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Argus",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/argus.webp"
+  },
+  {
+    "name": "Odette",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/odette.webp"
+  },
+  {
+    "name": "Lancelot",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lancelot.webp"
+  },
+  {
+    "name": "Diggie",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/diggie.webp"
+  },
+  {
+    "name": "Hylos",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/hylos.webp"
+  },
+  {
+    "name": "Zhask",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/zhask.webp"
+  },
+  {
+    "name": "Helcurt",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/helcurt.webp"
+  },
+  {
+    "name": "Pharsa",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/pharsa.webp"
+  },
+  {
+    "name": "Lesley",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lesley.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Jawhead",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/jawhead.webp"
+  },
+  {
+    "name": "Angela",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/angela.webp"
+  },
+  {
+    "name": "Gusion",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/gusion.webp"
+  },
+  {
+    "name": "Valir",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/valir.webp"
+  },
+  {
+    "name": "Martis",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/martis.webp"
+  },
+  {
+    "name": "Uranus",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/uranus.webp"
+  },
+  {
+    "name": "Hanabi",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/hanabi.webp"
+  },
+  {
+    "name": "Chang'e",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/change.webp"
+  },
+  {
+    "name": "Kaja",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/kaja.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Selena",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/selena.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Aldous",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/aldous.webp"
+  },
+  {
+    "name": "Claude",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/claude.webp"
+  },
+  {
+    "name": "Vale",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/vale.webp"
+  },
+  {
+    "name": "Leomord",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/leomord.webp"
+  },
+  {
+    "name": "Lunox",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lunox.webp"
+  },
+  {
+    "name": "Hanzo",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/hanzo.webp"
+  },
+  {
+    "name": "Belerick",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/belerick.webp"
+  },
+  {
+    "name": "Kimmy",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/kimmy.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Thamuz",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/thamuz.webp"
+  },
+  {
+    "name": "Harith",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/harith.webp"
+  },
+  {
+    "name": "Minsitthar",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/minsitthar.webp"
+  },
+  {
+    "name": "Kadita",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/kadita.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Faramis",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/faramis.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Badang",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/badang.webp"
+  },
+  {
+    "name": "Khufra",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/khufra.webp"
+  },
+  {
+    "name": "Granger",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/granger.webp"
+  },
+  {
+    "name": "Guinevere",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/guinevere.webp"
+  },
+  {
+    "name": "Esmeralda",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/esmeralda.webp",
+    "role2": "mage"
+  },
+  {
+    "name": "Terizla",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/terizla.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "X.Borg",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/xborg.webp"
+  },
+  {
+    "name": "Ling",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/ling.webp"
+  },
+  {
+    "name": "Dyrroth",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/dyrroth.webp"
+  },
+  {
+    "name": "Lylia",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lylia.webp"
+  },
+  {
+    "name": "Baxia",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/baxia.webp"
+  },
+  {
+    "name": "Masha",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/masha.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "Wanwan",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/wanwan.webp"
+  },
+  {
+    "name": "Silvanna",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/silvanna.webp"
+  },
+  {
+    "name": "Cecilion",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/cecilion.webp"
+  },
+  {
+    "name": "Carmilla",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/carmilla.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "Atlas",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/atlas.webp"
+  },
+  {
+    "name": "Popol & Kupa",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/popol-and-kupa.webp"
+  },
+  {
+    "name": "Yu Zhong",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/yu-zhong.webp"
+  },
+  {
+    "name": "Luo Yi",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/luo-yi.webp"
+  },
+  {
+    "name": "Benedetta",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/benedetta.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Khaleed",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/khaleed.webp"
+  },
+  {
+    "name": "Barats",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/barats.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Brody",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/brody.webp"
+  },
+  {
+    "name": "Yve",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/yve.webp"
+  },
+  {
+    "name": "Mathilda",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/mathilda.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Paquito",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/paquito.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Gloo",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/gloo.webp"
+  },
+  {
+    "name": "Beatrix",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/beatrix.webp"
+  },
+  {
+    "name": "Phoveus",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/phoveus.webp"
+  },
+  {
+    "name": "Natan",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/natan.webp"
+  },
+  {
+    "name": "Aulus",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/aulus.webp"
+  },
+  {
+    "name": "Aamon",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/aamon.webp"
+  },
+  {
+    "name": "Valentina",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/valentina.webp"
+  },
+  {
+    "name": "Edith",
+    "role": "tank",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/edith.webp",
+    "role2": "marksman"
+  },
+  {
+    "name": "Floryn",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/floryn.webp"
+  },
+  {
+    "name": "Yin",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/yin.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Melissa",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/melissa.webp"
+  },
+  {
+    "name": "Xavier",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/xavier.webp"
+  },
+  {
+    "name": "Julian",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/julian.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Fredrinn",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/fredrinn.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "Joy",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/joy.webp"
+  },
+  {
+    "name": "Novaria",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/novaria.webp"
+  },
+  {
+    "name": "Arlott",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/arlott.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Ixia",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/ixia.webp"
+  },
+  {
+    "name": "Nolan",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/nolan.webp"
+  },
+  {
+    "name": "Cici",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/cici.webp"
+  },
+  {
+    "name": "Chip",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/chip.webp",
+    "role2": "tank"
+  },
+  {
+    "name": "Zhuxin",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/zhuxin.webp"
+  },
+  {
+    "name": "Suyou",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/suyou.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Lukas",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/lukas.webp"
+  },
+  {
+    "name": "Kalea",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/kalea.webp",
+    "role2": "fighter"
+  },
+  {
+    "name": "Zetian",
+    "role": "mage",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/zetian.webp"
+  },
+  {
+    "name": "Obsidia",
+    "role": "marksman",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/obsidia.webp"
+  },
+  {
+    "name": "Sora",
+    "role": "fighter",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/sora.webp",
+    "role2": "assassin"
+  },
+  {
+    "name": "Marcel",
+    "role": "support",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/marcel.webp"
+  },
+  {
+    "name": "Hirara",
+    "role": "assassin",
+    "image": "https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/img/heroes/hirara.webp"
+  }
+]

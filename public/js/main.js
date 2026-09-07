@@ -775,9 +775,28 @@ window.hzCloseWelcomePopup = function(){
   var OPTOUT_KEY = 'hz_welcome_popup_optout';
   var SESSION_SHOWN_KEY = 'hz_welcome_popup_shown';
   var SESSION_COUNT_KEY = 'hz_welcome_popup_session_count';
+  var VERSION_KEY = 'hz_welcome_popup_version';
   var MAX_SESSIONS = 5;
   var overlay = document.getElementById('hz-welcome-popup-overlay');
   if(!overlay)return;
+
+  /* ── Content-version reset ──
+     Naikkan CONTENT_VERSION setiap kali konten popup berubah signifikan
+     (mis. dari ajakan subscribe YouTube -> ajakan join saluran WhatsApp)
+     dan ingin popup tampil lagi ke SEMUA user, termasuk yang sudah pernah
+     centang "Jangan Tampilkan Lagi" atau sudah mencapai batas 5 sesi.
+     Sekali versi berubah, status optout & hitungan sesi user direset ke 0,
+     lalu siklus normal (max 5 sesi, checkbox muncul mulai kemunculan ke-2)
+     berjalan lagi dari awal seperti user baru. */
+  var CONTENT_VERSION = 'wa-channel-1';
+  try{
+    if(localStorage.getItem(VERSION_KEY) !== CONTENT_VERSION){
+      localStorage.removeItem(OPTOUT_KEY);
+      localStorage.setItem(SESSION_COUNT_KEY, '0');
+      sessionStorage.removeItem(SESSION_SHOWN_KEY);
+      localStorage.setItem(VERSION_KEY, CONTENT_VERSION);
+    }
+  }catch(e){}
 
   var checkbox = document.getElementById('hz-welcome-popup-optout-checkbox');
   if(checkbox){
