@@ -173,12 +173,14 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero171-icon.png",
-        "link": "https://sfile.co/lRJPBCM1prY"
+        "link": "https://sfile.co/lRJPBCM1prY",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/78/Hero171-icon.png",
-        "link": "https://sfile.co/jexp4V2e4TC"
+        "link": "https://sfile.co/jexp4V2e4TC",
+        "fixSfx": true
       },
       {
         "name": "Elite",
@@ -218,12 +220,14 @@
       {
         "name": "Imperial Warrior",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero179-icon.png",
-        "link": "https://sfile.co/ANLBnKokRIG"
+        "link": "https://sfile.co/ANLBnKokRIG",
+        "fixSfx": true
       },
       {
         "name": "Imperial Warrior + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero179-icon.png",
-        "link": "https://sfile.co/o4R8AWQAQyj"
+        "link": "https://sfile.co/o4R8AWQAQyj",
+        "fixSfx": true
       },
       {
         "name": "Aspirants",
