@@ -588,7 +588,12 @@ function hzExtractHeroCode(url) {
   const m = url.match(/\/(Hero\d+)-icon/i);
   return m ? m[1] : '';
 }
-function buildDlRow(name, url, link, isLast) {
+/* Badge "Fix SFX" — position:absolute di atas nama replace, di dalam pembungkus position:relative yang
+   sudah ada. Karena absolute, badge tidak ikut menentukan tinggi/posisi nama, ikon, maupun tombol Download. */
+function hzFixSfxBadge() {
+  return '<span style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:800;letter-spacing:.5px;line-height:1.2;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>FIX SFX</span>';
+}
+function buildDlRow(name, url, link, isLast, fixSfx) {
   const altR = hzExtractHeroCode(url) || name;
   const hasLogo = /logo/i.test(name);
   const logoQBtn = hasLogo
@@ -599,14 +604,14 @@ function buildDlRow(name, url, link, isLast) {
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   const rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="' + rowStyle + '">\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">' + escHtml(name) + '</span>' + logoQBtn + '</span></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;">' + (fixSfx ? hzFixSfxBadge() : '') + '<span style="font-weight:800;color:#111;font-size:12px;">' + escHtml(name) + '</span>' + logoQBtn + '</span></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">' + dlBtn + '</td>\n'
     + '</tr>\n';
 }
 
 /* Baris Tab 2 — identik Tab 1, namareplace kuning (#FFC200), logo tooltip tetap ada */
-function buildDlRowTab2(name, url, link, isLast) {
+function buildDlRowTab2(name, url, link, isLast, fixSfx) {
   const altR = hzExtractHeroCode(url) || name;
   const hasLogo = /logo/i.test(name);
   const logoQBtn = hasLogo
@@ -617,7 +622,7 @@ function buildDlRowTab2(name, url, link, isLast) {
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   const rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="' + rowStyle + '">\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#FFC200;font-size:12px;">' + escHtml(name) + '</span>' + logoQBtn + '</span></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;">' + (fixSfx ? hzFixSfxBadge() : '') + '<span style="font-weight:800;color:#FFC200;font-size:12px;">' + escHtml(name) + '</span>' + logoQBtn + '</span></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">' + dlBtn + '</td>\n'
     + '</tr>\n';
@@ -643,8 +648,8 @@ function buildDlInject(dl) {
   dl = dl || {};
   const rowsTab1 = dl.rowsTab1 || [];
   const rowsTab2 = dl.rowsTab2 || [];
-  const rowsHtml = (rows) => rows.map((r, i) => buildDlRow(r.name, r.url, r.link, i === rows.length - 1)).join('');
-  const rowsHtmlTab2 = (rows) => rows.map((r, i) => buildDlRowTab2(r.name, r.url, r.link, i === rows.length - 1)).join('');
+  const rowsHtml = (rows) => rows.map((r, i) => buildDlRow(r.name, r.url, r.link, i === rows.length - 1, !!r.fixSfx)).join('');
+  const rowsHtmlTab2 = (rows) => rows.map((r, i) => buildDlRowTab2(r.name, r.url, r.link, i === rows.length - 1, !!r.fixSfx)).join('');
 
   if (!dl.dual) {
     return buildDlTableWrap(rowsHtml(rowsTab1));

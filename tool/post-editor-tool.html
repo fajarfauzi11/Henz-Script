@@ -74,6 +74,10 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 .dual-ab-check-wrap{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.18);border-radius:8px;margin-bottom:12px;cursor:pointer;user-select:none;}
 .dual-ab-check-wrap input[type=checkbox]{width:15px;height:15px;accent-color:#6366f1;cursor:pointer;flex-shrink:0;}
 .dual-ab-check-wrap span{font-size:12.5px;font-weight:600;color:#4338ca;font-family:'Inter',sans-serif;}
+/* Fix SFX checkbox per blok replace */
+.fixsfx-check-wrap{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(21,101,192,.06);border:1px solid rgba(21,101,192,.18);border-radius:8px;cursor:pointer;user-select:none;}
+.fixsfx-check-wrap input[type=checkbox]{width:15px;height:15px;accent-color:#1565c0;cursor:pointer;flex-shrink:0;}
+.fixsfx-check-wrap span{font-size:12px;font-weight:600;color:#1565c0;font-family:'Inter',sans-serif;}
 /* Tab 2 section header in form */
 .dual-tab-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;padding:8px 0 4px;font-family:'Inter',sans-serif;}
 .dual-tab-name-wrap{display:flex;gap:8px;margin-bottom:10px;}
@@ -966,6 +970,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
           <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">linkreplace1</span></div>
           <input type="text" id="linkreplace1" placeholder="https://sfile.co/xxx"/>
         </div>
+        <label class="fixsfx-check-wrap">
+          <input type="checkbox" id="fixsfx1" onchange="scheduleLiveUpdate()"/>
+          <span>Fix SFX · badge di atas nama replace</span>
+        </label>
       </div>
     </div>
 
@@ -990,6 +998,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
           <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">linkreplaceterakhir</span></div>
           <input type="text" id="linkreplaceterakhir" placeholder="https://sfile.co/xxx"/>
         </div>
+        <label class="fixsfx-check-wrap">
+          <input type="checkbox" id="fixsfxlast" onchange="scheduleLiveUpdate()"/>
+          <span>Fix SFX · badge di atas nama replace</span>
+        </label>
       </div>
     </div>
 
@@ -1032,6 +1044,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
             <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">t2_linkreplace1</span></div>
             <input type="text" id="t2_linkreplace1" placeholder="https://sfile.co/xxx"/>
           </div>
+          <label class="fixsfx-check-wrap">
+            <input type="checkbox" id="t2_fixsfx1" onchange="scheduleLiveUpdate()"/>
+            <span>Fix SFX · badge di atas nama replace</span>
+          </label>
         </div>
       </div>
 
@@ -1056,6 +1072,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
             <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">t2_linkreplaceterakhir</span></div>
             <input type="text" id="t2_linkreplaceterakhir" placeholder="https://sfile.co/xxx"/>
           </div>
+          <label class="fixsfx-check-wrap">
+            <input type="checkbox" id="t2_fixsfxlast" onchange="scheduleLiveUpdate()"/>
+            <span>Fix SFX · badge di atas nama replace</span>
+          </label>
         </div>
       </div>
 
@@ -1693,6 +1713,7 @@ function addDlBlok(){
         '<input type="text" id="urlreplace'+idx+'" placeholder="https://i.ibb.co/xxx/icon.png"/></div>'+
       '<div class="field"><div class="field-label" style="font-size:9px">Link Download <span class="field-badge">linkreplace'+idx+'</span></div>'+
         '<input type="text" id="linkreplace'+idx+'" placeholder="https://sfile.co/xxx"/></div>'+
+      '<label class="fixsfx-check-wrap"><input type="checkbox" id="fixsfx'+idx+'" onchange="scheduleLiveUpdate()"/><span>Fix SFX · badge di atas nama replace</span></label>'+
     '</div>';
   mid.appendChild(card);
   attachAllListeners();
@@ -1737,6 +1758,7 @@ function hzSyncTab2FromTab1(){
   // Populate blok pertama
   hzSetField('t2_replace1',    v('replace1'));
   hzSetField('t2_urlreplace1', v('urlreplace1'));
+  hzSetCheck('t2_fixsfx1', vc('fixsfx1'));
   // t2_linkreplace1 sengaja dikosongkan → render sebagai Soon!
 
   // Populate blok tengah — ikuti jumlah & urutan blok Tab 1
@@ -1750,6 +1772,7 @@ function hzSyncTab2FromTab1(){
       var newIdx = dlCounterT2;
       hzSetField('t2_replace'    + newIdx, v('replace'    + idx));
       hzSetField('t2_urlreplace' + newIdx, v('urlreplace' + idx));
+      hzSetCheck('t2_fixsfx' + newIdx, vc('fixsfx' + idx));
       // t2_linkreplace{newIdx} sengaja dikosongkan
     });
   }
@@ -1757,6 +1780,7 @@ function hzSyncTab2FromTab1(){
   // Populate blok terakhir
   hzSetField('t2_replacelast',        v('replacelast'));
   hzSetField('t2_urlreplaceterakhir', v('urlreplaceterakhir'));
+  hzSetCheck('t2_fixsfxlast', vc('fixsfxlast'));
   // t2_linkreplaceterakhir sengaja dikosongkan
 
   updateDlCountT2();
@@ -1796,6 +1820,7 @@ function addDlBlokT2(){
         '<input type="text" id="t2_urlreplace'+idx+'" placeholder="https://i.ibb.co/xxx/icon.png"/></div>'+
       '<div class="field"><div class="field-label" style="font-size:9px">Link Download <span class="field-badge">t2_linkreplace'+idx+'</span></div>'+
         '<input type="text" id="t2_linkreplace'+idx+'" placeholder="https://sfile.co/xxx"/></div>'+
+      '<label class="fixsfx-check-wrap"><input type="checkbox" id="t2_fixsfx'+idx+'" onchange="scheduleLiveUpdate()"/><span>Fix SFX · badge di atas nama replace</span></label>'+
     '</div>';
   mid.appendChild(card);
   attachAllListeners();
@@ -1810,6 +1835,8 @@ function removeDlBlokT2(idx){
 
 // ── HELPERS ────────────────────────────────
 function v(id){ return (document.getElementById(id)||{value:''}).value||''; }
+function vc(id){ var el = document.getElementById(id); return !!(el && el.checked); }
+function hzSetCheck(id, on){ var el = document.getElementById(id); if(el) el.checked = !!on; }
 function s57(str){ return str.length>57?str.substring(0,57)+'...':str; }
 function s82(str){ return str.length>82?str.substring(0,82)+'...':str; }
 function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -2009,7 +2036,12 @@ function buildAbMiddle(){
 
 // ── BUILD DL MIDDLE HTML ───────────────────
 // ── BUILD SATU BARIS TABEL DOWNLOAD ───────────
-function buildDlRow(name, url, link, isLast, isT2){
+/* Badge "Fix SFX" — position:absolute di atas nama replace, di dalam pembungkus position:relative yang
+   sudah ada. Karena absolute, badge tidak ikut menentukan tinggi/posisi nama, ikon, maupun tombol Download. */
+function hzFixSfxBadge() {
+  return '<span style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:800;letter-spacing:.5px;line-height:1.2;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>FIX SFX</span>';
+}
+function buildDlRow(name, url, link, isLast, isT2, fixSfx){
   var altR  = hzExtractHeroCode(url) || name;
   var hasLogo = /logo/i.test(name);
   var nameColor = isT2 ? '#FFC200' : '#111';
@@ -2021,7 +2053,7 @@ function buildDlRow(name, url, link, isLast, isT2){
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   var rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="'+rowStyle+'">\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:'+nameColor+';font-size:12px;">'+esc(name)+'</span>'+logoQBtn+'</span></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;">'+(fixSfx ? hzFixSfxBadge() : '')+'<span style="font-weight:800;color:'+nameColor+';font-size:12px;">'+esc(name)+'</span>'+logoQBtn+'</span></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="'+esc(url)+'" alt="'+esc(altR)+'" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">'+dlBtn+'</td>\n'
     + '</tr>\n';
@@ -2034,7 +2066,7 @@ function buildDlTableRows(isT2){
   var html = '';
 
   // Blok pertama
-  html += buildDlRow(v(pfx+'replace1'), v(pfx+'urlreplace1'), v(pfx+'linkreplace1'), false, isT2);
+  html += buildDlRow(v(pfx+'replace1'), v(pfx+'urlreplace1'), v(pfx+'linkreplace1'), false, isT2, vc(pfx+'fixsfx1'));
 
   // Blok tengah dinamis
   var mid = document.getElementById(midId);
@@ -2044,12 +2076,12 @@ function buildDlTableRows(isT2){
       var m = card.id.match(isT2 ? /dl-mid-t2-(\d+)/ : /dl-mid-(\d+)/);
       if(!m) return;
       var idx = m[1];
-      html += buildDlRow(v(pfx+'replace'+idx), v(pfx+'urlreplace'+idx), v(pfx+'linkreplace'+idx), false, isT2);
+      html += buildDlRow(v(pfx+'replace'+idx), v(pfx+'urlreplace'+idx), v(pfx+'linkreplace'+idx), false, isT2, vc(pfx+'fixsfx'+idx));
     });
   }
 
   // Blok terakhir
-  html += buildDlRow(v(pfx+'replacelast'), v(pfx+'urlreplaceterakhir'), v(pfx+'linkreplaceterakhir'), true, isT2);
+  html += buildDlRow(v(pfx+'replacelast'), v(pfx+'urlreplaceterakhir'), v(pfx+'linkreplaceterakhir'), true, isT2, vc(pfx+'fixsfxlast'));
 
   return html;
 }
@@ -2202,11 +2234,17 @@ function hzCollectDlDynamicIndexes(isT2){
 }
 function hzCollectDlRows(pfx){
   var rows = [];
-  rows.push({ name: v(pfx+'replace1'), url: v(pfx+'urlreplace1'), link: v(pfx+'linkreplace1') });
+  // fixSfx hanya ditulis ke JSON kalau dicentang — post lama tanpa field ini tetap identik
+  function mk(nameId, urlId, linkId, fxId){
+    var r = { name: v(nameId), url: v(urlId), link: v(linkId) };
+    if(vc(fxId)) r.fixSfx = true;
+    return r;
+  }
+  rows.push(mk(pfx+'replace1', pfx+'urlreplace1', pfx+'linkreplace1', pfx+'fixsfx1'));
   hzCollectDlDynamicIndexes(pfx==='t2_').forEach(function(idx){
-    rows.push({ name: v(pfx+'replace'+idx), url: v(pfx+'urlreplace'+idx), link: v(pfx+'linkreplace'+idx) });
+    rows.push(mk(pfx+'replace'+idx, pfx+'urlreplace'+idx, pfx+'linkreplace'+idx, pfx+'fixsfx'+idx));
   });
-  rows.push({ name: v(pfx+'replacelast'), url: v(pfx+'urlreplaceterakhir'), link: v(pfx+'linkreplaceterakhir') });
+  rows.push(mk(pfx+'replacelast', pfx+'urlreplaceterakhir', pfx+'linkreplaceterakhir', pfx+'fixsfxlast'));
   return rows;
 }
 // Kumpulkan field varian N (3-7) untuk sebuah blok ability, dari form ke object data JSON
@@ -2440,12 +2478,14 @@ function hzLoadFromJson(jsonString, filename){
       hzSetField(pfx+'replace1', rows[0].name || '');
       hzSetField(pfx+'urlreplace1', rows[0].url || '');
       hzSetField(pfx+'linkreplace1', rows[0].link || '');
+      hzSetCheck(pfx+'fixsfx1', rows[0].fixSfx);
     }
     var last = rows.length > 1 ? rows[rows.length-1] : null;
     if(last){
       hzSetField(pfx+'replacelast', last.name || '');
       hzSetField(pfx+'urlreplaceterakhir', last.url || '');
       hzSetField(pfx+'linkreplaceterakhir', last.link || '');
+      hzSetCheck(pfx+'fixsfxlast', last.fixSfx);
     }
     for(var i=1; i<rows.length-1; i++){
       if(isT2) addDlBlokT2(); else addDlBlok();
@@ -2453,6 +2493,7 @@ function hzLoadFromJson(jsonString, filename){
       hzSetField(pfx+'replace'+idx, rows[i].name || '');
       hzSetField(pfx+'urlreplace'+idx, rows[i].url || '');
       hzSetField(pfx+'linkreplace'+idx, rows[i].link || '');
+      hzSetCheck(pfx+'fixsfx'+idx, rows[i].fixSfx);
     }
   }
   loadDlRows(rowsT1, '', false);
