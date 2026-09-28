@@ -591,7 +591,45 @@ function hzExtractHeroCode(url) {
 /* Badge "Fix SFX" — position:absolute di atas nama replace, di dalam pembungkus position:relative yang
    sudah ada. Karena absolute, badge tidak ikut menentukan tinggi/posisi nama, ikon, maupun tombol Download. */
 function hzFixSfxBadge() {
-  return '<span style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:800;letter-spacing:.5px;line-height:1.2;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>FIX SFX</span>';
+  return '<span data-hz-fixsfx="1" style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:3px;display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:800;letter-spacing:.5px;line-height:1.2;padding:2px 8px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>FIX SFX</span>';
+}
+/* Runtime kecil, hanya disertakan kalau tabel punya badge Fix SFX. Nama replace yang turun jadi 2+ baris
+   di layar sempit mendorong badge (absolute) mendekati garis atas baris; script ini mengukur jaraknya dan
+   menambah padding-top pada sel nama HANYA kalau jarak < 6px. Baris bernama 1 baris tidak disentuh. */
+var HZ_FIXSFX_SCRIPT = ''
+  + '<script>\n'
+  + '(function(){\n'
+  + '  var G=6;\n'
+  + '  function adj(){\n'
+  + '    var bs=document.querySelectorAll("[data-hz-fixsfx]");\n'
+  + '    for(var i=0;i<bs.length;i++){\n'
+  + '      var b=bs[i],td=b.closest("td"),tr=b.closest("tr");\n'
+  + '      if(!td||!tr)continue;\n'
+  + '      var base=td.getAttribute("data-hz-pt");\n'
+  + '      if(base===null){base=parseFloat(getComputedStyle(td).paddingTop)||0;td.setAttribute("data-hz-pt",base);}\n'
+  + '      else base=parseFloat(base);\n'
+  + '      td.style.paddingTop=base+"px";\n'
+  + '      if(!tr.offsetHeight)continue;\n'
+  + '      var p=0;\n'
+  + '      for(var k=0;k<6;k++){\n'
+  + '        var d=G-(b.getBoundingClientRect().top-tr.getBoundingClientRect().top);\n'
+  + '        if(d<=0.5)break;\n'
+  + '        p+=d;td.style.paddingTop=(base+p)+"px";\n'
+  + '      }\n'
+  + '    }\n'
+  + '  }\n'
+  + '  var t;function sch(){if(window.requestAnimationFrame){cancelAnimationFrame(t);t=requestAnimationFrame(adj);}else adj();}\n'
+  + '  var o=window.hzDlTabSwitch;\n'
+  + '  if(typeof o==="function")window.hzDlTabSwitch=function(x){o(x);adj();};\n'
+  + '  if(document.readyState!=="loading")adj();else document.addEventListener("DOMContentLoaded",adj);\n'
+  + '  window.addEventListener("load",adj);\n'
+  + '  window.addEventListener("resize",sch);\n'
+  + '  window.addEventListener("orientationchange",sch);\n'
+  + '  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(adj);\n'
+  + '})();\n'
+  + '</script>\n';
+function hzWithFixSfxScript(html) {
+  return html.indexOf('data-hz-fixsfx') !== -1 ? html + HZ_FIXSFX_SCRIPT : html;
 }
 function buildDlRow(name, url, link, isLast, fixSfx) {
   const altR = hzExtractHeroCode(url) || name;
@@ -652,7 +690,7 @@ function buildDlInject(dl) {
   const rowsHtmlTab2 = (rows) => rows.map((r, i) => buildDlRowTab2(r.name, r.url, r.link, i === rows.length - 1, !!r.fixSfx)).join('');
 
   if (!dl.dual) {
-    return buildDlTableWrap(rowsHtml(rowsTab1));
+    return hzWithFixSfxScript(buildDlTableWrap(rowsHtml(rowsTab1)));
   }
 
   const t1Name = dl.tab1Name || 'Tab 1';
@@ -713,7 +751,7 @@ function buildDlInject(dl) {
     + '};\n'
     + '</script>\n';
 
-  return seg + dualTable + initScript;
+  return hzWithFixSfxScript(seg + dualTable + initScript);
 }
 
 /* Ubah tombol Download jadi "Soon!" kalau href-nya kosong setelah semua token diganti
