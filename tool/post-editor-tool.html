@@ -2087,7 +2087,7 @@ function buildDlRow(name, url, link, isLast, isT2, fixSfx){
     ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   var dlBtn = link
-    ? '<a href="'+esc(link)+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
+    ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="'+esc(name)+'" data-url="'+esc(link)+'" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   var rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="'+rowStyle+'">\n'
@@ -2801,18 +2801,28 @@ function hzGetDlMidIndices(isT2){
   return idxs;
 }
 
+/* Suffix otomatis badge Fix SFX: baris berakhiran ", FIX SFX" (koma + spasi + FIX SFX, tidak peka huruf besar/kecil).
+   Suffix dicek & dipotong DULU dari ujung baris, baru sisanya diparse seperti biasa (nama, link) —
+   jadi link tetap utuh dan baris tanpa suffix berperilaku persis seperti sebelumnya. */
+var HZ_DL_BATCH_FIXSFX_RE = /,\s*FIX SFX\s*$/i;
+
 function hzParseDlBatchLines(text){
   var lines = text.split('\n');
   var valid = [], invalid = 0;
   lines.forEach(function(line){
     line = line.trim();
     if(!line) return;
+    var fixSfx = false;
+    if(HZ_DL_BATCH_FIXSFX_RE.test(line)){
+      fixSfx = true;
+      line = line.replace(HZ_DL_BATCH_FIXSFX_RE, '').trim();
+    }
     var commaIdx = line.indexOf(',');
     if(commaIdx === -1){ invalid++; return; }
     var name = line.substring(0, commaIdx).trim();
     var link = line.substring(commaIdx + 1).trim();
     if(!name || !link){ invalid++; return; }
-    valid.push({ name: name, link: link });
+    valid.push({ name: name, link: link, fixSfx: fixSfx });
   });
   return { valid: valid, invalid: invalid };
 }
@@ -2822,12 +2832,16 @@ function hzApplyDlBatch(isT2, items){
   var n = items.length;
   var addBlokFn = isT2 ? addDlBlokT2 : addDlBlok;
 
+  // Checkbox Fix SFX ikut batch: baris ber-suffix ", FIX SFX" -> dicentang, baris tanpa suffix -> dimatikan.
+  // Hanya blok yang ditulis batch yang disentuh (blok kelebihan di luar batch dibiarkan apa adanya).
   if(n === 1){
     hzSetField(pfx + 'replace1', items[0].name);
     hzSetField(pfx + 'linkreplace1', items[0].link);
+    hzSetCheck(pfx + 'fixsfx1', items[0].fixSfx);
   } else {
     hzSetField(pfx + 'replace1', items[0].name);
     hzSetField(pfx + 'linkreplace1', items[0].link);
+    hzSetCheck(pfx + 'fixsfx1', items[0].fixSfx);
 
     var middleItems = items.slice(1, n - 1);
     var existingMid = hzGetDlMidIndices(isT2);
@@ -2841,17 +2855,20 @@ function hzApplyDlBatch(isT2, items){
       }
       hzSetField(pfx + 'replace' + idx, item.name);
       hzSetField(pfx + 'linkreplace' + idx, item.link);
+      hzSetCheck(pfx + 'fixsfx' + idx, item.fixSfx);
     });
 
     var last = items[n - 1];
     hzSetField(pfx + 'replacelast', last.name);
     hzSetField(pfx + 'linkreplaceterakhir', last.link);
+    hzSetCheck(pfx + 'fixsfxlast', last.fixSfx);
   }
 
   attachAllListeners();
   if(typeof scheduleLiveUpdate === 'function') scheduleLiveUpdate();
   if(typeof hzShowLoadStatus === 'function'){
-    hzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update. Icon perlu diisi manual satu per satu.'], false, false);
+    var fxCount = items.filter(function(it){ return it.fixSfx; }).length;
+    hzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update' + (fxCount ? ', ' + fxCount + ' badge Fix SFX aktif' : '') + '. Icon perlu diisi manual satu per satu.'], false, false);
   }
 }
 
@@ -2875,12 +2892,13 @@ function hzOpenDlBatchModal(isT2){
   desc.style.cssText = "font-family:'Inter',sans-serif;font-size:12px;color:#666;line-height:1.7;";
   desc.innerHTML = 'Satu baris = satu varian, format: <b>Nama Replace, Link Download</b><br>'
     + 'Contoh: <code style="background:#f4f4f5;padding:1px 5px;border-radius:4px;">Default, https://sfile.co/JuSW9H6e0YX</code><br>'
+    + 'Tambahkan <b>, FIX SFX</b> di akhir baris untuk mengaktifkan badge Fix SFX otomatis: <code style="background:#f4f4f5;padding:1px 5px;border-radius:4px;">Starlight, https://sfile.co/eodNWOJ279P, FIX SFX</code> (baris tanpa suffix = badge dimatikan).<br>'
     + 'Icon tidak diisi otomatis (isi manual setelahnya). Blok yang sudah ada tapi tidak ke-cover batch (batch lebih sedikit) akan dibiarkan apa adanya.';
   box.appendChild(desc);
 
   var textarea = document.createElement('textarea');
   textarea.id = 'hz-dl-batch-textarea';
-  textarea.placeholder = 'Default, https://sfile.co/JuSW9H6e0YX\nDefault + Logo, https://sfile.co/DaFSRY7shGA\nBasic, https://sfile.co/lgz2tvpprs4';
+  textarea.placeholder = 'Default, https://sfile.co/JuSW9H6e0YX, FIX SFX\nDefault + Logo, https://sfile.co/DaFSRY7shGA\nBasic, https://sfile.co/lgz2tvpprs4, FIX SFX';
   textarea.style.cssText = 'width:100%;min-height:180px;padding:10px 12px;border:1px solid #e0e0e0;border-radius:8px;font-family:monospace;font-size:12.5px;resize:vertical;box-sizing:border-box;';
   box.appendChild(textarea);
 
@@ -2894,6 +2912,8 @@ function hzOpenDlBatchModal(isT2){
     previewEl.style.color = '#888';
     if(!textarea.value.trim()){ previewEl.textContent = ''; return; }
     var msg = parsed.valid.length + ' baris valid terdeteksi';
+    var fxN = parsed.valid.filter(function(it){ return it.fixSfx; }).length;
+    if(fxN > 0) msg += ' (' + fxN + ' Fix SFX)';
     if(parsed.invalid > 0) msg += ', ' + parsed.invalid + ' baris dilewati (format salah)';
     previewEl.textContent = msg;
   };
@@ -3926,6 +3946,78 @@ return `<!DOCTYPE html>
     object-fit: cover;
     display: block;
   }
+  /* ── POPUP GERBANG DOWNLOAD (banner Adsterra + tombol jeda) ── */
+  .hz-dlgate-banner-slot {
+    margin: 16px 20px 0;
+    min-height: 250px;
+    border: 1px dashed #d5d5d5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    overflow: hidden;
+  }
+  .hz-dlgate-btn-wrap {
+    padding: 16px 20px 20px;
+  }
+  .hz-dlgate-btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 46px;
+    border: none;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background .15s, color .15s, transform .1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hz-dlgate-btn:active { transform: scale(.98); }
+  .hz-dlgate-btn[disabled] {
+    background: #e0e0e0;
+    color: #999;
+    cursor: default;
+  }
+  .hz-dlgate-btn .hz-dlgate-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    color: #717171;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .hz-dlgate-btn.hz-dlgate-btn-ready {
+    background: #0c76d0;
+  }
+  .hz-dlgate-caption {
+    margin: 10px 0 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    color: #0c76d0;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .hz-dlgate-disclaimer {
+    margin: 0 0 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    color: #999;
+    text-align: center;
+    line-height: 1.4;
+  }
 </style>
 
 
@@ -4232,6 +4324,31 @@ return `<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- POPUP GERBANG DOWNLOAD — banner iklan Adsterra + tombol dengan jeda 3 detik.
+       ✏️ EDIT: Tempel kode banner Adsterra asli di dalam <div id="hz-dlgate-banner-slot">,
+       menggantikan komentar placeholder di bawah, setelah kode iklan didapat dari dashboard. -->
+  <div id="hz-dlgate-overlay" class="hz-tooltip-overlay" onclick="hzDlGateClose(event)">
+    <div class="hz-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-tooltip-head">
+        <span id="hz-dlgate-title">Download</span>
+        <button type="button" class="hz-tooltip-close" onclick="hzDlGateClose()" aria-label="Tutup">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <hr class="hz-tooltip-hr"/>
+      <div id="hz-dlgate-banner-slot" class="hz-dlgate-banner-slot">
+        <!-- PLACEHOLDER — ganti/hapus span di bawah ini dengan kode banner Adsterra asli -->
+        <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:600;color:#b7b7b7;">Slot banner Adsterra</span>
+      </div>
+      <div class="hz-dlgate-btn-wrap">
+        <p class="hz-dlgate-disclaimer">*Dengan mengklik dan berinteraksi dengan iklan yang tampil, kamu membantu Henz untuk terus menyediakan script premium secara gratis.</p>
+        <button type="button" id="hz-dlgate-btn" class="hz-dlgate-btn" onclick="hzDlGateBtnClick()">Download</button>
+        <p id="hz-dlgate-caption" class="hz-dlgate-caption">Klik "Download" untuk menyiapkan link download kamu.</p>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 <!-- END [B] OUTER WRAPPER -->
 
@@ -4505,6 +4622,94 @@ function hzCloseDlTabTooltip(e){
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
+
+/* ── [E7c] Popup gerbang download (Adsterra) ── */
+var HZ_DLGATE_SMARTLINK = 'https://example.com/REPLACE_WITH_ADSTERRA_SMARTLINK'; // ✏️ EDIT: ganti dengan Direct Link/SmartLink asli dari dashboard Adsterra
+var HZ_DLGATE_AD_COOLDOWN_MS = 10 * 60 * 1000; // jeda minimal antar pembukaan smartlink dalam sesi yang sama
+var hzDlGateUrl = '';
+var hzDlGateTimer = null;
+
+function hzDlGateOpen(btn){
+  hzDlGateUrl = btn.getAttribute('data-url') || '';
+  if(!hzDlGateUrl) return;
+  var name = btn.getAttribute('data-name') || '';
+  var heroEl = document.getElementById('hz-hero-title');
+  var hero = heroEl ? heroEl.textContent : '';
+  var titleEl = document.getElementById('hz-dlgate-title');
+  if(titleEl) titleEl.textContent = (hero ? hero + ' — ' : '') + name;
+  hzDlGateResetBtn();
+  var ov = document.getElementById('hz-dlgate-overlay');
+  if(!ov) return;
+  ov.style.display = 'flex';
+  void ov.offsetWidth;
+  ov.classList.add('open');
+}
+function hzDlGateClose(e){
+  var ov = document.getElementById('hz-dlgate-overlay');
+  if(!ov) return;
+  ov.classList.remove('open');
+  setTimeout(function(){ ov.style.display = 'none'; }, 180);
+  if(hzDlGateTimer){ clearInterval(hzDlGateTimer); hzDlGateTimer = null; }
+}
+function hzDlGateResetBtn(){
+  var btn = document.getElementById('hz-dlgate-btn');
+  if(!btn) return;
+  if(hzDlGateTimer){ clearInterval(hzDlGateTimer); hzDlGateTimer = null; }
+  btn.disabled = false;
+  btn.classList.remove('hz-dlgate-btn-ready');
+  btn.innerHTML = 'Download';
+  btn.onclick = hzDlGateBtnClick;
+  hzDlGateSetCaption('idle');
+}
+function hzDlGateSetCaption(stage){
+  var cap = document.getElementById('hz-dlgate-caption');
+  if(!cap) return;
+  var texts = {
+    idle: 'Klik "Download" untuk menyiapkan link download kamu.',
+    wait: 'Mohon tunggu, link download sedang disiapkan...',
+    ready: 'Klik "Download File" untuk mulai mengunduh script.'
+  };
+  cap.textContent = texts[stage] || '';
+}
+function hzDlGateMaybeOpenAd(){
+  try {
+    var last = parseInt(sessionStorage.getItem('hzDlGateAdTs') || '0', 10);
+    var now = Date.now();
+    if (now - last >= HZ_DLGATE_AD_COOLDOWN_MS) {
+      sessionStorage.setItem('hzDlGateAdTs', String(now));
+      window.open(HZ_DLGATE_SMARTLINK, '_blank', 'noopener');
+    }
+  } catch(e){ /* sessionStorage bisa gagal (mode privat dll) — abaikan, jangan hentikan alur */ }
+}
+function hzDlGateBtnClick(){
+  hzDlGateMaybeOpenAd();
+  var btn = document.getElementById('hz-dlgate-btn');
+  if(!btn) return;
+  var n = 5;
+  btn.disabled = true;
+  btn.onclick = null;
+  btn.innerHTML = 'Tunggu.. <span class="hz-dlgate-count">' + n + '</span>';
+  hzDlGateSetCaption('wait');
+  hzDlGateTimer = setInterval(function(){
+    n--;
+    if(n <= 0){
+      clearInterval(hzDlGateTimer);
+      hzDlGateTimer = null;
+      btn.disabled = false;
+      btn.classList.add('hz-dlgate-btn-ready');
+      btn.innerHTML = 'Download File';
+      btn.onclick = hzDlGateFinalOpen;
+      hzDlGateSetCaption('ready');
+      return;
+    }
+    var c = btn.querySelector('.hz-dlgate-count');
+    if(c) c.textContent = n;
+  }, 1000);
+}
+function hzDlGateFinalOpen(){
+  if(hzDlGateUrl) window.open(hzDlGateUrl, '_blank', 'noopener');
+}
+
 
 
 /* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */
