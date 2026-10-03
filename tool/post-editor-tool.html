@@ -74,6 +74,17 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 .dual-ab-check-wrap{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.18);border-radius:8px;margin-bottom:12px;cursor:pointer;user-select:none;}
 .dual-ab-check-wrap input[type=checkbox]{width:15px;height:15px;accent-color:#6366f1;cursor:pointer;flex-shrink:0;}
 .dual-ab-check-wrap span{font-size:12.5px;font-weight:600;color:#4338ca;font-family:'Inter',sans-serif;}
+/* Fix SFX checkbox per blok replace */
+.fixsfx-check-wrap{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(21,101,192,.06);border:1px solid rgba(21,101,192,.18);border-radius:8px;cursor:pointer;user-select:none;}
+.fixsfx-check-wrap input[type=checkbox]{width:15px;height:15px;accent-color:#1565c0;cursor:pointer;flex-shrink:0;}
+.fixsfx-check-wrap span{font-size:12px;font-weight:600;color:#1565c0;font-family:'Inter',sans-serif;}
+/* Toggle visibilitas post (Publik / Tidak publik) */
+.vis-seg{display:flex;border:1px solid var(--b3);border-radius:10px;overflow:hidden;background:var(--s3);}
+.vis-opt{flex:1;padding:10px 0;border:none;background:transparent;color:var(--t2);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,color .15s;}
+.vis-opt + .vis-opt{border-left:1px solid var(--b3);}
+.vis-opt.active{background:#111;color:#fff;}
+.vis-opt.active.draft{background:#e65100;color:#fff;}
+.vis-hint{margin-top:8px;font-size:11.5px;line-height:1.6;color:var(--t3);}
 /* Tab 2 section header in form */
 .dual-tab-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;padding:8px 0 4px;font-family:'Inter',sans-serif;}
 .dual-tab-name-wrap{display:flex;gap:8px;margin-bottom:10px;}
@@ -966,6 +977,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
           <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">linkreplace1</span></div>
           <input type="text" id="linkreplace1" placeholder="https://sfile.co/xxx"/>
         </div>
+        <label class="fixsfx-check-wrap">
+          <input type="checkbox" id="fixsfx1" onchange="scheduleLiveUpdate()"/>
+          <span>Fix SFX · badge di atas nama replace</span>
+        </label>
       </div>
     </div>
 
@@ -990,6 +1005,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
           <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">linkreplaceterakhir</span></div>
           <input type="text" id="linkreplaceterakhir" placeholder="https://sfile.co/xxx"/>
         </div>
+        <label class="fixsfx-check-wrap">
+          <input type="checkbox" id="fixsfxlast" onchange="scheduleLiveUpdate()"/>
+          <span>Fix SFX · badge di atas nama replace</span>
+        </label>
       </div>
     </div>
 
@@ -1032,6 +1051,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
             <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">t2_linkreplace1</span></div>
             <input type="text" id="t2_linkreplace1" placeholder="https://sfile.co/xxx"/>
           </div>
+          <label class="fixsfx-check-wrap">
+            <input type="checkbox" id="t2_fixsfx1" onchange="scheduleLiveUpdate()"/>
+            <span>Fix SFX · badge di atas nama replace</span>
+          </label>
         </div>
       </div>
 
@@ -1056,6 +1079,10 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
             <div class="field-label" style="font-size:9px">Link Download <span class="field-badge">t2_linkreplaceterakhir</span></div>
             <input type="text" id="t2_linkreplaceterakhir" placeholder="https://sfile.co/xxx"/>
           </div>
+          <label class="fixsfx-check-wrap">
+            <input type="checkbox" id="t2_fixsfxlast" onchange="scheduleLiveUpdate()"/>
+            <span>Fix SFX · badge di atas nama replace</span>
+          </label>
         </div>
       </div>
 
@@ -1107,10 +1134,20 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
     <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off"/>
   </div>
 
+  <!-- Visibilitas post: Publik (langsung tampil) / Tidak publik (hanya lewat link langsung) -->
+  <div class="field" style="margin-bottom:10px;">
+    <div class="field-label">Visibilitas post</div>
+    <div class="vis-seg" id="hz-vis-seg">
+      <button type="button" class="vis-opt active" id="hz-vis-public" onclick="hzSetVisibility('public')">Publik</button>
+      <button type="button" class="vis-opt" id="hz-vis-draft" onclick="hzSetVisibility('draft')">Tidak publik</button>
+    </div>
+    <div class="vis-hint" id="hz-vis-hint">Post langsung tampil di homepage, search, halaman hero, dan kategori setelah Vercel selesai deploy.</div>
+  </div>
+
   <!-- Finalize & upload -->
   <button class="btn-generate" id="btn-finalize" onclick="finalizeAndUpload()">
     <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Finalize &amp; Upload ke GitHub
+    <span id="btn-finalize-label">Finalize &amp; Upload ke GitHub</span>
   </button>
 
   <div class="result-section" id="result-section">
@@ -1693,6 +1730,7 @@ function addDlBlok(){
         '<input type="text" id="urlreplace'+idx+'" placeholder="https://i.ibb.co/xxx/icon.png"/></div>'+
       '<div class="field"><div class="field-label" style="font-size:9px">Link Download <span class="field-badge">linkreplace'+idx+'</span></div>'+
         '<input type="text" id="linkreplace'+idx+'" placeholder="https://sfile.co/xxx"/></div>'+
+      '<label class="fixsfx-check-wrap"><input type="checkbox" id="fixsfx'+idx+'" onchange="scheduleLiveUpdate()"/><span>Fix SFX · badge di atas nama replace</span></label>'+
     '</div>';
   mid.appendChild(card);
   attachAllListeners();
@@ -1737,6 +1775,7 @@ function hzSyncTab2FromTab1(){
   // Populate blok pertama
   hzSetField('t2_replace1',    v('replace1'));
   hzSetField('t2_urlreplace1', v('urlreplace1'));
+  hzSetCheck('t2_fixsfx1', vc('fixsfx1'));
   // t2_linkreplace1 sengaja dikosongkan → render sebagai Soon!
 
   // Populate blok tengah — ikuti jumlah & urutan blok Tab 1
@@ -1750,6 +1789,7 @@ function hzSyncTab2FromTab1(){
       var newIdx = dlCounterT2;
       hzSetField('t2_replace'    + newIdx, v('replace'    + idx));
       hzSetField('t2_urlreplace' + newIdx, v('urlreplace' + idx));
+      hzSetCheck('t2_fixsfx' + newIdx, vc('fixsfx' + idx));
       // t2_linkreplace{newIdx} sengaja dikosongkan
     });
   }
@@ -1757,6 +1797,7 @@ function hzSyncTab2FromTab1(){
   // Populate blok terakhir
   hzSetField('t2_replacelast',        v('replacelast'));
   hzSetField('t2_urlreplaceterakhir', v('urlreplaceterakhir'));
+  hzSetCheck('t2_fixsfxlast', vc('fixsfxlast'));
   // t2_linkreplaceterakhir sengaja dikosongkan
 
   updateDlCountT2();
@@ -1796,6 +1837,7 @@ function addDlBlokT2(){
         '<input type="text" id="t2_urlreplace'+idx+'" placeholder="https://i.ibb.co/xxx/icon.png"/></div>'+
       '<div class="field"><div class="field-label" style="font-size:9px">Link Download <span class="field-badge">t2_linkreplace'+idx+'</span></div>'+
         '<input type="text" id="t2_linkreplace'+idx+'" placeholder="https://sfile.co/xxx"/></div>'+
+      '<label class="fixsfx-check-wrap"><input type="checkbox" id="t2_fixsfx'+idx+'" onchange="scheduleLiveUpdate()"/><span>Fix SFX · badge di atas nama replace</span></label>'+
     '</div>';
   mid.appendChild(card);
   attachAllListeners();
@@ -1810,6 +1852,8 @@ function removeDlBlokT2(idx){
 
 // ── HELPERS ────────────────────────────────
 function v(id){ return (document.getElementById(id)||{value:''}).value||''; }
+function vc(id){ var el = document.getElementById(id); return !!(el && el.checked); }
+function hzSetCheck(id, on){ var el = document.getElementById(id); if(el) el.checked = !!on; }
 function s57(str){ return str.length>57?str.substring(0,57)+'...':str; }
 function s82(str){ return str.length>82?str.substring(0,82)+'...':str; }
 function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -2009,7 +2053,50 @@ function buildAbMiddle(){
 
 // ── BUILD DL MIDDLE HTML ───────────────────
 // ── BUILD SATU BARIS TABEL DOWNLOAD ───────────
-function buildDlRow(name, url, link, isLast, isT2){
+/* Badge "Fix SFX" — position:absolute di atas nama replace, di dalam pembungkus position:relative yang
+   sudah ada. Karena absolute, badge tidak ikut menentukan tinggi/posisi nama, ikon, maupun tombol Download. */
+function hzFixSfxBadge() {
+  return '<span data-hz-fixsfx="1" style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:2px;display:inline-flex;align-items:center;gap:2px;font-size:8px;font-weight:800;letter-spacing:.4px;line-height:1.2;padding:1.5px 6px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>FIX SFX</span>';
+}
+/* Runtime kecil, hanya disertakan kalau tabel punya badge Fix SFX. Nama replace yang turun jadi 2+ baris
+   di layar sempit mendorong badge (absolute) mendekati garis atas baris; script ini mengukur jaraknya dan
+   menambah padding-top pada sel nama HANYA kalau jarak < 6px. Baris bernama 1 baris tidak disentuh. */
+var HZ_FIXSFX_SCRIPT = ''
+  + '<script>\n'
+  + '(function(){\n'
+  + '  var G=6;\n'
+  + '  function adj(){\n'
+  + '    var bs=document.querySelectorAll("[data-hz-fixsfx]");\n'
+  + '    for(var i=0;i<bs.length;i++){\n'
+  + '      var b=bs[i],td=b.closest("td"),tr=b.closest("tr");\n'
+  + '      if(!td||!tr)continue;\n'
+  + '      var base=td.getAttribute("data-hz-pt");\n'
+  + '      if(base===null){base=parseFloat(getComputedStyle(td).paddingTop)||0;td.setAttribute("data-hz-pt",base);}\n'
+  + '      else base=parseFloat(base);\n'
+  + '      td.style.paddingTop=base+"px";\n'
+  + '      if(!tr.offsetHeight)continue;\n'
+  + '      var p=0;\n'
+  + '      for(var k=0;k<6;k++){\n'
+  + '        var d=G-(b.getBoundingClientRect().top-tr.getBoundingClientRect().top);\n'
+  + '        if(d<=0.5)break;\n'
+  + '        p+=d;td.style.paddingTop=(base+p)+"px";\n'
+  + '      }\n'
+  + '    }\n'
+  + '  }\n'
+  + '  var t;function sch(){if(window.requestAnimationFrame){cancelAnimationFrame(t);t=requestAnimationFrame(adj);}else adj();}\n'
+  + '  var o=window.hzDlTabSwitch;\n'
+  + '  if(typeof o==="function")window.hzDlTabSwitch=function(x){o(x);adj();};\n'
+  + '  if(document.readyState!=="loading")adj();else document.addEventListener("DOMContentLoaded",adj);\n'
+  + '  window.addEventListener("load",adj);\n'
+  + '  window.addEventListener("resize",sch);\n'
+  + '  window.addEventListener("orientationchange",sch);\n'
+  + '  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(adj);\n'
+  + '})();\n'
+  + '<\/script>\n';
+function hzWithFixSfxScript(html) {
+  return html.indexOf('data-hz-fixsfx') !== -1 ? html + HZ_FIXSFX_SCRIPT : html;
+}
+function buildDlRow(name, url, link, isLast, isT2, fixSfx){
   var altR  = hzExtractHeroCode(url) || name;
   var hasLogo = /logo/i.test(name);
   var nameColor = isT2 ? '#FFC200' : '#111';
@@ -2017,11 +2104,11 @@ function buildDlRow(name, url, link, isLast, isT2){
     ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   var dlBtn = link
-    ? '<a href="'+esc(link)+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
+    ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="'+esc(name)+'" data-url="'+esc(link)+'" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   var rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="'+rowStyle+'">\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:'+nameColor+';font-size:12px;">'+esc(name)+'</span>'+logoQBtn+'</span></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;">'+(fixSfx ? hzFixSfxBadge() : '')+'<span style="font-weight:800;color:'+nameColor+';font-size:12px;">'+esc(name)+'</span>'+logoQBtn+'</span></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="'+esc(url)+'" alt="'+esc(altR)+'" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">'+dlBtn+'</td>\n'
     + '</tr>\n';
@@ -2034,7 +2121,7 @@ function buildDlTableRows(isT2){
   var html = '';
 
   // Blok pertama
-  html += buildDlRow(v(pfx+'replace1'), v(pfx+'urlreplace1'), v(pfx+'linkreplace1'), false, isT2);
+  html += buildDlRow(v(pfx+'replace1'), v(pfx+'urlreplace1'), v(pfx+'linkreplace1'), false, isT2, vc(pfx+'fixsfx1'));
 
   // Blok tengah dinamis
   var mid = document.getElementById(midId);
@@ -2044,12 +2131,12 @@ function buildDlTableRows(isT2){
       var m = card.id.match(isT2 ? /dl-mid-t2-(\d+)/ : /dl-mid-(\d+)/);
       if(!m) return;
       var idx = m[1];
-      html += buildDlRow(v(pfx+'replace'+idx), v(pfx+'urlreplace'+idx), v(pfx+'linkreplace'+idx), false, isT2);
+      html += buildDlRow(v(pfx+'replace'+idx), v(pfx+'urlreplace'+idx), v(pfx+'linkreplace'+idx), false, isT2, vc(pfx+'fixsfx'+idx));
     });
   }
 
   // Blok terakhir
-  html += buildDlRow(v(pfx+'replacelast'), v(pfx+'urlreplaceterakhir'), v(pfx+'linkreplaceterakhir'), true, isT2);
+  html += buildDlRow(v(pfx+'replacelast'), v(pfx+'urlreplaceterakhir'), v(pfx+'linkreplaceterakhir'), true, isT2, vc(pfx+'fixsfxlast'));
 
   return html;
 }
@@ -2075,7 +2162,7 @@ function buildDlTableWrap(tbodyHtml){
 // ── BUILD DOWNLOAD SECTION (single / dual) ─────
 function buildDlInject(){
   if(!hzIsDlDualEnabled()){
-    return buildDlTableWrap(buildDlTableRows(false));
+    return hzWithFixSfxScript(buildDlTableWrap(buildDlTableRows(false)));
   }
 
   var t1Name = v('dl-tab1-name') || 'Tab 1';
@@ -2134,7 +2221,7 @@ function buildDlInject(){
     + '};\n'
     + '<\/script>\n';
 
-  return seg + dualTable + initScript;
+  return hzWithFixSfxScript(seg + dualTable + initScript);
 }
 
 // ── BUILD HTML (shared by live preview & generate) ──
@@ -2202,11 +2289,17 @@ function hzCollectDlDynamicIndexes(isT2){
 }
 function hzCollectDlRows(pfx){
   var rows = [];
-  rows.push({ name: v(pfx+'replace1'), url: v(pfx+'urlreplace1'), link: v(pfx+'linkreplace1') });
+  // fixSfx hanya ditulis ke JSON kalau dicentang — post lama tanpa field ini tetap identik
+  function mk(nameId, urlId, linkId, fxId){
+    var r = { name: v(nameId), url: v(urlId), link: v(linkId) };
+    if(vc(fxId)) r.fixSfx = true;
+    return r;
+  }
+  rows.push(mk(pfx+'replace1', pfx+'urlreplace1', pfx+'linkreplace1', pfx+'fixsfx1'));
   hzCollectDlDynamicIndexes(pfx==='t2_').forEach(function(idx){
-    rows.push({ name: v(pfx+'replace'+idx), url: v(pfx+'urlreplace'+idx), link: v(pfx+'linkreplace'+idx) });
+    rows.push(mk(pfx+'replace'+idx, pfx+'urlreplace'+idx, pfx+'linkreplace'+idx, pfx+'fixsfx'+idx));
   });
-  rows.push({ name: v(pfx+'replacelast'), url: v(pfx+'urlreplaceterakhir'), link: v(pfx+'linkreplaceterakhir') });
+  rows.push(mk(pfx+'replacelast', pfx+'urlreplaceterakhir', pfx+'linkreplaceterakhir', pfx+'fixsfxlast'));
   return rows;
 }
 // Kumpulkan field varian N (3-7) untuk sebuah blok ability, dari form ke object data JSON
@@ -2440,12 +2533,14 @@ function hzLoadFromJson(jsonString, filename){
       hzSetField(pfx+'replace1', rows[0].name || '');
       hzSetField(pfx+'urlreplace1', rows[0].url || '');
       hzSetField(pfx+'linkreplace1', rows[0].link || '');
+      hzSetCheck(pfx+'fixsfx1', rows[0].fixSfx);
     }
     var last = rows.length > 1 ? rows[rows.length-1] : null;
     if(last){
       hzSetField(pfx+'replacelast', last.name || '');
       hzSetField(pfx+'urlreplaceterakhir', last.url || '');
       hzSetField(pfx+'linkreplaceterakhir', last.link || '');
+      hzSetCheck(pfx+'fixsfxlast', last.fixSfx);
     }
     for(var i=1; i<rows.length-1; i++){
       if(isT2) addDlBlokT2(); else addDlBlok();
@@ -2453,6 +2548,7 @@ function hzLoadFromJson(jsonString, filename){
       hzSetField(pfx+'replace'+idx, rows[i].name || '');
       hzSetField(pfx+'urlreplace'+idx, rows[i].url || '');
       hzSetField(pfx+'linkreplace'+idx, rows[i].link || '');
+      hzSetCheck(pfx+'fixsfx'+idx, rows[i].fixSfx);
     }
   }
   loadDlRows(rowsT1, '', false);
@@ -2604,7 +2700,25 @@ async function hzFetchFromRepo(){
       hzShowLoadStatus(['⚠ Tidak ada file post ditemukan di public/data/posts maupun public/post.'], true, false);
       return;
     }
-    hzShowRepoFilePicker(allFiles, token);
+    // Status publik: post JSON yang TIDAK terdaftar di posts.json = "belum publik".
+    // Satu fetch posts.json saja; kalau gagal dibaca, badge tidak ditampilkan (jangan menebak).
+    var publicUrls = null;
+    try{
+      var pj = await hzGhGetFile('public/js/posts.json', token);
+      if(pj){
+        var plist = JSON.parse(hzBase64Decode(pj.content));
+        if(Array.isArray(plist)){
+          publicUrls = {};
+          plist.forEach(function(pp){ if(pp && pp.url) publicUrls[String(pp.url).replace(/\/+$/, '')] = true; });
+        }
+      }
+    }catch(e){ publicUrls = null; }
+    if(publicUrls){
+      allFiles.forEach(function(f){
+        if(f.kind === 'json') f.draft = !publicUrls['/post/'+f.name.replace(/\.json$/, '')];
+      });
+    }
+    hzShowRepoFilePicker(allFiles, token, !!publicUrls);
   }catch(e){
     hzShowLoadStatus(['❌ Gagal mengambil daftar file: '+e.message], false, true);
   }finally{
@@ -2613,7 +2727,12 @@ async function hzFetchFromRepo(){
   }
 }
 
-function hzShowRepoFilePicker(files, token){
+// Normalisasi buat pencarian: huruf kecil, tanpa ekstensi, "-" "_" "." dan spasi dianggap sama
+function hzRepoNorm(str){
+  return String(str||'').toLowerCase().replace(/\.(json|html)$/, '').replace(/[-_.\s]+/g, ' ').trim();
+}
+
+function hzShowRepoFilePicker(files, token, statusKnown){
   // Hapus modal lama kalau ada
   var old = document.getElementById('hz-repo-modal');
   if(old) old.remove();
@@ -2630,21 +2749,53 @@ function hzShowRepoFilePicker(files, token){
   title.textContent = 'Pilih file dari public/post/';
   box.appendChild(title);
 
+  var search = document.createElement('input');
+  search.type = 'text';
+  search.id = 'hz-repo-search';
+  search.placeholder = 'Cari post... (mis. alucard legend)';
+  search.autocomplete = 'off';
+  search.style.cssText = 'width:100%;padding:9px 12px;border:1px solid #e0e0e0;border-radius:8px;font-family:\'Inter\',sans-serif;font-size:13px;box-sizing:border-box;flex-shrink:0;';
+  box.appendChild(search);
+
+  var countEl = document.createElement('div');
+  countEl.style.cssText = 'font-family:\'Inter\',sans-serif;font-size:11.5px;color:#888;margin-top:-6px;flex-shrink:0;';
+  box.appendChild(countEl);
+
   var list = document.createElement('div');
   list.style.cssText = 'overflow-y:auto;display:flex;flex-direction:column;gap:6px;flex:1;';
+
+  var emptyEl = document.createElement('div');
+  emptyEl.textContent = 'Tidak ada file yang cocok.';
+  emptyEl.style.cssText = 'display:none;padding:14px;text-align:center;font-family:\'Inter\',sans-serif;font-size:12.5px;color:#999;';
+
+  var rows = [];
+  var draftTotal = 0;
 
   files.forEach(function(f){
     var item = document.createElement('button');
     item.style.cssText = 'text-align:left;padding:10px 14px;border-radius:8px;border:1px solid #e8e8e8;background:#fafafa;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:12.5px;color:#333;font-weight:500;transition:background .15s;display:flex;align-items:center;justify-content:space-between;gap:8px;';
     var label = document.createElement('span');
     label.textContent = f.name;
-    var badge = document.createElement('span');
+    label.style.cssText = 'min-width:0;overflow-wrap:anywhere;';
+    var right = document.createElement('span');
+    right.style.cssText = 'display:flex;align-items:center;gap:6px;flex-shrink:0;';
+
     var isJson = f.kind === 'json';
+    if(isJson && f.draft){
+      draftTotal++;
+      var dBadge = document.createElement('span');
+      dBadge.textContent = 'Belum publik';
+      dBadge.style.cssText = 'font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:20px;white-space:nowrap;background:#fbe9e7;color:#bf360c;';
+      right.appendChild(dBadge);
+    }
+    var badge = document.createElement('span');
     badge.textContent = isJson ? 'JSON' : 'HTML lama';
     badge.style.cssText = 'font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 7px;border-radius:20px;white-space:nowrap;'
       + (isJson ? 'background:#e3f2fd;color:#1565c0;' : 'background:#fff3e0;color:#e65100;');
+    right.appendChild(badge);
+
     item.appendChild(label);
-    item.appendChild(badge);
+    item.appendChild(right);
     item.onmouseenter = function(){ this.style.background='#f0f0f0'; };
     item.onmouseleave = function(){ this.style.background='#fafafa'; };
     item.onclick = function(){
@@ -2652,11 +2803,36 @@ function hzShowRepoFilePicker(files, token){
       hzFetchRepoFile(f, token);
     };
     list.appendChild(item);
+    rows.push({ el: item, key: hzRepoNorm(f.name) });
   });
+  list.appendChild(emptyEl);
   box.appendChild(list);
 
+  function applyFilter(){
+    var tokens = hzRepoNorm(search.value).split(' ').filter(Boolean);
+    var visible = 0;
+    rows.forEach(function(r){
+      var ok = tokens.every(function(t){ return r.key.indexOf(t) !== -1; });
+      r.el.style.display = ok ? 'flex' : 'none';
+      if(ok) visible++;
+    });
+    emptyEl.style.display = visible ? 'none' : 'block';
+    var msg = visible + ' dari ' + rows.length + ' file';
+    if(statusKnown) msg += ' · ' + draftTotal + ' belum publik';
+    else msg += ' · status publik tidak bisa dicek (posts.json gagal dibaca)';
+    countEl.textContent = msg;
+  }
+  search.oninput = applyFilter;
+  search.onkeydown = function(e){
+    if(e.key !== 'Enter') return;
+    for(var i=0;i<rows.length;i++){
+      if(rows[i].el.style.display !== 'none'){ rows[i].el.click(); break; }
+    }
+  };
+  applyFilter();
+
   var cancelBtn = document.createElement('button');
-  cancelBtn.style.cssText = 'padding:9px 0;border-radius:8px;border:1px solid #e0e0e0;background:transparent;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;color:#555;font-weight:600;';
+  cancelBtn.style.cssText = 'padding:9px 0;border-radius:8px;border:1px solid #e0e0e0;background:transparent;cursor:pointer;font-family:\'Inter\',sans-serif;font-size:13px;color:#555;font-weight:600;flex-shrink:0;';
   cancelBtn.textContent = 'Batal';
   cancelBtn.onclick = function(){ overlay.remove(); hzShowLoadStatus([], false, false); };
   box.appendChild(cancelBtn);
@@ -2664,6 +2840,7 @@ function hzShowRepoFilePicker(files, token){
   overlay.appendChild(box);
   overlay.onclick = function(e){ if(e.target===overlay){ overlay.remove(); hzShowLoadStatus([], false, false); } };
   document.body.appendChild(overlay);
+  search.focus();
 }
 
 async function hzFetchRepoFile(file, token){
@@ -2678,6 +2855,9 @@ async function hzFetchRepoFile(file, token){
     var textContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
     if(file.kind === 'json') hzLoadFromJson(textContent, file.name);
     else hzLoadFromHtml(textContent, file.name);
+    // Toggle visibilitas mengikuti status asli post di repo (status tak diketahui -> toggle dibiarkan)
+    if(file.draft === true) hzSetVisibility('draft');
+    else if(file.draft === false || file.kind === 'html') hzSetVisibility('public');
   }catch(e){
     hzShowLoadStatus(['❌ Gagal mengambil file "'+file.name+'": '+e.message], false, true);
   }
@@ -2722,18 +2902,28 @@ function hzGetDlMidIndices(isT2){
   return idxs;
 }
 
+/* Suffix otomatis badge Fix SFX: baris berakhiran ", FIX SFX" (koma + spasi + FIX SFX, tidak peka huruf besar/kecil).
+   Suffix dicek & dipotong DULU dari ujung baris, baru sisanya diparse seperti biasa (nama, link) —
+   jadi link tetap utuh dan baris tanpa suffix berperilaku persis seperti sebelumnya. */
+var HZ_DL_BATCH_FIXSFX_RE = /,\s*FIX SFX\s*$/i;
+
 function hzParseDlBatchLines(text){
   var lines = text.split('\n');
   var valid = [], invalid = 0;
   lines.forEach(function(line){
     line = line.trim();
     if(!line) return;
+    var fixSfx = false;
+    if(HZ_DL_BATCH_FIXSFX_RE.test(line)){
+      fixSfx = true;
+      line = line.replace(HZ_DL_BATCH_FIXSFX_RE, '').trim();
+    }
     var commaIdx = line.indexOf(',');
     if(commaIdx === -1){ invalid++; return; }
     var name = line.substring(0, commaIdx).trim();
     var link = line.substring(commaIdx + 1).trim();
     if(!name || !link){ invalid++; return; }
-    valid.push({ name: name, link: link });
+    valid.push({ name: name, link: link, fixSfx: fixSfx });
   });
   return { valid: valid, invalid: invalid };
 }
@@ -2743,12 +2933,16 @@ function hzApplyDlBatch(isT2, items){
   var n = items.length;
   var addBlokFn = isT2 ? addDlBlokT2 : addDlBlok;
 
+  // Checkbox Fix SFX ikut batch: baris ber-suffix ", FIX SFX" -> dicentang, baris tanpa suffix -> dimatikan.
+  // Hanya blok yang ditulis batch yang disentuh (blok kelebihan di luar batch dibiarkan apa adanya).
   if(n === 1){
     hzSetField(pfx + 'replace1', items[0].name);
     hzSetField(pfx + 'linkreplace1', items[0].link);
+    hzSetCheck(pfx + 'fixsfx1', items[0].fixSfx);
   } else {
     hzSetField(pfx + 'replace1', items[0].name);
     hzSetField(pfx + 'linkreplace1', items[0].link);
+    hzSetCheck(pfx + 'fixsfx1', items[0].fixSfx);
 
     var middleItems = items.slice(1, n - 1);
     var existingMid = hzGetDlMidIndices(isT2);
@@ -2762,17 +2956,20 @@ function hzApplyDlBatch(isT2, items){
       }
       hzSetField(pfx + 'replace' + idx, item.name);
       hzSetField(pfx + 'linkreplace' + idx, item.link);
+      hzSetCheck(pfx + 'fixsfx' + idx, item.fixSfx);
     });
 
     var last = items[n - 1];
     hzSetField(pfx + 'replacelast', last.name);
     hzSetField(pfx + 'linkreplaceterakhir', last.link);
+    hzSetCheck(pfx + 'fixsfxlast', last.fixSfx);
   }
 
   attachAllListeners();
   if(typeof scheduleLiveUpdate === 'function') scheduleLiveUpdate();
   if(typeof hzShowLoadStatus === 'function'){
-    hzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update. Icon perlu diisi manual satu per satu.'], false, false);
+    var fxCount = items.filter(function(it){ return it.fixSfx; }).length;
+    hzShowLoadStatus(['✅ Batch diterapkan: ' + n + ' baris (nama & link) ter-update' + (fxCount ? ', ' + fxCount + ' badge Fix SFX aktif' : '') + '. Icon perlu diisi manual satu per satu.'], false, false);
   }
 }
 
@@ -2796,12 +2993,13 @@ function hzOpenDlBatchModal(isT2){
   desc.style.cssText = "font-family:'Inter',sans-serif;font-size:12px;color:#666;line-height:1.7;";
   desc.innerHTML = 'Satu baris = satu varian, format: <b>Nama Replace, Link Download</b><br>'
     + 'Contoh: <code style="background:#f4f4f5;padding:1px 5px;border-radius:4px;">Default, https://sfile.co/JuSW9H6e0YX</code><br>'
+    + 'Tambahkan <b>, FIX SFX</b> di akhir baris untuk mengaktifkan badge Fix SFX otomatis: <code style="background:#f4f4f5;padding:1px 5px;border-radius:4px;">Starlight, https://sfile.co/eodNWOJ279P, FIX SFX</code> (baris tanpa suffix = badge dimatikan).<br>'
     + 'Icon tidak diisi otomatis (isi manual setelahnya). Blok yang sudah ada tapi tidak ke-cover batch (batch lebih sedikit) akan dibiarkan apa adanya.';
   box.appendChild(desc);
 
   var textarea = document.createElement('textarea');
   textarea.id = 'hz-dl-batch-textarea';
-  textarea.placeholder = 'Default, https://sfile.co/JuSW9H6e0YX\nDefault + Logo, https://sfile.co/DaFSRY7shGA\nBasic, https://sfile.co/lgz2tvpprs4';
+  textarea.placeholder = 'Default, https://sfile.co/JuSW9H6e0YX, FIX SFX\nDefault + Logo, https://sfile.co/DaFSRY7shGA\nBasic, https://sfile.co/lgz2tvpprs4, FIX SFX';
   textarea.style.cssText = 'width:100%;min-height:180px;padding:10px 12px;border:1px solid #e0e0e0;border-radius:8px;font-family:monospace;font-size:12.5px;resize:vertical;box-sizing:border-box;';
   box.appendChild(textarea);
 
@@ -2815,6 +3013,8 @@ function hzOpenDlBatchModal(isT2){
     previewEl.style.color = '#888';
     if(!textarea.value.trim()){ previewEl.textContent = ''; return; }
     var msg = parsed.valid.length + ' baris valid terdeteksi';
+    var fxN = parsed.valid.filter(function(it){ return it.fixSfx; }).length;
+    if(fxN > 0) msg += ' (' + fxN + ' Fix SFX)';
     if(parsed.invalid > 0) msg += ', ' + parsed.invalid + ' baris dilewati (format salah)';
     previewEl.textContent = msg;
   };
@@ -3272,6 +3472,26 @@ async function hzGhPutFile(path, contentStr, message, token, sha){
   return res.json();
 }
 
+// ── VISIBILITAS POST ────────────────────────
+// 'public'  = alur biasa (entry ditulis ke posts.json).
+// 'draft'   = hanya data/posts/{slug}.json yang diupload; posts.json & categories.json TIDAK disentuh.
+//             Halaman tetap dibuat build.js (bisa dibuka lewat link langsung) tapi noindex & tanpa sitemap.
+var _hzVisibility = 'public';
+function hzSetVisibility(mode){
+  _hzVisibility = (mode === 'draft') ? 'draft' : 'public';
+  var isDraft = _hzVisibility === 'draft';
+  var bp = document.getElementById('hz-vis-public');
+  var bd = document.getElementById('hz-vis-draft');
+  if(bp) bp.classList.toggle('active', !isDraft);
+  if(bd){ bd.classList.toggle('active', isDraft); bd.classList.toggle('draft', isDraft); }
+  var lbl = document.getElementById('btn-finalize-label');
+  if(lbl) lbl.textContent = isDraft ? 'Simpan sebagai Tidak Publik ke GitHub' : 'Finalize & Upload ke GitHub';
+  var hint = document.getElementById('hz-vis-hint');
+  if(hint) hint.textContent = isDraft
+    ? 'Hanya bisa dibuka lewat link langsung (noindex). Tidak muncul di homepage, search, hero, kategori, dan sitemap. Bukan rahasia: repo GitHub bersifat publik.'
+    : 'Post langsung tampil di homepage, search, halaman hero, dan kategori setelah Vercel selesai deploy.';
+}
+
 // ── MAIN: Finalize & Upload ─────────────────
 async function finalizeAndUpload(){
   var token = (document.getElementById('gh-token').value||'').trim();
@@ -3300,8 +3520,12 @@ async function finalizeAndUpload(){
     return;
   }
 
+  var isDraft = (_hzVisibility === 'draft');
+
   var herolinkVal = (document.getElementById('herolink').value||'').trim();
-  if(herolinkVal && KZ_HERO_NAMES.length){
+  if(isDraft){
+    // Mode tidak publik: validasi Nama Hero dilewati, baru dicek saat post dipublikasikan.
+  } else if(herolinkVal && KZ_HERO_NAMES.length){
     var heroMatchOk = KZ_HERO_NAMES.some(function(n){ return n.toLowerCase() === herolinkVal.toLowerCase(); });
     if(!heroMatchOk){
       var lanjut = window.confirm('Nama hero "'+herolinkVal+'" tidak ditemukan di daftar hero (heroes.json).\n\nPost ini TIDAK akan muncul di halaman Daftar Hero manapun kalau dilanjutkan.\n\nKlik OK untuk tetap lanjut upload, atau Cancel untuk perbaiki dulu ejaannya.');
@@ -3355,6 +3579,34 @@ async function finalizeAndUpload(){
       hzLog('Nama file belum dipakai, akan dibuat baru.');
     }
 
+    // 1b. Mode tidak publik: cek dulu apakah post ini sekarang terdaftar (publik) di posts.json.
+    //     Konfirmasi diminta SEBELUM ada yang diupload, jadi Cancel tidak meninggalkan perubahan setengah jalan.
+    var draftIdxFile = null, draftPosts = null, draftIdx = -1;
+    if(isDraft){
+      hzLog('Mengecek status publik di posts.json...');
+      draftIdxFile = await hzGhGetFile(jsonPath, token);
+      if(draftIdxFile){
+        try{
+          draftPosts = JSON.parse(hzBase64Decode(draftIdxFile.content));
+        }catch(e){
+          throw new Error('posts.json gagal di-parse (format JSON rusak). Belum ada yang diupload — perbaiki posts.json dulu.');
+        }
+        if(!Array.isArray(draftPosts)) throw new Error('posts.json bukan array. Belum ada yang diupload — perbaiki posts.json dulu.');
+        for(var di=0; di<draftPosts.length; di++){
+          if(draftPosts[di].url === '/post/'+slug){ draftIdx = di; break; }
+        }
+        if(draftIdx !== -1){
+          var okDemote = window.confirm('\"'+namehero+'\" saat ini PUBLIK.\n\nMenjadikannya tidak publik akan menghapusnya dari homepage, search, hero, kategori, dan sitemap. Jumlah view-nya juga mulai dari nol lagi kalau nanti dipublikasikan ulang (id baru).\n\nKlik OK untuk lanjut, atau Cancel untuk batalkan.');
+          if(!okDemote){
+            hzSetStatus('Dibatalkan', 'error');
+            hzLog('Dibatalkan oleh user — post tetap publik, tidak ada yang diubah.', true);
+            btn.disabled = false;
+            return;
+          }
+        }
+      }
+    }
+
     // 2. Kumpulkan data konten & upload sebagai JSON (desain/HTML dirakit oleh build.js saat deploy)
     var contentData = buildContentData();
     var contentJson = JSON.stringify(contentData, null, 2) + '\n';
@@ -3362,11 +3614,34 @@ async function finalizeAndUpload(){
     await hzGhPutFile(
       dataPath,
       contentJson,
-      (overwriteSha ? 'Update post: ' : 'Add post: ')+namehero,
+      (overwriteSha ? 'Update post: ' : 'Add post: ')+namehero+(isDraft ? ' (tidak publik)' : ''),
       token,
       overwriteSha
     );
     hzLog('✓ Data post berhasil diupload.');
+
+    // Mode tidak publik: posts.json hanya disentuh kalau post ini sebelumnya publik (entry dihapus).
+    // categories.json dilewati supaya kategori kosong tidak muncul di publik.
+    if(isDraft){
+      if(draftIdx !== -1){
+        hzLog('Menghapus entry dari posts.json (dijadikan tidak publik)...');
+        draftPosts.splice(draftIdx, 1);
+        await hzGhPutFile(
+          jsonPath,
+          JSON.stringify(draftPosts, null, 2)+'\n',
+          'Update posts.json: unpublish '+namehero,
+          token,
+          draftIdxFile.sha
+        );
+        hzLog('✓ posts.json diupdate — post tidak lagi terdaftar.');
+      } else {
+        hzLog('posts.json tidak disentuh (post ini memang belum terdaftar).');
+      }
+      hzSetStatus('Berhasil!', 'success');
+      hzLog('');
+      hzLog('Selesai! \"'+namehero+'\" disimpan sebagai TIDAK PUBLIK. Setelah Vercel selesai redeploy, halamannya hanya bisa dibuka lewat link langsung /post/'+slug+' (noindex, tidak muncul di homepage/search/hero/kategori/sitemap). Untuk mempublikasikan: pilih \"Publik\" lalu Finalize lagi.');
+      return;
+    }
 
     // 3. Update posts.json
     hzLog('Mengambil posts.json terbaru...');
@@ -3847,6 +4122,83 @@ return `<!DOCTYPE html>
     object-fit: cover;
     display: block;
   }
+  /* ── POPUP GERBANG DOWNLOAD (banner Adsterra + tombol jeda) ── */
+  .hz-dlgate-banner-slot {
+    margin: 16px 16px 0;
+    min-height: 250px;
+    border: 1px dashed #d5d5d5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    overflow: hidden;
+  }
+  /* Layar kecil: slot dibuat selebar box popup supaya banner 300px tidak terpotong (diukur 320–1280px) */
+  @media (max-width: 380px) {
+    #hz-dlgate-overlay { padding: 8px; }
+    .hz-dlgate-banner-slot { margin: 16px 0 0; border-left: 0; border-right: 0; border-radius: 0; }
+  }
+  .hz-dlgate-btn-wrap {
+    padding: 16px 20px 20px;
+  }
+  .hz-dlgate-btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 46px;
+    border: none;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background .15s, color .15s, transform .1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hz-dlgate-btn:active { transform: scale(.98); }
+  .hz-dlgate-btn[disabled] {
+    background: #e0e0e0;
+    color: #999;
+    cursor: default;
+  }
+  .hz-dlgate-btn .hz-dlgate-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    color: #717171;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .hz-dlgate-btn.hz-dlgate-btn-ready {
+    background: #0c76d0;
+  }
+  .hz-dlgate-caption {
+    margin: 10px 0 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    color: #0c76d0;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .hz-dlgate-disclaimer {
+    margin: 0 0 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    color: #999;
+    text-align: center;
+    line-height: 1.4;
+  }
 </style>
 
 
@@ -4153,6 +4505,31 @@ return `<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- POPUP GERBANG DOWNLOAD — banner iklan Adsterra + tombol dengan jeda 3 detik.
+       ✏️ EDIT: Tempel kode banner Adsterra asli di dalam <div id="hz-dlgate-banner-slot">,
+       menggantikan komentar placeholder di bawah, setelah kode iklan didapat dari dashboard. -->
+  <div id="hz-dlgate-overlay" class="hz-tooltip-overlay" onclick="hzDlGateClose(event)">
+    <div class="hz-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-tooltip-head">
+        <span id="hz-dlgate-title">Download</span>
+        <button type="button" class="hz-tooltip-close" onclick="hzDlGateClose()" aria-label="Tutup">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <hr class="hz-tooltip-hr"/>
+      <div id="hz-dlgate-banner-slot" class="hz-dlgate-banner-slot">
+        <!-- PLACEHOLDER — ganti/hapus span di bawah ini dengan kode banner Adsterra asli -->
+        <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:600;color:#b7b7b7;">Slot banner Adsterra</span>
+      </div>
+      <div class="hz-dlgate-btn-wrap">
+        <p class="hz-dlgate-disclaimer">*Dengan mengklik dan berinteraksi dengan iklan yang tampil, kamu membantu Henz untuk terus menyediakan script premium secara gratis.</p>
+        <button type="button" id="hz-dlgate-btn" class="hz-dlgate-btn" onclick="hzDlGateBtnClick()">Download</button>
+        <p id="hz-dlgate-caption" class="hz-dlgate-caption">Klik "Download" untuk menyiapkan link download kamu.</p>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 <!-- END [B] OUTER WRAPPER -->
 
@@ -4426,6 +4803,94 @@ function hzCloseDlTabTooltip(e){
   ov.classList.remove('open');
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
+
+/* ── [E7c] Popup gerbang download (Adsterra) ── */
+var HZ_DLGATE_SMARTLINK = 'https://example.com/REPLACE_WITH_ADSTERRA_SMARTLINK'; // ✏️ EDIT: ganti dengan Direct Link/SmartLink asli dari dashboard Adsterra
+var HZ_DLGATE_AD_COOLDOWN_MS = 10 * 60 * 1000; // jeda minimal antar pembukaan smartlink dalam sesi yang sama
+var hzDlGateUrl = '';
+var hzDlGateTimer = null;
+
+function hzDlGateOpen(btn){
+  hzDlGateUrl = btn.getAttribute('data-url') || '';
+  if(!hzDlGateUrl) return;
+  var name = btn.getAttribute('data-name') || '';
+  var heroEl = document.getElementById('hz-hero-title');
+  var hero = heroEl ? heroEl.textContent : '';
+  var titleEl = document.getElementById('hz-dlgate-title');
+  if(titleEl) titleEl.textContent = (hero ? hero + ' — ' : '') + name;
+  hzDlGateResetBtn();
+  var ov = document.getElementById('hz-dlgate-overlay');
+  if(!ov) return;
+  ov.style.display = 'flex';
+  void ov.offsetWidth;
+  ov.classList.add('open');
+}
+function hzDlGateClose(e){
+  var ov = document.getElementById('hz-dlgate-overlay');
+  if(!ov) return;
+  ov.classList.remove('open');
+  setTimeout(function(){ ov.style.display = 'none'; }, 180);
+  if(hzDlGateTimer){ clearInterval(hzDlGateTimer); hzDlGateTimer = null; }
+}
+function hzDlGateResetBtn(){
+  var btn = document.getElementById('hz-dlgate-btn');
+  if(!btn) return;
+  if(hzDlGateTimer){ clearInterval(hzDlGateTimer); hzDlGateTimer = null; }
+  btn.disabled = false;
+  btn.classList.remove('hz-dlgate-btn-ready');
+  btn.innerHTML = 'Download';
+  btn.onclick = hzDlGateBtnClick;
+  hzDlGateSetCaption('idle');
+}
+function hzDlGateSetCaption(stage){
+  var cap = document.getElementById('hz-dlgate-caption');
+  if(!cap) return;
+  var texts = {
+    idle: 'Klik "Download" untuk menyiapkan link download kamu.',
+    wait: 'Mohon tunggu, link download sedang disiapkan...',
+    ready: 'Klik "Download File" untuk mulai mengunduh script.'
+  };
+  cap.textContent = texts[stage] || '';
+}
+function hzDlGateMaybeOpenAd(){
+  try {
+    var last = parseInt(sessionStorage.getItem('hzDlGateAdTs') || '0', 10);
+    var now = Date.now();
+    if (now - last >= HZ_DLGATE_AD_COOLDOWN_MS) {
+      sessionStorage.setItem('hzDlGateAdTs', String(now));
+      window.open(HZ_DLGATE_SMARTLINK, '_blank', 'noopener');
+    }
+  } catch(e){ /* sessionStorage bisa gagal (mode privat dll) — abaikan, jangan hentikan alur */ }
+}
+function hzDlGateBtnClick(){
+  hzDlGateMaybeOpenAd();
+  var btn = document.getElementById('hz-dlgate-btn');
+  if(!btn) return;
+  var n = 5;
+  btn.disabled = true;
+  btn.onclick = null;
+  btn.innerHTML = 'Tunggu.. <span class="hz-dlgate-count">' + n + '</span>';
+  hzDlGateSetCaption('wait');
+  hzDlGateTimer = setInterval(function(){
+    n--;
+    if(n <= 0){
+      clearInterval(hzDlGateTimer);
+      hzDlGateTimer = null;
+      btn.disabled = false;
+      btn.classList.add('hz-dlgate-btn-ready');
+      btn.innerHTML = 'Download File';
+      btn.onclick = hzDlGateFinalOpen;
+      hzDlGateSetCaption('ready');
+      return;
+    }
+    var c = btn.querySelector('.hz-dlgate-count');
+    if(c) c.textContent = n;
+  }, 1000);
+}
+function hzDlGateFinalOpen(){
+  if(hzDlGateUrl) window.open(hzDlGateUrl, '_blank', 'noopener');
+}
+
 
 
 /* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */

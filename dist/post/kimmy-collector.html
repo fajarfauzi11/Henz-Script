@@ -20,7 +20,7 @@
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/></noscript>
-<link href="/css/style.css?v=1788820877151" rel="stylesheet"/>
+<link href="/css/style.css?v=1790991353810" rel="stylesheet"/>
 </head>
 <body class="page-post item-view">
 <header class="hz-hv1-header" id="hz-hv1-header">
@@ -507,6 +507,83 @@
     object-fit: cover;
     display: block;
   }
+  /* ── POPUP GERBANG DOWNLOAD (banner Adsterra + tombol jeda) ── */
+  .hz-dlgate-banner-slot {
+    margin: 16px 16px 0;
+    min-height: 250px;
+    border: 1px dashed #d5d5d5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    overflow: hidden;
+  }
+  /* Layar kecil: slot dibuat selebar box popup supaya banner 300px tidak terpotong (diukur 320–1280px) */
+  @media (max-width: 380px) {
+    #hz-dlgate-overlay { padding: 8px; }
+    .hz-dlgate-banner-slot { margin: 16px 0 0; border-left: 0; border-right: 0; border-radius: 0; }
+  }
+  .hz-dlgate-btn-wrap {
+    padding: 16px 20px 20px;
+  }
+  .hz-dlgate-btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 46px;
+    border: none;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background .15s, color .15s, transform .1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hz-dlgate-btn:active { transform: scale(.98); }
+  .hz-dlgate-btn[disabled] {
+    background: #e0e0e0;
+    color: #999;
+    cursor: default;
+  }
+  .hz-dlgate-btn .hz-dlgate-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    color: #717171;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .hz-dlgate-btn.hz-dlgate-btn-ready {
+    background: #0c76d0;
+  }
+  .hz-dlgate-caption {
+    margin: 10px 0 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    color: #0c76d0;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .hz-dlgate-disclaimer {
+    margin: 0 0 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-style: italic;
+    color: #999;
+    text-align: center;
+    line-height: 1.4;
+  }
 </style>
 
 
@@ -893,57 +970,57 @@ Setelah 1 detik, medan tersebut menyusut, menarik semua hero lawan ke tengahnya 
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hero711-icon.png" alt="Hero711" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/q7gs04h8e92" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Default" data-url="https://sfile.co/q7gs04h8e92" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Default + Logo</span><button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/15/Hero711-icon.png" alt="Hero711" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/TAtn0zDO5QQ" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Default + Logo" data-url="https://sfile.co/TAtn0zDO5QQ" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero712-icon.png" alt="Hero712" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/dswCfVkR7Kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Basic" data-url="https://sfile.co/dswCfVkR7Kr" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Basic + Logo</span><button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:'Manrope',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/0/02/Hero712-icon.png" alt="Hero712" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/KikbhzmgoC0" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Basic + Logo" data-url="https://sfile.co/KikbhzmgoC0" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Starlight</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/6/64/Hero713-icon.png" alt="Hero713" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/BtzYK3xiUst" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Starlight" data-url="https://sfile.co/BtzYK3xiUst" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Luckybox</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero714-icon.png" alt="Hero714" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/1MUAB3gWYWY" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Luckybox" data-url="https://sfile.co/1MUAB3gWYWY" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Special Leader</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/4/42/Hero715-icon.png" alt="Hero715" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/P7rvPE8nPeB" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Special Leader" data-url="https://sfile.co/P7rvPE8nPeB" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Dragon Tamer</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/2/20/Hero716-icon.png" alt="Hero716" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/h7t3karLFem" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Dragon Tamer" data-url="https://sfile.co/h7t3karLFem" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Star Wars</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/4/48/Hero717-icon.png" alt="Hero717" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/mbI4lquxJNG" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Star Wars" data-url="https://sfile.co/mbI4lquxJNG" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="border-bottom:1px solid #f0f0f0;">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Special Nova</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/1/1e/Hero718-icon.png" alt="Hero718" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/7uuVlP3Idsd" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Special Nova" data-url="https://sfile.co/7uuVlP3Idsd" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
 <tr style="">
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;"><span style="font-weight:800;color:#111;font-size:12px;">Elite</span></span></td>
   <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="https://static.wikia.nocookie.net/mobile-legends/images/d/d2/Hero719-icon.png" alt="Hero719" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>
-  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="https://sfile.co/TEOlEOslNT9" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
+  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><a href="#" onclick="hzDlGateOpen(this);return false;" data-name="Elite" data-url="https://sfile.co/TEOlEOslNT9" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a></td>
 </tr>
       </tbody>
     </table>
@@ -996,6 +1073,35 @@ Setelah 1 detik, medan tersebut menyusut, menarik semua hero lawan ke tengahnya 
   </div>
 
 </div>
+  <!-- POPUP GERBANG DOWNLOAD — banner iklan Adsterra + tombol dengan jeda 3 detik.
+       ✏️ EDIT: Tempel kode banner Adsterra asli (2 tag script: atOptions + invoke.js, APA ADANYA, jangan diubah)
+       di dalam elemen template id="hz-dlgate-banner-tpl" di bawah. Kode di dalam template tidak dijalankan saat
+       halaman dimuat; baru dimasukkan ke slot SEKALI saat popup pertama kali dibuka (lazy), jadi tidak ada impresi
+       tersembunyi dan tidak ada impresi berulang dalam satu kunjungan. -->
+  <template id="hz-dlgate-banner-tpl">
+    <!-- ✏️ TEMPEL kode banner Adsterra asli di sini (atOptions + invoke.js) -->
+  </template>
+  <div id="hz-dlgate-overlay" class="hz-post-tooltip-overlay" onclick="hzDlGateClose(event)">
+    <div class="hz-post-tooltip-box" onclick="event.stopPropagation()">
+      <div class="hz-post-tooltip-head">
+        <span id="hz-dlgate-title">Download</span>
+        <button type="button" class="hz-post-tooltip-close" onclick="hzDlGateClose()" aria-label="Tutup">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <hr class="hz-post-tooltip-hr"/>
+      <div id="hz-dlgate-banner-slot" class="hz-dlgate-banner-slot">
+        <!-- PLACEHOLDER — ganti/hapus span di bawah ini dengan kode banner Adsterra asli -->
+        <span style="font-family:'Manrope',sans-serif;font-size:11.5px;font-weight:600;color:#b7b7b7;">Slot banner Adsterra</span>
+      </div>
+      <div class="hz-dlgate-btn-wrap">
+        <p class="hz-dlgate-disclaimer">*Dengan mengklik dan berinteraksi dengan iklan yang tampil, kamu membantu Henz untuk terus menyediakan script premium secara gratis.</p>
+        <button type="button" id="hz-dlgate-btn" class="hz-dlgate-btn" onclick="hzDlGateBtnClick()">Download</button>
+        <p id="hz-dlgate-caption" class="hz-dlgate-caption">Klik "Download" untuk menyiapkan link download kamu.</p>
+      </div>
+    </div>
+  </div>
+
 <!-- END [B] OUTER WRAPPER -->
 
 
@@ -1259,6 +1365,109 @@ function hzCloseDlTabTooltip(e){
   setTimeout(function(){ ov.style.display = 'none'; }, 180);
 }
 
+/* ── [E7c] Popup gerbang download (Adsterra) ── */
+/* Banner Adsterra dimuat LAZY & SEKALI: kode asli di elemen template hz-dlgate-banner-tpl baru dijalankan saat popup
+   pertama kali terlihat. Template kosong (belum ada <script>) -> tidak melakukan apa-apa, placeholder tetap tampil. */
+var hzDlGateBannerLoaded = false;
+function hzDlGateLoadBanner(){
+  if(hzDlGateBannerLoaded) return;
+  var tpl = document.getElementById('hz-dlgate-banner-tpl');
+  var slot = document.getElementById('hz-dlgate-banner-slot');
+  if(!tpl || !slot || !tpl.content || !tpl.content.querySelector('script')) return;
+  hzDlGateBannerLoaded = true;
+  try {
+    while(slot.firstChild) slot.removeChild(slot.firstChild);
+    slot.appendChild(document.importNode(tpl.content, true));
+  } catch(e){ /* gagal memuat iklan tidak boleh menghentikan alur download */ }
+}
+var HZ_DLGATE_SMARTLINK = 'https://example.com/REPLACE_WITH_ADSTERRA_SMARTLINK'; // ✏️ EDIT: ganti dengan Direct Link/SmartLink asli dari dashboard Adsterra
+var HZ_DLGATE_AD_COOLDOWN_MS = 10 * 60 * 1000; // jeda minimal antar pembukaan smartlink dalam sesi yang sama
+var hzDlGateUrl = '';
+var hzDlGateTimer = null;
+
+function hzDlGateOpen(btn){
+  hzDlGateUrl = btn.getAttribute('data-url') || '';
+  if(!hzDlGateUrl) return;
+  var name = btn.getAttribute('data-name') || '';
+  var heroEl = document.getElementById('hz-hero-title');
+  var hero = heroEl ? heroEl.textContent : '';
+  var titleEl = document.getElementById('hz-dlgate-title');
+  if(titleEl) titleEl.textContent = (hero ? hero + ' — ' : '') + name;
+  hzDlGateResetBtn();
+  var ov = document.getElementById('hz-dlgate-overlay');
+  if(!ov) return;
+  ov.style.display = 'flex';
+  void ov.offsetWidth;
+  ov.classList.add('open');
+  hzDlGateLoadBanner();
+}
+function hzDlGateClose(e){
+  var ov = document.getElementById('hz-dlgate-overlay');
+  if(!ov) return;
+  ov.classList.remove('open');
+  setTimeout(function(){ ov.style.display = 'none'; }, 180);
+  if(hzDlGateTimer){ clearInterval(hzDlGateTimer); hzDlGateTimer = null; }
+}
+function hzDlGateResetBtn(){
+  var btn = document.getElementById('hz-dlgate-btn');
+  if(!btn) return;
+  if(hzDlGateTimer){ clearInterval(hzDlGateTimer); hzDlGateTimer = null; }
+  btn.disabled = false;
+  btn.classList.remove('hz-dlgate-btn-ready');
+  btn.innerHTML = 'Download';
+  btn.onclick = hzDlGateBtnClick;
+  hzDlGateSetCaption('idle');
+}
+function hzDlGateSetCaption(stage){
+  var cap = document.getElementById('hz-dlgate-caption');
+  if(!cap) return;
+  var texts = {
+    idle: 'Klik "Download" untuk menyiapkan link download kamu.',
+    wait: 'Mohon tunggu, link download sedang disiapkan...',
+    ready: 'Klik "Download File" untuk mulai mengunduh script.'
+  };
+  cap.textContent = texts[stage] || '';
+}
+function hzDlGateMaybeOpenAd(){
+  try {
+    var last = parseInt(sessionStorage.getItem('hzDlGateAdTs') || '0', 10);
+    var now = Date.now();
+    if (now - last >= HZ_DLGATE_AD_COOLDOWN_MS) {
+      sessionStorage.setItem('hzDlGateAdTs', String(now));
+      window.open(HZ_DLGATE_SMARTLINK, '_blank', 'noopener');
+    }
+  } catch(e){ /* sessionStorage bisa gagal (mode privat dll) — abaikan, jangan hentikan alur */ }
+}
+function hzDlGateBtnClick(){
+  hzDlGateMaybeOpenAd();
+  var btn = document.getElementById('hz-dlgate-btn');
+  if(!btn) return;
+  var n = 5;
+  btn.disabled = true;
+  btn.onclick = null;
+  btn.innerHTML = 'Tunggu.. <span class="hz-dlgate-count">' + n + '</span>';
+  hzDlGateSetCaption('wait');
+  hzDlGateTimer = setInterval(function(){
+    n--;
+    if(n <= 0){
+      clearInterval(hzDlGateTimer);
+      hzDlGateTimer = null;
+      btn.disabled = false;
+      btn.classList.add('hz-dlgate-btn-ready');
+      btn.innerHTML = 'Download File';
+      btn.onclick = hzDlGateFinalOpen;
+      hzDlGateSetCaption('ready');
+      return;
+    }
+    var c = btn.querySelector('.hz-dlgate-count');
+    if(c) c.textContent = n;
+  }, 1000);
+}
+function hzDlGateFinalOpen(){
+  if(hzDlGateUrl) window.open(hzDlGateUrl, '_blank', 'noopener');
+}
+
+
 
 /* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */
 function hzMoveComments(){
@@ -1320,7 +1529,7 @@ document.addEventListener('DOMContentLoaded', hzMoveComments);
       </div>
     </div>
   </div>
-  <div class="hz-footer-bottom"><p>&copy; <span id="hz-year"></span> Henz MLBB. Moonton All rights reserved.</p></div>
+  <div class="hz-footer-bottom"><p>&copy; <span id="hz-year"></span> Henz MLBB. Moonton All rights reserved.</p><p style="margin-top:6px;"><a href="/kebijakan-privasi" style="color:#999;text-decoration:none;">Kebijakan Privasi</a> <span style="color:#ddd;">·</span> <a href="/syarat-ketentuan" style="color:#999;text-decoration:none;">Syarat dan Ketentuan</a></p></div>
 </footer>
 <div id="hz-welcome-popup-overlay" class="hz-tooltip-overlay" onclick="hzCloseWelcomePopup(event)">
   <div class="hz-tooltip-box" onclick="event.stopPropagation()">
@@ -1354,6 +1563,6 @@ document.addEventListener('DOMContentLoaded', hzMoveComments);
 <script defer src="/_vercel/insights/script.js"></script>
 
 
-<script src="/js/app.js?v=1788820877151"></script>
+<script src="/js/app.js?v=1790991353810"></script>
 </body>
 </html>
