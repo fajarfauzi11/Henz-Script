@@ -30,11 +30,14 @@ function injectCacheBust(html) {
 function buildAppBundle() {
   const cardTemplateSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'card-template.js'), 'utf8');
   const mainSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'main.js'), 'utf8');
-  const bundle = cardTemplateSrc + '\n' + mainSrc;
+  const floatingMenuSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'floating-menu.js'), 'utf8');
+  /* Menu melayang + riwayat script (floating-menu.js) ditaruh paling akhir; ';' pemisah mencegah
+     main.js yang berakhir tanpa titik-koma "menyambung" ke IIFE di file berikutnya. */
+  const bundle = cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc;
   const jsOutDir = path.join(OUT_DIR, 'js');
   fs.mkdirSync(jsOutDir, { recursive: true });
   fs.writeFileSync(path.join(jsOutDir, 'app.js'), bundle, 'utf8');
-  console.log('built: js/app.js (gabungan card-template.js + main.js, ' + bundle.length + ' bytes)');
+  console.log('built: js/app.js (gabungan card-template.js + main.js + floating-menu.js, ' + bundle.length + ' bytes)');
 }
 /* Batas card yang langsung tampil di detail hero & kategori skin sebelum "Lihat Lebih Banyak" */
 const CP_LOADMORE_LIMIT = 20;
@@ -88,11 +91,23 @@ function readPartial(name) {
   return fs.readFileSync(partialPath, 'utf8');
 }
 
+/* Menu melayang (tombol pengaturan pojok kanan bawah + modal riwayat) disisipkan otomatis tepat
+   sebelum </body> di SEMUA halaman (statis, template post/hero/kategori, post statis lama),
+   jadi footer.html tidak perlu disentuh. Aman dipanggil berulang: kalau sudah ada, dilewati. */
+let FLOATING_MENU_HTML = null;
+function injectFloatingMenu(html) {
+  if (html.indexOf('id="hz-fm-root"') !== -1) return html;
+  const idx = html.lastIndexOf('</body>');
+  if (idx === -1) return html;
+  if (FLOATING_MENU_HTML === null) FLOATING_MENU_HTML = readPartial('floating-menu.html');
+  return html.slice(0, idx) + FLOATING_MENU_HTML + '\n' + html.slice(idx);
+}
+
 function processHtml(content) {
   const withPartials = content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
   });
-  return injectCacheBust(withPartials);
+  return injectCacheBust(injectFloatingMenu(withPartials));
 }
 
 function copyRecursive(srcDir, outDir) {

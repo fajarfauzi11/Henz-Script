@@ -1,5 +1,16 @@
 [
   {
+    "id": 151,
+    "title": "Fredrinn SPARKLE",
+    "url": "/post/fredrinn-sparkle",
+    "thumb": "https://i.ibb.co/8LQrcHgd/fredrinn-sparkle.webp",
+    "cat": "SPARKLE",
+    "hero": "Fredrinn",
+    "date": "3 Okt 2026",
+    "author": "Henz",
+    "comments": 0
+  },
+  {
     "id": 150,
     "title": "Granger M7",
     "url": "/post/granger-m7",
@@ -78,7 +89,7 @@
     "thumb": "https://i.ibb.co/v6JCL9zv/fanny-legend.webp",
     "cat": "Legend",
     "hero": "Fanny",
-    "date": "8 September 2026",
+    "date": "8 Sep 2026",
     "author": "Henz",
     "comments": 0,
     "keywords": "Fanny Galactic Starhawk"
