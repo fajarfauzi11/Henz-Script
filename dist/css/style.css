@@ -790,3 +790,341 @@ html.hz-fm-lock{overflow:hidden}
 @media(max-width:480px){.hz-fm-overlay{padding:14px}.hz-fm-modal{border-radius:18px}}
 @media(prefers-reduced-motion:reduce){.hz-fm-btn,.hz-fm-btn svg,.hz-fm-panel,.hz-fm-overlay,.hz-fm-modal{transition:none!important}}
 @media print{.hz-fm,.hz-fm-overlay{display:none!important}}
+<<<<<<< Updated upstream
+=======
+
+/* ===================== Switch Mode Gelap (di panel menu melayang) ===================== */
+.hz-fm-item-dark{display:none}
+html[data-dark-ready] .hz-fm-item-dark{display:flex}
+.hz-fm-switch{position:relative;width:40px;height:24px;flex-shrink:0;border-radius:9999px;background:#d4d4d8;transition:background .2s ease}
+.hz-fm-switch-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .2s ease}
+.hz-fm-item-dark[aria-checked="true"] .hz-fm-switch{background:#e53232}
+.hz-fm-item-dark[aria-checked="true"] .hz-fm-switch-knob{transform:translateX(16px)}
+@media(prefers-reduced-motion:reduce){.hz-fm-switch,.hz-fm-switch-knob{transition:none!important}}
+
+/* ===================== MODE GELAP (html[data-theme="dark"]) =====================
+   Lapisan override: kode warna terang di atas tidak diubah. Setiap aturan mengulang rantai selector aslinya
+   (termasuk varian :hover/:active/.active) supaya spesifisitasnya pasti menang. Token warna di bawah dipakai
+   ulang di tahap berikutnya. Aktif di semua halaman (atribut <html data-dark-ready> dari build.js).
+   Tahap 1: beranda, header, kartu, skeleton, Terpopuler, footer, popup, menu melayang. Tahap 2: post. Tahap 3: sisanya. */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --hz-bg:#121212;--hz-surface:#1c1c1f;--hz-surface-2:#26262a;--hz-surface-3:#303035;
+  --hz-line:#34343a;--hz-line-2:#3a3a40;
+  --hz-ctl:#4a4a52;--hz-btn:#5a5a63;--hz-btn-hi:#9e9e9e;
+  --hz-text:#f1f1f3;--hz-text-2:#d0d0d6;--hz-text-3:#a1a1aa;--hz-text-4:#80808a;
+  --hz-red-text:#ff6b6b;
+  --swiper-pagination-bullet-inactive-color:#fff;
+  background:var(--hz-bg)
+}
+html[data-theme="dark"] body{background:var(--hz-bg);color:var(--hz-text-2)}
+
+/* ---- Header V1 (box) ---- */
+html[data-theme="dark"] .hz-hv1-header{background:var(--hz-surface);border-bottom-color:var(--hz-line);box-shadow:0 1px 6px rgba(0,0,0,.4)}
+html[data-theme="dark"] .hz-logo-svg-slot svg path,html[data-theme="dark"] #hz-logo-svg-slot svg path{fill:#f4f4f5!important}
+html[data-theme="dark"] .hz-hv1-logo-bold{color:var(--hz-text)}
+html[data-theme="dark"] .hz-hv1-search-btn{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-hv1-search-toggle-form input{border-color:var(--hz-line-2);background:var(--hz-surface-2);color:var(--hz-text)}
+html[data-theme="dark"] .hz-hv1-mobile-nav{background:hsl(240 4% 11% / 96%);border-top-color:var(--hz-line);box-shadow:0 12px 24px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-hv1-mobile-nav a{color:var(--hz-text);border-bottom-color:rgba(255,255,255,.07)}
+html[data-theme="dark"] .hz-hv1-mobile-nav a:active,html[data-theme="dark"] .hz-hv1-mobile-nav a.active{background:rgba(255,255,255,.06)}
+@media(hover:hover) and (pointer:fine){html[data-theme="dark"] .hz-hv1-mobile-nav a:hover{background:rgba(255,255,255,.06)}}
+html[data-theme="dark"] .hz-hv1-drawer-search input{background:var(--hz-surface-2);border-color:var(--hz-line-2);color:var(--hz-text)}
+html[data-theme="dark"] .hz-hv1-drawer-search input:focus{background:var(--hz-surface-2)}
+
+/* ---- Header V2 (pill setelah scroll) + drawer ---- */
+html[data-theme="dark"] .henz-header-inner{background:hsl(240 4% 14% / 90%)}
+html[data-theme="dark"] .henz-logo,html[data-theme="dark"] .henz-logo-desktop-name{color:var(--hz-text)}
+html[data-theme="dark"] .henz-nav a{color:var(--hz-text)}
+html[data-theme="dark"] .henz-search-input{background:rgba(255,255,255,.08);color:var(--hz-text)}
+html[data-theme="dark"] .henz-search-input::placeholder{color:var(--hz-text-3)}
+html[data-theme="dark"] .henz-search-input:hover{background:rgba(255,255,255,.12)}
+html[data-theme="dark"] .henz-search-input:focus,html[data-theme="dark"] .henz-header .henz-search-input:focus{background:rgba(255,255,255,.14)}
+html[data-theme="dark"] .henz-search-icon{color:var(--hz-text-3)}
+html[data-theme="dark"] .henz-mobile-search-pill{background:rgba(255,255,255,.08)}
+html[data-theme="dark"] .henz-mobile-search-pill input{color:var(--hz-text)}
+html[data-theme="dark"] .henz-hamburger{color:var(--hz-text)}
+html[data-theme="dark"] .hz-drawer-links li a{color:var(--hz-text)}
+html[data-theme="dark"] .hz-drawer-search input{background:rgba(255,255,255,.08);color:var(--hz-text)}
+html[data-theme="dark"] .hz-drawer-search input:focus{background:rgba(255,255,255,.12)}
+
+/* ---- Beranda: CTA, segmented, judul seksi, slider ---- */
+html[data-theme="dark"] .hz-hero-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-hero-cta{color:var(--hz-text);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+html[data-theme="dark"] .hz-hero-cta:hover{background:rgba(255,255,255,.07)}
+html[data-theme="dark"] .hz-hero-cta-icon{background:rgba(255,255,255,.1)}
+html[data-theme="dark"] .hz-seg{background:var(--hz-btn-hi)}
+html[data-theme="dark"] .hz-seg-item{color:#18181b}
+html[data-theme="dark"] .hz-seg-item.active{color:#fff}
+html[data-theme="dark"] .hz-seg-pill{background:var(--hz-ctl);box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-section-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-section-sub{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-section-more{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-swiper .swiper-button-next,html[data-theme="dark"] .hz-swiper .swiper-button-prev{background:var(--hz-surface-3);box-shadow:0 4px 8px rgba(0,0,0,.5);color:var(--hz-text)!important;border-color:var(--hz-ctl)}
+
+/* ---- Kartu skin ---- */
+html[data-theme="dark"] .hz-card{background:var(--hz-surface);border-color:var(--hz-line);box-shadow:0 1px 3px rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.35)}
+html[data-theme="dark"] .hz-card:hover{box-shadow:0 10px 25px rgba(0,0,0,.55)}
+html[data-theme="dark"] .hz-card-img-wrap{background:var(--hz-surface-2)}
+html[data-theme="dark"] .hz-card-no-img{background:linear-gradient(135deg,var(--hz-surface-2),var(--hz-surface-3));color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-card-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-card-author{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-card-avatar{border-color:var(--hz-line-2)}
+html[data-theme="dark"] .hz-card-date-wrap,html[data-theme="dark"] .hz-card-views{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-card-pill{background:rgba(255,255,255,.07);color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-card-pill.hz-card-views{background:rgba(229,50,50,.18);color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-card-dl-btn{color:var(--hz-text-2);border-color:rgba(255,255,255,.26)}
+html[data-theme="dark"] .hz-card-dl-btn-icon{background:rgba(255,255,255,.09)}
+
+/* ---- Skeleton loading ---- */
+html[data-theme="dark"] .hz-skel{background:var(--hz-surface);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+html[data-theme="dark"] .hz-skel-hero{background:var(--hz-surface);border-color:var(--hz-line)}
+html[data-theme="dark"] .hz-skel-circle,html[data-theme="dark"] .hz-skel-pill,html[data-theme="dark"] .hz-skel-img,html[data-theme="dark"] .hz-skel-line,html[data-theme="dark"] .hz-skel-label,html[data-theme="dark"] .hz-skel-title,html[data-theme="dark"] .hz-skel-divider,html[data-theme="dark"] .hz-skel-meta-line{background:var(--hz-surface-3)}
+html[data-theme="dark"] .hz-cp-skel{background:var(--hz-surface);box-shadow:0 2px 10px rgba(0,0,0,.4);border-color:var(--hz-line)}
+html[data-theme="dark"] .hz-cp-skel-img,html[data-theme="dark"] .hz-cp-skel-line{background:var(--hz-surface-3)}
+
+/* ---- Terpopuler / tab kategori ---- */
+html[data-theme="dark"] .hz-cp-wrap{background:var(--hz-bg)}
+html[data-theme="dark"] .hz-cp-hero-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-cp-hero-title em{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-cp-hero-sub{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-cp-tabs-wrap{background:var(--hz-surface);border-color:var(--hz-line-2);box-shadow:0 8px 24px rgba(0,0,0,.45)}
+html[data-theme="dark"] .hz-cp-tab{border-color:var(--hz-ctl);color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-cp-tab:active{border-color:#e53232;color:var(--hz-red-text);background:rgba(229,50,50,.14);box-shadow:0 6px 14px rgba(229,50,50,.2)}
+html[data-theme="dark"] .hz-cp-tab:active .hz-cp-tab-count{color:var(--hz-red-text)}
+@media(hover:hover) and (pointer:fine){
+  html[data-theme="dark"] .hz-cp-tab:hover{border-color:#e53232;color:var(--hz-red-text);background:rgba(229,50,50,.14);box-shadow:0 10px 20px rgba(229,50,50,.2)}
+  html[data-theme="dark"] .hz-cp-tab:hover .hz-cp-tab-count{color:var(--hz-red-text)}
+}
+html[data-theme="dark"] .hz-cp-tab-count{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-cp-empty,html[data-theme="dark"] .hz-cp-count{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-cp-loadmore-btn{background:var(--hz-btn-hi);color:#111}
+html[data-theme="dark"] .hz-cp-loadmore-btn:hover{background:#b0b0b0}
+
+/* ---- Footer ---- */
+html[data-theme="dark"] .hz-footer{background:var(--hz-surface);border-top-color:var(--hz-line)}
+html[data-theme="dark"] .hz-footer-logo-img{background:var(--hz-surface-3)}
+html[data-theme="dark"] .hz-footer-logo-bold{color:var(--hz-text)}
+html[data-theme="dark"] .hz-footer-logo-light{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-footer-tagline{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-footer-social-btn{background:var(--hz-surface-3);color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-footer-col-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-footer-links a{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-footer-links a:hover{color:var(--hz-text)}
+html[data-theme="dark"] .hz-footer-support-avatar{background:var(--hz-surface-3)}
+html[data-theme="dark"] .hz-footer-support-name{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-footer-support-note{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-footer-bottom{border-top-color:var(--hz-line)}
+html[data-theme="dark"] .hz-footer-bottom p{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-footer-bottom span[style*="color:#ddd"]{color:var(--hz-line-2)!important}
+
+/* ---- Popup tooltip / welcome (ada di footer semua halaman) ---- */
+html[data-theme="dark"] .hz-tooltip-overlay{color:var(--hz-text-2);background:rgba(0,0,0,.65)}
+html[data-theme="dark"] .hz-tooltip-box{background:var(--hz-surface);border-color:var(--hz-line-2);box-shadow:0 2px 12px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-tooltip-head span{color:var(--hz-text)}
+html[data-theme="dark"] .hz-tooltip-close{background:var(--hz-surface-3);color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-tooltip-close:hover{background:#3a3a40;color:var(--hz-text)}
+html[data-theme="dark"] .hz-tooltip-close:active{background:#44444b;color:var(--hz-text)}
+html[data-theme="dark"] .hz-tooltip-hr{background:var(--hz-line)}
+html[data-theme="dark"] .hz-tooltip-desc{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-tooltip-imgwrap{background:var(--hz-surface-2)}
+html[data-theme="dark"] .hz-welcome-popup-optout-row label{color:var(--hz-text-3)}
+
+/* ---- Menu melayang + modal riwayat ---- */
+html[data-theme="dark"] .hz-fm-panel{background:var(--hz-surface);border-color:var(--hz-line-2);box-shadow:0 12px 32px rgba(0,0,0,.6),0 2px 8px rgba(0,0,0,.4)}
+html[data-theme="dark"] .hz-fm-panel-title{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-fm-item{color:var(--hz-text)}
+html[data-theme="dark"] .hz-fm-item:active{background:var(--hz-surface-2)}
+@media(hover:hover){html[data-theme="dark"] .hz-fm-item:hover{background:var(--hz-surface-2)}}
+html[data-theme="dark"] .hz-fm-item-ico{background:rgba(229,50,50,.16);color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-fm-item-arrow{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-fm-switch{background:#4a4a52}
+html[data-theme="dark"] .hz-fm-overlay{background:rgba(0,0,0,.65)}
+html[data-theme="dark"] .hz-fm-modal{background:var(--hz-surface);box-shadow:0 20px 50px rgba(0,0,0,.6);border:1px solid var(--hz-line-2)}
+html[data-theme="dark"] .hz-fm-modal-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-fm-modal-sub{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-fm-close{background:var(--hz-surface-3);color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-fm-close:active{background:#44444b;color:var(--hz-text)}
+@media(hover:hover){html[data-theme="dark"] .hz-fm-close:hover{background:#3a3a40;color:var(--hz-text)}}
+html[data-theme="dark"] .hz-fm-hr{background:var(--hz-line)}
+html[data-theme="dark"] .hz-fm-hist-item{border-color:var(--hz-line-2);background:var(--hz-surface-2)}
+html[data-theme="dark"] .hz-fm-hist-item:active{background:rgba(229,50,50,.14);border-color:#e53232}
+@media(hover:hover){html[data-theme="dark"] .hz-fm-hist-item:hover{border-color:#e53232;background:rgba(229,50,50,.1)}}
+html[data-theme="dark"] .hz-fm-hist-thumb{background:var(--hz-surface-3)}
+html[data-theme="dark"] .hz-fm-hist-body strong{color:var(--hz-text)}
+html[data-theme="dark"] .hz-fm-hist-body span{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-fm-hist-arrow{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-fm-empty strong{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-fm-empty span{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-fm-clear{border-color:rgba(229,50,50,.4);background:rgba(229,50,50,.14);color:var(--hz-red-text)}
+@media(hover:hover){html[data-theme="dark"] .hz-fm-clear:hover{background:rgba(229,50,50,.22);border-color:#e53232}}
+html[data-theme="dark"] .hz-fm-confirm-text{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-fm-cancel{border-color:var(--hz-line-2);background:var(--hz-surface-2);color:var(--hz-text-2)}
+
+/* ---- Kartu hero (Hero Terpopuler di beranda, juga dipakai halaman Daftar Hero) + ikon verified ---- */
+html[data-theme="dark"] .hz-card-verified path{stroke:#e4e4e7}
+html[data-theme="dark"] .hz-dh-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-dh-title em{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-dh-sub{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-dh-role-name{color:var(--hz-text)}
+html[data-theme="dark"] .hz-dh-role-count{color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-dh-divider{background:var(--hz-line)}
+html[data-theme="dark"] .hz-dh-card{background:var(--hz-surface);border-color:var(--hz-line);box-shadow:0 1px 3px rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.35)}
+@media(hover:hover) and (pointer:fine){
+  html[data-theme="dark"] .hz-dh-card:hover{box-shadow:0 10px 22px rgba(0,0,0,.55);border-color:#e53232}
+  html[data-theme="dark"] .hz-dh-card:hover .hz-dh-name{color:var(--hz-red-text)}
+}
+html[data-theme="dark"] .hz-dh-card:active,html[data-theme="dark"] .hz-dh-card:focus-visible{border-color:#e53232;box-shadow:0 1px 3px rgba(0,0,0,.45),0 1px 2px rgba(0,0,0,.35)}
+html[data-theme="dark"] .hz-dh-avatar-wrap{background:var(--hz-surface-3);box-shadow:0 0 0 2px #FFC200,0 8px 20px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-dh-name{color:var(--hz-text)}
+html[data-theme="dark"] .hz-dh-skel{background:var(--hz-surface);border-color:var(--hz-line)}
+html[data-theme="dark"] .hz-dh-skel-avatar,html[data-theme="dark"] .hz-dh-skel-line{background:var(--hz-surface-3)}
+html[data-theme="dark"] .hz-dh-empty{color:var(--hz-text-4)}
+
+/* ===================== MODE GELAP — Tahap 2: halaman post =====================
+   Warna di dalam kartu post hampir semuanya inline style (template + injeksi build.js + 11 post statis), jadi
+   override memakai selector atribut [style*=...] + !important. Penanda selector = potongan string inline aslinya;
+   kalau inline style di template/build.js diubah, aturan padanannya di sini perlu ikut disesuaikan (audit kontras
+   otomatis akan menangkapnya). Selector ber-tag (a/div/span...) sengaja lebih spesifik dari yang generik.
+   Setiap selector atribut punya padanan bentuk rgb(...): setelah JS mengubah style sebuah elemen (mis. tombol
+   "Baca Selengkapnya"), browser menulis ulang atribut style-nya ke bentuk rgb(), jadi bentuk hex saja tidak cukup. */
+html[data-theme="dark"] [style*="color:#111"], html[data-theme="dark"] [style*="color: rgb(17, 17, 17)"]{color:var(--hz-text)!important}
+html[data-theme="dark"] [style*="color:#666"], html[data-theme="dark"] [style*="color: rgb(102, 102, 102)"]{color:var(--hz-text-3)!important}
+html[data-theme="dark"] [style*="color:#e53232"], html[data-theme="dark"] [style*="color: rgb(229, 50, 50)"]{color:var(--hz-red-text)!important}
+html[data-theme="dark"] [style*="color:#b7b7b7"], html[data-theme="dark"] [style*="color:#999"], html[data-theme="dark"] [style*="color: rgb(183, 183, 183)"], html[data-theme="dark"] [style*="color: rgb(153, 153, 153)"]{color:var(--hz-text-4)!important}
+html[data-theme="dark"] th[style*="color:#aaa"], html[data-theme="dark"] th[style*="color: rgb(170, 170, 170)"]{color:var(--hz-text-3)!important}
+/* kartu utama, kotak cerita/abilities, garis pemisah */
+html[data-theme="dark"] div[style*="background:#fff;border-radius:20px;border:1px solid #e8e8e8"], html[data-theme="dark"] div[style*="background: rgb(255, 255, 255); border-radius: 20px; border: 1px solid rgb(232, 232, 232)"]{background:var(--hz-surface)!important;border-color:var(--hz-line-2)!important;box-shadow:0 2px 12px rgba(0,0,0,.5)!important}
+html[data-theme="dark"] div[style*="background:#f8f8f8"], html[data-theme="dark"] div[style*="background: rgb(248, 248, 248)"]{background:var(--hz-surface-2)!important;border-color:var(--hz-line-2)!important}
+html[data-theme="dark"] div[style*="border-top:1px solid #e8e8e8"], html[data-theme="dark"] div[style*="border-top:1px solid #efefef"], html[data-theme="dark"] div[style*="border-bottom:1px solid #efefef"], html[data-theme="dark"] div[style*="border-top: 1px solid rgb(232, 232, 232)"], html[data-theme="dark"] div[style*="border-top: 1px solid rgb(239, 239, 239)"], html[data-theme="dark"] div[style*="border-bottom: 1px solid rgb(239, 239, 239)"]{border-color:var(--hz-line-2)!important}
+html[data-theme="dark"] div[style*="linear-gradient(to right,transparent,#e5e5e5,transparent)"]{background:linear-gradient(to right,transparent,#3a3a40,transparent)!important}
+/* tombol hitam -> abu gelap terangkat (#303035), teks putih */
+html[data-theme="dark"] a[style*="background:#111"], html[data-theme="dark"] a[style*="background: rgb(17, 17, 17)"]{background:var(--hz-btn)!important;color:#fff!important}
+/* Download Script = tombol utama: terang, teks gelap (ikon stroke=currentColor ikut) */
+html[data-theme="dark"] a#hz-dl-btn[style*="background:#111"], html[data-theme="dark"] a#hz-dl-btn[style*="background: rgb(17, 17, 17)"]{background:var(--hz-btn-hi)!important;color:#111!important}
+/* tabel download */
+html[data-theme="dark"] div[style*="border:1px solid #e8e8e8;border-radius:16px"], html[data-theme="dark"] div[style*="border: 1px solid rgb(232, 232, 232); border-radius: 16px"]{border-color:var(--hz-line-2)!important}
+html[data-theme="dark"] tr[style*="background:#fafafa"], html[data-theme="dark"] tr[style*="background: rgb(250, 250, 250)"]{background:var(--hz-surface-2)!important;border-color:var(--hz-line-2)!important}
+html[data-theme="dark"] tr[style*="border-bottom:1px solid #f0f0f0"], html[data-theme="dark"] tr[style*="border-bottom: 1px solid rgb(240, 240, 240)"]{border-color:var(--hz-line)!important}
+html[data-theme="dark"] a[style*="background:#fff;border:2px solid #e0e0e0"], html[data-theme="dark"] a[style*="background: rgb(255, 255, 255); border: 2px solid rgb(224, 224, 224)"]{background:var(--hz-btn-hi)!important;border-color:var(--hz-btn-hi)!important;color:#111!important}
+html[data-theme="dark"] span[style*="background:#e0e0e0"], html[data-theme="dark"] span[style*="background: rgb(224, 224, 224)"]{background:var(--hz-surface-2)!important;border-color:var(--hz-surface-2)!important;color:var(--hz-text-4)!important}
+html[data-theme="dark"] button[style*="border:1px solid #b5b5b5"], html[data-theme="dark"] button[style*="border: 1px solid rgb(181, 181, 181)"]{background:var(--hz-surface-3)!important;border-color:var(--hz-ctl)!important;color:var(--hz-text-3)!important}
+/* chip kategori ability + badge Fix SFX: tint transparan, teks terang seirama */
+html[data-theme="dark"] [style*="background:#e8f5e9"], html[data-theme="dark"] [style*="background: rgb(232, 245, 233)"]{background:rgba(76,175,80,.18)!important}
+html[data-theme="dark"] [style*="color:#2e7d32"], html[data-theme="dark"] [style*="color: rgb(46, 125, 50)"]{color:#81c784!important}
+html[data-theme="dark"] [style*="background:#e3f2fd"], html[data-theme="dark"] [style*="background: rgb(227, 242, 253)"]{background:rgba(33,150,243,.2)!important}
+html[data-theme="dark"] [style*="color:#1565c0"], html[data-theme="dark"] [style*="color: rgb(21, 101, 192)"]{color:#64b5f6!important}
+html[data-theme="dark"] [style*="background:#f3e5f5"], html[data-theme="dark"] [style*="background: rgb(243, 229, 245)"]{background:rgba(171,71,188,.22)!important}
+html[data-theme="dark"] [style*="color:#6a1b9a"], html[data-theme="dark"] [style*="color: rgb(106, 27, 154)"]{color:#ce93d8!important}
+html[data-theme="dark"] [style*="background:#fff3e0"], html[data-theme="dark"] [style*="background: rgb(255, 243, 224)"]{background:rgba(255,152,0,.18)!important}
+html[data-theme="dark"] [style*="color:#e65100"], html[data-theme="dark"] [style*="color: rgb(230, 81, 0)"]{color:#ffb74d!important}
+html[data-theme="dark"] [style*="background:#e0f7fa"], html[data-theme="dark"] [style*="background: rgb(224, 247, 250)"]{background:rgba(0,188,212,.18)!important}
+html[data-theme="dark"] [style*="color:#006064"], html[data-theme="dark"] [style*="color: rgb(0, 96, 100)"]{color:#4dd0e1!important}
+/* notice Info (biru) dan Lapor Bug (merah): latar transparan sudah aman, teks gelapnya diterangkan */
+html[data-theme="dark"] [style*="color:#1d4ed8"], html[data-theme="dark"] [style*="color: rgb(29, 78, 216)"]{color:#93c5fd!important}
+html[data-theme="dark"] [style*="color:#1e3a8a"], html[data-theme="dark"] [style*="color: rgb(30, 58, 138)"]{color:#bfdbfe!important}
+html[data-theme="dark"] [style*="color:#b91c1c"], html[data-theme="dark"] [style*="color: rgb(185, 28, 28)"]{color:#fca5a5!important}
+html[data-theme="dark"] [style*="color:#7f1d1d"], html[data-theme="dark"] [style*="color: rgb(127, 29, 29)"]{color:#fecaca!important}
+/* kelas dari blok <style> template post */
+html[data-theme="dark"] .hz-ab-seg{background:var(--hz-btn-hi)}
+html[data-theme="dark"] .hz-ab-seg-item{color:#18181b}
+html[data-theme="dark"] .hz-ab-seg-item.active{color:#fff}
+html[data-theme="dark"] .hz-ab-seg-pill{background:var(--hz-ctl);box-shadow:0 1px 3px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-post-tooltip-overlay{background:rgba(0,0,0,.65)}
+html[data-theme="dark"] .hz-post-tooltip-box{background:var(--hz-surface);border-color:var(--hz-line-2);box-shadow:0 2px 12px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-post-tooltip-head span{color:var(--hz-text)}
+html[data-theme="dark"] .hz-post-tooltip-close{background:var(--hz-surface-3);color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-post-tooltip-close:hover{background:#3a3a40;color:var(--hz-text)}
+html[data-theme="dark"] .hz-post-tooltip-close:active{background:#44444b;color:var(--hz-text)}
+html[data-theme="dark"] .hz-post-tooltip-hr{background:var(--hz-line)}
+html[data-theme="dark"] .hz-post-tooltip-desc{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-post-tooltip-imgwrap{background:var(--hz-surface-2)}
+/* gerbang download: slot banner iklan dibingkai wadah netral (isi iklan pihak ketiga tidak disentuh) */
+html[data-theme="dark"] .hz-dlgate-banner-slot{border-color:#4a4a52;background:var(--hz-surface-2)}
+html[data-theme="dark"] .hz-dlgate-btn{background:var(--hz-btn-hi);color:#111}
+html[data-theme="dark"] .hz-dlgate-btn[disabled]{background:var(--hz-surface-2);color:var(--hz-text-4)}
+html[data-theme="dark"] .hz-dlgate-btn .hz-dlgate-count{background:#3f3f46;color:#fff}
+html[data-theme="dark"] .hz-dlgate-btn.hz-dlgate-btn-ready{background:#0c76d0;color:#fff}
+html[data-theme="dark"] .hz-dlgate-caption{color:#5aa9ee}
+html[data-theme="dark"] .hz-dlgate-disclaimer{color:var(--hz-text-4)}
+
+/* ===================== MODE GELAP — Tahap 3: halaman lain ===================== */
+/* ---- Pencarian ---- */
+html[data-theme="dark"] .hz-sv-empty{background:var(--hz-surface);border-color:var(--hz-line)}
+html[data-theme="dark"] .hz-sv-empty-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-sv-empty-sub b{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-sv-empty-tip{background:var(--hz-surface-2);border-color:var(--hz-ctl);color:var(--hz-text-3)}
+@media(hover:hover) and (pointer:fine){html[data-theme="dark"] .hz-sv-empty-tip:hover{border-color:#e53232;color:var(--hz-red-text)}}
+html[data-theme="dark"] .hz-sv-empty-cta{background:var(--hz-btn-hi);color:#111}
+html[data-theme="dark"] .hz-sv-empty-cta svg{stroke:#111}
+/* ---- Socials ---- */
+html[data-theme="dark"] .hz-sp-title,html[data-theme="dark"] .hz-sp-name{color:var(--hz-text)}
+html[data-theme="dark"] .hz-sp-title em{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-sp-card{background:var(--hz-surface);border-color:var(--hz-line-2)}
+html[data-theme="dark"] .hz-sp-card.yt{border-color:rgba(255,82,82,.32)}
+html[data-theme="dark"] .hz-sp-card.tg{border-color:rgba(42,171,238,.32)}
+html[data-theme="dark"] .hz-sp-card.wa{border-color:rgba(37,211,102,.32)}
+html[data-theme="dark"] .hz-sp-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.55)}
+html[data-theme="dark"] .hz-sp-card.yt:hover{border-color:#FF0000}
+html[data-theme="dark"] .hz-sp-card.tg:hover{border-color:#2AABEE}
+html[data-theme="dark"] .hz-sp-card.wa:hover{border-color:#25D366}
+html[data-theme="dark"] .hz-sp-card.yt .hz-sp-icon,html[data-theme="dark"] .hz-sp-card.yt .hz-sp-badge{background:rgba(255,0,0,.16)}
+html[data-theme="dark"] .hz-sp-card.tg .hz-sp-icon,html[data-theme="dark"] .hz-sp-card.tg .hz-sp-badge{background:rgba(42,171,238,.16)}
+html[data-theme="dark"] .hz-sp-card.wa .hz-sp-icon,html[data-theme="dark"] .hz-sp-card.wa .hz-sp-badge{background:rgba(37,211,102,.16)}
+html[data-theme="dark"] .hz-sp-card.yt .hz-sp-badge{color:#ff6b6b}
+html[data-theme="dark"] .hz-sp-card.tg .hz-sp-badge{color:#4fc3f7}
+html[data-theme="dark"] .hz-sp-card.wa .hz-sp-badge{color:#4cd98b}
+html[data-theme="dark"] .hz-sp-btn,html[data-theme="dark"] .hz-rq-btn{background:var(--hz-btn-hi);color:#111;position:relative;z-index:1}
+html[data-theme="dark"] .hz-sp-btn svg,html[data-theme="dark"] .hz-rq-btn svg{stroke:#111}
+html[data-theme="dark"] .hz-sp-card:hover .hz-sp-btn,html[data-theme="dark"] .hz-rq-card:hover .hz-rq-btn{color:#fff}
+html[data-theme="dark"] .hz-sp-card:hover .hz-sp-btn svg,html[data-theme="dark"] .hz-rq-card:hover .hz-rq-btn svg{stroke:#fff}
+/* ---- Request Script ---- */
+html[data-theme="dark"] .hz-rq-title,html[data-theme="dark"] .hz-rq-name{color:var(--hz-text)}
+html[data-theme="dark"] .hz-rq-title em{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-rq-card{background:var(--hz-surface);border-color:var(--hz-line-2)}
+html[data-theme="dark"] .hz-rq-card.wa{border-color:rgba(37,211,102,.32)}
+html[data-theme="dark"] .hz-rq-card.tg{border-color:rgba(42,171,238,.32)}
+html[data-theme="dark"] .hz-rq-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.55)}
+html[data-theme="dark"] .hz-rq-card.wa:hover{border-color:#25D366}
+html[data-theme="dark"] .hz-rq-card.tg:hover{border-color:#2AABEE}
+html[data-theme="dark"] .hz-rq-card.wa .hz-rq-icon{background:rgba(37,211,102,.16)}
+html[data-theme="dark"] .hz-rq-card.tg .hz-rq-icon{background:rgba(42,171,238,.16)}
+/* ---- Tutorial ---- */
+html[data-theme="dark"] .hz-tut-title,html[data-theme="dark"] .hz-tut-name{color:var(--hz-text)}
+html[data-theme="dark"] .hz-tut-title em{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-tut-card{background:var(--hz-surface);border-color:var(--hz-line-2)}
+html[data-theme="dark"] .hz-tut-card:hover{box-shadow:0 12px 32px rgba(0,0,0,.55);border-color:#e53232}
+html[data-theme="dark"] .hz-tut-thumb{background:var(--hz-surface-3)}
+/* ---- Detail hero (Daftar Hero) + detail kategori (Kategori Skin) ---- */
+html[data-theme="dark"] .hz-heroh-card,html[data-theme="dark"] .hz-cath-card{background:var(--hz-surface);border-color:var(--hz-line-2);box-shadow:0 10px 28px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-heroh-name,html[data-theme="dark"] .hz-cath-name,html[data-theme="dark"] .hz-heroh-section-title,html[data-theme="dark"] .hz-cath-section-title{color:var(--hz-text)}
+html[data-theme="dark"] .hz-heroh-count,html[data-theme="dark"] .hz-cath-count{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-heroh-avatar-wrap{background:var(--hz-surface-3);box-shadow:0 8px 20px rgba(0,0,0,.5)}
+html[data-theme="dark"] .hz-cath-initial{background:var(--hz-surface-3)}
+html[data-theme="dark"] .hz-heroh-divider,html[data-theme="dark"] .hz-cath-divider{background:var(--hz-line)}
+/* ---- 404 ---- */
+html[data-theme="dark"] .hz-404-badge{background:rgba(229,50,50,.14);border-color:rgba(229,50,50,.38);color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-404-desc{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-404-btn-secondary{background:var(--hz-surface-2);border-color:var(--hz-ctl);color:var(--hz-text)}
+html[data-theme="dark"] .hz-404-btn-secondary:hover{border-color:#e53232;color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-404-divider{background:var(--hz-line)}
+html[data-theme="dark"] .hz-404-link{background:var(--hz-surface-2);border-color:var(--hz-ctl);color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-404-link:hover{border-color:#e53232;color:var(--hz-red-text)}
+/* ---- Kebijakan Privasi + Syarat & Ketentuan ---- */
+html[data-theme="dark"] .hz-legal-eyebrow{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-legal-title,html[data-theme="dark"] .hz-legal-section h2{color:var(--hz-text)}
+html[data-theme="dark"] .hz-legal-section p,html[data-theme="dark"] .hz-legal-section li{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-legal-toc a{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-legal-toc a:hover{background:var(--hz-surface-2);color:var(--hz-text)}
+@media(max-width:800px){html[data-theme="dark"] .hz-legal-toc a{background:var(--hz-surface-2)}}
+/* ---- Dekorasi kartu Socials/Request: warna brand dicerahkan + opacity dinaikkan agar tidak keruh di latar gelap ---- */
+html[data-theme="dark"] .hz-sp-deco,html[data-theme="dark"] .hz-rq-deco{opacity:.20}
+html[data-theme="dark"] .hz-rq-arrow{opacity:.34}
+html[data-theme="dark"] .hz-sp-card.yt .hz-sp-deco{fill:#ff5a5a}
+html[data-theme="dark"] .hz-sp-card.tg .hz-sp-deco,html[data-theme="dark"] .hz-rq-card.tg .hz-rq-deco{fill:#4fc3f7}
+html[data-theme="dark"] .hz-sp-card.wa .hz-sp-deco,html[data-theme="dark"] .hz-rq-card.wa .hz-rq-deco{fill:#4cd98b}
+/* ---- Heading pencarian (selector ber-ID) + fallback avatar saat gambar gagal dimuat (background disetel JS) ---- */
+html[data-theme="dark"] #hz-search-heading h1{color:var(--hz-text)}
+html[data-theme="dark"] #hz-search-heading h1 em{color:var(--hz-red-text)}
+html[data-theme="dark"] [style*="background: rgb(236, 236, 236)"]{background:var(--hz-surface-3)!important}
+>>>>>>> Stashed changes

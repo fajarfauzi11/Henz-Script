@@ -6,7 +6,13 @@
    [{u:'/post/slug', t:'Judul', i:'https://thumb', ts:1700000000000}, ...] — terbaru di urutan pertama.
    - Dicatat otomatis saat halaman post dibuka (post draft/noindex TIDAK dicatat).
    - Membuka ulang script yang sama memindahkannya ke paling atas.
+<<<<<<< Updated upstream
    - Maksimal 30 entri. Entri yang post-nya sudah tidak ada di posts.json dibuang saat modal dibuka. */
+=======
+   - Maksimal 30 entri. Entri yang post-nya sudah tidak ada di posts.json dibuang saat modal dibuka.
+
+   Switch Mode Gelap (key hz_theme) juga ditangani di sini; lihat blok "Mode Gelap" di init(). */
+>>>>>>> Stashed changes
 (function(){
   var KEY = 'hz_history_v1';
   var MAX = 30;
@@ -101,6 +107,51 @@
     var htmlEl = document.documentElement;
     var pruned = false;
 
+<<<<<<< Updated upstream
+=======
+    /* --- Mode Gelap ---
+       Aktif di halaman bertanda <html data-dark-ready> (disisipkan build.js: injectThemeInit, semua halaman);
+       tanpa atribut itu baris switch-nya disembunyikan CSS dan fungsi ini tidak melakukan apa-apa.
+       Pilihan disimpan di localStorage key hz_theme ('dark'; terang = key dihapus). Default selalu terang.
+       Pemasangan awal data-theme (anti kilatan putih) dilakukan script #hz-theme-init di <head>. */
+    var darkBtn = document.getElementById('hz-fm-dark');
+    var THEME_KEY = 'hz_theme';
+    function themeIsDark(){ return htmlEl.getAttribute('data-theme') === 'dark'; }
+    function storedDark(){ try{ return localStorage.getItem(THEME_KEY) === 'dark'; }catch(err){ return false; } }
+    function syncThemeColor(dark){
+      var m = document.getElementById('hz-theme-color');
+      if(dark){
+        if(!m){ m = document.createElement('meta'); m.name = 'theme-color'; m.id = 'hz-theme-color'; document.head.appendChild(m); }
+        m.setAttribute('content', '#1c1c1f');
+      }else if(m && m.parentNode){
+        m.parentNode.removeChild(m);
+      }
+    }
+    function applyTheme(dark){
+      if(!htmlEl.hasAttribute('data-dark-ready')) return;
+      if(dark) htmlEl.setAttribute('data-theme', 'dark'); else htmlEl.removeAttribute('data-theme');
+      syncThemeColor(dark);
+      if(darkBtn) darkBtn.setAttribute('aria-checked', dark ? 'true' : 'false');
+    }
+    if(darkBtn){
+      darkBtn.setAttribute('aria-checked', themeIsDark() ? 'true' : 'false');
+      darkBtn.addEventListener('click', function(){
+        var next = !themeIsDark();
+        applyTheme(next);
+        try{
+          if(next) localStorage.setItem(THEME_KEY, 'dark'); else localStorage.removeItem(THEME_KEY);
+        }catch(err){}
+      });
+    }
+    /* Tab/halaman lain mengubah tema: ikut menyesuaikan */
+    window.addEventListener('storage', function(e){
+      if(e.key === THEME_KEY || e.key === null) applyTheme(storedDark());
+    });
+    window.addEventListener('pageshow', function(e){
+      if(e.persisted) applyTheme(storedDark());
+    });
+
+>>>>>>> Stashed changes
     /* --- Panel --- */
     function panelOpen(){ return root.classList.contains('open'); }
     function openPanel(){

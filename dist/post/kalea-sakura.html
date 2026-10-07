@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
+<html lang="id" data-dark-ready>
+<head><script id="hz-theme-init">(function(){try{var d=document.documentElement;if(d.hasAttribute("data-dark-ready")&&localStorage.getItem("hz_theme")==="dark"){d.setAttribute("data-theme","dark");var m=document.createElement("meta");m.name="theme-color";m.content="#1c1c1f";m.id="hz-theme-color";document.head.appendChild(m);}}catch(e){}})();</script>
 <meta charset="UTF-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Script Skin Kalea Sakura</title>
@@ -20,7 +20,11 @@
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/></noscript>
+<<<<<<< Updated upstream
 <link href="/css/style.css?v=1791073146147" rel="stylesheet"/>
+=======
+<link href="/css/style.css?v=1791290538825" rel="stylesheet"/>
+>>>>>>> Stashed changes
 </head>
 <body class="page-post item-view">
 <header class="hz-hv1-header" id="hz-hv1-header">
@@ -1533,6 +1537,7 @@ document.addEventListener('DOMContentLoaded', hzMoveComments);
 <script defer src="/_vercel/insights/script.js"></script>
 
 
+<<<<<<< Updated upstream
 <script src="/js/app.js?v=1791073146147"></script>
 <!-- Floating Menu (Pengaturan) — disisipkan otomatis oleh build.js sebelum tag penutup body di SEMUA halaman.
      Logika: public/js/floating-menu.js (ikut digabung ke dist/js/app.js). Gaya: bagian "Floating Menu" di style.css.
@@ -1540,6 +1545,22 @@ document.addEventListener('DOMContentLoaded', hzMoveComments);
 <div class="hz-fm" id="hz-fm-root">
   <div class="hz-fm-panel" id="hz-fm-panel" role="group" aria-label="Menu pengaturan">
     <div class="hz-fm-panel-title">Pengaturan</div>
+=======
+<script src="/js/app.js?v=1791290538825"></script>
+<!-- Floating Menu (Pengaturan) — disisipkan otomatis oleh build.js sebelum tag penutup body di SEMUA halaman.
+     Logika: public/js/floating-menu.js (ikut digabung ke dist/js/app.js). Gaya: bagian "Floating Menu" di style.css.
+     Baris baru nanti cukup ditambah sebagai <button class="hz-fm-item"> di dalam #hz-fm-panel.
+     Baris Mode Gelap (#hz-fm-dark) tampil di halaman yang tag html-nya diberi atribut data-dark-ready
+     (disisipkan build.js lewat injectThemeInit ke semua halaman). -->
+<div class="hz-fm" id="hz-fm-root">
+  <div class="hz-fm-panel" id="hz-fm-panel" role="group" aria-label="Menu pengaturan">
+    <div class="hz-fm-panel-title">Pengaturan</div>
+    <button type="button" class="hz-fm-item hz-fm-item-dark" id="hz-fm-dark" role="switch" aria-checked="false">
+      <span class="hz-fm-item-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
+      <span class="hz-fm-item-label">Mode Gelap</span>
+      <span class="hz-fm-switch" aria-hidden="true"><span class="hz-fm-switch-knob"></span></span>
+    </button>
+>>>>>>> Stashed changes
     <button type="button" class="hz-fm-item" id="hz-fm-open-history">
       <span class="hz-fm-item-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
       <span class="hz-fm-item-label">Riwayat Script</span>
