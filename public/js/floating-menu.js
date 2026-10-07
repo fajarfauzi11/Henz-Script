@@ -6,18 +6,7 @@
    [{u:'/post/slug', t:'Judul', i:'https://thumb', ts:1700000000000}, ...] — terbaru di urutan pertama.
    - Dicatat otomatis saat halaman post dibuka (post draft/noindex TIDAK dicatat).
    - Membuka ulang script yang sama memindahkannya ke paling atas.
-<<<<<<< Updated upstream
    - Maksimal 30 entri. Entri yang post-nya sudah tidak ada di posts.json dibuang saat modal dibuka. */
-=======
-   - Maksimal 30 entri. Entri yang post-nya sudah tidak ada di posts.json dibuang saat modal dibuka.
-
-   Switch Mode Gelap (key hz_theme) juga ditangani di sini; lihat blok "Mode Gelap" di init().
-
-   PWA ("Install Aplikasi"): blok "PWA" di bawah mendaftarkan /sw.js dan mengatur atribut <html data-pwa>:
-   - "prompt" = Chromium (Chrome/Edge/Samsung Internet) sudah memicu beforeinstallprompt -> tombol memanggil prompt bawaan.
-   - "ios"    = iPhone/iPad -> tidak ada prompt bawaan, tombol membuka modal petunjuk (#hz-fm-ios).
-   - tidak ada = tidak bisa/tidak perlu (sudah terpasang, mode aplikasi, atau browser tanpa dukungan) -> baris disembunyikan CSS. */
->>>>>>> Stashed changes
 (function(){
   var KEY = 'hz_history_v1';
   var MAX = 30;
@@ -69,51 +58,6 @@
     save(list.slice(0, MAX));
   }
 
-<<<<<<< Updated upstream
-=======
-  /* ---------- PWA: service worker + Install Aplikasi ---------- */
-  var deferredInstall = null;
-  function isStandalone(){
-    try{
-      return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
-    }catch(err){ return false; }
-  }
-  function isIOS(){
-    var ua = navigator.userAgent || '';
-    var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if(!ios) return false;
-    return !/FBAN|FBAV|Instagram|Line\/|MicroMessenger/i.test(ua); // browser dalam aplikasi (IG/FB/dll) tidak bisa memasang
-  }
-  function setPwaState(){
-    var el = document.documentElement;
-    if(isStandalone()){ el.removeAttribute('data-pwa'); return; }
-    if(deferredInstall) el.setAttribute('data-pwa', 'prompt');
-    else if(isIOS()) el.setAttribute('data-pwa', 'ios');
-    else el.removeAttribute('data-pwa');
-  }
-  window.addEventListener('beforeinstallprompt', function(e){
-    e.preventDefault(); // prompt bawaan ditahan; dipanggil lewat baris "Install Aplikasi" di menu
-    deferredInstall = e;
-    setPwaState();
-  });
-  window.addEventListener('appinstalled', function(){ deferredInstall = null; setPwaState(); });
-  try{
-    var mq = window.matchMedia('(display-mode: standalone)');
-    if(mq.addEventListener) mq.addEventListener('change', setPwaState);
-    else if(mq.addListener) mq.addListener(setPwaState);
-  }catch(err){}
-  setPwaState();
-
-  function registerServiceWorker(){
-    if(!('serviceWorker' in navigator)) return;
-    var host = location.hostname;
-    if(location.protocol !== 'https:' && host !== 'localhost' && host !== '127.0.0.1') return;
-    var go = function(){ navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){}); };
-    if(document.readyState === 'complete') go(); else window.addEventListener('load', go);
-  }
-  registerServiceWorker();
-
->>>>>>> Stashed changes
   /* ---------- UI ---------- */
   function pad(n){ return (n < 10 ? '0' : '') + n; }
   function fmtDate(ts){
@@ -156,54 +100,6 @@
 
     var htmlEl = document.documentElement;
     var pruned = false;
-<<<<<<< Updated upstream
-=======
-    var installBtn = document.getElementById('hz-fm-install');
-    var iosOverlay = document.getElementById('hz-fm-ios');
-    var iosClose = document.getElementById('hz-fm-ios-close');
-
-    /* --- Mode Gelap ---
-       Aktif di halaman bertanda <html data-dark-ready> (disisipkan build.js: injectThemeInit, semua halaman);
-       tanpa atribut itu baris switch-nya disembunyikan CSS dan fungsi ini tidak melakukan apa-apa.
-       Pilihan disimpan di localStorage key hz_theme ('dark'; terang = key dihapus). Default selalu terang.
-       Pemasangan awal data-theme (anti kilatan putih) dilakukan script #hz-theme-init di <head>. */
-    var darkBtn = document.getElementById('hz-fm-dark');
-    var THEME_KEY = 'hz_theme';
-    function themeIsDark(){ return htmlEl.getAttribute('data-theme') === 'dark'; }
-    function storedDark(){ try{ return localStorage.getItem(THEME_KEY) === 'dark'; }catch(err){ return false; } }
-    function syncThemeColor(dark){
-      var m = document.getElementById('hz-theme-color');
-      if(dark){
-        if(!m){ m = document.createElement('meta'); m.name = 'theme-color'; m.id = 'hz-theme-color'; document.head.appendChild(m); }
-        m.setAttribute('content', '#1c1c1f');
-      }else if(m && m.parentNode){
-        m.parentNode.removeChild(m);
-      }
-    }
-    function applyTheme(dark){
-      if(!htmlEl.hasAttribute('data-dark-ready')) return;
-      if(dark) htmlEl.setAttribute('data-theme', 'dark'); else htmlEl.removeAttribute('data-theme');
-      syncThemeColor(dark);
-      if(darkBtn) darkBtn.setAttribute('aria-checked', dark ? 'true' : 'false');
-    }
-    if(darkBtn){
-      darkBtn.setAttribute('aria-checked', themeIsDark() ? 'true' : 'false');
-      darkBtn.addEventListener('click', function(){
-        var next = !themeIsDark();
-        applyTheme(next);
-        try{
-          if(next) localStorage.setItem(THEME_KEY, 'dark'); else localStorage.removeItem(THEME_KEY);
-        }catch(err){}
-      });
-    }
-    /* Tab/halaman lain mengubah tema: ikut menyesuaikan */
-    window.addEventListener('storage', function(e){
-      if(e.key === THEME_KEY || e.key === null) applyTheme(storedDark());
-    });
-    window.addEventListener('pageshow', function(e){
-      if(e.persisted) applyTheme(storedDark());
-    });
->>>>>>> Stashed changes
 
     /* --- Panel --- */
     function panelOpen(){ return root.classList.contains('open'); }
@@ -325,43 +221,6 @@
     closeBtn.addEventListener('click', closeHistory);
     overlay.addEventListener('click', function(e){ if(e.target === overlay) closeHistory(); });
 
-<<<<<<< Updated upstream
-=======
-    /* --- Install Aplikasi --- */
-    function iosOpen(){ return !!(iosOverlay && iosOverlay.classList.contains('open')); }
-    function openIos(){
-      if(!iosOverlay) return;
-      closePanel();
-      lastFocus = btn;
-      iosOverlay.classList.add('open');
-      iosOverlay.setAttribute('aria-hidden', 'false');
-      htmlEl.classList.add('hz-fm-lock');
-      setTimeout(function(){ if(iosClose) iosClose.focus(); }, 30);
-    }
-    function closeIos(){
-      if(!iosOverlay) return;
-      iosOverlay.classList.remove('open');
-      iosOverlay.setAttribute('aria-hidden', 'true');
-      htmlEl.classList.remove('hz-fm-lock');
-      if(lastFocus && lastFocus.focus) lastFocus.focus();
-    }
-    if(installBtn){
-      installBtn.addEventListener('click', function(){
-        if(deferredInstall){
-          var ev = deferredInstall;
-          deferredInstall = null; // event hanya bisa dipakai sekali
-          closePanel();
-          setPwaState();
-          try{ ev.prompt(); }catch(err){}
-        }else if(isIOS()){
-          openIos();
-        }
-      });
-    }
-    if(iosClose) iosClose.addEventListener('click', closeIos);
-    if(iosOverlay) iosOverlay.addEventListener('click', function(e){ if(e.target === iosOverlay) closeIos(); });
-
->>>>>>> Stashed changes
     /* --- Hapus riwayat (dengan konfirmasi) --- */
     clearBtn.addEventListener('click', function(){
       foot.classList.add('confirming');
@@ -383,21 +242,11 @@
       var key = e.key || '';
       if(key === 'Escape' || key === 'Esc'){
         if(overlay.classList.contains('open')){ closeHistory(); }
-<<<<<<< Updated upstream
         else if(panelOpen()){ closePanel(); btn.focus(); }
         return;
       }
       if(key === 'Tab' && overlay.classList.contains('open')){
         var f = overlay.querySelectorAll('a[href], button');
-=======
-        else if(iosOpen()){ closeIos(); }
-        else if(panelOpen()){ closePanel(); btn.focus(); }
-        return;
-      }
-      var trap = overlay.classList.contains('open') ? overlay : (iosOpen() ? iosOverlay : null);
-      if(key === 'Tab' && trap){
-        var f = trap.querySelectorAll('a[href], button');
->>>>>>> Stashed changes
         var vis = [];
         for(var i = 0; i < f.length; i++){
           if(f[i].offsetParent !== null) vis.push(f[i]);
@@ -406,20 +255,12 @@
         var first = vis[0], last = vis[vis.length - 1];
         if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
         else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
-<<<<<<< Updated upstream
         else if(!overlay.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
-=======
-        else if(!trap.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
->>>>>>> Stashed changes
       }
     });
 
     /* Halaman dipulihkan dari bfcache (tombol Back): catat ulang supaya waktu "Dibuka" ikut diperbarui */
-<<<<<<< Updated upstream
     window.addEventListener('pageshow', function(e){ if(e.persisted) record(); });
-=======
-    window.addEventListener('pageshow', function(e){ if(e.persisted){ record(); setPwaState(); } });
->>>>>>> Stashed changes
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
