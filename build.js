@@ -97,17 +97,61 @@ function readPartial(name) {
 let FLOATING_MENU_HTML = null;
 function injectFloatingMenu(html) {
   if (html.indexOf('id="hz-fm-root"') !== -1) return html;
+  if (html.indexOf('hz-bare') !== -1) return html; // halaman mandiri (offline.html): tanpa menu
   const idx = html.lastIndexOf('</body>');
   if (idx === -1) return html;
   if (FLOATING_MENU_HTML === null) FLOATING_MENU_HTML = readPartial('floating-menu.html');
   return html.slice(0, idx) + FLOATING_MENU_HTML + '\n' + html.slice(idx);
 }
 
+/* Mode Gelap berlaku di SEMUA halaman: (1) <html> diberi atribut data-dark-ready supaya switch di menu melayang
+   tampil, dan (2) script kecil disisipkan tepat setelah <head> yang memasang data-theme="dark" SEBELUM halaman
+   tergambar (mencegah kilatan putih). Preferensi disimpan di localStorage key hz_theme; default selalu terang.
+   Tema gelapnya sendiri ada di bagian "MODE GELAP" pada public/css/style.css. */
+const THEME_INIT_SCRIPT = '<script id="hz-theme-init">(function(){try{var d=document.documentElement;if(d.hasAttribute("data-dark-ready")&&localStorage.getItem("hz_theme")==="dark"){d.setAttribute("data-theme","dark");var m=document.createElement("meta");m.name="theme-color";m.content="#1c1c1f";m.id="hz-theme-color";document.head.appendChild(m);}}catch(e){}})();</script>';
+function injectThemeInit(html) {
+  if (html.indexOf('id="hz-theme-init"') !== -1) return html;
+  if (html.indexOf('hz-bare') !== -1) return html; // halaman mandiri (offline.html) mengatur tema sendiri
+  if (!/<body\b[^>]*>/i.test(html) || !/<head\b[^>]*>/i.test(html) || !/<html\b[^>]*>/i.test(html)) return html;
+  return html
+    .replace(/<html\b([^>]*)>/i, '<html$1 data-dark-ready>')
+    .replace(/<head\b[^>]*>/i, (m) => m + THEME_INIT_SCRIPT);
+}
+
+/* PWA ("Install Aplikasi"): manifest + ikon layar utama iOS disisipkan ke <head> semua halaman.
+   - <link rel="apple-touch-icon"> yang sudah ada (favicon 64px dari jsDelivr) diganti ke ikon lokal 180px.
+   - Ikon aplikasi ada di public/icons/ (sementara: logo header di atas warna brand; ganti file PNG-nya dengan ikon final).
+   Aman dipanggil berulang: kalau <link rel="manifest"> sudah ada, dilewati. */
+const PWA_APPLE_ICON = '<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>';
+function injectPwaHead(html) {
+  if (html.indexOf('hz-bare') !== -1) return html;
+  if (/<link\b[^>]*rel=["']manifest["']/i.test(html)) return html;
+  if (!/<\/head>/i.test(html)) return html;
+  let out = html;
+  if (/<link\b[^>]*rel=["']apple-touch-icon["'][^>]*>/i.test(out)) {
+    out = out.replace(/<link\b[^>]*rel=["']apple-touch-icon["'][^>]*>/i, PWA_APPLE_ICON);
+  }
+  const tags = '<link rel="manifest" href="/manifest.webmanifest"/>' +
+    (/rel=["']apple-touch-icon["']/i.test(out) ? '' : PWA_APPLE_ICON) +
+    '<meta name="apple-mobile-web-app-title" content="Henz MLBB"/>';
+  return out.replace(/<\/head>/i, tags + '</head>');
+}
+
+/* Service worker: __HZ_BUILD__ diganti id build (CACHE_BUST) supaya sw.js berubah di setiap deploy
+   (browser memasang versi baru dan cache versi lama dihapus otomatis). */
+function buildServiceWorker() {
+  const swPath = path.join(OUT_DIR, 'sw.js');
+  if (!fs.existsSync(swPath)) return;
+  const src = fs.readFileSync(swPath, 'utf8');
+  fs.writeFileSync(swPath, src.split('__HZ_BUILD__').join(String(CACHE_BUST)), 'utf8');
+  console.log('built: sw.js (build id ' + CACHE_BUST + ')');
+}
+
 function processHtml(content) {
   const withPartials = content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
   });
-  return injectCacheBust(injectFloatingMenu(withPartials));
+  return injectCacheBust(injectFloatingMenu(injectThemeInit(injectPwaHead(withPartials))));
 }
 
 function copyRecursive(srcDir, outDir) {
@@ -137,6 +181,7 @@ console.log('Building site...');
 if (fs.existsSync(OUT_DIR)) fs.rmSync(OUT_DIR, { recursive: true, force: true });
 copyRecursive(SRC_DIR, OUT_DIR);
 buildAppBundle();
+buildServiceWorker();
 
 /* Halaman post itu file statis manual (bukan template), jadi canonical+OG-nya
    disuntik otomatis di sini dengan mencocokkan <title> ke posts.json.
