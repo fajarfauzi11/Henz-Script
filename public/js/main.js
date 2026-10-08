@@ -154,9 +154,11 @@ window.hzSmartBack = function(fallbackUrl){
   var hv2=document.querySelector('.henz-header');
   var mq=window.matchMedia('(max-width:768px)');
   function hv2BaseTop(){return mq.matches?8:24;}
+  /* --hz-sat = inset status bar (hanya terdefinisi di PWA Android layar penuh: html.hz-e2e, lihat style.css);
+     di tempat lain var() jatuh ke 0px sehingga hasilnya sama persis dengan sebelumnya. */
   function sync(){
-    if(hv1)hv1.style.top=vv.offsetTop+'px';
-    if(hv2)hv2.style.top=(vv.offsetTop+hv2BaseTop())+'px';
+    if(hv1)hv1.style.top='calc('+vv.offsetTop+'px + var(--hz-sat, 0px))';
+    if(hv2)hv2.style.top='calc('+(vv.offsetTop+hv2BaseTop())+'px + var(--hz-sat, 0px))';
   }
   var ticking=false;
   function onVVChange(){

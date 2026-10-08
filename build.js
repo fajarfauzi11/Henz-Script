@@ -137,6 +137,18 @@ function injectPwaHead(html) {
   return out.replace(/<\/head>/i, tags + '</head>');
 }
 
+/* PWA Android layar penuh (edge-to-edge): tepat setelah <meta name="viewport"> disisipkan skrip kecil yang HANYA aktif
+   di Android + mode aplikasi terpasang (display-mode: standalone). Skrip menambah "viewport-fit=cover" pada meta itu
+   (Chrome 135+ lalu menggambar halaman sampai ke belakang navigation bar gestur) dan menandai <html class="hz-e2e">.
+   Semua penyesuaian tampilan ada di style.css bagian "PWA Android: layar penuh" dan dibatasi ke html.hz-e2e,
+   jadi iOS, tab browser biasa, dan desktop tidak berubah sama sekali. Aman dipanggil berulang. */
+const E2E_INIT_SCRIPT = '<script id="hz-e2e-init">(function(){try{if(/Android/i.test(navigator.userAgent)&&window.matchMedia("(display-mode: standalone)").matches){var m=document.querySelector("meta[name=viewport]");if(m&&!/viewport-fit/i.test(m.getAttribute("content")||""))m.setAttribute("content",(m.getAttribute("content")||"")+", viewport-fit=cover");document.documentElement.classList.add("hz-e2e")}}catch(e){}})();</script>';
+function injectE2eInit(html) {
+  if (html.indexOf('hz-bare') !== -1) return html;
+  if (html.indexOf('id="hz-e2e-init"') !== -1) return html;
+  return html.replace(/<meta\b[^>]*name=["']viewport["'][^>]*>/i, (m) => m + E2E_INIT_SCRIPT);
+}
+
 /* Service worker: __HZ_BUILD__ diganti id build (CACHE_BUST) supaya sw.js berubah di setiap deploy
    (browser memasang versi baru dan cache versi lama dihapus otomatis). */
 function buildServiceWorker() {
@@ -151,7 +163,7 @@ function processHtml(content) {
   const withPartials = content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
   });
-  return injectCacheBust(injectFloatingMenu(injectThemeInit(injectPwaHead(withPartials))));
+  return injectCacheBust(injectFloatingMenu(injectThemeInit(injectE2eInit(injectPwaHead(withPartials)))));
 }
 
 function copyRecursive(srcDir, outDir) {

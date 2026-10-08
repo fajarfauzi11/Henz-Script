@@ -1139,3 +1139,24 @@ html[data-pwa="prompt"] .hz-fm-item-install,html[data-pwa="ios"] .hz-fm-item-ins
 html[data-theme="dark"] .hz-fm-steps li{color:var(--hz-text-2)}
 html[data-theme="dark"] .hz-fm-steps strong{color:var(--hz-text)}
 html[data-theme="dark"] .hz-dlgate-appnote{color:var(--hz-text-4)}
+
+/* ===================== PWA Android: layar penuh (edge-to-edge) =====================
+   Aktif HANYA jika <html class="hz-e2e"> (skrip #hz-e2e-init dari build.js: Android + mode aplikasi terpasang).
+   Skrip itu juga menambah viewport-fit=cover, sehingga Chrome 135+ menggambar halaman sampai ke belakang status bar dan
+   navigation bar gestur. Tanpa dukungan Chrome/ROM, semua inset bernilai 0 dan aturan di bawah tidak mengubah apa pun.
+   --hz-sat = inset atas (status bar). --hz-sab = inset bawah STATIS (safe-area-max-inset-bottom, Chrome 135+); inset
+   bawah yang "hidup" dilaporkan 0 sampai scroll pertama di sebagian versi Chrome, jadi dipakai nilai maksimumnya. */
+html.hz-e2e{--hz-sat:env(safe-area-inset-top,0px);--hz-sab:env(safe-area-max-inset-bottom,env(safe-area-inset-bottom,0px))}
+html.hz-e2e body{padding-top:var(--hz-sat)}
+/* strip di belakang status bar: warna sama dengan yang tampil sebelumnya (putih di terang, #1c1c1f di gelap) */
+html.hz-e2e::before{content:"";position:fixed;top:0;left:0;right:0;height:var(--hz-sat);background:#fff;z-index:1000;pointer-events:none}
+html.hz-e2e[data-theme="dark"]::before{background:#1c1c1f}
+/* header tetap turun sejauh inset atas */
+html.hz-e2e .hz-hv1-header{top:var(--hz-sat)}
+html.hz-e2e .henz-header{top:calc(24px + var(--hz-sat))}
+@media(max-width:768px){html.hz-e2e .henz-header{top:calc(8px + var(--hz-sat))}}
+/* bawah: footer, tombol gear, dan modal tidak tertutup navigation bar gestur */
+html.hz-e2e .hz-footer-bottom{padding-bottom:calc(18px + var(--hz-sab))}
+html.hz-e2e .hz-fm{bottom:calc(16px + var(--hz-sab))}
+html.hz-e2e .hz-fm-overlay{padding-bottom:calc(20px + var(--hz-sab))}
+@media(max-width:480px){html.hz-e2e .hz-fm-overlay{padding-bottom:calc(14px + var(--hz-sab))}}
