@@ -707,7 +707,7 @@ function buildDlRow(name, url, link, isLast, fixSfx) {
   const altR = hzExtractHeroCode(url) || name;
   const hasLogo = /logo/i.test(name);
   const logoQBtn = hasLogo
-    ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #111;background:#111;color:#fff;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
+    ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   const dlBtn = link
     ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="' + escHtml(name) + '" data-url="' + escHtml(link) + '" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
@@ -725,7 +725,7 @@ function buildDlRowTab2(name, url, link, isLast, fixSfx) {
   const altR = hzExtractHeroCode(url) || name;
   const hasLogo = /logo/i.test(name);
   const logoQBtn = hasLogo
-    ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #111;background:#111;color:#fff;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
+    ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   const dlBtn = link
     ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="' + escHtml(name) + '" data-url="' + escHtml(link) + '" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
@@ -775,7 +775,7 @@ function buildDlInject(dl) {
     + '    <button aria-checked="false" class="hz-ab-seg-item" data-target="hz-dl-t2" role="radio" type="button" onclick="hzDlTabSwitch(this)">' + escHtml(t2Name) + '</button>\n'
     + '    <div class="hz-ab-seg-pill" id="hz-dl-seg-pill"></div>\n'
     + '  </div>\n'
-    + '  <button type="button" onclick="hzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="position:absolute;top:50%;left:100%;margin-left:8px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #111;background:#111;color:#fff;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>\n'
+    + '  <button type="button" onclick="hzOpenDlTabTooltip()" aria-label="Apa itu Tab 1 &amp; Tab 2?" style="position:absolute;top:50%;left:100%;margin-left:8px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>\n'
     + '  </span>\n'
     + '</div>\n';
 
