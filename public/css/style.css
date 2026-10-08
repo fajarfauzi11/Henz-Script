@@ -1006,7 +1006,7 @@ html[data-theme="dark"] tr[style*="background:#fafafa"], html[data-theme="dark"]
 html[data-theme="dark"] tr[style*="border-bottom:1px solid #f0f0f0"], html[data-theme="dark"] tr[style*="border-bottom: 1px solid rgb(240, 240, 240)"]{border-color:var(--hz-line)!important}
 html[data-theme="dark"] a[style*="background:#fff;border:2px solid #e0e0e0"], html[data-theme="dark"] a[style*="background: rgb(255, 255, 255); border: 2px solid rgb(224, 224, 224)"]{background:var(--hz-btn-hi)!important;border-color:var(--hz-btn-hi)!important;color:#111!important}
 html[data-theme="dark"] span[style*="background:#e0e0e0"], html[data-theme="dark"] span[style*="background: rgb(224, 224, 224)"]{background:var(--hz-surface-2)!important;border-color:var(--hz-surface-2)!important;color:var(--hz-text-4)!important}
-html[data-theme="dark"] button[style*="border:1px solid #b5b5b5"], html[data-theme="dark"] button[style*="border: 1px solid rgb(181, 181, 181)"]{background:var(--hz-surface-3)!important;border-color:var(--hz-ctl)!important;color:var(--hz-text-3)!important}
+html[data-theme="dark"] button[aria-label^="Apa itu"]{background:var(--hz-btn-hi)!important;border-color:var(--hz-btn-hi)!important;color:#111!important}
 /* chip kategori ability + badge Fix SFX: tint transparan, teks terang seirama */
 html[data-theme="dark"] [style*="background:#e8f5e9"], html[data-theme="dark"] [style*="background: rgb(232, 245, 233)"]{background:rgba(76,175,80,.18)!important}
 html[data-theme="dark"] [style*="color:#2e7d32"], html[data-theme="dark"] [style*="color: rgb(46, 125, 50)"]{color:#81c784!important}
