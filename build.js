@@ -31,13 +31,15 @@ function buildAppBundle() {
   const cardTemplateSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'card-template.js'), 'utf8');
   const mainSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'main.js'), 'utf8');
   const floatingMenuSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'floating-menu.js'), 'utf8');
+  const notifySrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'notify.js'), 'utf8');
   /* Menu melayang + riwayat script (floating-menu.js) ditaruh paling akhir; ';' pemisah mencegah
      main.js yang berakhir tanpa titik-koma "menyambung" ke IIFE di file berikutnya. */
-  const bundle = cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc;
+  /* Notifikasi (notify.js: lonceng + popup + Firebase lazy) paling akhir; floating-menu.js berakhir dengan ';' sendiri. */
+  const bundle = cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc + '\n;\n' + notifySrc;
   const jsOutDir = path.join(OUT_DIR, 'js');
   fs.mkdirSync(jsOutDir, { recursive: true });
   fs.writeFileSync(path.join(jsOutDir, 'app.js'), bundle, 'utf8');
-  console.log('built: js/app.js (gabungan card-template.js + main.js + floating-menu.js, ' + bundle.length + ' bytes)');
+  console.log('built: js/app.js (gabungan card-template.js + main.js + floating-menu.js + notify.js, ' + bundle.length + ' bytes)');
 }
 /* Batas card yang langsung tampil di detail hero & kategori skin sebelum "Lihat Lebih Banyak" */
 const CP_LOADMORE_LIMIT = 20;

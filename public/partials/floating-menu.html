@@ -77,3 +77,79 @@
     </ol>
   </div>
 </div>
+<!-- Popup Notifikasi (lonceng di header) — logika: public/js/notify.js. Blok .hz-nt-st ditampilkan sesuai status
+     (data-st): ready | on | denied | ios-install | unsupported. Gambar tutorial = ilustrasi SVG inline (tanpa request gambar). -->
+<div class="hz-fm-overlay hz-nt" id="hz-nt" role="dialog" aria-modal="true" aria-labelledby="hz-nt-title" aria-hidden="true">
+  <div class="hz-fm-modal">
+    <div class="hz-fm-head">
+      <h2 class="hz-fm-modal-title" id="hz-nt-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        Notifikasi
+      </h2>
+      <button type="button" class="hz-fm-close" id="hz-nt-close" aria-label="Tutup notifikasi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="hz-nt-tabs" role="tablist" aria-label="Notifikasi">
+      <button type="button" class="hz-nt-tab" role="tab" data-tab="info" aria-selected="true" aria-controls="hz-nt-pane-info" id="hz-nt-tab-info">Aktifkan</button>
+      <button type="button" class="hz-nt-tab" role="tab" data-tab="hist" aria-selected="false" aria-controls="hz-nt-pane-hist" id="hz-nt-tab-hist" tabindex="-1">Riwayat</button>
+    </div>
+    <div class="hz-nt-info" id="hz-nt-pane-info" role="tabpanel" aria-labelledby="hz-nt-tab-info">
+      <p class="hz-nt-msg" id="hz-nt-msg" role="status" aria-live="polite"></p>
+      <div class="hz-nt-st" data-st="ready">
+        <h3 class="hz-nt-h">Dapat kabar saat ada script baru</h3>
+        <p class="hz-nt-p">Aktifkan notifikasi dan kamu langsung tahu begitu script skin baru dirilis di Henz MLBB. Gratis, tanpa spam, dan bisa dimatikan kapan saja.</p>
+        <div class="hz-nt-art">
+          <svg viewBox="0 0 280 132" role="img" aria-label="Contoh kotak izin dari browser: pilih tombol Izinkan">
+            <rect class="nt-a-card" x="14" y="8" width="252" height="116" rx="14"/>
+            <circle class="nt-a-ico" cx="38" cy="34" r="9"/>
+            <path class="nt-a-bell" d="M38 28.5a4.2 4.2 0 0 0-4.2 4.2c0 4.2-1.8 5.4-1.8 5.4h12s-1.8-1.2-1.8-5.4A4.2 4.2 0 0 0 38 28.5z"/>
+            <text class="nt-a-t1" x="54" y="31">henzscript.com ingin</text>
+            <text class="nt-a-t1" x="54" y="45">mengirim notifikasi</text>
+            <rect class="nt-a-btn" x="28" y="68" width="100" height="36" rx="18"/>
+            <text class="nt-a-btn-t" x="78" y="91" text-anchor="middle">Blokir</text>
+            <rect class="nt-a-ring" x="140" y="63" width="112" height="46" rx="23"/>
+            <rect class="nt-a-ok" x="144" y="68" width="104" height="36" rx="18"/>
+            <text class="nt-a-ok-t" x="196" y="91" text-anchor="middle">Izinkan</text>
+          </svg>
+        </div>
+        <button type="button" class="hz-nt-cta" id="hz-nt-enable">Aktifkan Notifikasi</button>
+        <ol class="hz-fm-steps">
+          <li><span class="hz-fm-step-n">1</span><span>Tekan tombol <strong>Aktifkan Notifikasi</strong> di atas.</span></li>
+          <li><span class="hz-fm-step-n">2</span><span>Saat browser bertanya, pilih <strong>Izinkan</strong>.</span></li>
+          <li><span class="hz-fm-step-n">3</span><span>Selesai. Script baru akan muncul di tab <strong>Riwayat</strong>.</span></li>
+        </ol>
+      </div>
+      <div class="hz-nt-st" data-st="on" hidden>
+        <h3 class="hz-nt-h">Notifikasi sudah aktif</h3>
+        <p class="hz-nt-p">Kamu akan mendapat pemberitahuan di perangkat ini setiap ada script baru. Semua yang masuk setelah notifikasi diaktifkan tercatat di tab <strong>Riwayat</strong>.</p>
+        <button type="button" class="hz-nt-cta hz-nt-cta--ghost" id="hz-nt-disable">Matikan Notifikasi</button>
+      </div>
+      <div class="hz-nt-st" data-st="denied" hidden>
+        <h3 class="hz-nt-h">Notifikasi diblokir di browser</h3>
+        <p class="hz-nt-p">Izin notifikasi untuk situs ini sedang ditolak, jadi tidak bisa diminta ulang dari sini. Buka kembali lewat pengaturan browser:</p>
+        <ol class="hz-fm-steps">
+          <li><span class="hz-fm-step-n">1</span><span>Ketuk ikon <strong>gembok</strong> atau <strong>pengaturan</strong> di sebelah alamat situs.</span></li>
+          <li><span class="hz-fm-step-n">2</span><span>Pilih <strong>Izin</strong> (atau <strong>Setelan situs</strong>), lalu ubah <strong>Notifikasi</strong> menjadi <strong>Izinkan</strong>.</span></li>
+          <li><span class="hz-fm-step-n">3</span><span>Muat ulang halaman ini, lalu buka lonceng lagi.</span></li>
+        </ol>
+        <p class="hz-nt-note">Di aplikasi terpasang (iPhone/iPad): buka <strong>Pengaturan &gt; Notifikasi &gt; Henz MLBB</strong>.</p>
+      </div>
+      <div class="hz-nt-st" data-st="ios-install" hidden>
+        <h3 class="hz-nt-h">Pasang aplikasinya dulu</h3>
+        <p class="hz-nt-p">Di iPhone dan iPad, notifikasi hanya bisa aktif setelah Henz MLBB dipasang ke Layar Utama (butuh iOS 16.4 atau lebih baru).</p>
+        <ol class="hz-fm-steps">
+          <li><span class="hz-fm-step-n">1</span><span>Ketuk tombol <strong>Bagikan</strong> (kotak dengan panah ke atas) di browser-mu.</span></li>
+          <li><span class="hz-fm-step-n">2</span><span>Pilih <strong>Tambahkan ke Layar Utama</strong>, lalu ketuk <strong>Tambah</strong>.</span></li>
+          <li><span class="hz-fm-step-n">3</span><span>Buka Henz MLBB dari ikon di layar utama, lalu ketuk lonceng ini lagi untuk mengaktifkan.</span></li>
+        </ol>
+      </div>
+      <div class="hz-nt-st" data-st="unsupported" hidden>
+        <h3 class="hz-nt-h">Browser ini belum mendukung notifikasi</h3>
+        <p class="hz-nt-p">Buka henzscript.com lewat Chrome, Edge, Firefox, atau Safari versi terbaru untuk mengaktifkan notifikasi.</p>
+        <p class="hz-nt-note" id="hz-nt-inapp" hidden>Kamu sedang membuka lewat aplikasi lain (misalnya WhatsApp atau Instagram). Ketuk menu <strong>&#8942;</strong> lalu pilih <strong>Buka di browser</strong>.</p>
+      </div>
+    </div>
+    <div class="hz-fm-list hz-nt-hist" id="hz-nt-pane-hist" role="tabpanel" aria-labelledby="hz-nt-tab-hist" hidden></div>
+  </div>
+</div>

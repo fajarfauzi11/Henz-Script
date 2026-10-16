@@ -263,7 +263,11 @@ document.querySelectorAll('.hz-search-form-js').forEach(function(form){
 function hzFetchPosts(cb){
   fetch('/js/posts.json?t='+Date.now())
     .then(function(r){return r.json();})
-    .then(function(d){cb(Array.isArray(d)?d:[]);})
+    .then(function(d){
+      var list=Array.isArray(d)?d:[];
+      try{if(window.hzNotifySync)window.hzNotifySync(list);}catch(e){} /* notify.js: perbarui titik merah lonceng tanpa request tambahan */
+      cb(list);
+    })
     .catch(function(){cb([]);});
 }
 
