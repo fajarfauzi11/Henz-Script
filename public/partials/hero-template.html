@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>{{HERO_NAME}} — Henz MLBB</title>
+<meta name="description" content="Kumpulan script skin Mobile Legends terbaru untuk hero {{HERO_NAME}} dari Henz MLBB ({{HERO_ROLE_LABEL}})."/>
+<link rel="canonical" href="{{CANONICAL_URL}}"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&family=Barlow:wght@900&display=swap" rel="stylesheet"/></noscript>
+<link href="/css/style.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/favicon.png"/>
+<link rel="icon" type="image/webp" href="https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/favicon.webp"/>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@6f86d3e92da6cc890e6f2034a41c805cd20dcab9/public/favicon.png"/>
+</head>
+<body class="page-hero">
+<!-- include:header.html -->
+<div class="henz-page">
+<main class="henz-main-content" id="main" role="main">
+
+<div class="hz-dh-page hz-heroh-page">
+
+<a class="hz-heroh-back" href="/daftar-hero" onclick="return hzSmartBack(this.getAttribute('href'));">&#8592; Halaman Sebelumnya</a>
+
+<div class="hz-heroh-card">
+  <div class="hz-heroh-content">
+    <div class="hz-heroh-info">
+      <span class="hz-heroh-role-badge">{{HERO_ROLE_LABEL_UPPER}}</span>
+      <div class="hz-heroh-name">{{HERO_NAME}}</div>
+      <div class="hz-heroh-count">{{POST_COUNT}} script tersedia</div>
+    </div>
+    <div class="hz-heroh-avatar-wrap"><img src="{{HERO_IMAGE}}" alt="{{HERO_NAME}}" onerror="this.parentNode.style.background='#ececec';this.remove()"/></div>
+  </div>
+</div>
+
+<div class="hz-heroh-section-title">Koleksi Script</div>
+<div class="hz-heroh-divider"></div>
+
+<div class="hz-cp-grid{{GRID_LIMIT_CLASS}}" style="max-width:1080px;margin:0 auto;">
+{{POSTS_HTML}}
+</div>
+{{LOADMORE_HTML}}
+
+</div>
+
+</main>
+</div>
+<!-- include:footer.html -->
+
+<script src="/js/app.js"></script>
+</body>
+</html>
