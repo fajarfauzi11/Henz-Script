@@ -1,0 +1,71 @@
+# Kirim notifikasi push saat ada script baru.
+# Dipicu setiap push ke main yang menyentuh public/js/posts.json (atau manual lewat tombol "Run workflow").
+# Langkah: tunggu sampai situs live (Vercel) sudah memuat id post terbaru, lalu panggil /api/push-notify.
+# Endpoint itu sendiri yang memutuskan ada/tidaknya post baru (membandingkan dengan push:last_notified_id di Redis),
+# jadi push yang tidak menambah post tidak mengirim apa pun.
+# Butuh secret repo: PUSH_ADMIN_SECRET (nilainya sama dengan environment variable di Vercel).
+name: Notifikasi script baru
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/js/posts.json'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'normal = kirim bila ada post baru | dry = hanya cek | test = kirim notifikasi uji'
+        required: false
+        default: 'normal'
+        type: choice
+        options: [normal, dry, test]
+
+concurrency:
+  group: push-notify
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE: https://www.henzscript.com
+    steps:
+      - name: Ambil kode
+        uses: actions/checkout@v4
+
+      - name: Tunggu situs live memuat post terbaru
+        if: ${{ github.event_name == 'push' || inputs.mode == 'normal' }}
+        run: |
+          set -u
+          want=$(jq '[.[].id] | max' public/js/posts.json)
+          echo "id post terbaru di repo: $want"
+          for i in $(seq 1 40); do
+            have=$(curl -fsS --max-time 15 -H 'Cache-Control: no-cache' "$SITE/js/posts.json?t=$(date +%s)" | jq '[.[].id] | max' 2>/dev/null || echo 0)
+            echo "percobaan $i: situs live punya id $have"
+            if [ "${have:-0}" -ge "$want" ]; then exit 0; fi
+            sleep 20
+          done
+          echo "Situs live belum memuat id $want setelah ~13 menit. Hentikan agar tidak mengirim notifikasi sebelum halamannya ada."
+          exit 1
+
+      - name: Panggil /api/push-notify
+        env:
+          PUSH_ADMIN_SECRET: ${{ secrets.PUSH_ADMIN_SECRET }}
+          MODE: ${{ inputs.mode || 'normal' }}
+        run: |
+          set -u
+          if [ -z "${PUSH_ADMIN_SECRET:-}" ]; then echo "Secret PUSH_ADMIN_SECRET belum diatur di repo."; exit 1; fi
+          case "$MODE" in
+            dry)  payload='{"dry":true}' ;;
+            test) payload='{"test":true}' ;;
+            *)    payload='{}' ;;
+          esac
+          curl -sS --fail-with-body --max-time 60 -X POST "$SITE/api/push-notify" \
+            -H "Authorization: Bearer $PUSH_ADMIN_SECRET" \
+            -H 'Content-Type: application/json' \
+            -d "$payload"
+          echo

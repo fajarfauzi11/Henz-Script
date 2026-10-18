@@ -105,3 +105,55 @@ self.addEventListener('fetch', function(event){
     event.respondWith(handleStatic(event));
   }
 });
+
+/* ===================== Notifikasi push (Firebase Cloud Messaging) =====================
+   Server mengirim pesan "data-only" ke topic FCM (api/push-notify.js). Kita tampilkan notifikasinya sendiri di sini,
+   jadi SDK Firebase TIDAK dimuat di service worker. Bentuk payload dari FCM bisa berupa {data:{...}} atau
+   {notification:{...}, data:{...}}; keduanya digabung supaya tetap aman kalau bentuknya sedikit berbeda.
+   Field data: title, body, url (alamat tujuan saat diketuk), icon, image, tag. */
+self.addEventListener('push', function(event){
+  var payload = {};
+  try{ payload = event.data ? event.data.json() : {}; }
+  catch(err){
+    try{ payload = { data: { body: event.data.text() } }; }catch(err2){ payload = {}; }
+  }
+  var d = {};
+  var n = (payload && payload.notification) || {};
+  var x = (payload && payload.data) || {};
+  var k;
+  for(k in n) d[k] = n[k];
+  for(k in x) d[k] = x[k];
+  var title = String(d.title || 'Henz MLBB');
+  var opts = {
+    body: String(d.body || ''),
+    icon: d.icon || '/icons/icon-192.png',
+    badge: '/icons/icon-192.png',
+    tag: d.tag || undefined,
+    renotify: !!d.tag,
+    data: { url: d.url || '/' }
+  };
+  if(d.image) opts.image = d.image;
+  event.waitUntil(self.registration.showNotification(title, opts));
+});
+
+self.addEventListener('notificationclick', function(event){
+  event.notification.close();
+  var target = '/';
+  try{
+    var u = new URL((event.notification.data && event.notification.data.url) || '/', self.location.origin);
+    if(u.origin === self.location.origin) target = u.href; // hanya tujuan di situs ini
+  }catch(err){}
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(list){
+      for(var i = 0; i < list.length; i++){
+        var c = list[i];
+        if(c.url && c.url.indexOf(self.location.origin) === 0 && 'focus' in c){
+          return c.focus().then(function(w){ return (w && 'navigate' in w) ? w.navigate(target) : null; }).catch(function(){
+            return self.clients.openWindow(target);
+          });
+        }
+      }
+      return self.clients.openWindow(target);
+    })
+  );
+});

@@ -43,7 +43,7 @@
 <div class="hz-legal-page">
   <div class="hz-legal-eyebrow">Legal</div>
   <h1 class="hz-legal-title">Kebijakan Privasi</h1>
-  <p class="hz-legal-meta">Berlaku sejak 6 Oktober 2026</p>
+  <p class="hz-legal-meta">Berlaku sejak 15 Oktober 2026</p>
 
   <div class="hz-legal-layout">
     <nav class="hz-legal-toc" aria-label="Daftar isi">
@@ -69,6 +69,7 @@
         <p>Situs ini tidak memiliki sistem pendaftaran akun, login, atau formulir yang meminta nama, email, atau nomor telepon secara langsung ke server kami. Fitur "Request Script" dan "Lapor Bug" mengarahkanmu ke grup WhatsApp atau Telegram eksternal, jadi apa pun yang kamu ketik di sana tersimpan dan dikelola oleh WhatsApp/Telegram, bukan oleh kami.</p>
         <p>Yang kami kumpulkan hanya data agregat dan anonim, yaitu jumlah tampilan tiap halaman post, untuk mengetahui skin mana yang paling banyak diminati. Angka ini tidak terhubung ke identitas siapa pun.</p>
         <p>Beberapa fitur menyimpan data langsung di browsermu, bukan di server kami, yaitu riwayat script yang pernah kamu buka dan pilihan mode gelap. Data ini tidak kami kirim ke server kami dan tidak kami kumpulkan. Rinciannya ada di bagian 4.</p>
+        <p>Jika kamu memilih mengaktifkan notifikasi, browsermu membuat kode pengenal acak (token notifikasi) lewat Firebase Cloud Messaging milik Google. Token itu dikirim ke server kami dan disimpan supaya notifikasi script baru bisa sampai ke perangkatmu. Token tidak berisi nama, email, atau data identitas lain, dan tidak kami hubungkan ke identitas siapa pun. Kamu bisa menghentikannya kapan saja lewat tombol "Matikan Notifikasi" di menu lonceng atau lewat pengaturan notifikasi browser.</p>
       </div>
 
       <div class="hz-legal-section" id="pihak-ketiga">
@@ -76,7 +77,8 @@
         <p>Situs ini berjalan di atas beberapa layanan pihak ketiga, masing-masing punya kebijakan privasinya sendiri, dan sebagian dari mereka bisa memproses data secara otomatis (seperti alamat IP) saat halaman dimuat:</p>
         <ul>
           <li><strong>Vercel</strong> — penyedia hosting kami, juga menjalankan Vercel Web Analytics untuk memantau performa situs secara agregat.</li>
-          <li><strong>Upstash Redis</strong> — menyimpan angka hitungan tampilan yang disebut di atas.</li>
+          <li><strong>Upstash Redis</strong> — menyimpan angka hitungan tampilan yang disebut di atas, serta token notifikasi bagi pengunjung yang mengaktifkannya.</li>
+          <li><strong>Google Firebase (Cloud Messaging)</strong> — layanan Google yang mengantarkan notifikasi script baru ke browsermu. Kodenya dimuat dari server Google hanya saat kamu mengaktifkan notifikasi, dan Google memproses token notifikasi serta data teknis perangkat (seperti alamat IP) sesuai kebijakan privasinya.</li>
           <li><strong>Google Fonts</strong> — memuat huruf Manrope, Plus Jakarta Sans, dan Barlow langsung dari server Google.</li>
           <li><strong>jsDelivr</strong> — jaringan pengantar konten (CDN) yang memuat ikon situs (favicon) dan pustaka slider (Swiper) dari server mereka.</li>
           <li><strong>ImgBB</strong> — layanan hosting gambar tempat thumbnail script dan gambar skin dimuat (dari domain i.ibb.co).</li>
@@ -96,6 +98,7 @@
           <li>Menandai bahwa tampilan sebuah post sudah dihitung dalam sesi ini, supaya tidak terhitung ganda. Penanda ini hilang saat tab atau browser ditutup.</li>
           <li><strong>Riwayat script yang dibuka.</strong> Setiap kali kamu membuka halaman script, situs mencatat judul, tautan, tautan gambar thumbnail, dan waktu bukanya (maksimal 30 script terakhir) agar kamu bisa membukanya lagi lewat menu pengaturan. Riwayat ini hanya ada di browser yang kamu pakai, tidak tersinkron ke perangkat lain, dan tidak dikirim ke server kami.</li>
           <li><strong>Pilihan mode gelap.</strong> Jika kamu menyalakan mode gelap, pilihan itu disimpan supaya tampilan tetap gelap saat kamu berkunjung lagi.</li>
+          <li><strong>Status notifikasi.</strong> Jika kamu mengaktifkan notifikasi, browser menyimpan penanda bahwa notifikasi aktif beserta nomor script terbaru saat itu, supaya tab Riwayat di menu lonceng hanya menampilkan script yang rilis sesudahnya. Data ini hanya ada di browsermu.</li>
           <li><strong>Salinan sementara untuk aplikasi (cache).</strong> Situs memakai service worker untuk menyimpan salinan sementara halaman yang pernah kamu buka dan berkas tampilan dari situs ini (CSS, JS, gambar) di browsermu, supaya situs lebih cepat dimuat, bisa menampilkan halaman offline, dan bisa dipasang sebagai aplikasi lewat menu "Install Aplikasi". Salinan ini tidak berisi data pribadi dan dibersihkan otomatis saat situs diperbarui. Skrip iklan dan layanan pihak ketiga tidak ikut disimpan oleh service worker kami.</li>
         </ul>
         <p>Riwayat script bisa kamu hapus kapan saja lewat tombol "Hapus Riwayat" di menu pengaturan (ikon gir di pojok kanan bawah), dan mode gelap bisa dimatikan lewat switch di menu yang sama. Semua data ini juga bisa dihapus lewat pengaturan browser, dan tidak digunakan untuk mengidentifikasi kamu secara pribadi. Layanan pihak ketiga pada bagian 3 punya penyimpanan dan kebijakannya sendiri.</p>
