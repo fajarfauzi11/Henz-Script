@@ -558,7 +558,7 @@ function hzBuildAbilityRow(opts) {
 
   function contentBlock(url, name, kategori, longDesc, prefix) {
     return '  <div style="display:flex;align-items:flex-start;gap:14px;padding:12px 20px 14px;">\n'
-      + '    <img src="' + escHtml(url) + '" alt="' + escHtml(name) + '" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>\n'
+      + '    <img src="' + escHtml(url) + '" alt="' + escHtml(name) + '" loading="lazy" decoding="async" style="width:52px;height:52px;border-radius:50%;object-fit:contain;flex-shrink:0;background:#1a1a2e;box-shadow:0 1px 6px rgba(0,0,0,.25);"/>\n'
       + '    <div style="flex:1;min-width:0;">\n'
       + '      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px;">\n'
       + '        <span style="font-size:14px;font-weight:800;color:#111;font-family:\'Manrope\',sans-serif;">' + escHtml(name) + '</span>\n'
@@ -717,7 +717,7 @@ function buildDlRow(name, url, link, isLast, fixSfx) {
   const rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="' + rowStyle + '">\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;">' + (fixSfx ? hzFixSfxBadge() : '') + '<span style="font-weight:800;color:#111;font-size:12px;">' + escHtml(name) + '</span>' + logoQBtn + '</span></td>\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" loading="lazy" decoding="async" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">' + dlBtn + '</td>\n'
     + '</tr>\n';
 }
@@ -735,7 +735,7 @@ function buildDlRowTab2(name, url, link, isLast, fixSfx) {
   const rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="' + rowStyle + '">\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><span style="position:relative;display:inline-block;">' + (fixSfx ? hzFixSfxBadge() : '') + '<span style="font-weight:800;color:#FFC200;font-size:12px;">' + escHtml(name) + '</span>' + logoQBtn + '</span></td>\n'
-    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
+    + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;"><img src="' + escHtml(url) + '" alt="' + escHtml(altR) + '" referrerpolicy="no-referrer" loading="lazy" decoding="async" style="width:42px;height:42px;border-radius:50%;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,.15);margin:0 auto;display:block;"/></td>\n'
     + '  <td style="padding:14px 14px;text-align:center;vertical-align:middle;">' + dlBtn + '</td>\n'
     + '</tr>\n';
 }
@@ -837,6 +837,226 @@ function hzApplySoonFallback(html) {
   );
 }
 
+/* ===================== SEO: pratinjau tautan (Open Graph) + data terstruktur (JSON-LD) =====================
+   Semua berupa tag di <head>: TIDAK mengubah tampilan atau desain halaman sama sekali.
+   - Halaman post (dari template): JSON-LD dibuat di generatePostPages lewat placeholder {{JSONLD}}; OG sudah ada di template.
+   - Halaman lain (beranda, hero, kategori, hub, tutorial, dst.): injectSeoMetaAll() menyuntik OG + JSON-LD di akhir build,
+     memakai <title>, meta description, dan canonical yang SUDAH ada di tiap halaman. Idempoten (lewati yang sudah punya). */
+const SEO_SITE_NAME = 'Henz MLBB';
+const SEO_DEFAULT_IMAGE = BASE_URL + '/icons/icon-512.png';
+const SEO_SAME_AS = ['https://www.youtube.com/@henzthesixth', 'https://t.me/henzcorps', 'https://whatsapp.com/channel/0029VbDXzYMId7nKuFlKs73B'];
+const ID_MONTH_ANY = { jan: '01', januari: '01', feb: '02', februari: '02', mar: '03', maret: '03', apr: '04', april: '04', mei: '05', may: '05', jun: '06', juni: '06', jul: '07', juli: '07', agu: '08', agt: '08', agustus: '08', aug: '08', sep: '09', sept: '09', september: '09', okt: '10', oktober: '10', oct: '10', nov: '11', november: '11', des: '12', desember: '12', dec: '12' };
+/* Tanggal di data post bervariasi: "8 September 2026", "3 Okt 2026", "Update 8 Sep 2026" -> "2026-09-08" */
+function parseDateFlexible(str) {
+  const t = (str || '').replace(/^\s*update\s*/i, '').trim().split(/\s+/);
+  if (t.length !== 3 || !/^\d{1,2}$/.test(t[0]) || !/^\d{4}$/.test(t[2])) return null;
+  const mo = ID_MONTH_ANY[t[1].toLowerCase().replace(/\./g, '')];
+  return mo ? t[2] + '-' + mo + '-' + t[0].padStart(2, '0') : null;
+}
+/* "<" di-escape supaya isi JSON tidak pernah bisa menutup tag <script> */
+function ldScript(obj) {
+  return '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, '\\u003c') + '</script>';
+}
+function ldBreadcrumb(items) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it[0], item: absoluteUrl(it[1]) })),
+  };
+}
+function buildPostJsonLd(data, slug, postUrl, entry) {
+  const url = absoluteUrl(postUrl);
+  const name = 'Script Skin ' + (data.namehero || slug);
+  const heroName = (entry && entry.hero) || data.herolink || '';
+  const hs = slugify(heroName);
+  const crumbs = [['Beranda', '/'], ['Daftar Hero', '/daftar-hero']];
+  if (heroName && fs.existsSync(path.join(OUT_DIR, 'hero', hs + '.html'))) crumbs.push([heroName, '/hero/' + hs]);
+  crumbs.push([name, postUrl]);
+  const modified = parseDateFlexible(data.datepost);
+  const published = parseDateFlexible(entry && entry.date) || modified;
+  return ldScript({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        '@id': url + '#article',
+        headline: name,
+        description: 'Download script skin ' + (data.namehero || slug) + ' no password, aman, dan terbaru dari Henz MLBB.',
+        image: data.urlthumbnail ? [data.urlthumbnail] : undefined,
+        datePublished: published || undefined,
+        dateModified: modified || published || undefined,
+        author: { '@type': 'Person', name: data.authorname || SEO_SITE_NAME },
+        publisher: { '@type': 'Organization', name: SEO_SITE_NAME, logo: { '@type': 'ImageObject', url: SEO_DEFAULT_IMAGE } },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+        articleSection: data.kategoriskin || undefined,
+        keywords: data.keywords || undefined,
+        inLanguage: 'id',
+      },
+      ldBreadcrumb(crumbs),
+    ],
+  });
+}
+
+function injectSeoMetaAll() {
+  const postsPath = path.join(SRC_DIR, 'js', 'posts.json');
+  const posts = fs.existsSync(postsPath) ? JSON.parse(fs.readFileSync(postsPath, 'utf8')) : [];
+  const heroesPath = path.join(SRC_DIR, 'js', 'heroes.json');
+  const heroes = fs.existsSync(heroesPath) ? JSON.parse(fs.readFileSync(heroesPath, 'utf8')) : [];
+  const catsPath = path.join(SRC_DIR, 'js', 'categories.json');
+  const cats = fs.existsSync(catsPath) ? JSON.parse(fs.readFileSync(catsPath, 'utf8')) : {};
+  const heroNameBySlug = {};
+  heroes.forEach((h) => { if (h && h.name) heroNameBySlug[slugify(h.name)] = h.name; });
+  const catNameBySlug = {};
+  Object.keys(cats).forEach((c) => { catNameBySlug[slugify(c)] = c; });
+  const latestThumbBy = (keyFn) => {
+    const m = {};
+    posts.forEach((p) => {
+      const k = keyFn(p);
+      if (!k || !p.thumb || !/^https:\/\//i.test(p.thumb)) return;
+      if (!m[k] || (Number(p.id) || 0) > (Number(m[k].id) || 0)) m[k] = p;
+    });
+    return m;
+  };
+  const latestByHero = latestThumbBy((p) => (p.hero ? slugify(p.hero) : ''));
+  const latestByCat = latestThumbBy((p) => (p.cat ? slugify(p.cat) : ''));
+  const STATIC_NAMES = {
+    'daftar-hero.html': 'Daftar Hero', 'kategori-skin.html': 'Kategori Skin', 'tutorial.html': 'Tutorial', 'socials.html': 'Socials',
+    'request-script.html': 'Request Script', 'kebijakan-privasi.html': 'Kebijakan Privasi', 'syarat-ketentuan.html': 'Syarat & Ketentuan',
+  };
+  const attr = (v) => String(v).replace(/"/g, '&quot;');
+  const walk = (dir, out) => {
+    fs.readdirSync(dir, { withFileTypes: true }).forEach((e) => {
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) walk(f, out); else if (e.name.endsWith('.html')) out.push(f);
+    });
+    return out;
+  };
+  let nOg = 0, nLd = 0;
+  walk(OUT_DIR, []).forEach((fpath) => {
+    const rel = path.relative(OUT_DIR, fpath).split(path.sep).join('/');
+    if (rel === '404.html' || rel === 'offline.html' || rel === 'category.html' || rel === 'daftarhero.html' || rel === 'scriptrequest.html') return;
+    let html = fs.readFileSync(fpath, 'utf8');
+    if (html.indexOf('</head>') === -1 || /<meta[^>]+name="robots"[^>]+noindex/i.test(html)) return;
+    const tm = html.match(/<title>([\s\S]*?)<\/title>/);
+    const cm = html.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/);
+    const dm = html.match(/<meta[^>]+name="description"[^>]+content="([^"]*)"/) || html.match(/<meta[^>]+content="([^"]*)"[^>]+name="description"/);
+    if (!tm || !cm) return;
+    const title = tm[1].trim();
+    const canonical = cm[1];
+    const desc = dm ? dm[1] : '';
+    let image = SEO_DEFAULT_IMAGE;
+    let large = false;
+    let ld = null;
+    let m;
+    if (rel === 'index.html') {
+      ld = { '@context': 'https://schema.org', '@graph': [
+        { '@type': 'WebSite', '@id': BASE_URL + '/#website', url: BASE_URL + '/', name: SEO_SITE_NAME, inLanguage: 'id', publisher: { '@id': BASE_URL + '/#org' },
+          potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: BASE_URL + '/search.html?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } },
+        { '@type': 'Organization', '@id': BASE_URL + '/#org', name: SEO_SITE_NAME, url: BASE_URL + '/', logo: { '@type': 'ImageObject', url: SEO_DEFAULT_IMAGE }, sameAs: SEO_SAME_AS },
+      ] };
+    } else if ((m = rel.match(/^hero\/([^/]+)\.html$/))) {
+      const name = heroNameBySlug[m[1]] || title;
+      const lp = latestByHero[m[1]];
+      if (lp) { image = lp.thumb; large = true; }
+      ld = { '@context': 'https://schema.org', '@graph': [
+        { '@type': 'CollectionPage', '@id': canonical + '#page', url: canonical, name: title, description: desc || undefined, inLanguage: 'id', isPartOf: { '@id': BASE_URL + '/#website' } },
+        ldBreadcrumb([['Beranda', '/'], ['Daftar Hero', '/daftar-hero'], [name, '/hero/' + m[1]]]),
+      ] };
+    } else if ((m = rel.match(/^kategori-skin\/([^/]+)\.html$/))) {
+      const name = m[1] === 'semua' ? 'Semua Skin' : (catNameBySlug[m[1]] || title);
+      const lp = latestByCat[m[1]];
+      if (lp) { image = lp.thumb; large = true; }
+      ld = { '@context': 'https://schema.org', '@graph': [
+        { '@type': 'CollectionPage', '@id': canonical + '#page', url: canonical, name: title, description: desc || undefined, inLanguage: 'id', isPartOf: { '@id': BASE_URL + '/#website' } },
+        ldBreadcrumb([['Beranda', '/'], ['Kategori Skin', '/kategori-skin'], [name, '/kategori-skin/' + m[1]]]),
+      ] };
+    } else if (STATIC_NAMES[rel]) {
+      ld = { '@context': 'https://schema.org', '@graph': [ldBreadcrumb([['Beranda', '/'], [STATIC_NAMES[rel], '/' + rel.replace(/\.html$/, '')]])] };
+    }
+    let add = '';
+    if (html.indexOf('property="og:title"') === -1) {
+      add += '<meta property="og:type" content="website"/>\n<meta property="og:site_name" content="' + SEO_SITE_NAME + '"/>\n<meta property="og:locale" content="id_ID"/>\n'
+        + '<meta property="og:title" content="' + attr(title) + '"/>\n'
+        + (desc ? '<meta property="og:description" content="' + desc + '"/>\n' : '')
+        + '<meta property="og:url" content="' + canonical + '"/>\n<meta property="og:image" content="' + attr(image) + '"/>\n'
+        + '<meta name="twitter:card" content="' + (large ? 'summary_large_image' : 'summary') + '"/>\n';
+      nOg++;
+    }
+    if (ld && html.indexOf('application/ld+json') === -1) { add += ldScript(ld) + '\n'; nLd++; }
+    if (!add) return;
+    html = html.replace('</head>', add + '</head>');
+    fs.writeFileSync(fpath, html, 'utf8');
+  });
+  console.log('SEO: OG disuntik ke ' + nOg + ' halaman, JSON-LD ke ' + nLd + ' halaman (selain post dari template).');
+}
+
+/* ===================== Ikon skill/hero dari repo ikon (jsDelivr) =====================
+   Ikon di halaman post aslinya dimuat dari static.wikia.nocookie.net (pihak ketiga, bisa berubah/hilang sewaktu-waktu).
+   Workflow .github/workflows/mirror-icons.yml mencadangkannya ke repo ikon dan menulis tool/skill-icons-map.json
+   ({ "<url wikia>": "skill/a/bb/Nama.png" }). Saat build, <img> yang URL-nya ada di peta dialihkan ke jsDelivr, dengan
+   onerror yang mengembalikannya ke URL wikia asli bila CDN gagal. Peta tidak ada/kosong = tidak ada yang diubah. */
+const ICON_CDN_BASE = 'https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script-icons@main/';
+let ICON_MAP = {};
+try {
+  const iconMapPath = path.join(__dirname, 'tool', 'skill-icons-map.json');
+  if (fs.existsSync(iconMapPath)) ICON_MAP = JSON.parse(fs.readFileSync(iconMapPath, 'utf8')) || {};
+} catch (e) {
+  console.log('Peta ikon tidak terbaca, dilewati: ' + e.message);
+}
+const ICON_MAP_COUNT = Object.keys(ICON_MAP).length;
+let iconsRewritten = 0;
+function hzUseMirroredIcons(html) {
+  if (!ICON_MAP_COUNT) return html;
+  return html.replace(/<img\b[^>]*>/g, (tag) => {
+    const m = tag.match(/\bsrc="(https:\/\/static\.wikia\.nocookie\.net\/[^"]+)"/);
+    if (!m || /\bonerror=/.test(tag)) return tag;
+    const orig = m[1].replace(/&amp;/g, '&');
+    const rel = ICON_MAP[orig];
+    if (!rel) return tag;
+    const cdn = ICON_CDN_BASE + rel.split('/').map(encodeURIComponent).join('/');
+    const closing = tag.slice(-2) === '/>' ? '/>' : '>';
+    const head = tag.slice(0, tag.length - closing.length).replace(m[0], 'src="' + cdn + '"');
+    iconsRewritten++;
+    return head + ' onerror="this.onerror=null;this.src=\'' + escHtml(orig).replace(/'/g, '%27') + '\'"' + closing;
+  });
+}
+
+/* ===================== "Skin Lain" di halaman post (dibuat saat build) =====================
+   Aturan: skin lain dari hero yang sama (terbaru dulu, maks 4). Kalau hero itu hanya punya skin yang sedang dibuka,
+   fallback ke skin lain di kategori yang sama (maks 4). Kalau keduanya kosong, bagian ini tidak ditampilkan.
+   Sumber data = posts.json, jadi post draft (tidak ada di posts.json) tidak pernah muncul di sini, dan view count
+   kartu diisi otomatis oleh main.js (hzLoadViewCounts membaca semua [data-view-id], 1 request gabungan). */
+const RELATED_MAX = 4;
+function buildRelatedHtml(entry, postsArr) {
+  if (!entry || !postsArr || !postsArr.length) return '';
+  const byNewest = (a, b) => (b.id || 0) - (a.id || 0);
+  const others = postsArr.filter((p) => p && p.url && p.url !== entry.url);
+  let title = '';
+  let moreHref = '';
+  let list = [];
+  if (entry.hero) {
+    const hs = slugify(entry.hero);
+    list = others.filter((p) => p.hero && slugify(p.hero) === hs).sort(byNewest).slice(0, RELATED_MAX);
+    if (list.length) {
+      title = 'Skin Lain dari ' + entry.hero;
+      if (fs.existsSync(path.join(OUT_DIR, 'hero', hs + '.html'))) moreHref = '/hero/' + hs;
+    }
+  }
+  if (!list.length && entry.cat) {
+    list = others.filter((p) => p.cat === entry.cat).sort(byNewest).slice(0, RELATED_MAX);
+    if (list.length) {
+      title = 'Skin ' + entry.cat + ' Lainnya';
+      const cs = slugify(entry.cat);
+      if (fs.existsSync(path.join(OUT_DIR, 'kategori-skin', cs + '.html'))) moreHref = '/kategori-skin/' + cs;
+    }
+  }
+  if (!list.length) return '';
+  return '<section id="hz-related" class="hz-related" aria-labelledby="hz-related-title">\n'
+    + '        <div class="hz-related-head"><h2 id="hz-related-title">' + escHtml(title) + '</h2>'
+    + (moreHref ? '<a class="hz-related-all" href="' + moreHref + '">Lihat Semua &rarr;</a>' : '') + '</div>\n'
+    + '        <div class="hz-related-grid">\n' + list.map(hzBuildCard).join('\n') + '\n        </div>\n'
+    + '      </section>';
+}
+
 function generatePostPages() {
   const dataDir = path.join(SRC_DIR, 'data', 'posts');
   if (!fs.existsSync(dataDir)) {
@@ -853,9 +1073,11 @@ function generatePostPages() {
   // yang dipakai main.js buat nge-increment (lihat public/js/main.js: page-post block)
   const postsJsonPath = path.join(SRC_DIR, 'js', 'posts.json');
   const postsIndexByUrl = {};
+  let postsIndexArr = [];
   let postsIndexLoaded = false;
   if (fs.existsSync(postsJsonPath)) {
     const postsIndex = JSON.parse(fs.readFileSync(postsJsonPath, 'utf8'));
+    postsIndexArr = postsIndex;
     postsIndex.forEach((p) => { if (p.url) postsIndexByUrl[p.url] = p; });
     postsIndexLoaded = true;
   }
@@ -906,9 +1128,12 @@ function generatePostPages() {
       .split('{{VIEW_ID}}').join(escHtml(viewId))
       .split('{{VIEW_SLUG}}').join(escHtml(slug))
       .split('{{CANONICAL_URL}}').join(absoluteUrl(postUrl))
-      .split('{{ROBOTS_META}}').join(isDraft ? '\n<meta name="robots" content="noindex,nofollow"/>' : '');
+      .split('{{ROBOTS_META}}').join(isDraft ? '\n<meta name="robots" content="noindex,nofollow"/>' : '')
+      .split('{{RELATED_INJECT}}').join(isDraft ? '' : buildRelatedHtml(postsEntry, postsIndexArr))
+      .split('{{JSONLD}}').join(isDraft ? '' : buildPostJsonLd(data, slug, postUrl, postsEntry));
 
     html = hzApplySoonFallback(html);
+    html = hzUseMirroredIcons(html);
     html = processHtml(html);
     fs.writeFileSync(path.join(postOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
     if (!isDraft) addSitemapUrl(postUrl, { lastmod: parseIdDate(data.datepost), changefreq: 'monthly', priority: 0.9, category: 'post' });
@@ -919,6 +1144,7 @@ function generatePostPages() {
   }
 }
 generatePostPages();
+if (ICON_MAP_COUNT) console.log('Ikon wikia -> jsDelivr: ' + iconsRewritten + ' tag <img> dialihkan (peta: ' + ICON_MAP_COUNT + ' URL).');
 
 /* ===================== sitemap.xml & robots.txt ===================== */
 function generateSitemapAndRobots() {
@@ -1007,6 +1233,7 @@ function generateSitemapAndRobots() {
   fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), robots, 'utf8');
   console.log('built: robots.txt');
 }
+injectSeoMetaAll();
 generateSitemapAndRobots();
 
 console.log('Build selesai. Output di:', OUT_DIR);

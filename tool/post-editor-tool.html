@@ -3675,7 +3675,7 @@ async function finalizeAndUpload(){
 
     if(existingIndex !== -1){
       // Overwrite: update entry yang sudah ada in-place, jangan duplikat.
-      // id, author, comments tetap dipertahankan dari entry lama.
+      // id dan author tetap dipertahankan dari entry lama.
       var oldEntry = posts[existingIndex];
       oldEntry.title = namehero;
       oldEntry.thumb = thumbVal;
@@ -3693,8 +3693,7 @@ async function finalizeAndUpload(){
         cat: catVal,
         hero: heroVal,
         date: hzDateFromDatepost(),
-        author: 'Henz',
-        comments: 0
+        author: 'Henz'
       };
       if(keywordsVal) newEntry.keywords = keywordsVal;
       posts.unshift(newEntry);
@@ -3829,100 +3828,6 @@ return `<!DOCTYPE html>
   .item-view .Blog .blog-posts .post-outer-container { padding: 0 !important; box-shadow: none !important; border-radius: 0 !important; border: none !important; background: transparent !important; }
   .item-view .Blog .blog-posts .post-outer-container,
   .item-view .post-outer-container { margin-bottom: 0 !important; }
-
-  /* ── KOMENTAR — di dalam card putih, style minimal ── */
-  #comments {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    font-family: 'Manrope', sans-serif !important;
-  }
-  #comments > h3.title {
-    font-size: 16px !important;
-    font-weight: 800 !important;
-    color: #111 !important;
-    font-family: 'Manrope', sans-serif !important;
-    margin: 0 0 16px !important;
-    padding: 0 !important;
-    border: none !important;
-  }
-  #comment-post-message,
-  .comment-form h4 {
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    color: #888 !important;
-    letter-spacing: 0 !important;
-    text-transform: none !important;
-    margin: 0 0 12px !important;
-    font-family: 'Manrope', sans-serif !important;
-  }
-  .comment-form {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin-bottom: 0 !important;
-  }
-  #comment-editor {
-    border-radius: 8px !important;
-    border: 1px solid #e8e8e8 !important;
-  }
-  .comment {
-    display: flex !important;
-    gap: 12px !important;
-    padding: 14px 0 !important;
-    border-bottom: 1px solid #f5f5f5 !important;
-    align-items: flex-start !important;
-  }
-  .comment:last-child { border-bottom: none !important; }
-  .avatar-image-container img.author-avatar {
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    flex-shrink: 0 !important;
-  }
-  .comment-block { flex: 1 !important; min-width: 0 !important; }
-  .comment-author {
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    color: #111 !important;
-    font-family: 'Manrope', sans-serif !important;
-  }
-  .comment-author a { color: #111 !important; text-decoration: none !important; }
-  .comment-body {
-    font-size: 13.5px !important;
-    color: #555 !important;
-    line-height: 1.7 !important;
-    font-weight: 500 !important;
-    font-family: 'Manrope', sans-serif !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 4px 0 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-  }
-  .comment-footer { font-size: 11px !important; color: #bbb !important; font-family: 'Manrope', sans-serif !important; }
-  .comment-footer a { color: #bbb !important; text-decoration: none !important; }
-  .paging-control-container {
-    display: flex !important;
-    gap: 8px !important;
-    padding: 16px 0 0 !important;
-    font-family: 'Manrope', sans-serif !important;
-  }
-  .paging-control-container a {
-    display: inline-block !important;
-    padding: 6px 16px !important;
-    background: #f5f5f5 !important;
-    border: 1px solid #e8e8e8 !important;
-    border-radius: 8px !important;
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    color: #555 !important;
-    text-decoration: none !important;
-  }
-  .comment-range-text { font-size: 12px !important; color: #aaa !important; }
 
   /* ── Override padding horizontal post-outer-container di mobile ── */
   @media (max-width: 600px) {
@@ -4469,9 +4374,6 @@ return `<!DOCTYPE html>
     </div>
     <!-- END [D] BODY KONTEN -->
 
-    <!-- Slot komentar — diisi JS dari #comments Blogger -->
-    <div id="hz-comments-slot" style="padding:28px 32px 32px;display:none;"></div>
-
   </div>
   <!-- END [B2] CARD PUTIH -->
 
@@ -4892,28 +4794,6 @@ function hzDlGateFinalOpen(){
 }
 
 
-
-/* ── [E7] Pindahkan #comments ke dalam card putih (hz-comments-slot) ── */
-function hzMoveComments(){
-  var slot     = document.getElementById('hz-comments-slot');
-  var comments = document.getElementById('comments');
-  if(!slot || !comments) return false;
-  if(comments.parentNode === slot){
-    slot.style.display = 'block';
-    return true;
-  }
-  slot.appendChild(comments);
-  slot.style.display = 'block';
-  return true;
-}
-
-if(!hzMoveComments()){
-  var _kzCmtTimer = setInterval(function(){
-    if(hzMoveComments()) clearInterval(_kzCmtTimer);
-  }, 100);
-  setTimeout(function(){ clearInterval(_kzCmtTimer); }, 3000);
-}
-document.addEventListener('DOMContentLoaded', hzMoveComments);
 
 //]]>
 <\/script>

@@ -426,8 +426,7 @@ if(document.getElementById('hz-swiper-latest')){
         hzApplyViewCounts(document,views);
       })
       .catch(function(){
-        var sortedByComments=posts.slice().sort(function(a,b){return parseInt(b.comments||0)-parseInt(a.comments||0);});
-        renderPopular(sortedByComments);
+        renderPopular(posts.slice());
         hzLoadViewCounts();
       });
   });
