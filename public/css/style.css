@@ -1127,6 +1127,26 @@ html[data-theme="dark"] #hz-search-heading h1 em{color:var(--hz-red-text)}
 html[data-theme="dark"] [style*="background: rgb(236, 236, 236)"]{background:var(--hz-surface-3)!important}
 
 /* ===================== PWA: Install Aplikasi (baris di menu gear + modal iPhone) ===================== */
+/* ── Favorit (baris menu + modal Script Favorit) ── */
+.hz-fm-item-count{min-width:20px;height:20px;box-sizing:border-box;padding:0 6px;border-radius:999px;background:#c62828;color:#fff;font-size:11px;font-weight:800;line-height:1;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.hz-fm-item-count[hidden]{display:none}
+.hz-fm-fav-item{padding-right:6px}
+.hz-fm-fav-link{flex:1;min-width:0;display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.hz-fm-fav-link:focus-visible{outline:2px solid #e53232;outline-offset:2px;border-radius:9px}
+.hz-fm-fav-rm{width:44px;height:44px;flex-shrink:0;padding:0;border:none;border-radius:50%;background:#fdf4f4;color:#e53232;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s,transform .1s}
+.hz-fm-fav-rm svg{width:22px;height:22px;fill:currentColor}
+.hz-fm-fav-rm:active{transform:scale(.92);background:#fbe6e6}
+.hz-fm-fav-rm:focus-visible{outline:2px solid #e53232;outline-offset:2px}
+@media(hover:hover){.hz-fm-fav-rm:hover{background:#fbe6e6}}
+.hz-fm-fav-total{margin-right:auto;align-self:center;font-size:13px;font-weight:700;color:#52525b}
+.hz-fm-modal-foot.confirming .hz-fm-fav-total{display:none}
+#hz-fm-fav .hz-fm-modal-foot{margin-top:0;padding:12px 20px 18px;border-top:1px solid #efefef}
+html[data-theme="dark"] .hz-fm-fav-rm{background:rgba(229,50,50,.16);color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-fm-fav-rm:active{background:rgba(229,50,50,.28)}
+@media(hover:hover){html[data-theme="dark"] .hz-fm-fav-rm:hover{background:rgba(229,50,50,.28)}}
+html[data-theme="dark"] .hz-fm-fav-total{color:var(--hz-text-3)}
+html[data-theme="dark"] #hz-fm-fav .hz-fm-modal-foot{border-top-color:var(--hz-line-2)}
+@media(prefers-reduced-motion:reduce){.hz-fm-fav-rm{transition:none!important}}
 .hz-fm-item-install{display:none}
 html[data-pwa="prompt"] .hz-fm-item-install,html[data-pwa="ios"] .hz-fm-item-install{display:flex}
 .hz-fm-steps{list-style:none;margin:0;padding:14px 20px 22px;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
