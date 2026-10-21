@@ -11,7 +11,7 @@
 
    Placeholder id build pada variabel BUILD di bawah diganti build.js di setiap deploy. Akibatnya file ini berubah di setiap
    deploy, browser memasang versi baru, dan cache versi lama dihapus otomatis saat aktivasi. */
-var BUILD = '1792466864291';
+var BUILD = '1792623504890';
 var STATIC_CACHE = 'hz-static-' + BUILD;
 var PAGE_CACHE = 'hz-pages-' + BUILD;
 var OFFLINE_URL = '/offline';

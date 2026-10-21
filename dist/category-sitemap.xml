@@ -2,6 +2,16 @@
 <?xml-stylesheet type="text/xsl" href="/sitemap-urls.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.henzscript.com/kategori-skin/collector</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.henzscript.com/kategori-skin/legend</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.henzscript.com/kategori-skin/sparkle</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -12,22 +22,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.henzscript.com/kategori-skin/collector</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.henzscript.com/kategori-skin/starlight</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.henzscript.com/kategori-skin/luckybox</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.henzscript.com/kategori-skin/legend</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
