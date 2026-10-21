@@ -1286,8 +1286,9 @@ html[data-theme="dark"] .hz-nt-msg{color:#f97066}
 
 /* Riwayat Script & Riwayat Notifikasi: jarak rapi + tepi daftar memudar (tidak terpotong keras). Padding atas/bawah daftar
    sengaja >= lebar pudar, jadi kartu tetap utuh saat daftar di posisi paling atas/bawah. */
-#hz-fm-history .hz-fm-modal-sub{padding-bottom:12px}
-#hz-fm-history .hz-fm-list,.hz-nt-hist{padding-top:12px;padding-bottom:16px;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 16px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 16px),transparent 100%)}
+#hz-fm-history .hz-fm-modal-sub,#hz-fm-fav .hz-fm-modal-sub{padding-bottom:12px;border-bottom:1px solid #efefef}
+#hz-fm-history .hz-fm-list,#hz-fm-fav .hz-fm-list,.hz-nt-hist{padding-top:12px;padding-bottom:16px;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 16px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 16px),transparent 100%)}
 #hz-fm-history .hz-fm-modal-foot{margin-top:0;padding:12px 20px 18px;border-top:1px solid #efefef}
 .hz-nt-tabs{margin-bottom:4px}
 html[data-theme="dark"] #hz-fm-history .hz-fm-modal-foot{border-top-color:var(--hz-line-2)}
+html[data-theme="dark"] #hz-fm-history .hz-fm-modal-sub,html[data-theme="dark"] #hz-fm-fav .hz-fm-modal-sub{border-bottom-color:var(--hz-line-2)}

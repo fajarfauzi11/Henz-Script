@@ -153,8 +153,8 @@
     s.appendChild(p);
     return s;
   }
-  function toast(msg, act){
-    if(typeof window.hzShowToast === 'function') window.hzShowToast(msg, act);
+  function toast(msg, act, kind){
+    if(typeof window.hzShowToast === 'function') window.hzShowToast(msg, act, kind);
   }
 
   function init(){
@@ -227,6 +227,8 @@
     /* --- Panel --- */
     function panelOpen(){ return root.classList.contains('open'); }
     function openPanel(){
+      var tt = document.getElementById('hz-toast'); // toast tidak boleh menutupi isi panel
+      if(tt) tt.classList.remove('show');
       root.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
       btn.setAttribute('aria-label', 'Tutup menu pengaturan');
@@ -494,12 +496,12 @@
         for(var i = 0; i < arr.length; i++){ if(arr[i].u === favPage.u){ idx = i; break; } }
         if(idx !== -1){
           arr.splice(idx, 1);
-          toast(favSave(arr) ? 'Dihapus dari Favorit' : 'Gagal menyimpan favorit');
+          if(favSave(arr)) toast('Dihapus dari Favorit', null, 'off'); else toast('Gagal menyimpan favorit');
         }else{
           var entry = currentEntry() || favPage;
           entry.ts = Date.now();
           arr.unshift(entry);
-          if(favSave(arr.slice(0, FMAX))) toast('Ditambahkan ke Favorit', { label: 'Lihat', fn: function(){ openFav(favBtn); } });
+          if(favSave(arr.slice(0, FMAX))) toast('Ditambahkan ke Favorit', { label: 'Lihat', fn: function(){ openFav(favBtn); } }, 'on');
           else toast('Gagal menyimpan favorit');
         }
         syncFav();
