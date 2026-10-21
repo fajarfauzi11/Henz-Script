@@ -389,10 +389,35 @@
   .hz-share-btn:focus{outline:none}
   .hz-share-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   @media(hover:hover){.hz-share-btn:hover{background:rgba(0,0,0,.58)}}
-  .hz-toast{position:fixed;left:50%;bottom:calc(26px + var(--hz-sab,0px));transform:translate(-50%,12px);opacity:0;pointer-events:none;z-index:2147483000;max-width:calc(100vw - 32px);background:#111;color:#fff;font:700 13px/1.3 'Manrope',sans-serif;padding:11px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:opacity .2s,transform .2s;text-align:center}
+  /* ── Tombol Favorit (hati, di kiri tombol Bagikan; disembunyikan sampai JS memastikan ini post publik) ── */
+  .hz-fav-btn{position:absolute;top:14px;right:62px;z-index:3;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.42);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent;transition:background .15s,transform .1s,color .15s}
+  .hz-fav-btn[hidden]{display:none}
+  .hz-fav-btn svg{width:19px;height:19px;display:block}
+  .hz-fav-btn[aria-pressed="true"]{color:#ff6b6b}
+  .hz-fav-btn[aria-pressed="true"] svg{fill:currentColor}
+  .hz-fav-btn:active{transform:scale(.92);background:rgba(0,0,0,.6)}
+  .hz-fav-btn:focus{outline:none}
+  .hz-fav-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  @media(hover:hover){.hz-fav-btn:hover{background:rgba(0,0,0,.58)}}
+  .hz-toast{position:fixed;left:50%;bottom:calc(92px + var(--hz-sab,0px));transform:translate(-50%,12px);opacity:0;pointer-events:none;z-index:2147483000;width:max-content;max-width:calc(100vw - 32px);box-sizing:border-box;background:#111;color:#fff;font:700 13.5px/1.3 'Manrope',sans-serif;padding:11px 18px;border-radius:999px;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 12px 32px rgba(0,0,0,.36);transition:opacity .2s,transform .2s;text-align:center}
   .hz-toast.show{opacity:1;transform:translate(-50%,0)}
-  html[data-theme="dark"] .hz-toast{background:#ececee;color:#111}
-  @media(prefers-reduced-motion:reduce){.hz-share-btn,.hz-toast{transition:none}}
+  .hz-toast.has-ico,.hz-toast.has-act{display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;text-align:left}
+  .hz-toast.has-act{padding-right:8px}
+  .hz-toast.has-act.show{pointer-events:auto}
+  .hz-toast-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hz-toast-ico{width:28px;height:28px;flex-shrink:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#e53232;color:#fff}
+  .hz-toast-ico svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .hz-toast-ico--on svg{fill:currentColor}
+  .hz-toast-ico--off{background:rgba(255,255,255,.16)}
+  .hz-toast-act{height:30px;margin-left:4px;padding:0 14px;border:0;border-radius:999px;background:rgba(255,255,255,.14);color:#FFC200;font:inherit;font-weight:800;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s}
+  .hz-toast-act:active{background:rgba(255,255,255,.24)}
+  .hz-toast-act:focus-visible{outline:2px solid #FFC200;outline-offset:2px}
+  @media(hover:hover){.hz-toast-act:hover{background:rgba(255,255,255,.22)}}
+  html[data-theme="dark"] .hz-toast-act{background:rgba(0,0,0,.08);color:#c62828}
+  html[data-theme="dark"] .hz-toast-act:active{background:rgba(0,0,0,.16)}
+  html[data-theme="dark"] .hz-toast-ico--off{background:rgba(0,0,0,.1)}
+  html[data-theme="dark"] .hz-toast{background:#ececee;color:#111;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 12px 32px rgba(0,0,0,.6)}
+  @media(prefers-reduced-motion:reduce){.hz-share-btn,.hz-fav-btn,.hz-toast{transition:none}}
   /* ── Skin Lain dari hero / kategori yang sama ── */
   .hz-related{margin-top:36px}
   .hz-related-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:16px}
@@ -453,6 +478,12 @@
       <!-- [C2b] Tombol Bagikan — Web Share API (HP) atau salin tautan (desktop). Logika di bagian [E8] -->
       <button type="button" id="hz-share-btn" class="hz-share-btn" aria-label="Bagikan script ini">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+      </button>
+
+      <!-- [C2c] Tombol Favorit — hanya ada di halaman post penuh. Logika di public/js/floating-menu.js (blok "Favorit"):
+           disimpan di localStorage (hz_fav_v1), tampil lewat JS hanya untuk post publik (post draft/noindex tetap tersembunyi). -->
+      <button type="button" id="hz-fav-btn" class="hz-fav-btn" aria-pressed="false" aria-label="Simpan ke Favorit" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
       </button>
 
       <!-- [C3] Meta hero — teks di atas gambar (kiri bawah) -->
@@ -1131,7 +1162,7 @@ function hzDlGateFinalOpen(){
 
 
 /* ── [E8] Tombol Bagikan: Web Share API (HP) atau salin tautan + toast (desktop) ── */
-function hzShowToast(msg){
+function hzShowToast(msg, act, kind){
   var t = document.getElementById('hz-toast');
   if(!t){
     t = document.createElement('div');
@@ -1141,11 +1172,31 @@ function hzShowToast(msg){
     t.setAttribute('aria-live', 'polite');
     document.body.appendChild(t);
   }
-  t.textContent = msg;
+  t.textContent = '';
+  t.classList.toggle('has-act', !!act);
+  t.classList.toggle('has-ico', !!kind);
+  if(kind){
+    var ic = document.createElement('span');
+    ic.className = 'hz-toast-ico hz-toast-ico--' + kind;
+    ic.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>';
+    t.appendChild(ic);
+  }
+  var tx = document.createElement('span');
+  tx.className = 'hz-toast-txt';
+  tx.textContent = msg;
+  t.appendChild(tx);
+  if(act){
+    var ab = document.createElement('button');
+    ab.type = 'button';
+    ab.className = 'hz-toast-act';
+    ab.textContent = act.label;
+    ab.addEventListener('click', function(){ t.classList.remove('show'); act.fn(); });
+    t.appendChild(ab);
+  }
   void t.offsetWidth;
   t.classList.add('show');
   clearTimeout(hzShowToast._t);
-  hzShowToast._t = setTimeout(function(){ t.classList.remove('show'); }, 2200);
+  hzShowToast._t = setTimeout(function(){ t.classList.remove('show'); }, act ? 4200 : 2200);
 }
 function hzCopyText(text){
   if(navigator.clipboard && window.isSecureContext){
