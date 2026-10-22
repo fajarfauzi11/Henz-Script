@@ -689,7 +689,13 @@ if(document.getElementById('hz-search-heading')){
     }
     if(results.length>1){
       document.getElementById('hz-sv-sort').hidden=false;
-      document.getElementById('hz-sv-sort-sel').addEventListener('change',function(){state.sort=this.value;draw();});
+      var sortSel=document.getElementById('hz-sv-sort-sel'),viaPointer=false;
+      sortSel.addEventListener('pointerdown',function(){viaPointer=true;});
+      sortSel.addEventListener('keydown',function(){viaPointer=false;});
+      sortSel.addEventListener('change',function(){
+        state.sort=this.value;draw();
+        if(viaPointer){viaPointer=false;this.blur();} /* pilihan lewat sentuh/klik: jangan biarkan ring fokus merah menetap */
+      });
     }
     draw();
   }
@@ -742,7 +748,7 @@ if(document.getElementById('hz-search-heading')){
     search:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
     arrow:'<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>'
   };
-  var data=null,loading=null,panel=null,dim=null,cur=null,items=[],active=-1,uid=0;
+  var data=null,loading=null,panel=null,dim=null,cur=null,items=[],active=-1,uid=0,opening=null;
   function enc(s){return encodeURIComponent(s);}
   function safeUrl(u){return /^https?:\/\//i.test(u||'')?u:'';}
   function cap(s){s=s||'';return s.charAt(0).toUpperCase()+s.slice(1);}
@@ -813,15 +819,19 @@ if(document.getElementById('hz-search-heading')){
   }
   function isOpen(){return !!(panel&&panel.classList.contains('open'));}
   function open(inp){
-    ensure();cur=inp;
+    if(isOpen()&&cur===inp){place();return;} /* sudah terbuka untuk input ini: jangan render ulang (gambar berkedip) */
+    if(opening===inp)return;                  /* data masih dimuat untuk input ini */
+    opening=inp;ensure();cur=inp;
     sgLoad(function(){
-      if(cur!==inp)return;
+      if(opening!==inp)return;               /* ditutup / pindah input saat data dimuat */
+      opening=null;
       panel.classList.add('open');dim.classList.add('open');
       inp.setAttribute('aria-expanded','true');
       place();render();
     });
   }
   function close(){
+    opening=null;
     if(!panel)return;
     panel.classList.remove('open');dim.classList.remove('open');
     if(cur){cur.setAttribute('aria-expanded','false');cur.removeAttribute('aria-activedescendant');}
@@ -860,7 +870,7 @@ if(document.getElementById('hz-search-heading')){
       });
       h+='</div>';
     }
-    var pops=data.popular.slice(0,4).map(function(n){return findHero(n)||{name:n};});
+    var pops=data.popular.slice(0,5).map(function(n){return findHero(n)||{name:n};});
     if(pops.length){
       h+=sec('Hero populer')+'<div class="hz-sg-heroes">';
       pops.forEach(function(p){
@@ -870,7 +880,7 @@ if(document.getElementById('hz-search-heading')){
     }
     var cnt={};
     data.posts.forEach(function(p){if(p.cat)cnt[p.cat]=(cnt[p.cat]||0)+1;});
-    var cats=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a]||a.localeCompare(b);}).slice(0,5);
+    var cats=Object.keys(cnt).sort(function(a,b){return cnt[b]-cnt[a]||a.localeCompare(b);}).slice(0,8);
     if(cats.length){
       h+=sec('Kategori')+'<div class="hz-sg-chips hz-sg-chips--cat">';
       cats.forEach(function(c){h+='<a class="hz-sg-item hz-sg-cat" role="option" href="/kategori-skin/'+hzDhSlugify(c)+'">'+hzSvEsc(c)+'</a>';});
@@ -917,10 +927,23 @@ if(document.getElementById('hz-search-heading')){
     if(!panel||!cur||!data)return;
     var q=cur.value.trim();
     panel.innerHTML=q?renderQuery(q):renderIdle();
+    fitCats();
     items=Array.prototype.slice.call(panel.querySelectorAll('.hz-sg-item'));
     items.forEach(function(it){it.id='hz-sg-o'+(++uid);});
     active=-1;cur.removeAttribute('aria-activedescendant');
     panel.scrollTop=0;
+  }
+  /* Pill kategori maksimal 2 baris: buang pill paling akhir (jumlah script paling sedikit) sampai muat */
+  function fitCats(){
+    var box=panel.querySelector('.hz-sg-chips--cat');
+    if(!box)return;
+    var chips=box.children;
+    function rows(){
+      var tops=[];
+      for(var i=0;i<chips.length;i++){var t=chips[i].offsetTop;if(tops.indexOf(t)===-1)tops.push(t);}
+      return tops.length;
+    }
+    while(chips.length>1&&rows()>2)box.removeChild(chips[chips.length-1]);
   }
   function setActive(n){
     if(!items.length)return;
@@ -952,23 +975,25 @@ if(document.getElementById('hz-search-heading')){
       }
     });
   });
-  /* Toggle pencarian mobile: input bisa masih terfokus saat toggle menutup, jadi event focus tidak terulang.
-     Buka dropdown eksplisit setiap toggle dibuka lewat tombol. */
+  /* Toggle pencarian mobile (header V1): input bisa masih terfokus saat toggle menutup, jadi event focus tidak terulang.
+     Hook ini membuka dropdown saat toggle terbuka dan menutupnya saat toggle tertutup, tanpa menutup-lalu-membuka lagi. */
   var sgTb=document.getElementById('hz-hv1-search-btn');
   if(sgTb)sgTb.addEventListener('click',function(){
     setTimeout(function(){
       var w=document.getElementById('hz-hv1-search-wrap');
       var i=w&&w.classList.contains('open')?w.querySelector('input[name="q"]'):null;
-      if(i)open(i);
+      if(i)open(i);else close();
     },0);
   });
   document.addEventListener('click',function(e){
     if(!isOpen())return;
     var f=cur&&cur.form;
     if(f&&f.contains(e.target))return;
+    if(sgTb&&sgTb.contains(e.target))return; /* ikon cari header V1: ditangani hook di bawah, bukan ditutup lalu dibuka lagi */
     close();
   });
-  window.addEventListener('resize',function(){if(isOpen())place();});
+  function relayout(){if(!isOpen())return;place();if(!cur.value.trim())render();} /* lebar berubah: pill kategori dihitung ulang */
+  window.addEventListener('resize',relayout);
   if(window.visualViewport)window.visualViewport.addEventListener('resize',function(){if(isOpen())place();});
 })();
 

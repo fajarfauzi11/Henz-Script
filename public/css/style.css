@@ -388,12 +388,17 @@ html[data-theme="dark"] .hz-sv-empty-dym .hz-sv-empty-tip--main{background:var(-
 .hz-sg-rlink svg{color:#71717a}
 .hz-sg-x{width:36px;height:36px;margin-right:4px;border:0;border-radius:50%;background:transparent;color:#71717a;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex-shrink:0}
 .hz-sg-x svg{width:13px;height:13px}
-.hz-sg-heroes{display:flex;gap:4px;padding:2px 10px 6px;overflow-x:auto;scrollbar-width:none}
+.hz-sg-heroes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:2px 10px 6px}
 .hz-sg-heroes::-webkit-scrollbar{display:none}
-.hz-sg-hero{display:flex;flex-direction:column;align-items:center;gap:6px;width:76px;flex-shrink:0;padding:6px 0;border-radius:12px;font-size:12px;font-weight:700;color:#18181b;text-decoration:none}
+.hz-sg-hero{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;padding:6px 0;border-radius:12px;font-size:12px;font-weight:700;color:#18181b;text-decoration:none}
 .hz-sg-av{position:relative;width:56px;height:56px;border-radius:50%;background:#e4e4e7;color:#52525b;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;overflow:hidden;flex-shrink:0}
 .hz-sg-av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hz-sg-av--sm{width:40px;height:40px;font-size:14px}
+.hz-sg-hero .hz-sg-av{width:56px;max-width:100%;height:auto;aspect-ratio:1/1}
+.hz-sg-hero>span:last-child{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* Tanpa blok biru saat disentuh + tanpa ring fokus yang menetap setelah klik/sentuh */
+#hz-sg,#hz-sg *,.hz-sv-chip,.hz-sv-sort select,.hz-sv-note a,.hz-sv-empty-dym a,.hz-sv-empty-cta2,.hz-sv-empty-tip{-webkit-tap-highlight-color:transparent}
+.hz-sv-sort select:focus:not(:focus-visible),.hz-sv-chip:focus:not(:focus-visible){outline:none}
 .hz-sg-cat{display:inline-flex;align-items:center;height:44px;box-sizing:border-box;padding:0 16px;border-radius:999px;border:1px solid #d4d4d8;background:#fff;font-size:13px;font-weight:700;color:#18181b;text-decoration:none}
 .hz-sg-row{display:flex;align-items:center;gap:12px;min-height:56px;box-sizing:border-box;padding:6px 16px;color:#18181b;text-decoration:none}
 .hz-sg-row>svg,.hz-sg-all>svg{color:#71717a;width:14px;height:14px}
