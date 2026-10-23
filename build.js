@@ -992,14 +992,13 @@ function injectSeoMetaAll() {
 /* ===================== "Skin Lain" di halaman post (dibuat saat build) =====================
    Aturan (dua bagian terpisah, masing-masing punya judul dan tautan "Lihat Semua"):
    1) "Skin Lain dari <hero>": skin lain dari hero yang sama (terbaru dulu, maks 4).
-   2) "Skin <kategori> Lainnya": skin lain di kategori yang sama (maks 4, tanpa duplikat dari bagian 1) — hanya ditambahkan
-      bila bagian 1 berisi KURANG dari RELATED_HERO_MIN kartu (1-2), supaya saran tidak terlalu banyak.
-   Kalau hero tidak punya skin lain sama sekali, bagian 2 menjadi satu-satunya bagian (perilaku lama).
+   2) "Skin <kategori> Lainnya": skin lain di kategori yang sama (maks 4, tanpa duplikat dari bagian 1) — SELALU ditampilkan
+      bila ada isinya, berapa pun jumlah kartu di bagian 1.
+   Kalau hero tidak punya skin lain sama sekali, bagian 2 menjadi satu-satunya bagian.
    Kalau keduanya kosong, tidak ada yang ditampilkan.
    Sumber data = posts.json, jadi post draft (tidak ada di posts.json) tidak pernah muncul di sini, dan view count
    kartu diisi otomatis oleh main.js (hzLoadViewCounts membaca semua [data-view-id], 1 request gabungan). */
 const RELATED_MAX = 4;
-const RELATED_HERO_MIN = 3;
 function buildRelatedSection(id, title, moreHref, list) {
   return '<section id="' + id + '" class="hz-related" aria-labelledby="' + id + '-title">\n'
     + '        <div class="hz-related-head"><h2 id="' + id + '-title">' + escHtml(title) + '</h2>'
@@ -1021,7 +1020,7 @@ function buildRelatedHtml(entry, postsArr) {
       sections.push(buildRelatedSection('hz-related', 'Skin Lain dari ' + entry.hero, moreHref, heroList));
     }
   }
-  if (entry.cat && heroList.length < RELATED_HERO_MIN) {
+  if (entry.cat) {
     const used = new Set(heroList.map((p) => p.url));
     const catList = others.filter((p) => p.cat === entry.cat && !used.has(p.url)).sort(byNewest).slice(0, RELATED_MAX);
     if (catList.length) {
