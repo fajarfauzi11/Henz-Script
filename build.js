@@ -990,40 +990,47 @@ function injectSeoMetaAll() {
 }
 
 /* ===================== "Skin Lain" di halaman post (dibuat saat build) =====================
-   Aturan: skin lain dari hero yang sama (terbaru dulu, maks 4). Kalau hero itu hanya punya skin yang sedang dibuka,
-   fallback ke skin lain di kategori yang sama (maks 4). Kalau keduanya kosong, bagian ini tidak ditampilkan.
+   Aturan (dua bagian terpisah, masing-masing punya judul dan tautan "Lihat Semua"):
+   1) "Skin Lain dari <hero>": skin lain dari hero yang sama (terbaru dulu, maks 4).
+   2) "Skin <kategori> Lainnya": skin lain di kategori yang sama (maks 4, tanpa duplikat dari bagian 1) — hanya ditambahkan
+      bila bagian 1 berisi KURANG dari RELATED_HERO_MIN kartu (1-2), supaya saran tidak terlalu banyak.
+   Kalau hero tidak punya skin lain sama sekali, bagian 2 menjadi satu-satunya bagian (perilaku lama).
+   Kalau keduanya kosong, tidak ada yang ditampilkan.
    Sumber data = posts.json, jadi post draft (tidak ada di posts.json) tidak pernah muncul di sini, dan view count
    kartu diisi otomatis oleh main.js (hzLoadViewCounts membaca semua [data-view-id], 1 request gabungan). */
 const RELATED_MAX = 4;
+const RELATED_HERO_MIN = 3;
+function buildRelatedSection(id, title, moreHref, list) {
+  return '<section id="' + id + '" class="hz-related" aria-labelledby="' + id + '-title">\n'
+    + '        <div class="hz-related-head"><h2 id="' + id + '-title">' + escHtml(title) + '</h2>'
+    + (moreHref ? '<a class="hz-related-all" href="' + moreHref + '">Lihat Semua &rarr;</a>' : '') + '</div>\n'
+    + '        <div class="hz-related-grid">\n' + list.map(hzBuildCard).join('\n') + '\n        </div>\n'
+    + '      </section>';
+}
 function buildRelatedHtml(entry, postsArr) {
   if (!entry || !postsArr || !postsArr.length) return '';
   const byNewest = (a, b) => (b.id || 0) - (a.id || 0);
   const others = postsArr.filter((p) => p && p.url && p.url !== entry.url);
-  let title = '';
-  let moreHref = '';
-  let list = [];
+  const sections = [];
+  let heroList = [];
   if (entry.hero) {
     const hs = slugify(entry.hero);
-    list = others.filter((p) => p.hero && slugify(p.hero) === hs).sort(byNewest).slice(0, RELATED_MAX);
-    if (list.length) {
-      title = 'Skin Lain dari ' + entry.hero;
-      if (fs.existsSync(path.join(OUT_DIR, 'hero', hs + '.html'))) moreHref = '/hero/' + hs;
+    heroList = others.filter((p) => p.hero && slugify(p.hero) === hs).sort(byNewest).slice(0, RELATED_MAX);
+    if (heroList.length) {
+      const moreHref = fs.existsSync(path.join(OUT_DIR, 'hero', hs + '.html')) ? '/hero/' + hs : '';
+      sections.push(buildRelatedSection('hz-related', 'Skin Lain dari ' + entry.hero, moreHref, heroList));
     }
   }
-  if (!list.length && entry.cat) {
-    list = others.filter((p) => p.cat === entry.cat).sort(byNewest).slice(0, RELATED_MAX);
-    if (list.length) {
-      title = 'Skin ' + entry.cat + ' Lainnya';
+  if (entry.cat && heroList.length < RELATED_HERO_MIN) {
+    const used = new Set(heroList.map((p) => p.url));
+    const catList = others.filter((p) => p.cat === entry.cat && !used.has(p.url)).sort(byNewest).slice(0, RELATED_MAX);
+    if (catList.length) {
       const cs = slugify(entry.cat);
-      if (fs.existsSync(path.join(OUT_DIR, 'kategori-skin', cs + '.html'))) moreHref = '/kategori-skin/' + cs;
+      const moreHref = fs.existsSync(path.join(OUT_DIR, 'kategori-skin', cs + '.html')) ? '/kategori-skin/' + cs : '';
+      sections.push(buildRelatedSection(sections.length ? 'hz-related-cat' : 'hz-related', 'Skin ' + entry.cat + ' Lainnya', moreHref, catList));
     }
   }
-  if (!list.length) return '';
-  return '<section id="hz-related" class="hz-related" aria-labelledby="hz-related-title">\n'
-    + '        <div class="hz-related-head"><h2 id="hz-related-title">' + escHtml(title) + '</h2>'
-    + (moreHref ? '<a class="hz-related-all" href="' + moreHref + '">Lihat Semua &rarr;</a>' : '') + '</div>\n'
-    + '        <div class="hz-related-grid">\n' + list.map(hzBuildCard).join('\n') + '\n        </div>\n'
-    + '      </section>';
+  return sections.join('\n\n      ');
 }
 
 function generatePostPages() {
