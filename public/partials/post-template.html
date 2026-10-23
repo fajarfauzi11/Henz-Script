@@ -419,14 +419,21 @@
   html[data-theme="dark"] .hz-toast{background:#ececee;color:#111;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 12px 32px rgba(0,0,0,.6)}
   @media(prefers-reduced-motion:reduce){.hz-share-btn,.hz-fav-btn,.hz-toast{transition:none}}
   /* ── Skin Lain dari hero / kategori yang sama ── */
-  .hz-related{margin-top:36px}
-  .hz-related-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:16px}
-  .hz-related-head h2{margin:0;font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;letter-spacing:-.2px;line-height:1.25;color:#111}
-  .hz-related-all{flex-shrink:0;font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#e53232;text-decoration:none;white-space:nowrap}
+  .hz-related{margin:28px 0 8px}
+  .hz-related-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px}
+  .hz-related-head h2{margin:0;font-family:'Plus Jakarta Sans','Manrope',sans-serif;font-size:19px;font-weight:900;letter-spacing:-.8px;line-height:1.25;color:#18181b}
+  @media(min-width:641px){.hz-related-head h2{font-size:22px}}
+  .hz-related-all{flex-shrink:0;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:#e53232;text-decoration:none;white-space:nowrap}
   .hz-related-all:hover{text-decoration:underline}
-  .hz-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  @media(min-width:700px){.hz-related-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
+  /* Grid mengikuti kartu normal (.hz-cp-grid): 2 kolom di HP, 3 kolom di tablet/desktop */
+  .hz-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .hz-related-grid .hz-card{height:auto}
+  @media(min-width:641px){
+    .hz-related-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .hz-related-grid>.hz-card:nth-child(n+4){display:none} /* maks. 3 kartu agar baris penuh */
+  }
   html[data-theme="dark"] .hz-related-head h2{color:var(--hz-text)}
+  html[data-theme="dark"] .hz-related-all{color:var(--hz-red-text)}
 </style>
 
 
@@ -715,14 +722,15 @@
       </div>
       <!-- END [D5] TABEL DOWNLOAD -->
 
-      <!-- [D6] SKIN LAIN — dibuat saat build (build.js: buildRelatedHtml). Kosong bila tidak ada skin lain. -->
-      {{RELATED_INJECT}}
-
     </div>
     <!-- END [D] BODY KONTEN -->
 
   </div>
   <!-- END [B2] CARD PUTIH -->
+
+  <!-- [D6] SKIN LAIN — sengaja di LUAR card putih supaya kartunya berukuran sama dengan kartu normal
+       (grid 2 kolom di HP, 3 kolom mulai 641px). Dibuat saat build (build.js: buildRelatedHtml). Kosong bila tidak ada skin lain. -->
+  {{RELATED_INJECT}}
 
   <!-- TOOLTIP "APA ITU LOGO?" — konten diisi dari editor -->
   <div id="hz-logo-tooltip-overlay" class="hz-post-tooltip-overlay" onclick="hzCloseLogoTooltip(event)">
