@@ -10,7 +10,10 @@
 
    Discord (opsional): bila env DISCORD_WEBHOOK_URL diisi, setiap post baru juga dikirim sebagai embed ke channel Discord
    lewat webhook (teks pesan berbahasa Inggris). DISCORD_PING_ROLE_ID (opsional) = ID role yang di-ping; kosong = tanpa ping.
-   Pengiriman Discord bersifat best-effort: kegagalannya tidak pernah menggagalkan notifikasi push ataupun memajukan patokan. */
+   Pengiriman Discord bersifat best-effort: kegagalannya tidak pernah menggagalkan notifikasi push ataupun memajukan patokan.
+   Tiap pesan Discord membawa tombol link ("Open Script"). Bila Discord menolak komponen untuk webhook ini (HTTP 400),
+   pesan dikirim ulang tanpa tombol (embed biasa) supaya notifikasi tidak hilang.
+   Opsi uji: {"test":true,"ping":true} mengirim pesan uji yang benar-benar mem-ping role (butuh DISCORD_PING_ROLE_ID). */
 const crypto = require('crypto');
 const { Redis } = require('@upstash/redis');
 const { sendToTopic } = require('./_lib/fcm');
@@ -54,6 +57,12 @@ function discordAllowed(role) {
   return { parse: [], roles: role ? [role] : [] }; // hanya role itu yang boleh di-ping
 }
 
+// Satu baris berisi satu tombol link (style 5). Tombol link bukan komponen interaktif, jadi boleh untuk webhook biasa
+// asalkan request memakai ?with_components=true.
+function linkButtonRow(label, url) {
+  return [{ type: 1, components: [{ type: 2, style: 5, label: clip(label, 80), url }] }];
+}
+
 function discordPostPayload(p, role) {
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => esc(clip(x, 100)));
   const embed = {
@@ -69,6 +78,7 @@ function discordPostPayload(p, role) {
     content: mentionPrefix(role) + 'A new script just dropped!',
     embeds: [embed],
     allowed_mentions: discordAllowed(role),
+    components: linkButtonRow('Open Script', SITE + p.url),
   };
 }
 
@@ -87,35 +97,56 @@ function discordSummaryPayload(list, role) {
       timestamp: new Date().toISOString(),
     }],
     allowed_mentions: discordAllowed(role),
+    components: linkButtonRow('Open Henz Script', SITE + '/'),
   };
 }
 
-// Kirim satu pesan ke webhook. Hasil: 'sent' | 'failed'. Tidak pernah melempar error.
-async function sendDiscord(url, payload) {
+// Satu kali POST ke webhook (dengan satu percobaan ulang bila kena batas laju 429).
+// Hasil: 'ok' | 'rejected' (HTTP 400: payload/komponen ditolak) | 'error' (lainnya). Tidak pernah melempar error.
+async function postWebhook(target, payload) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const r = await fetch(url, {
+      const r = await fetch(target, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
         signal: AbortSignal.timeout(6000),
       });
-      if (r.ok) return 'sent';
+      if (r.ok) return 'ok';
       if (r.status === 429 && attempt === 0) {
         let wait = 1;
         try { wait = Number((await r.json()).retry_after) || 1; } catch (e) { /* pakai default */ }
-        if (wait > 4) return 'failed';
+        if (wait > 4) return 'error';
         await sleep(wait * 1000 + 100);
         continue;
       }
-      console.error('discord webhook HTTP ' + r.status); // jangan pernah mencatat URL webhook
-      return 'failed';
+      let detail = '';
+      try { detail = clip(await r.text(), 200); } catch (e) { /* abaikan */ }
+      console.error('discord webhook HTTP ' + r.status + (detail ? ' ' + detail : '')); // jangan pernah mencatat URL webhook
+      return r.status === 400 ? 'rejected' : 'error';
     } catch (e) {
       console.error('discord webhook:', e && e.message);
-      return 'failed';
+      return 'error';
     }
   }
-  return 'failed';
+  return 'error';
+}
+
+// Kirim satu pesan. Bila membawa tombol dan ditolak (400), kirim ulang tanpa tombol.
+// Hasil: { status: 'sent' | 'failed', button: true bila pesan terkirim DENGAN tombol }.
+async function sendDiscord(url, payload) {
+  const hasButton = Array.isArray(payload.components) && payload.components.length > 0;
+  if (!hasButton) {
+    return { status: (await postWebhook(url, payload)) === 'ok' ? 'sent' : 'failed', button: false };
+  }
+  const first = await postWebhook(url + '?with_components=true', payload);
+  if (first === 'ok') return { status: 'sent', button: true };
+  if (first === 'rejected') {
+    const plain = Object.assign({}, payload);
+    delete plain.components;
+    return { status: (await postWebhook(url, plain)) === 'ok' ? 'sent' : 'failed', button: false };
+  }
+  return { status: 'failed', button: false };
 }
 
 function authorized(req) {
@@ -193,15 +224,30 @@ module.exports = async (req, res) => {
         icon: SITE + '/icons/icon-192.png',
         tag: 'test',
       });
-      let discord = 'skipped';
+      const wantPing = body.ping === true;
+      let discord = { status: 'skipped', button: false };
       if (dc.url) {
-        // Uji tanpa ping role, supaya anggota tidak terganggu.
+        // Tanpa "ping": pesan uji biasa, tanpa mem-ping role. Dengan "ping": benar-benar mem-ping role (bila terkonfigurasi).
+        const role = wantPing ? dc.role : '';
+        const text = !wantPing
+          ? 'Webhook test: if you can see this, the Discord connection works.'
+          : (dc.role
+            ? 'Ping test: this message should ping the role.'
+            : 'Ping test: DISCORD_PING_ROLE_ID is missing or invalid, so no role was pinged.');
         discord = await sendDiscord(dc.url, {
-          content: 'Webhook test: if you can see this, the Discord connection works.',
-          allowed_mentions: discordAllowed(''),
+          content: mentionPrefix(role) + text,
+          allowed_mentions: discordAllowed(role),
+          components: linkButtonRow('Open Henz Script', SITE + '/'),
         });
       }
-      res.status(200).json({ ok: true, test: true, discord, ping_role_configured: !!dc.role });
+      res.status(200).json({
+        ok: true,
+        test: true,
+        ping_requested: wantPing,
+        ping_role_configured: !!dc.role,
+        discord: discord.status,
+        button: discord.button,
+      });
       return;
     }
 
@@ -225,7 +271,7 @@ module.exports = async (req, res) => {
       return;
     }
     if (dry) {
-      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
+      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, ping_role_configured: !!dc.role, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
       return;
     }
 
@@ -237,12 +283,18 @@ module.exports = async (req, res) => {
 
     let sent = 0;
     let doneId = lastId;
-    const discord = { enabled: !!dc.url, sent: 0, failed: 0 };
+    const discord = { enabled: !!dc.url, ping: !!dc.role, sent: 0, failed: 0, buttons: 0, without_button: 0 };
     const toDiscord = async (payload) => {
       if (!dc.url) return;
       if (discord.sent + discord.failed > 0) await sleep(DISCORD_GAP_MS);
-      if ((await sendDiscord(dc.url, payload)) === 'sent') discord.sent += 1;
-      else discord.failed += 1;
+      const r = await sendDiscord(dc.url, payload);
+      if (r.status === 'sent') {
+        discord.sent += 1;
+        if (r.button) discord.buttons += 1;
+        else discord.without_button += 1;
+      } else {
+        discord.failed += 1;
+      }
     };
     try {
       if (fresh.length <= MAX_INDIVIDUAL) {

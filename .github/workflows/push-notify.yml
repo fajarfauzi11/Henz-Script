@@ -14,11 +14,11 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'normal = kirim bila ada post baru | dry = hanya cek | test = kirim notifikasi uji'
+        description: 'normal = kirim bila ada post baru | dry = hanya cek | test = notifikasi uji | testping = uji Discord dengan ping role'
         required: false
         default: 'normal'
         type: choice
-        options: [normal, dry, test]
+        options: [normal, dry, test, testping]
 
 concurrency:
   group: push-notify
@@ -62,6 +62,7 @@ jobs:
           case "$MODE" in
             dry)  payload='{"dry":true}' ;;
             test) payload='{"test":true}' ;;
+            testping) payload='{"test":true,"ping":true}' ;;
             *)    payload='{}' ;;
           esac
           curl -sS --fail-with-body --max-time 60 -X POST "$SITE/api/push-notify" \
