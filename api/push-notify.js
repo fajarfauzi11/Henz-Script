@@ -13,7 +13,12 @@
    Pengiriman Discord bersifat best-effort: kegagalannya tidak pernah menggagalkan notifikasi push ataupun memajukan patokan.
    Tiap pesan Discord membawa tombol link ("Open Script"). Bila Discord menolak komponen untuk webhook ini (HTTP 400),
    pesan dikirim ulang tanpa tombol (embed biasa) supaya notifikasi tidak hilang.
-   Opsi uji: {"test":true,"ping":true} mengirim pesan uji yang benar-benar mem-ping role (butuh DISCORD_PING_ROLE_ID). */
+   Opsi uji: {"test":true,"ping":true} mengirim pesan uji yang benar-benar mem-ping role (butuh DISCORD_PING_ROLE_ID).
+
+   Telegram (opsional): bila env TELEGRAM_BOT_TOKEN dan TELEGRAM_CHAT_ID diisi, setiap post baru juga dikirim ke grup/channel
+   Telegram sebagai foto + caption + tombol "Open Script" (bahasa Inggris). TELEGRAM_THREAD_ID (opsional) mengarahkan pesan
+   ke satu topik di grup berforum. Bila foto ditolak Telegram, pesan dikirim ulang sebagai teks + tombol. Best-effort,
+   sama seperti Discord. Mode test ikut mengirim pesan uji ke Telegram. */
 const crypto = require('crypto');
 const { Redis } = require('@upstash/redis');
 const { sendToTopic } = require('./_lib/fcm');
@@ -28,7 +33,7 @@ const LAST_KEY = 'push:last_notified_id';
 const LOCK_KEY = 'push:lock';
 const MAX_INDIVIDUAL = 3;
 const EMBED_COLOR = 0xe53232;
-const DISCORD_GAP_MS = 600; // jeda antar pesan Discord agar tidak kena batas laju webhook
+const CHAT_GAP_MS = 1100; // jeda antar pesan ke Discord/Telegram agar tidak kena batas laju (Telegram sekitar 1 pesan/detik per chat)
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -183,6 +188,93 @@ function summaryMessage(list) {
   };
 }
 
+// ---- Telegram ----
+function telegramConfig() {
+  const token = String(process.env.TELEGRAM_BOT_TOKEN || '').trim();
+  const chat = String(process.env.TELEGRAM_CHAT_ID || '').trim();
+  const thread = String(process.env.TELEGRAM_THREAD_ID || '').trim();
+  const ok = /^\d{6,12}:[\w-]{30,}$/.test(token) && /^(-?\d{5,20}|@\w{5,})$/.test(chat);
+  return { token: ok ? token : '', chat: ok ? chat : '', thread: ok && /^\d{1,12}$/.test(thread) ? Number(thread) : 0 };
+}
+
+function htmlEsc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function telegramPostMessage(p) {
+  const url = SITE + p.url;
+  const bits = [p.hero, p.cat].filter(Boolean).map((x) => htmlEsc(clip(x, 100)));
+  const msg = {
+    text: '\ud83c\udd95 <b><a href="' + htmlEsc(url) + '">' + htmlEsc(clip('New script: ' + p.title, 200)) + '</a></b>' +
+      (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
+      '\n\nOpen the post to view and download the script.',
+    button: { text: 'Open Script', url },
+  };
+  if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) msg.photo = p.thumb;
+  return msg;
+}
+
+function telegramSummaryMessage(list) {
+  const shown = list.slice(-10).reverse();
+  const lines = shown.map((p) => '\u2022 <a href="' + htmlEsc(SITE + p.url) + '">' + htmlEsc(clip(p.title, 80)) + '</a>');
+  if (list.length > shown.length) lines.push('\u2026and ' + (list.length - shown.length) + ' more');
+  return {
+    text: '<b>' + list.length + ' new scripts on Henz Script</b>\n\n' + lines.join('\n'),
+    button: { text: 'Open Henz Script', url: SITE + '/' },
+  };
+}
+
+// Satu panggilan Bot API (dengan satu percobaan ulang bila kena 429).
+// Hasil: 'ok' | 'rejected' (HTTP 400) | 'error'. Tidak pernah melempar error dan tidak pernah mencatat token.
+async function tgCall(cfg, method, params) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const r = await fetch('https://api.telegram.org/bot' + cfg.token + '/' + method, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(params),
+        signal: AbortSignal.timeout(8000),
+      });
+      let j = null;
+      try { j = await r.json(); } catch (e) { /* bukan JSON */ }
+      if (r.ok && j && j.ok) return 'ok';
+      const retry = j && j.parameters ? Number(j.parameters.retry_after) : 0;
+      if (r.status === 429 && attempt === 0 && retry > 0 && retry <= 4) {
+        await sleep(retry * 1000 + 100);
+        continue;
+      }
+      console.error('telegram ' + method + ' HTTP ' + r.status + (j && j.description ? ' ' + clip(j.description, 200) : ''));
+      return r.status === 400 ? 'rejected' : 'error';
+    } catch (e) {
+      console.error('telegram:', e && e.message);
+      return 'error';
+    }
+  }
+  return 'error';
+}
+
+// Kirim satu pesan ke Telegram (dengan bunyi notifikasi biasa). Foto dicoba dulu; bila ditolak, kirim teks + tombol.
+// Hasil: { status: 'sent' | 'failed', photo: true bila terkirim sebagai foto }.
+async function sendTelegram(cfg, msg) {
+  const base = {
+    chat_id: cfg.chat,
+    disable_notification: false,
+    reply_markup: { inline_keyboard: [[{ text: msg.button.text, url: msg.button.url }]] },
+  };
+  if (cfg.thread) base.message_thread_id = cfg.thread;
+  if (msg.photo) {
+    const r = await tgCall(cfg, 'sendPhoto', Object.assign({}, base, { photo: msg.photo, caption: msg.text, parse_mode: 'HTML' }));
+    if (r === 'ok') return { status: 'sent', photo: true };
+    if (r !== 'rejected') return { status: 'failed', photo: false };
+  }
+  const r2 = await tgCall(cfg, 'sendMessage', Object.assign({}, base, {
+    text: msg.text,
+    parse_mode: 'HTML',
+    link_preview_options: { is_disabled: true },
+  }));
+  return { status: r2 === 'ok' ? 'sent' : 'failed', photo: false };
+}
+
 async function fetchPosts() {
   const r = await fetch(SITE + '/js/posts.json?t=' + Date.now(), {
     headers: { 'Cache-Control': 'no-cache' },
@@ -213,6 +305,7 @@ module.exports = async (req, res) => {
   body = body && typeof body === 'object' ? body : {};
   const dry = body.dry === true;
   const dc = discordConfig();
+  const tg = telegramConfig();
 
   let locked = false;
   try {
@@ -240,6 +333,13 @@ module.exports = async (req, res) => {
           components: linkButtonRow('Open Henz Script', SITE + '/'),
         });
       }
+      let telegram = { status: 'skipped', photo: false };
+      if (tg.token) {
+        telegram = await sendTelegram(tg, {
+          text: 'Telegram test: if you can see this, the bot works.',
+          button: { text: 'Open Henz Script', url: SITE + '/' },
+        });
+      }
       res.status(200).json({
         ok: true,
         test: true,
@@ -247,6 +347,8 @@ module.exports = async (req, res) => {
         ping_role_configured: !!dc.role,
         discord: discord.status,
         button: discord.button,
+        telegram: telegram.status,
+        telegram_topic_configured: !!tg.thread,
       });
       return;
     }
@@ -271,7 +373,7 @@ module.exports = async (req, res) => {
       return;
     }
     if (dry) {
-      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, ping_role_configured: !!dc.role, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
+      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, ping_role_configured: !!dc.role, telegram_enabled: !!tg.token, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
       return;
     }
 
@@ -284,9 +386,8 @@ module.exports = async (req, res) => {
     let sent = 0;
     let doneId = lastId;
     const discord = { enabled: !!dc.url, ping: !!dc.role, sent: 0, failed: 0, buttons: 0, without_button: 0 };
+    const telegram = { enabled: !!tg.token, topic: !!tg.thread, sent: 0, failed: 0, photos: 0, text_only: 0 };
     const toDiscord = async (payload) => {
-      if (!dc.url) return;
-      if (discord.sent + discord.failed > 0) await sleep(DISCORD_GAP_MS);
       const r = await sendDiscord(dc.url, payload);
       if (r.status === 'sent') {
         discord.sent += 1;
@@ -296,24 +397,42 @@ module.exports = async (req, res) => {
         discord.failed += 1;
       }
     };
+    const toTelegram = async (msg) => {
+      const r = await sendTelegram(tg, msg);
+      if (r.status === 'sent') {
+        telegram.sent += 1;
+        if (r.photo) telegram.photos += 1;
+        else telegram.text_only += 1;
+      } else {
+        telegram.failed += 1;
+      }
+    };
+    // Kirim ke Discord dan Telegram bersamaan (satu jeda per pesan, bukan per tujuan, agar fungsi tetap singkat).
+    let announced = 0;
+    const announce = async (discordPayload, telegramMsg) => {
+      if (!dc.url && !tg.token) return;
+      if (announced > 0) await sleep(CHAT_GAP_MS);
+      announced += 1;
+      await Promise.all([dc.url ? toDiscord(discordPayload) : null, tg.token ? toTelegram(telegramMsg) : null]);
+    };
     try {
       if (fresh.length <= MAX_INDIVIDUAL) {
         for (const p of fresh) {
           await sendToTopic(postMessage(p));
           sent += 1;
           doneId = p.id;
-          await toDiscord(discordPostPayload(p, dc.role));
+          await announce(discordPostPayload(p, dc.role), telegramPostMessage(p));
         }
       } else {
         await sendToTopic(summaryMessage(fresh));
         sent = 1;
         doneId = fresh[fresh.length - 1].id;
-        await toDiscord(discordSummaryPayload(fresh, dc.role));
+        await announce(discordSummaryPayload(fresh, dc.role), telegramSummaryMessage(fresh));
       }
     } finally {
       if (doneId > lastId) await redis.set(LAST_KEY, doneId); // simpan kemajuan walau gagal di tengah, supaya tidak terkirim dobel
     }
-    res.status(200).json({ ok: true, sent, last: doneId, discord });
+    res.status(200).json({ ok: true, sent, last: doneId, discord, telegram });
   } catch (err) {
     console.error('push-notify:', err && err.message);
     res.status(502).json({ error: 'Gagal: ' + (err && err.message ? err.message : 'unknown') });
