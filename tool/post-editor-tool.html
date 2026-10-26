@@ -93,7 +93,8 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 .rq-box{display:none;}
 .rq-box.show{display:block;}
 .rq-box .vis-hint{margin-top:6px;}
-.rq-off .rq-list,.rq-off #rq-secret-box{opacity:.45;pointer-events:none;}
+.rq-purge{align-self:flex-start;background:none;border:none;color:var(--t3);font-family:'Inter',sans-serif;font-size:11.5px;text-decoration:underline;cursor:pointer;padding:0;margin-top:2px;}
+.rq-purge:hover{color:var(--t1);}
 /* Tab 2 section header in form */
 .dual-tab-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;padding:8px 0 4px;font-family:'Inter',sans-serif;}
 .dual-tab-name-wrap{display:flex;gap:8px;margin-bottom:10px;}
@@ -1184,6 +1185,8 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
       </div>
     </div>
     <div class="vis-hint" id="hz-rq-hint">Tanpa centang = hanya notifikasi HP seperti biasa. Mention hanya tampil di platform yang dicentang. Data peminta disimpan sementara di server (bukan di repo) dan dihapus setelah notifikasi terkirim.</div>
+    <div class="vis-hint" id="hz-rq-note" style="display:none;color:var(--green);"></div>
+    <button type="button" class="rq-purge" id="rq-purge" style="display:none" onclick="hzRqPurgeAll()"></button>
   </div>
 
   <!-- Finalize & upload -->
@@ -2946,6 +2949,8 @@ async function hzFetchRepoFile(file, token){
     // Toggle visibilitas mengikuti status asli post di repo (status tak diketahui -> toggle dibiarkan)
     if(file.draft === true) hzSetVisibility('draft');
     else if(file.draft === false || file.kind === 'html') hzSetVisibility('public');
+    // Mention peminta: isi ulang dari data draft di browser ini (kalau ada); kalau tidak, kosongkan agar tidak terbawa dari post lain.
+    if(typeof hzRqRestore === 'function') hzRqRestore(file.kind === 'json' ? String(file.name).replace(/\.json$/i, '') : '');
   }catch(e){
     hzShowLoadStatus(['❌ Gagal mengambil file "'+file.name+'": '+e.message], false, true);
   }
@@ -3593,8 +3598,10 @@ var HZ_RQ_FORMAT    = {
   telegram: 'Isi dengan username 5–32 karakter (huruf, angka, garis bawah), diawali huruf (beberapa orang: pisahkan dengan koma).',
   whatsapp: 'Isi dengan nomor 8–15 angka, contoh 0812xxxxxxxx atau +62812xxxxxxx (beberapa orang: pisahkan dengan koma).'
 };
-var HZ_RQ_HINT_DEFAULT = 'Tanpa centang = hanya notifikasi HP seperti biasa. Mention hanya tampil di platform yang dicentang. Data peminta disimpan sementara di server (bukan di repo) dan dihapus setelah notifikasi terkirim.';
-var HZ_RQ_HINT_DRAFT   = 'Tidak tersedia untuk post "Tidak publik" (belum punya id dan tidak memicu notifikasi). Pilih "Publik" untuk memakai fitur ini.';
+var HZ_RQ_HINT_DEFAULT = 'Tanpa centang = hanya notifikasi HP seperti biasa. Mention hanya tampil di platform yang dicentang. Data peminta disimpan sementara di server (bukan di repo) dan dihapus setelah notifikasi terkirim. Saat disimpan sebagai "Tidak publik", isian hanya diingat di browser ini dan terisi lagi saat draft dibuka.';
+var HZ_RQ_HINT_DRAFT   = 'Mode "Tidak publik": isian peminta hanya diingat di browser ini (tidak dikirim ke server, tidak ada notifikasi) dan terisi lagi saat draft ini dibuka. Mention baru dikirim saat post dipublikasikan.';
+var HZ_RQ_DRAFT_KEY    = 'kz_rq_drafts_v1';
+var HZ_RQ_DRAFT_TTL_MS = 90 * 24 * 60 * 60 * 1000; // data draft di browser dibuang otomatis setelah 90 hari
 var _hzRqInited = false;
 
 function hzRqInit(){
@@ -3605,6 +3612,7 @@ function hzRqInit(){
   var saved = localStorage.getItem('kz_rq_secret');
   if(saved) s.value = saved;
   s.addEventListener('input', function(){ localStorage.setItem('kz_rq_secret', s.value); });
+  hzRqRefreshPurge();
 }
 
 function hzRqToggle(p){
@@ -3620,12 +3628,92 @@ function hzRqSync(){
     var c = document.getElementById('rq-chk-'+p);
     return !!(c && c.checked);
   });
-  var wrap = document.getElementById('hz-rq-wrap');
-  if(wrap) wrap.classList.toggle('rq-off', isDraft);
   var sb = document.getElementById('rq-secret-box');
-  if(sb) sb.classList.toggle('show', any);
+  if(sb) sb.classList.toggle('show', any && !isDraft); // kunci endpoint hanya dibutuhkan saat publikasi
   var hint = document.getElementById('hz-rq-hint');
   if(hint) hint.textContent = isDraft ? HZ_RQ_HINT_DRAFT : HZ_RQ_HINT_DEFAULT;
+}
+
+// ── Draft: isian peminta diingat di browser ini saja (localStorage), per slug ──
+function hzRqDraftRead(){
+  try{
+    var o = JSON.parse(localStorage.getItem(HZ_RQ_DRAFT_KEY) || '{}');
+    if(!o || typeof o !== 'object' || Array.isArray(o)) return {};
+    var now = Date.now(), changed = false;
+    Object.keys(o).forEach(function(k){
+      if(!o[k] || typeof o[k].ts !== 'number' || now - o[k].ts > HZ_RQ_DRAFT_TTL_MS){ delete o[k]; changed = true; }
+    });
+    if(changed) hzRqDraftWrite(o);
+    return o;
+  }catch(e){ return {}; }
+}
+function hzRqDraftWrite(o){
+  try{
+    if(Object.keys(o).length) localStorage.setItem(HZ_RQ_DRAFT_KEY, JSON.stringify(o));
+    else localStorage.removeItem(HZ_RQ_DRAFT_KEY);
+  }catch(e){}
+}
+function hzRqDraftSave(slug, data){
+  var o = hzRqDraftRead();
+  o['s:'+slug] = { ts: Date.now(), data: data };
+  hzRqDraftWrite(o);
+  hzRqRefreshPurge();
+}
+function hzRqDraftRemove(slug){
+  var o = hzRqDraftRead();
+  if(o['s:'+slug]){ delete o['s:'+slug]; hzRqDraftWrite(o); }
+  hzRqRefreshPurge();
+}
+function hzRqRefreshPurge(){
+  var b = document.getElementById('rq-purge');
+  if(!b) return;
+  var n = Object.keys(hzRqDraftRead()).length;
+  b.style.display = n ? '' : 'none';
+  b.textContent = 'Hapus data peminta draft yang tersimpan di browser ini ('+n+')';
+}
+function hzRqPurgeAll(){
+  if(!window.confirm('Hapus semua data peminta draft yang tersimpan di browser ini?\n\nIsian peminta pada draft akan hilang dan harus diisi lagi saat dipublikasikan.')) return;
+  hzRqDraftWrite({});
+  hzRqRefreshPurge();
+}
+
+// Kosongkan seluruh isian mention peminta (centang, isian, catatan).
+function hzRqReset(){
+  HZ_RQ_PLATFORMS.forEach(function(p){
+    var c = document.getElementById('rq-chk-'+p);
+    var i = document.getElementById('rq-in-'+p);
+    var b = document.getElementById('rq-box-'+p);
+    if(c) c.checked = false;
+    if(i) i.value = '';
+    if(b) b.classList.remove('show');
+  });
+  var note = document.getElementById('hz-rq-note');
+  if(note){ note.style.display = 'none'; note.textContent = ''; }
+  hzRqSync();
+}
+
+// Isi ulang dari data draft yang tersimpan untuk slug ini. Mengosongkan dulu supaya sisa post sebelumnya tidak terbawa.
+function hzRqRestore(slug){
+  hzRqReset();
+  if(!slug) return 0;
+  var rec = hzRqDraftRead()['s:'+slug];
+  if(!rec || !rec.data) return 0;
+  var n = 0;
+  HZ_RQ_PLATFORMS.forEach(function(p){
+    var list = rec.data[p];
+    if(!Array.isArray(list) || !list.length) return;
+    var c = document.getElementById('rq-chk-'+p), i = document.getElementById('rq-in-'+p);
+    if(!c || !i) return;
+    c.checked = true;
+    i.value = list.join(', ');
+    hzRqToggle(p);
+    n++;
+  });
+  if(n){
+    var note = document.getElementById('hz-rq-note');
+    if(note){ note.style.display = ''; note.textContent = '✓ Isian peminta diisi otomatis dari data draft yang tersimpan di browser ini. Periksa lagi sebelum Finalize.'; }
+  }
+  return n;
 }
 
 // Hasil: nilai yang sudah dinormalkan (string) atau null bila tidak valid.
@@ -3665,7 +3753,7 @@ function hzRqParseList(platform, raw){
 }
 
 // null = tidak ada platform yang dicentang. Selain itu: { data, names, secret, error }. data[platform] = array nilai.
-function hzRqCollect(){
+function hzRqCollect(isDraft){
   var data = {}, names = [], error = '';
   HZ_RQ_PLATFORMS.forEach(function(p){
     var chk = document.getElementById('rq-chk-'+p);
@@ -3690,7 +3778,7 @@ function hzRqCollect(){
   if(!names.length && !error) return null;
   var sEl = document.getElementById('rq-secret');
   var secret = sEl ? (sEl.value||'').trim() : '';
-  if(!error && secret.length < 16) error = 'Kunci endpoint peminta belum diisi (isi dengan nilai REQUESTER_SECRET dari Vercel, minimal 16 karakter).';
+  if(!error && !isDraft && secret.length < 16) error = 'Kunci endpoint peminta belum diisi (isi dengan nilai REQUESTER_SECRET dari Vercel, minimal 16 karakter).';
   return { data:data, names:names, secret:secret, error:error };
 }
 
@@ -3751,7 +3839,7 @@ async function finalizeAndUpload(){
   var isDraft = (_hzVisibility === 'draft');
 
   // Mention peminta (opsional): validasi di awal supaya tidak ada upload setengah jalan karena isian salah.
-  var rqState = isDraft ? null : hzRqCollect();
+  var rqState = hzRqCollect(isDraft); // mode tidak publik: hanya divalidasi lalu diingat di browser ini
   if(rqState && rqState.error){
     hzSetStatus('Gagal', 'error');
     hzLog(rqState.error, true);
@@ -3873,6 +3961,12 @@ async function finalizeAndUpload(){
       } else {
         hzLog('posts.json tidak disentuh (post ini memang belum terdaftar).');
       }
+      if(rqState && rqState.data){
+        hzRqDraftSave(slug, rqState.data);
+        hzLog('✓ Isian peminta diingat di browser ini (tidak dikirim ke server) dan terisi lagi saat draft ini dibuka.');
+      } else {
+        hzRqDraftRemove(slug);
+      }
       hzSetStatus('Berhasil!', 'success');
       hzLog('');
       hzLog('Selesai! \"'+namehero+'\" disimpan sebagai TIDAK PUBLIK. Setelah Vercel selesai redeploy, halamannya hanya bisa dibuka lewat link langsung /post/'+slug+' (noindex, tidak muncul di homepage/search/hero/kategori/sitemap). Untuk mempublikasikan: pilih \"Publik\" lalu Finalize lagi.');
@@ -3992,6 +4086,8 @@ async function finalizeAndUpload(){
       }
     }
 
+    hzRqDraftRemove(slug); // data draft (kalau ada) sudah dipakai
+    hzRqReset();           // supaya peminta post ini tidak ikut terbawa ke post berikutnya
     hzSetStatus('Berhasil!', 'success');
     hzLog('');
     hzLog('Selesai! "'+namehero+'" akan tampil di homepage & ter-generate halamannya setelah Vercel selesai redeploy (build.js merakit HTML dari data ini + template pusat).');
