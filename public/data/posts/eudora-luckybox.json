@@ -4,7 +4,7 @@
   "urlthumbnail": "https://i.ibb.co/7x747XST/eudora-luckybox.webp",
   "kategoriskin": "Luckybox",
   "keywords": "Eudora Emerald Enchantress",
-  "datepost": "Update 24 Okt 2026",
+  "datepost": "Update 25 Okt 2026",
   "authorname": "Henz MLBB",
   "longstory": "Eudora adalah seorang Light Elf yang lahir di sebuah desa dekat Monastery of Light, tempat prasangka terhadap kaum Elf masih sangat kuat. Sejak kecil ia sering diejek dan dikucilkan karena telinganya yang runcing dan matanya yang berbeda dari manusia. Kesepian, Eudora hanya memiliki setangkai bunga Silver Song sebagai teman bercerita. Namun ketika bunga itu dirusak oleh anak-anak desa, amarah yang selama ini ia pendam meledak dan membangkitkan kekuatan sihir petir yang luar biasa hingga hampir menghancurkan desa. Sejak saat itu, keluarganya terpaksa terus berpindah-pindah karena Eudora kesulitan mengendalikan emosinya.\n\nKehidupan mereka akhirnya berubah ketika Theresa, seorang mentor dari Magic Academy, menemukan bakat sihir Eudora dan mengajaknya belajar di akademi. Di bawah bimbingan Theresa, Eudora berkembang menjadi penyihir berbakat dan menguasai berbagai ilmu sihir tingkat tinggi. Ia kemudian menjadi salah satu pengajar terbaik di Ulturia School. Meski dihormati oleh banyak orang, luka batin akibat diskriminasi di masa kecil masih membuatnya menyembunyikan telinga Elf-nya dengan rambut panjang.\n\nSaat Theresa memutuskan pensiun dan menunjuk Eudora sebagai kepala Ulturia School, keputusan itu memicu penolakan besar. Banyak orang menolak menerima seorang Elf sebagai pemimpin sekolah sihir dan anggota komite akademik. Keraguan serta prasangka itu membangkitkan kembali trauma masa kecil Eudora hingga kekuatan petirnya kembali lepas kendali, menyebabkan upacara serah terima jabatan berakhir dalam kekacauan. Merasa tidak lagi memiliki tempat di akademi, Eudora memutuskan untuk mengundurkan diri dan pergi.\n\nTheresa menghentikannya dan memberikan sebuah True-sight Mirror, cermin yang memperlihatkan jati diri seseorang. Melalui cermin itu, Eudora menyadari bahwa selama ini dirinya terlalu terikat pada penilaian orang lain. Ia akhirnya menerima identitasnya sebagai seorang Light Elf dan berdamai dengan masa lalunya. Setelah menemukan ketenangan dalam dirinya, Eudora memotong rambut panjangnya, memperlihatkan telinga Elf-nya dengan bangga, lalu kembali ke Ulturia School.\n\nSejak saat itu, Eudora memimpin Ulturia School sebagai dekan baru, menggantikan Theresa. Ia membuktikan bahwa kemampuan dan karakter seseorang tidak ditentukan oleh rasnya, melainkan oleh tekad dan keberaniannya untuk menerima jati diri. Kini, Eudora dikenal sebagai salah satu penyihir petir terkuat di Moniyan sekaligus simbol bahwa seorang Light Elf juga mampu menjadi pemimpin yang dihormati.",
   "dualTabNames": {
@@ -96,11 +96,11 @@
       "name": "Ball Lightning",
       "kategori": "CC/Damage",
       "longDesc": "Eudora melemparkan bola petir ke arah musuh target, mengurangi Pertahanan Sihir mereka sebesar 10-25 selama 1,8 detik, memberikan 300–400 (+50% Total Kekuatan Sihir) Kerusakan Sihir , dan membuat mereka pingsan selama 1 detik.\nJika target terpengaruh oleh Superkonduktor, bola petir ini mengurangi Pertahanan Sihir musuh di dekatnya, memberikan kerusakan area yang berpusat pada target, dan membuat semua musuh di dekatnya terkena efek setrum.",
-      "dual": false,
-      "url2": "",
-      "name2": "",
-      "kategori2": "Mobility",
-      "longDesc2": "",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/1/18/Rasho_Umbrella_Flee_2.png",
+      "name2": "Rasho Umbrella Flee",
+      "kategori2": "Mobility/Damage",
+      "longDesc2": "Tanpa Seimei Umbrella, Kagura bergerak ke lokasi di mana Seimei Umbrella berada dan mengambilnya kembali, memberikan 300 (+90% Total Magic Power) Magic Damage kepada lawan yang berada di sekitar.",
       "dual3": false,
       "url3": "",
       "name3": "",
@@ -133,11 +133,11 @@
       "name": "Thunder's Wrath",
       "kategori": "Burst",
       "longDesc": "Eudora memanggil semburan petir ke area target, memberikan 600–1000 (+160% Total Kekuatan Sihir) Kerusakan Sihir kepada target di tengah. Kemudian petir itu menyerang target di luar pusat, memberikan 300–500 (+100% Total Kekuatan Sihir) Kerusakan Sihir .\nSetiap kali Amukan Petir mengenai target yang terkena efeknya Superkonduktor, ini memicu ledakan Petir yang berpusat di  Target superkonduktor setelah penundaan singkat, memberikan 300–550 (+110% Total Kekuatan Sihir) Kerusakan Sihir.",
-      "dual": false,
-      "url2": "",
-      "name2": "",
-      "kategori2": "Burst",
-      "longDesc2": "",
+      "dual": true,
+      "url2": "https://static.wikia.nocookie.net/mobile-legends/images/e/e2/Yin_Yang_Overturn_2.png",
+      "name2": "Yin Yang Overturn",
+      "kategori2": "Burst/CC",
+      "longDesc2": "Kagura mereset cooldown dari Seimei Umbrella Open, memberikan 235 (+60% Total Magic Power) Magic Damage ke lawan di sekitar Seimei Umbrella dan menyebabkan 60% slow. Setelah 1.5 detik, hero lawan di sekitar payung akan ditarik ke tengah dan menerima 480 (+155% Total Magic Power) Magic Damage.",
       "dual3": false,
       "url3": "",
       "name3": "",
@@ -175,6 +175,62 @@
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2a/Hero151-icon.png",
         "link": "https://sfile.co/ME8pKzIuDNH",
         "fixSfx": true
+      },
+      {
+        "name": "Default + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ef/Hero251-icon.png",
+        "link": "https://sfile.co/hFLhdlW8Cdx",
+        "fixSfx": true
+      },
+      {
+        "name": "Basic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Hero252-icon.png",
+        "link": "https://sfile.co/e7XbUFwNJcr",
+        "fixSfx": true
+      },
+      {
+        "name": "Basic + Logo",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/89/Hero252-icon.png",
+        "link": "https://sfile.co/5JizE3fUjGL",
+        "fixSfx": true
+      },
+      {
+        "name": "Special Cherry",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/12/Hero253-icon.png",
+        "link": "https://sfile.co/Y93NmN0eT8F",
+        "fixSfx": true
+      },
+      {
+        "name": "Summer",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/6/66/Hero254-icon.png",
+        "link": "https://sfile.co/a1WEXx2PuC0",
+        "fixSfx": true
+      },
+      {
+        "name": "Luckybox",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/37/Hero255-icon.png",
+        "link": "https://sfile.co/pkRaZ7lhZLH"
+      },
+      {
+        "name": "Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a4/Hero256-icon.png",
+        "link": "https://sfile.co/rRHQ0pVyZ9C",
+        "fixSfx": true
+      },
+      {
+        "name": "Annual Starlight",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/c5/Hero257-icon.png",
+        "link": "https://sfile.co/eIHpmggQxwA"
+      },
+      {
+        "name": "BTC",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/fb/Hero259-icon.png",
+        "link": "https://sfile.co/dVXv675JrJO"
+      },
+      {
+        "name": "Epic",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a3/Hero102510-icon.png",
+        "link": "https://sfile.co/AAJQgUpjfct"
       },
       {
         "name": "Default + Logo",
