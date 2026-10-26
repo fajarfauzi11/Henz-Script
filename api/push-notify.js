@@ -23,7 +23,12 @@
    WhatsApp (semi-otomatis, sengaja TIDAK memakai otomatisasi WhatsApp): bila TELEGRAM_ADMIN_CHAT_ID diisi (ID akun Telegram
    admin, boleh beberapa dipisah koma; admin harus sudah menekan Start pada bot), setiap post baru juga dikirim ke chat PRIBADI
    admin lewat bot yang sama: teks bahasa Indonesia siap tempel + tombol "Bagikan ke WhatsApp" (tautan wa.me) + tombol buka
-   post. Admin sendiri yang memilih grup dan menekan kirim di WhatsApp. Bisa dipakai tanpa grup Telegram. */
+   post. Admin sendiri yang memilih grup dan menekan kirim di WhatsApp. Bisa dipakai tanpa grup Telegram.
+
+   Mention peminta (opsional): tool menyimpan data peminta ke Redis (kunci req:{id}, lewat api/push-requester.js) SEBELUM commit
+   posts.json. Saat mengirim, data dibaca per post dan dipakai hanya bila url-nya cocok dengan post itu. Mention hanya tampil di
+   platform yang dipilih di tool (kunci discord / telegram / whatsapp). Datanya dihapus setelah post terkirim. Bila data tidak ada,
+   notifikasi berjalan seperti biasa tanpa mention. Nilai identitas tidak pernah dicatat ke log. */
 const crypto = require('crypto');
 const { Redis } = require('@upstash/redis');
 const { sendToTopic } = require('./_lib/fcm');
@@ -41,6 +46,65 @@ const EMBED_COLOR = 0xe53232;
 const CHAT_GAP_MS = 1100; // jeda antar pesan ke Discord/Telegram agar tidak kena batas laju (Telegram sekitar 1 pesan/detik per chat)
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// ---- Data peminta (mention) ----
+const RQ_PREFIX = 'req:';
+const RQ_MAX_LOOKUP = 20; // batas jumlah post yang dicek per pengiriman
+const RQ_MAX_SUMMARY = 5; // batas jumlah peminta yang di-mention dalam satu pesan ringkasan
+
+// Validasi ulang isi Redis (jangan percaya begitu saja) dan cocokkan dengan post yang sedang dikirim.
+function rqClean(raw, p) {
+  if (typeof raw === 'string') {
+    try { raw = JSON.parse(raw); } catch (e) { return null; }
+  }
+  if (!raw || typeof raw !== 'object' || raw.url !== p.url) return null; // url harus cocok: cegah data sisa menempel ke post lain
+  const out = {};
+  if (/^\d{17,20}$/.test(String(raw.discord || ''))) out.discord = String(raw.discord);
+  const tgu = String(raw.telegram || '').replace(/^@+/, '');
+  if (/^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(tgu)) out.telegram = tgu;
+  if (/^\d{8,15}$/.test(String(raw.whatsapp || ''))) out.whatsapp = String(raw.whatsapp);
+  return Object.keys(out).length ? out : null;
+}
+
+// Hasil: { [id]: { discord?, telegram?, whatsapp? } }. Tidak pernah melempar error.
+async function loadRequesters(list) {
+  const map = {};
+  try {
+    const items = list.slice(-RQ_MAX_LOOKUP);
+    const vals = await Promise.all(items.map((p) => redis.get(RQ_PREFIX + p.id).catch(() => null)));
+    items.forEach((p, i) => {
+      const c = rqClean(vals[i], p);
+      if (c) map[p.id] = c;
+    });
+  } catch (e) {
+    console.error('requester lookup:', e && e.message);
+  }
+  return map;
+}
+
+async function clearRequesters(list) {
+  try {
+    const keys = list.slice(-RQ_MAX_LOOKUP).map((p) => RQ_PREFIX + p.id);
+    if (keys.length) await redis.del(...keys);
+  } catch (e) {
+    console.error('requester cleanup:', e && e.message); // kunci kedaluwarsa sendiri (TTL)
+  }
+}
+
+// Kumpulkan identitas unik dari beberapa post untuk pesan ringkasan.
+function rqCollect(list, map, key) {
+  const seen = new Set();
+  const out = [];
+  for (const p of list) {
+    const r = map[p.id];
+    if (r && r[key] && !seen.has(r[key])) {
+      seen.add(r[key]);
+      out.push(r[key]);
+      if (out.length >= RQ_MAX_SUMMARY) break;
+    }
+  }
+  return out;
+}
 
 function discordConfig() {
   const url = String(process.env.DISCORD_WEBHOOK_URL || '').trim();
@@ -63,8 +127,8 @@ function mentionPrefix(role) {
   return role ? '<@&' + role + '> ' : '';
 }
 
-function discordAllowed(role) {
-  return { parse: [], roles: role ? [role] : [] }; // hanya role itu yang boleh di-ping
+function discordAllowed(role, users) {
+  return { parse: [], roles: role ? [role] : [], users: users || [] }; // hanya role dan user itu yang boleh di-ping
 }
 
 // Satu baris berisi satu tombol link (style 5). Tombol link bukan komponen interaktif, jadi boleh untuk webhook biasa
@@ -73,7 +137,8 @@ function linkButtonRow(label, url) {
   return [{ type: 1, components: [{ type: 2, style: 5, label: clip(label, 80), url }] }];
 }
 
-function discordPostPayload(p, role) {
+function discordPostPayload(p, role, rq) {
+  const uid = rq && rq.discord ? rq.discord : '';
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => esc(clip(x, 100)));
   const embed = {
     title: clip('New script: ' + p.title, 256),
@@ -85,19 +150,21 @@ function discordPostPayload(p, role) {
   };
   if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) embed.image = { url: p.thumb };
   return {
-    content: mentionPrefix(role) + 'A new script just dropped!',
+    content: mentionPrefix(role) + 'A new script just dropped!' + (uid ? '\nScript requested by <@' + uid + '>' : ''),
     embeds: [embed],
-    allowed_mentions: discordAllowed(role),
+    allowed_mentions: discordAllowed(role, uid ? [uid] : []),
     components: linkButtonRow('Open Script', SITE + p.url),
   };
 }
 
-function discordSummaryPayload(list, role) {
+function discordSummaryPayload(list, role, ids) {
+  ids = ids || [];
   const shown = list.slice(-10).reverse();
   const lines = shown.map((p) => '\u2022 [' + esc(clip(p.title, 80)) + '](' + SITE + p.url + ')');
   if (list.length > shown.length) lines.push('\u2026and ' + (list.length - shown.length) + ' more');
   return {
-    content: mentionPrefix(role) + 'New scripts just dropped!',
+    content: mentionPrefix(role) + 'New scripts just dropped!' +
+      (ids.length ? '\n' + (ids.length === 1 ? 'Script' : 'Scripts') + ' requested by ' + ids.map((i) => '<@' + i + '>').join(' ') : ''),
     embeds: [{
       title: clip(list.length + ' new scripts on Henz Script', 256),
       url: SITE + '/',
@@ -106,7 +173,7 @@ function discordSummaryPayload(list, role) {
       footer: { text: 'Henz Script' },
       timestamp: new Date().toISOString(),
     }],
-    allowed_mentions: discordAllowed(role),
+    allowed_mentions: discordAllowed(role, ids),
     components: linkButtonRow('Open Henz Script', SITE + '/'),
   };
 }
@@ -215,25 +282,28 @@ function htmlEsc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function telegramPostMessage(p) {
+function telegramPostMessage(p, rq) {
   const url = SITE + p.url;
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => htmlEsc(clip(x, 100)));
   const msg = {
     text: '\ud83c\udd95 <b><a href="' + htmlEsc(url) + '">' + htmlEsc(clip('New script: ' + p.title, 200)) + '</a></b>' +
       (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
-      '\n\nOpen the post to view and download the script.',
+      '\n\nOpen the post to view and download the script.' +
+      (rq && rq.telegram ? '\nScript requested by @' + htmlEsc(rq.telegram) : ''),
     button: { text: 'Open Script', url },
   };
   if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) msg.photo = p.thumb;
   return msg;
 }
 
-function telegramSummaryMessage(list) {
+function telegramSummaryMessage(list, names) {
+  names = names || [];
   const shown = list.slice(-10).reverse();
   const lines = shown.map((p) => '\u2022 <a href="' + htmlEsc(SITE + p.url) + '">' + htmlEsc(clip(p.title, 80)) + '</a>');
   if (list.length > shown.length) lines.push('\u2026and ' + (list.length - shown.length) + ' more');
   return {
-    text: '<b>' + list.length + ' new scripts on Henz Script</b>\n\n' + lines.join('\n'),
+    text: '<b>' + list.length + ' new scripts on Henz Script</b>\n\n' + lines.join('\n') +
+      (names.length ? '\n\n' + (names.length === 1 ? 'Script' : 'Scripts') + ' requested by ' + names.map((n) => '@' + htmlEsc(n)).join(' ') : ''),
     button: { text: 'Open Henz Script', url: SITE + '/' },
   };
 }
@@ -298,34 +368,40 @@ function waShareUrl(text) {
   return 'https://wa.me/?text=' + encodeURIComponent(text);
 }
 
-function waPostText(p) {
+function waPostText(p, rq) {
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => waClean(clip(x, 100)));
   return '\ud83c\udd95 *Script baru: ' + waClean(clip(p.title, 150)) + '*' +
     (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
+    (rq && rq.whatsapp ? '\nScript direquest oleh @' + rq.whatsapp : '') +
     '\n\nCek dan download di sini:\n' + SITE + p.url;
 }
 
 // Ringkasan untuk banyak post; dipangkas bila tautan wa.me akan terlalu panjang untuk tombol Telegram.
-function waSummaryText(list) {
+function waSummaryText(list, nums) {
+  nums = nums || [];
   const shown = list.slice(-10).reverse();
   let text = '';
   for (let n = shown.length; n >= 1; n--) {
     const lines = shown.slice(0, n).map((p) => '\u2022 ' + waClean(clip(p.title, 80)) + '\n' + SITE + p.url);
     const more = list.length - n;
     text = '\ud83c\udd95 *' + list.length + ' script baru di Henz Script*\n\n' + lines.join('\n\n') +
-      (more > 0 ? '\n\n\u2026dan ' + more + ' lainnya' : '') + '\n\nLihat semua:\n' + SITE + '/';
+      (more > 0 ? '\n\n\u2026dan ' + more + ' lainnya' : '') +
+      (nums.length ? '\n\nScript direquest oleh ' + nums.map((n) => '@' + n).join(' ') : '') +
+      '\n\nLihat semua:\n' + SITE + '/';
     if (waShareUrl(text).length <= 1800) break;
   }
   return text;
 }
 
-function waAdminMessage(text, openUrl, openLabel) {
+function waAdminMessage(text, openUrl, openLabel, nums) {
   const share = waShareUrl(text);
+  const who = (nums || []).map((n) => '<a href="https://wa.me/' + n + '">+' + n + '</a>').join(' \u00b7 ');
   const rows = [];
   if (share.length <= 2000) rows.push([{ text: 'Bagikan ke WhatsApp', url: share }]);
   rows.push([{ text: openLabel, url: openUrl }]);
   return {
-    text: '\ud83d\udcf2 <b>Siap dibagikan ke WhatsApp</b>\nKetuk kotak di bawah untuk menyalin, atau tekan <b>Bagikan ke WhatsApp</b> lalu pilih grup.\n\n<pre>' + htmlEsc(text) + '</pre>',
+    text: '\ud83d\udcf2 <b>Siap dibagikan ke WhatsApp</b>\nKetuk kotak di bawah untuk menyalin, atau tekan <b>Bagikan ke WhatsApp</b> lalu pilih grup.\n\n<pre>' + htmlEsc(text) + '</pre>' +
+      (who ? '\n\n\ud83d\udc64 Peminta (ketuk nomor untuk membuka chat): ' + who : ''),
     rows,
   };
 }
@@ -455,7 +531,17 @@ module.exports = async (req, res) => {
       return;
     }
     if (dry) {
-      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, ping_role_configured: !!dc.role, telegram_enabled: !!tg.chat, admin_dm_enabled: tg.admins.length > 0, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
+      const dryReqs = await loadRequesters(fresh);
+      res.status(200).json({
+        ok: true,
+        dry: true,
+        last: lastId,
+        discord_enabled: !!dc.url,
+        ping_role_configured: !!dc.role,
+        telegram_enabled: !!tg.chat,
+        admin_dm_enabled: tg.admins.length > 0,
+        would_send: fresh.map((p) => ({ id: p.id, title: p.title, mention: dryReqs[p.id] ? Object.keys(dryReqs[p.id]) : [] })),
+      });
       return;
     }
 
@@ -465,6 +551,7 @@ module.exports = async (req, res) => {
       return;
     }
 
+    const reqs = await loadRequesters(fresh);
     let sent = 0;
     let doneId = lastId;
     const discord = { enabled: !!dc.url, ping: !!dc.role, sent: 0, failed: 0, buttons: 0, without_button: 0 };
@@ -513,18 +600,33 @@ module.exports = async (req, res) => {
           await sendToTopic(postMessage(p));
           sent += 1;
           doneId = p.id;
-          await announce(discordPostPayload(p, dc.role), telegramPostMessage(p), waAdminMessage(waPostText(p), SITE + p.url, 'Buka post'));
+          const rq = reqs[p.id];
+          await announce(
+            discordPostPayload(p, dc.role, rq),
+            telegramPostMessage(p, rq),
+            waAdminMessage(waPostText(p, rq), SITE + p.url, 'Buka post', rq && rq.whatsapp ? [rq.whatsapp] : [])
+          );
         }
       } else {
         await sendToTopic(summaryMessage(fresh));
         sent = 1;
         doneId = fresh[fresh.length - 1].id;
-        await announce(discordSummaryPayload(fresh, dc.role), telegramSummaryMessage(fresh), waAdminMessage(waSummaryText(fresh), SITE + '/', 'Buka situs'));
+        const dIds = rqCollect(fresh, reqs, 'discord');
+        const tNames = rqCollect(fresh, reqs, 'telegram');
+        const wNums = rqCollect(fresh, reqs, 'whatsapp');
+        await announce(
+          discordSummaryPayload(fresh, dc.role, dIds),
+          telegramSummaryMessage(fresh, tNames),
+          waAdminMessage(waSummaryText(fresh, wNums), SITE + '/', 'Buka situs', wNums)
+        );
       }
     } finally {
-      if (doneId > lastId) await redis.set(LAST_KEY, doneId); // simpan kemajuan walau gagal di tengah, supaya tidak terkirim dobel
+      if (doneId > lastId) {
+        await redis.set(LAST_KEY, doneId); // simpan kemajuan walau gagal di tengah, supaya tidak terkirim dobel
+        await clearRequesters(fresh.filter((p) => p.id <= doneId)); // data peminta tidak dipakai lagi
+      }
     }
-    res.status(200).json({ ok: true, sent, last: doneId, discord, telegram, whatsapp });
+    res.status(200).json({ ok: true, sent, last: doneId, requesters: Object.keys(reqs).length, discord, telegram, whatsapp });
   } catch (err) {
     console.error('push-notify:', err && err.message);
     res.status(502).json({ error: 'Gagal: ' + (err && err.message ? err.message : 'unknown') });

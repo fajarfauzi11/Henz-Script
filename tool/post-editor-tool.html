@@ -85,6 +85,15 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
 .vis-opt.active{background:#111;color:#fff;}
 .vis-opt.active.draft{background:#e65100;color:#fff;}
 .vis-hint{margin-top:8px;font-size:11.5px;line-height:1.6;color:var(--t3);}
+/* Mention peminta script (opsional) */
+.rq-list{display:flex;flex-direction:column;gap:8px;}
+.rq-row{display:flex;flex-direction:column;gap:8px;padding:10px 12px;border:1px solid var(--b2);border-radius:10px;background:var(--s2);}
+.rq-chk{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--t1);}
+.rq-chk input[type=checkbox]{width:15px;height:15px;accent-color:#111;cursor:pointer;flex-shrink:0;}
+.rq-box{display:none;}
+.rq-box.show{display:block;}
+.rq-box .vis-hint{margin-top:6px;}
+.rq-off .rq-list,.rq-off #rq-secret-box{opacity:.45;pointer-events:none;}
 /* Tab 2 section header in form */
 .dual-tab-label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#6366f1;padding:8px 0 4px;font-family:'Inter',sans-serif;}
 .dual-tab-name-wrap{display:flex;gap:8px;margin-bottom:10px;}
@@ -1144,6 +1153,39 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
     <div class="vis-hint" id="hz-vis-hint">Post langsung tampil di homepage, search, halaman hero, dan kategori setelah Vercel selesai deploy.</div>
   </div>
 
+  <!-- Mention peminta script (opsional): data disimpan di server (Redis), bukan di repo -->
+  <div class="field" style="margin-bottom:10px;" id="hz-rq-wrap">
+    <div class="field-label">Mention peminta script <span class="field-badge">opsional</span></div>
+    <div class="rq-list">
+      <div class="rq-row">
+        <label class="rq-chk"><input type="checkbox" id="rq-chk-discord" onchange="hzRqToggle('discord')"/><span>Discord</span></label>
+        <div class="rq-box" id="rq-box-discord">
+          <input type="text" id="rq-in-discord" placeholder="ID user Discord, contoh 123456789012345678" autocomplete="off" inputmode="numeric"/>
+          <div class="vis-hint">ID numerik (17–20 angka). Di Discord: Pengaturan → Advanced → Developer Mode, lalu klik kanan user → Copy User ID.</div>
+        </div>
+      </div>
+      <div class="rq-row">
+        <label class="rq-chk"><input type="checkbox" id="rq-chk-telegram" onchange="hzRqToggle('telegram')"/><span>Telegram</span></label>
+        <div class="rq-box" id="rq-box-telegram">
+          <input type="text" id="rq-in-telegram" placeholder="@username, contoh @budi_123" autocomplete="off"/>
+          <div class="vis-hint">Username Telegram (5–32 karakter: huruf, angka, garis bawah). User harus anggota grup agar mendapat notifikasi.</div>
+        </div>
+      </div>
+      <div class="rq-row">
+        <label class="rq-chk"><input type="checkbox" id="rq-chk-whatsapp" onchange="hzRqToggle('whatsapp')"/><span>WhatsApp</span></label>
+        <div class="rq-box" id="rq-box-whatsapp">
+          <input type="text" id="rq-in-whatsapp" placeholder="Nomor, contoh 0812xxxxxxxx atau +62812xxxxxxx" autocomplete="off" inputmode="tel"/>
+          <div class="vis-hint">Nomor otomatis diubah ke format 62…. Nomor hanya tampil di DM Telegram adminmu dan teks siap salin, tidak di Discord/Telegram.</div>
+        </div>
+      </div>
+      <div class="rq-box" id="rq-secret-box">
+        <div class="field-label">Kunci endpoint peminta <span class="field-badge auto">tersimpan di browser ini saja</span></div>
+        <input type="password" id="rq-secret" placeholder="REQUESTER_SECRET (sama dengan di Vercel)" autocomplete="off"/>
+      </div>
+    </div>
+    <div class="vis-hint" id="hz-rq-hint">Tanpa centang = hanya notifikasi HP seperti biasa. Mention hanya tampil di platform yang dicentang. Data peminta disimpan sementara di server (bukan di repo) dan dihapus setelah notifikasi terkirim.</div>
+  </div>
+
   <!-- Finalize & upload -->
   <button class="btn-generate" id="btn-finalize" onclick="finalizeAndUpload()">
     <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1425,6 +1467,7 @@ function loadGhToken(){
   input.addEventListener('input', function(){
     localStorage.setItem('kz_gh_token', input.value);
   });
+  if(typeof hzRqInit === 'function') hzRqInit();
 }
 
 // ── ABILITIES DYNAMIC BLOK ─────────────────
@@ -3535,6 +3578,121 @@ function hzSetVisibility(mode){
   if(hint) hint.textContent = isDraft
     ? 'Hanya bisa dibuka lewat link langsung (noindex). Tidak muncul di homepage, search, hero, kategori, dan sitemap. Bukan rahasia: repo GitHub bersifat publik.'
     : 'Post langsung tampil di homepage, search, halaman hero, dan kategori setelah Vercel selesai deploy.';
+  if(typeof hzRqSync === 'function') hzRqSync();
+}
+
+// ── MENTION PEMINTA SCRIPT (opsional) ──────────────────
+// Identitas peminta bersifat pribadi: dikirim ke endpoint (disimpan di Redis, kedaluwarsa 30 hari),
+// TIDAK ditulis ke repo/posts.json dan TIDAK ditampilkan di log tool ini.
+var HZ_RQ_ENDPOINT  = 'https://www.henzscript.com/api/push-requester';
+var HZ_RQ_PLATFORMS = ['discord','telegram','whatsapp'];
+var HZ_RQ_LABEL     = { discord:'Discord', telegram:'Telegram', whatsapp:'WhatsApp' };
+var HZ_RQ_FORMAT    = {
+  discord:  'Isi dengan ID numerik 17–20 angka.',
+  telegram: 'Isi dengan username 5–32 karakter (huruf, angka, garis bawah), diawali huruf.',
+  whatsapp: 'Isi dengan nomor 8–15 angka, contoh 0812xxxxxxxx atau +62812xxxxxxx.'
+};
+var HZ_RQ_HINT_DEFAULT = 'Tanpa centang = hanya notifikasi HP seperti biasa. Mention hanya tampil di platform yang dicentang. Data peminta disimpan sementara di server (bukan di repo) dan dihapus setelah notifikasi terkirim.';
+var HZ_RQ_HINT_DRAFT   = 'Tidak tersedia untuk post "Tidak publik" (belum punya id dan tidak memicu notifikasi). Pilih "Publik" untuk memakai fitur ini.';
+var _hzRqInited = false;
+
+function hzRqInit(){
+  if(_hzRqInited) return;
+  var s = document.getElementById('rq-secret');
+  if(!s) return;
+  _hzRqInited = true;
+  var saved = localStorage.getItem('kz_rq_secret');
+  if(saved) s.value = saved;
+  s.addEventListener('input', function(){ localStorage.setItem('kz_rq_secret', s.value); });
+}
+
+function hzRqToggle(p){
+  var chk = document.getElementById('rq-chk-'+p);
+  var box = document.getElementById('rq-box-'+p);
+  if(box) box.classList.toggle('show', !!(chk && chk.checked));
+  hzRqSync();
+}
+
+function hzRqSync(){
+  var isDraft = (typeof _hzVisibility !== 'undefined' && _hzVisibility === 'draft');
+  var any = HZ_RQ_PLATFORMS.some(function(p){
+    var c = document.getElementById('rq-chk-'+p);
+    return !!(c && c.checked);
+  });
+  var wrap = document.getElementById('hz-rq-wrap');
+  if(wrap) wrap.classList.toggle('rq-off', isDraft);
+  var sb = document.getElementById('rq-secret-box');
+  if(sb) sb.classList.toggle('show', any);
+  var hint = document.getElementById('hz-rq-hint');
+  if(hint) hint.textContent = isDraft ? HZ_RQ_HINT_DRAFT : HZ_RQ_HINT_DEFAULT;
+}
+
+// Hasil: nilai yang sudah dinormalkan (string) atau null bila tidak valid.
+function hzRqNormalize(platform, raw){
+  var s = String(raw == null ? '' : raw).trim();
+  if(platform === 'discord'){
+    return /^\d{17,20}$/.test(s) ? s : null;
+  }
+  if(platform === 'telegram'){
+    s = s.replace(/^@+/, '');
+    return /^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(s) ? s : null;
+  }
+  if(platform === 'whatsapp'){
+    var d = s.replace(/[\s().\-]/g, '').replace(/^\+/, '');
+    if(!/^\d+$/.test(d)) return null;
+    if(d.indexOf('00') === 0) d = d.slice(2);        // 0062812… → 62812…
+    else if(d.charAt(0) === '0') d = '62' + d.slice(1); // 0812… → 62812…
+    return /^\d{8,15}$/.test(d) ? d : null;
+  }
+  return null;
+}
+
+// null = tidak ada platform yang dicentang. Selain itu: { data, names, secret, error }.
+function hzRqCollect(){
+  var data = {}, names = [], error = '';
+  HZ_RQ_PLATFORMS.forEach(function(p){
+    var chk = document.getElementById('rq-chk-'+p);
+    if(!chk || !chk.checked) return;
+    var inp = document.getElementById('rq-in-'+p);
+    var norm = hzRqNormalize(p, inp ? inp.value : '');
+    if(norm === null){
+      if(!error) error = 'Isian peminta '+HZ_RQ_LABEL[p]+' belum valid. '+HZ_RQ_FORMAT[p];
+      return;
+    }
+    data[p] = norm;
+    names.push(HZ_RQ_LABEL[p]);
+  });
+  if(!names.length && !error) return null;
+  var sEl = document.getElementById('rq-secret');
+  var secret = sEl ? (sEl.value||'').trim() : '';
+  if(!error && secret.length < 16) error = 'Kunci endpoint peminta belum diisi (isi dengan nilai REQUESTER_SECRET dari Vercel, minimal 16 karakter).';
+  return { data:data, names:names, secret:secret, error:error };
+}
+
+// Hasil: { ok:true } atau { ok:false, msg }. msg tidak pernah memuat identitas peminta.
+async function hzRqSave(id, url, data, secret){
+  var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+  var timer = ctrl ? setTimeout(function(){ ctrl.abort(); }, 12000) : null;
+  try{
+    var res = await fetch(HZ_RQ_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Authorization':'Bearer '+secret, 'Content-Type':'application/json' },
+      body: JSON.stringify({ id:id, url:url, requester:data }),
+      signal: ctrl ? ctrl.signal : undefined
+    });
+    if(res.ok) return { ok:true };
+    var msg = 'HTTP '+res.status;
+    if(res.status === 401){
+      msg += ' (kunci endpoint salah, atau REQUESTER_SECRET belum diatur di Vercel / belum redeploy)';
+    } else {
+      try{ var j = await res.json(); if(j && j.error) msg += ' — '+j.error; }catch(e){}
+    }
+    return { ok:false, msg:msg };
+  }catch(e){
+    return { ok:false, msg:(e && e.name === 'AbortError') ? 'waktu habis' : 'tidak bisa terhubung ke endpoint (cek koneksi, atau apakah fungsi sudah ter-deploy)' };
+  }finally{
+    if(timer) clearTimeout(timer);
+  }
 }
 
 // ── MAIN: Finalize & Upload ─────────────────
@@ -3566,6 +3724,14 @@ async function finalizeAndUpload(){
   }
 
   var isDraft = (_hzVisibility === 'draft');
+
+  // Mention peminta (opsional): validasi di awal supaya tidak ada upload setengah jalan karena isian salah.
+  var rqState = isDraft ? null : hzRqCollect();
+  if(rqState && rqState.error){
+    hzSetStatus('Gagal', 'error');
+    hzLog(rqState.error, true);
+    return;
+  }
 
   var herolinkVal = (document.getElementById('herolink').value||'').trim();
   if(isDraft){
@@ -3707,6 +3873,7 @@ async function finalizeAndUpload(){
     posts.forEach(function(p){ if(typeof p.id === 'number' && p.id > maxId) maxId = p.id; });
 
     var newUrl = '/post/'+slug;
+    var rqPostId = null; // diisi hanya untuk post baru (id baru memicu notifikasi)
     var existingIndex = -1;
     for(var i=0;i<posts.length;i++){
       if(posts[i].url === newUrl){ existingIndex = i; break; }
@@ -3742,6 +3909,26 @@ async function finalizeAndUpload(){
       };
       if(keywordsVal) newEntry.keywords = keywordsVal;
       posts.unshift(newEntry);
+      rqPostId = newEntry.id;
+    }
+
+    // 3b. Mention peminta: simpan ke endpoint SEBELUM commit posts.json (commit itulah yang memicu notifikasi).
+    if(rqState && rqState.data){
+      if(rqPostId === null){
+        hzLog('Info peminta dilewati: post ini sudah ada di posts.json, jadi tidak memicu notifikasi lagi.');
+      } else {
+        hzLog('Menyimpan info peminta untuk id '+rqPostId+' ('+rqState.names.join(', ')+')...');
+        var rqRes = await hzRqSave(rqPostId, newUrl, rqState.data, rqState.secret);
+        if(rqRes.ok){
+          hzLog('✓ Info peminta tersimpan di server (bukan di repo).');
+        } else {
+          var lanjutRq = window.confirm('Gagal menyimpan info peminta: '+rqRes.msg+'\n\nKlik OK untuk lanjut upload TANPA mention peminta, atau Cancel untuk berhenti (posts.json belum diubah).');
+          if(!lanjutRq){
+            throw new Error('Dibatalkan: info peminta belum tersimpan ('+rqRes.msg+'). Data post sudah terupload tapi posts.json BELUM diubah — jalankan Finalize lagi setelah masalahnya beres.');
+          }
+          hzLog('Lanjut tanpa mention peminta.', true);
+        }
+      }
     }
 
     hzLog('Mengupload posts.json yang sudah diperbarui...');
