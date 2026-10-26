@@ -307,8 +307,8 @@ function telegramPostMessage(p, rq) {
   const msg = {
     text: '\ud83c\udd95 <b><a href="' + htmlEsc(url) + '">' + htmlEsc(clip('New script: ' + p.title, 200)) + '</a></b>' +
       (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
-      '\n\nOpen the post to view and download the script.' +
-      (rq && rq.telegram ? '\nScript requested by ' + rq.telegram.map((n) => '@' + htmlEsc(n)).join(' ') : ''),
+      (rq && rq.telegram ? '\n\nScript requested by ' + rq.telegram.map((n) => '@' + htmlEsc(n)).join(' ') : '') +
+      '\n\nOpen the post to view and download the script.',
     button: { text: 'Open Script', url },
   };
   if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) msg.photo = p.thumb;
@@ -391,7 +391,7 @@ function waPostText(p, rq) {
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => waClean(clip(x, 100)));
   return '\ud83c\udd95 *Script baru: ' + waClean(clip(p.title, 150)) + '*' +
     (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
-    (rq && rq.whatsapp ? '\nScript direquest oleh ' + rq.whatsapp.map((n) => '@' + n).join(' ') : '') +
+    (rq && rq.whatsapp ? '\n\nScript direquest oleh ' + rq.whatsapp.map((n) => '@' + n).join(' ') : '') +
     '\n\nCek dan download di sini:\n' + SITE + p.url;
 }
 
