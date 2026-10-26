@@ -1160,22 +1160,22 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
       <div class="rq-row">
         <label class="rq-chk"><input type="checkbox" id="rq-chk-discord" onchange="hzRqToggle('discord')"/><span>Discord</span></label>
         <div class="rq-box" id="rq-box-discord">
-          <input type="text" id="rq-in-discord" placeholder="ID user Discord, contoh 123456789012345678" autocomplete="off" inputmode="numeric"/>
-          <div class="vis-hint">ID numerik (17–20 angka). Di Discord: Pengaturan → Advanced → Developer Mode, lalu klik kanan user → Copy User ID.</div>
+          <input type="text" id="rq-in-discord" placeholder="ID user Discord, contoh 123456789012345678 (beberapa: pisahkan koma)" autocomplete="off" inputmode="numeric"/>
+          <div class="vis-hint">ID numerik (17–20 angka). Di Discord: Pengaturan → Advanced → Developer Mode, lalu klik kanan user → Copy User ID. Beberapa orang: pisahkan dengan koma, maksimal 5.</div>
         </div>
       </div>
       <div class="rq-row">
         <label class="rq-chk"><input type="checkbox" id="rq-chk-telegram" onchange="hzRqToggle('telegram')"/><span>Telegram</span></label>
         <div class="rq-box" id="rq-box-telegram">
-          <input type="text" id="rq-in-telegram" placeholder="@username, contoh @budi_123" autocomplete="off"/>
-          <div class="vis-hint">Username Telegram (5–32 karakter: huruf, angka, garis bawah). User harus anggota grup agar mendapat notifikasi.</div>
+          <input type="text" id="rq-in-telegram" placeholder="@username, contoh @budi_123, @sari_45" autocomplete="off"/>
+          <div class="vis-hint">Username Telegram (5–32 karakter: huruf, angka, garis bawah). User harus anggota grup agar mendapat notifikasi. Beberapa orang: pisahkan dengan koma, maksimal 5.</div>
         </div>
       </div>
       <div class="rq-row">
         <label class="rq-chk"><input type="checkbox" id="rq-chk-whatsapp" onchange="hzRqToggle('whatsapp')"/><span>WhatsApp</span></label>
         <div class="rq-box" id="rq-box-whatsapp">
-          <input type="text" id="rq-in-whatsapp" placeholder="Nomor, contoh 0812xxxxxxxx atau +62812xxxxxxx" autocomplete="off" inputmode="tel"/>
-          <div class="vis-hint">Nomor otomatis diubah ke format 62…. Nomor hanya tampil di DM Telegram adminmu dan teks siap salin, tidak di Discord/Telegram.</div>
+          <input type="text" id="rq-in-whatsapp" placeholder="Nomor, contoh 0812xxxxxxxx, +62813xxxxxxxx" autocomplete="off" inputmode="tel"/>
+          <div class="vis-hint">Nomor otomatis diubah ke format 62…. Beberapa orang: pisahkan dengan koma, maksimal 5. Nomor hanya tampil di DM Telegram adminmu dan teks siap salin, tidak di Discord/Telegram.</div>
         </div>
       </div>
       <div class="rq-box" id="rq-secret-box">
@@ -3587,10 +3587,11 @@ function hzSetVisibility(mode){
 var HZ_RQ_ENDPOINT  = 'https://www.henzscript.com/api/push-requester';
 var HZ_RQ_PLATFORMS = ['discord','telegram','whatsapp'];
 var HZ_RQ_LABEL     = { discord:'Discord', telegram:'Telegram', whatsapp:'WhatsApp' };
+var HZ_RQ_MAX       = 5; // maksimal peminta per platform
 var HZ_RQ_FORMAT    = {
-  discord:  'Isi dengan ID numerik 17–20 angka.',
-  telegram: 'Isi dengan username 5–32 karakter (huruf, angka, garis bawah), diawali huruf.',
-  whatsapp: 'Isi dengan nomor 8–15 angka, contoh 0812xxxxxxxx atau +62812xxxxxxx.'
+  discord:  'Isi dengan ID numerik 17–20 angka (beberapa orang: pisahkan dengan koma).',
+  telegram: 'Isi dengan username 5–32 karakter (huruf, angka, garis bawah), diawali huruf (beberapa orang: pisahkan dengan koma).',
+  whatsapp: 'Isi dengan nomor 8–15 angka, contoh 0812xxxxxxxx atau +62812xxxxxxx (beberapa orang: pisahkan dengan koma).'
 };
 var HZ_RQ_HINT_DEFAULT = 'Tanpa centang = hanya notifikasi HP seperti biasa. Mention hanya tampil di platform yang dicentang. Data peminta disimpan sementara di server (bukan di repo) dan dihapus setelah notifikasi terkirim.';
 var HZ_RQ_HINT_DRAFT   = 'Tidak tersedia untuk post "Tidak publik" (belum punya id dan tidak memicu notifikasi). Pilih "Publik" untuk memakai fitur ini.';
@@ -3647,20 +3648,44 @@ function hzRqNormalize(platform, raw){
   return null;
 }
 
-// null = tidak ada platform yang dicentang. Selain itu: { data, names, secret, error }.
+// Pecah isian dipisah koma/titik koma. Hasil: { list: [nilai valid unik], bad: nomor entri (mulai 1) pertama yang tidak valid atau 0, count }.
+function hzRqParseList(platform, raw){
+  var parts = String(raw == null ? '' : raw).split(/[,;]+/);
+  var list = [], seen = {}, bad = 0, count = 0;
+  for(var i = 0; i < parts.length; i++){
+    var part = parts[i].trim();
+    if(!part) continue;
+    count++;
+    var v = hzRqNormalize(platform, part);
+    if(v === null){ if(!bad) bad = count; continue; }
+    var key = (platform === 'telegram') ? v.toLowerCase() : v; // username Telegram tidak membedakan huruf besar/kecil
+    if(!seen[key]){ seen[key] = 1; list.push(v); }
+  }
+  return { list:list, bad:bad, count:count };
+}
+
+// null = tidak ada platform yang dicentang. Selain itu: { data, names, secret, error }. data[platform] = array nilai.
 function hzRqCollect(){
   var data = {}, names = [], error = '';
   HZ_RQ_PLATFORMS.forEach(function(p){
     var chk = document.getElementById('rq-chk-'+p);
     if(!chk || !chk.checked) return;
     var inp = document.getElementById('rq-in-'+p);
-    var norm = hzRqNormalize(p, inp ? inp.value : '');
-    if(norm === null){
-      if(!error) error = 'Isian peminta '+HZ_RQ_LABEL[p]+' belum valid. '+HZ_RQ_FORMAT[p];
+    var r = hzRqParseList(p, inp ? inp.value : '');
+    if(r.bad){
+      if(!error) error = 'Isian peminta '+HZ_RQ_LABEL[p]+': entri ke-'+r.bad+' belum valid. '+HZ_RQ_FORMAT[p];
       return;
     }
-    data[p] = norm;
-    names.push(HZ_RQ_LABEL[p]);
+    if(!r.list.length){
+      if(!error) error = 'Isian peminta '+HZ_RQ_LABEL[p]+' masih kosong. '+HZ_RQ_FORMAT[p];
+      return;
+    }
+    if(r.list.length > HZ_RQ_MAX){
+      if(!error) error = 'Peminta '+HZ_RQ_LABEL[p]+' maksimal '+HZ_RQ_MAX+' orang per post.';
+      return;
+    }
+    data[p] = r.list;
+    names.push(HZ_RQ_LABEL[p] + (r.list.length > 1 ? ' ×'+r.list.length : ''));
   });
   if(!names.length && !error) return null;
   var sEl = document.getElementById('rq-secret');

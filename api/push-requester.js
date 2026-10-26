@@ -2,8 +2,9 @@
    Dipanggil dari tool/post-editor-tool.html SEBELUM posts.json di-commit, dengan header
    Authorization: Bearer <REQUESTER_SECRET>. Tanpa secret yang benar -> 401.
 
-   Body JSON: { "id": 157, "url": "/post/nama-post", "requester": { "discord": "123456789012345678", "telegram": "username", "whatsapp": "62812xxxxxxx" } }
+   Body JSON: { "id": 157, "url": "/post/nama-post", "requester": { "discord": ["123456789012345678"], "telegram": ["username"], "whatsapp": ["62812xxxxxxx"] } }
    - Minimal satu platform. Hanya platform yang dikirim yang akan di-mention (tampil di platform itu saja).
+   - Tiap platform menerima satu nilai (string) atau daftar (array), maksimal 5 orang per platform.
    - Disimpan di Redis pada kunci req:{id} selama 30 hari, lalu dibaca dan dihapus oleh api/push-notify.js.
    - {"id":157, "clear":true} menghapus data (opsional).
    Data pribadi: JANGAN simpan di repo/posts.json, dan jangan dicatat ke log. Respons tidak pernah memantulkan nilainya. */
@@ -16,6 +17,12 @@ const redis = new Redis({
 });
 
 const TTL_SECONDS = 30 * 24 * 60 * 60;
+const MAX_PER_PLATFORM = 5;
+const SPECS = {
+  discord: { re: /^\d{17,20}$/, norm: (s) => s },
+  telegram: { re: /^[A-Za-z][A-Za-z0-9_]{4,31}$/, norm: (s) => s.replace(/^@+/, '') },
+  whatsapp: { re: /^\d{8,15}$/, norm: (s) => s },
+};
 
 function setCors(res) {
   // Tool dibuka dari luar domain situs (file lokal), jadi CORS diperlukan. Aman karena akses dijaga secret Bearer, bukan cookie.
@@ -79,18 +86,24 @@ module.exports = async (req, res) => {
     }
     const rq = body.requester && typeof body.requester === 'object' ? body.requester : {};
     const value = { url };
-    if (rq.discord !== undefined) {
-      if (!/^\d{17,20}$/.test(String(rq.discord))) { res.status(400).json({ error: 'format discord tidak valid' }); return; }
-      value.discord = String(rq.discord);
-    }
-    if (rq.telegram !== undefined) {
-      const u = String(rq.telegram).replace(/^@+/, '');
-      if (!/^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(u)) { res.status(400).json({ error: 'format telegram tidak valid' }); return; }
-      value.telegram = u;
-    }
-    if (rq.whatsapp !== undefined) {
-      if (!/^\d{8,15}$/.test(String(rq.whatsapp))) { res.status(400).json({ error: 'format whatsapp tidak valid' }); return; }
-      value.whatsapp = String(rq.whatsapp);
+    for (const k of Object.keys(SPECS)) {
+      if (rq[k] === undefined) continue;
+      const arr = Array.isArray(rq[k]) ? rq[k] : [rq[k]];
+      if (arr.length < 1 || arr.length > MAX_PER_PLATFORM) {
+        res.status(400).json({ error: 'jumlah ' + k + ' harus 1-' + MAX_PER_PLATFORM });
+        return;
+      }
+      const list = [];
+      for (let i = 0; i < arr.length; i++) {
+        const s = SPECS[k].norm(String(arr[i]).trim());
+        if (!SPECS[k].re.test(s)) {
+          res.status(400).json({ error: 'format ' + k + ' entri ke-' + (i + 1) + ' tidak valid' }); // jangan memantulkan nilainya
+          return;
+        }
+        const dup = list.some((x) => (k === 'telegram' ? x.toLowerCase() === s.toLowerCase() : x === s)); // username Telegram tidak membedakan huruf besar/kecil
+        if (!dup) list.push(s);
+      }
+      value[k] = list;
     }
     const platforms = ['discord', 'telegram', 'whatsapp'].filter((k) => value[k] !== undefined);
     if (!platforms.length) {
@@ -99,7 +112,7 @@ module.exports = async (req, res) => {
     }
 
     await redis.set(key, value, { ex: TTL_SECONDS });
-    res.status(200).json({ ok: true, id, platforms, ttl_days: 30 });
+    res.status(200).json({ ok: true, id, platforms, count: platforms.reduce((n, k) => n + value[k].length, 0), ttl_days: 30 });
   } catch (err) {
     console.error('push-requester:', err && err.message); // jangan pernah mencatat isi data peminta
     res.status(502).json({ error: 'Gagal menyimpan' });

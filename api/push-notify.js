@@ -27,7 +27,8 @@
 
    Mention peminta (opsional): tool menyimpan data peminta ke Redis (kunci req:{id}, lewat api/push-requester.js) SEBELUM commit
    posts.json. Saat mengirim, data dibaca per post dan dipakai hanya bila url-nya cocok dengan post itu. Mention hanya tampil di
-   platform yang dipilih di tool (kunci discord / telegram / whatsapp). Datanya dihapus setelah post terkirim. Bila data tidak ada,
+   platform yang dipilih di tool (kunci discord / telegram / whatsapp), satu atau beberapa orang per platform (maks 5).
+   Datanya dihapus setelah post terkirim. Bila data tidak ada,
    notifikasi berjalan seperti biasa tanpa mention. Nilai identitas tidak pernah dicatat ke log. */
 const crypto = require('crypto');
 const { Redis } = require('@upstash/redis');
@@ -51,6 +52,19 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const RQ_PREFIX = 'req:';
 const RQ_MAX_LOOKUP = 20; // batas jumlah post yang dicek per pengiriman
 const RQ_MAX_SUMMARY = 5; // batas jumlah peminta yang di-mention dalam satu pesan ringkasan
+const RQ_MAX_PER_PLATFORM = 5; // batas peminta per platform untuk satu post
+
+// Terima nilai tunggal (data lama) atau daftar. Hasil selalu array: nilai valid, unik, maksimal RQ_MAX_PER_PLATFORM.
+function rqList(v, re, norm) {
+  const arr = Array.isArray(v) ? v : (v === undefined || v === null ? [] : [v]);
+  const out = [];
+  for (const x of arr) {
+    const s = norm(String(x).trim());
+    if (re.test(s) && !out.some((x) => x.toLowerCase() === s.toLowerCase())) out.push(s); // angka tidak punya huruf; username Telegram tidak membedakan huruf besar/kecil
+    if (out.length >= RQ_MAX_PER_PLATFORM) break;
+  }
+  return out;
+}
 
 // Validasi ulang isi Redis (jangan percaya begitu saja) dan cocokkan dengan post yang sedang dikirim.
 function rqClean(raw, p) {
@@ -59,10 +73,12 @@ function rqClean(raw, p) {
   }
   if (!raw || typeof raw !== 'object' || raw.url !== p.url) return null; // url harus cocok: cegah data sisa menempel ke post lain
   const out = {};
-  if (/^\d{17,20}$/.test(String(raw.discord || ''))) out.discord = String(raw.discord);
-  const tgu = String(raw.telegram || '').replace(/^@+/, '');
-  if (/^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(tgu)) out.telegram = tgu;
-  if (/^\d{8,15}$/.test(String(raw.whatsapp || ''))) out.whatsapp = String(raw.whatsapp);
+  const d = rqList(raw.discord, /^\d{17,20}$/, (s) => s);
+  if (d.length) out.discord = d;
+  const t = rqList(raw.telegram, /^[A-Za-z][A-Za-z0-9_]{4,31}$/, (s) => s.replace(/^@+/, ''));
+  if (t.length) out.telegram = t;
+  const w = rqList(raw.whatsapp, /^\d{8,15}$/, (s) => s);
+  if (w.length) out.whatsapp = w;
   return Object.keys(out).length ? out : null;
 }
 
@@ -91,16 +107,19 @@ async function clearRequesters(list) {
   }
 }
 
-// Kumpulkan identitas unik dari beberapa post untuk pesan ringkasan.
+// Kumpulkan identitas unik dari beberapa post untuk pesan ringkasan (maksimal RQ_MAX_SUMMARY).
 function rqCollect(list, map, key) {
   const seen = new Set();
   const out = [];
   for (const p of list) {
     const r = map[p.id];
-    if (r && r[key] && !seen.has(r[key])) {
-      seen.add(r[key]);
-      out.push(r[key]);
-      if (out.length >= RQ_MAX_SUMMARY) break;
+    if (!r || !r[key]) continue;
+    for (const v of r[key]) {
+      if (!seen.has(v)) {
+        seen.add(v);
+        out.push(v);
+        if (out.length >= RQ_MAX_SUMMARY) return out;
+      }
     }
   }
   return out;
@@ -138,7 +157,7 @@ function linkButtonRow(label, url) {
 }
 
 function discordPostPayload(p, role, rq) {
-  const uid = rq && rq.discord ? rq.discord : '';
+  const uids = rq && rq.discord ? rq.discord : [];
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => esc(clip(x, 100)));
   const embed = {
     title: clip('New script: ' + p.title, 256),
@@ -150,9 +169,9 @@ function discordPostPayload(p, role, rq) {
   };
   if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) embed.image = { url: p.thumb };
   return {
-    content: mentionPrefix(role) + 'A new script just dropped!' + (uid ? '\nScript requested by <@' + uid + '>' : ''),
+    content: mentionPrefix(role) + 'A new script just dropped!' + (uids.length ? '\nScript requested by ' + uids.map((i) => '<@' + i + '>').join(' ') : ''),
     embeds: [embed],
-    allowed_mentions: discordAllowed(role, uid ? [uid] : []),
+    allowed_mentions: discordAllowed(role, uids),
     components: linkButtonRow('Open Script', SITE + p.url),
   };
 }
@@ -289,7 +308,7 @@ function telegramPostMessage(p, rq) {
     text: '\ud83c\udd95 <b><a href="' + htmlEsc(url) + '">' + htmlEsc(clip('New script: ' + p.title, 200)) + '</a></b>' +
       (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
       '\n\nOpen the post to view and download the script.' +
-      (rq && rq.telegram ? '\nScript requested by @' + htmlEsc(rq.telegram) : ''),
+      (rq && rq.telegram ? '\nScript requested by ' + rq.telegram.map((n) => '@' + htmlEsc(n)).join(' ') : ''),
     button: { text: 'Open Script', url },
   };
   if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) msg.photo = p.thumb;
@@ -372,7 +391,7 @@ function waPostText(p, rq) {
   const bits = [p.hero, p.cat].filter(Boolean).map((x) => waClean(clip(x, 100)));
   return '\ud83c\udd95 *Script baru: ' + waClean(clip(p.title, 150)) + '*' +
     (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
-    (rq && rq.whatsapp ? '\nScript direquest oleh @' + rq.whatsapp : '') +
+    (rq && rq.whatsapp ? '\nScript direquest oleh ' + rq.whatsapp.map((n) => '@' + n).join(' ') : '') +
     '\n\nCek dan download di sini:\n' + SITE + p.url;
 }
 
@@ -604,7 +623,7 @@ module.exports = async (req, res) => {
           await announce(
             discordPostPayload(p, dc.role, rq),
             telegramPostMessage(p, rq),
-            waAdminMessage(waPostText(p, rq), SITE + p.url, 'Buka post', rq && rq.whatsapp ? [rq.whatsapp] : [])
+            waAdminMessage(waPostText(p, rq), SITE + p.url, 'Buka post', rq && rq.whatsapp ? rq.whatsapp : [])
           );
         }
       } else {
