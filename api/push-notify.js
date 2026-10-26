@@ -18,7 +18,12 @@
    Telegram (opsional): bila env TELEGRAM_BOT_TOKEN dan TELEGRAM_CHAT_ID diisi, setiap post baru juga dikirim ke grup/channel
    Telegram sebagai foto + caption + tombol "Open Script" (bahasa Inggris). TELEGRAM_THREAD_ID (opsional) mengarahkan pesan
    ke satu topik di grup berforum. Bila foto ditolak Telegram, pesan dikirim ulang sebagai teks + tombol. Best-effort,
-   sama seperti Discord. Mode test ikut mengirim pesan uji ke Telegram. */
+   sama seperti Discord. Mode test ikut mengirim pesan uji ke Telegram.
+
+   WhatsApp (semi-otomatis, sengaja TIDAK memakai otomatisasi WhatsApp): bila TELEGRAM_ADMIN_CHAT_ID diisi (ID akun Telegram
+   admin, boleh beberapa dipisah koma; admin harus sudah menekan Start pada bot), setiap post baru juga dikirim ke chat PRIBADI
+   admin lewat bot yang sama: teks bahasa Indonesia siap tempel + tombol "Bagikan ke WhatsApp" (tautan wa.me) + tombol buka
+   post. Admin sendiri yang memilih grup dan menekan kirim di WhatsApp. Bisa dipakai tanpa grup Telegram. */
 const crypto = require('crypto');
 const { Redis } = require('@upstash/redis');
 const { sendToTopic } = require('./_lib/fcm');
@@ -193,8 +198,17 @@ function telegramConfig() {
   const token = String(process.env.TELEGRAM_BOT_TOKEN || '').trim();
   const chat = String(process.env.TELEGRAM_CHAT_ID || '').trim();
   const thread = String(process.env.TELEGRAM_THREAD_ID || '').trim();
-  const ok = /^\d{6,12}:[\w-]{30,}$/.test(token) && /^(-?\d{5,20}|@\w{5,})$/.test(chat);
-  return { token: ok ? token : '', chat: ok ? chat : '', thread: ok && /^\d{1,12}$/.test(thread) ? Number(thread) : 0 };
+  const tokenOk = /^\d{6,12}:[\w-]{30,}$/.test(token);
+  const chatOk = tokenOk && /^(-?\d{5,20}|@\w{5,})$/.test(chat);
+  const admins = tokenOk
+    ? String(process.env.TELEGRAM_ADMIN_CHAT_ID || '').split(/[\s,;]+/).filter((x) => /^\d{5,15}$/.test(x)).slice(0, 5)
+    : [];
+  return {
+    token: tokenOk ? token : '',
+    chat: chatOk ? chat : '',
+    thread: chatOk && /^\d{1,12}$/.test(thread) ? Number(thread) : 0,
+    admins,
+  };
 }
 
 function htmlEsc(s) {
@@ -275,6 +289,65 @@ async function sendTelegram(cfg, msg) {
   return { status: r2 === 'ok' ? 'sent' : 'failed', photo: false };
 }
 
+// ---- WhatsApp (semi-otomatis: pesan siap tempel ke chat pribadi admin, dikirim manual oleh admin) ----
+function waClean(s) {
+  return String(s).replace(/[*_~`]/g, '').replace(/\s+/g, ' ').trim(); // buang karakter format WhatsApp dari judul
+}
+
+function waShareUrl(text) {
+  return 'https://wa.me/?text=' + encodeURIComponent(text);
+}
+
+function waPostText(p) {
+  const bits = [p.hero, p.cat].filter(Boolean).map((x) => waClean(clip(x, 100)));
+  return '\ud83c\udd95 *Script baru: ' + waClean(clip(p.title, 150)) + '*' +
+    (bits.length ? '\n' + bits.join(' \u00b7 ') : '') +
+    '\n\nCek dan download di sini:\n' + SITE + p.url;
+}
+
+// Ringkasan untuk banyak post; dipangkas bila tautan wa.me akan terlalu panjang untuk tombol Telegram.
+function waSummaryText(list) {
+  const shown = list.slice(-10).reverse();
+  let text = '';
+  for (let n = shown.length; n >= 1; n--) {
+    const lines = shown.slice(0, n).map((p) => '\u2022 ' + waClean(clip(p.title, 80)) + '\n' + SITE + p.url);
+    const more = list.length - n;
+    text = '\ud83c\udd95 *' + list.length + ' script baru di Henz Script*\n\n' + lines.join('\n\n') +
+      (more > 0 ? '\n\n\u2026dan ' + more + ' lainnya' : '') + '\n\nLihat semua:\n' + SITE + '/';
+    if (waShareUrl(text).length <= 1800) break;
+  }
+  return text;
+}
+
+function waAdminMessage(text, openUrl, openLabel) {
+  const share = waShareUrl(text);
+  const rows = [];
+  if (share.length <= 2000) rows.push([{ text: 'Bagikan ke WhatsApp', url: share }]);
+  rows.push([{ text: openLabel, url: openUrl }]);
+  return {
+    text: '\ud83d\udcf2 <b>Siap dibagikan ke WhatsApp</b>\nKetuk kotak di bawah untuk menyalin, atau tekan <b>Bagikan ke WhatsApp</b> lalu pilih grup.\n\n<pre>' + htmlEsc(text) + '</pre>',
+    rows,
+  };
+}
+
+// Kirim ke chat pribadi tiap admin. Hasil: { sent, failed }. Tidak pernah melempar error.
+async function sendAdminDMs(cfg, msg) {
+  const out = { sent: 0, failed: 0 };
+  await Promise.all(cfg.admins.map(async (id) => {
+    const r = await tgCall(cfg, 'sendMessage', {
+      chat_id: id,
+      text: msg.text,
+      parse_mode: 'HTML',
+      link_preview_options: { is_disabled: true },
+      disable_notification: false,
+      reply_markup: { inline_keyboard: msg.rows },
+    });
+    if (r === 'ok') out.sent += 1;
+    else out.failed += 1;
+  }));
+  return out;
+}
+
 async function fetchPosts() {
   const r = await fetch(SITE + '/js/posts.json?t=' + Date.now(), {
     headers: { 'Cache-Control': 'no-cache' },
@@ -334,11 +407,19 @@ module.exports = async (req, res) => {
         });
       }
       let telegram = { status: 'skipped', photo: false };
-      if (tg.token) {
+      if (tg.chat) {
         telegram = await sendTelegram(tg, {
           text: 'Telegram test: if you can see this, the bot works.',
           button: { text: 'Open Henz Script', url: SITE + '/' },
         });
+      }
+      let adminDm = 'skipped';
+      if (tg.admins.length) {
+        adminDm = await sendAdminDMs(tg, waAdminMessage(
+          '*Tes bagikan ke WhatsApp*\nJika kamu melihat ini, bot bisa mengirim ke chat pribadimu.\n\n' + SITE + '/',
+          SITE + '/',
+          'Buka situs'
+        ));
       }
       res.status(200).json({
         ok: true,
@@ -349,6 +430,7 @@ module.exports = async (req, res) => {
         button: discord.button,
         telegram: telegram.status,
         telegram_topic_configured: !!tg.thread,
+        admin_dm: adminDm,
       });
       return;
     }
@@ -373,7 +455,7 @@ module.exports = async (req, res) => {
       return;
     }
     if (dry) {
-      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, ping_role_configured: !!dc.role, telegram_enabled: !!tg.token, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
+      res.status(200).json({ ok: true, dry: true, last: lastId, discord_enabled: !!dc.url, ping_role_configured: !!dc.role, telegram_enabled: !!tg.chat, admin_dm_enabled: tg.admins.length > 0, would_send: fresh.map((p) => ({ id: p.id, title: p.title })) });
       return;
     }
 
@@ -386,7 +468,8 @@ module.exports = async (req, res) => {
     let sent = 0;
     let doneId = lastId;
     const discord = { enabled: !!dc.url, ping: !!dc.role, sent: 0, failed: 0, buttons: 0, without_button: 0 };
-    const telegram = { enabled: !!tg.token, topic: !!tg.thread, sent: 0, failed: 0, photos: 0, text_only: 0 };
+    const telegram = { enabled: !!tg.chat, topic: !!tg.thread, sent: 0, failed: 0, photos: 0, text_only: 0 };
+    const whatsapp = { enabled: tg.admins.length > 0, admins: tg.admins.length, sent: 0, failed: 0 };
     const toDiscord = async (payload) => {
       const r = await sendDiscord(dc.url, payload);
       if (r.status === 'sent') {
@@ -407,13 +490,22 @@ module.exports = async (req, res) => {
         telegram.failed += 1;
       }
     };
-    // Kirim ke Discord dan Telegram bersamaan (satu jeda per pesan, bukan per tujuan, agar fungsi tetap singkat).
+    const toAdmins = async (msg) => {
+      const r = await sendAdminDMs(tg, msg);
+      whatsapp.sent += r.sent;
+      whatsapp.failed += r.failed;
+    };
+    // Kirim ke Discord, Telegram, dan chat pribadi admin (untuk WhatsApp) bersamaan (satu jeda per pesan, bukan per tujuan, agar fungsi tetap singkat).
     let announced = 0;
-    const announce = async (discordPayload, telegramMsg) => {
-      if (!dc.url && !tg.token) return;
+    const announce = async (discordPayload, telegramMsg, waMsg) => {
+      if (!dc.url && !tg.chat && !tg.admins.length) return;
       if (announced > 0) await sleep(CHAT_GAP_MS);
       announced += 1;
-      await Promise.all([dc.url ? toDiscord(discordPayload) : null, tg.token ? toTelegram(telegramMsg) : null]);
+      await Promise.all([
+        dc.url ? toDiscord(discordPayload) : null,
+        tg.chat ? toTelegram(telegramMsg) : null,
+        tg.admins.length ? toAdmins(waMsg) : null,
+      ]);
     };
     try {
       if (fresh.length <= MAX_INDIVIDUAL) {
@@ -421,18 +513,18 @@ module.exports = async (req, res) => {
           await sendToTopic(postMessage(p));
           sent += 1;
           doneId = p.id;
-          await announce(discordPostPayload(p, dc.role), telegramPostMessage(p));
+          await announce(discordPostPayload(p, dc.role), telegramPostMessage(p), waAdminMessage(waPostText(p), SITE + p.url, 'Buka post'));
         }
       } else {
         await sendToTopic(summaryMessage(fresh));
         sent = 1;
         doneId = fresh[fresh.length - 1].id;
-        await announce(discordSummaryPayload(fresh, dc.role), telegramSummaryMessage(fresh));
+        await announce(discordSummaryPayload(fresh, dc.role), telegramSummaryMessage(fresh), waAdminMessage(waSummaryText(fresh), SITE + '/', 'Buka situs'));
       }
     } finally {
       if (doneId > lastId) await redis.set(LAST_KEY, doneId); // simpan kemajuan walau gagal di tengah, supaya tidak terkirim dobel
     }
-    res.status(200).json({ ok: true, sent, last: doneId, discord, telegram });
+    res.status(200).json({ ok: true, sent, last: doneId, discord, telegram, whatsapp });
   } catch (err) {
     console.error('push-notify:', err && err.message);
     res.status(502).json({ error: 'Gagal: ' + (err && err.message ? err.message : 'unknown') });
