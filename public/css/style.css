@@ -839,7 +839,7 @@ body.page-hero .henz-page{padding-top:35px;padding-bottom:0}
 .hz-footer-legal a{color:#777;text-decoration:none;transition:color .15s}
 .hz-footer-legal a:hover{color:#111}
 .hz-footer-legal span{color:#ccc}
-@media(max-width:600px){.hz-footer-bottom{--hz-fb-pb:88px;flex-direction:column;text-align:center;padding-left:20px;padding-right:20px}}
+@media(max-width:600px){.hz-footer-bottom{--hz-fb-pb:20px;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding-left:20px;padding-right:76px}}
 /* ── 404 PAGE ── */
 body.page-404 .henz-page{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 80px);padding-top:80px}
 .hz-404-wrap{width:100%;display:flex;justify-content:center;padding:32px 20px}
