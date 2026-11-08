@@ -919,7 +919,7 @@ function injectSeoMetaAll() {
   const latestByHero = latestThumbBy((p) => (p.hero ? slugify(p.hero) : ''));
   const latestByCat = latestThumbBy((p) => (p.cat ? slugify(p.cat) : ''));
   const STATIC_NAMES = {
-    'daftar-hero.html': 'Daftar Hero', 'kategori-skin.html': 'Kategori Skin', 'tutorial.html': 'Tutorial', 'socials.html': 'Socials',
+    'daftar-hero.html': 'Daftar Hero', 'kategori-skin.html': 'Kategori Skin', 'tutorial.html': 'Tutorial', 'socials.html': 'Socials', 'credits.html': 'Credits',
     'request-script.html': 'Request Script', 'kebijakan-privasi.html': 'Kebijakan Privasi', 'syarat-ketentuan.html': 'Syarat & Ketentuan',
   };
   const attr = (v) => String(v).replace(/"/g, '&quot;');
@@ -1128,6 +1128,8 @@ function generateSitemapAndRobots() {
   addSitemapUrl('/request-script', {changefreq: 'monthly', priority: 0.4, category: 'page'});
   addSitemapUrl('/search', {changefreq: 'monthly', priority: 0.3, category: 'page'});
   addSitemapUrl('/socials', {changefreq: 'monthly', priority: 0.3, category: 'page'});
+  // Credits disembunyikan sementara dari sitemap (halaman /credits tetap ada). Aktifkan lagi saat siap dirilis:
+  // addSitemapUrl('/credits', {changefreq: 'monthly', priority: 0.3, category: 'page'});
   addSitemapUrl('/tutorial', {changefreq: 'monthly', priority: 0.5, category: 'page'});
   addSitemapUrl('/kebijakan-privasi', {changefreq: 'yearly', priority: 0.2, category: 'page'});
   addSitemapUrl('/syarat-ketentuan', {changefreq: 'yearly', priority: 0.2, category: 'page'});
