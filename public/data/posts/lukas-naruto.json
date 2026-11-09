@@ -173,44 +173,52 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero1271-icon.png",
-        "link": "https://sfile.co/yYPdgIPngqX"
+        "link": "https://sfile.co/yYPdgIPngqX",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero1271-icon.png",
-        "link": "https://sfile.co/HLIXbKqctsS"
+        "link": "https://sfile.co/HLIXbKqctsS",
+        "fixSfx": true
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ce/Hero1272-icon.png",
-        "link": "https://sfile.co/ipZXdKqJYN5"
+        "link": "https://sfile.co/ipZXdKqJYN5",
+        "fixSfx": true
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ce/Hero1272-icon.png",
-        "link": "https://sfile.co/cX7Mxy7UbcC"
+        "link": "https://sfile.co/cX7Mxy7UbcC",
+        "fixSfx": true
       }
     ],
     "rowsTab2": [
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero1271-icon.png",
-        "link": "https://sfile.co/wG4Wr8C89aC"
+        "link": "https://sfile.co/wG4Wr8C89aC",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/1/1c/Hero1271-icon.png",
-        "link": "https://sfile.co/hFggHJQW7Dr"
+        "link": "https://sfile.co/hFggHJQW7Dr",
+        "fixSfx": true
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ce/Hero1272-icon.png",
-        "link": "https://sfile.co/eKAeQkHNbsX"
+        "link": "https://sfile.co/eKAeQkHNbsX",
+        "fixSfx": true
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ce/Hero1272-icon.png",
-        "link": "https://sfile.co/aHoziFmuqzx"
+        "link": "https://sfile.co/aHoziFmuqzx",
+        "fixSfx": true
       }
     ]
   },
