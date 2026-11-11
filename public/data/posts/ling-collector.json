@@ -4,7 +4,7 @@
   "urlthumbnail": "https://i.ibb.co/DDX4NQBM/ling-collector.webp",
   "kategoriskin": "Collector",
   "keywords": "Ling Serene Plume",
-  "datepost": "Update 8 Nov 2026",
+  "datepost": "Update 11 Nov 2026",
   "authorname": "Henz MLBB",
   "longstory": "Ling adalah anggota berbakat dari Finch Sect, kelompok pembunuh rahasia yang terkenal di Cadia Riverlands. Sejak kecil ia dilatih menjadi pembunuh tanpa kebebasan untuk menentukan jalan hidupnya sendiri. Keahliannya melampaui murid lain, membuatnya dijuluki sebagai ninja terbaik di sekte tersebut. Meski selalu berhasil menyelesaikan misi, Ling mulai mempertanyakan arti hidupnya setelah bertemu Zilong, seorang pendekar yang hidup mengikuti keyakinannya sendiri.\n\nDalam sebuah misi untuk membunuh Baxia, penjaga Dragon Altar, Ling mengalami kekalahan telak dan hampir kehilangan nyawanya. Di ambang kematian, roh Vermilion Bird muncul dan menyelamatkannya. Baxia kemudian membawa Ling ke Dragon Altar, tempat ia hidup bersama Baxia dan Zilong. Selama berada di sana, Ling merasakan kehidupan yang damai dan mulai memahami arti persahabatan, kebebasan, serta alasan seseorang bertarung.\n\nNamun, kesetiaannya kepada Finch Sect belum benar-benar berakhir. Atas perintah sang tetua, Ling menyusup ke Dragon Altar untuk mencari segel terlarang. Aksinya diketahui Baxia dan memicu pertarungan sengit yang akhirnya dihentikan oleh Zilong. Dari kejadian itu, Ling menyadari bahwa baik Finch Sect maupun Dragon Altar sama-sama memiliki tujuan masing-masing, sementara dirinya masih terjebak dalam belenggu masa lalu.\n\nBeberapa tahun kemudian, Finch Sect bersekutu dengan Yu Zhong untuk menyerang Dragon Altar. Ling ikut dalam serangan tersebut, tetapi kembali dikalahkan oleh Zilong. Saat kehilangan arah, ia kembali bertemu dengan roh Vermilion Bird. Untuk pertama kalinya, roh itu berbicara dan menjelaskan bahwa penjara sejati bukanlah tempat, melainkan hati yang tidak bebas. Vermilion Bird mengungkapkan bahwa kekuatannya selama ini diberikan kepada Ling agar ia dapat hidup dan menemukan jalannya sendiri.\n\nSetelah memahami kebenaran itu, Ling akhirnya melepaskan belenggu yang selama ini mengikatnya. Ia menerima warisan kekuatan Vermilion Bird, bukan sebagai alat untuk membunuh, melainkan sebagai simbol kebebasan dan harapan. Dengan semangat baru dan sayap biru yang membara, Ling meninggalkan masa lalunya sebagai pembunuh Finch Sect dan terbang bebas sebagai Cyan Finch, siap melindungi Cadia Riverlands dengan kehendaknya sendiri.",
   "dualTabNames": {
@@ -173,37 +173,44 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero841-icon.png",
-        "link": "https://sfile.co/X96QuhXWJBi"
+        "link": "https://sfile.co/MywbzBUHgPI",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/ca/Hero841-icon.png",
-        "link": "https://sfile.co/lyiyYGtZsED"
+        "link": "https://sfile.co/DgTqsSxi0VY",
+        "fixSfx": true
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Hero842-icon.png",
-        "link": "https://sfile.co/AB0Qrqtsry6"
+        "link": "https://sfile.co/B04p0uS1dKR",
+        "fixSfx": true
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/c/cc/Hero842-icon.png",
-        "link": "https://sfile.co/BasLEqtDaaI"
+        "link": "https://sfile.co/7ROl9tuJyqz",
+        "fixSfx": true
       },
       {
         "name": "Starlight",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/56/Hero843-icon.png",
-        "link": "https://sfile.co/7LyvAC0GCvD"
+        "link": "https://sfile.co/mAUNb5iltur",
+        "fixSfx": true
       },
       {
         "name": "Dragon Tamer",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/de/Hero844-icon.png",
-        "link": "https://sfile.co/rqadH7Vf0NJ"
+        "link": "https://sfile.co/DaT8l1C9eKp",
+        "fixSfx": true
       },
       {
         "name": "Special",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/da/Hero845-icon.png",
-        "link": "https://sfile.co/xTEDQupy1sw"
+        "link": "https://sfile.co/MpL9DJvEXXq",
+        "fixSfx": true
       },
       {
         "name": "M World",
