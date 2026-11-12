@@ -262,8 +262,9 @@ document.querySelectorAll('.hz-search-form-js').forEach(function(form){
   hv2.addEventListener('blur',function(){this.placeholder='Cari';});
 })();
 
-/* URL berkas data (posts/heroes/categories/hero-popular): ?v=<id build> dari window.hzDataUrl (prolog bundle, lihat build.js) supaya
-   bisa di-cache lama oleh browser dan otomatis baru tiap deploy. Tanpa prolog (berkas mentah): ?t=waktu seperti sebelumnya. */
+/* URL berkas data (posts/heroes/categories/hero-popular): ?v=<hash isi berkas> dari window.hzDataUrl (prolog bundle + window.HZ_DV di
+   tiap HTML, lihat build.js) supaya bisa di-cache lama oleh browser dan baru berganti saat isi berkasnya berganti. Tanpa itu
+   (berkas mentah): ?t=waktu seperti sebelumnya. */
 function hzDataUrl(f){return window.hzDataUrl?window.hzDataUrl(f):'/js/'+f+'?t='+Date.now();}
 
 /* Fetch posts.json */

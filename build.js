@@ -5,6 +5,7 @@
 */
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const SRC_DIR = path.join(__dirname, 'public');
 const OUT_DIR = path.join(__dirname, 'dist');
@@ -12,14 +13,22 @@ const PARTIALS_DIR = path.join(SRC_DIR, 'partials');
 
 /* Domain resmi — dipakai buat canonical, Open Graph, dan sitemap.xml */
 const BASE_URL = 'https://www.henzscript.com';
-/* Cache-busting: setiap kali build.js dijalankan, semua link css/js dapat query ?v=xxx baru,
-   jadi browser TIDAK BOLEH pakai cache lama begitu file di-deploy ulang. Ini akar solusi dari
-   berulangnya kasus "user test pakai file/versi lama yang ke-cache di browser". */
+/* Cache-busting berbasis ISI FILE: link css/js dan berkas data JSON mendapat ?v=<hash isi>. Selama isi sebuah berkas tidak
+   berubah, URL-nya tetap sama, jadi cache browser pengunjung lama tetap terpakai (di vercel.json berkas ini immutable).
+   Begitu isinya berubah, hash-nya berubah dan browser otomatis mengambil yang baru, jadi tidak ada lagi kasus "user test pakai
+   file/versi lama yang ke-cache". Dulu ?v= memakai waktu build, sehingga SETIAP deploy (termasuk deploy yang hanya menambah post)
+   membuang cache CSS+JS semua pengunjung walau isinya tidak berubah. CACHE_BUST (waktu) kini hanya sisa untuk placeholder
+   __HZ_BUILD__ opsional di sw.js (lihat buildServiceWorker). */
 const CACHE_BUST = Date.now();
+function contentHash(data) { return crypto.createHash('sha1').update(data).digest('hex').slice(0, 10); }
+const DATA_FILES = ['posts.json', 'heroes.json', 'categories.json', 'hero-popular.json'];
+let ASSET_V = null; // { bundle, css, js, data:{nama-file: hash} } -- diisi sekali oleh computeAssetVersions() sebelum halaman ditulis
 function injectCacheBust(html) {
+  /* window.HZ_DV (hash tiap berkas data) disuntik tepat sebelum <script src="/js/app.js">, supaya terbaca oleh window.hzDataUrl. */
+  const dv = '<script>window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';</script>';
   return html
-    .replace(/(href="\/css\/style\.css)(")/g, `$1?v=${CACHE_BUST}$2`)
-    .replace(/(src="\/js\/app\.js)(")/g, `$1?v=${CACHE_BUST}$2`);
+    .replace(/(href="\/css\/style\.css)(")/g, (m, a, b) => a + '?v=' + ASSET_V.css + b)
+    .replace(/(<script\b[^>]*?\bsrc="\/js\/app\.js)(")/g, (m, a, b) => dv + a + '?v=' + ASSET_V.js + b);
 }
 /* Gabungan browser bundle: card-template.js (harus lebih dulu, karena main.js
    memakai window.hzCard yang dibentuk file ini) + main.js, ditulis ulang tiap
@@ -27,7 +36,7 @@ function injectCacheBust(html) {
    File sumber public/js/card-template.js & public/js/main.js TETAP ada apa
    adanya (card-template.js masih dipakai build.js sendiri lewat require() di
    bawah), cuma browser tidak lagi diarahkan ke keduanya secara terpisah. */
-function buildAppBundle() {
+function makeAppBundle() {
   const cardTemplateSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'card-template.js'), 'utf8');
   const mainSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'main.js'), 'utf8');
   const floatingMenuSrc = fs.readFileSync(path.join(SRC_DIR, 'js', 'floating-menu.js'), 'utf8');
@@ -35,11 +44,25 @@ function buildAppBundle() {
   /* Menu melayang + riwayat script (floating-menu.js) ditaruh paling akhir; ';' pemisah mencegah
      main.js yang berakhir tanpa titik-koma "menyambung" ke IIFE di file berikutnya. */
   /* Notifikasi (notify.js: lonceng + popup + Firebase lazy) paling akhir; floating-menu.js berakhir dengan ';' sendiri. */
-  /* Prolog: id build (sama dengan ?v= CSS/JS) + pembentuk URL berkas data. Dipakai main.js/floating-menu.js/notify.js untuk meminta
-     posts.json, heroes.json, categories.json, hero-popular.json dengan ?v=<id build>: browser boleh menyimpannya lama (vercel.json),
-     tapi tiap deploy URL-nya otomatis baru, jadi data tidak pernah basi. Tanpa prolog ini, tiap pemakai kembali ke ?t=waktu (selalu segar). */
-  const prolog = "window.HZ_BUILD='" + CACHE_BUST + "';window.hzDataUrl=function(f){return '/js/'+f+'?v='+window.HZ_BUILD;};\n";
-  const bundle = prolog + cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc + '\n;\n' + notifySrc;
+  /* Prolog: pembentuk URL berkas data (posts/heroes/categories/hero-popular) dari window.HZ_DV, objek {nama-file: hash isi} yang
+     disuntik build.js ke setiap HTML (lihat injectCacheBust). URL ?v=<hash isi> boleh di-cache lama (vercel.json) dan baru berganti
+     kalau isi berkasnya berganti. Prolog SENGAJA tidak memuat id build/waktu: isi app.js harus identik antar-build selama sumbernya
+     tidak berubah, supaya hash isinya (dan URL app.js) tidak ikut berganti di tiap deploy. Tanpa HZ_DV, kembali ke ?t=waktu. */
+  const prolog = "window.hzDataUrl=function(f){var d=window.HZ_DV;return '/js/'+f+'?'+(d&&d[f]?'v='+d[f]:'t='+Date.now());};\n";
+  return prolog + cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc + '\n;\n' + notifySrc;
+}
+/* Dihitung SEKALI sebelum halaman ditulis (HTML disuntik ?v= saat copyRecursive), dari sumber yang akan dipakai dist. */
+function computeAssetVersions() {
+  const bundle = makeAppBundle();
+  const data = {};
+  DATA_FILES.forEach((f) => {
+    const p = path.join(SRC_DIR, 'js', f);
+    if (fs.existsSync(p)) data[f] = contentHash(fs.readFileSync(p));
+  });
+  return { bundle, css: contentHash(fs.readFileSync(path.join(SRC_DIR, 'css', 'style.css'))), js: contentHash(bundle), data };
+}
+function buildAppBundle() {
+  const bundle = ASSET_V.bundle;
   const jsOutDir = path.join(OUT_DIR, 'js');
   fs.mkdirSync(jsOutDir, { recursive: true });
   fs.writeFileSync(path.join(jsOutDir, 'app.js'), bundle, 'utf8');
@@ -206,6 +229,8 @@ function copyRecursive(srcDir, outDir) {
 
 console.log('Building site...');
 if (fs.existsSync(OUT_DIR)) fs.rmSync(OUT_DIR, { recursive: true, force: true });
+ASSET_V = computeAssetVersions();
+console.log('versi aset (hash isi): css ' + ASSET_V.css + ', js ' + ASSET_V.js + ', data ' + JSON.stringify(ASSET_V.data));
 copyRecursive(SRC_DIR, OUT_DIR);
 buildAppBundle();
 buildServiceWorker();
@@ -1242,6 +1267,12 @@ function verifyDist() {
     need(a.length >= 50000, 'sumber public/css/style.css terlalu kecil (' + a.length + ' byte)');
     need(a.equals(c), 'dist/css/style.css tidak sama dengan sumbernya');
   }
+  /* Versi ?v= (hash isi) yang ditulis ke HTML harus cocok dengan isi berkas yang BENAR-BENAR ada di dist; kalau tidak, browser
+     bisa menyimpan isi yang salah di bawah URL yang di-cache 1 tahun. */
+  const hashOf = (rel) => { const p = path.join(OUT_DIR, rel); return fs.existsSync(p) ? contentHash(fs.readFileSync(p)) : null; };
+  need(hashOf('css/style.css') === ASSET_V.css, 'versi css (?v=) tidak cocok dengan isi dist/css/style.css');
+  need(hashOf('js/app.js') === ASSET_V.js, 'versi js (?v=) tidak cocok dengan isi dist/js/app.js');
+  DATA_FILES.forEach((f) => { if (ASSET_V.data[f] !== undefined) need(hashOf('js/' + f) === ASSET_V.data[f], 'versi data ' + f + ' tidak cocok dengan isi dist/js/' + f); });
   ['js/app.js', 'sw.js', 'manifest.webmanifest', 'sitemap_index.xml'].forEach((f) => {
     const p = path.join(OUT_DIR, f);
     need(fs.existsSync(p) && fs.statSync(p).size > 500, 'dist/' + f + ' tidak ada atau terlalu kecil');
@@ -1255,6 +1286,8 @@ function verifyDist() {
     const html = fs.readFileSync(f, 'utf8');
     need(html.indexOf('</head>') !== -1 && html.indexOf('</body>') !== -1, rel + ': struktur <head>/<body> tidak lengkap');
     if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css') !== -1, rel + ': tidak memuat /css/style.css');
+    if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css?v=' + ASSET_V.css + '"') !== -1, rel + ': ?v= css tidak sesuai hash isi');
+    if (html.indexOf('/js/app.js') !== -1) need(html.indexOf('src="/js/app.js?v=' + ASSET_V.js + '"') !== -1 && html.indexOf('window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';') !== -1, rel + ': ?v= app.js / window.HZ_DV tidak sesuai hash isi');
     const ph = html.match(/\{\{[A-Z0-9_]{3,}\}\}/);
     need(!ph, rel + ': placeholder template tersisa ' + (ph ? ph[0] : ''));
     const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
