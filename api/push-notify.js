@@ -40,6 +40,8 @@ const redis = new Redis({
 });
 
 const SITE = 'https://www.henzscript.com';
+// Ikon notifikasi dari jsDelivr (dipatok ke hash commit) supaya tidak membebani Vercel. Ganti hash bila PNG diganti (lihat build.js).
+const ICON_URL = 'https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@59fbdc721420f310a774e85de992c5d0045f78ed/public/icons/icon-192.png';
 const LAST_KEY = 'push:last_notified_id';
 const LOCK_KEY = 'push:lock';
 const MAX_INDIVIDUAL = 3;
@@ -261,7 +263,7 @@ function postMessage(p) {
     title: 'Script baru: ' + String(p.title),
     body: (bits.length ? bits.join(' \u00b7 ') + ' \u2014 ' : '') + 'ketuk untuk melihat.',
     url: p.url, // path relatif: service worker membukanya di origin tempat pelanggan mendaftar (www atau tanpa www)
-    icon: SITE + '/icons/icon-192.png',
+    icon: ICON_URL,
     tag: 'post-' + p.id,
   };
   if (typeof p.thumb === 'string' && /^https:\/\//i.test(p.thumb)) data.image = p.thumb;
@@ -274,7 +276,7 @@ function summaryMessage(list) {
     title: list.length + ' script baru di Henz MLBB',
     body: names + (list.length > 3 ? ', dan lainnya' : ''),
     url: '/',
-    icon: SITE + '/icons/icon-192.png',
+    icon: ICON_URL,
     tag: 'post-batch',
   };
 }
@@ -482,7 +484,7 @@ module.exports = async (req, res) => {
         title: 'Tes notifikasi Henz MLBB',
         body: 'Kalau kamu melihat ini, notifikasi berfungsi dengan baik.',
         url: '/',
-        icon: SITE + '/icons/icon-192.png',
+        icon: ICON_URL,
         tag: 'test',
       });
       const wantPing = body.ping === true;

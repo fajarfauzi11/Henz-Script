@@ -19,6 +19,9 @@ var PAGE_CACHE = 'hz-pages-' + BUILD;
 var OFFLINE_URL = '/offline';
 var MAX_PAGES = 30;
 var MAX_STATIC = 120;
+/* Ikon notifikasi: disajikan lewat jsDelivr (dipatok ke hash commit), bukan dari Vercel. Kalau PNG diganti, ganti hash-nya juga di
+   build.js, public/manifest.webmanifest, dan api/push-notify.js. */
+var ICON_URL = 'https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@59fbdc721420f310a774e85de992c5d0045f78ed/public/icons/icon-192.png';
 
 self.addEventListener('install', function(event){
   event.waitUntil(
@@ -128,8 +131,8 @@ self.addEventListener('push', function(event){
   var title = String(d.title || 'Henz MLBB');
   var opts = {
     body: String(d.body || ''),
-    icon: d.icon || '/icons/icon-192.png',
-    badge: '/icons/icon-192.png',
+    icon: d.icon || ICON_URL,
+    badge: ICON_URL,
     tag: d.tag || undefined,
     renotify: !!d.tag,
     data: { url: d.url || '/' }

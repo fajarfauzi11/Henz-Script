@@ -125,10 +125,13 @@ function injectThemeInit(html) {
 }
 
 /* PWA ("Install Aplikasi"): manifest + ikon layar utama iOS disisipkan ke <head> semua halaman.
-   - <link rel="apple-touch-icon"> yang sudah ada (favicon 64px dari jsDelivr) diganti ke ikon lokal 180px.
-   - Ikon aplikasi ada di public/icons/ (sementara: logo header di atas warna brand; ganti file PNG-nya dengan ikon final).
+   - <link rel="apple-touch-icon"> yang sudah ada (favicon 64px dari jsDelivr) diganti ke ikon 180px.
+   - Ikon aplikasi ada di public/icons/ dan disajikan lewat jsDelivr (ICON_CDN, dipatok ke hash commit) supaya tidak jadi request ke
+     Vercel di setiap kunjungan. Kalau file PNG-nya diganti: commit dulu, lalu ganti hash di 4 tempat: ICON_CDN di build.js,
+     public/manifest.webmanifest, ICON_URL di public/sw.js, dan ICON_URL di api/push-notify.js.
    Aman dipanggil berulang: kalau <link rel="manifest"> sudah ada, dilewati. */
-const PWA_APPLE_ICON = '<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>';
+const ICON_CDN = 'https://cdn.jsdelivr.net/gh/fajarfauzi11/Henz-Script@59fbdc721420f310a774e85de992c5d0045f78ed/public/icons/';
+const PWA_APPLE_ICON = '<link rel="apple-touch-icon" href="' + ICON_CDN + 'apple-touch-icon.png"/>';
 function injectPwaHead(html) {
   if (html.indexOf('hz-bare') !== -1) return html;
   if (/<link\b[^>]*rel=["']manifest["']/i.test(html)) return html;
@@ -853,7 +856,7 @@ function hzApplySoonFallback(html) {
    - Halaman lain (beranda, hero, kategori, hub, tutorial, dst.): injectSeoMetaAll() menyuntik OG + JSON-LD di akhir build,
      memakai <title>, meta description, dan canonical yang SUDAH ada di tiap halaman. Idempoten (lewati yang sudah punya). */
 const SEO_SITE_NAME = 'Henz MLBB';
-const SEO_DEFAULT_IMAGE = BASE_URL + '/icons/icon-512.png';
+const SEO_DEFAULT_IMAGE = ICON_CDN + 'icon-512.png';
 const SEO_SAME_AS = ['https://www.youtube.com/@henzthesixth', 'https://t.me/henzcorps', 'https://whatsapp.com/channel/0029VbDXzYMId7nKuFlKs73B'];
 const ID_MONTH_ANY = { jan: '01', januari: '01', feb: '02', februari: '02', mar: '03', maret: '03', apr: '04', april: '04', mei: '05', may: '05', jun: '06', juni: '06', jul: '07', juli: '07', agu: '08', agt: '08', agustus: '08', aug: '08', sep: '09', sept: '09', september: '09', okt: '10', oktober: '10', oct: '10', nov: '11', november: '11', des: '12', desember: '12', dec: '12' };
 /* Tanggal di data post bervariasi: "8 September 2026", "3 Okt 2026", "Update 8 Sep 2026" -> "2026-09-08" */
