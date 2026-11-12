@@ -112,7 +112,25 @@
     if(!('serviceWorker' in navigator)) return;
     var host = location.hostname;
     if(location.protocol !== 'https:' && host !== 'localhost' && host !== '127.0.0.1') return;
-    var go = function(){ navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){}); };
+    /* Chrome memeriksa sw.js pada SETIAP navigasi ke halaman yang dikontrol SW (balasan 304 pun tetap dihitung sebagai request
+       ke Vercel). Dengan updateViaCache bawaan ('imports') pemeriksaan itu melewati cache HTTP, jadi tidak bisa dihemat.
+       Karena itu SW didaftarkan dengan updateViaCache:'all' dan sw.js diberi Cache-Control max-age pendek di vercel.json:
+       pemeriksaan saat navigasi dilayani dari cache HTTP, dan baru ke jaringan setelah max-age habis.
+       - Daftar hanya kalau belum ada registrasi yang hidup, atau registrasi lama masih memakai updateViaCache bawaan
+         (pengunjung lama dialihkan sekali, setelah itu tidak mendaftar ulang di tiap halaman).
+       - Jaring pengaman: update() dipanggil paling sering sekali per 24 jam (penanda waktu di localStorage: hz_sw_chk). */
+    var SW_CHK = 'hz_sw_chk', SW_DAY = 86400000;
+    var stamp = function(){ try{ localStorage.setItem(SW_CHK, String(Date.now())); }catch(err){} };
+    var reg = function(){ stamp(); return navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'all' }).catch(function(){}); };
+    var go = function(){
+      if(!navigator.serviceWorker.getRegistration){ reg(); return; }
+      navigator.serviceWorker.getRegistration('/').then(function(r){
+        if(!r || !(r.active || r.waiting || r.installing) || r.updateViaCache !== 'all'){ reg(); return; }
+        var last = 0;
+        try{ last = parseInt(localStorage.getItem(SW_CHK) || '0', 10) || 0; }catch(err){}
+        if(Date.now() - last > SW_DAY){ stamp(); r.update().catch(function(){}); }
+      }).catch(function(){ reg(); });
+    };
     if(document.readyState === 'complete') go(); else window.addEventListener('load', go);
   }
   registerServiceWorker();

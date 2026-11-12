@@ -9,9 +9,11 @@
      (skrip iklan tidak boleh diubah atau di-cache)
    - non-GET, permintaan Range, /api/* (penghitung tampilan), /js/posts.json dan /data/* (harus selalu segar), /_vercel/*, sitemap/xml, sw.js.
 
-   Placeholder id build pada variabel BUILD di bawah diganti build.js di setiap deploy. Akibatnya file ini berubah di setiap
-   deploy, browser memasang versi baru, dan cache versi lama dihapus otomatis saat aktivasi. */
-var BUILD = '__HZ_BUILD__';
+   Versi SW (variabel BUILD di bawah) SENGAJA statis dan TIDAK lagi diganti build.js di setiap deploy. Dulu file ini berubah di
+   setiap deploy, sehingga tiap pengunjung memasang SW baru dan mengunduh ulang /offline setiap kali ada deploy. Aset statis sudah
+   ber-?v=<id build> (CSS/JS), jadi tidak ada risiko memakai berkas lama. NAIKKAN nilai BUILD secara manual (mis. 'v2') HANYA kalau
+   logika atau penamaan cache di file ini berubah; saat aktivasi, cache versi lama dihapus otomatis. */
+var BUILD = 'v1';
 var STATIC_CACHE = 'hz-static-' + BUILD;
 var PAGE_CACHE = 'hz-pages-' + BUILD;
 var OFFLINE_URL = '/offline';

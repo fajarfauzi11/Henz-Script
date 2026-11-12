@@ -151,14 +151,20 @@ function injectE2eInit(html) {
   return html.replace(/<meta\b[^>]*name=["']viewport["'][^>]*>/i, (m) => m + E2E_INIT_SCRIPT);
 }
 
-/* Service worker: __HZ_BUILD__ diganti id build (CACHE_BUST) supaya sw.js berubah di setiap deploy
-   (browser memasang versi baru dan cache versi lama dihapus otomatis). */
+/* Service worker: versi SW (var BUILD di public/sw.js) sekarang STATIS dan dinaikkan manual, supaya sw.js TIDAK berubah di
+   setiap deploy (dulu tiap deploy memaksa semua pengunjung memasang SW baru + mengunduh ulang /offline). Placeholder
+   __HZ_BUILD__ tetap diganti id build bila suatu saat dipakai lagi, tapi sw.js saat ini tidak memakainya. */
 function buildServiceWorker() {
   const swPath = path.join(OUT_DIR, 'sw.js');
   if (!fs.existsSync(swPath)) return;
   const src = fs.readFileSync(swPath, 'utf8');
-  fs.writeFileSync(swPath, src.split('__HZ_BUILD__').join(String(CACHE_BUST)), 'utf8');
-  console.log('built: sw.js (build id ' + CACHE_BUST + ')');
+  if (src.indexOf('__HZ_BUILD__') !== -1) {
+    fs.writeFileSync(swPath, src.split('__HZ_BUILD__').join(String(CACHE_BUST)), 'utf8');
+    console.log('built: sw.js (build id ' + CACHE_BUST + ')');
+  } else {
+    const m = src.match(/var BUILD = '([^']+)'/);
+    console.log('built: sw.js (versi SW statis ' + (m ? m[1] : '?') + ', tidak berubah tiap deploy)');
+  }
 }
 
 function processHtml(content) {
