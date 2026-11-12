@@ -262,9 +262,13 @@ document.querySelectorAll('.hz-search-form-js').forEach(function(form){
   hv2.addEventListener('blur',function(){this.placeholder='Cari';});
 })();
 
+/* URL berkas data (posts/heroes/categories/hero-popular): ?v=<id build> dari window.hzDataUrl (prolog bundle, lihat build.js) supaya
+   bisa di-cache lama oleh browser dan otomatis baru tiap deploy. Tanpa prolog (berkas mentah): ?t=waktu seperti sebelumnya. */
+function hzDataUrl(f){return window.hzDataUrl?window.hzDataUrl(f):'/js/'+f+'?t='+Date.now();}
+
 /* Fetch posts.json */
 function hzFetchPosts(cb){
-  fetch('/js/posts.json?t='+Date.now())
+  fetch(hzDataUrl('posts.json'))
     .then(function(r){return r.json();})
     .then(function(d){
       var list=Array.isArray(d)?d:[];
@@ -439,8 +443,8 @@ if(document.getElementById('hz-swiper-latest')){
 var hzSwiperHeroPopular=hzInitHeroSwiper('hz-swiper-hero-popular');
 if(document.getElementById('hz-hero-popular-wrapper')){
   Promise.all([
-    fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
-    fetch('/js/hero-popular.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];})
+    fetch(hzDataUrl('heroes.json')).then(function(r){return r.json();}).catch(function(){return [];}),
+    fetch(hzDataUrl('hero-popular.json')).then(function(r){return r.json();}).catch(function(){return [];})
   ]).then(function(res){
     var heroes=Array.isArray(res[0])?res[0]:[];
     var keys=Array.isArray(res[1])?res[1]:[];
@@ -565,9 +569,9 @@ function hzRankSuggestions(qVal,heroes,cats,popular){
 }
 function hzBuildSuggestions(qVal,callback){
   Promise.all([
-    fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
-    fetch('/js/categories.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {};}),
-    fetch('/js/hero-popular.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];})
+    fetch(hzDataUrl('heroes.json')).then(function(r){return r.json();}).catch(function(){return [];}),
+    fetch(hzDataUrl('categories.json')).then(function(r){return r.json();}).catch(function(){return {};}),
+    fetch(hzDataUrl('hero-popular.json')).then(function(r){return r.json();}).catch(function(){return [];})
   ]).then(function(res){
     callback(hzRankSuggestions(qVal,res[0]||[],res[1]||{},res[2]||[]));
   }).catch(function(){callback([]);});
@@ -764,9 +768,9 @@ if(document.getElementById('hz-search-heading')){
     loading=[cb];
     Promise.all([
       new Promise(function(res){hzFetchPosts(res);}),
-      fetch('/js/heroes.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];}),
-      fetch('/js/categories.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return {};}),
-      fetch('/js/hero-popular.json?t='+Date.now()).then(function(r){return r.json();}).catch(function(){return [];})
+      fetch(hzDataUrl('heroes.json')).then(function(r){return r.json();}).catch(function(){return [];}),
+      fetch(hzDataUrl('categories.json')).then(function(r){return r.json();}).catch(function(){return {};}),
+      fetch(hzDataUrl('hero-popular.json')).then(function(r){return r.json();}).catch(function(){return [];})
     ]).then(function(r){
       data={posts:r[0]||[],heroes:r[1]||[],cats:r[2]||{},popular:r[3]||[]};
       var q=loading;loading=null;
@@ -1000,7 +1004,7 @@ if(document.getElementById('hz-search-heading')){
 /* Daftar Hero Page */
 if(document.getElementById('hz-dh-sections')){
   var hzDhLimit=window.matchMedia('(max-width:768px)').matches?6:12;
-  fetch('/js/heroes.json?t='+Date.now())
+  fetch(hzDataUrl('heroes.json'))
     .then(function(r){return r.json();})
     .then(function(d){hzDhInit(Array.isArray(d)?d:[]);})
     .catch(function(){hzDhInit([]);});

@@ -35,7 +35,11 @@ function buildAppBundle() {
   /* Menu melayang + riwayat script (floating-menu.js) ditaruh paling akhir; ';' pemisah mencegah
      main.js yang berakhir tanpa titik-koma "menyambung" ke IIFE di file berikutnya. */
   /* Notifikasi (notify.js: lonceng + popup + Firebase lazy) paling akhir; floating-menu.js berakhir dengan ';' sendiri. */
-  const bundle = cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc + '\n;\n' + notifySrc;
+  /* Prolog: id build (sama dengan ?v= CSS/JS) + pembentuk URL berkas data. Dipakai main.js/floating-menu.js/notify.js untuk meminta
+     posts.json, heroes.json, categories.json, hero-popular.json dengan ?v=<id build>: browser boleh menyimpannya lama (vercel.json),
+     tapi tiap deploy URL-nya otomatis baru, jadi data tidak pernah basi. Tanpa prolog ini, tiap pemakai kembali ke ?t=waktu (selalu segar). */
+  const prolog = "window.HZ_BUILD='" + CACHE_BUST + "';window.hzDataUrl=function(f){return '/js/'+f+'?v='+window.HZ_BUILD;};\n";
+  const bundle = prolog + cardTemplateSrc + '\n' + mainSrc + '\n;\n' + floatingMenuSrc + '\n;\n' + notifySrc;
   const jsOutDir = path.join(OUT_DIR, 'js');
   fs.mkdirSync(jsOutDir, { recursive: true });
   fs.writeFileSync(path.join(jsOutDir, 'app.js'), bundle, 'utf8');

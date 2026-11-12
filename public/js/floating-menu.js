@@ -315,7 +315,7 @@
     function pruneAgainstIndex(){
       if(pruned) return;
       pruned = true;
-      fetch('/js/posts.json')
+      fetch(window.hzDataUrl ? window.hzDataUrl('posts.json') : '/js/posts.json?t=' + Date.now())
         .then(function(r){ if(!r.ok) throw new Error('posts.json'); return r.json(); })
         .then(function(posts){
           if(!Array.isArray(posts)) return;

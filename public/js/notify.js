@@ -93,7 +93,7 @@
     return m;
   }
   function loadPosts(){
-    return fetch('/js/posts.json?t=' + Date.now())
+    return fetch(window.hzDataUrl ? window.hzDataUrl('posts.json') : '/js/posts.json?t=' + Date.now())
       .then(function(r){ if(!r.ok) throw new Error('posts'); return r.json(); })
       .then(function(d){
         var list = Array.isArray(d) ? d : [];

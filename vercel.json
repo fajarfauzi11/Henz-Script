@@ -5,8 +5,37 @@
   "headers": [
     {
       "source": "/js/posts.json",
+      "missing": [{ "type": "query", "key": "v" }],
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/js/posts.json",
+      "has": [{ "type": "query", "key": "v" }],
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/heroes.json",
+      "has": [{ "type": "query", "key": "v" }],
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/hero-popular.json",
+      "has": [{ "type": "query", "key": "v" }],
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/js/categories.json",
+      "has": [{ "type": "query", "key": "v" }],
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
