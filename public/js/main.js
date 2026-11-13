@@ -362,6 +362,37 @@ function hzApplyViewCounts(root,views){
     if(span)span.textContent=window.hzCard.hzFormatViewCount((views&&views[id])||0);
   });
 }
+/* Angka view: SATU permintaan GET /api/view?all=1 (URL tetap, dipakai SEMUA halaman) yang boleh disimpan browser 15 menit dan CDN
+   10 menit (lihat api/view.js; angka view sengaja boleh tertinggal, maks. 30 menit). Dulu tiap halaman meminta ?items=<id halaman itu>,
+   jadi URL-nya berbeda-beda dan tidak pernah bisa dipakai ulang. Hasilnya diingat per halaman (hzViewsAllPromise) supaya pemanggilan
+   berulang (mis. tiap draw() di halaman pencarian) tidak membuat request lagi.
+   Bentuk respons: { all:true, views:{ "<id>:<slug>": jumlah } }. Respons TANPA all:true ditolak: server lama membalas ?all=1 dengan
+   {views:{}} (items kosong) dan itu akan tampil sebagai angka 0 di semua kartu.
+   hzGetViews(items) menerima [{id,slug}] dan mengembalikan Promise<{id: jumlah}>, bentuk yang sama dengan jalur lama (?items=), jadi
+   semua pemakai tidak berubah. Kalau mode "all" gagal (jaringan, 500, format tak terduga), otomatis memakai jalur lama ?items=. */
+var hzViewsAllPromise=null;
+function hzViewKey(id,slug){return id+':'+String(slug||'').trim().replace(/[^a-zA-Z0-9-_]/g,'').slice(0,80);}
+function hzFetchViewsAll(){
+  if(!hzViewsAllPromise){
+    hzViewsAllPromise=fetch('/api/view?all=1')
+      .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
+      .then(function(d){if(!d||d.all!==true||!d.views||typeof d.views!=='object')throw new Error('view api format');return d.views;});
+    hzViewsAllPromise.catch(function(){hzViewsAllPromise=null;});
+  }
+  return hzViewsAllPromise;
+}
+function hzGetViews(items){
+  return hzFetchViewsAll().then(function(all){
+    var out={};
+    items.forEach(function(it){var v=all[hzViewKey(it.id,it.slug)];if(v!==undefined)out[it.id]=v;});
+    return out;
+  }).catch(function(){
+    var q=items.map(function(it){return it.id+':'+(it.slug||'');});
+    return fetch('/api/view?items='+encodeURIComponent(q.join(',')))
+      .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
+      .then(function(data){return (data&&data.views)||{};});
+  });
+}
 function hzLoadViewCounts(root){
   var scope=root||document;
   var els=scope.querySelectorAll('[data-view-id]');
@@ -370,12 +401,11 @@ function hzLoadViewCounts(root){
   els.forEach(function(el){
     var id=el.getAttribute('data-view-id');
     var slug=el.getAttribute('data-view-slug')||'';
-    if(id&&!seen[id]){seen[id]=1;items.push(id+':'+slug);}
+    if(id&&!seen[id]){seen[id]=1;items.push({id:id,slug:slug});}
   });
   if(!items.length)return;
-  fetch('/api/view?items='+encodeURIComponent(items.join(',')))
-    .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
-    .then(function(data){hzApplyViewCounts(scope,(data&&data.views)||{});})
+  hzGetViews(items)
+    .then(function(views){hzApplyViewCounts(scope,views);})
     .catch(function(){});
 }
 /* Homepage menangani view count sendiri lewat 1 fetch gabungan di blok "Load Sliders"
@@ -422,11 +452,9 @@ if(document.getElementById('hz-swiper-latest')){
        (2) menampilkan angka view di slider "Terbaru" MAUPUN "Terpopuler" — supaya
        homepage cukup 1x panggil /api/view (dulu 3x: 1x buat Terbaru, 1x buat sortir,
        1x lagi buat Terpopuler — padahal datanya sama). */
-    var items=posts.map(function(p){return p.id+':'+window.hzCard.hzSlugFromUrl(p.url);});
-    fetch('/api/view?items='+encodeURIComponent(items.join(',')))
-      .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
-      .then(function(data){
-        var views=(data&&data.views)||{};
+    var items=posts.map(function(p){return {id:p.id,slug:window.hzCard.hzSlugFromUrl(p.url)};});
+    hzGetViews(items)
+      .then(function(views){
         var sortedByViews=posts.slice().sort(function(a,b){
           return (parseInt(views[b.id],10)||0)-(parseInt(views[a.id],10)||0);
         });
