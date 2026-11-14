@@ -4,7 +4,7 @@
   "urlthumbnail": "https://i.ibb.co/wrNy6gfp/chou-kof.webp",
   "kategoriskin": "KOF",
   "keywords": "Chou Iori Yagami",
-  "datepost": "Update 8 Nov 2026",
+  "datepost": "Update 14 Nov 2026",
   "authorname": "Henz MLBB",
   "longstory": "Chou lahir di sebuah daerah kumuh yang terpencil dan hidup dalam kondisi yang serba kekurangan. Meski demikian, ia tetap memiliki hati yang baik dan selalu membantu orang-orang tua serta anak-anak di sekitarnya. Ketika kekacauan mulai menyebar di Land of Dawn, kehidupan di daerah tersebut ikut terancam.\n\nSuatu hari, Chou menemukan seorang biksu misterius yang sedang dikejar oleh para penculiknya. Chou menyelamatkannya dan membawanya ke daerah kumuh untuk dirawat.\n\nSebagai balasannya, sang biksu mengajarkan Chou seni bela diri Kung Fu kuno dari Timur. Ia juga mengatakan bahwa dunia membutuhkan seorang pahlawan sejati untuk menghentikan kekacauan yang sedang terjadi.\n\nTerinspirasi oleh perkataan tersebut, Chou bertekad untuk menjadi pahlawan dan membawa perubahan. Ia pun bersumpah untuk memulai perjalanannya mengelilingi Land of Dawn tanpa menoleh ke belakang.\n\nSetelah Chou pergi, sang biksu hanya mengangguk sebelum menghilang ke dalam bayangan. Dengan kemampuan bela diri yang telah dipelajarinya dan hati yang penuh keberanian, Chou memulai perjalanan untuk menjadi pahlawan sejati.",
   "dualTabNames": {
@@ -173,42 +173,50 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png",
-        "link": "https://sfile.co/TTWeSpHILiY"
+        "link": "https://sfile.co/PyfPpSAVHgw",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero261-icon.png",
-        "link": "https://sfile.co/ymEuLoTxtmK"
+        "link": "https://sfile.co/aLkVI41Iq6k",
+        "fixSfx": true
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png",
-        "link": "https://sfile.co/OVLni6ucnXQ"
+        "link": "https://sfile.co/PSpZvTW9mbI",
+        "fixSfx": true
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/ba/Hero262-icon.png",
-        "link": "https://sfile.co/uAOKWIK1A3m"
+        "link": "https://sfile.co/2JahdQOewmG",
+        "fixSfx": true
       },
       {
         "name": "Luckybox",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/d1/Hero263-icon.png",
-        "link": "https://sfile.co/fmpFvau03ZS"
+        "link": "https://sfile.co/Kr6UC9mbZP1",
+        "fixSfx": true
       },
       {
         "name": "Elite",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero264-icon.png",
-        "link": "https://sfile.co/cBacpGVNhUD"
+        "link": "https://sfile.co/rVjXP660f9w",
+        "fixSfx": true
       },
       {
-        "name": "Special",
+        "name": "Special Tiger",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a9/Hero265-icon.png",
-        "link": "https://sfile.co/rHjLpwx1kcQ"
+        "link": "https://sfile.co/wznQ28QWUv0",
+        "fixSfx": true
       },
       {
         "name": "Starlight",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/80/Hero267-icon.png",
-        "link": "https://sfile.co/opwLY0oDBcn"
+        "link": "https://sfile.co/pKcRocDLGea",
+        "fixSfx": true
       },
       {
         "name": "Dawning Star",
@@ -239,6 +247,12 @@
         "name": "Street Fighter",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero102614-icon.png",
         "link": ""
+      },
+      {
+        "name": "Special Glory",
+        "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/06/Hero102615-icon.png",
+        "link": "",
+        "fixSfx": true
       }
     ],
     "rowsTab2": []
