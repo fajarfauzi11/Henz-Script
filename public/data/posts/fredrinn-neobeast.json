@@ -4,12 +4,17 @@
   "urlthumbnail": "https://i.ibb.co/N6GWCJG2/da65cbc11419.webp",
   "kategoriskin": "Neobeasts",
   "keywords": "",
-  "datepost": "Update 8 Nov 2026",
+  "datepost": "Update 15 Nov 2026",
   "authorname": "Henz MLBB",
   "longstory": "Fredrinn adalah putra Duke Vance, seorang bangsawan berpengaruh dari Castle Grandrock. Namun sejak kecil, ia tidak tertarik pada kehidupan bangsawan yang penuh aturan dan politik. Mendambakan kebebasan dan petualangan, Fredrinn melarikan diri dari rumah dan menjelajahi berbagai wilayah berbahaya di Land of Dawn. Berkat keberanian, kecerdasan, dan instingnya yang tajam, namanya perlahan dikenal sebagai seorang petualang berbakat, meskipun tidak banyak yang mengetahui latar belakang bangsawannya.\n\nDalam setiap petualangannya, Fredrinn selalu ditemani sahabat terbaiknya, Fray. Keduanya menjelajahi reruntuhan kuno dan tempat-tempat yang belum pernah dipetakan. Suatu hari, mereka menemukan sebuah altar kuno dengan kristal misterius di tengahnya. Meski Fray memperingatkannya, rasa penasaran membuat Fredrinn menyentuh kristal tersebut, tanpa sadar membangkitkan kekuatan kuno yang tersegel selama berabad-abad.\n\nKemunculan kekuatan itu menyebabkan altar runtuh dan menjebak mereka berdua. Di tengah bencana tersebut, Fray memilih mengorbankan dirinya demi menyelamatkan Fredrinn. Ia menancapkan pecahan kristal ke dada sahabatnya, membuat kekuatan kristal menyatu dengan jantung Fredrinn dan melindunginya dari kehancuran. Ketika Fredrinn sadar kembali, Fray telah menghilang tanpa jejak. Yang tersisa hanyalah sebuah kompas sihir milik Fray.\n\nSaat membuka kompas itu, Fredrinn menemukan bahwa jarumnya masih bergerak, menandakan Fray mungkin masih hidup. Sejak saat itu, ia mendedikasikan hidupnya untuk mencari keberadaan sahabatnya. Demi mendapatkan informasi sebanyak mungkin, Fredrinn menetap di Los Pecados dan menjadi penaksir harta karun yang terkenal. Ia membangun jaringan informasi yang luas dan mengumpulkan kekayaan untuk mendukung pencariannya.\n\nSeiring waktu, Fredrinn dikenal sebagai sosok yang cerdik, mahal, dan sangat profesional dalam pekerjaannya, hingga dijuluki sebagai \"money-grubber\" oleh banyak orang. Berbagai rumor beredar, bahkan ada yang menuduhnya mengorbankan Fray demi mendapatkan kristal di dadanya. Namun kenyataannya, luka dan kristal yang menyatu dengan jantungnya adalah pengingat atas pengorbanan sahabat yang pernah menyelamatkannya. Hingga kini, Fredrinn masih terus mengikuti petunjuk dari kompas ajaib itu, bertekad menemukan Fray selama jarumnya masih bergerak.",
   "dualTabNames": {
     "tab1": "Tab 1",
-    "tab2": "Tab 2"
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
   },
   "abilitiesPasif": {
     "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Crystalline_Armor.png",
@@ -20,7 +25,32 @@
     "url2": "",
     "name2": "",
     "kategori2": "BUFF",
-    "longDesc2": ""
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
   },
   "abilitiesList": [
     {
@@ -33,7 +63,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "AOE",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
     },
     {
       "label": "Skill 2",
@@ -45,7 +100,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "Mobility",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
     },
     {
       "label": "Skill 3",
@@ -57,7 +137,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "AOE",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
     },
     {
       "label": "Ultimate",
@@ -69,7 +174,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "Burst",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
     }
   ],
   "download": {
@@ -80,27 +210,32 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero1171-icon.png",
-        "link": "https://sfile.co/0g26MNhUwAp"
+        "link": "https://sfile.co/CKVLr4yqbMs",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/f/f4/Hero1171-icon.png",
-        "link": "https://sfile.co/4My3xWrvIqj"
+        "link": "https://sfile.co/nHl4mXKiJcL",
+        "fixSfx": true
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero1172-icon.png",
-        "link": "https://sfile.co/JD29MfyiXjR"
+        "link": "https://sfile.co/NDWDo0nC32g",
+        "fixSfx": true
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/e/ed/Hero1172-icon.png",
-        "link": "https://sfile.co/TJEGQg4riB0"
+        "link": "https://sfile.co/KedcU0b8Xdf",
+        "fixSfx": true
       },
       {
         "name": "Elite",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/3/3b/Hero1173-icon.png",
-        "link": "https://sfile.co/jntzzbFT3NZ"
+        "link": "https://sfile.co/5pb3eX7Czjs",
+        "fixSfx": true
       },
       {
         "name": "SPARKLE",
@@ -110,7 +245,8 @@
       {
         "name": "Starlight",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/7/7e/Hero1176-icon.png",
-        "link": "https://sfile.co/xJ2J3fx23yT"
+        "link": "https://sfile.co/vpDNgtXEspe",
+        "fixSfx": true
       }
     ],
     "rowsTab2": []
