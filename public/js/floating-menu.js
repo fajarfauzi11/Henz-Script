@@ -119,7 +119,8 @@
     /* Service worker TIDAK lagi didaftarkan untuk semua pengunjung di kunjungan pertama. Setiap pendaftaran = request sw.js dan /offline
        ke Vercel, padahal pengunjung yang hanya mampir sebentar tidak memakai manfaatnya (offline, prompt install, notifikasi).
        Pendaftaran dilakukan saat SALAH SATU pemicu terpenuhi:
-       1) Tindakan eksplisit: menekan lonceng notifikasi, mengaktifkan notifikasi (notify.js memanggil window.hzEnsureSW), atau menekan
+       1) Tindakan eksplisit: menekan "Aktifkan" di modal notifikasi dan memberi izin (notify.js getToken memanggil window.hzEnsureSW;
+          sekadar membuka lonceng TIDAK cukup), atau menekan
           "Install Aplikasi" di iPhone.
        2) Penanda hz_sw_want di localStorage: salah satu pemicu pernah terpenuhi di perangkat ini (berlaku seterusnya).
        3) Aktif di situs >= NEED_ACTIVE detik DAN minimal satu interaksi (klik/ketuk/tekan tombol). "Aktif" = tab terlihat dan ada aktivitas

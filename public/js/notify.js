@@ -152,7 +152,8 @@
     return fbP;
   }
   /* Service worker tidak lagi didaftarkan otomatis di kunjungan pertama (lihat floating-menu.js, registerServiceWorker). Tanpa registrasi,
-     navigator.serviceWorker.ready tidak pernah selesai, jadi daftarkan dulu lewat window.hzEnsureSW (tindakan eksplisit pengguna). */
+     navigator.serviceWorker.ready tidak pernah selesai, jadi daftarkan dulu lewat window.hzEnsureSW. Pemicunya HANYA tombol "Aktifkan":
+     getToken() baru dipanggil setelah izin notifikasi diberikan, jadi membuka lonceng/modal, atau menolak izin, TIDAK mendaftarkan service worker. */
   function ensureSW(){
     try{ return window.hzEnsureSW ? window.hzEnsureSW() : Promise.resolve(); }
     catch(err){ return Promise.resolve(); }
@@ -396,7 +397,7 @@
       if(lastFocus && lastFocus.focus) lastFocus.focus();
     }
     bells.forEach(function(b){
-      b.addEventListener('click', function(){ ensureSW().then(null, function(){}); openModal(b); });
+      b.addEventListener('click', function(){ openModal(b); });
     });
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
