@@ -151,10 +151,16 @@
     fbP.then(null, function(){ fbP = null; });
     return fbP;
   }
+  /* Service worker tidak lagi didaftarkan otomatis di kunjungan pertama (lihat floating-menu.js, registerServiceWorker). Tanpa registrasi,
+     navigator.serviceWorker.ready tidak pernah selesai, jadi daftarkan dulu lewat window.hzEnsureSW (tindakan eksplisit pengguna). */
+  function ensureSW(){
+    try{ return window.hzEnsureSW ? window.hzEnsureSW() : Promise.resolve(); }
+    catch(err){ return Promise.resolve(); }
+  }
   function getToken(){
     return Promise.all([
       loadFirebase(),
-      withTimeout(navigator.serviceWorker.ready, 10000, 'sw')
+      withTimeout(ensureSW().then(function(){ return navigator.serviceWorker.ready; }), 10000, 'sw')
     ]).then(function(r){
       return r[0].mod.getToken(r[0].messaging, { vapidKey: VAPID_KEY, serviceWorkerRegistration: r[1] });
     }).then(function(t){
@@ -390,7 +396,7 @@
       if(lastFocus && lastFocus.focus) lastFocus.focus();
     }
     bells.forEach(function(b){
-      b.addEventListener('click', function(){ openModal(b); });
+      b.addEventListener('click', function(){ ensureSW().then(null, function(){}); openModal(b); });
     });
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });

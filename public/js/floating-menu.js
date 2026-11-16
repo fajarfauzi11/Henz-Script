@@ -23,6 +23,7 @@
   var MAX = 30;
   var FKEY = 'hz_fav_v1';
   var FMAX = 100;
+  var swHistoryCheck = null; // diisi registerServiceWorker(): dipanggil tiap riwayat/favorit tersimpan (pemicu 4 pendaftaran service worker)
 
   /* ---------- Storage (semua dibungkus try/catch: mode privat / storage diblokir tidak boleh merusak halaman) ---------- */
   function isValid(e){
@@ -39,8 +40,11 @@
     }catch(err){ return []; }
   }
   function saveK(key, arr){
-    try{ localStorage.setItem(key, JSON.stringify(arr)); return true; }
-    catch(err){ return false; }
+    var ok = false;
+    try{ localStorage.setItem(key, JSON.stringify(arr)); ok = true; }
+    catch(err){ ok = false; }
+    if(ok && swHistoryCheck){ try{ swHistoryCheck(); }catch(err){} }
+    return ok;
   }
   function load(){ return loadK(KEY, MAX); }
   function save(arr){ return saveK(KEY, arr); }
@@ -112,24 +116,105 @@
     if(!('serviceWorker' in navigator)) return;
     var host = location.hostname;
     if(location.protocol !== 'https:' && host !== 'localhost' && host !== '127.0.0.1') return;
-    /* Chrome memeriksa sw.js pada SETIAP navigasi ke halaman yang dikontrol SW (balasan 304 pun tetap dihitung sebagai request
-       ke Vercel). Dengan updateViaCache bawaan ('imports') pemeriksaan itu melewati cache HTTP, jadi tidak bisa dihemat.
-       Karena itu SW didaftarkan dengan updateViaCache:'all' dan sw.js diberi Cache-Control max-age pendek di vercel.json:
-       pemeriksaan saat navigasi dilayani dari cache HTTP, dan baru ke jaringan setelah max-age habis.
-       - Daftar hanya kalau belum ada registrasi yang hidup, atau registrasi lama masih memakai updateViaCache bawaan
-         (pengunjung lama dialihkan sekali, setelah itu tidak mendaftar ulang di tiap halaman).
-       - Jaring pengaman: update() dipanggil paling sering sekali per 24 jam (penanda waktu di localStorage: hz_sw_chk). */
-    var SW_CHK = 'hz_sw_chk', SW_DAY = 86400000;
+    /* Service worker TIDAK lagi didaftarkan untuk semua pengunjung di kunjungan pertama. Setiap pendaftaran = request sw.js dan /offline
+       ke Vercel, padahal pengunjung yang hanya mampir sebentar tidak memakai manfaatnya (offline, prompt install, notifikasi).
+       Pendaftaran dilakukan saat SALAH SATU pemicu terpenuhi:
+       1) Tindakan eksplisit: menekan lonceng notifikasi, mengaktifkan notifikasi (notify.js memanggil window.hzEnsureSW), atau menekan
+          "Install Aplikasi" di iPhone.
+       2) Penanda hz_sw_want di localStorage: salah satu pemicu pernah terpenuhi di perangkat ini (berlaku seterusnya).
+       3) Aktif di situs >= NEED_ACTIVE detik DAN minimal satu interaksi (klik/ketuk/tekan tombol). "Aktif" = tab terlihat dan ada aktivitas
+          (gulir/gerak kursor/sentuh/tombol) dalam IDLE_MS terakhir. Detik aktif dan penanda interaksi dijumlahkan antar-halaman dalam satu tab
+          (sessionStorage: hz_sw_a, hz_sw_i).
+       4) Favorit >= FAV_MIN atau riwayat script >= HIST_MIN (melihat-lihat sebentar tidak cukup).
+       Pengunjung yang SUDAH punya registrasi tidak dilepas dan tidak dibatasi: tetap dirawat seperti sebelumnya (migrasi updateViaCache +
+       update paling sering sekali per 24 jam).
+       Catatan teknis: Chrome memeriksa sw.js pada SETIAP navigasi ke halaman yang dikontrol SW (balasan 304 pun dihitung request ke Vercel).
+       Karena itu SW didaftarkan dengan updateViaCache:'all' dan sw.js diberi Cache-Control max-age pendek di vercel.json, sehingga
+       pemeriksaan itu dilayani cache HTTP dan baru ke jaringan setelah max-age habis. */
+    var SW_CHK = 'hz_sw_chk', SW_WANT = 'hz_sw_want', SW_DAY = 86400000;
+    var NEED_ACTIVE = 60, IDLE_MS = 30000, FAV_MIN = 3, HIST_MIN = 5;
+    var A_KEY = 'hz_sw_a', I_KEY = 'hz_sw_i';
     var stamp = function(){ try{ localStorage.setItem(SW_CHK, String(Date.now())); }catch(err){} };
     var reg = function(){ stamp(); return navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'all' }).catch(function(){}); };
+    var alive = function(r){ return !!(r && (r.active || r.waiting || r.installing)); };
+    var wanted = function(){ try{ return localStorage.getItem(SW_WANT) === '1'; }catch(err){ return false; } };
+    var enoughHistory = function(){
+      try{ return favLoad().length >= FAV_MIN || load().length >= HIST_MIN; }catch(err){ return false; }
+    };
+    /* Registrasi sudah ada: pindahkan ke updateViaCache 'all' bila belum, dan update paling sering sekali per 24 jam. */
+    function maintain(r){
+      if(r.updateViaCache !== 'all') return reg();
+      var last = 0;
+      try{ last = parseInt(localStorage.getItem(SW_CHK) || '0', 10) || 0; }catch(err){}
+      if(Date.now() - last > SW_DAY){ stamp(); r.update().catch(function(){}); }
+      return Promise.resolve(r);
+    }
+    var gated = false;           // true selama menunggu pemicu (belum punya registrasi dan belum "lolos")
+    var stopWatch = function(){};
+    var ensuring = null;
+    /* Pastikan service worker terdaftar (dipakai semua pemicu). Mengembalikan Promise<registrasi | undefined>; bila gagal, boleh dicoba lagi. */
+    function ensureSW(){
+      if(ensuring) return ensuring;
+      try{ localStorage.setItem(SW_WANT, '1'); }catch(err){}
+      stopWatch();
+      var get = navigator.serviceWorker.getRegistration ? navigator.serviceWorker.getRegistration('/') : Promise.resolve(null);
+      ensuring = get.then(function(r){ return alive(r) ? maintain(r) : reg(); }, function(){ return reg(); })
+        .then(function(r){ if(!r) ensuring = null; return r; });
+      return ensuring;
+    }
+    window.hzEnsureSW = ensureSW;
+    swHistoryCheck = function(){ if(gated && enoughHistory()) ensureSW(); };
+
+    /* Pemicu 3: pantau keaktifan sampai syarat terpenuhi. */
+    function watchEngagement(){
+      gated = true;
+      var active = 0, interacted = false, lastPresence = Date.now(), done = false;
+      try{
+        active = parseInt(sessionStorage.getItem(A_KEY) || '0', 10) || 0;
+        interacted = sessionStorage.getItem(I_KEY) === '1';
+      }catch(err){}
+      function save(){
+        try{ sessionStorage.setItem(A_KEY, String(active)); if(interacted) sessionStorage.setItem(I_KEY, '1'); }catch(err){}
+      }
+      function check(){ if(!done && active >= NEED_ACTIVE && interacted) ensureSW(); }
+      function present(){ lastPresence = Date.now(); }
+      function interact(){
+        var first = !interacted;
+        interacted = true; present();
+        if(first){ save(); check(); }
+      }
+      var timer = setInterval(function(){
+        if(done) return;
+        if(document.visibilityState === 'hidden') return;      // tab tersembunyi tidak dihitung
+        if(Date.now() - lastPresence > IDLE_MS) return;        // diam terlalu lama tidak dihitung
+        active++;
+        if(active % 5 === 0) save();
+        check();
+      }, 1000);
+      var interactEv = ['pointerdown', 'mousedown', 'touchstart', 'keydown'];
+      var presentEv = ['scroll', 'wheel', 'mousemove', 'touchmove'];
+      interactEv.forEach(function(n){ window.addEventListener(n, interact, true); });
+      presentEv.forEach(function(n){ window.addEventListener(n, present, { capture: true, passive: true }); });
+      window.addEventListener('pagehide', save);
+      document.addEventListener('visibilitychange', save);
+      stopWatch = function(){
+        done = true; gated = false; clearInterval(timer);
+        interactEv.forEach(function(n){ window.removeEventListener(n, interact, true); });
+        presentEv.forEach(function(n){ window.removeEventListener(n, present, true); });
+        window.removeEventListener('pagehide', save);
+        document.removeEventListener('visibilitychange', save);
+        stopWatch = function(){};
+      };
+    }
+
     var go = function(){
-      if(!navigator.serviceWorker.getRegistration){ reg(); return; }
-      navigator.serviceWorker.getRegistration('/').then(function(r){
-        if(!r || !(r.active || r.waiting || r.installing) || r.updateViaCache !== 'all'){ reg(); return; }
-        var last = 0;
-        try{ last = parseInt(localStorage.getItem(SW_CHK) || '0', 10) || 0; }catch(err){}
-        if(Date.now() - last > SW_DAY){ stamp(); r.update().catch(function(){}); }
-      }).catch(function(){ reg(); });
+      var decide = function(r){
+        if(alive(r)){ maintain(r); return; }                          // sudah punya SW: perilaku lama
+        if(wanted() || enoughHistory()){ ensureSW(); return; }         // pemicu 2 dan 4
+        watchEngagement();                                            // pemicu 3 (pemicu 1 lewat window.hzEnsureSW)
+      };
+      if(!navigator.serviceWorker.getRegistration){ decide(null); return; }
+      navigator.serviceWorker.getRegistration('/').then(decide, function(){ decide(null); });
     };
     if(document.readyState === 'complete') go(); else window.addEventListener('load', go);
   }
@@ -561,6 +646,7 @@
           setPwaState();
           try{ ev.prompt(); }catch(err){}
         }else if(isIOS()){
+          if(window.hzEnsureSW) window.hzEnsureSW(); // tindakan eksplisit: pendaftaran service worker (pemicu 1)
           openIos();
         }
       });
