@@ -374,6 +374,8 @@ var hzViewsAllPromise=null;
 function hzViewKey(id,slug){return id+':'+String(slug||'').trim().replace(/[^a-zA-Z0-9-_]/g,'').slice(0,80);}
 function hzFetchViewsAll(){
   if(!hzViewsAllPromise){
+    /* Beranda dan pencarian: angka dari snapshot saat build ditanam di HTML (window.HZ_VIEWS, bentuk sama dengan respons ?all=1) -> TANPA request. */
+    if(window.HZ_VIEWS&&typeof window.HZ_VIEWS==='object'){hzViewsAllPromise=Promise.resolve(window.HZ_VIEWS);return hzViewsAllPromise;}
     hzViewsAllPromise=fetch('/api/view?all=1')
       .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
       .then(function(d){if(!d||d.all!==true||!d.views||typeof d.views!=='object')throw new Error('view api format');return d.views;});
@@ -394,6 +396,7 @@ function hzGetViews(items){
   });
 }
 function hzLoadViewCounts(root){
+  if(window.HZ_VB)return; /* angka view sudah dicetak ke HTML saat build (snapshot, lihat build.js): tidak perlu request */
   var scope=root||document;
   var els=scope.querySelectorAll('[data-view-id]');
   if(!els.length)return;

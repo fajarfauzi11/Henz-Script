@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { execFileSync } = require('child_process');
 
 const SRC_DIR = path.join(__dirname, 'public');
 const OUT_DIR = path.join(__dirname, 'dist');
@@ -23,9 +24,33 @@ const CACHE_BUST = Date.now();
 function contentHash(data) { return crypto.createHash('sha1').update(data).digest('hex').slice(0, 10); }
 const DATA_FILES = ['posts.json', 'heroes.json', 'categories.json', 'hero-popular.json'];
 let ASSET_V = null; // { bundle, css, js, data:{nama-file: hash} } -- diisi sekali oleh computeAssetVersions() sebelum halaman ditulis
+
+/* Snapshot angka view saat build: scripts/views-snapshot.js (proses anak) membaca semua angka dari Redis SEKALI, lalu hasilnya dipakai
+   untuk mencetak angka langsung ke HTML (tanpa request /api/view dari pengunjung). Gagal apa pun (kredensial tidak ada, modul belum
+   terpasang, Redis gagal/lambat) TIDAK menggagalkan build: ok:false dan halaman tetap memakai /api/view seperti biasa.
+   HZ_SKIP_VIEWS_SNAPSHOT=1 melewati langkah ini (mis. build lokal). Token tidak pernah masuk dist (dijaga verifyDist). */
+let VIEWS = { ok: false, reason: 'belum dibaca', views: {} };
+function loadViewSnapshot() {
+  if (process.env.HZ_SKIP_VIEWS_SNAPSHOT === '1') return { ok: false, reason: 'HZ_SKIP_VIEWS_SNAPSHOT=1', views: {} };
+  const scrub = (s) => ['KV_REST_API_READ_ONLY_TOKEN', 'KV_REST_API_TOKEN'].reduce((a, n) => {
+    const t = process.env[n]; return t && t.length >= 8 ? a.split(t).join('[token]') : a;
+  }, String(s));
+  try {
+    const raw = execFileSync(process.execPath, [path.join(__dirname, 'scripts', 'views-snapshot.js')], {
+      encoding: 'utf8', timeout: 45000, maxBuffer: 8 * 1024 * 1024, env: process.env, stdio: ['ignore', 'pipe', 'ignore']
+    });
+    const r = JSON.parse(raw);
+    if (r && r.ok === true && r.views && typeof r.views === 'object' && !Array.isArray(r.views)) return { ok: true, views: r.views, source: r.source };
+    return { ok: false, reason: scrub((r && r.reason) || 'tidak diketahui'), views: {} };
+  } catch (e) {
+    return { ok: false, reason: scrub('proses pembaca gagal (' + ((e && (e.code || e.signal)) || 'error') + ')'), views: {} };
+  }
+}
 function injectCacheBust(html) {
   /* window.HZ_DV (hash tiap berkas data) disuntik tepat sebelum <script src="/js/app.js">, supaya terbaca oleh window.hzDataUrl. */
-  const dv = '<script>window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';</script>';
+  const baked = VIEWS.ok && html.indexOf('data-view-id') !== -1; // angka view sudah dicetak ke halaman ini (klien tidak perlu /api/view)
+  const wantViews = VIEWS.ok && (html.indexOf('id="hz-swiper-latest"') !== -1 || html.indexOf('id="hz-search-heading"') !== -1); // beranda dan pencarian
+  const dv = '<script>window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';' + (baked ? 'window.HZ_VB=1;' : '') + (wantViews ? 'window.HZ_VIEWS=' + clientViewsJson() + ';' : '') + '</script>';
   return html
     .replace(/(href="\/css\/style\.css)(")/g, (m, a, b) => a + '?v=' + ASSET_V.css + b)
     .replace(/(<script\b[^>]*?\bsrc="\/js\/app\.js)(")/g, (m, a, b) => dv + a + '?v=' + ASSET_V.js + b);
@@ -108,7 +133,25 @@ function parseIdDate(str) {
 }
 
 /* Desain card script dipusatkan di public/js/card-template.js (dipakai juga oleh browser lewat window.hzCard) */
-const { hzBuildCard } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
+const { hzBuildCard, hzSlugFromUrl, hzFormatViewCount } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
+/* Angka view yang dicetak langsung di HTML (dari snapshot). viewKey = "<id>:<slug>" persis seperti kunci di api/view.js dan hzViewKey() di main.js.
+   undefined bila snapshot tidak tersedia: kartu tetap "-" dan JS mengisinya dari /api/view seperti biasa. */
+function viewKey(id, slug) { return id + ':' + String(slug || '').trim().replace(/[^a-zA-Z0-9-_]/g, '').slice(0, 80); }
+function viewCountFor(id, slug) { return VIEWS.ok ? (VIEWS.views[viewKey(id, slug)] || 0) : undefined; }
+const cardWithViews = (p) => hzBuildCard(p, { views: viewCountFor(p.id, hzSlugFromUrl(p.url)) });
+/* Peta angka view untuk beranda dan pencarian (kartunya dirender JS dari posts.json): { "<id>:<slug>": jumlah } hanya untuk post yang ada di
+   posts.json (kunci yatim/draf di Redis tidak ikut). Ditanam di HTML sebagai window.HZ_VIEWS, jadi halaman itu tidak perlu /api/view. */
+let CLIENT_VIEWS_JSON = null;
+function clientViewsJson() {
+  if (!VIEWS.ok) return null;
+  if (CLIENT_VIEWS_JSON === null) {
+    const idx = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'js', 'posts.json'), 'utf8'));
+    const out = {};
+    idx.forEach((p) => { const k = viewKey(p.id, hzSlugFromUrl(p.url)); out[k] = VIEWS.views[k] || 0; });
+    CLIENT_VIEWS_JSON = JSON.stringify(out).replace(/</g, '\\u003c');
+  }
+  return CLIENT_VIEWS_JSON;
+}
 
 const INCLUDE_RE = /<!--\s*include:([\w.-]+)\s*-->/g;
 
@@ -231,6 +274,10 @@ console.log('Building site...');
 if (fs.existsSync(OUT_DIR)) fs.rmSync(OUT_DIR, { recursive: true, force: true });
 ASSET_V = computeAssetVersions();
 console.log('versi aset (hash isi): css ' + ASSET_V.css + ', js ' + ASSET_V.js + ', data ' + JSON.stringify(ASSET_V.data));
+VIEWS = loadViewSnapshot();
+console.log(VIEWS.ok
+  ? 'views snapshot: OK - ' + Object.keys(VIEWS.views).length + ' kunci (token ' + (VIEWS.source === 'read-only' ? 'baca-saja' : 'biasa') + ')'
+  : 'views snapshot: dilewati - ' + VIEWS.reason + ' (halaman memakai /api/view seperti biasa)');
 copyRecursive(SRC_DIR, OUT_DIR);
 buildAppBundle();
 buildServiceWorker();
@@ -372,7 +419,7 @@ function generateHeroPages() {
       : '';
 
     const postsHtml = matched.length
-      ? matched.map(hzBuildCard).join('\n')
+      ? matched.map(cardWithViews).join('\n')
       : '<div class="hz-sv-empty">'
         + '<div class="hz-sv-empty-icon"><svg viewBox="0 0 96 96" fill="none">'
         + '<circle cx="48" cy="48" r="34" stroke="#e6e6e6" stroke-width="7"/>'
@@ -449,7 +496,7 @@ function generateCategoryPages() {
     if (!slug) return;
     const matched = postsByCat[catName];
     const postsHtml = matched.length
-      ? matched.map(hzBuildCard).join('\n')
+      ? matched.map(cardWithViews).join('\n')
       : '<div class="hz-cp-empty">Belum ada script untuk kategori ini.</div>';
     const { gridLimitClass, loadmoreHtml } = buildLoadMoreParts(matched.length);
     const initial = catName.trim().charAt(0).toUpperCase();
@@ -474,7 +521,7 @@ function generateCategoryPages() {
   // Halaman "Semua" — seluruh post lintas kategori (dikecualikan cat internal)
   const allMatched = posts.filter((p) => !p.cat || EXCLUDED_CATS.indexOf(p.cat) === -1);
   const allPostsHtml = allMatched.length
-    ? allMatched.map(hzBuildCard).join('\n')
+    ? allMatched.map(cardWithViews).join('\n')
     : '<div class="hz-cp-empty">Belum ada script.</div>';
   const allLoadMore = buildLoadMoreParts(allMatched.length);
   let allHtml = template
@@ -703,7 +750,7 @@ function hzExtractHeroCode(url) {
 /* Badge "Fix SFX" — position:absolute di atas nama replace, di dalam pembungkus position:relative yang
    sudah ada. Karena absolute, badge tidak ikut menentukan tinggi/posisi nama, ikon, maupun tombol Download. */
 function hzFixSfxBadge() {
-  return '<span data-hz-fixsfx="1" style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:2px;display:inline-flex;align-items:center;gap:2px;font-size:8px;font-weight:800;letter-spacing:.4px;line-height:1.2;padding:1.5px 6px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>SFX REPLAY</span>';
+  return '<span data-hz-fixsfx="1" style="position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:2px;display:inline-flex;align-items:center;gap:2px;font-size:8px;font-weight:800;letter-spacing:.4px;line-height:1.2;padding:1.5px 6px;border-radius:20px;white-space:nowrap;background:#e3f2fd;color:#1565c0;font-family:\'Manrope\',sans-serif;"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 8a5 5 0 0 1 0 8"/><path d="M17.7 5a9 9 0 0 1 0 14"/><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"/></svg>FIX SFX</span>';
 }
 /* Runtime kecil, hanya disertakan kalau tabel punya badge Fix SFX. Nama replace yang turun jadi 2+ baris
    di layar sempit mendorong badge (absolute) mendekati garis atas baris; script ini mengukur jaraknya dan
@@ -1041,7 +1088,7 @@ function buildRelatedSection(id, title, moreHref, list) {
   return '<section id="' + id + '" class="hz-related" aria-labelledby="' + id + '-title">\n'
     + '        <div class="hz-related-head"><h2 id="' + id + '-title">' + escHtml(title) + '</h2>'
     + (moreHref ? '<a class="hz-related-all" href="' + moreHref + '">Lihat Semua &rarr;</a>' : '') + '</div>\n'
-    + '        <div class="hz-related-grid">\n' + list.map(hzBuildCard).join('\n') + '\n        </div>\n'
+    + '        <div class="hz-related-grid">\n' + list.map(cardWithViews).join('\n') + '\n        </div>\n'
     + '      </section>';
 }
 function buildRelatedHtml(entry, postsArr) {
@@ -1140,6 +1187,7 @@ function generatePostPages() {
       .split('{{DLTAB_TOOLTIP_IMG}}').join(tooltipDlTab.img || '')
       .split('{{VIEW_ID}}').join(escHtml(viewId))
       .split('{{VIEW_SLUG}}').join(escHtml(slug))
+      .split('{{VIEW_COUNT}}').join(VIEWS.ok ? hzFormatViewCount(viewCountFor(viewId, slug)) : '&ndash;')
       .split('{{CANONICAL_URL}}').join(absoluteUrl(postUrl))
       .split('{{ROBOTS_META}}').join(isDraft ? '\n<meta name="robots" content="noindex,nofollow"/>' : '')
       .split('{{RELATED_INJECT}}').join(isDraft ? '' : buildRelatedHtml(postsEntry, postsIndexArr))
@@ -1273,6 +1321,20 @@ function verifyDist() {
   need(hashOf('css/style.css') === ASSET_V.css, 'versi css (?v=) tidak cocok dengan isi dist/css/style.css');
   need(hashOf('js/app.js') === ASSET_V.js, 'versi js (?v=) tidak cocok dengan isi dist/js/app.js');
   DATA_FILES.forEach((f) => { if (ASSET_V.data[f] !== undefined) need(hashOf('js/' + f) === ASSET_V.data[f], 'versi data ' + f + ' tidak cocok dengan isi dist/js/' + f); });
+  /* Token Redis TIDAK BOLEH ada di keluaran (dist dipublikasikan). Dicek terhadap nilai env yang dipakai build ini. */
+  ['KV_REST_API_READ_ONLY_TOKEN', 'KV_REST_API_TOKEN'].forEach((name) => {
+    const t = process.env[name];
+    if (!t || t.length < 8) return;
+    const stack = [OUT_DIR];
+    while (stack.length) {
+      const d = stack.pop();
+      fs.readdirSync(d, { withFileTypes: true }).forEach((e) => {
+        const p = path.join(d, e.name);
+        if (e.isDirectory()) stack.push(p);
+        else if (/\.(html|js|json|css|xml|xsl|txt|webmanifest|svg)$/i.test(e.name) && fs.readFileSync(p, 'utf8').includes(t)) problems.push('KEBOCORAN: nilai ' + name + ' ditemukan di dist' + p.slice(OUT_DIR.length));
+      });
+    }
+  });
   ['js/app.js', 'sw.js', 'manifest.webmanifest', 'sitemap_index.xml'].forEach((f) => {
     const p = path.join(OUT_DIR, f);
     need(fs.existsSync(p) && fs.statSync(p).size > 500, 'dist/' + f + ' tidak ada atau terlalu kecil');
@@ -1288,6 +1350,16 @@ function verifyDist() {
     if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css') !== -1, rel + ': tidak memuat /css/style.css');
     if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css?v=' + ASSET_V.css + '"') !== -1, rel + ': ?v= css tidak sesuai hash isi');
     if (html.indexOf('/js/app.js') !== -1) need(html.indexOf('src="/js/app.js?v=' + ASSET_V.js + '"') !== -1 && html.indexOf('window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';') !== -1, rel + ': ?v= app.js / window.HZ_DV tidak sesuai hash isi');
+    /* Snapshot view: halaman dengan kartu/angka view harus sudah berisi angka dan penanda HZ_VB; tanpa snapshot, tidak boleh ada HZ_VB. */
+    if (VIEWS.ok && html.indexOf('data-view-id') !== -1) need(html.indexOf('window.HZ_VB=1;') !== -1 && !/data-view-count>&ndash;</.test(html), rel + ': angka view belum dicetak padahal snapshot tersedia');
+    if (!VIEWS.ok) need(html.indexOf('HZ_VB') === -1, rel + ': HZ_VB ada padahal snapshot tidak tersedia');
+    /* Beranda dan pencarian harus memuat window.HZ_VIEWS yang valid (objek angka bulat >= 0); halaman lain tidak boleh. */
+    if (VIEWS.ok && (html.indexOf('id="hz-swiper-latest"') !== -1 || html.indexOf('id="hz-search-heading"') !== -1)) {
+      const mv = /window\.HZ_VIEWS=(\{[^;]*\});/.exec(html);
+      let okv = false;
+      try { const o = mv && JSON.parse(mv[1]); okv = !!o && Object.keys(o).length > 0 && Object.values(o).every((v) => Number.isInteger(v) && v >= 0); } catch (e) { okv = false; }
+      need(okv, rel + ': window.HZ_VIEWS tidak ada/tidak valid padahal snapshot tersedia');
+    } else need(html.indexOf('HZ_VIEWS') === -1, rel + ': HZ_VIEWS ada di halaman yang tidak seharusnya');
     const ph = html.match(/\{\{[A-Z0-9_]{3,}\}\}/);
     need(!ph, rel + ': placeholder template tersisa ' + (ph ? ph[0] : ''));
     const re = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
