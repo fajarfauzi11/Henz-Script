@@ -1,0 +1,9 @@
+# Opsional, hanya bila deploy lewat CLI (npx wrangler deploy). Lewat dashboard Cloudflare, berkas ini tidak diperlukan.
+name = "henz-view"
+main = "view-counter.js"
+compatibility_date = "2026-01-01"
+# Secret diatur terpisah (jangan ditulis di sini):
+#   npx wrangler secret put UPSTASH_URL
+#   npx wrangler secret put UPSTASH_TOKEN
+# [vars]
+# MAX_ID = "300"

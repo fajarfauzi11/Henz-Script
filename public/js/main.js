@@ -376,6 +376,8 @@ function hzFetchViewsAll(){
   if(!hzViewsAllPromise){
     /* Beranda dan pencarian: angka dari snapshot saat build ditanam di HTML (window.HZ_VIEWS, bentuk sama dengan respons ?all=1) -> TANPA request. */
     if(window.HZ_VIEWS&&typeof window.HZ_VIEWS==='object'){hzViewsAllPromise=Promise.resolve(window.HZ_VIEWS);return hzViewsAllPromise;}
+    /* Mode hemat (window.HZ_SAVER, lihat build.js): TIDAK ada request /api/view sama sekali. Tanpa snapshot, angka tetap "-". */
+    if(window.HZ_SAVER){hzViewsAllPromise=Promise.reject(new Error('saver'));hzViewsAllPromise.catch(function(){});return hzViewsAllPromise;}
     hzViewsAllPromise=fetch('/api/view?all=1')
       .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
       .then(function(d){if(!d||d.all!==true||!d.views||typeof d.views!=='object')throw new Error('view api format');return d.views;});
@@ -389,6 +391,7 @@ function hzGetViews(items){
     items.forEach(function(it){var v=all[hzViewKey(it.id,it.slug)];if(v!==undefined)out[it.id]=v;});
     return out;
   }).catch(function(){
+    if(window.HZ_SAVER)throw new Error('saver'); /* mode hemat: tanpa jalur cadangan ?items= */
     var q=items.map(function(it){return it.id+':'+(it.slug||'');});
     return fetch('/api/view?items='+encodeURIComponent(q.join(',')))
       .then(function(r){if(!r.ok)throw new Error('view api error');return r.json();})
@@ -421,7 +424,21 @@ if(!document.getElementById('hz-swiper-latest')){
   if(document.readyState==='complete'||document.readyState==='interactive')hzLoadViewCounts();
 }
 
-if(document.body.classList.contains('page-post')){
+/* Mode hemat: id+slug post sudah ditanam di HTML (window.HZ_POST) jadi posts.json TIDAK diunduh di halaman post. View dicatat lewat
+   endpoint Cloudflare Worker (window.HZ_VIEW_EP, bukan Vercel); bila endpoint tidak diset, view tidak dicatat. Permintaan memakai
+   Content-Type text/plain supaya tidak ada preflight OPTIONS. */
+if(document.body.classList.contains('page-post')&&window.HZ_SAVER){
+  (function(){
+    var p=window.HZ_POST,ep=window.HZ_VIEW_EP;
+    if(!p||!p.id||!ep)return;
+    var flagKey='kz_viewed_'+p.id;
+    try{if(sessionStorage.getItem(flagKey))return;}catch(e){}
+    try{
+      fetch(ep,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify({id:p.id,slug:p.slug}),mode:'cors',credentials:'omit',keepalive:true})
+        .then(function(r){if(r&&r.ok){try{sessionStorage.setItem(flagKey,'1');}catch(e){}}}).catch(function(){});
+    }catch(e){}
+  })();
+}else if(document.body.classList.contains('page-post')){
   hzFetchPosts(function(posts){
     var path=window.location.pathname.replace(/\/+$/,'');
     var current=posts.filter(function(p){return (p.url||'').replace(/\/+$/,'')===path;})[0];
@@ -600,6 +617,7 @@ function hzRankSuggestions(qVal,heroes,cats,popular){
   return picked.slice(0,3);
 }
 function hzBuildSuggestions(qVal,callback){
+  if(window.HZ_SAVER){callback([]);return;} /* mode hemat: tanpa fetch heroes/categories/hero-popular */
   Promise.all([
     fetch(hzDataUrl('heroes.json')).then(function(r){return r.json();}).catch(function(){return [];}),
     fetch(hzDataUrl('categories.json')).then(function(r){return r.json();}).catch(function(){return {};}),
@@ -685,7 +703,7 @@ if(document.getElementById('hz-search-heading')){
   function svShow(results,corr){
     if(corr){
       document.getElementById('hz-sv-note').innerHTML='<div class="hz-sv-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg>'
-        +'<span>Menampilkan hasil untuk <b>'+hzSvEsc(corr.to)+'</b>. <a href="/search.html?q='+encodeURIComponent(corr.from)+'&amp;exact=1">Cari persis &ldquo;'+hzSvEsc(corr.from)+'&rdquo;</a></span></div>';
+        +'<span>Menampilkan hasil untuk <b>'+hzSvEsc(corr.to)+'</b>. <a href="/search?q='+encodeURIComponent(corr.from)+'&amp;exact=1">Cari persis &ldquo;'+hzSvEsc(corr.from)+'&rdquo;</a></span></div>';
     }
     var state={cat:'',sort:'new'};
     var counts={};
@@ -798,6 +816,12 @@ if(document.getElementById('hz-search-heading')){
     if(data){cb();return;}
     if(loading){loading.push(cb);return;}
     loading=[cb];
+    if(window.HZ_SAVER){ /* mode hemat: dropdown hanya pencarian terakhir (localStorage), tanpa request */
+      data={posts:[],heroes:[],cats:{},popular:[]};
+      var qs=loading;loading=null;
+      qs.forEach(function(f){f();});
+      return;
+    }
     Promise.all([
       new Promise(function(res){hzFetchPosts(res);}),
       fetch(hzDataUrl('heroes.json')).then(function(r){return r.json();}).catch(function(){return [];}),

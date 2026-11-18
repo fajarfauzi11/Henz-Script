@@ -116,6 +116,26 @@
     if(!('serviceWorker' in navigator)) return;
     var host = location.hostname;
     if(location.protocol !== 'https:' && host !== 'localhost' && host !== '127.0.0.1') return;
+    /* MODE HEMAT (window.HZ_SAVER, lihat build.js): service worker dilepas total, tidak ada pendaftaran, tidak ada pemeriksaan sw.js.
+       Registrasi lama dilepas dari sisi halaman (langsung, tanpa menunggu pemeriksaan sw.js) dan cache hz-* dihapus. Bila memang ada
+       registrasi yang dilepas, tersimpan penanda hz_sw_killed + hz_sw_want: saat mode hemat dimatikan, SW terdaftar lagi otomatis di
+       kunjungan berikutnya dan notify.js memulihkan langganan push (lihat maybeRefresh). sw.js versi hemat juga mengirim pesan yang sama. */
+    if(window.HZ_SAVER){
+      var markKilled = function(){ try{ localStorage.setItem('hz_sw_killed', '1'); localStorage.setItem('hz_sw_want', '1'); }catch(err){} };
+      window.hzEnsureSW = function(){ return Promise.resolve(); };
+      try{ navigator.serviceWorker.addEventListener('message', function(e){ if(e && e.data && e.data.hzSwKilled) markKilled(); }); }catch(err){}
+      var killAll = function(){
+        var get = navigator.serviceWorker.getRegistrations ? navigator.serviceWorker.getRegistrations() : Promise.resolve([]);
+        get.then(function(regs){
+          var had = false;
+          regs.forEach(function(r){ if(r && (r.active || r.waiting || r.installing)) had = true; r.unregister().catch(function(){}); });
+          if(had) markKilled();
+        }).catch(function(){});
+        if(window.caches && caches.keys) caches.keys().then(function(ks){ ks.forEach(function(k){ if(k.indexOf('hz-') === 0) caches.delete(k); }); }).catch(function(){});
+      };
+      if(document.readyState === 'complete') killAll(); else window.addEventListener('load', killAll);
+      return;
+    }
     /* Service worker TIDAK lagi didaftarkan untuk semua pengunjung di kunjungan pertama. Setiap pendaftaran = request sw.js dan /offline
        ke Vercel, padahal pengunjung yang hanya mampir sebentar tidak memakai manfaatnya (offline, prompt install, notifikasi).
        Pendaftaran dilakukan saat SALAH SATU pemicu terpenuhi:
@@ -399,6 +419,7 @@
     /* Cocokkan dengan posts.json sekali per halaman: buang entri yang post-nya sudah dihapus,
        dan segarkan judul/thumbnail kalau berubah. Kalau fetch gagal, riwayat dibiarkan apa adanya. */
     function pruneAgainstIndex(){
+      if(window.HZ_SAVER) return; // mode hemat: tanpa fetch posts.json (entri riwayat/favorit yatim dibersihkan lagi saat mode normal)
       if(pruned) return;
       pruned = true;
       fetch(window.hzDataUrl ? window.hzDataUrl('posts.json') : '/js/posts.json?t=' + Date.now())

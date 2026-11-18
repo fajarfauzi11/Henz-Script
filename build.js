@@ -25,6 +25,24 @@ function contentHash(data) { return crypto.createHash('sha1').update(data).diges
 const DATA_FILES = ['posts.json', 'heroes.json', 'categories.json', 'hero-popular.json'];
 let ASSET_V = null; // { bundle, css, js, data:{nama-file: hash} } -- diisi sekali oleh computeAssetVersions() sebelum halaman ditulis
 
+/* ===================== MODE HEMAT CDN =====================
+   Switch saat BUILD: environment variable HZ_SAVER=1 di Vercel (Settings > Environment Variables) lalu Redeploy. Hapus variabelnya
+   + Redeploy untuk kembali normal. Tanpa HZ_SAVER, keluaran build identik dengan sebelum fitur ini ada (selain isi app.js).
+   Sumber kode TIDAK dihapus: semua fitur yang dimatikan hanyalah cabang `if(window.HZ_SAVER)` di JS klien, dan window.HZ_SAVER=1
+   disuntik inline ke HTML (jadi flag tidak butuh request). app.js sama persis di kedua mode, jadi cache browser tidak terbuang saat switch.
+   Efek mode hemat: (1) view dicatat lewat endpoint Cloudflare Worker (HZ_VIEW_ENDPOINT) atau tidak dicatat sama sekali; tidak ada /api/view
+   dari pengunjung; (2) tidak ada fetch posts.json di halaman post, riwayat, lonceng; saran pencarian tanpa request; (3) tanpa
+   <link rel=manifest>; (4) service worker dilepas (sw.js jadi kill-switch); (5) CSS+JS disajikan dari jsDelivr dengan fallback otomatis. */
+const SAVER = process.env.HZ_SAVER === '1';
+const SAVER_VIEW_EP = (function () { const v = String(process.env.HZ_VIEW_ENDPOINT || '').trim(); return /^https:\/\/[^\s"'<>\\]+$/.test(v) ? v : ''; })();
+const ASSET_CDN = SAVER; // CSS+JS dari jsDelivr hanya di mode hemat (bisa dipisah ke flag sendiri bila nanti dijadikan permanen)
+const ASSET_CDN_REPO = 'fajarfauzi11/Henz-Script';
+/* Tag git yang membawa berkas aset di repo (dibuat workflow .github/workflows/cdn-assets.yml): 'a<hash css>-<hash js>'. Nama tag dan nama
+   berkas ditentukan oleh ISI berkas, jadi build dan workflow selalu sepakat tanpa saling menunggu. */
+function assetCdnBase() { return 'https://cdn.jsdelivr.net/gh/' + ASSET_CDN_REPO + '@a' + ASSET_V.css + '-' + ASSET_V.js + '/cdn/'; }
+function assetCssUrl() { return assetCdnBase() + 'style.' + ASSET_V.css + '.css'; }
+function assetJsUrl() { return assetCdnBase() + 'app.' + ASSET_V.js + '.js'; }
+
 /* Snapshot angka view saat build: scripts/views-snapshot.js (proses anak) membaca semua angka dari Redis SEKALI, lalu hasilnya dipakai
    untuk mencetak angka langsung ke HTML (tanpa request /api/view dari pengunjung). Gagal apa pun (kredensial tidak ada, modul belum
    terpasang, Redis gagal/lambat) TIDAK menggagalkan build: ok:false dan halaman tetap memakai /api/view seperti biasa.
@@ -50,7 +68,17 @@ function injectCacheBust(html) {
   /* window.HZ_DV (hash tiap berkas data) disuntik tepat sebelum <script src="/js/app.js">, supaya terbaca oleh window.hzDataUrl. */
   const baked = VIEWS.ok && html.indexOf('data-view-id') !== -1; // angka view sudah dicetak ke halaman ini (klien tidak perlu /api/view)
   const wantViews = VIEWS.ok && (html.indexOf('id="hz-swiper-latest"') !== -1 || html.indexOf('id="hz-search-heading"') !== -1); // beranda dan pencarian
-  const dv = '<script>window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';' + (baked ? 'window.HZ_VB=1;' : '') + (wantViews ? 'window.HZ_VIEWS=' + clientViewsJson() + ';' : '') + '</script>';
+  const saverVars = SAVER ? 'window.HZ_SAVER=1;' + (SAVER_VIEW_EP ? 'window.HZ_VIEW_EP=' + JSON.stringify(SAVER_VIEW_EP) + ';' : '') : '';
+  const dv = '<script>window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';' + (baked ? 'window.HZ_VB=1;' : '') + (wantViews ? 'window.HZ_VIEWS=' + clientViewsJson() + ';' : '') + saverVars + '</script>';
+  if (ASSET_CDN) {
+    /* Mode hemat: CSS + JS dari jsDelivr. Kalau gagal dimuat (jaringan/blokir/404), otomatis jatuh ke salinan Vercel yang sama persis.
+       CSS: onerror mengganti href. JS: onerror memakai document.write supaya urutan eksekusi (skrip inline sesudahnya) tetap terjaga. */
+    const cssLocal = '/css/style.css?v=' + ASSET_V.css;
+    const jsLocal = '/js/app.js?v=' + ASSET_V.js;
+    return html
+      .replace(/<link\b[^>]*\bhref="\/css\/style\.css"[^>]*>/g, () => '<link rel="preconnect" href="https://cdn.jsdelivr.net"/><link href="' + assetCssUrl() + '" rel="stylesheet" onerror="this.onerror=null;this.href=\'' + cssLocal + '\'"/>')
+      .replace(/<script\b[^>]*?\bsrc="\/js\/app\.js"[^>]*><\/script>/g, () => dv + '<script src="' + assetJsUrl() + '" onerror="document.write(\'<script src=&quot;' + jsLocal + '&quot;><\\/script>\')"></script>');
+  }
   return html
     .replace(/(href="\/css\/style\.css)(")/g, (m, a, b) => a + '?v=' + ASSET_V.css + b)
     .replace(/(<script\b[^>]*?\bsrc="\/js\/app\.js)(")/g, (m, a, b) => dv + a + '?v=' + ASSET_V.js + b);
@@ -206,7 +234,7 @@ function injectPwaHead(html) {
   if (/<link\b[^>]*rel=["']apple-touch-icon["'][^>]*>/i.test(out)) {
     out = out.replace(/<link\b[^>]*rel=["']apple-touch-icon["'][^>]*>/i, PWA_APPLE_ICON);
   }
-  const tags = '<link rel="manifest" href="/manifest.webmanifest"/>' +
+  const tags = (SAVER ? '' : '<link rel="manifest" href="/manifest.webmanifest"/>') + // mode hemat: tanpa manifest (hemat 1 request per kunjungan harian)
     (/rel=["']apple-touch-icon["']/i.test(out) ? '' : PWA_APPLE_ICON) +
     '<meta name="apple-mobile-web-app-title" content="Henz MLBB"/>';
   return out.replace(/<\/head>/i, tags + '</head>');
@@ -227,9 +255,30 @@ function injectE2eInit(html) {
 /* Service worker: versi SW (var BUILD di public/sw.js) sekarang STATIS dan dinaikkan manual, supaya sw.js TIDAK berubah di
    setiap deploy (dulu tiap deploy memaksa semua pengunjung memasang SW baru + mengunduh ulang /offline). Placeholder
    __HZ_BUILD__ tetap diganti id build bila suatu saat dipakai lagi, tapi sw.js saat ini tidak memakainya. */
+/* Mode hemat: sw.js diganti kill-switch. Pengunjung yang sudah punya service worker mengambilnya sekali, lalu SW menghapus cache hz-*,
+   memberi tahu halaman (agar penanda pemulihan notifikasi tersimpan), dan melepas dirinya. Setelah itu tidak ada lagi pemeriksaan sw.js.
+   Saat mode hemat dimatikan, sw.js normal kembali dan kode di floating-menu.js/notify.js memasang ulang + memulihkan langganan push. */
+const SW_KILL_SRC = [
+  '/* sw.js - MODE HEMAT CDN (hz-kill-sw). Berkas ini hanya melepas service worker lama; versi normal kembali saat mode hemat dimatikan. */',
+  "self.addEventListener('install', function(){ self.skipWaiting(); });",
+  "self.addEventListener('activate', function(event){",
+  '  event.waitUntil(',
+  "    caches.keys().then(function(keys){ return Promise.all(keys.filter(function(k){ return k.indexOf('hz-') === 0; }).map(function(k){ return caches.delete(k); })); })",
+  "      .then(function(){ return self.clients.matchAll({ type: 'window', includeUncontrolled: true }); })",
+  "      .then(function(list){ list.forEach(function(c){ try{ c.postMessage({ hzSwKilled: 1 }); }catch(err){} }); })",
+  '      .then(function(){ return self.registration.unregister(); })',
+  '  );',
+  '});',
+  ''
+].join('\n');
 function buildServiceWorker() {
   const swPath = path.join(OUT_DIR, 'sw.js');
   if (!fs.existsSync(swPath)) return;
+  if (SAVER) {
+    fs.writeFileSync(swPath, SW_KILL_SRC, 'utf8');
+    console.log('built: sw.js (MODE HEMAT: kill-switch, service worker pengunjung dilepas)');
+    return;
+  }
   const src = fs.readFileSync(swPath, 'utf8');
   if (src.indexOf('__HZ_BUILD__') !== -1) {
     fs.writeFileSync(swPath, src.split('__HZ_BUILD__').join(String(CACHE_BUST)), 'utf8');
@@ -270,6 +319,18 @@ function copyRecursive(srcDir, outDir) {
   }
 }
 
+/* Mode khusus untuk workflow .github/workflows/cdn-assets.yml: tulis CSS + JS beraturan nama-hash ke cdn-out/cdn/ lalu keluar (tidak
+   menyentuh dist/). Dijalankan: node build.js --cdn-assets. Menulis nama tag git ke stdout (baris 'TAG=...'). */
+if (process.argv.includes('--cdn-assets')) {
+  ASSET_V = computeAssetVersions();
+  const outDir = path.join(__dirname, 'cdn-out', 'cdn');
+  fs.rmSync(path.join(__dirname, 'cdn-out'), { recursive: true, force: true });
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'style.' + ASSET_V.css + '.css'), fs.readFileSync(path.join(SRC_DIR, 'css', 'style.css')));
+  fs.writeFileSync(path.join(outDir, 'app.' + ASSET_V.js + '.js'), ASSET_V.bundle, 'utf8');
+  console.log('TAG=a' + ASSET_V.css + '-' + ASSET_V.js);
+  process.exit(0);
+}
 console.log('Building site...');
 if (fs.existsSync(OUT_DIR)) fs.rmSync(OUT_DIR, { recursive: true, force: true });
 ASSET_V = computeAssetVersions();
@@ -1035,7 +1096,7 @@ function injectSeoMetaAll() {
     if (rel === 'index.html') {
       ld = { '@context': 'https://schema.org', '@graph': [
         { '@type': 'WebSite', '@id': BASE_URL + '/#website', url: BASE_URL + '/', name: SEO_SITE_NAME, inLanguage: 'id', publisher: { '@id': BASE_URL + '/#org' },
-          potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: BASE_URL + '/search.html?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } },
+          potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: BASE_URL + '/search?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } },
         { '@type': 'Organization', '@id': BASE_URL + '/#org', name: SEO_SITE_NAME, url: BASE_URL + '/', logo: { '@type': 'ImageObject', url: SEO_DEFAULT_IMAGE }, sameAs: SEO_SAME_AS },
       ] };
     } else if ((m = rel.match(/^hero\/([^/]+)\.html$/))) {
@@ -1212,7 +1273,7 @@ function generateSitemapAndRobots() {
   addSitemapUrl('/kategori-skin', {changefreq: 'weekly', priority: 0.8, category: 'page'});
   addSitemapUrl('/daftar-hero', {changefreq: 'weekly', priority: 0.8, category: 'page'});
   addSitemapUrl('/request-script', {changefreq: 'monthly', priority: 0.4, category: 'page'});
-  addSitemapUrl('/search', {changefreq: 'monthly', priority: 0.3, category: 'page'});
+  // /search sengaja TIDAK masuk sitemap (halaman hasil pencarian; juga ditutup di robots.txt)
   addSitemapUrl('/socials', {changefreq: 'monthly', priority: 0.3, category: 'page'});
   // Credits disembunyikan sementara dari sitemap (halaman /credits tetap ada). Aktifkan lagi saat siap dirilis:
   // addSitemapUrl('/credits', {changefreq: 'monthly', priority: 0.3, category: 'page'});
@@ -1290,12 +1351,37 @@ function generateSitemapAndRobots() {
   fs.writeFileSync(path.join(OUT_DIR, 'sitemap_index.xml'), indexXml, 'utf8');
   console.log('built: sitemap_index.xml (index, ' + sitemapIndexEntries.length + ' sub-sitemap, total ' + SITEMAP_URLS.length + ' url)');
 
-  const robots = 'User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ' + BASE_URL + '/sitemap_index.xml\n';
+  const robots = 'User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /search\n\nSitemap: ' + BASE_URL + '/sitemap_index.xml\n';
   fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), robots, 'utf8');
   console.log('built: robots.txt');
 }
 injectSeoMetaAll();
 generateSitemapAndRobots();
+
+/* Mode hemat: halaman post memuat id+slug dirinya sendiri (window.HZ_POST) supaya pencatatan view tidak perlu mengunduh posts.json.
+   Dicocokkan lewat URL halaman ke posts.json; post draf (tidak ada di posts.json) tidak diberi HZ_POST, jadi tidak pernah dicatat. */
+function injectSaverPostIds() {
+  if (!SAVER) return;
+  const idx = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'js', 'posts.json'), 'utf8'));
+  const norm = (u) => String(u || '').split('?')[0].split('#')[0].replace(/\.html$/i, '').replace(/\/+$/, '');
+  const byUrl = {};
+  idx.forEach((p) => { if (p && p.url) byUrl[norm(p.url)] = p; });
+  const dir = path.join(OUT_DIR, 'post');
+  let n = 0;
+  if (!fs.existsSync(dir)) return;
+  fs.readdirSync(dir).filter((f) => f.endsWith('.html')).forEach((f) => {
+    const p = byUrl['/post/' + f.replace(/\.html$/i, '')];
+    if (!p || p.id === undefined || p.id === null) return;
+    const file = path.join(dir, f);
+    const html = fs.readFileSync(file, 'utf8');
+    if (html.indexOf('window.HZ_DV=') === -1 || html.indexOf('window.HZ_POST=') !== -1) return;
+    const tag = 'window.HZ_POST=' + JSON.stringify({ id: p.id, slug: hzSlugFromUrl(p.url) }).replace(/</g, '\\u003c') + ';';
+    fs.writeFileSync(file, html.replace('window.HZ_DV=', tag + 'window.HZ_DV='), 'utf8');
+    n++;
+  });
+  console.log('mode hemat: HZ_POST ditanam di ' + n + ' halaman post');
+}
+injectSaverPostIds();
 
 /* ===================== Pagar pengaman build =====================
    Bila hasil build tidak utuh, build GAGAL (exit 1): Vercel membatalkan deployment itu dan production tetap memakai
@@ -1335,6 +1421,12 @@ function verifyDist() {
       });
     }
   });
+  /* sw.js: mode hemat = kill-switch, mode normal = service worker biasa. Tidak boleh tertukar. */
+  const swOut = path.join(OUT_DIR, 'sw.js');
+  if (fs.existsSync(swOut)) {
+    const swTxt = fs.readFileSync(swOut, 'utf8');
+    need(SAVER ? swTxt.indexOf('hz-kill-sw') !== -1 && swTxt.indexOf("addEventListener('fetch'") === -1 : swTxt.indexOf('hz-kill-sw') === -1, 'sw.js tidak sesuai mode (' + (SAVER ? 'hemat' : 'normal') + ')');
+  }
   ['js/app.js', 'sw.js', 'manifest.webmanifest', 'sitemap_index.xml'].forEach((f) => {
     const p = path.join(OUT_DIR, f);
     need(fs.existsSync(p) && fs.statSync(p).size > 500, 'dist/' + f + ' tidak ada atau terlalu kecil');
@@ -1347,9 +1439,24 @@ function verifyDist() {
     const rel = path.relative(OUT_DIR, f).split(path.sep).join('/');
     const html = fs.readFileSync(f, 'utf8');
     need(html.indexOf('</head>') !== -1 && html.indexOf('</body>') !== -1, rel + ': struktur <head>/<body> tidak lengkap');
-    if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css') !== -1, rel + ': tidak memuat /css/style.css');
-    if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css?v=' + ASSET_V.css + '"') !== -1, rel + ': ?v= css tidak sesuai hash isi');
-    if (html.indexOf('/js/app.js') !== -1) need(html.indexOf('src="/js/app.js?v=' + ASSET_V.js + '"') !== -1 && html.indexOf('window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';') !== -1, rel + ': ?v= app.js / window.HZ_DV tidak sesuai hash isi');
+    if (ASSET_CDN) {
+      /* Mode hemat: CSS/JS dari jsDelivr WAJIB membawa fallback ke salinan Vercel dengan ?v= yang cocok hash isi. */
+      if (!NO_CSS_OK[rel]) need(html.indexOf('href="' + assetCssUrl() + '"') !== -1 && html.indexOf("this.href='/css/style.css?v=" + ASSET_V.css + "'") !== -1, rel + ': tag CSS jsDelivr + fallback tidak sesuai');
+      if (html.indexOf('/js/app.js') !== -1 || html.indexOf(assetJsUrl()) !== -1) need(html.indexOf('src="' + assetJsUrl() + '"') !== -1 && html.indexOf('/js/app.js?v=' + ASSET_V.js + '&quot;') !== -1 && html.indexOf('window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';') !== -1, rel + ': tag JS jsDelivr + fallback / window.HZ_DV tidak sesuai');
+    } else {
+      if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css') !== -1, rel + ': tidak memuat /css/style.css');
+      if (!NO_CSS_OK[rel]) need(html.indexOf('href="/css/style.css?v=' + ASSET_V.css + '"') !== -1, rel + ': ?v= css tidak sesuai hash isi');
+      if (html.indexOf('/js/app.js') !== -1) need(html.indexOf('src="/js/app.js?v=' + ASSET_V.js + '"') !== -1 && html.indexOf('window.HZ_DV=' + JSON.stringify(ASSET_V.data) + ';') !== -1, rel + ': ?v= app.js / window.HZ_DV tidak sesuai hash isi');
+    }
+    /* Penanda mode: mode hemat harus memuat window.HZ_SAVER=1 di tiap halaman ber-app.js dan tanpa <link rel=manifest>; mode normal tidak boleh memuat jejak mode hemat. */
+    if (SAVER) {
+      if (html.indexOf('window.HZ_DV=') !== -1) need(html.indexOf('window.HZ_SAVER=1;') !== -1, rel + ': window.HZ_SAVER=1 tidak ada di mode hemat');
+      need(!/<link\b[^>]*rel=["']manifest["']/i.test(html), rel + ': <link rel=manifest> masih ada di mode hemat');
+      const mp = /window\.HZ_POST=(\{[^;]*\});/.exec(html);
+      if (mp) { try { const o = JSON.parse(mp[1]); need(Number.isInteger(o.id) && /^[a-zA-Z0-9_-]{1,80}$/.test(o.slug), rel + ': window.HZ_POST tidak valid'); } catch (e) { problems.push(rel + ': window.HZ_POST bukan JSON valid'); } }
+    } else {
+      need(html.indexOf('HZ_SAVER') === -1 && html.indexOf('HZ_POST') === -1 && html.indexOf('HZ_VIEW_EP') === -1 && html.indexOf('cdn.jsdelivr.net/gh/' + ASSET_CDN_REPO + '@a') === -1, rel + ': ada jejak mode hemat padahal HZ_SAVER tidak aktif');
+    }
     /* Snapshot view: halaman dengan kartu/angka view harus sudah berisi angka dan penanda HZ_VB; tanpa snapshot, tidak boleh ada HZ_VB. */
     if (VIEWS.ok && html.indexOf('data-view-id') !== -1) need(html.indexOf('window.HZ_VB=1;') !== -1 && !/data-view-count>&ndash;</.test(html), rel + ': angka view belum dicetak padahal snapshot tersedia');
     if (!VIEWS.ok) need(html.indexOf('HZ_VB') === -1, rel + ': HZ_VB ada padahal snapshot tidak tersedia');

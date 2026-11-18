@@ -72,6 +72,7 @@
 
   /* Status: unsupported | ios-install | denied | ready | on */
   function getState(){
+    if(window.HZ_SAVER) return 'saver'; // mode hemat: service worker dilepas, notifikasi dijeda (data langganan di localStorage tetap utuh)
     if(isIOS() && !isStandalone()) return 'ios-install';
     if(!hasPushApi()) return 'unsupported';
     var perm = Notification.permission;
@@ -193,13 +194,22 @@
 
   /* Perbarui token secara berkala (token FCM bisa berganti) tanpa mengganggu pengguna */
   function maybeRefresh(){
+    /* hz_sw_killed: service worker pernah dilepas oleh mode hemat (floating-menu.js). Langganan push ikut terputus, jadi begitu mode
+       normal kembali, token diperbarui SEKARANG (tanpa menunggu REFRESH_MS). Izin sudah diberikan, jadi tidak ada dialog baru. */
+    var killed = false;
+    try{ killed = localStorage.getItem('hz_sw_killed') === '1'; }catch(err){}
     var rec = readRec();
-    if(!rec || getState() !== 'on') return;
-    if(Date.now() - (rec.chk || 0) < REFRESH_MS) return;
+    var st = getState();
+    if(!rec || st !== 'on'){
+      if(killed && st !== 'saver'){ try{ localStorage.removeItem('hz_sw_killed'); }catch(err){} }
+      return;
+    }
+    if(!killed && Date.now() - (rec.chk || 0) < REFRESH_MS) return;
     var run = function(){
       getToken().then(function(t){ return callServer('POST', t); }).then(function(){
         var r2 = readRec();
         if(r2){ r2.chk = Date.now(); writeRec(r2); }
+        if(killed){ try{ localStorage.removeItem('hz_sw_killed'); }catch(err){} }
       }).then(null, function(){});
     };
     if(window.requestIdleCallback) window.requestIdleCallback(run, { timeout: 8000 });
@@ -221,6 +231,22 @@
     var disableBtn = document.getElementById('hz-nt-disable');
     var msgEl = document.getElementById('hz-nt-msg');
     var inappEl = document.getElementById('hz-nt-inapp');
+    if(window.HZ_SAVER && !document.getElementById('hz-nt-saver')){ // blok status "dijeda" (dibuat lewat JS: HTML dua mode tetap sama)
+      var svBlock = document.createElement('div');
+      svBlock.className = 'hz-nt-st';
+      svBlock.id = 'hz-nt-saver';
+      svBlock.setAttribute('data-st', 'saver');
+      svBlock.hidden = true;
+      var svH = document.createElement('h3');
+      svH.className = 'hz-nt-h';
+      svH.textContent = 'Notifikasi dijeda sementara';
+      var svP = document.createElement('p');
+      svP.className = 'hz-nt-p';
+      svP.textContent = 'Fitur notifikasi dimatikan sementara untuk menghemat kuota situs. Notifikasi akan aktif kembali otomatis dan pengaturanmu tetap tersimpan.';
+      svBlock.appendChild(svH);
+      svBlock.appendChild(svP);
+      paneInfo.appendChild(svBlock);
+    }
     var blocks = overlay.querySelectorAll('.hz-nt-st');
     if(!closeBtn || !paneInfo || !paneHist || !enableBtn || !disableBtn) return;
 
@@ -330,6 +356,10 @@
       var st = getState();
       var rec = readRec();
       clearList();
+      if(st === 'saver'){
+        emptyBlock('Notifikasi dijeda sementara', 'Riwayat tampil lagi begitu fitur ini aktif kembali.');
+        return;
+      }
       if(st !== 'on' || !rec){
         emptyBlock('Notifikasi belum aktif', 'Aktifkan notifikasi supaya kabar script baru muncul di sini.', 'Cara mengaktifkan', function(){ showTab('info'); });
         return;

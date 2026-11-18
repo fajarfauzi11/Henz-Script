@@ -1,0 +1,88 @@
+# Menerbitkan CSS + JS situs ke tag git agar bisa disajikan jsDelivr (dipakai MODE HEMAT CDN, lihat docs/mode-hemat.md).
+# Dipicu setiap push ke main yang menyentuh CSS/JS/build.js (atau manual lewat "Run workflow").
+# Langkah: build.js --cdn-assets menulis cdn/style.<hash>.css dan cdn/app.<hash>.js lalu mencetak nama tag 'a<hashcss>-<hashjs>'.
+# Berkas itu dikomit ke repo sementara yang TERPISAH dari riwayat main (hanya 1 commit berisi 2 berkas), diberi tag tersebut, dan
+# HANYA tag-nya yang di-push. Branch main tidak disentuh, jadi tidak memicu deploy Vercel lagi. Nama tag ditentukan oleh isi
+# berkas, jadi build.js (Vercel) dan workflow ini selalu sepakat tanpa saling menunggu. Tag yang sudah ada dilewati (idempoten).
+name: Aset CDN (jsDelivr)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/css/style.css'
+      - 'public/js/main.js'
+      - 'public/js/card-template.js'
+      - 'public/js/floating-menu.js'
+      - 'public/js/notify.js'
+      - 'build.js'
+      - '.github/workflows/cdn-assets.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: cdn-assets
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Hitung aset dan nama tag
+        id: assets
+        run: |
+          node build.js --cdn-assets | tee assets.txt
+          TAG=$(grep '^TAG=' assets.txt | cut -d= -f2)
+          if [ -z "$TAG" ]; then echo "Nama tag kosong"; exit 1; fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          ls -la cdn-out/cdn
+
+      - name: Terbitkan tag
+        env:
+          TAG: ${{ steps.assets.outputs.tag }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" > /dev/null 2>&1; then
+            echo "Tag $TAG sudah ada, tidak ada yang perlu diterbitkan."
+            exit 0
+          fi
+          mkdir /tmp/pub
+          cp -r cdn-out/cdn /tmp/pub/cdn
+          cd /tmp/pub
+          git init -q -b cdn-assets
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cdn
+          git commit -q -m "Aset CDN $TAG"
+          git tag "$TAG"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin "refs/tags/$TAG"
+          echo "Tag $TAG diterbitkan."
+
+      - name: Pemanasan dan pengecekan jsDelivr
+        continue-on-error: true
+        env:
+          TAG: ${{ steps.assets.outputs.tag }}
+        run: |
+          REST=${TAG#a}
+          CSS=${REST%-*}
+          JS=${REST##*-}
+          for f in "style.$CSS.css" "app.$JS.js"; do
+            URL="https://cdn.jsdelivr.net/gh/${GITHUB_REPOSITORY}@${TAG}/cdn/$f"
+            ok=0
+            for i in 1 2 3 4 5 6 7 8 9 10; do
+              if curl -fsS -o /dev/null "$URL"; then ok=1; break; fi
+              sleep 15
+            done
+            if [ "$ok" = "1" ]; then echo "OK   $URL"; else echo "BELUM TERSEDIA $URL (halaman mode hemat tetap aman: otomatis memakai salinan Vercel)"; fi
+          done
