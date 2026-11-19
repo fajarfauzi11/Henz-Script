@@ -11,7 +11,8 @@ kembali persis seperti biasa.
 3. Deployments > deployment terbaru > Redeploy (opsional: matikan "Use existing Build Cache"). Selesai dalam sekitar 1-2 menit.
 
 Tidak perlu mengubah kode atau commit. Cek Build Logs: mode hemat mencetak `mode hemat: HZ_POST ditanam di N halaman post` dan
-`built: sw.js (MODE HEMAT: kill-switch ...)`. Pagar pengaman build memastikan HTML, sw.js, dan tag CSS/JS sesuai mode.
+`built: sw.js (MODE HEMAT: kill-switch ...)`. Pagar pengaman build memastikan HTML, sw.js, robots.txt, dan tag CSS/JS/data sesuai
+mode; kalau ada yang salah, build GAGAL dan deployment lama tetap tayang (situs tidak pernah rusak karena salah konfigurasi).
 
 Variabel lain (hanya dipakai saat `HZ_SAVER=1`):
 
@@ -25,14 +26,16 @@ Variabel lain (hanya dipakai saat `HZ_SAVER=1`):
 |---|---|
 | Catat view | Tidak ada `POST /api/view`. View dikirim ke Worker Cloudflare (bukan Vercel) bila `HZ_VIEW_ENDPOINT` diisi, satu kali per post per sesi. |
 | Angka view di web | Tetap snapshot saat build (tidak bergerak sampai redeploy), sama seperti mode normal. Tanpa snapshot, angka tampil "-" (tidak ada fallback `/api/view`). |
-| `posts.json` | Tidak diunduh di halaman post (id+slug ditanam di HTML), saat membuka riwayat/favorit, atau membuka lonceng. Tetap dipakai beranda dan pencarian. |
-| Saran pencarian | Dropdown hanya menampilkan pencarian terakhir (localStorage). Tanpa saran hero/kategori/populer. Halaman hasil pencarian tetap berfungsi. |
+| Berkas data (`posts.json`, `heroes.json`, `categories.json`, `hero-popular.json`) | Diambil dari **jsDelivr** (tag `d<hash>`), bukan Vercel. Gagal/404/isi bukan JSON => otomatis memakai salinan Vercel. Di halaman post, `posts.json` tidak diunduh sama sekali (id+slug ditanam di HTML). |
+| Saran pencarian, pembersihan riwayat | **Tetap aktif** (datanya dari jsDelivr, tanpa request ke Vercel). Bila data jsDelivr tidak tersedia di build, kembali ke perilaku hemat lama (dropdown hanya pencarian terakhir). |
 | Manifest PWA | `<link rel="manifest">` tidak disisipkan (baris "Install Aplikasi" di Chrome/Android hilang). Penambahan ke layar utama iPhone tetap ada. |
 | Service worker | Dilepas total: tidak ada pendaftaran dan tidak ada pemeriksaan `sw.js`. Cache offline dihapus. |
 | Notifikasi push | Dijeda (modal lonceng menjelaskan). Data langganan di perangkat tetap tersimpan. Telegram/WhatsApp/Discord tidak terpengaruh. |
-| CSS dan JS | Disajikan dari jsDelivr (tag git), dengan **fallback otomatis** ke salinan Vercel bila jsDelivr gagal/diblokir/404. |
+| CSS dan JS | Disajikan dari jsDelivr (tag `a<hashcss>-<hashjs>`), dengan **fallback otomatis** ke salinan Vercel bila jsDelivr gagal/diblokir/404. |
+| `robots.txt` | Crawler bernilai rendah ditutup: `meta-webindexer`, `PetalBot`, `AhrefsBot`, `Amazonbot`, `GPTBot`. Googlebot, Bingbot, OAI-SearchBot, dan mesin pencari lain tidak disentuh. Hanya yang patuh robots.txt yang berhenti (dampak sekitar 1%). |
 
 Tidak berubah: halaman post, tombol download, gate Adsterra, link asli (semuanya tidak memakai request ke Vercel selain HTML post).
+Setelah mode hemat, **setiap jenis halaman hanya memakai 1 request ke Vercel** (HTML-nya) bagi pengunjung baru.
 
 ## Pemulihan saat mode hemat dimatikan
 
@@ -45,12 +48,16 @@ Tidak berubah: halaman post, tombol download, gate Adsterra, link asli (semuanya
 
 ## Persiapan satu kali
 
-### A. Aset CSS/JS di jsDelivr (workflow `cdn-assets.yml`)
+### A. Aset CSS/JS dan data di jsDelivr (workflow `cdn-assets.yml`)
 
-1. Push kode ini ke `main`. Workflow **Aset CDN (jsDelivr)** berjalan otomatis (atau tombol Run workflow) dan membuat tag `a<hashcss>-<hashjs>`.
-2. Cek tab Actions: langkah "Pemanasan dan pengecekan jsDelivr" harus menampilkan `OK` untuk kedua berkas.
-3. Baru setelah itu nyalakan `HZ_SAVER=1`. Setiap kali CSS/JS berubah, workflow membuat tag baru otomatis; selama tag itu belum
-   tersedia di jsDelivr, pengunjung memakai salinan Vercel (aman, hanya tidak hemat).
+1. Push kode ini ke `main`. Workflow **Aset CDN (jsDelivr)** berjalan otomatis (atau tombol Run workflow) dan menerbitkan DUA tag:
+   `a<hashcss>-<hashjs>` (CSS + JS, jarang berganti) dan `d<hash>` (4 berkas data, berganti tiap ada post/hero baru).
+2. Cek tab Actions > run terbaru > langkah "Pemanasan dan pengecekan jsDelivr": harus `OK` untuk `style`, `app`, dan keempat `.json`.
+3. Baru setelah itu nyalakan `HZ_SAVER=1`.
+
+Saat kamu menambah post baru (push `posts.json`): workflow menerbitkan tag data baru dalam beberapa puluh detik. Kalau halaman sudah tayang
+lebih dulu daripada tag-nya, pengunjung otomatis memakai salinan Vercel untuk sementara (aman, hanya tidak hemat sesaat). Tag lama tidak
+dihapus, jadi halaman yang masih di-cache pengunjung tetap berfungsi.
 
 ### B. Worker pencatat view (Cloudflare)
 
@@ -67,8 +74,9 @@ format id/slug, dan `MAX_ID`).
 
 ## Berkas yang terlibat
 
-`build.js` (flag `HZ_SAVER`, tag CSS/JS, `sw.js` kill-switch, `--cdn-assets`), `public/js/main.js`, `public/js/floating-menu.js`,
-`public/js/notify.js` (cabang `window.HZ_SAVER`), `worker/view-counter.js`, `.github/workflows/cdn-assets.yml`.
+`build.js` (flag `HZ_SAVER`, tag CSS/JS/data, `sw.js` kill-switch, blokir bot di robots.txt, `--cdn-assets`), `public/js/main.js`,
+`public/js/floating-menu.js`, `public/js/notify.js` (cabang `window.HZ_SAVER` dan pembungkus `hzFetchData`), `worker/view-counter.js`,
+`.github/workflows/cdn-assets.yml`.
 
 Perbaikan yang berlaku di semua mode: form pencarian langsung ke `/search`, bug request `/alt=` di halaman request-script,
 `/search` dikeluarkan dari sitemap dan ditutup di `robots.txt`.

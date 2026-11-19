@@ -419,10 +419,10 @@
     /* Cocokkan dengan posts.json sekali per halaman: buang entri yang post-nya sudah dihapus,
        dan segarkan judul/thumbnail kalau berubah. Kalau fetch gagal, riwayat dibiarkan apa adanya. */
     function pruneAgainstIndex(){
-      if(window.HZ_SAVER) return; // mode hemat: tanpa fetch posts.json (entri riwayat/favorit yatim dibersihkan lagi saat mode normal)
+      if(window.HZ_SAVER && !window.HZ_DC) return; // mode hemat TANPA data jsDelivr: tanpa fetch posts.json (entri yatim dibersihkan lagi nanti)
       if(pruned) return;
       pruned = true;
-      fetch(window.hzDataUrl ? window.hzDataUrl('posts.json') : '/js/posts.json?t=' + Date.now())
+      (window.hzFetchData ? window.hzFetchData('posts.json') : fetch('/js/posts.json?t=' + Date.now()))
         .then(function(r){ if(!r.ok) throw new Error('posts.json'); return r.json(); })
         .then(function(posts){
           if(!Array.isArray(posts)) return;
