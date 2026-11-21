@@ -172,7 +172,7 @@ function parseIdDate(str) {
 }
 
 /* Desain card script dipusatkan di public/js/card-template.js (dipakai juga oleh browser lewat window.hzCard) */
-const { hzBuildCard, hzSlugFromUrl, hzFormatViewCount } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
+const { hzBuildCard, hzSlugFromUrl, hzFormatViewCount, hzBadgeText } = require(path.join(SRC_DIR, 'js', 'card-template.js'));
 /* Angka view yang dicetak langsung di HTML (dari snapshot). viewKey = "<id>:<slug>" persis seperti kunci di api/view.js dan hzViewKey() di main.js.
    undefined bila snapshot tidak tersedia: kartu tetap "-" dan JS mengisinya dari /api/view seperti biasa. */
 function viewKey(id, slug) { return id + ':' + String(slug || '').trim().replace(/[^a-zA-Z0-9-_]/g, '').slice(0, 80); }
@@ -1198,6 +1198,12 @@ function buildRelatedHtml(entry, postsArr) {
   return sections.join('\n\n      ');
 }
 
+/* Badge "Special" di banner post penuh. Teks dinormalisasi oleh hzBadgeText (card-template.js) yang sama dengan card. */
+function buildPostBadgeHtml(raw) {
+  const text = hzBadgeText(raw);
+  return text ? '<span class="hz-post-badge" id="hz-post-badge">' + escHtml(text) + '</span>' : '';
+}
+
 function generatePostPages() {
   const dataDir = path.join(SRC_DIR, 'data', 'posts');
   if (!fs.existsSync(dataDir)) {
@@ -1249,9 +1255,14 @@ function generatePostPages() {
       console.log('  \u26a0 "' + slug + '" belum ada di posts.json — view count sementara pakai slug sebagai id.');
     }
 
+    if (postsEntry && hzBadgeText(data.badge) !== hzBadgeText(postsEntry.badge)) {
+      console.log('  \u26a0 "' + slug + '": badge di data JSON ("' + hzBadgeText(data.badge) + '") berbeda dengan posts.json ("' + hzBadgeText(postsEntry.badge) + '") — card dan halaman post akan tampil berbeda. Upload ulang post ini lewat tool.');
+    }
+
     let html = template
       .split('{{NAMEHERO}}').join(escHtml(namehero))
       .split('{{URLTHUMBNAIL}}').join(data.urlthumbnail || '')
+      .split('{{BADGE_INJECT}}').join(buildPostBadgeHtml(data.badge))
       .split('{{KATEGORISKIN}}').join(escHtml(data.kategoriskin || ''))
       .split('{{DATEPOST}}').join(escHtml(data.datepost || ''))
       .split('{{AUTHORNAME}}').join(escHtml(data.authorname || 'Henz MLBB'))

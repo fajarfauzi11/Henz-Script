@@ -29,6 +29,12 @@
     return n.toLocaleString('id-ID');
   }
 
+  /* Badge "Special" (opsional) di kiri atas thumbnail card. Sumber teks: field `badge` di posts.json.
+     Dipakai juga oleh build.js untuk badge di banner post penuh, supaya aturan normalisasinya satu. */
+  function hzBadgeText(raw){
+    return String(raw==null?'':raw).replace(/\s+/g,' ').trim().slice(0,40);
+  }
+
   function hzSlugFromUrl(url){
     return (url||'').replace(/^.*\/post\//,'').replace(/\.html$/,'').replace(/\/+$/,'');
   }
@@ -43,11 +49,18 @@
       title=e.title||'Tanpa Judul',date=hzShortDate(e.date||''),auth=e.author||'Henz Official',
       ava=e.avatar||'https://i.ibb.co/fzWQDCf4/favicon.webp',
       esc=hzEscHtml(title);
+    var badge=hzBadgeText(e.badge);
+    /* onerror: tanpa badge perilaku lama persis (ganti isi wrap). Dengan badge, hanya <img> yang diganti
+       supaya badge tidak ikut terhapus saat gambar gagal dimuat. */
+    var imgErr=badge
+      ?'this.outerHTML=\'<div class=&quot;hz-card-no-img&quot;>No Image</div>\''
+      :'this.parentNode.innerHTML=\'<div class=&quot;hz-card-no-img&quot;>No Image</div>\'';
     var imgH=thumb
-      ?'<img class="hz-card-img" src="'+thumb+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="this.parentNode.innerHTML=\'<div class=&quot;hz-card-no-img&quot;>No Image</div>\'">'
+      ?'<img class="hz-card-img" src="'+thumb+'" alt="'+esc+'" loading="lazy" draggable="false" onerror="'+imgErr+'">'
       :'<div class="hz-card-no-img">No Image</div>';
+    var badgeH=badge?'<span class="hz-card-badge">'+hzEscHtml(badge)+'</span>':'';
     return '<a class="hz-card" href="'+url+'">'
-      +'<div class="hz-card-img-wrap">'+imgH+'</div>'
+      +'<div class="hz-card-img-wrap">'+imgH+badgeH+'</div>'
       +'<div class="hz-card-body">'
       +(label?'<p class="hz-card-label">'+hzEscHtml(label)+'</p>':'')
       +'<h3 class="hz-card-title" title="'+esc+'">'+esc+'</h3>'
@@ -68,7 +81,8 @@
     hzBuildCard:hzBuildCard,
     hzShortDate:hzShortDate,
     hzFormatViewCount:hzFormatViewCount,
-    hzSlugFromUrl:hzSlugFromUrl
+    hzSlugFromUrl:hzSlugFromUrl,
+    hzBadgeText:hzBadgeText
   };
 
   if(typeof module!=='undefined'&&module.exports){

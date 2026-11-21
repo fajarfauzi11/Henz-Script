@@ -215,6 +215,17 @@ input[type="text"]::placeholder,input[type="password"]::placeholder,textarea::pl
       <input type="text" id="kategoriskin" placeholder="Starlight / Collector / Elite / Special"/>
     </div>
     <div class="field">
+      <div class="field-label">Badge Special <span class="field-badge">badge</span> <span class="field-badge auto">opsional</span></div>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;cursor:pointer;">
+        <input type="checkbox" id="badge-on" onchange="hzBadgeToggle()" style="width:15px;height:15px;accent-color:#111;cursor:pointer;flex-shrink:0;"/>
+        <span>Tampilkan badge di thumbnail (card &amp; banner post)</span>
+      </label>
+      <div id="badge-text-wrap" style="margin-top:8px;opacity:.5;">
+        <input type="text" id="badge-text" maxlength="30" placeholder="Special" disabled/>
+      </div>
+      <div class="field-hint" style="font-size:11px;color:#999;margin-top:4px;">Teks bebas, tampil di kiri atas gambar card dan banner post. Dikosongkan = "Special". Disarankan maksimal sekitar 20 karakter (di card yang lebih panjang dipotong "…"). Centang dimatikan = badge dihapus saat upload.</div>
+    </div>
+    <div class="field">
       <div class="field-label">URL Gambar Kategori <span class="field-badge auto">auto: tambah ke categories.json jika baru</span></div>
       <input type="text" id="catimgurl" placeholder="https://static.wikia.nocookie.net/... (opsional)"/>
       <div class="field-hint" style="font-size:11px;color:#999;margin-top:4px;">Opsional. Hanya dipakai jika kategori di atas belum ada di categories.json. Bisa dikosongkan dan diisi manual nanti.</div>
@@ -1898,6 +1909,47 @@ function removeDlBlokT2(idx){
 
 // ── HELPERS ────────────────────────────────
 function v(id){ return (document.getElementById(id)||{value:''}).value||''; }
+
+// ── BADGE SPECIAL (opsional) ──
+// Aturan normalisasi sama dengan hzBadgeText di public/js/card-template.js (spasi dirapikan, maks 40 karakter).
+function hzBadgeNormalize(raw){ return String(raw==null?'':raw).replace(/\s+/g,' ').trim().slice(0,40); }
+// Teks badge yang berlaku: '' jika checkbox mati; "Special" jika dicentang tapi teks kosong.
+function hzBadgeText(){
+  var on = document.getElementById('badge-on');
+  if(!on || !on.checked) return '';
+  return hzBadgeNormalize(v('badge-text')) || 'Special';
+}
+function hzBadgeSync(){
+  var on = document.getElementById('badge-on');
+  var inp = document.getElementById('badge-text');
+  var wrap = document.getElementById('badge-text-wrap');
+  var chk = !!(on && on.checked);
+  if(inp) inp.disabled = !chk;
+  if(wrap) wrap.style.opacity = chk ? '1' : '.5';
+}
+function hzBadgeToggle(){
+  hzBadgeSync();
+  if(document.getElementById('badge-on').checked){
+    var inp = document.getElementById('badge-text');
+    if(inp) inp.focus();
+  }
+  scheduleLiveUpdate();
+}
+// Dipakai saat memuat data post (JSON/HTML): teks kosong = badge mati.
+function hzSetBadgeField(raw){
+  var t = hzBadgeNormalize(raw);
+  var on = document.getElementById('badge-on');
+  var inp = document.getElementById('badge-text');
+  if(on) on.checked = !!t;
+  if(inp) inp.value = t;
+  hzBadgeSync();
+}
+// Markup badge untuk pratinjau (gaya sama dengan .hz-post-badge di post-template.html, inline karena template tool tidak memuat style situs).
+function hzBuildBadgeHtml(){
+  var t = hzBadgeText();
+  if(!t) return '';
+  return '<span id="hz-post-badge" style="position:absolute;top:14px;left:14px;z-index:3;max-width:calc(100% - 126px);padding:6px 11px;border-radius:7px;background:#fff;color:#111;border:2px solid #111;box-shadow:3px 3px 0 #FFC200;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:800;letter-spacing:.7px;line-height:1;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none;">'+esc(t)+'</span>';
+}
 function vc(id){ var el = document.getElementById(id); return !!(el && el.checked); }
 function hzSetCheck(id, on){ var el = document.getElementById(id); if(el) el.checked = !!on; }
 function s57(str){ return str.length>57?str.substring(0,57)+'...':str; }
@@ -2299,6 +2351,9 @@ function buildHTML(){
     .replace('<!-- DLTAB_TOOLTIP_DESC_INJECT -->', hzBuildTooltipDescHtml(v('tooltip-dltab-desc')))
     .replace('DLTAB_TOOLTIP_IMG_INJECT', esc(v('tooltip-dltab-img')));
 
+  // Badge Special: disuntik PALING AKHIR supaya teks badge tidak ikut diganti regex token di atas
+  tpl = tpl.replace('<!-- BADGE_INJECT -->', function(){ return hzBuildBadgeHtml(); });
+
   // Ubah tombol Download menjadi "Soon!" (abu-abu, non-clickable)
   // jika href-nya kosong setelah semua token di-replace
   tpl = tpl.replace(
@@ -2366,6 +2421,8 @@ function buildContentData(){
   data.urlthumbnail= v('urlthumbnail');
   data.kategoriskin= v('kategoriskin');
   data.keywords    = v('keywords');
+  var badgeTxt = hzBadgeText();
+  if(badgeTxt) data.badge = badgeTxt; // tanpa badge: key tidak ditulis sama sekali
   data.datepost    = v('datepost');
   data.authorname  = v('authorname') || 'Henz MLBB';
   data.longstory   = v('longstory');
@@ -2458,6 +2515,7 @@ function hzLoadFromJson(jsonString, filename){
   hzSetField('urlthumbnail', data.urlthumbnail || '');
   hzSetField('kategoriskin', data.kategoriskin || '');
   hzSetField('keywords', data.keywords || '');
+  hzSetBadgeField(data.badge || '');
   hzSetField('datepost', data.datepost || '');
   hzSetField('authorname', data.authorname || 'Henz MLBB');
   hzSetField('longstory', data.longstory || '');
@@ -3241,6 +3299,8 @@ function hzLoadFromHtml(htmlString, filename){
   var heroImg = doc.querySelector('#hz-hero > img');
   if(heroImg) hzSetField('urlthumbnail', heroImg.getAttribute('src') || '');
   else warnings.push('\u26a0 urlthumbnail tidak ditemukan');
+  var badgeEl = doc.querySelector('#hz-post-badge');
+  hzSetBadgeField(badgeEl ? badgeEl.textContent : '');
 
   // [3] KATEGORISKIN, DATEPOST, AUTHORNAME
   var heroMeta = doc.getElementById('hz-hero-meta');
@@ -4002,6 +4062,7 @@ async function finalizeAndUpload(){
     var catVal      = (document.getElementById('kategoriskin').value||'').trim();
     var heroVal     = (document.getElementById('herolink').value||'').trim();
     var keywordsVal = (document.getElementById('keywords').value||'').trim();
+    var badgeVal    = hzBadgeText();
     var catImgVal   = (document.getElementById('catimgurl').value||'').trim();
 
     if(existingIndex !== -1){
@@ -4014,6 +4075,7 @@ async function finalizeAndUpload(){
       oldEntry.hero  = heroVal;
       oldEntry.date  = hzDateFromDatepost();
       if(keywordsVal){ oldEntry.keywords = keywordsVal; } else { delete oldEntry.keywords; }
+      if(badgeVal){ oldEntry.badge = badgeVal; } else { delete oldEntry.badge; }
       hzLog('Entry "'+namehero+'" sudah ada di posts.json, akan diupdate (bukan duplikat).');
     } else {
       var newEntry = {
@@ -4027,6 +4089,7 @@ async function finalizeAndUpload(){
         author: 'Henz'
       };
       if(keywordsVal) newEntry.keywords = keywordsVal;
+      if(badgeVal) newEntry.badge = badgeVal;
       posts.unshift(newEntry);
       rqPostId = newEntry.id;
     }
@@ -4500,6 +4563,8 @@ return `<!DOCTYPE html>
 
       <!-- [C2] Gradient gelap dari bawah agar teks terbaca — jangan diubah -->
       <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.25) 50%,transparent 100%);pointer-events:none;"></div>
+
+      <!-- BADGE_INJECT -->
 
       <!-- [C3] Meta hero — teks di atas gambar (kiri bawah) -->
       <div id="hz-hero-meta" style="position:absolute;bottom:0;left:0;right:0;padding:24px 32px 28px;">
