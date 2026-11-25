@@ -757,7 +757,11 @@
     "date": "22 Nov 2026",
     "author": "Henz",
     "keywords": "Suyou Sasuke Uchiha",
-    "badge": "Fix Size"
+    "badge": "Fix Size",
+    "upd": {
+      "t": 1795600332363,
+      "n": "Fix Size Model menjai lebih kecil atau normal seperti skin asli."
+    }
   },
   {
     "id": 105,
