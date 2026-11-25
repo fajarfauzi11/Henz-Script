@@ -184,7 +184,11 @@
     "date": "22 Nov 2026",
     "author": "Henz",
     "keywords": "Obsidia Imperatrix Arashi",
-    "badge": "Fix Model"
+    "badge": "Fix Model",
+    "upd": {
+      "t": 1795600279709,
+      "n": "Fix Model replace Default"
+    }
   },
   {
     "id": 157,
