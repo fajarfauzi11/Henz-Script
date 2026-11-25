@@ -1479,3 +1479,12 @@ html[data-theme="dark"] .hz-fm-new{background:#c62828}
 html[data-theme="dark"] .hz-post-upd{border-color:rgba(229,50,50,.4);background:rgba(229,50,50,.12);color:var(--hz-text-2)}
 html[data-theme="dark"] .hz-post-upd svg{color:var(--hz-red-text)}
 html[data-theme="dark"] .hz-post-upd strong{color:var(--hz-text)}
+
+/* Log Update: perlakuan tepi daftar yang SAMA dengan Riwayat Script/Favorit (lihat blok "Riwayat Script & Riwayat Notifikasi" di atas):
+   garis pemisah di bawah deskripsi, padding atas/bawah daftar >= lebar pudar, dan tepi daftar memudar, jadi kartu yang tergulir
+   tidak terpotong keras dan kartu pertama/terakhir tetap utuh saat daftar di ujung. Catatan kaki diberi garis atas seperti footer Riwayat. */
+#hz-fm-log .hz-fm-modal-sub{padding-bottom:12px;border-bottom:1px solid #efefef}
+#hz-fm-log .hz-fm-list{padding-top:12px;padding-bottom:16px;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 16px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 12px,#000 calc(100% - 16px),transparent 100%)}
+#hz-fm-log .hz-lg-foot{padding:10px 20px 16px;border-top:1px solid #efefef}
+html[data-theme="dark"] #hz-fm-log .hz-fm-modal-sub{border-bottom-color:var(--hz-line-2)}
+html[data-theme="dark"] #hz-fm-log .hz-lg-foot{border-top-color:var(--hz-line-2)}
