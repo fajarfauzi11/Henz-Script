@@ -14,6 +14,9 @@
 
    Switch Mode Gelap (key hz_theme) juga ditangani di sini; lihat blok "Mode Gelap" di init().
 
+   Log Update: baris di menu gear + modal #hz-fm-log (tab Update | Baru), data dari posts.json; lihat blok "Log Update" di init().
+   Penanda "Baru" (titik di ikon gear + pil di baris menu): localStorage hz_log_seen_v1 {si,su,ki,ku} = id/waktu-pembaruan terbaru yang sudah dilihat dan yang diketahui.
+
    PWA ("Install Aplikasi"): blok "PWA" di bawah mendaftarkan /sw.js dan mengatur atribut <html data-pwa>:
    - "prompt" = Chromium (Chrome/Edge/Samsung Internet) sudah memicu beforeinstallprompt -> tombol memanggil prompt bawaan.
    - "ios"    = iPhone/iPad -> tidak ada prompt bawaan, tombol membuka modal petunjuk (#hz-fm-ios).
@@ -280,6 +283,14 @@
   function toast(msg, act, kind){
     if(typeof window.hzShowToast === 'function') window.hzShowToast(msg, act, kind);
   }
+
+  /* Log Update: main.js memanggil window.hzLogSync(list) tiap halaman selesai mengambil posts.json (tanpa request tambahan).
+     Bila dipanggil sebelum init() selesai, daftarnya ditahan di logPending lalu diproses saat blok "Log Update" siap. */
+  var logSyncFn = null, logPending = null;
+  window.hzLogSync = function(list){
+    if(!Array.isArray(list)) return;
+    if(logSyncFn) logSyncFn(list); else logPending = list;
+  };
 
   function init(){
     record();
@@ -692,17 +703,279 @@
       closeBtn.focus();
     });
 
+    /* --- Log Update ---
+       Baris "Log Update" di menu gear + modal #hz-fm-log dengan 2 tab:
+       - Update: script lama yang diperbarui, dari field `upd` di posts.json ({t:<epoch ms>, n:<catatan>}); terbaru dulu, maks LOG_MAX.
+       - Baru: LOG_MAX id terbesar di posts.json (id naik terus, jadi tidak bergantung format tanggal teks).
+       Data = posts.json yang SAMA dengan halaman lain (window.hzFetchData: URL ber-?v=hash dan cache panjang; jsDelivr di mode hemat).
+       Diambil LAZY hanya saat modal dibuka, disimpan di memori selama halaman terbuka (gagal = dicoba lagi di pembukaan berikutnya).
+       Tidak ada localStorage dan tidak ada request lain. Semua teks dari data dipasang lewat textContent (bukan innerHTML). */
+    var logOverlay = document.getElementById('hz-fm-log');
+    var logCloseFn = null;
+    var openLogBtn = document.getElementById('hz-fm-open-log');
+    if(logOverlay && openLogBtn){
+      (function(){
+        var LOG_MAX = 10;
+        var NOTE_MAX = 120;
+        var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+        var SUBS = {
+          upd: 'Script lama yang baru diperbarui oleh Henz. Ketuk untuk membuka script-nya.',
+          'new': '10 script terbaru yang baru dirilis. Ketuk untuk membuka script-nya.'
+        };
+        var closeB = document.getElementById('hz-fm-log-close');
+        var tabs = { upd: document.getElementById('hz-fm-log-tab-upd'), 'new': document.getElementById('hz-fm-log-tab-new') };
+        var panes = { upd: document.getElementById('hz-fm-log-pane-upd'), 'new': document.getElementById('hz-fm-log-pane-new') };
+        var subEl = document.getElementById('hz-fm-log-sub');
+        var footEl = document.getElementById('hz-fm-log-foot');
+        if(!closeB || !tabs.upd || !tabs['new'] || !panes.upd || !panes['new'] || !subEl || !footEl) return;
+
+        var logPosts = null;   // isi posts.json (array) setelah berhasil diambil
+        var loading = false;
+        var tab = 'upd';
+        var picked = false;    // true = pengunjung sudah memilih tab sendiri (jangan dipindah otomatis)
+        var counts = { upd: 0, 'new': 0 };
+
+        /* Penanda "ada yang baru": localStorage hz_log_seen_v1 = {si,su: id & waktu-pembaruan terbaru yang SUDAH dilihat (modal dibuka);
+           ki,ku: yang terbaru diketahui}. Pengunjung baru: posisi awal dicatat diam-diam (tanpa titik). Titik = ki>si atau ku>su.
+           Halaman yang tidak memuat posts.json tetap bisa menampilkan titik dari catatan ini. Storage dibungkus try/catch. */
+        var SEEN_KEY = 'hz_log_seen_v1';
+        var dotEl = document.getElementById('hz-fm-dot');
+        var newEl = document.getElementById('hz-fm-log-new');
+        function readSeen(){
+          try{
+            var o = JSON.parse(localStorage.getItem(SEEN_KEY) || 'null');
+            if(o && typeof o === 'object' && isFinite(o.si) && isFinite(o.su) && isFinite(o.ki) && isFinite(o.ku)) return o;
+          }catch(e){}
+          return null;
+        }
+        function writeSeen(o){ try{ localStorage.setItem(SEEN_KEY, JSON.stringify(o)); return true; }catch(e){ return false; } }
+        function setDot(on){ if(dotEl) dotEl.hidden = !on; if(newEl) newEl.hidden = !on; }
+        function dotFromRec(){ var r = readSeen(); setDot(!!(r && (r.ki > r.si || r.ku > r.su))); }
+        function maxOf(list){
+          var mi = 0, mu = 0;
+          list.forEach(function(p){
+            if(!validPost(p)) return;
+            if(p.id > mi) mi = p.id;
+            if(p.upd && typeof p.upd.t === 'number' && isFinite(p.upd.t) && p.upd.t > mu) mu = p.upd.t;
+          });
+          return { i: mi, u: mu };
+        }
+        function syncDot(list){
+          var m = maxOf(list);
+          if(!m.i) return; // daftar kosong/rusak: jangan jadikan acuan
+          var r = readSeen();
+          if(!r){ writeSeen({ si: m.i, su: m.u, ki: m.i, ku: m.u }); setDot(false); return; }
+          var ki = Math.max(r.ki, m.i), ku = Math.max(r.ku, m.u);
+          if(ki !== r.ki || ku !== r.ku){ r.ki = ki; r.ku = ku; writeSeen(r); }
+          setDot(ki > r.si || ku > r.su);
+        }
+        function markSeen(list){
+          var m = maxOf(list), r = readSeen() || { si: 0, su: 0, ki: 0, ku: 0 };
+          var i = Math.max(r.ki, m.i), u = Math.max(r.ku, m.u);
+          writeSeen({ si: i, su: u, ki: i, ku: u });
+          setDot(false);
+        }
+
+        function safeHref(u){
+          return (typeof u === 'string' && u.charAt(0) === '/' && u.charAt(1) !== '/') ? u : '';
+        }
+        function dayDiff(ts){
+          var a = new Date(), b = new Date(ts);
+          var d0 = new Date(a.getFullYear(), a.getMonth(), a.getDate()).getTime();
+          var d1 = new Date(b.getFullYear(), b.getMonth(), b.getDate()).getTime();
+          return Math.round((d0 - d1) / 86400000);
+        }
+        function relTime(ts){
+          var d = dayDiff(ts);
+          if(d <= 0) return 'Hari ini';
+          if(d === 1) return 'Kemarin';
+          if(d < 7) return d + ' hari lalu';
+          var b = new Date(ts);
+          return b.getDate() + ' ' + MONTHS[b.getMonth()] + ' ' + b.getFullYear();
+        }
+        function clip(t, max){
+          t = String(t).replace(/\s+/g, ' ').trim();
+          return t.length > max ? t.slice(0, max - 1).replace(/\s+$/, '') + '\u2026' : t;
+        }
+        function validPost(p){
+          return !!(p && typeof p.id === 'number' && p.title && safeHref(p.url));
+        }
+        function getUpdates(list){
+          return list.filter(function(p){
+            return validPost(p) && p.upd && typeof p.upd.t === 'number' && isFinite(p.upd.t) && p.upd.t > 0;
+          }).sort(function(a, b){ return b.upd.t - a.upd.t; }).slice(0, LOG_MAX);
+        }
+        function getNew(list){
+          return list.filter(validPost).sort(function(a, b){ return b.id - a.id; }).slice(0, LOG_MAX);
+        }
+        function el(tag, cls, text){
+          var n = document.createElement(tag);
+          if(cls) n.className = cls;
+          if(text) n.textContent = text;
+          return n;
+        }
+        function mkItem(p, kind){
+          var a = el('a', 'hz-fm-hist-item');
+          a.href = safeHref(p.url);
+          var th = el('span', 'hz-fm-hist-thumb');
+          var src = safeThumb(p.thumb);
+          if(src){
+            var img = document.createElement('img');
+            img.alt = '';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.src = src;
+            img.addEventListener('error', function(){ img.style.display = 'none'; });
+            th.appendChild(img);
+          }
+          var body = el('span', 'hz-fm-hist-body');
+          body.appendChild(el('strong', '', String(p.title)));
+          var meta = el('span', 'hz-lg-meta');
+          if(kind === 'upd'){
+            var note = typeof p.upd.n === 'string' ? clip(p.upd.n, NOTE_MAX) : '';
+            if(note) body.appendChild(el('span', 'hz-lg-note', note));
+            meta.appendChild(el('span', 'hz-lg-chip hz-lg-chip--upd', 'Diperbarui'));
+            meta.appendChild(el('span', '', relTime(p.upd.t)));
+          } else {
+            if(p.cat) body.appendChild(el('span', 'hz-lg-note', 'Kategori ' + String(p.cat)));
+            meta.appendChild(el('span', 'hz-lg-chip hz-lg-chip--new', 'Baru'));
+            if(p.date) meta.appendChild(el('span', '', String(p.date)));
+          }
+          body.appendChild(meta);
+          a.appendChild(th);
+          a.appendChild(body);
+          a.appendChild(chevron());
+          return a;
+        }
+        function clear(node){ while(node.firstChild) node.removeChild(node.firstChild); }
+        function emptyBlock(node, title, text){
+          clear(node);
+          var e = el('div', 'hz-fm-empty');
+          e.appendChild(el('strong', '', title));
+          if(text) e.appendChild(el('span', '', text));
+          node.appendChild(e);
+        }
+        function fillPane(kind, items){
+          var node = panes[kind];
+          clear(node);
+          counts[kind] = items.length;
+          if(!items.length){
+            if(kind === 'upd') emptyBlock(node, 'Belum ada pembaruan', 'Pembaruan script akan muncul di sini.');
+            else emptyBlock(node, 'Belum ada script baru', 'Script yang baru dirilis akan muncul di sini.');
+            return;
+          }
+          items.forEach(function(p){ node.appendChild(mkItem(p, kind)); });
+        }
+        function syncChrome(){
+          subEl.textContent = SUBS[tab];
+          var n = counts[tab];
+          if(logPosts && n > 0){
+            footEl.textContent = tab === 'upd' ? 'Menampilkan ' + n + ' pembaruan terbaru.' : 'Menampilkan ' + n + ' script terbaru.';
+            footEl.hidden = false;
+          } else {
+            footEl.hidden = true;
+          }
+        }
+        function setTab(name, focusTab){
+          tab = name === 'new' ? 'new' : 'upd';
+          ['upd', 'new'].forEach(function(k){
+            var on = k === tab;
+            tabs[k].setAttribute('aria-selected', on ? 'true' : 'false');
+            tabs[k].tabIndex = on ? 0 : -1;
+            panes[k].hidden = !on;
+          });
+          panes[tab].scrollTop = 0;
+          syncChrome();
+          if(focusTab) tabs[tab].focus();
+        }
+        function renderAll(){
+          var upd = getUpdates(logPosts), nw = getNew(logPosts);
+          fillPane('upd', upd);
+          fillPane('new', nw);
+          if(!picked && !upd.length && nw.length) tab = 'new'; // belum ada pembaruan: buka langsung tab Baru
+          setTab(tab, false);
+          if(logOverlay.classList.contains('open')) markSeen(logPosts); // sudah dilihat: titik "Baru" padam
+        }
+        function fetchPosts(){
+          return (window.hzFetchData ? window.hzFetchData('posts.json') : fetch('/js/posts.json?t=' + Date.now()))
+            .then(function(r){ if(!r.ok) throw new Error('posts'); return r.json(); })
+            .then(function(d){ if(!Array.isArray(d)) throw new Error('format'); return d; });
+        }
+        function load(){
+          if(logPosts){ renderAll(); return; }
+          if(loading) return;
+          loading = true;
+          counts.upd = 0; counts['new'] = 0;
+          emptyBlock(panes.upd, 'Memuat\u2026', '');
+          emptyBlock(panes['new'], 'Memuat\u2026', '');
+          setTab(tab, false);
+          fetchPosts().then(function(list){
+            logPosts = list;
+            loading = false;
+            renderAll();
+          }, function(){
+            loading = false;
+            counts.upd = 0; counts['new'] = 0;
+            emptyBlock(panes.upd, 'Gagal memuat data', 'Periksa koneksimu lalu buka lagi menu ini.');
+            emptyBlock(panes['new'], 'Gagal memuat data', 'Periksa koneksimu lalu buka lagi menu ini.');
+            syncChrome();
+          });
+        }
+        function openLog(){
+          closePanel();
+          lastFocus = btn; // panel menutup saat modal terbuka, jadi fokus dikembalikan ke tombol gear
+          picked = false;
+          tab = 'upd';
+          logOverlay.classList.add('open');
+          logOverlay.setAttribute('aria-hidden', 'false');
+          htmlEl.classList.add('hz-fm-lock');
+          load();
+          setTimeout(function(){ closeB.focus(); }, 30);
+        }
+        function closeLog(){
+          logOverlay.classList.remove('open');
+          logOverlay.setAttribute('aria-hidden', 'true');
+          htmlEl.classList.remove('hz-fm-lock');
+          if(lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+        logCloseFn = closeLog;
+        openLogBtn.addEventListener('click', openLog);
+        closeB.addEventListener('click', closeLog);
+        logOverlay.addEventListener('click', function(e){ if(e.target === logOverlay) closeLog(); });
+        ['upd', 'new'].forEach(function(k){
+          tabs[k].addEventListener('click', function(){ picked = true; setTab(k, false); });
+          tabs[k].addEventListener('keydown', function(e){
+            var key = e.key || '';
+            if(key === 'ArrowLeft' || key === 'ArrowRight' || key === 'Left' || key === 'Right'){
+              e.preventDefault();
+              picked = true;
+              setTab(k === 'upd' ? 'new' : 'upd', true);
+            }
+          });
+        });
+
+        logSyncFn = function(list){
+          syncDot(list);
+          if(!logPosts) logPosts = list.slice(); // data modal ikut dari halaman (tanpa mengambil lagi)
+        };
+        if(logPending){ var lp = logPending; logPending = null; logSyncFn(lp); } else dotFromRec();
+        window.addEventListener('storage', function(e){ if(e.key === SEEN_KEY) dotFromRec(); });
+        window.addEventListener('pageshow', function(e){ if(e.persisted) dotFromRec(); });
+      })();
+    }
+
     /* --- Keyboard: ESC menutup, Tab dikurung di dalam modal --- */
     document.addEventListener('keydown', function(e){
       var key = e.key || '';
       if(key === 'Escape' || key === 'Esc'){
         if(overlay.classList.contains('open')){ closeHistory(); }
         else if(favOverlay && favOverlay.classList.contains('open') && favCloseFn){ favCloseFn(); }
+        else if(logOverlay && logOverlay.classList.contains('open') && logCloseFn){ logCloseFn(); }
         else if(iosOpen()){ closeIos(); }
         else if(panelOpen()){ closePanel(); btn.focus(); }
         return;
       }
-      var trap = overlay.classList.contains('open') ? overlay : ((favOverlay && favOverlay.classList.contains('open')) ? favOverlay : (iosOpen() ? iosOverlay : null));
+      var trap = overlay.classList.contains('open') ? overlay : ((favOverlay && favOverlay.classList.contains('open')) ? favOverlay : ((logOverlay && logOverlay.classList.contains('open')) ? logOverlay : (iosOpen() ? iosOverlay : null)));
       if(key === 'Tab' && trap){
         var f = trap.querySelectorAll('a[href], button');
         var vis = [];

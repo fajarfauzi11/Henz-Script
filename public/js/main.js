@@ -276,6 +276,7 @@ function hzFetchPosts(cb){
     .then(function(d){
       var list=Array.isArray(d)?d:[];
       try{if(window.hzNotifySync)window.hzNotifySync(list);}catch(e){} /* notify.js: perbarui titik merah lonceng tanpa request tambahan */
+      try{if(window.hzLogSync)window.hzLogSync(list);}catch(e){} /* floating-menu.js: penanda "Baru" Log Update tanpa request tambahan */
       cb(list);
     })
     .catch(function(){cb([]);});

@@ -1447,3 +1447,35 @@ html[data-theme="dark"] .hz-nt-msg{color:#f97066}
 .hz-nt-tabs{margin-bottom:4px}
 html[data-theme="dark"] #hz-fm-history .hz-fm-modal-foot{border-top-color:var(--hz-line-2)}
 html[data-theme="dark"] #hz-fm-history .hz-fm-modal-sub,html[data-theme="dark"] #hz-fm-fav .hz-fm-modal-sub{border-bottom-color:var(--hz-line-2)}
+
+/* ===== Log Update (menu melayang) — popup 2 tab Update | Baru =====
+   Memakai ulang .hz-nt-tabs/.hz-nt-tab (tab) dan .hz-fm-hist-item (kartu). Markup: floating-menu.html (#hz-fm-log). Logika: floating-menu.js. */
+.hz-lg-pane[hidden]{display:none}
+.hz-fm-hist-body .hz-lg-note{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:12.5px;line-height:1.4;color:#555;word-break:break-word}
+.hz-fm-hist-body .hz-lg-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11.5px;font-weight:700;color:#6b6b72}
+.hz-fm-hist-body .hz-lg-chip{display:inline-block;border-radius:6px;padding:2px 7px;font-size:11px;font-weight:800;line-height:1.3}
+.hz-fm-hist-body .hz-lg-chip--new{background:#e8f6ec;color:#1d7a3a}
+.hz-fm-hist-body .hz-lg-chip--upd{background:#fdecec;color:#c42626}
+.hz-lg-foot{flex-shrink:0;margin:0;padding:0 20px 16px;font-size:11.5px;line-height:1.4;color:#6b6b72;text-align:center}
+.hz-lg-foot[hidden]{display:none}
+html[data-theme="dark"] .hz-fm-hist-body .hz-lg-note{color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-fm-hist-body .hz-lg-meta{color:var(--hz-text-3)}
+html[data-theme="dark"] .hz-fm-hist-body .hz-lg-chip--new{background:rgba(46,160,80,.2);color:#6fdc8c}
+html[data-theme="dark"] .hz-fm-hist-body .hz-lg-chip--upd{background:rgba(229,50,50,.18);color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-lg-foot{color:var(--hz-text-3)}
+
+/* Log Update: penanda "ada yang baru" (titik di ikon gear + pil "Baru" di baris menu) dan kotak "Diperbarui" di halaman post */
+.hz-fm-btn{position:relative}
+.hz-fm-dot{position:absolute;top:0;right:0;width:14px;height:14px;box-sizing:border-box;border-radius:50%;background:#FFC200;border:2px solid #fff;pointer-events:none}
+.hz-fm-dot[hidden]{display:none}
+.hz-fm-new{flex-shrink:0;border-radius:999px;background:#e53232;color:#fff;font-size:10.5px;font-weight:800;line-height:1;padding:4px 8px}
+.hz-fm-new[hidden]{display:none}
+.hz-post-upd{display:flex;align-items:flex-start;gap:9px;margin:0 0 22px;padding:11px 14px;border:1px solid #f3c4c4;border-radius:12px;background:#fdf4f4;color:#333;font-size:13px;line-height:1.5;font-family:'Manrope',sans-serif}
+.hz-post-upd svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:#e53232}
+.hz-post-upd span{min-width:0;overflow-wrap:anywhere}
+.hz-post-upd strong{font-weight:800;color:#111}
+html[data-theme="dark"] .hz-fm-dot{border-color:var(--hz-bg)}
+html[data-theme="dark"] .hz-fm-new{background:#c62828}
+html[data-theme="dark"] .hz-post-upd{border-color:rgba(229,50,50,.4);background:rgba(229,50,50,.12);color:var(--hz-text-2)}
+html[data-theme="dark"] .hz-post-upd svg{color:var(--hz-red-text)}
+html[data-theme="dark"] .hz-post-upd strong{color:var(--hz-text)}

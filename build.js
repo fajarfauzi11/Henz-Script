@@ -1019,6 +1019,29 @@ function parseDateFlexible(str) {
   const mo = ID_MONTH_ANY[t[1].toLowerCase().replace(/\./g, '')];
   return mo ? t[2] + '-' + mo + '-' + t[0].padStart(2, '0') : null;
 }
+
+/* ===== Log Update: field upd di posts.json ({t:<epoch ms>, n:<catatan>}, ditulis tool post) =====
+   Dipakai untuk kotak "Diperbarui" di halaman post, dateModified JSON-LD, dan lastmod sitemap.
+   Tanggal dihitung di zona WIB (Asia/Jakarta), bukan zona server build (UTC). */
+const UPD_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+const UPD_DATE_FMT = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jakarta', year: 'numeric', month: '2-digit', day: '2-digit' });
+function updInfo(entry) {
+  const u = entry && entry.upd;
+  if (!u || typeof u.t !== 'number' || !isFinite(u.t) || u.t <= 0) return null;
+  const parts = UPD_DATE_FMT.formatToParts(new Date(u.t));
+  const g = (type) => (parts.find((x) => x.type === type) || {}).value;
+  const y = g('year'), m = g('month'), d = g('day');
+  if (!y || !m || !d || !UPD_MONTHS[parseInt(m, 10) - 1]) return null;
+  let note = typeof u.n === 'string' ? u.n.replace(/\s+/g, ' ').trim() : '';
+  if (note.length > 120) note = note.slice(0, 119).replace(/\s+$/, '') + '\u2026';
+  return { iso: y + '-' + m + '-' + d, label: parseInt(d, 10) + ' ' + UPD_MONTHS[parseInt(m, 10) - 1] + ' ' + y, note: note };
+}
+function laterIso(a, b) { if (!a) return b || null; if (!b) return a; return a >= b ? a : b; }
+function buildUpdatedHtml(entry) {
+  const u = updInfo(entry);
+  if (!u) return '';
+  return '<div class="hz-post-upd" id="hz-post-upd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.5 15a9 9 0 1 1-2.1-9.4L23 10"/></svg><span><strong>Diperbarui ' + u.label + '</strong>' + (u.note ? ' &middot; ' + escHtml(u.note) : '') + '</span></div>';
+}
 /* "<" di-escape supaya isi JSON tidak pernah bisa menutup tag <script> */
 function ldScript(obj) {
   return '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, '\\u003c') + '</script>';
@@ -1037,8 +1060,9 @@ function buildPostJsonLd(data, slug, postUrl, entry) {
   const crumbs = [['Beranda', '/'], ['Daftar Hero', '/daftar-hero']];
   if (heroName && fs.existsSync(path.join(OUT_DIR, 'hero', hs + '.html'))) crumbs.push([heroName, '/hero/' + hs]);
   crumbs.push([name, postUrl]);
-  const modified = parseDateFlexible(data.datepost);
-  const published = parseDateFlexible(entry && entry.date) || modified;
+  const baseModified = parseDateFlexible(data.datepost);
+  const modified = laterIso(baseModified, (updInfo(entry) || {}).iso); // pembaruan dari Log Update bisa lebih baru dari datepost
+  const published = parseDateFlexible(entry && entry.date) || baseModified;
   return ldScript({
     '@context': 'https://schema.org',
     '@graph': [
@@ -1282,13 +1306,14 @@ function generatePostPages() {
       .split('{{VIEW_COUNT}}').join(VIEWS.ok ? hzFormatViewCount(viewCountFor(viewId, slug)) : '&ndash;')
       .split('{{CANONICAL_URL}}').join(absoluteUrl(postUrl))
       .split('{{ROBOTS_META}}').join(isDraft ? '\n<meta name="robots" content="noindex,nofollow"/>' : '')
+      .split('{{UPDATED_INJECT}}').join(isDraft ? '' : buildUpdatedHtml(postsEntry))
       .split('{{RELATED_INJECT}}').join(isDraft ? '' : buildRelatedHtml(postsEntry, postsIndexArr))
       .split('{{JSONLD}}').join(isDraft ? '' : buildPostJsonLd(data, slug, postUrl, postsEntry));
 
     html = hzApplySoonFallback(html);
     html = processHtml(html);
     fs.writeFileSync(path.join(postOutDir, slug + '.html'), injectCacheBust(html), 'utf8');
-    if (!isDraft) addSitemapUrl(postUrl, { lastmod: parseIdDate(data.datepost), changefreq: 'monthly', priority: 0.9, category: 'post' });
+    if (!isDraft) addSitemapUrl(postUrl, { lastmod: laterIso(parseIdDate(data.datepost), (updInfo(postsEntry) || {}).iso), changefreq: 'monthly', priority: 0.9, category: 'post' });
     console.log('built: post/' + slug + '.html (dari data JSON)' + (isDraft ? ' [TIDAK PUBLIK]' : ''));
   });
   if (draftSlugs.length) {
@@ -1319,7 +1344,7 @@ function generateSitemapAndRobots() {
     posts.forEach((p) => {
       if (!p.url) return;
       addSitemapUrl(p.url, {
-        lastmod: parseIdDate(p.date),
+        lastmod: laterIso(parseIdDate(p.date), (updInfo(p) || {}).iso),
         changefreq: 'monthly',
         priority: 0.9,
         category: 'post'

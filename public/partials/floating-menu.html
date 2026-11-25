@@ -13,6 +13,12 @@
       <span class="hz-fm-item-label">Mode Gelap</span>
       <span class="hz-fm-switch" aria-hidden="true"><span class="hz-fm-switch-knob"></span></span>
     </button>
+    <button type="button" class="hz-fm-item" id="hz-fm-open-log">
+      <span class="hz-fm-item-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></span>
+      <span class="hz-fm-item-label">Log Update</span>
+      <span class="hz-fm-new" id="hz-fm-log-new" hidden>Baru</span>
+      <svg class="hz-fm-item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <button type="button" class="hz-fm-item hz-fm-item-install" id="hz-fm-install">
       <span class="hz-fm-item-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 8v6"/><path d="M9.5 11.8L12 14.3l2.5-2.5"/><line x1="10.5" y1="18.5" x2="13.5" y2="18.5"/></svg></span>
       <span class="hz-fm-item-label">Install Aplikasi</span>
@@ -32,6 +38,7 @@
   </div>
   <button type="button" class="hz-fm-btn" id="hz-fm-btn" aria-label="Buka menu pengaturan" aria-expanded="false" aria-controls="hz-fm-panel">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    <span class="hz-fm-dot" id="hz-fm-dot" aria-hidden="true" hidden></span>
   </button>
 </div>
 <!-- Modal Script Favorit — logika: blok "Favorit" di public/js/floating-menu.js (localStorage hz_fav_v1) -->
@@ -92,6 +99,29 @@
         </span>
       </div>
     </div>
+  </div>
+</div>
+<!-- Modal Log Update — logika: blok "Log Update" di public/js/floating-menu.js. Tab Update = script lama yang diperbarui (field upd di posts.json),
+     tab Baru = 10 id post terbesar. Data = posts.json yang sama dengan halaman lain (lazy, saat modal dibuka). -->
+<div class="hz-fm-overlay hz-lg" id="hz-fm-log" role="dialog" aria-modal="true" aria-labelledby="hz-fm-log-title" aria-hidden="true">
+  <div class="hz-fm-modal">
+    <div class="hz-fm-head">
+      <h2 class="hz-fm-modal-title" id="hz-fm-log-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
+        Log Update
+      </h2>
+      <button type="button" class="hz-fm-close" id="hz-fm-log-close" aria-label="Tutup Log Update">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="hz-nt-tabs" role="tablist" aria-label="Log Update">
+      <button type="button" class="hz-nt-tab" role="tab" data-tab="upd" aria-selected="true" aria-controls="hz-fm-log-pane-upd" id="hz-fm-log-tab-upd">Update</button>
+      <button type="button" class="hz-nt-tab" role="tab" data-tab="new" aria-selected="false" aria-controls="hz-fm-log-pane-new" id="hz-fm-log-tab-new" tabindex="-1">Baru</button>
+    </div>
+    <p class="hz-fm-modal-sub" id="hz-fm-log-sub">Script lama yang baru diperbarui oleh Henz. Ketuk untuk membuka script-nya.</p>
+    <div class="hz-fm-list hz-lg-pane" id="hz-fm-log-pane-upd" role="tabpanel" aria-labelledby="hz-fm-log-tab-upd"></div>
+    <div class="hz-fm-list hz-lg-pane" id="hz-fm-log-pane-new" role="tabpanel" aria-labelledby="hz-fm-log-tab-new" hidden></div>
+    <p class="hz-lg-foot" id="hz-fm-log-foot" hidden></p>
   </div>
 </div>
 <div class="hz-fm-overlay" id="hz-fm-ios" role="dialog" aria-modal="true" aria-labelledby="hz-fm-ios-title" aria-hidden="true">
