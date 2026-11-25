@@ -1165,6 +1165,19 @@ Disclaimer : Tag skin atau logo akan tetap terlihat di potret pada history gamep
     <div class="vis-hint" id="hz-vis-hint">Post langsung tampil di homepage, search, halaman hero, dan kategori setelah Vercel selesai deploy.</div>
   </div>
 
+  <!-- Pembaruan script (opsional): ditulis ke posts.json (field upd) -> tampil di tab Update menu "Log Update" situs -->
+  <div class="field" style="margin-bottom:10px;" id="hz-lg-wrap">
+    <div class="field-label">Pembaruan script <span class="field-badge">opsional</span></div>
+    <label class="rq-chk"><input type="checkbox" id="lg-upd-on" onchange="hzLgToggle()"/><span>Tandai sebagai pembaruan (tampil di Log Update)</span></label>
+    <div class="rq-box" id="lg-upd-box">
+      <div class="field-label" style="margin-top:8px;">Catatan pembaruan</div>
+      <input type="text" id="lg-upd-note" maxlength="120" placeholder="mis. Fix SFX skill 2 dan efek ultimate" autocomplete="off" oninput="hzLgCount()"/>
+      <div class="vis-hint" id="lg-upd-count">0/120</div>
+    </div>
+    <div class="vis-hint" id="lg-upd-hint">Hanya untuk post yang sudah ada. Biarkan mati untuk perbaikan kecil seperti typo.</div>
+    <div class="vis-hint" id="lg-upd-msg" style="display:none;color:#e65100;" role="status" aria-live="polite"></div>
+  </div>
+
   <!-- Mention peminta script (opsional): data disimpan di server (Redis), bukan di repo -->
   <div class="field" style="margin-bottom:10px;" id="hz-rq-wrap">
     <div class="field-label">Mention peminta script <span class="field-badge">opsional</span></div>
@@ -2499,6 +2512,7 @@ function buildContentData(){
 
 // ── LOAD CONTENT DATA (JSON) KE FORM — pengganti hzLoadFromHtml untuk file .json ──
 function hzLoadFromJson(jsonString, filename){
+  if(typeof hzLgReset === 'function') hzLgReset(); // centang pembaruan milik post sebelumnya tidak boleh terbawa
   var data;
   try{
     data = JSON.parse(jsonString);
@@ -3249,6 +3263,7 @@ function hzAttachEditedListeners(){
 }
 
 function hzLoadFromHtml(htmlString, filename){
+  if(typeof hzLgReset === 'function') hzLgReset();
   var warnings = [];
 
   var parser = new DOMParser();
@@ -3644,6 +3659,104 @@ function hzSetVisibility(mode){
     ? 'Hanya bisa dibuka lewat link langsung (noindex). Tidak muncul di homepage, search, hero, kategori, dan sitemap. Bukan rahasia: repo GitHub bersifat publik.'
     : 'Post langsung tampil di homepage, search, halaman hero, dan kategori setelah Vercel selesai deploy.';
   if(typeof hzRqSync === 'function') hzRqSync();
+  if(typeof hzLgSync === 'function') hzLgSync();
+}
+
+// ── PEMBARUAN SCRIPT -> LOG UPDATE (opsional) ──────────────
+// Dicentang = entry post di posts.json diberi field upd {t:<epoch ms>, n:<catatan>} (tab Update di menu "Log Update" situs).
+// Hanya untuk post yang SUDAH terdaftar di posts.json (alur Publik). Post baru otomatis masuk tab Baru lewat id-nya.
+// Tidak dicentang = upd lama (kalau ada) dibiarkan apa adanya. upd yang lebih tua dari HZ_LG_KEEP_DAYS dibersihkan tiap posts.json ditulis.
+var HZ_LG_MAX = 120;
+var HZ_LG_KEEP_DAYS = 60;
+var _hzLgSeq = 0;
+function hzLgNormalize(raw){ return String(raw==null?'':raw).replace(/\s+/g,' ').trim().slice(0,HZ_LG_MAX); }
+function hzLgMsg(text){
+  var m = document.getElementById('lg-upd-msg');
+  if(!m) return;
+  m.textContent = text || '';
+  m.style.display = text ? 'block' : 'none';
+}
+function hzLgCount(){
+  var c = document.getElementById('lg-upd-count');
+  if(c) c.textContent = hzLgNormalize(v('lg-upd-note')).length + '/' + HZ_LG_MAX;
+}
+function hzLgSyncBox(){
+  var box = document.getElementById('lg-upd-box');
+  if(box) box.classList.toggle('show', vc('lg-upd-on'));
+  hzLgCount();
+}
+function hzLgReset(){
+  _hzLgSeq++;
+  hzSetCheck('lg-upd-on', false);
+  var n = document.getElementById('lg-upd-note');
+  if(n) n.value = '';
+  hzLgMsg('');
+  hzLgSyncBox();
+  hzLgSync(); // pesan/penonaktifan mode Tidak publik tetap benar setelah reset
+}
+// Dipanggil hzSetVisibility: mode Tidak publik tidak menyentuh posts.json, jadi tidak ada Log Update.
+function hzLgSync(){
+  var isDraft = (typeof _hzVisibility !== 'undefined' && _hzVisibility === 'draft');
+  var chk = document.getElementById('lg-upd-on');
+  if(!chk) return;
+  if(isDraft){
+    if(chk.checked) hzLgReset();
+    chk.disabled = true;
+    hzLgMsg('Mode Tidak publik tidak memakai Log Update.');
+  } else {
+    chk.disabled = false;
+    hzLgMsg('');
+  }
+}
+async function hzLgToggle(){
+  var chk = document.getElementById('lg-upd-on');
+  if(!chk) return;
+  hzLgSyncBox();
+  var seq = ++_hzLgSeq;
+  if(!chk.checked){ hzLgMsg(''); return; }
+  hzLgMsg('');
+  var note = document.getElementById('lg-upd-note');
+  if(note) note.focus();
+  var token = (document.getElementById('gh-token').value||'').trim();
+  var slug = hzSlugify((document.getElementById('namehero').value||'').trim());
+  if(!token || !slug){
+    hzLgMsg('Keberadaan post dicek lagi saat upload (isi Judul Hero dan token GitHub kalau mau dicek sekarang).');
+    return;
+  }
+  hzLgMsg('Mengecek apakah post sudah ada...');
+  var exists = false;
+  try{
+    var f = await hzGhGetFile('public/js/posts.json', token);
+    var list = f ? JSON.parse(hzBase64Decode(f.content)) : null;
+    if(!Array.isArray(list)) throw new Error('posts.json tidak terbaca');
+    for(var i=0;i<list.length;i++){ if(list[i] && list[i].url === '/post/'+slug){ exists = true; break; } }
+  }catch(e){
+    if(seq !== _hzLgSeq) return;
+    hzLgMsg('Belum bisa dicek sekarang ('+e.message+'). Akan diperiksa lagi saat upload.');
+    return;
+  }
+  if(seq !== _hzLgSeq || !chk.checked) return;
+  if(exists){ hzLgMsg(''); return; }
+  hzSetCheck('lg-upd-on', false);
+  hzLgSyncBox();
+  hzLgMsg('Post baru otomatis masuk tab Baru.');
+}
+// Validasi sebelum ada yang diupload. Return {on,note} atau {error}.
+function hzLgCollect(isDraft){
+  if(isDraft || !vc('lg-upd-on')) return { on:false, note:'' };
+  var note = hzLgNormalize(v('lg-upd-note'));
+  if(!note) return { error:'Catatan pembaruan masih kosong. Isi catatan singkat, atau matikan centang "Tandai sebagai pembaruan".' };
+  return { on:true, note:note };
+}
+// Buang upd yang sudah lebih tua dari HZ_LG_KEEP_DAYS (atau bentuknya rusak). Return jumlah entri yang dibersihkan.
+function hzLgPrune(posts){
+  var limit = Date.now() - HZ_LG_KEEP_DAYS*24*60*60*1000, n = 0;
+  posts.forEach(function(p){
+    if(!p || p.upd === undefined) return;
+    var t = p.upd && typeof p.upd.t === 'number' ? p.upd.t : 0;
+    if(!(t >= limit)){ delete p.upd; n++; }
+  });
+  return n;
 }
 
 // ── MENTION PEMINTA SCRIPT (opsional) ──────────────────
@@ -3906,6 +4019,14 @@ async function finalizeAndUpload(){
     return;
   }
 
+  // Pembaruan script (opsional): divalidasi di awal juga, supaya tidak ada upload setengah jalan.
+  var lgState = hzLgCollect(isDraft);
+  if(lgState.error){
+    hzSetStatus('Gagal', 'error');
+    hzLog(lgState.error, true);
+    return;
+  }
+
   var herolinkVal = (document.getElementById('herolink').value||'').trim();
   if(isDraft){
     // Mode tidak publik: validasi Nama Hero dilewati, baru dicek saat post dipublikasikan.
@@ -4076,6 +4197,10 @@ async function finalizeAndUpload(){
       oldEntry.date  = hzDateFromDatepost();
       if(keywordsVal){ oldEntry.keywords = keywordsVal; } else { delete oldEntry.keywords; }
       if(badgeVal){ oldEntry.badge = badgeVal; } else { delete oldEntry.badge; }
+      if(lgState.on){
+        oldEntry.upd = { t: Date.now(), n: lgState.note };
+        hzLog('Pembaruan dicatat untuk Log Update: "'+lgState.note+'"');
+      }
       hzLog('Entry "'+namehero+'" sudah ada di posts.json, akan diupdate (bukan duplikat).');
     } else {
       var newEntry = {
@@ -4092,6 +4217,7 @@ async function finalizeAndUpload(){
       if(badgeVal) newEntry.badge = badgeVal;
       posts.unshift(newEntry);
       rqPostId = newEntry.id;
+      if(lgState.on) hzLog('Post baru otomatis masuk tab Baru di Log Update, jadi catatan pembaruan tidak dicatat.');
     }
 
     // 3b. Mention peminta: simpan ke endpoint SEBELUM commit posts.json (commit itulah yang memicu notifikasi).
@@ -4113,11 +4239,14 @@ async function finalizeAndUpload(){
       }
     }
 
+    var lgPruned = hzLgPrune(posts);
+    if(lgPruned) hzLog('Catatan pembaruan lama (lebih dari '+HZ_LG_KEEP_DAYS+' hari) dibersihkan dari '+lgPruned+' entry.');
+
     hzLog('Mengupload posts.json yang sudah diperbarui...');
     await hzGhPutFile(
       jsonPath,
       JSON.stringify(posts, null, 2)+'\n',
-      'Update posts.json: add '+namehero,
+      (existingIndex !== -1 ? 'Update posts.json: update ' : 'Update posts.json: add ')+namehero,
       token,
       jsonFile.sha
     );
@@ -4151,6 +4280,7 @@ async function finalizeAndUpload(){
 
     hzRqDraftRemove(slug); // data draft (kalau ada) sudah dipakai
     hzRqReset();           // supaya peminta post ini tidak ikut terbawa ke post berikutnya
+    hzLgReset();           // centang & catatan pembaruan tidak ikut terbawa ke post berikutnya
     hzSetStatus('Berhasil!', 'success');
     hzLog('');
     hzLog('Selesai! "'+namehero+'" akan tampil di homepage & ter-generate halamannya setelah Vercel selesai redeploy (build.js merakit HTML dari data ini + template pusat).');
