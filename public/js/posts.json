@@ -1037,7 +1037,11 @@
     "hero": "Gloo",
     "date": "24 Nov 2026",
     "author": "Henz",
-    "keywords": "Gloo Patrick Star"
+    "keywords": "Gloo Patrick Star",
+    "upd": {
+      "t": 1795600394889,
+      "n": "Menambahkan Fix SFX Replay"
+    }
   },
   {
     "id": 80,
