@@ -1037,7 +1037,12 @@ function updInfo(entry) {
   return { iso: y + '-' + m + '-' + d, label: parseInt(d, 10) + ' ' + UPD_MONTHS[parseInt(m, 10) - 1] + ' ' + y, note: note };
 }
 function laterIso(a, b) { if (!a) return b || null; if (!b) return a; return a >= b ? a : b; }
+/* Saklar kotak "Diperbarui" di halaman post: SEMENTARA DIMATIKAN (permintaan Essen, 25/11/2026). Nyalakan lagi dengan env HZ_SHOW_UPDATED=1
+   di Vercel (lalu Redeploy) atau ubah default di bawah jadi true. Hanya memengaruhi kotak di post: popup Log Update, dateModified JSON-LD,
+   dan lastmod sitemap tetap memakai data upd. */
+const SHOW_POST_UPDATED = process.env.HZ_SHOW_UPDATED === '1';
 function buildUpdatedHtml(entry) {
+  if (!SHOW_POST_UPDATED) return '';
   const u = updInfo(entry);
   if (!u) return '';
   return '<div class="hz-post-upd" id="hz-post-upd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.5 15a9 9 0 1 1-2.1-9.4L23 10"/></svg><span><strong>Diperbarui ' + u.label + '</strong>' + (u.note ? ' &middot; ' + escHtml(u.note) : '') + '</span></div>';
