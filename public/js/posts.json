@@ -1650,9 +1650,14 @@
     "thumb": "https://i.ibb.co/0V1Q7pjz/freya-legend.webp",
     "cat": "Legend",
     "hero": "Freya",
-    "date": "8 Nov 2026",
+    "date": "26 Nov 2026",
     "author": "Henz",
-    "keywords": "Freya Galactic Vanquisher"
+    "keywords": "Freya Galactic Vanquisher",
+    "badge": "Fix Size",
+    "upd": {
+      "t": 1795692383127,
+      "n": "Fix Size All Replace"
+    }
   },
   {
     "id": 24,
