@@ -4,12 +4,18 @@
   "urlthumbnail": "https://i.ibb.co/0V1Q7pjz/freya-legend.webp",
   "kategoriskin": "Legend",
   "keywords": "Freya Galactic Vanquisher",
-  "datepost": "Update 8 Nov 2026",
+  "badge": "Fix Size",
+  "datepost": "Update 26 Nov 2026",
   "authorname": "Henz MLBB",
   "longstory": "Freya adalah seorang pejuang dari Northern Vale yang mewarisi tekad para Valkyrie, para pelindung legendaris Sessrumnir. Setelah kakaknya, Skuld, yang merupakan Valkyrie sebelumnya gugur dalam sebuah misi dan Aurora Heart relik suci yang menjadi sumber kekuatan Northern Vale menghilang, banyak orang mulai menyalahkan Skuld atas kegagalan tersebut. Freya menolak mempercayai tuduhan itu. Demi memulihkan kehormatan sang kakak dan menemukan Aurora Heart yang hilang, ia memulai perjalanan panjang melintasi badai salju sambil terus melindungi siapa pun yang membutuhkan pertolongan.\n\nDalam perjalanannya, Freya mulai memahami arti sebenarnya dari gelar Valkyrie. Bagi rakyat biasa, Valkyrie adalah penyelamat. Bagi para prajurit, Valkyrie adalah simbol kejayaan. Dari Sessrumnir, ia juga mengetahui asal-usul para Valkyrie: ribuan tahun lalu, Sigrun, Valkyrie pertama, menggunakan Aurora Heart untuk menghidupkan kembali tungku suci yang menjaga kehidupan Northern Vale. Sejak saat itu, setiap Valkyrie bertugas melindungi tanah air mereka sekaligus menjaga Aurora Heart agar api tungku tersebut tidak pernah padam.\n\nTak lama kemudian, Freya akhirnya menemukan kebenaran di balik kematian Skuld. Sekelompok pengikut God of Light ternyata telah menjebak Skuld, mencuri Aurora Heart, dan berusaha menghancurkan tungku suci Sessrumnir agar kekuatan Northern Vale lenyap. Ketika Freya tiba, Sessrumnir telah porak-poranda dan para pejuang Northern Vale berada di ambang kekalahan. Di hadapannya terbentang dua pilihan: mengejar para pelaku demi membalas kematian kakaknya, atau menyelamatkan tungku suci yang menjadi harapan seluruh Northern Vale.\n\nFreya memilih menjalankan tugas seorang Valkyrie. Menyadari bahwa tungku suci membutuhkan sumber kekuatan baru untuk tetap menyala, ia dengan rela mengorbankan dirinya dan melompat ke dalam api tungku. Pengorbanannya membuatnya diakui oleh seluruh roh Valkyrie yang telah gugur sebelumnya. Senjatanya ditempa kembali menjadi halberd yang lebih kuat, sementara sepasang sayap emas tumbuh di punggungnya. Freya pun terlahir kembali sebagai Valkyrie baru, bukan karena Aurora Heart, melainkan karena keberanian dan pengorbanannya sendiri.\n\nKini Freya menjadi pelindung baru Northern Vale sekaligus penerus sejati warisan Valkyrie. Dengan tombak di tangannya dan aurora sebagai penuntun, ia memburu para pengikut God of Light yang melarikan diri, sekaligus bersumpah untuk mempertahankan Northern Vale hingga akhir hayatnya. Baginya, menjadi Valkyrie bukan sekadar gelar, melainkan pengabdian tanpa pamrih demi tanah kelahirannya.",
   "dualTabNames": {
     "tab1": "Tab 1",
-    "tab2": "Tab 2"
+    "tab2": "Tab 2",
+    "tab3": "Tab 3",
+    "tab4": "Tab 4",
+    "tab5": "Tab 5",
+    "tab6": "Tab 6",
+    "tab7": "Tab 7"
   },
   "abilitiesPasif": {
     "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Power_of_Einherjar.png",
@@ -20,7 +26,32 @@
     "url2": "",
     "name2": "",
     "kategori2": "BUFF",
-    "longDesc2": ""
+    "longDesc2": "",
+    "dual3": false,
+    "url3": "",
+    "name3": "",
+    "kategori3": "BUFF",
+    "longDesc3": "",
+    "dual4": false,
+    "url4": "",
+    "name4": "",
+    "kategori4": "BUFF",
+    "longDesc4": "",
+    "dual5": false,
+    "url5": "",
+    "name5": "",
+    "kategori5": "BUFF",
+    "longDesc5": "",
+    "dual6": false,
+    "url6": "",
+    "name6": "",
+    "kategori6": "BUFF",
+    "longDesc6": "",
+    "dual7": false,
+    "url7": "",
+    "name7": "",
+    "kategori7": "BUFF",
+    "longDesc7": ""
   },
   "abilitiesList": [
     {
@@ -33,7 +64,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "AOE",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "AOE",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "AOE",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "AOE",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "AOE",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "AOE",
+      "longDesc7": ""
     },
     {
       "label": "Skill 2",
@@ -45,7 +101,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "Mobility",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Mobility",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Mobility",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Mobility",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Mobility",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Mobility",
+      "longDesc7": ""
     },
     {
       "label": "Ultimate",
@@ -57,7 +138,32 @@
       "url2": "",
       "name2": "",
       "kategori2": "Burst",
-      "longDesc2": ""
+      "longDesc2": "",
+      "dual3": false,
+      "url3": "",
+      "name3": "",
+      "kategori3": "Burst",
+      "longDesc3": "",
+      "dual4": false,
+      "url4": "",
+      "name4": "",
+      "kategori4": "Burst",
+      "longDesc4": "",
+      "dual5": false,
+      "url5": "",
+      "name5": "",
+      "kategori5": "Burst",
+      "longDesc5": "",
+      "dual6": false,
+      "url6": "",
+      "name6": "",
+      "kategori6": "Burst",
+      "longDesc6": "",
+      "dual7": false,
+      "url7": "",
+      "name7": "",
+      "kategori7": "Burst",
+      "longDesc7": ""
     }
   ],
   "download": {
@@ -68,62 +174,71 @@
       {
         "name": "Default",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero221-icon.png",
-        "link": "https://sfile.co/ri6QcuYruok"
+        "link": "https://sfile.co/NOFudwdM1wH",
+        "fixSfx": true
       },
       {
         "name": "Default + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/4/4e/Hero221-icon.png",
-        "link": "https://sfile.co/J56MC81AoWn"
+        "link": "https://sfile.co/iM9AeTKgeOH",
+        "fixSfx": true
       },
       {
         "name": "Basic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Hero222-icon.png",
-        "link": "https://sfile.co/qOUOAJax3xe"
+        "link": "https://sfile.co/KHhRENrLKVR",
+        "fixSfx": true
       },
       {
         "name": "Basic + Logo",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/a/a5/Hero222-icon.png",
-        "link": "https://sfile.co/hWnQaeAN9bP"
+        "link": "https://sfile.co/0jdxTucYWM8",
+        "fixSfx": true
       },
       {
         "name": "Old Starlight",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/0/03/Hero223-icon.png",
-        "link": "https://sfile.co/VQ3fxo8wEqg"
+        "link": "https://sfile.co/rbnhh3ilHrM",
+        "fixSfx": true
       },
       {
         "name": "Summer",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/d/dd/Hero224-icon.png",
-        "link": "https://sfile.co/njOj4GcNem3"
+        "link": "https://sfile.co/8E0SxklwxDr",
+        "fixSfx": true
       },
       {
         "name": "Luckybox",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/8/87/Hero225-icon.png",
-        "link": "https://sfile.co/CFgL8XOVhgP"
+        "link": "https://sfile.co/jC6hc4dWwYs"
       },
       {
         "name": "Elite",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/b/bc/Hero226-icon.png",
-        "link": "https://sfile.co/uipbVuURIFU"
+        "link": "https://sfile.co/y7IMaKlADgq",
+        "fixSfx": true
       },
       {
         "name": "Christmas",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/9d/Hero227-icon.png",
-        "link": "https://sfile.co/rFH8rDTKBGu"
+        "link": "https://sfile.co/j2ffjPNKfUw",
+        "fixSfx": true
       },
       {
         "name": "Epic",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/9/92/Hero228-icon.png",
-        "link": "https://sfile.co/MXF0vd6wRZd"
+        "link": "https://sfile.co/5bNn5gUfffH"
       },
       {
         "name": "SABER",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/2/2b/Manhunter_Icon.png",
-        "link": "https://sfile.co/9cT91Kq3ctJ"
+        "link": "https://sfile.co/RKBMgvTpIZl"
       },
       {
         "name": "New Starlight",
         "url": "https://static.wikia.nocookie.net/mobile-legends/images/5/5e/Hero102211-icon.png",
-        "link": "https://sfile.co/xxBykepj800"
+        "link": "https://sfile.co/g4SOjVm3ydb",
+        "fixSfx": true
       }
     ],
     "rowsTab2": []
