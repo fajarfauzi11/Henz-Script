@@ -215,6 +215,22 @@ function injectFloatingMenu(html) {
   return html.slice(0, idx) + FLOATING_MENU_HTML + '\n' + html.slice(idx);
 }
 
+/* Cloudflare Web Analytics (gratis, tanpa cookie/localStorage): snippet beacon disisipkan tepat sebelum </body> di SEMUA halaman
+   (kecuali halaman mandiri offline.html), sesudah menu melayang. Skrip dimuat dari static.cloudflareinsights.com dan data dikirim ke
+   cloudflareinsights.com, jadi TIDAK menambah request ke Vercel. Token situs memang publik (tampil di sumber halaman).
+   Saklar cepat: env HZ_ANALYTICS=0 di Vercel (lalu Redeploy) mematikan snippet tanpa mengubah kode. Hanya satu snippet per halaman
+   (aturan Cloudflare), dan aman dipanggil berulang: kalau sudah ada, dilewati. */
+const CF_ANALYTICS_ON = process.env.HZ_ANALYTICS !== '0';
+const CF_ANALYTICS_TAG = `<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b21226a437374d5ba87c232ee6cb147c"}'></script><!-- End Cloudflare Web Analytics -->`;
+function injectCfAnalytics(html) {
+  if (!CF_ANALYTICS_ON) return html;
+  if (html.indexOf('data-cf-beacon') !== -1) return html; // deteksi tag beacon-nya (bukan teks yang kebetulan menyebut domain Cloudflare, mis. Kebijakan Privasi)
+  if (html.indexOf('hz-bare') !== -1) return html; // halaman mandiri (offline.html): tanpa analytics
+  const idx = html.lastIndexOf('</body>');
+  if (idx === -1) return html;
+  return html.slice(0, idx) + CF_ANALYTICS_TAG + '\n' + html.slice(idx);
+}
+
 /* Mode Gelap berlaku di SEMUA halaman: (1) <html> diberi atribut data-dark-ready supaya switch di menu melayang
    tampil, dan (2) script kecil disisipkan tepat setelah <head> yang memasang data-theme="dark" SEBELUM halaman
    tergambar (mencegah kilatan putih). Preferensi disimpan di localStorage key hz_theme; default selalu terang.
@@ -304,7 +320,7 @@ function processHtml(content) {
   const withPartials = content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
   });
-  return injectCacheBust(injectFloatingMenu(injectThemeInit(injectE2eInit(injectPwaHead(withPartials)))));
+  return injectCacheBust(injectCfAnalytics(injectFloatingMenu(injectThemeInit(injectE2eInit(injectPwaHead(withPartials))))));
 }
 
 function copyRecursive(srcDir, outDir) {
