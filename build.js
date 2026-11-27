@@ -215,6 +215,25 @@ function injectFloatingMenu(html) {
   return html.slice(0, idx) + FLOATING_MENU_HTML + '\n' + html.slice(idx);
 }
 
+/* Move2Link (shortlink monetisasi) mode "Full Page Script": skrip hanya mengganti href <a> yang domainnya cocok (sfile.co) SAAT halaman dimuat.
+   Tombol Download di post memakai href="#" + data-url (gerbang Adsterra), jadi tidak tersentuh skrip. Karena itu tiap tombol dipasangi satu
+   <a class="hz-m2l-src" hidden> berisi link sfile asli tepat sesudahnya; skrip menggantinya jadi shortlink, dan hzDlGateFinalOpen membaca href-nya
+   saat tombol "Download File" ditekan (jika skrip gagal/diblokir, href tetap sfile asli sehingga unduhan tetap jalan).
+   Skrip hanya disisipkan di halaman yang punya anchor sumber itu. Saklar cepat: env HZ_M2L=0 di Vercel (lalu Redeploy). */
+const M2L_ON = process.env.HZ_M2L !== '0';
+const M2L_TAG = '<script async src="https://api.move2link.com/js/full-page-script.js" data-token="0aaf215df95e44206ab05daa2744f973a94ceefc4a94" data-mode="include" data-domains="sfile.co"></script>';
+function hzM2lSrc(link) {
+  return '<a class="hz-m2l-src" href="' + escHtml(link) + '" hidden tabindex="-1" aria-hidden="true" rel="nofollow noopener"></a>';
+}
+function injectMove2Link(html) {
+  if (!M2L_ON) return html;
+  if (html.indexOf('hz-m2l-src') === -1) return html;
+  if (html.indexOf('move2link.com/js/full-page-script.js') !== -1) return html;
+  const idx = html.lastIndexOf('</body>');
+  if (idx === -1) return html;
+  return html.slice(0, idx) + M2L_TAG + '\n' + html.slice(idx);
+}
+
 /* Cloudflare Web Analytics (gratis, tanpa cookie/localStorage): snippet beacon disisipkan tepat sebelum </body> di SEMUA halaman
    (kecuali halaman mandiri offline.html), sesudah menu melayang. Skrip dimuat dari static.cloudflareinsights.com dan data dikirim ke
    cloudflareinsights.com, jadi TIDAK menambah request ke Vercel. Token situs memang publik (tampil di sumber halaman).
@@ -320,7 +339,7 @@ function processHtml(content) {
   const withPartials = content.replace(INCLUDE_RE, (match, partialName) => {
     return readPartial(partialName);
   });
-  return injectCacheBust(injectCfAnalytics(injectFloatingMenu(injectThemeInit(injectE2eInit(injectPwaHead(withPartials))))));
+  return injectCacheBust(injectMove2Link(injectCfAnalytics(injectFloatingMenu(injectThemeInit(injectE2eInit(injectPwaHead(withPartials)))))));
 }
 
 function copyRecursive(srcDir, outDir) {
@@ -894,7 +913,7 @@ function buildDlRow(name, url, link, isLast, fixSfx) {
     ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   const dlBtn = link
-    ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="' + escHtml(name) + '" data-url="' + escHtml(link) + '" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
+    ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="' + escHtml(name) + '" data-url="' + escHtml(link) + '" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>' + hzM2lSrc(link)
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   const rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="' + rowStyle + '">\n'
@@ -912,7 +931,7 @@ function buildDlRowTab2(name, url, link, isLast, fixSfx) {
     ? '<button type="button" onclick="hzOpenLogoTooltip()" aria-label="Apa itu Logo?" style="position:absolute;top:50%;left:100%;margin-left:4px;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1px solid #b5b5b5;background:#fff;color:#717171;font-size:9px;font-weight:700;font-family:\'Manrope\',sans-serif;cursor:pointer;padding:0;line-height:1;">?</button>'
     : '';
   const dlBtn = link
-    ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="' + escHtml(name) + '" data-url="' + escHtml(link) + '" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>'
+    ? '<a href="#" onclick="hzDlGateOpen(this);return false;" data-name="' + escHtml(name) + '" data-url="' + escHtml(link) + '" style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#fff;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#111;text-decoration:none;white-space:nowrap;">Download</a>' + hzM2lSrc(link)
     : '<span style="display:inline-flex;align-items:center;justify-content:center;padding:7px 16px;background:#e0e0e0;border:2px solid #e0e0e0;border-radius:10px;font-family:\'Manrope\',sans-serif;font-size:11px;font-weight:700;color:#999;white-space:nowrap;cursor:default;width:88px;height:30px;box-sizing:border-box;">Soon!</span>';
   const rowStyle = isLast ? '' : 'border-bottom:1px solid #f0f0f0;';
   return '<tr style="' + rowStyle + '">\n'

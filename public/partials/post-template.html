@@ -1088,11 +1088,14 @@ function hzDlGateLoadBanner(){
 var HZ_DLGATE_SMARTLINK = 'https://ardance.org/4/4392b56a3104d22112d67c27b1e93ff2'; // Direct Link/SmartLink Adsterra (dari dashboard)
 var HZ_DLGATE_AD_COOLDOWN_MS = 10 * 60 * 1000; // jeda minimal antar pembukaan smartlink dalam sesi yang sama
 var hzDlGateUrl = '';
+var hzDlGateSrc = null; // anchor tersembunyi .hz-m2l-src (href-nya diganti skrip Move2Link)
 var hzDlGateTimer = null;
 
 function hzDlGateOpen(btn){
   hzDlGateUrl = btn.getAttribute('data-url') || '';
   if(!hzDlGateUrl) return;
+  var nx = btn.nextElementSibling;
+  hzDlGateSrc = (nx && nx.classList && nx.classList.contains('hz-m2l-src')) ? nx : null;
   var name = btn.getAttribute('data-name') || '';
   var heroEl = document.getElementById('hz-hero-title');
   var hero = heroEl ? heroEl.textContent : '';
@@ -1169,7 +1172,12 @@ function hzDlGateBtnClick(){
   }, 1000);
 }
 function hzDlGateFinalOpen(){
-  if(hzDlGateUrl) window.open(hzDlGateUrl, '_blank', 'noopener');
+  var u = hzDlGateUrl;
+  try {
+    /* Dibaca SAAT tombol ditekan: bila skrip Move2Link sudah mengganti href, pakai shortlink; bila belum/gagal/diblokir, tetap link asli. */
+    if(hzDlGateSrc && /^https?:$/.test(hzDlGateSrc.protocol) && hzDlGateSrc.href) u = hzDlGateSrc.href;
+  } catch(e){}
+  if(u) window.open(u, '_blank', 'noopener');
 }
 
 
