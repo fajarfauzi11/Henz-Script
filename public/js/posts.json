@@ -558,9 +558,13 @@
     "thumb": "https://i.ibb.co/zTq3k711/granger-collector.webp",
     "cat": "Collector",
     "hero": "Granger",
-    "date": "8 Nov 2026",
+    "date": "28 Nov 2026",
     "author": "Henz",
-    "keywords": "Granger Agent Z"
+    "keywords": "Granger Agent Z",
+    "upd": {
+      "t": 1795869584329,
+      "n": "Fix SFX Replay"
+    }
   },
   {
     "id": 123,
