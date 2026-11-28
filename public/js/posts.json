@@ -514,9 +514,13 @@
     "thumb": "https://i.ibb.co/232Yyrnw/xavier-jjk.webp",
     "cat": "Jujutsu Kaisen",
     "hero": "Xavier",
-    "date": "8 Nov 2026",
+    "date": "28 Nov 2026",
     "author": "Henz",
-    "keywords": "Xavier Gojo Satoru"
+    "keywords": "Xavier Gojo Satoru",
+    "upd": {
+      "t": 1795870363678,
+      "n": "Fix SFX Replay"
+    }
   },
   {
     "id": 127,
